@@ -1,0 +1,4992 @@
+9001
+08:55:46,390 --> 08:55:50,350
+And in here, we're gonna say API
+key is going to be ether scan
+
+9002
+08:55:50,980 --> 08:55:55,870
+API key that we're going to
+define up here the same way we
+
+9003
+08:55:55,870 --> 08:55:59,680
+define these other keys. So
+we'll say const, ether scan API
+
+9004
+08:55:59,680 --> 08:56:05,950
+key equals process dot e NV dot
+ether scan API key. And if
+
+9005
+08:56:05,950 --> 08:56:08,530
+something like this pops up, you
+can generally just hit enter,
+
+9006
+08:56:08,560 --> 08:56:12,130
+and it will autocomplete it for
+you, which is awesome. Great. So
+
+9007
+08:56:12,130 --> 08:56:14,980
+now we have an ether scan API
+key back in the heart had
+
+9008
+08:56:14,980 --> 08:56:18,010
+documentation, it tells us by
+adding this, we actually get a
+
+9009
+08:56:18,010 --> 08:56:22,840
+new task called verify. Let's
+try that out. So open our
+
+9010
+08:56:22,840 --> 08:56:27,880
+terminal back up. And we'll do
+yarn, RT hat. Let's see what
+
+9011
+08:56:27,880 --> 08:56:32,110
+pops up. Wow, we did get a new
+verification here. When we run
+
+9012
+08:56:32,140 --> 08:56:35,590
+yarn hard hat harder, it
+actually looks into our hard
+
+9013
+08:56:35,590 --> 08:56:38,980
+hat.config.js and checks for any
+plugins. If there are new
+
+9014
+08:56:38,980 --> 08:56:42,850
+plugins there, it'll add them as
+a new task that we can do. You
+
+9015
+08:56:42,850 --> 08:56:46,630
+can manually verify your
+contract by doing yarn or MPX
+
+9016
+08:56:46,660 --> 08:56:50,230
+Harnett verify dash dash
+network, the deployed contract
+
+9017
+08:56:50,230 --> 08:56:53,890
+address and any constructor
+arguments yourself. But we want
+
+9018
+08:56:53,890 --> 08:56:56,440
+to be a little bit more
+programmatic than this. So what
+
+9019
+08:56:56,440 --> 08:56:58,600
+we're going to do is we're going
+to go back and create this
+
+9020
+08:56:58,630 --> 08:57:01,570
+verification function, it is
+good to know how to do it via
+
+9021
+08:57:01,570 --> 08:57:03,670
+command line so that if you want
+to verify something in the
+
+9022
+08:57:03,670 --> 08:57:07,420
+future, manually, you can, let's
+build this verify function
+
+9023
+08:57:07,420 --> 08:57:10,120
+though. So we're going to take
+the our contract address and
+
+9024
+08:57:10,120 --> 08:57:13,090
+some arguments. And for our
+sake, we're going to do console
+
+9025
+08:57:13,660 --> 08:57:18,970
+dot log verifying contract that
+that just so that we know we
+
+9026
+08:57:18,970 --> 08:57:22,090
+might have to wait for a little
+bit. And in our code, we can
+
+9027
+08:57:22,090 --> 08:57:28,210
+actually run any task from hard
+hat using a run package. So up
+
+9028
+08:57:28,210 --> 08:57:32,410
+at the top, we're actually going
+to import run from hard hat as
+
+9029
+08:57:32,410 --> 08:57:37,690
+well run allows us to run any
+hard hat task. So in our code
+
+9030
+08:57:37,690 --> 08:57:42,940
+here, we're going to do a wait
+to run. And then we can do there
+
+9031
+08:57:43,090 --> 08:57:46,810
+it thought. Now part of that
+allows you to add different
+
+9032
+08:57:46,810 --> 08:57:49,420
+parameters as well in this run.
+And it's usually best that you
+
+9033
+08:57:49,420 --> 08:57:52,750
+go ahead and add them in here so
+that we're really specific with
+
+9034
+08:57:52,750 --> 08:57:57,970
+what we're doing. If we do yarn
+hardhat verify dash dash help,
+
+9035
+08:57:58,120 --> 08:58:01,060
+we can see what parameters we
+can actually pass. Well, it
+
+9036
+08:58:01,060 --> 08:58:04,330
+looks like we can pass the
+Verify parameter. So we'll do
+
+9037
+08:58:04,540 --> 08:58:08,800
+colon, verify. If you go to the
+actual GitHub for the
+
+9038
+08:58:08,800 --> 08:58:11,200
+verification tasks, you can
+actually see you can do more
+
+9039
+08:58:11,200 --> 08:58:14,290
+than just verify, you can do
+verify, get minimum build,
+
+9040
+08:58:14,500 --> 08:58:17,770
+verify, get constructor
+arguments, verify, verify, which
+
+9041
+08:58:17,770 --> 08:58:19,720
+is what we're going to be
+working with, and a couple of
+
+9042
+08:58:19,720 --> 08:58:23,050
+other subtasks as well. The
+second parameter that goes
+
+9043
+08:58:23,050 --> 08:58:26,110
+inside run is going to be a list
+of actual parameters. This
+
+9044
+08:58:26,140 --> 08:58:28,720
+second parameter here is just
+kind of the sub task, if you
+
+9045
+08:58:28,720 --> 08:58:32,500
+will, of our verify task. And
+this is going to be an object
+
+9046
+08:58:32,500 --> 08:58:34,990
+that contains the actual
+parameters. And this is where we
+
+9047
+08:58:34,990 --> 08:58:40,480
+pass in an address, which is
+going to be our contract
+
+9048
+08:58:40,480 --> 08:58:47,770
+address, and then our construct
+or arguments, which is going to
+
+9049
+08:58:47,770 --> 08:58:52,330
+be arcs. Now normally just this
+right here should be enough for
+
+9050
+08:58:52,330 --> 08:58:55,540
+us to go ahead and use this
+verify contract in our main
+
+9051
+08:58:55,540 --> 08:58:58,330
+function, but we're going to add
+one additional thing to it.
+
+9052
+08:58:58,330 --> 08:59:00,940
+Because in practice, sometimes
+there's some errors that can
+
+9053
+08:59:00,940 --> 08:59:03,250
+come up. One of the errors that
+often comes up when running a
+
+9054
+08:59:03,250 --> 08:59:05,770
+wait is that the contract has
+already been verified. And
+
+9055
+08:59:05,920 --> 08:59:08,740
+you'll actually likely run into
+this, because ether scan will
+
+9056
+08:59:08,740 --> 08:59:11,680
+get smart enough by seeing
+enough bytecode that is exactly
+
+9057
+08:59:11,680 --> 08:59:14,350
+simple storage that it will
+start to just automatically
+
+9058
+08:59:14,350 --> 08:59:17,470
+verify any bytecode that looks
+like simple storage. And then
+
+9059
+08:59:17,470 --> 08:59:21,070
+this await will throw an error,
+which we want to avoid. So what
+
+9060
+08:59:21,070 --> 08:59:27,340
+we can do is we can add a try
+catch onto this await. So
+
+9061
+08:59:27,340 --> 08:59:30,550
+outside of the way, we're going
+to add a try. And we're going to
+
+9062
+08:59:30,550 --> 08:59:34,540
+add these little brackets that
+wrap around our weight. And then
+
+9063
+08:59:34,540 --> 08:59:40,270
+we're going to put a catch. This
+is known as a try, catch and
+
+9064
+08:59:40,270 --> 08:59:44,380
+solidity also has tried catches.
+But basically, this e is going
+
+9065
+08:59:44,380 --> 08:59:47,620
+to be any error that this
+section throws. So we're going
+
+9066
+08:59:47,620 --> 08:59:51,160
+to do is we're going to say if
+this message is already
+
+9067
+08:59:51,160 --> 08:59:53,920
+verified, then we're just going
+to continue. So we're gonna say
+
+9068
+08:59:53,950 --> 09:00:00,460
+if e.message.to lowercase, we're
+going to make sure it's to
+
+9069
+09:00:00,460 --> 09:00:06,850
+lowercase that includes already
+there. If five, then we're just
+
+9070
+09:00:06,850 --> 09:00:10,450
+going to console dot log already
+verified
+
+9071
+09:00:11,500 --> 09:00:16,810
+like that. Otherwise, we're just
+going to console dot log e. The
+
+9072
+09:00:16,810 --> 09:00:20,650
+reason we do This is because of
+this errors, our verification
+
+9073
+09:00:20,650 --> 09:00:23,110
+function will break, and our
+whole script will end. And we
+
+9074
+09:00:23,110 --> 09:00:25,690
+don't want our whole script to
+end, we want our script to keep
+
+9075
+09:00:25,690 --> 09:00:28,480
+continuing if the verification
+doesn't work, because it's not
+
+9076
+09:00:28,480 --> 09:00:30,940
+really a big deal. So I know
+this might seem like a lot of
+
+9077
+09:00:30,940 --> 09:00:34,450
+code, feel free to copy and
+paste it from the GitHub repo to
+
+9078
+09:00:34,450 --> 09:00:38,170
+just move along. But awesome. So
+we now have a verify function
+
+9079
+09:00:38,200 --> 09:00:42,040
+using the Verify task in
+hardhat. Let's go ahead and use
+
+9080
+09:00:42,040 --> 09:00:45,730
+this now in our main function,
+right below our deploy, we'll do
+
+9081
+09:00:45,730 --> 09:00:48,490
+console dot log deployed
+contract two, and then the
+
+9082
+09:00:48,490 --> 09:00:51,940
+contract address. But before we
+call this main function, let's
+
+9083
+09:00:51,970 --> 09:00:57,580
+think for a quick second. What
+happens when we deploy to our RT
+
+9084
+09:00:57,580 --> 09:01:01,090
+Hat Network? Well, remember, if
+we deploy to our Hard Hat
+
+9085
+09:01:01,090 --> 09:01:04,480
+Network, will our contract need
+to be verified I need to scan?
+
+9086
+09:01:04,720 --> 09:01:08,110
+Well, we know there's a we know
+there's a rink ether scan, we
+
+9087
+09:01:08,110 --> 09:01:10,450
+know there's a COVID ether scan,
+we know there's a main net easy
+
+9088
+09:01:10,450 --> 09:01:14,680
+scan. But is there a Hardhead
+ether scan? No, of course not.
+
+9089
+09:01:14,740 --> 09:01:18,070
+Right? The hard at runtime
+environment is a network local
+
+9090
+09:01:18,070 --> 09:01:21,580
+to our machine. So it doesn't
+make sense for us to verify a
+
+9091
+09:01:21,580 --> 09:01:24,880
+hard hat network deployed
+contract on ether scan. So we
+
+9092
+09:01:24,880 --> 09:01:28,690
+actually don't want to call this
+verify function, when we're
+
+9093
+09:01:28,690 --> 09:01:31,750
+working with our local network.
+This is where these chain IDs
+
+9094
+09:01:31,750 --> 09:01:34,180
+are going to come in quite
+useful. What we can do is we can
+
+9095
+09:01:34,180 --> 09:01:37,270
+check to see if the network that
+we're running on is a live
+
+9096
+09:01:37,300 --> 09:01:40,120
+network or it's a test net, or
+it's a network that actually can
+
+9097
+09:01:40,120 --> 09:01:42,580
+be verified, we can actually get
+network configuration
+
+9098
+09:01:42,580 --> 09:01:48,640
+information by importing a
+network like this. And we can do
+
+9099
+09:01:49,240 --> 09:01:56,260
+something like console dot log
+network dot config. Now, if I
+
+9100
+09:01:56,260 --> 09:02:01,930
+run yarn, art, hit run scripts
+deploy.js. On our Hard Hat
+
+9101
+09:02:01,930 --> 09:02:05,890
+Network, since I'm not passing a
+network flag, we get this
+
+9102
+09:02:05,890 --> 09:02:09,460
+massive output that looks like
+this. Our network dot config
+
+9103
+09:02:09,490 --> 09:02:12,460
+contains a ton of information
+about the current network that
+
+9104
+09:02:12,460 --> 09:02:15,310
+we're on, you'll see here that
+the chain ID of the Hardhead
+
+9105
+09:02:15,310 --> 09:02:20,080
+network is actually 31337 gas
+price, which gets set to auto
+
+9106
+09:02:20,440 --> 09:02:23,770
+block gas limit the current fork
+of Aetherium that we're working
+
+9107
+09:02:23,770 --> 09:02:27,490
+with, and all these other pieces
+here. This chain ID is really
+
+9108
+09:02:27,490 --> 09:02:30,880
+important. Because we can use
+this chain ID to figure out
+
+9109
+09:02:31,000 --> 09:02:33,700
+which one is a test net, or
+which one is a live network. And
+
+9110
+09:02:33,700 --> 09:02:36,550
+remember, running the script is
+going to be the same as doing
+
+9111
+09:02:36,580 --> 09:02:39,310
+dash dash network, hard hat,
+
+9112
+09:02:40,720 --> 09:02:44,530
+you'll see our channel ID is
+still 31337. Again, that's
+
+9113
+09:02:44,530 --> 09:02:47,800
+because the default network in
+our heart had config, it's hard
+
+9114
+09:02:47,800 --> 09:02:51,190
+hat, which is the same as saying
+every single time we run a
+
+9115
+09:02:51,190 --> 09:02:54,190
+script, we're secretly running
+it with dash dash network hard
+
+9116
+09:02:54,190 --> 09:02:57,730
+hat. So now we only want to
+verify on our test net. So what
+
+9117
+09:02:57,730 --> 09:03:02,110
+we can do is we can say if
+network dot config, that chain
+
+9118
+09:03:02,110 --> 09:03:07,570
+ID equals equals equals four,
+which is going to be rank B, ad.
+
+9119
+09:03:08,320 --> 09:03:12,040
+And a JavaScript equals equals
+equals is nearly the same as
+
+9120
+09:03:12,040 --> 09:03:15,910
+equals equals, except no type
+conversion is done, which just
+
+9121
+09:03:15,910 --> 09:03:21,820
+means in JavaScript, four equals
+four, and four equals equals the
+
+9122
+09:03:21,820 --> 09:03:26,110
+string of four, but four, but if
+you were to use four equals
+
+9123
+09:03:26,110 --> 09:03:30,910
+equals equals four, this is
+false. This is true equals
+
+9124
+09:03:30,910 --> 09:03:34,990
+equals four equals equals would
+be true, four equals equals to
+
+9125
+09:03:34,990 --> 09:03:38,050
+the string of four would also be
+true, but four equals equals
+
+9126
+09:03:38,110 --> 09:03:41,200
+equals to the string of four is
+going to be false. So you can
+
+9127
+09:03:41,200 --> 09:03:43,540
+kind of do whatever you want
+here equals equals or equals
+
+9128
+09:03:43,540 --> 09:03:46,870
+equals equals. So we want to say
+if the network dot config dot
+
+9129
+09:03:46,870 --> 09:03:52,030
+Trinity is four, so if we're on
+Rinkeby, then we can go ahead
+
+9130
+09:03:52,030 --> 09:03:57,100
+and actually verify. But we also
+want to make sure we only verify
+
+9131
+09:03:57,130 --> 09:04:01,570
+if our ether scan API key
+exists. So we can also in here
+
+9132
+09:04:01,570 --> 09:04:05,890
+is site and this double
+ampersand means and we can say
+
+9133
+09:04:05,920 --> 09:04:12,670
+process dot e NV dot ether scan
+API key. This is some Boolean
+
+9134
+09:04:12,670 --> 09:04:15,040
+tricks that we're doing here,
+basically, so our first
+
+9135
+09:04:15,070 --> 09:04:18,190
+conditional we're saying if
+network dot config chinati
+
+9136
+09:04:18,310 --> 09:04:22,000
+equals equals equals four, this
+section can be true or false,
+
+9137
+09:04:22,030 --> 09:04:25,060
+obviously, right? The chain ID
+that we're running on can be the
+
+9138
+09:04:25,060 --> 09:04:28,660
+hardest network, which would
+mean this doesn't equal four, or
+
+9139
+09:04:28,660 --> 09:04:31,360
+it would be Rinckey, which means
+this does equal four. But
+
+9140
+09:04:31,390 --> 09:04:34,120
+there's no conditional on this
+side. So how does this side
+
+9141
+09:04:34,120 --> 09:04:37,360
+work? In JavaScript, if an
+object exists, and you try to
+
+9142
+09:04:37,360 --> 09:04:41,380
+cast it as a Boolean, it will be
+converted to true. If it doesn't
+
+9143
+09:04:41,380 --> 09:04:44,320
+exist, it will be converted to
+false. So in JavaScript,
+
+9144
+09:04:44,320 --> 09:04:49,690
+basically, if either scan API
+key exists, if we have this in
+
+9145
+09:04:49,690 --> 09:04:53,680
+our data in VI, this will be
+true. And if not, this will be
+
+9146
+09:04:53,680 --> 09:04:57,130
+false. So another way to read
+this line here is saying if
+
+9147
+09:04:57,190 --> 09:05:01,480
+network dot config that Trinity
+is for AKA, if we're on rink B,
+
+9148
+09:05:01,960 --> 09:05:07,150
+and our ether scan API key
+exists, then do some stuff. And
+
+9149
+09:05:07,180 --> 09:05:09,790
+that's what we're going to do
+here. So in here, we'd want to
+
+9150
+09:05:09,790 --> 09:05:15,910
+run verify, or verify function
+and pass it the contract address
+
+9151
+09:05:15,970 --> 09:05:20,170
+which is going to be Simple
+Storage dot address and the
+
+9152
+09:05:20,170 --> 09:05:23,350
+constructor arguments which we
+know are going to be blank. And
+
+9153
+09:05:23,350 --> 09:05:27,370
+since our verify function is an
+async function, and it deals
+
+9154
+09:05:27,370 --> 09:05:31,120
+with promises and stuff, we want
+to add the await keyword here.
+
+9155
+09:05:31,510 --> 09:05:34,810
+Awesome. So we've added a way to
+actually verify our contract.
+
+9156
+09:05:34,810 --> 09:05:38,740
+But we're not quite done. See on
+ether scan and all these block
+
+9157
+09:05:38,740 --> 09:05:42,430
+explorers the instant we deploy
+the contract and the instant we
+
+9158
+09:05:42,430 --> 09:05:46,210
+send the contract, ether scan
+might not know about the
+
+9159
+09:05:46,210 --> 09:05:50,260
+transaction yet, it might take a
+hot second for ether scan to be
+
+9160
+09:05:50,260 --> 09:05:53,020
+up to speed with where the
+blockchain is. So it's usually
+
+9161
+09:05:53,020 --> 09:05:57,220
+best practice to wait for a few
+blocks to be mined, until you
+
+9162
+09:05:57,220 --> 09:06:00,280
+actually run your verification
+process. We've actually learned
+
+9163
+09:06:00,280 --> 09:06:04,000
+how to do this already with the
+deploy transaction. So before we
+
+9164
+09:06:04,000 --> 09:06:09,640
+actually verify we run, we want
+to run a weight, simple storage.
+
+9165
+09:06:10,900 --> 09:06:19,180
+Deploy transaction Wait, six. So
+we will wait six blocks, and
+
+9166
+09:06:19,180 --> 09:06:22,360
+then we'll run our verification
+process. Now, if you want to go
+
+9167
+09:06:22,360 --> 09:06:25,450
+and test this out right now, you
+absolutely can. I'm going to
+
+9168
+09:06:25,450 --> 09:06:28,480
+keep going, though, because
+again, testing all these on a
+
+9169
+09:06:28,480 --> 09:06:31,840
+test net takes a little bit of
+extra time. So I'm going to
+
+9170
+09:06:31,840 --> 09:06:34,120
+finish the rest of our main
+function, and then I'm going to
+
+9171
+09:06:34,120 --> 09:06:39,820
+run everything all together.
+Okay, cool. So we've deployed
+
+9172
+09:06:39,820 --> 09:06:42,730
+our contract, we've
+automatically programmatically
+
+9173
+09:06:42,760 --> 09:06:46,300
+verified our contract. What's
+next? Well, what did we do last
+
+9174
+09:06:46,300 --> 09:06:50,320
+time, we started interacting
+with the contract. So let's do
+
+9175
+09:06:50,710 --> 09:06:56,980
+const. Current Value equals
+await simple storage dot
+
+9176
+09:06:56,980 --> 09:07:01,780
+retrieve. To get the current
+value, simple storage, that's
+
+9177
+09:07:01,780 --> 09:07:05,650
+all. We have a retrieve
+function, which returns the
+
+9178
+09:07:05,650 --> 09:07:09,430
+favorite number, so let's get
+the current value. And we'll do
+
+9179
+09:07:09,460 --> 09:07:18,730
+console dot log, the current
+value is and then some string
+
+9180
+09:07:18,730 --> 09:07:23,230
+interpolation, current value.
+And then we'll go ahead and
+
+9181
+09:07:23,230 --> 09:07:31,780
+update the current value by
+doing cons. Transaction response
+
+9182
+09:07:31,870 --> 09:07:39,040
+equals await simple storage,
+that store will store the number
+
+9183
+09:07:39,040 --> 09:07:45,580
+seven, and then we'll await
+transaction response dot Wait,
+
+9184
+09:07:45,760 --> 09:07:49,810
+we'll wait one block for that
+transaction to go through. And
+
+9185
+09:07:49,810 --> 09:07:53,980
+we'll grab the updated value by
+saying const updated value
+
+9186
+09:07:54,730 --> 09:07:57,700
+equals await simple storage
+
+9187
+09:07:58,960 --> 09:08:10,030
+dot retrieve. Then we'll do
+console log. The added value is
+
+9188
+09:08:11,200 --> 09:08:14,980
+updated value. Awesome. And this
+is going to be our whole script.
+
+9189
+09:08:15,370 --> 09:08:17,920
+So if I can zoom out for a
+little bit, I know it will be a
+
+9190
+09:08:17,920 --> 09:08:22,360
+little bit small here, we've got
+this huge main function, which
+
+9191
+09:08:22,390 --> 09:08:26,230
+does what? Well it deploys our
+contract. If we're on a test
+
+9192
+09:08:26,230 --> 09:08:29,560
+net, it then verifies our
+contract. And then it updates
+
+9193
+09:08:29,590 --> 09:08:33,670
+the value to seven. And we have
+our verify function down here.
+
+9194
+09:08:33,970 --> 09:08:37,180
+And we have a section of our
+code that calls our main
+
+9195
+09:08:37,180 --> 09:08:40,240
+function. Now for run this on
+the hard hat network. What do
+
+9196
+09:08:40,240 --> 09:08:44,260
+you think will happen? Well,
+let's try yarn, or net run
+
+9197
+09:08:44,350 --> 09:08:48,760
+scripts. Deploy dot j s.
+Alright, awesome, we get exactly
+
+9198
+09:08:48,760 --> 09:08:52,210
+what we saw before we get
+deploying contract deployed
+
+9199
+09:08:52,210 --> 09:08:56,110
+contract to current value is
+zero, update value seven. And
+
+9200
+09:08:56,110 --> 09:08:58,630
+there's nothing in here about
+verification. That's exactly
+
+9201
+09:08:58,630 --> 09:09:02,590
+what we want. Now, moment of
+truth. Let's try this on
+
+9202
+09:09:02,620 --> 09:09:08,290
+Rinkeby. We'll do yarn, RT hat
+run scripts, deploy dot j s,
+
+9203
+09:09:08,770 --> 09:09:16,540
+dash dash network Rinkeby. And
+it's gonna go a lot slower,
+
+9204
+09:09:16,570 --> 09:09:19,330
+because obviously now we're
+deploying to an actual test net,
+
+9205
+09:09:19,360 --> 09:09:21,970
+where the blocks actually need
+to be mined. And we see we
+
+9206
+09:09:21,970 --> 09:09:24,580
+haven't deployed the contract.
+Now that our contract is
+
+9207
+09:09:24,580 --> 09:09:27,610
+deployed. We know that we're
+currently waiting six block
+
+9208
+09:09:27,610 --> 09:09:30,610
+confirmations for us to go ahead
+and verify. And actually I
+
+9209
+09:09:30,610 --> 09:09:37,210
+should add console dot log,
+waiting for block the x's so
+
+9210
+09:09:37,210 --> 09:09:40,060
+that we don't get campus weird.
+Oh, wait, what are we doing now?
+
+9211
+09:09:42,970 --> 09:09:45,550
+That it looks like we ran into
+this error, no such file or
+
+9212
+09:09:45,550 --> 09:09:48,610
+directory, it looks like our
+code might not have compiled
+
+9213
+09:09:48,610 --> 09:09:51,430
+correctly here. So here's what
+I'm gonna do. We're gonna go
+
+9214
+09:09:51,430 --> 09:09:55,180
+ahead and delete our artifacts
+to trash. We're gonna delete our
+
+9215
+09:09:55,180 --> 09:09:58,810
+cache as well. And we're going
+to try rerunning this whenever
+
+9216
+09:09:58,810 --> 09:10:01,540
+you run a script with the hard
+drive command Hardhead will
+
+9217
+09:10:01,540 --> 09:10:04,870
+automatically recompile it for
+you, especially if there's no
+
+9218
+09:10:04,870 --> 09:10:08,170
+artifacts folder. So we're going
+to rerun this command and
+
+9219
+09:10:08,170 --> 09:10:11,050
+heartbeat, it's going to compile
+first and we can see that it
+
+9220
+09:10:11,050 --> 09:10:14,320
+does exactly that. And then it's
+going to go ahead and redeploy.
+
+9221
+09:10:15,010 --> 09:10:17,830
+Hopefully this time, it should
+be able to find the contract
+
+9222
+09:10:17,830 --> 09:10:26,170
+that had just compiled looks
+like this time after I deleted
+
+9223
+09:10:26,170 --> 09:10:29,200
+the artifacts folder, we
+actually did indeed get some
+
+9224
+09:10:29,200 --> 09:10:32,680
+successful compilation. And we
+can see here successfully
+
+9225
+09:10:32,680 --> 09:10:35,770
+submitted source code for
+contract or verification on the
+
+9226
+09:10:35,770 --> 09:10:38,290
+block explore waiting for
+verification results,
+
+9227
+09:10:38,800 --> 09:10:41,590
+successfully verified contracts
+simple storage on ether scan,
+
+9228
+09:10:41,890 --> 09:10:45,040
+and even gives us a link that we
+can go ahead and Command click
+
+9229
+09:10:45,040 --> 09:10:48,400
+or control click into. And we
+can see the contract indeed
+
+9230
+09:10:48,400 --> 09:10:55,360
+being verified. This is awesome.
+This is perfect. We've now got a
+
+9231
+09:10:55,360 --> 09:11:00,700
+successful deploy dot j s script
+that can deploy, verify, and
+
+9232
+09:11:00,700 --> 09:11:04,300
+then interact with our code.
+This is fantastic. This hard hat
+
+9233
+09:11:04,300 --> 09:11:06,760
+thing seems pretty cool. What
+else can we do with hard hat
+
+9234
+09:11:06,820 --> 09:11:11,650
+like I showed you before. Hard
+Hat comes with these tasks. And
+
+9235
+09:11:11,650 --> 09:11:13,900
+the number of tasks that
+Hardhead can come with can be
+
+9236
+09:11:13,900 --> 09:11:17,620
+extended by us writing plugins,
+we can actually write our own
+
+9237
+09:11:17,620 --> 09:11:21,190
+tasks in hardhat. And in our
+Hardhead dot config, it can
+
+9238
+09:11:21,190 --> 09:11:24,250
+defaulted with this task
+account, we can see task
+
+9239
+09:11:24,280 --> 09:11:28,510
+accounts, prints the list of
+accounts, and just prints a list
+
+9240
+09:11:28,510 --> 09:11:31,960
+of accounts here actually go to
+the heart had documentation to
+
+9241
+09:11:31,960 --> 09:11:34,690
+learn more about creating our
+own tasks, one of the ways that
+
+9242
+09:11:34,690 --> 09:11:39,640
+you can define tasks is directly
+in our heart head.config.js. But
+
+9243
+09:11:39,640 --> 09:11:43,450
+typically, what people do is
+they have a new folder called
+
+9244
+09:11:43,480 --> 09:11:47,530
+tasks where they put all their
+tasks. So for now, I'm gonna go
+
+9245
+09:11:47,530 --> 09:11:49,900
+ahead and delete this section
+here. And we're going to create
+
+9246
+09:11:49,930 --> 09:11:52,840
+our own task. You'll notice that
+now that we've deleted that
+
+9247
+09:11:52,840 --> 09:11:58,750
+section, if we run yarn RDAP, we
+no longer see the accounts task
+
+9248
+09:11:58,750 --> 09:12:01,660
+in here, because we've just
+deleted that task. So let's
+
+9249
+09:12:01,660 --> 09:12:08,140
+create our own new task. We'll
+call this block number.js. And
+
+9250
+09:12:08,140 --> 09:12:10,900
+we'll use this to get the
+current block number or whatever
+
+9251
+09:12:10,900 --> 09:12:13,810
+blockchain that we're working
+with. So let's create this task.
+
+9252
+09:12:14,080 --> 09:12:17,320
+First, we need to import the
+task function, we can get it by
+
+9253
+09:12:17,320 --> 09:12:24,730
+saying const task equals require
+arhat slash config. The hard hat
+
+9254
+09:12:24,730 --> 09:12:28,870
+slash config has the task
+function. To define a task, we
+
+9255
+09:12:28,870 --> 09:12:33,460
+can now just say task, give it a
+name and a description, the name
+
+9256
+09:12:33,490 --> 09:12:34,630
+is going to be blocked number.
+
+9257
+09:12:36,010 --> 09:12:39,550
+And then the description is
+going to be prints the current
+
+9258
+09:12:40,930 --> 09:12:45,700
+block number. Now that we have
+this task, there's a couple of
+
+9259
+09:12:45,700 --> 09:12:48,040
+things we can actually do with
+it, we can add different
+
+9260
+09:12:48,040 --> 09:12:51,280
+parameters to it by using the
+dot add command, which allow us
+
+9261
+09:12:51,280 --> 09:12:54,400
+to pass parameters to the task.
+And then we could also set
+
+9262
+09:12:54,400 --> 09:12:58,180
+actions which define what the
+task should actually do for us,
+
+9263
+09:12:58,210 --> 09:13:03,340
+we're just going to do dot set
+action. And define what we want
+
+9264
+09:13:03,340 --> 09:13:07,660
+this function to do. So we're
+going to make this an async
+
+9265
+09:13:07,660 --> 09:13:11,620
+function, that's going to take
+as an input, the task arguments,
+
+9266
+09:13:11,650 --> 09:13:15,790
+which are going to be blank for
+us, and the HR E, which I'll
+
+9267
+09:13:15,790 --> 09:13:19,570
+define in a second. Now, let me
+explain the syntax really
+
+9268
+09:13:19,570 --> 09:13:22,570
+quickly. This might look a
+little bit weird, but this is
+
+9269
+09:13:22,570 --> 09:13:26,110
+what's known as a JavaScript
+arrow function. In JavaScript,
+
+9270
+09:13:26,140 --> 09:13:29,170
+you can actually define
+functions without even using the
+
+9271
+09:13:29,170 --> 09:13:32,140
+function keyword. For example,
+if we go back to our deploy
+
+9272
+09:13:32,140 --> 09:13:36,670
+function, we have our async
+function verify down here.
+
+9273
+09:13:37,090 --> 09:13:40,330
+However, another way we could
+have defined this is is without
+
+9274
+09:13:40,330 --> 09:13:43,420
+using the function word at all,
+and actually turning this whole
+
+9275
+09:13:43,420 --> 09:13:47,560
+thing into a variable, we could
+have said instead, we could say
+
+9276
+09:13:48,070 --> 09:13:54,370
+const verify is going to be an
+async function that takes
+
+9277
+09:13:54,370 --> 09:14:00,010
+contract addresses and
+arguments. And here's the
+
+9278
+09:14:00,010 --> 09:14:03,700
+function definition. These two
+lines are essentially
+
+9279
+09:14:03,730 --> 09:14:07,900
+equivalent. There's some slight
+differences between between
+
+9280
+09:14:07,900 --> 09:14:10,630
+using the function keyword and
+having your function be a
+
+9281
+09:14:10,630 --> 09:14:13,060
+variable. But for the purposes
+of this course, they're
+
+9282
+09:14:13,060 --> 09:14:17,860
+basically the same. Which means
+though, that this by itself is a
+
+9283
+09:14:17,860 --> 09:14:21,340
+function, just not assigned to a
+variable. But essentially, the
+
+9284
+09:14:21,340 --> 09:14:24,760
+two of these do are exactly the
+same. And that's the syntax that
+
+9285
+09:14:24,760 --> 09:14:27,940
+we're doing here. You can
+imagine this sort of being like
+
+9286
+09:14:27,940 --> 09:14:35,440
+const block task equals async
+function, which takes the params
+
+9287
+09:14:35,920 --> 09:14:39,010
+and then runs that arrow
+function. Or you can think of it
+
+9288
+09:14:39,010 --> 09:14:45,880
+as async. Function, block task
+parameters, and then the
+
+9289
+09:14:45,880 --> 09:14:49,450
+function definition, these are
+all essentially the same. The
+
+9290
+09:14:49,450 --> 09:14:53,290
+major difference is that we're
+never giving our function a
+
+9291
+09:14:53,290 --> 09:14:56,170
+name, we never give it this
+block task variable. This is
+
+9292
+09:14:56,170 --> 09:14:59,650
+known as an anonymous function
+in JavaScript, because it
+
+9293
+09:14:59,650 --> 09:15:02,920
+doesn't have a name. Now that we
+have our function in here, we
+
+9294
+09:15:02,920 --> 09:15:06,940
+can now call some function to
+get the block number. Well, how
+
+9295
+09:15:06,940 --> 09:15:10,150
+can we get the block number when
+we run tasks, we automatically
+
+9296
+09:15:10,150 --> 09:15:13,480
+pass our anonymous functions,
+the task arguments, which in
+
+9297
+09:15:13,480 --> 09:15:18,040
+this one, we don't have any, but
+we also pass this HR II object.
+
+9298
+09:15:18,550 --> 09:15:23,560
+This HRV is the heart hat
+runtime environment. Back in our
+
+9299
+09:15:23,560 --> 09:15:27,820
+deploy script, this is basically
+the same as this require hard
+
+9300
+09:15:27,820 --> 09:15:32,320
+hat in here. So this HRV can
+access a lot of the same, this
+
+9301
+09:15:32,320 --> 09:15:36,940
+HRV can access a lot of the same
+packages that the hard hat
+
+9302
+09:15:37,060 --> 09:15:41,920
+package can. So we can do Hae
+dot ethers, just like how you
+
+9303
+09:15:41,920 --> 09:15:45,100
+can import ethers from hard hat.
+And in our ethers package,
+
+9304
+09:15:45,100 --> 09:15:47,740
+there's actually a number of
+functions we can use like dot
+
+9305
+09:15:47,740 --> 09:15:54,520
+Pro, biter dot get block number.
+Let's save this to a variable
+
+9306
+09:15:54,970 --> 09:15:59,890
+const blocked number equals, and
+this is going to be a
+
+9307
+09:15:59,890 --> 09:16:02,500
+synchronous, so we're going to
+want to add a weight here. And
+
+9308
+09:16:02,500 --> 09:16:06,940
+then let's do console dot log
+block number. Or better yet,
+
+9309
+09:16:07,540 --> 09:16:11,740
+we'll string interpolate this
+and say current block number
+
+9310
+09:16:12,760 --> 09:16:17,740
+like this. Now though, if I try
+to run this task, you'll notice
+
+9311
+09:16:17,770 --> 09:16:21,790
+it doesn't show up in the heart
+Atlas of tasks, let's do yarn.
+
+9312
+09:16:22,330 --> 09:16:26,920
+Art app. Hmm, I don't see block
+number in here. Well, this is
+
+9313
+09:16:26,920 --> 09:16:31,600
+because we need to add it to our
+config dot config will add
+
+9314
+09:16:31,990 --> 09:16:38,590
+require dot slash tasks slash
+block number.
+
+9315
+09:16:39,970 --> 09:16:43,420
+And in order for us to import
+it, and let's add a module that
+
+9316
+09:16:43,420 --> 09:16:47,080
+exports I'll explain what this
+does a little bit later. But now
+
+9317
+09:16:47,080 --> 09:16:50,890
+that we've required it, if I run
+yarn hard hat, and now see
+
+9318
+09:16:50,950 --> 09:16:54,490
+blocked over is one of the tasks
+that I can use. Now for a run
+
+9319
+09:16:54,490 --> 09:16:59,740
+yarn, art hat block number, we
+get current block number is
+
+9320
+09:16:59,740 --> 09:17:03,730
+zero. And this makes sense
+because this is defaulting to
+
+9321
+09:17:03,730 --> 09:17:08,230
+our Hard Hat Network, which gets
+reset every time we run it. But
+
+9322
+09:17:08,230 --> 09:17:11,770
+if I run yarn, hard hat block
+number A dash dash network
+
+9323
+09:17:11,770 --> 09:17:15,430
+Rinkeby, what do you think I'm
+gonna get? Again, a much larger
+
+9324
+09:17:15,430 --> 09:17:19,120
+number, current block number is
+right here. Because this is the
+
+9325
+09:17:19,120 --> 09:17:23,830
+actual block number of Rigby
+versus the block number of our
+
+9326
+09:17:23,830 --> 09:17:27,550
+heart ad network is going to be
+zero because it gets reset every
+
+9327
+09:17:27,550 --> 09:17:31,660
+single time, we run one of these
+scripts now scripts and tasks
+
+9328
+09:17:31,660 --> 09:17:35,500
+both can basically do the same
+thing. They both can interact
+
+9329
+09:17:35,500 --> 09:17:38,080
+with contracts, they both can
+deploy smart contracts, they can
+
+9330
+09:17:38,080 --> 09:17:41,830
+both pretty much do everything.
+I prefer scripts just as a
+
+9331
+09:17:41,830 --> 09:17:45,160
+general rule of thumb, because I
+don't always think adding a
+
+9332
+09:17:45,160 --> 09:17:48,310
+special thing from the command
+line makes sense. So I prefer
+
+9333
+09:17:48,310 --> 09:17:51,400
+scripts, but you'll see a ton of
+tasks and examples out there as
+
+9334
+09:17:51,400 --> 09:17:55,270
+well. I think tasks are really
+nice for specific use cases. But
+
+9335
+09:17:55,510 --> 09:17:58,270
+for the most part, we're pretty
+much going to use exclusively
+
+9336
+09:17:58,270 --> 09:18:01,960
+scripts, but it is good to know
+what a task looks like and how
+
+9337
+09:18:01,960 --> 09:18:05,260
+to use it. I think tasks are
+better for plugins and scripts
+
+9338
+09:18:05,290 --> 09:18:08,410
+are better for your own local
+development environment. But if
+
+9339
+09:18:08,410 --> 09:18:14,380
+you want to do everything with
+tasks, you absolutely can. As
+
+9340
+09:18:14,380 --> 09:18:18,160
+you're starting to see, this
+config piece is pretty powerful.
+
+9341
+09:18:18,550 --> 09:18:21,970
+And we can use it to modify our
+entire code base and our entire
+
+9342
+09:18:21,970 --> 09:18:25,330
+project to give our project more
+functionality. What else can
+
+9343
+09:18:25,330 --> 09:18:28,510
+this do? Well, right now, as you
+can see, every time we work with
+
+9344
+09:18:28,510 --> 09:18:31,360
+a hard hat network, every time
+we run a script, we run that
+
+9345
+09:18:31,360 --> 09:18:34,270
+script, and then the Hard Hat
+Network is deleted, right? We
+
+9346
+09:18:34,270 --> 09:18:36,760
+can't interact with our
+contracts anymore. Well, there's
+
+9347
+09:18:36,760 --> 09:18:40,840
+actually a way for us to run a
+hard hat network. Similar to how
+
+9348
+09:18:40,840 --> 09:18:44,530
+we ran a ganache network with a
+user interface. What we can do
+
+9349
+09:18:44,530 --> 09:18:51,430
+in hard hat is run yarn, RT hat
+node. And what this will do is
+
+9350
+09:18:51,430 --> 09:18:55,990
+it'll spin up a node on a local
+network, exactly the same as
+
+9351
+09:18:55,990 --> 09:19:00,460
+ganache but in our terminal. So
+you see here started HTTP and
+
+9352
+09:19:00,460 --> 09:19:04,930
+WebSocket. JSON RPC server at
+this address. And just like
+
+9353
+09:19:04,930 --> 09:19:08,320
+nosh, it comes packed with all
+these different accounts and
+
+9354
+09:19:08,320 --> 09:19:11,650
+private keys, which is awesome.
+You'll notice though,
+
+9355
+09:19:11,890 --> 09:19:16,540
+interestingly enough that this
+node that we're running isn't on
+
+9356
+09:19:16,540 --> 09:19:18,910
+the Hard Hat Network, well, we
+can actually create a new
+
+9357
+09:19:18,910 --> 09:19:22,510
+terminal to try to interact with
+this just by hitting this little
+
+9358
+09:19:22,510 --> 09:19:26,650
+plus button and creating a new
+terminal. Again, I'm using bash,
+
+9359
+09:19:26,650 --> 09:19:29,740
+but based off of whatever your
+operating system is, you can be
+
+9360
+09:19:29,740 --> 09:19:33,130
+using a different shell. And
+here, let's go ahead and run
+
+9361
+09:19:33,130 --> 09:19:39,100
+yarn arhat run scripts, deploy
+dot j s, and see what happens.
+
+9362
+09:19:39,250 --> 09:19:42,700
+Well, our typical setup happens,
+we deploy a contract, we get a
+
+9363
+09:19:42,700 --> 09:19:46,600
+contract address, we update the
+value. But if we look at our
+
+9364
+09:19:46,600 --> 09:19:49,840
+node, it doesn't look like any
+transactions went through what
+
+9365
+09:19:49,870 --> 09:19:53,770
+we don't see any locking here.
+So what's going on? Well, our
+
+9366
+09:19:53,770 --> 09:19:58,060
+Hard Hat Network is actually
+different from this locally
+
+9367
+09:19:58,060 --> 09:20:02,110
+running network here. This
+locally running network we often
+
+9368
+09:20:02,110 --> 09:20:05,590
+want to refer to as our local
+host. So it's slightly different
+
+9369
+09:20:05,590 --> 09:20:08,500
+than the Hard Hat Network. It's
+still using the hard hat runtime
+
+9370
+09:20:08,500 --> 09:20:11,380
+environment, but it's just not
+this default Hard Hat Network.
+
+9371
+09:20:11,380 --> 09:20:15,040
+It's considered its own separate
+network when we're running a
+
+9372
+09:20:15,040 --> 09:20:19,360
+node that it's going to live. of
+past the duration of a script.
+
+9373
+09:20:19,540 --> 09:20:23,410
+So we can actually interact with
+this by adding a new network to
+
+9374
+09:20:23,410 --> 09:20:27,280
+our hardhead.config.js, we'll
+create a new network and call it
+
+9375
+09:20:27,820 --> 09:20:28,690
+local host.
+
+9376
+09:20:30,369 --> 09:20:35,139
+And exactly as we did up here,
+we'll give it a URL accounts and
+
+9377
+09:20:35,139 --> 09:20:40,929
+a chain ID. So for URL, we can
+get that URL right from our
+
+9378
+09:20:40,929 --> 09:20:44,319
+terminal, I'll put a running
+yarn hard hat node. by copying
+
+9379
+09:20:44,319 --> 09:20:48,399
+that and pasting it in here, we
+can then do a comma, we'll give
+
+9380
+09:20:48,399 --> 09:20:55,899
+it a chain ID of 31337. Because
+even though it's considered a
+
+9381
+09:20:55,899 --> 09:20:58,809
+different network, it actually
+has the same chain ID as hard
+
+9382
+09:20:58,809 --> 09:21:01,449
+hat. Interestingly enough, I
+know I just said we were going
+
+9383
+09:21:01,449 --> 09:21:03,549
+to give it accounts, but we
+actually don't need to give it
+
+9384
+09:21:03,549 --> 09:21:07,269
+accounts. Because when we run
+with this localhost hard hat
+
+9385
+09:21:07,269 --> 09:21:11,019
+will automatically give us these
+10 fake accounts for us. So you
+
+9386
+09:21:11,019 --> 09:21:14,199
+can kind of think of the
+accounts here for this localhost
+
+9387
+09:21:14,199 --> 09:21:19,359
+as, as hard had already placing
+them in thanks, hard hat. But
+
+9388
+09:21:19,359 --> 09:21:23,529
+now, if we go back to our bash
+here, let's clear the terminal.
+
+9389
+09:21:23,949 --> 09:21:28,659
+Let's rerun the script. And
+we'll do dash dash network local
+
+9390
+09:21:28,659 --> 09:21:33,369
+host. Now we should be pointing
+to this node. And when I run
+
+9391
+09:21:33,369 --> 09:21:38,139
+this script, we should see some
+logging output at the end of
+
+9392
+09:21:38,139 --> 09:21:42,369
+this node. So let's go ahead and
+hit enter. Well, we see our
+
+9393
+09:21:42,369 --> 09:21:46,089
+normal stuff on our deploy
+script, we flip back to our node
+
+9394
+09:21:46,119 --> 09:21:50,979
+Wow, we see a ton of logging
+here. Similar to ganache, we can
+
+9395
+09:21:50,979 --> 09:21:53,739
+see a whole bunch of different
+logs on what just happened, we
+
+9396
+09:21:53,739 --> 09:21:56,439
+can see a contract was deployed,
+we can see the address the
+
+9397
+09:21:56,439 --> 09:22:00,579
+transaction hash from value,
+gas, and the block number and
+
+9398
+09:22:00,579 --> 09:22:05,289
+everything. We can also see our
+contract call calling the store
+
+9399
+09:22:05,289 --> 09:22:09,639
+function to update the value of
+our favorite number. This is
+
+9400
+09:22:09,639 --> 09:22:13,689
+incredibly powerful for quickly
+testing and working with things
+
+9401
+09:22:13,689 --> 09:22:17,349
+on a local JavaScript VM or hard
+hat network to be able to see
+
+9402
+09:22:17,409 --> 09:22:20,769
+how your contracts will interact
+on a real test net. And this is
+
+9403
+09:22:20,769 --> 09:22:24,759
+much quicker than working with a
+real test net. Now additionally,
+
+9404
+09:22:24,849 --> 09:22:27,999
+same as what we said before, any
+process that's running in the
+
+9405
+09:22:27,999 --> 09:22:32,019
+terminal, we can kill it with
+Ctrl C. So if you want to stop
+
+9406
+09:22:32,019 --> 09:22:37,569
+your node and then restart it,
+you can hit Ctrl. C, to stop it,
+
+9407
+09:22:37,599 --> 09:22:41,349
+and then just up and then rerun
+that same command to re spin up
+
+9408
+09:22:41,349 --> 09:22:45,639
+your node Ctrl C stops it. And
+then you can up to start again.
+
+9409
+09:22:45,909 --> 09:22:47,949
+Another way you can stop it, of
+course, is if you hit the
+
+9410
+09:22:47,949 --> 09:22:50,619
+trashcan, which deletes the
+whole terminal, we pulled a
+
+9411
+09:22:50,619 --> 09:22:55,449
+terminal back up, we can run it
+again. And just remember, if you
+
+9412
+09:22:55,449 --> 09:22:58,869
+hit the X that actually doesn't
+delete the terminal, that just
+
+9413
+09:22:58,869 --> 09:23:02,139
+hides it. So our hard hat node
+right now is still running
+
+9414
+09:23:02,139 --> 09:23:04,629
+because I just hit it. So I pull
+it back up, I can see that it is
+
+9415
+09:23:04,629 --> 09:23:07,149
+indeed still running. But if I
+trashed candidate, and then it
+
+9416
+09:23:07,149 --> 09:23:09,369
+pulled the terminal back up, I
+can see that it is no longer
+
+9417
+09:23:09,369 --> 09:23:15,729
+running. So running scripts is
+great. But what if I don't want
+
+9418
+09:23:15,729 --> 09:23:19,449
+to have to code an entire script
+to do some things? What if I
+
+9419
+09:23:19,449 --> 09:23:23,079
+want to just tinker around with
+the blockchain? Well, hard hat
+
+9420
+09:23:23,079 --> 09:23:26,499
+comes packed with this thing
+called the console. The console
+
+9421
+09:23:26,499 --> 09:23:29,979
+is a JavaScript environment. For
+us to run JavaScript commands to
+
+9422
+09:23:29,979 --> 09:23:33,579
+interact with any blockchain, we
+can jump to the console by
+
+9423
+09:23:33,579 --> 09:23:38,709
+running yarn, hardhat, console,
+and then whatever network flag
+
+9424
+09:23:38,739 --> 09:23:41,739
+if we want to work on rink B,
+main net polygon, avalanche,
+
+9425
+09:23:41,739 --> 09:23:45,759
+etc. That's just network local
+host. And now we're dropped into
+
+9426
+09:23:45,759 --> 09:23:49,599
+a shell him in the shell, we can
+do everything that we do in a
+
+9427
+09:23:49,599 --> 09:23:52,809
+deploy script. And we don't even
+have to run these imports,
+
+9428
+09:23:52,809 --> 09:23:55,929
+because everything with hard hat
+is automatically imported into
+
+9429
+09:23:55,929 --> 09:23:59,169
+our console. So for example,
+let's say I wanted to get a
+
+9430
+09:23:59,169 --> 09:24:02,889
+simple storage contract factory.
+Well, I could run exactly this
+
+9431
+09:24:02,889 --> 09:24:08,109
+line here. I could say const,
+simple storage, factory equals
+
+9432
+09:24:08,139 --> 09:24:15,939
+await ethers dot get contract
+factory, have simple storage.
+
+9433
+09:24:16,239 --> 09:24:19,929
+And now I can go ahead and even
+deploy this. So I can even just
+
+9434
+09:24:19,929 --> 09:24:25,029
+copy this line, paste it. And if
+we flip back to our node, we'll
+
+9435
+09:24:25,029 --> 09:24:28,539
+see that we just deployed a
+nother simple storage. And now
+
+9436
+09:24:28,539 --> 09:24:36,219
+we can do things like await
+simple storage dot retrieve. And
+
+9437
+09:24:36,219 --> 09:24:39,159
+I get the return value which is
+going to be a big number with a
+
+9438
+09:24:39,159 --> 09:24:43,239
+value of zero. I can also make
+transactions so I can do a
+
+9439
+09:24:43,239 --> 09:24:52,179
+weight, simple storage. That
+store let's do 55 If I hit up
+
+9440
+09:24:52,179 --> 09:24:55,149
+twice, I can go back to the
+simple storage dot retrieve.
+
+9441
+09:24:55,599 --> 09:24:59,379
+call that function and I can see
+my big number has a value of 55.
+
+9442
+09:24:59,379 --> 09:25:01,809
+Now, this is a great way to
+quickly interact with any
+
+9443
+09:25:01,809 --> 09:25:04,629
+blockchain that we want. Now you
+can exit the shell by hitting
+
+9444
+09:25:04,629 --> 09:25:09,519
+Ctrl C twice to get out. Or you
+can also just you can also Trash
+
+9445
+09:25:09,519 --> 09:25:12,159
+Can your terminal if you get
+confused. This console works
+
+9446
+09:25:12,159 --> 09:25:18,339
+with any network we can even do
+yarn, hard hat console dash dash
+
+9447
+09:25:18,369 --> 09:25:22,869
+network hard hat. And we'll get
+dropped into a hard hat network.
+
+9448
+09:25:23,319 --> 09:25:26,289
+Now this is not going to be the
+same node that's running here,
+
+9449
+09:25:26,319 --> 09:25:30,159
+this is going to be one that
+only runs for the duration of
+
+9450
+09:25:30,219 --> 09:25:33,399
+this command. So whenever we
+cancel this command, this hard
+
+9451
+09:25:33,399 --> 09:25:37,449
+hat network gets cancelled. And
+close out that too. We can also
+
+9452
+09:25:37,449 --> 09:25:45,429
+do yarn, hard hat, console, dash
+dash network Rinkeby Rigby, or
+
+9453
+09:25:45,429 --> 09:25:48,729
+polygon or test net or main net
+or whatever we want. And we can
+
+9454
+09:25:48,729 --> 09:25:54,609
+do things like ethers dot
+provider that can do things like
+
+9455
+09:25:54,639 --> 09:25:59,439
+await ethers dot provider dot
+get block number, see the block
+
+9456
+09:25:59,439 --> 09:26:03,639
+number of Rigby. We can also
+deploy contracts, we can update
+
+9457
+09:26:03,639 --> 09:26:05,979
+contracts, we can do anything
+that we want, you can do
+
+9458
+09:26:06,009 --> 09:26:08,859
+anything in these consoles, and
+they're great ways to quickly
+
+9459
+09:26:08,859 --> 09:26:10,719
+test and tinker in interact
+
+9460
+09:26:10,840 --> 09:26:16,060
+with contracts. Now, there's a
+couple other tasks that are
+
+9461
+09:26:16,060 --> 09:26:19,240
+really helpful. You'll see
+before I went ahead and just
+
+9462
+09:26:19,240 --> 09:26:22,450
+deleted artifacts and deleted
+the cache manually. Well, to do
+
+9463
+09:26:22,450 --> 09:26:28,840
+that yourself, you can also just
+run yarn Hardhead, clean. And
+
+9464
+09:26:28,840 --> 09:26:31,900
+that'll delete the artifacts
+folder and clear out your cache.
+
+9465
+09:26:31,990 --> 09:26:34,750
+We already know what compiled
+does. But one of the biggest
+
+9466
+09:26:34,750 --> 09:26:37,930
+things that Hardhead is
+fantastic for especially is
+
+9467
+09:26:37,930 --> 09:26:41,920
+running tests. Now we haven't
+run tests yet so far. However,
+
+9468
+09:26:41,920 --> 09:26:45,340
+running tests is absolutely
+critical to your smart contract
+
+9469
+09:26:45,340 --> 09:26:48,460
+development journey. And we're
+going to spend a lot of time in
+
+9470
+09:26:48,460 --> 09:26:51,490
+the future writing really good
+tests. The reason that writing
+
+9471
+09:26:51,490 --> 09:26:55,270
+tests are so important is
+because we want to make sure our
+
+9472
+09:26:55,270 --> 09:26:59,440
+code does exactly what we want
+it to do, especially in the
+
+9473
+09:26:59,440 --> 09:27:03,010
+defy, and the decentralized,
+smart contract world, all of our
+
+9474
+09:27:03,010 --> 09:27:06,400
+code is going to be open source
+for anybody to interact with,
+
+9475
+09:27:06,730 --> 09:27:10,540
+and potentially exploit. There's
+sites like req dot news, which
+
+9476
+09:27:10,570 --> 09:27:14,590
+go through a ton of previous
+hacks and how they actually got
+
+9477
+09:27:14,590 --> 09:27:17,890
+hacked and what happened in the
+smart contract to enable these
+
+9478
+09:27:17,890 --> 09:27:21,760
+hacks to occur. So testing, so
+writing really strong tests is
+
+9479
+09:27:21,760 --> 09:27:25,120
+always going to be our first
+line of defense. And we have
+
+9480
+09:27:25,120 --> 09:27:28,300
+this sample test.js, that comes
+default with the basic package
+
+9481
+09:27:28,300 --> 09:27:31,240
+of hardhat. But as you probably
+already know, we're going to
+
+9482
+09:27:31,240 --> 09:27:34,330
+rename this and change it. So
+we're going to rename this to
+
+9483
+09:27:34,840 --> 09:27:39,640
+test deploy dot j s. And we're
+going to delete everything in
+
+9484
+09:27:39,640 --> 09:27:43,030
+here and start from scratch. We
+want to be able to test all of
+
+9485
+09:27:43,030 --> 09:27:46,630
+our solidity code locally, so
+that we know exactly what it's
+
+9486
+09:27:46,630 --> 09:27:50,320
+doing. And we can have a
+programmatic way to make sure
+
+9487
+09:27:50,320 --> 09:27:54,700
+that our code does what we want
+it to do. So let's write a basic
+
+9488
+09:27:54,700 --> 09:27:58,870
+test for our simple storage
+contract. So that we can be sure
+
+9489
+09:27:58,870 --> 09:28:02,110
+that it's doing exactly what we
+want it to be doing. Hard Hat
+
+9490
+09:28:02,110 --> 09:28:06,130
+testing works with the Mocha
+framework, which is a JavaScript
+
+9491
+09:28:06,130 --> 09:28:09,760
+based framework for running our
+tests, you actually can write
+
+9492
+09:28:09,760 --> 09:28:13,900
+tests directly in solidity, if
+you'd like to, there's a bit of
+
+9493
+09:28:13,900 --> 09:28:16,630
+back and forth on whether
+testing with pure solidity is
+
+9494
+09:28:16,630 --> 09:28:19,720
+better or testing with a modern
+programming language. The
+
+9495
+09:28:19,720 --> 09:28:22,630
+argument goes that testing with
+a modern programming language,
+
+9496
+09:28:22,660 --> 09:28:27,010
+you have more flexibility to do
+more stuff to interact and test
+
+9497
+09:28:27,010 --> 09:28:29,230
+your smart contracts. But the
+argument for testing with us
+
+9498
+09:28:29,230 --> 09:28:32,200
+with solidity is that we want to
+be as close to the code as
+
+9499
+09:28:32,200 --> 09:28:35,980
+possible. At the time of
+recording, most projects do the
+
+9500
+09:28:35,980 --> 09:28:39,610
+vast majority of their testing
+in a modern programming language
+
+9501
+09:28:39,640 --> 09:28:42,520
+like JavaScript. So that's what
+we're going to be using here. So
+
+9502
+09:28:42,520 --> 09:28:45,610
+to get started with our mocha
+tests, we do, we're going to
+
+9503
+09:28:45,610 --> 09:28:50,050
+write a describe function.
+Describe is a keyword that
+
+9504
+09:28:50,050 --> 09:28:54,550
+hardheaded mocha will recognize,
+and it takes two parameters, it
+
+9505
+09:28:54,550 --> 09:28:58,180
+takes a string, which we're
+going to just write simple
+
+9506
+09:28:58,180 --> 09:29:02,500
+storage for now. And then also
+takes a function, we could make
+
+9507
+09:29:03,400 --> 09:29:09,670
+function, test func and then
+write some stuff in here, and
+
+9508
+09:29:09,670 --> 09:29:13,930
+then pass it to our describe
+here. But the common convention
+
+9509
+09:29:14,110 --> 09:29:17,740
+is going to be to do is to make
+it as an anonymous function,
+
+9510
+09:29:18,250 --> 09:29:22,510
+which we can create by typing
+function, putting an empty
+
+9511
+09:29:22,510 --> 09:29:25,390
+parameter here, and then some
+brackets like that. So our
+
+9512
+09:29:25,390 --> 09:29:29,560
+describe function takes a name,
+a string, and a function.
+
+9513
+09:29:29,890 --> 09:29:32,740
+Another way that you'll often
+see functions in describe is
+
+9514
+09:29:32,740 --> 09:29:37,000
+using that anonymous function
+syntax. So you might see just
+
+9515
+09:29:37,000 --> 09:29:41,440
+these parentheses, an arrow, and
+then some brackets, the two of
+
+9516
+09:29:41,440 --> 09:29:44,350
+these are going to be basically
+the same, there are some
+
+9517
+09:29:44,350 --> 09:29:47,830
+differences. And this second one
+is actually best practice, but
+
+9518
+09:29:47,830 --> 09:29:51,280
+just know that you might see
+this arrow syntax in other tests
+
+9519
+09:29:51,280 --> 09:29:54,010
+as well. We have described a
+sample storage and then our
+
+9520
+09:29:54,010 --> 09:29:56,680
+function here, which is going to
+have all of our tests in it.
+
+9521
+09:29:56,920 --> 09:29:59,530
+Inside each one of our describe
+blocks. We're gonna have
+
+9522
+09:29:59,530 --> 09:30:03,340
+something called a before each,
+and a bunch of It's Our before
+
+9523
+09:30:03,340 --> 09:30:07,030
+each function is going to tell
+us what to do before each of our
+
+9524
+09:30:07,060 --> 09:30:09,730
+hits. So we're going to have a
+ton of it and then we're going
+
+9525
+09:30:09,730 --> 09:30:13,030
+to have a before each. All of
+our IDs are going to be where we
+
+9526
+09:30:13,030 --> 09:30:15,940
+actually write the code for
+running our tests. And before
+
+9527
+09:30:15,940 --> 09:30:19,270
+each is going to be some code
+that tells us what to do before
+
+9528
+09:30:19,540 --> 09:30:23,710
+each one of these hits, we can
+also actually have describes,
+
+9529
+09:30:25,540 --> 09:30:29,470
+inside of describes, which again
+have more before each and more
+
+9530
+09:30:29,470 --> 09:30:33,550
+before it's having these nested
+describes can be really helpful
+
+9531
+09:30:33,550 --> 09:30:37,780
+for separating and modularizing
+our tests. But for this one,
+
+9532
+09:30:37,780 --> 09:30:41,080
+we're just going to have a setup
+that looks like this. And for
+
+9533
+09:30:41,080 --> 09:30:45,010
+this demo, we're only going to
+have one it. So in order to test
+
+9534
+09:30:45,010 --> 09:30:47,710
+our smart contracts, before we
+actually run our tests, we're
+
+9535
+09:30:47,710 --> 09:30:50,620
+probably going to need to deploy
+the smart contracts first. So
+
+9536
+09:30:50,620 --> 09:30:53,470
+inside of our before each, we're
+going to pass the our before
+
+9537
+09:30:53,470 --> 09:30:56,950
+each a function, that's going to
+tell our testing framework what
+
+9538
+09:30:56,950 --> 09:31:00,070
+to do before each test. So we're
+going to pass it an async
+
+9539
+09:31:00,100 --> 09:31:05,080
+function like this. And in here,
+we want to deploy our simple
+
+9540
+09:31:05,080 --> 09:31:08,410
+storage contract. So to do that,
+we're going to need to get the
+
+9541
+09:31:08,410 --> 09:31:12,520
+ethers framework and do exactly
+what we did in our deploy
+
+9542
+09:31:12,520 --> 09:31:15,670
+script. So in here, we're at the
+top we're gonna say const.
+
+9543
+09:31:16,180 --> 09:31:23,590
+Ethers, equals require art have
+an import ethers from hard hat.
+
+9544
+09:31:23,830 --> 09:31:29,800
+Then in our before each
+function, we'll say await ethers
+
+9545
+09:31:29,800 --> 09:31:37,510
+dot get contract factory of
+simple storage. And we'll assign
+
+9546
+09:31:37,510 --> 09:31:46,240
+this to a const. Simple Storage
+factory. And then we'll run
+
+9547
+09:31:46,960 --> 09:31:52,780
+away, simple storage factory dot
+deploy. Cool. And let's also
+
+9548
+09:31:52,810 --> 09:31:58,450
+assign this to a variable cost
+simple. Now, since right now,
+
+9549
+09:31:58,480 --> 09:32:02,470
+our simple storage and simple
+storage factory are scoped just
+
+9550
+09:32:02,470 --> 09:32:05,860
+to inside the before each, we
+actually need to stick these
+
+9551
+09:32:05,860 --> 09:32:09,940
+variables outside of the before
+each, so all of our events can
+
+9552
+09:32:09,970 --> 09:32:12,940
+interact with them. So instead
+of having simple storage,
+
+9553
+09:32:12,940 --> 09:32:16,660
+factory, and simple storage, be
+constant variables, we're going
+
+9554
+09:32:16,660 --> 09:32:20,140
+to define them outside of them
+for each with the let keyword.
+
+9555
+09:32:20,350 --> 09:32:25,540
+And we're gonna say let simple
+storage factory and we're going
+
+9556
+09:32:25,540 --> 09:32:29,860
+to initialize it to nothing. And
+then we'll say led simple
+
+9557
+09:32:29,920 --> 09:32:32,980
+storage. Now, if you have a
+whole bunch of let's just
+
+9558
+09:32:32,980 --> 09:32:35,380
+initializing another way, you
+can write them in JavaScript,
+
+9559
+09:32:35,410 --> 09:32:41,080
+just let simple storage factory
+comma, simple storage. And that
+
+9560
+09:32:41,080 --> 09:32:43,420
+works exactly the same. And then
+we can get rid of this const
+
+9561
+09:32:43,420 --> 09:32:47,770
+keyword. Because it's not a
+constant since we are assigning
+
+9562
+09:32:47,770 --> 09:32:50,050
+it. And now we have simple
+storage, factory and simple
+
+9563
+09:32:50,050 --> 09:32:53,200
+storage that we can use inside
+of our init function. Now we
+
+9564
+09:32:53,200 --> 09:32:56,140
+have a before each section. So
+before each one of our tests,
+
+9565
+09:32:56,200 --> 09:32:58,630
+we're going to deploy our simple
+storage contract. So we have a
+
+9566
+09:32:58,630 --> 09:33:02,200
+brand new contract to interact
+with for each one of our tests.
+
+9567
+09:33:02,260 --> 09:33:05,920
+Now, inside of the ID, this is
+where we're going to say what we
+
+9568
+09:33:05,920 --> 09:33:09,310
+want this specific test to do,
+and then describe the code
+
+9569
+09:33:09,550 --> 09:33:13,480
+that's going to actually do
+that. So we're going to say it
+
+9570
+09:33:13,870 --> 09:33:20,980
+should start with a favorite
+number of zero. So this is
+
+9571
+09:33:20,980 --> 09:33:24,190
+saying what this test should do.
+And then we're going to add our
+
+9572
+09:33:24,220 --> 09:33:27,910
+async function to actually do
+that. So we'll say async
+
+9573
+09:33:28,720 --> 09:33:34,060
+function. And in here, this is
+where we'll actually write the
+
+9574
+09:33:34,060 --> 09:33:38,020
+code to make sure that our
+contract does exactly this.
+
+9575
+09:33:38,080 --> 09:33:45,640
+We're say const. Current Value,
+equals await, simple storage.re
+
+9576
+09:33:46,840 --> 09:33:50,440
+retrieve. And now in this test,
+we want to say okay, now check
+
+9577
+09:33:50,440 --> 09:33:54,100
+to see that this current value
+is indeed zero. So how do we do
+
+9578
+09:33:54,100 --> 09:33:59,200
+that? Well, we can say const,
+expected value is going to equal
+
+9579
+09:33:59,830 --> 09:34:04,360
+zero. And what we can do is we
+can do either we can use either
+
+9580
+09:34:04,360 --> 09:34:08,170
+the assert keyword, or the
+expect keyword, which we're
+
+9581
+09:34:08,170 --> 09:34:12,970
+going to import both of these
+from a package called Chai. We
+
+9582
+09:34:12,970 --> 09:34:16,420
+actually installed Chai
+automatically when we downloaded
+
+9583
+09:34:16,420 --> 09:34:19,120
+the basic parameters when we
+downloaded the basic packages
+
+9584
+09:34:19,120 --> 09:34:23,050
+for hardhats. So at the top,
+we're gonna say const. Expect
+
+9585
+09:34:23,260 --> 09:34:24,310
+and assert
+
+9586
+09:34:25,630 --> 09:34:30,760
+equals require Chai, I'm a big
+fan of using assert as much as
+
+9587
+09:34:30,760 --> 09:34:33,160
+possible, because I think the
+syntax makes a little bit more
+
+9588
+09:34:33,190 --> 09:34:36,010
+sense. But there will be
+scenarios where we need to use
+
+9589
+09:34:36,010 --> 09:34:39,130
+expect instead. Now, assert has
+a ton of functions that are
+
+9590
+09:34:39,130 --> 09:34:43,030
+built in that help us make sure
+this is what we expect it to be.
+
+9591
+09:34:43,060 --> 09:34:48,040
+So I can do assert dot equal
+current value.to string, because
+
+9592
+09:34:48,040 --> 09:34:51,130
+remember, this is actually going
+to be a big number, comma,
+
+9593
+09:34:51,370 --> 09:34:55,480
+expected value. So I'm saying
+I'm asserting this retrieve to
+
+9594
+09:34:55,480 --> 09:34:59,440
+return zero, which is going to
+be our expected value. Now to
+
+9595
+09:34:59,440 --> 09:35:04,570
+actually run this, we're going
+to run yarn, art hat test. And
+
+9596
+09:35:04,570 --> 09:35:07,840
+we see we get an output that
+looks like this should start
+
+9597
+09:35:07,840 --> 09:35:10,870
+with favorite number of zero,
+and it's indeed passing. You'll
+
+9598
+09:35:10,870 --> 09:35:14,620
+notice that if I were to change
+this to one, and this wasn't
+
+9599
+09:35:14,620 --> 09:35:18,220
+correct, it would break and it
+would say art Pass or not
+
+9600
+09:35:18,220 --> 09:35:23,890
+passing assertion error expected
+zero to equal one. It expected
+
+9601
+09:35:23,920 --> 09:35:29,260
+zero to equal one, which is not
+what we want. We want zero to
+
+9602
+09:35:29,260 --> 09:35:33,430
+equal zero. So let's run this
+again. Tada should start with
+
+9603
+09:35:33,430 --> 09:35:36,640
+favorite number zero, and it's
+passing. Alright, fantastic. So
+
+9604
+09:35:36,640 --> 09:35:40,030
+that's how we wrote one of our
+tests, let's write one more test
+
+9605
+09:35:40,060 --> 09:35:43,060
+just to make sure that things
+are good. So let's say it should
+
+9606
+09:35:43,060 --> 09:35:48,490
+update when we call store,
+because when we call the store
+
+9607
+09:35:48,490 --> 09:35:51,850
+function, we want our favorite
+number to update. And we'll make
+
+9608
+09:35:51,850 --> 09:35:56,560
+this an async function as well.
+And let's add our stuff in here.
+
+9609
+09:35:56,770 --> 09:36:01,360
+So we'll say const. Expected
+Value equals seven, we're
+
+9610
+09:36:01,360 --> 09:36:04,990
+expecting that when we call
+store it updates to seven. Now
+
+9611
+09:36:05,020 --> 09:36:11,620
+we can say const. Transaction
+response equals await simple
+
+9612
+09:36:11,620 --> 09:36:16,840
+storage dot store. And we can
+even just pass it the expected
+
+9613
+09:36:16,840 --> 09:36:21,670
+value here. And then we'll do a
+weight transaction response that
+
+9614
+09:36:21,670 --> 09:36:25,240
+weight one. Now let's get the
+current value. So we'll say
+
+9615
+09:36:25,240 --> 09:36:31,030
+const. Current Value equals
+weight, simple storage,
+
+9616
+09:36:32,080 --> 09:36:37,750
+retrieve. And now we're going to
+assert dot equal current
+
+9617
+09:36:37,750 --> 09:36:44,140
+value.to string, comma expected
+value. And now we can run all
+
+9618
+09:36:44,140 --> 09:36:47,440
+these tests by running yarn
+Hardhead test. And you'll see we
+
+9619
+09:36:47,440 --> 09:36:51,700
+ran both of these tests. And now
+if I have 10,000 tests, and I'm
+
+9620
+09:36:51,700 --> 09:36:55,000
+only finagling with one test, I
+can actually just run one test
+
+9621
+09:36:55,000 --> 09:37:01,570
+by running yarn, art app, test,
+dash dash grep. And I can search
+
+9622
+09:37:01,600 --> 09:37:06,160
+for any keywords in any of the
+text here. So I'm going to grep
+
+9623
+09:37:06,160 --> 09:37:10,660
+for the store function. Because
+the store keyword isn't in this
+
+9624
+09:37:10,660 --> 09:37:14,740
+tax for this, it, it's only in
+the text for this it. So if I do
+
+9625
+09:37:14,740 --> 09:37:18,550
+grep store, it should only run
+our second test, which does
+
+9626
+09:37:18,550 --> 09:37:22,840
+indeed, one other way we can run
+only specific tests is with the
+
+9627
+09:37:22,840 --> 09:37:28,030
+only keyword. So we can type it
+dot only like that. And then we
+
+9628
+09:37:28,030 --> 09:37:33,430
+can run yarn, art hat test. And
+it should only run, this should
+
+9629
+09:37:33,490 --> 09:37:36,820
+update when we call store. And
+it does indeed, then we'll go
+
+9630
+09:37:36,820 --> 09:37:40,750
+ahead and delete this save, run
+again, and it should run all
+
+9631
+09:37:40,750 --> 09:37:45,250
+too. Fantastic. Now the other
+way you'll see these tests
+
+9632
+09:37:45,250 --> 09:37:49,210
+written is with instead of
+assert, it'll use the expect
+
+9633
+09:37:49,210 --> 09:37:52,600
+keyword. So you'll see something
+like expect current
+
+9634
+09:37:52,600 --> 09:37:59,260
+value.to string.to dot equal
+expected value, the two of these
+
+9635
+09:37:59,290 --> 09:38:03,520
+lines do exactly the same thing.
+And it's sort of up to you on
+
+9636
+09:38:03,520 --> 09:38:06,160
+which one you want to use. And
+that's all we're going to do for
+
+9637
+09:38:06,160 --> 09:38:12,280
+our testing. Now. This is
+fantastic, great job. Now that
+
+9638
+09:38:12,280 --> 09:38:15,940
+we have some tests, we can
+actually start testing to see
+
+9639
+09:38:15,940 --> 09:38:19,660
+how much gas each one of our
+functions actually costs. One of
+
+9640
+09:38:19,660 --> 09:38:23,230
+the most popular extensions for
+hard hat is the hard hat gas
+
+9641
+09:38:23,230 --> 09:38:27,160
+reporter. This is an extension
+that gets attached to all of our
+
+9642
+09:38:27,160 --> 09:38:30,130
+tests, and automatically gives
+us an output that looks like
+
+9643
+09:38:30,130 --> 09:38:32,950
+this, that tells us
+approximately how much gas each
+
+9644
+09:38:32,950 --> 09:38:36,010
+one of our functions cost. We
+scroll down in here, we can read
+
+9645
+09:38:36,010 --> 09:38:38,620
+the instructions on how to
+actually install this npm
+
+9646
+09:38:38,620 --> 09:38:41,830
+install Hardhead gas reporter
+which we're going to use with
+
+9647
+09:38:41,860 --> 09:38:49,510
+yarn. So we're gonna say yarn,
+add hard hat, gas reporter, dash
+
+9648
+09:38:49,510 --> 09:38:50,440
+dash Dev.
+
+9649
+09:38:52,930 --> 09:38:56,890
+And now that that package is
+installed, we can go over to our
+
+9650
+09:38:57,040 --> 09:39:01,480
+config and add some parameters
+in here so that we can work with
+
+9651
+09:39:01,480 --> 09:39:04,750
+this gas pit. But our neath our
+ether scan section, we're going
+
+9652
+09:39:04,750 --> 09:39:09,430
+to add a new section called gas
+reporter. To have it run,
+
+9653
+09:39:09,460 --> 09:39:12,940
+whenever we run our tests we're
+going to do enabled is going to
+
+9654
+09:39:12,940 --> 09:39:17,260
+be true. And then up at the top,
+we can add it by adding require
+
+9655
+09:39:18,250 --> 09:39:23,470
+hardhat gas reporter. Now that
+we have it in here, we can do
+
+9656
+09:39:23,470 --> 09:39:27,160
+yarn hardhat test, and after we
+run our tests, it'll
+
+9657
+09:39:27,190 --> 09:39:32,380
+automatically run this gas
+reporter. So we see our tests go
+
+9658
+09:39:32,380 --> 09:39:35,590
+ahead and run. And then we get
+this output that looks like this
+
+9659
+09:39:35,620 --> 09:39:39,610
+that tells us how approximately
+how much our contracts and
+
+9660
+09:39:39,610 --> 09:39:42,850
+methods cost. So our store
+function looks like It costs
+
+9661
+09:39:42,880 --> 09:39:45,910
+approximately this much gas and
+our simple storage costs
+
+9662
+09:39:45,940 --> 09:39:49,390
+approximately this much gas.
+This is incredibly helpful for
+
+9663
+09:39:49,390 --> 09:39:53,530
+figuring out how to optimize our
+gas as best as possible. Now I
+
+9664
+09:39:53,530 --> 09:39:56,650
+usually like to take it a step
+further though. Having the gas
+
+9665
+09:39:56,650 --> 09:40:00,460
+output it like that is nice, but
+we can make it even better. I
+
+9666
+09:40:00,460 --> 09:40:05,440
+like to output it to a file by
+doing output file. Yes, report
+
+9667
+09:40:05,470 --> 09:40:10,120
+dot txt and then my dot get
+ignore like to add it in here,
+
+9668
+09:40:10,210 --> 09:40:15,010
+but doing gas report dot txt
+sentence it's not really
+
+9669
+09:40:15,010 --> 09:40:18,190
+important for the gas report to
+get pushed up to GitHub. Do no
+
+9670
+09:40:18,190 --> 09:40:22,480
+colors is true. The reason we
+add this is because when we
+
+9671
+09:40:22,480 --> 09:40:26,890
+output to a file, the colors can
+get messed up basically. And
+
+9672
+09:40:26,890 --> 09:40:29,500
+then the biggest addition we
+could do is we can add a
+
+9673
+09:40:29,500 --> 09:40:34,840
+currency in here. So that we can
+get the cost of each function in
+
+9674
+09:40:34,840 --> 09:40:38,740
+USD for a blockchain like
+Aetherium. Now in order to get a
+
+9675
+09:40:38,740 --> 09:40:43,450
+currency here, we actually need
+to get an API key from corn
+
+9676
+09:40:43,450 --> 09:40:46,120
+market cap, just like we did
+with ether scan, you can go to
+
+9677
+09:40:46,120 --> 09:40:52,240
+coin market cap, corn market cap
+API, get your API key now, and
+
+9678
+09:40:52,240 --> 09:41:01,240
+we'll go ahead and sign up.
+Choose a basic plan. We'll agree
+
+9679
+09:41:01,660 --> 09:41:05,110
+and create my account, we'll get
+an email verification. And we'll
+
+9680
+09:41:05,110 --> 09:41:10,240
+go ahead and verify. Now in the
+coin market cap dashboard, we
+
+9681
+09:41:10,240 --> 09:41:14,050
+can copy our key. And yep, you
+guessed it exactly what we're
+
+9682
+09:41:14,050 --> 09:41:16,330
+going to do with this key, we're
+going to drop it into our dot
+
+9683
+09:41:16,330 --> 09:41:22,840
+env file, or say coin market
+cap, API key equals and then
+
+9684
+09:41:22,840 --> 09:41:25,750
+paste it in there like that. Now
+that we have our corn market cap
+
+9685
+09:41:25,780 --> 09:41:30,460
+API key in here, we can go back
+to our header dot config and add
+
+9686
+09:41:30,460 --> 09:41:33,490
+it in this corn market cap
+parameter. We're gonna do the
+
+9687
+09:41:33,490 --> 09:41:38,050
+exact same way we did above,
+we'll do const, coin, market
+
+9688
+09:41:38,050 --> 09:41:46,210
+cap, API key equals process dot
+EMV, that coin market cap API
+
+9689
+09:41:46,210 --> 09:41:49,930
+key, and then we'll take this
+sticking in here. So what this
+
+9690
+09:41:49,930 --> 09:41:52,930
+is going to do is actually going
+to make an API call to corn
+
+9691
+09:41:52,930 --> 09:41:56,680
+market cap, whenever we run our
+gas reporter. This is why
+
+9692
+09:41:56,710 --> 09:41:59,290
+sometimes you'll see me comment
+this out and uncomment it
+
+9693
+09:41:59,320 --> 09:42:02,440
+because I don't always want it
+to make this API calls. But now
+
+9694
+09:42:02,440 --> 09:42:05,410
+what we can do now that it's
+enabled, we have an output file,
+
+9695
+09:42:05,770 --> 09:42:08,740
+we can see the currency and we
+have our API key, all we can do
+
+9696
+09:42:08,740 --> 09:42:14,650
+is run yarn hardhat test. And
+after all our tests pass, we're
+
+9697
+09:42:14,650 --> 09:42:18,520
+going to see a gas report.tx T
+that we can go ahead and read
+
+9698
+09:42:18,520 --> 09:42:23,290
+from which has that gas report.
+And now it actually has the USD
+
+9699
+09:42:23,290 --> 09:42:26,200
+price of each one of these
+transactions, it looks like at
+
+9700
+09:42:26,200 --> 09:42:30,670
+current prices, with Aetherium
+being $3,000 per eath, and a gas
+
+9701
+09:42:30,670 --> 09:42:34,930
+price of 43 Gwei, the store
+function would cost $6. And the
+
+9702
+09:42:34,930 --> 09:42:38,440
+simple storage function would
+cost $64. The current the
+
+9703
+09:42:38,440 --> 09:42:40,540
+Hardhead gas reporter actually
+comes with some different
+
+9704
+09:42:40,540 --> 09:42:42,490
+options, though, if you're going
+to be deploying to different
+
+9705
+09:42:42,490 --> 09:42:46,180
+network, for example, with
+binance, Polygon, Avalanche or
+
+9706
+09:42:46,180 --> 09:42:49,630
+hecho. For example, let's say we
+wanted to deploy the polygon,
+
+9707
+09:42:49,900 --> 09:42:53,080
+let's see how much deploying the
+polygon would cost well in our
+
+9708
+09:42:53,080 --> 09:42:55,450
+WMV UHD ad token,
+
+9709
+09:42:57,790 --> 09:43:03,580
+Matic And now we'd rerun this
+test. And if we look at our gas
+
+9710
+09:43:03,580 --> 09:43:07,570
+report that takes T will now see
+the gas price of polygon right
+
+9711
+09:43:07,570 --> 09:43:12,100
+now is around 37 Gray per gas.
+And the cost of Matic is 147
+
+9712
+09:43:12,190 --> 09:43:15,760
+automatic and USD. Now we can
+see the cost of calling the
+
+9713
+09:43:15,760 --> 09:43:20,440
+simple storage method is going
+to be $0.00. Now this of course
+
+9714
+09:43:20,440 --> 09:43:23,320
+is rounded down, but it's going
+to be really, really cheap to
+
+9715
+09:43:23,320 --> 09:43:26,890
+call store versus deploying the
+contract is going to cost three
+
+9716
+09:43:26,890 --> 09:43:30,640
+cents, I make it a habit to
+select false for my gas reporter
+
+9717
+09:43:30,850 --> 09:43:32,830
+whenever I don't want to
+actually work with the gas here.
+
+9718
+09:43:33,070 --> 09:43:36,160
+Awesome. Now sometimes when
+we're working with our code, if
+
+9719
+09:43:36,160 --> 09:43:39,550
+we don't have these environment
+variables specified Hardhead
+
+9720
+09:43:39,580 --> 09:43:43,360
+might get a little bit upset
+with us. So oftentimes, I'll add
+
+9721
+09:43:43,390 --> 09:43:47,440
+some code in here. So that these
+variables are always populated,
+
+9722
+09:43:47,470 --> 09:43:52,870
+because we didn't specify our
+rink prpc URL, ring P RPC URL is
+
+9723
+09:43:52,870 --> 09:43:56,140
+going to be undefined. And that
+might throw some errors blow. So
+
+9724
+09:43:56,140 --> 09:43:59,350
+oftentimes, what we'll do is
+I'll add an or parameter here,
+
+9725
+09:43:59,620 --> 09:44:03,610
+these double pipes mean or, and
+in JavaScript, if we say some
+
+9726
+09:44:03,610 --> 09:44:07,000
+variable equals something or
+something else, what is really
+
+9727
+09:44:07,000 --> 09:44:10,690
+happening is we're gonna say,
+okay, rink, the RPC URL is going
+
+9728
+09:44:10,690 --> 09:44:15,220
+to be equal to process dot E and
+V dot rink, the RPC URL. But if
+
+9729
+09:44:15,220 --> 09:44:18,640
+this rink, the RPC URL doesn't
+exist, it's going to be whatever
+
+9730
+09:44:18,640 --> 09:44:23,080
+else is over here. And I might
+write something like HTTPS eath
+
+9731
+09:44:23,080 --> 09:44:28,360
+Rinkeby. Example, or something
+like this, just so that I don't
+
+9732
+09:44:28,360 --> 09:44:31,270
+make hard hat mad if I don't use
+rank B. And we can do something
+
+9733
+09:44:31,270 --> 09:44:36,610
+like that for all these. So
+you'll see this syntax,
+
+9734
+09:44:36,640 --> 09:44:42,700
+oftentimes in a lot of code
+setups. Now the last thing that
+
+9735
+09:44:42,700 --> 09:44:45,340
+I'm going to show you before
+going into the TypeScript
+
+9736
+09:44:45,340 --> 09:44:48,820
+edition of This is test
+coverage. And as we progressed
+
+9737
+09:44:48,820 --> 09:44:51,460
+to this course, I'm going to
+show you more and more tools
+
+9738
+09:44:51,460 --> 09:44:54,370
+that you can use to make sure
+that our simple storage contract
+
+9739
+09:44:54,400 --> 09:44:58,390
+is safe and secure. And we take
+all the steps we can to prevent
+
+9740
+09:44:58,390 --> 09:45:01,180
+any hacks from happening if we
+deploy in real life. One of
+
+9741
+09:45:01,180 --> 09:45:04,210
+those tools is a tool called
+solidity coverage. And this is
+
+9742
+09:45:04,210 --> 09:45:07,420
+also a hardhat plugin that we
+can use for our code. solidity
+
+9743
+09:45:07,420 --> 09:45:10,480
+coverage is a project that goes
+through all of our tests and
+
+9744
+09:45:10,480 --> 09:45:15,550
+sees exactly how many lines of
+code in our sample store dot Sol
+
+9745
+09:45:15,580 --> 09:45:18,580
+are actually covered. And this
+can be a Good tip off. If we
+
+9746
+09:45:18,580 --> 09:45:21,640
+don't cover some line of code,
+solidity coverage will say, Hey,
+
+9747
+09:45:21,670 --> 09:45:23,830
+you don't have any tests for
+this line, maybe you should
+
+9748
+09:45:23,830 --> 09:45:26,320
+write some tests for it. We can
+add solidity coverage the same
+
+9749
+09:45:26,320 --> 09:45:29,770
+way we've been adding all of our
+packages. npm install dash, just
+
+9750
+09:45:29,770 --> 09:45:33,880
+save Dev, or since we're using
+yarn, yarn, add dash dash Dev,
+
+9751
+09:45:34,090 --> 09:45:41,170
+solidity coverage. And we can
+then add this to our config, the
+
+9752
+09:45:41,170 --> 09:45:43,900
+same way we've been adding
+everything to our config, go to
+
+9753
+09:45:43,900 --> 09:45:48,610
+our config, and we'll write
+require solidity coverage. And
+
+9754
+09:45:48,610 --> 09:45:50,890
+there's some configuration
+pieces we can add down here
+
+9755
+09:45:50,890 --> 09:45:53,530
+below for this, but we're just
+going to use the default now we
+
+9756
+09:45:53,530 --> 09:45:58,870
+can do is run yarn, RT hat
+coverage. And this is going to
+
+9757
+09:45:58,870 --> 09:46:01,750
+go through our tests and print
+out a file that looks like this,
+
+9758
+09:46:01,930 --> 09:46:04,780
+we'll also get a file called
+coverage dot JSON, which is
+
+9759
+09:46:04,780 --> 09:46:08,500
+basically this chart broken down
+a little bit more often put my
+
+9760
+09:46:08,740 --> 09:46:12,040
+coverage dot JSON in my dot get
+ignore. And I know we haven't
+
+9761
+09:46:12,040 --> 09:46:15,250
+actually seen dot Git ignore, do
+what it's supposed to do. But we
+
+9762
+09:46:15,250 --> 09:46:20,500
+will soon we can see here that
+about 50% of the code 50% of our
+
+9763
+09:46:20,500 --> 09:46:24,250
+statements in simple storage dot
+soul are covered. About two
+
+9764
+09:46:24,250 --> 09:46:27,700
+thirds of our functions are and
+50% of the lines, It'll even
+
+9765
+09:46:27,700 --> 09:46:30,940
+give us exactly what lines
+aren't tested right now, which
+
+9766
+09:46:30,940 --> 09:46:34,750
+we can see exactly 31 and 32 of
+simple swords, outsole aren't
+
+9767
+09:46:34,750 --> 09:46:38,560
+covered, which makes a lot of
+sense, because 31 to 32 is this
+
+9768
+09:46:38,590 --> 09:46:41,650
+Add Person function, which we
+didn't call and we didn't add to
+
+9769
+09:46:41,650 --> 09:46:45,310
+our tests. If you want to take
+this time to pause and try to
+
+9770
+09:46:45,310 --> 09:46:48,580
+make this solidity coverage be
+100% across the board, by
+
+9771
+09:46:48,580 --> 09:46:51,370
+writing some more tests, I
+highly recommend you do so it'll
+
+9772
+09:46:51,370 --> 09:46:54,370
+be a great learning exercise.
+We'll also add the coverage
+
+9773
+09:46:54,400 --> 09:46:57,460
+folder. So covered adjacent and
+the coverage folder, which
+
+9774
+09:46:57,490 --> 09:47:00,550
+again, I'll explain what the dot
+get ignore folder does a little
+
+9775
+09:47:00,550 --> 09:47:06,040
+bit later. Now the last thing
+that we didn't talk about and
+
+9776
+09:47:06,040 --> 09:47:10,090
+here was what is this nomic labs
+hard hat waffle. We talked about
+
+9777
+09:47:10,090 --> 09:47:13,600
+Daddy and V heart and ether scan
+tasks gas reports. So today,
+
+9778
+09:47:14,110 --> 09:47:18,130
+what is this? Well, we can
+actually Google search this and
+
+9779
+09:47:18,130 --> 09:47:21,730
+find out exactly what this is
+Hardhead waffle is actually a
+
+9780
+09:47:21,730 --> 09:47:25,240
+plugin to work with the waffle
+testing framework. waffle is one
+
+9781
+09:47:25,240 --> 09:47:27,730
+of these frameworks that allow
+us to do some really advanced
+
+9782
+09:47:27,760 --> 09:47:30,310
+testing, we're going to be
+working with some syntax that
+
+9783
+09:47:30,310 --> 09:47:33,070
+looks really similar to this
+really soon. And we'll be
+
+9784
+09:47:33,070 --> 09:47:35,470
+showing you more and more of
+this waffle tool
+
+9785
+09:47:35,500 --> 09:47:41,200
+as we continue. Alright, the
+next part of this section, I'm
+
+9786
+09:47:41,200 --> 09:47:43,750
+actually going to go over the
+TypeScript edition of this. But
+
+9787
+09:47:43,750 --> 09:47:46,330
+for all intents and purposes,
+you've successfully created your
+
+9788
+09:47:46,330 --> 09:47:50,620
+first Hardhead project, you've
+done a ton of amazing things. In
+
+9789
+09:47:50,620 --> 09:47:53,560
+this lesson, let's do a quick
+refresher of what we've learned
+
+9790
+09:47:53,560 --> 09:47:57,100
+so far, we learned how to spin
+up our own hard hat projects.
+
+9791
+09:47:57,340 --> 09:48:02,620
+And now we can run yarn, hard
+hat and see a list of the tasks
+
+9792
+09:48:02,650 --> 09:48:06,010
+and different things that we can
+do with hard hat. We learned
+
+9793
+09:48:06,010 --> 09:48:10,210
+that hard hat looks for this
+hard hat.config.js. And this is
+
+9794
+09:48:10,210 --> 09:48:13,330
+sort of the entry point for any
+task that we run that starts
+
+9795
+09:48:13,330 --> 09:48:16,150
+with hard hat, we learned we can
+add our contracts to this
+
+9796
+09:48:16,150 --> 09:48:20,020
+contracts folder. And then we
+compile it by running yarn, art
+
+9797
+09:48:20,020 --> 09:48:24,400
+half compile, we learned that
+all the compliation goes into
+
+9798
+09:48:24,400 --> 09:48:28,210
+the artifacts and then the cache
+as well. And if we want to clean
+
+9799
+09:48:28,210 --> 09:48:30,820
+reset, we can either delete
+these two files or just run
+
+9800
+09:48:30,820 --> 09:48:34,840
+yarn, hard hat clean. So we
+learned that we can use scripts
+
+9801
+09:48:34,870 --> 09:48:38,350
+or tasks to actually deploy,
+interact and do things with our
+
+9802
+09:48:38,350 --> 09:48:40,990
+smart contracts. We also learned
+that I'm going to be using
+
+9803
+09:48:40,990 --> 09:48:43,360
+scripts for the rest of this
+course. But if you want, you
+
+9804
+09:48:43,360 --> 09:48:46,360
+could absolutely use tasks as
+well. I've asked this question a
+
+9805
+09:48:46,360 --> 09:48:49,060
+million times what's the
+difference? Nobody really seems
+
+9806
+09:48:49,060 --> 09:48:51,760
+to know what the main difference
+is. But I think the main
+
+9807
+09:48:51,760 --> 09:48:54,220
+difference is that tasks are for
+plugins. And scripts are for
+
+9808
+09:48:54,220 --> 09:48:57,280
+your local development Mart,
+that is mind limiter, we learned
+
+9809
+09:48:57,280 --> 09:49:01,120
+that we can import a whole bunch
+of things, including tasks from
+
+9810
+09:49:01,150 --> 09:49:03,610
+hard hat in our scripts, and we
+can work with our async
+
+9811
+09:49:03,610 --> 09:49:07,390
+functions to grab our contracts
+and deploy them, we actually
+
+9812
+09:49:07,390 --> 09:49:11,410
+then can programmatically verify
+them using hard hat and using
+
+9813
+09:49:11,410 --> 09:49:14,230
+hard hat plugins. And then
+additionally, we can interact
+
+9814
+09:49:14,230 --> 09:49:17,260
+with our contracts very similar
+to how we did it with ethers. We
+
+9815
+09:49:17,260 --> 09:49:20,560
+wrote a wonderful verification
+script. And we also wrote our
+
+9816
+09:49:20,560 --> 09:49:24,790
+own task, we wrote our first
+test for this whole space. And
+
+9817
+09:49:24,790 --> 09:49:27,400
+we showed what our tests are
+going to look like moving
+
+9818
+09:49:27,400 --> 09:49:30,520
+forward. And we talked a little
+bit about their importance. And
+
+9819
+09:49:30,520 --> 09:49:33,430
+I really should stress that
+writing good tests is going to
+
+9820
+09:49:33,430 --> 09:49:35,860
+be the difference between a
+really professional environment
+
+9821
+09:49:36,010 --> 09:49:38,920
+and kind of a side project.
+Whenever I audit smart
+
+9822
+09:49:38,920 --> 09:49:41,860
+contracts, or whenever I'm given
+a project for someone to tell me
+
+9823
+09:49:41,860 --> 09:49:44,950
+to take a look at. The first
+thing I look at is the readme,
+
+9824
+09:49:45,010 --> 09:49:48,850
+of course. And the second thing
+I look at is the tests. And if
+
+9825
+09:49:48,850 --> 09:49:51,640
+tests aren't good, I usually
+tell them, hey, you need to go
+
+9826
+09:49:51,640 --> 09:49:54,460
+back to the drawing board, and
+you need to level up your tests.
+
+9827
+09:49:54,490 --> 09:49:57,040
+So tests are really really
+important, especially for this
+
+9828
+09:49:57,040 --> 09:50:00,040
+space, we learned about a couple
+of more environment variables we
+
+9829
+09:50:00,040 --> 09:50:03,070
+can use. We learned about a
+couple of tools to see how good
+
+9830
+09:50:03,100 --> 09:50:07,060
+our tests are one of them being
+coverage. We also learn about a
+
+9831
+09:50:07,060 --> 09:50:10,450
+gas reporter to see how much
+it's going to cost us when we
+
+9832
+09:50:10,450 --> 09:50:13,900
+actually deploy to a real
+network. We learned a ton about
+
+9833
+09:50:13,900 --> 09:50:16,870
+the hard hat config, and how
+there are multiple networks that
+
+9834
+09:50:16,870 --> 09:50:19,810
+we can add add to our hard
+heads, we can make our project
+
+9835
+09:50:19,840 --> 09:50:23,500
+our EVM code, work with any
+network out there, we started
+
+9836
+09:50:23,500 --> 09:50:26,170
+working with dev dependencies
+instead of regular dependencies.
+
+9837
+09:50:26,410 --> 09:50:29,440
+Now, READMEs are something that
+I'm not really going to go over
+
+9838
+09:50:29,530 --> 09:50:33,130
+too deeply in here. But READMEs
+are sort of like the welcome
+
+9839
+09:50:33,130 --> 09:50:36,490
+page of your GitHub repository,
+and really should give you an
+
+9840
+09:50:36,490 --> 09:50:39,970
+understanding of what your code
+does. Being a part of the web
+
+9841
+09:50:39,970 --> 09:50:42,280
+through space. And being a part
+of the blockchain ecosystem is
+
+9842
+09:50:42,280 --> 09:50:45,580
+really more than just you coding
+your stuff by yourself. You want
+
+9843
+09:50:45,610 --> 09:50:48,400
+other people to interact and
+engage with your code and engage
+
+9844
+09:50:48,400 --> 09:50:50,860
+with your projects. I haven't
+showed you how to use GitHub
+
+9845
+09:50:50,860 --> 09:50:53,350
+yet. But don't worry, we're
+going to but if you look at my
+
+9846
+09:50:53,350 --> 09:50:56,710
+heart had simple storage readme.
+If you scroll down, usually, you
+
+9847
+09:50:56,710 --> 09:50:59,620
+really want to have a Getting
+Started section where you define
+
+9848
+09:50:59,620 --> 09:51:02,920
+how to set up all the code and
+how to set everything up a
+
+9849
+09:51:02,920 --> 09:51:06,730
+Quickstart section, and maybe a
+usage section and some testing
+
+9850
+09:51:06,730 --> 09:51:09,640
+section, which teaches people
+how to actually use and interact
+
+9851
+09:51:09,640 --> 09:51:12,430
+with your code. Since we're just
+learning more of the code part
+
+9852
+09:51:12,430 --> 09:51:15,040
+and not so much the readme part.
+For now, we're not going to go
+
+9853
+09:51:15,040 --> 09:51:18,190
+over how to make a fantastic
+readme. However, I will leave a
+
+9854
+09:51:18,190 --> 09:51:20,680
+link in the GitHub repository
+associated with this course,
+
+9855
+09:51:20,800 --> 09:51:23,680
+link to this best readme
+template. It really is a
+
+9856
+09:51:23,680 --> 09:51:26,620
+fantastic readme template that
+you can copy to any of your
+
+9857
+09:51:26,620 --> 09:51:29,290
+projects to make them look
+really good and give them a
+
+9858
+09:51:29,290 --> 09:51:32,050
+really good setup, so that other
+developers can come to your
+
+9859
+09:51:32,050 --> 09:51:35,230
+project, and learn and
+participate with what you're
+
+9860
+09:51:35,230 --> 09:51:38,590
+coding. But all right, you have
+learned an absolute ton, you
+
+9861
+09:51:38,590 --> 09:51:41,530
+should be incredibly proud of
+yourself, and incredibly excited
+
+9862
+09:51:41,530 --> 09:51:44,110
+that you've made it this far.
+Now I'm going to jump into the
+
+9863
+09:51:44,110 --> 09:51:46,540
+TypeScript section here. So for
+those of you who are coding
+
+9864
+09:51:46,540 --> 09:51:49,300
+along with TypeScript, feel free
+to follow along. For those of
+
+9865
+09:51:49,300 --> 09:51:52,120
+you who are not, you just
+finished the Basic section on
+
+9866
+09:51:52,120 --> 09:51:55,270
+hard hit, but stick around the
+next to heart out sections are
+
+9867
+09:51:55,270 --> 09:51:58,540
+going to be the ones that really
+fine grain and hone your skills,
+
+9868
+09:51:58,750 --> 09:52:01,240
+and give you all the
+fundamentals for working with
+
+9869
+09:52:01,240 --> 09:52:04,090
+these frameworks. So be sure to
+follow along with the next two
+
+9870
+09:52:04,090 --> 09:52:07,780
+sections, we've got a ton more
+fantastic content for you, we
+
+9871
+09:52:07,780 --> 09:52:10,660
+are just beginning to get deeper
+into the smart contract
+
+9872
+09:52:10,660 --> 09:52:14,200
+ecosystem. So take that lap, get
+that coffee, and I'll see you
+
+9873
+09:52:14,200 --> 09:52:20,740
+soon. Alright, also now let's do
+this with TypeScript. So I am
+
+9874
+09:52:20,740 --> 09:52:22,930
+going to go ahead and just start
+this from our JavaScript
+
+9875
+09:52:22,930 --> 09:52:25,570
+section. However, if in the
+future, you want to start a new
+
+9876
+09:52:25,570 --> 09:52:28,000
+Hardhead project, you can
+actually start a new project
+
+9877
+09:52:29,050 --> 09:52:34,450
+with yarn, hard hat. And then do
+great and advanced sample
+
+9878
+09:52:34,450 --> 09:52:38,740
+project that uses TypeScript,
+you'll add a ton of plugins. And
+
+9879
+09:52:38,740 --> 09:52:41,380
+you'll wait a while for
+everything to get uploaded. And
+
+9880
+09:52:41,380 --> 09:52:43,120
+you wait, and you wait a little
+bit for everything to get
+
+9881
+09:52:43,120 --> 09:52:45,370
+downloaded. We're not going to
+do that though, because I'm
+
+9882
+09:52:45,370 --> 09:52:48,640
+going to show you how to convert
+this to JavaScript Anyways, if
+
+9883
+09:52:48,640 --> 09:52:51,130
+in future hearted sections, as
+we're coding along with
+
+9884
+09:52:51,130 --> 09:52:53,800
+JavaScript, if you want to code
+along with TypeScript, you
+
+9885
+09:52:53,800 --> 09:52:57,100
+absolutely 100% can. But let's
+go ahead and show you what the
+
+9886
+09:52:57,100 --> 09:52:59,620
+main differences are. Now that
+advanced TypeScript thing is
+
+9887
+09:52:59,620 --> 09:53:01,960
+going to add a whole bunch of
+packages that you may or may not
+
+9888
+09:53:01,960 --> 09:53:04,870
+want, I will talk about some of
+them in our next lesson. But
+
+9889
+09:53:04,870 --> 09:53:07,510
+there are going to be some that
+you absolutely do need. Those
+
+9890
+09:53:07,510 --> 09:53:14,650
+are going to be at type chain
+slash ethers, dash v five, at
+
+9891
+09:53:14,680 --> 09:53:20,470
+type chain, slash hard hat, at
+TypeScript, at types, slash
+
+9892
+09:53:20,470 --> 09:53:28,930
+Chai, at types, slash node, at
+types slash moko, TS node, type
+
+9893
+09:53:28,930 --> 09:53:33,790
+chain and TypeScript. And I have
+a link in the GitHub repo
+
+9894
+09:53:33,790 --> 09:53:36,640
+associated with this course,
+I've got this yarn ad that you
+
+9895
+09:53:36,640 --> 09:53:39,160
+can just copy paste, if you want
+to just copy paste that into
+
+9896
+09:53:39,160 --> 09:53:41,650
+your project to run it. Oops,
+and I should have added those as
+
+9897
+09:53:41,650 --> 09:53:44,260
+dev dependencies. So we're going
+to actually just make them dev
+
+9898
+09:53:44,260 --> 09:53:47,530
+dependencies real quick, just by
+deleting these two lines, and
+
+9899
+09:53:47,530 --> 09:53:51,310
+adding a comma here. Awesome,
+that looks much better. And then
+
+9900
+09:53:51,310 --> 09:53:54,400
+of course, what we're going to
+do is we're going to convert all
+
+9901
+09:53:54,400 --> 09:53:59,110
+of our JavaScript to TypeScript.
+So anywhere where we have J S,
+
+9902
+09:53:59,200 --> 09:54:01,690
+we're going to put Ts,
+obviously, if you're coding this
+
+9903
+09:54:01,690 --> 09:54:04,630
+from scratch with TypeScript,
+you would do the.ts From the get
+
+9904
+09:54:04,630 --> 09:54:08,110
+go. This includes our hard hat
+dot config, that's also going to
+
+9905
+09:54:08,110 --> 09:54:10,420
+be TypeScript now. And
+additionally, we're going to add
+
+9906
+09:54:10,420 --> 09:54:14,260
+a TS config dot JSON. This is
+going to be our TypeScript
+
+9907
+09:54:14,260 --> 09:54:16,840
+configuration. Typically, for a
+setup, we're gonna go with
+
+9908
+09:54:16,840 --> 09:54:19,420
+something like this. And you can
+copy this from the GitHub repo
+
+9909
+09:54:19,420 --> 09:54:21,580
+associated with this course.
+It's basically telling
+
+9910
+09:54:21,610 --> 09:54:24,130
+TypeScript, what versions of
+Typescript and what files to
+
+9911
+09:54:24,130 --> 09:54:27,100
+include for working with
+TypeScript. Now let's go ahead
+
+9912
+09:54:27,100 --> 09:54:30,370
+and start with our deploy dot
+TypeScript. For usual, instead
+
+9913
+09:54:30,370 --> 09:54:34,390
+of using require, we're gonna go
+ahead and use import, we're
+
+9914
+09:54:34,390 --> 09:54:37,990
+gonna do the exact same thing.
+We're gonna have import ethers
+
+9915
+09:54:37,990 --> 09:54:45,640
+run network, from hard hat. And
+then in our verify function,
+
+9916
+09:54:45,790 --> 09:54:48,070
+we're going to add that we're
+gonna add the types for these
+
+9917
+09:54:48,070 --> 09:54:52,540
+arguments. So contract address,
+is going to be a string. And
+
+9918
+09:54:52,570 --> 09:54:56,260
+args is going to be an array of
+arguments. So we're gonna say
+
+9919
+09:54:56,260 --> 09:54:59,410
+it's gonna be any array, because
+it could be string, it could be
+
+9920
+09:54:59,410 --> 09:55:02,200
+numbers, it could be balloons,
+it could be anything. We're also
+
+9921
+09:55:02,200 --> 09:55:04,840
+going to say for IE, it could be
+any, even though this is
+
+9922
+09:55:04,840 --> 09:55:08,230
+technically an error type, we're
+just going to put any for
+
+9923
+09:55:08,230 --> 09:55:12,160
+simplicity. For now. All of our
+TypeScript scripts are included
+
+9924
+09:55:12,520 --> 09:55:15,730
+in our TS config, or any
+TypeScript files are manually
+
+9925
+09:55:15,730 --> 09:55:18,700
+added here, which we have Our
+entire scripts folder here,
+
+9926
+09:55:18,730 --> 09:55:22,870
+which is good. So now we need to
+add ethers in here. Well, if we
+
+9927
+09:55:22,870 --> 09:55:26,980
+look at our hardhead.config.ts,
+we're using require here still,
+
+9928
+09:55:27,040 --> 09:55:30,550
+and we need to swap this out for
+import for Donnie V, you can use
+
+9929
+09:55:30,550 --> 09:55:34,720
+dot env slash config for it to
+grab your dot env file. Now that
+
+9930
+09:55:34,720 --> 09:55:38,050
+we've imported everything, go
+back to our deploy.ts, we can
+
+9931
+09:55:38,050 --> 09:55:41,020
+see that that linting has gone
+away. If you want to be even
+
+9932
+09:55:41,020 --> 09:55:45,190
+more explicit, we can go ahead
+and add import at nomic labs
+
+9933
+09:55:45,850 --> 09:55:50,470
+slash hard hat ethers like so.
+reason we don't need to import
+
+9934
+09:55:50,470 --> 09:55:54,040
+it here is because these two
+packages also work with Hardhead
+
+9935
+09:55:54,040 --> 09:55:56,830
+ethers, so they automatically
+import it. But if you want to be
+
+9936
+09:55:56,830 --> 09:56:00,220
+super explicit, you can go ahead
+and add it like so. Now, we're
+
+9937
+09:56:00,220 --> 09:56:03,730
+almost good to go. But remember,
+our Harnett dot config is also
+
+9938
+09:56:03,730 --> 09:56:06,460
+importing our tasks. So we're
+going to need to update our
+
+9939
+09:56:06,460 --> 09:56:10,990
+tasks or block number to be
+TypeScript fide. So of course,
+
+9940
+09:56:11,020 --> 09:56:16,720
+instead of const require, we're
+going to import task from our
+
+9941
+09:56:16,720 --> 09:56:19,630
+that slash config. And we're
+going to be sure to export our
+
+9942
+09:56:19,630 --> 09:56:23,350
+task from lock number as the
+default. So we're going to do
+
+9943
+09:56:23,380 --> 09:56:28,960
+export default task like so. And
+now we should be good to run our
+
+9944
+09:56:28,960 --> 09:56:33,970
+scripts. So we can just do yarn,
+art hat, run scripts,
+
+9945
+09:56:34,330 --> 09:56:38,440
+employee.ts. We can do network
+hard hat if we choose. And
+
+9946
+09:56:38,470 --> 09:56:42,250
+awesome. Now, it's when we get
+to the testing, that things get
+
+9947
+09:56:42,280 --> 09:56:45,400
+a little bit different here. So
+let's go ahead and change this
+
+9948
+09:56:45,430 --> 09:56:50,410
+required to import. Just to make
+it happy there. Let's try to run
+
+9949
+09:56:50,440 --> 09:56:55,990
+yarn, art head test, we get a
+whole bunch of errors, and in VS
+
+9950
+09:56:55,990 --> 09:56:58,930
+code will actually go ahead and
+get these errors right from the
+
+9951
+09:56:58,930 --> 09:57:02,320
+linter. One of the trickiest
+things that you run into as a
+
+9952
+09:57:02,320 --> 09:57:06,100
+developer in this space is
+calling functions on contracts
+
+9953
+09:57:06,100 --> 09:57:09,520
+where those functions don't
+exist, or vice versa. We're not
+
+9954
+09:57:09,520 --> 09:57:12,340
+calling functions on contracts
+that do exist. Right now the
+
+9955
+09:57:12,340 --> 09:57:17,140
+typing for our contracts is just
+type contract, which isn't super
+
+9956
+09:57:17,140 --> 09:57:20,290
+helpful, because type contract
+doesn't necessarily have all the
+
+9957
+09:57:20,290 --> 09:57:23,440
+functions that we want it to
+have. We want our contracts to
+
+9958
+09:57:23,440 --> 09:57:27,490
+be of type contract, but we want
+them to be of the type of our
+
+9959
+09:57:27,490 --> 09:57:30,550
+contract, because if they're the
+type of our contract, they can
+
+9960
+09:57:30,550 --> 09:57:33,880
+have all the functions that we
+want them to have. So to give
+
+9961
+09:57:33,880 --> 09:57:37,330
+our contracts the correct typing
+here, we actually can use this
+
+9962
+09:57:37,330 --> 09:57:40,870
+tool called type chain, which
+gives our contracts correct
+
+9963
+09:57:40,900 --> 09:57:44,800
+typing type chain has a hardened
+plugin, which allows us to use
+
+9964
+09:57:44,830 --> 09:57:47,890
+type chain and TypeScript
+natively together, type chain
+
+9965
+09:57:47,890 --> 09:57:49,930
+slash hard hat was one of these
+things that we already
+
+9966
+09:57:49,930 --> 09:57:53,440
+installed. And to add it to our
+hard hat, we got to just go to
+
+9967
+09:57:53,440 --> 09:57:59,530
+the hard hat config, and add it
+in import at type chain slash
+
+9968
+09:57:59,680 --> 09:58:03,910
+arhat. Now once we import that
+in to our config, if we run yarn
+
+9969
+09:58:03,910 --> 09:58:08,860
+hardhat, we now get a new task
+here called type chain, you read
+
+9970
+09:58:08,860 --> 09:58:11,650
+the description, it says
+generate type chain typings for
+
+9971
+09:58:11,650 --> 09:58:15,460
+compiled contracts, this will
+enable all of our contracts to
+
+9972
+09:58:15,460 --> 09:58:18,910
+have their own typing. So we can
+have a simple storage variable
+
+9973
+09:58:18,970 --> 09:58:22,810
+of type simple storage contract,
+which is much better, because
+
+9974
+09:58:22,810 --> 09:58:25,600
+we're always going to know
+exactly what we can do with each
+
+9975
+09:58:25,600 --> 09:58:28,360
+contract. To create this, we run
+yarn,
+
+9976
+09:58:28,810 --> 09:58:35,620
+arhat type chain. And this is
+going to create a new folder
+
+9977
+09:58:35,680 --> 09:58:39,130
+called type chain slash types.
+With types for all of our
+
+9978
+09:58:39,130 --> 09:58:42,400
+contracts, you can even go into
+our simple storage sub Ts, which
+
+9979
+09:58:42,400 --> 09:58:44,650
+is going to have all the
+different functions and
+
+9980
+09:58:44,890 --> 09:58:48,550
+everything to do with our simple
+storage contract automatically
+
+9981
+09:58:48,550 --> 09:58:51,610
+coded into Typescript and
+JavaScript for us, which is
+
+9982
+09:58:51,610 --> 09:58:54,400
+incredibly helpful. And again,
+no, I haven't shown you what
+
+9983
+09:58:54,400 --> 09:58:57,520
+this is yet. But in our dot Git
+ignore, we usually want to add
+
+9984
+09:58:57,520 --> 09:59:01,390
+type chain and type chain dash
+types into our dot Git ignore so
+
+9985
+09:59:01,390 --> 09:59:04,630
+we don't push them up to GitHub.
+Now back in our test, we're
+
+9986
+09:59:04,630 --> 09:59:09,220
+going to add the exact types of
+these different objects here. So
+
+9987
+09:59:09,220 --> 09:59:12,130
+we're going to import them from
+that folder that we just
+
+9988
+09:59:12,130 --> 09:59:17,950
+created. So we'll do import
+simple storage, comma, simple
+
+9989
+09:59:17,950 --> 09:59:24,130
+storage underscore underscore
+factory from dot dot slash
+
+9990
+09:59:24,190 --> 09:59:29,350
+types, ain slash types, the
+simple storage factory is going
+
+9991
+09:59:29,350 --> 09:59:32,110
+to be simple storage factory and
+then civil storage of course, is
+
+9992
+09:59:32,110 --> 09:59:36,730
+going to be simple storage. So
+now when do let simple storage
+
+9993
+09:59:36,730 --> 09:59:42,430
+factory which is going to be of
+type, simple storage, underscore
+
+9994
+09:59:42,430 --> 09:59:46,090
+underscore factory, and then
+simple storage, which is going
+
+9995
+09:59:46,090 --> 09:59:51,820
+to be of type simple storage
+contract. And if we command
+
+9996
+09:59:51,820 --> 09:59:55,390
+clicked into simple storage,
+once again, we can see all the
+
+9997
+09:59:55,390 --> 09:59:59,380
+contract functions that we know
+and love, are here. In addition,
+
+9998
+09:59:59,380 --> 10:00:03,970
+we have all the functions of the
+actual contract itself. Once we
+
+9999
+10:00:03,970 --> 10:00:06,580
+do that, we're pretty much good
+to go we just need to have a
+
+10000
+10:00:06,580 --> 10:00:10,540
+couple of new things here. Get
+contract factory returns a type
+

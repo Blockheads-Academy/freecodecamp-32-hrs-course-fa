@@ -1,0 +1,4991 @@
+11001
+11:02:56,120 --> 11:02:59,240
+error, we know that the error is
+coming from the Funmi contract,
+
+11002
+11:02:59,480 --> 11:03:01,940
+not from the aggregator v3
+interface, or the price
+
+11003
+11:03:01,940 --> 11:03:05,090
+converter or some other
+contract. So that's how we want
+
+11004
+11:03:05,090 --> 11:03:07,820
+to write our error codes here.
+If we had any interfaces or
+
+11005
+11:03:07,820 --> 11:03:11,720
+libraries not imported, we would
+add them here. But then finally,
+
+11006
+11:03:11,750 --> 11:03:15,050
+we add our contracts. In this
+file, we only have one contract
+
+11007
+11:03:15,050 --> 11:03:18,950
+here. It's our Funmi contract.
+Awesome. Now the next thing we
+
+11008
+11:03:18,950 --> 11:03:21,590
+want to learn about as far as
+style guides go is this thing
+
+11009
+11:03:21,590 --> 11:03:26,810
+called natspec. natspec stands
+for Etherium natural language
+
+11010
+11:03:26,810 --> 11:03:30,500
+specification format. And it's
+basically a way of documenting
+
+11011
+11:03:30,530 --> 11:03:34,490
+our code inspired by Doxygen
+uses Doxygen style comments and
+
+11012
+11:03:34,490 --> 11:03:38,270
+tags to help document our code,
+you can click the link here in
+
+11013
+11:03:38,270 --> 11:03:41,270
+the solidity documentation to
+learn more about Doxygen. If we
+
+11014
+11:03:41,270 --> 11:03:43,880
+scroll down in the
+documentation, here, we can see
+
+11015
+11:03:43,880 --> 11:03:47,330
+an example of using natspec.
+Whenever we have a contract or a
+
+11016
+11:03:47,330 --> 11:03:50,450
+function that needs
+documentation, we can add some
+
+11017
+11:03:50,450 --> 11:03:53,750
+syntax that looks like this to
+it. So for example, if we wanted
+
+11018
+11:03:53,750 --> 11:03:57,470
+to add this to our code, we
+could add a comment explaining
+
+11019
+11:03:57,500 --> 11:04:00,560
+this funding contract to start a
+piece of natspec, you can do
+
+11020
+11:04:00,590 --> 11:04:05,210
+three backslashes, or one
+backslash, two stars, and then
+
+11021
+11:04:05,870 --> 11:04:09,350
+another ending star here.
+Everything we put inside of this
+
+11022
+11:04:09,350 --> 11:04:12,200
+comment section basically gets
+turned into a comment. For the
+
+11023
+11:04:12,200 --> 11:04:15,590
+start of our contract, we'll do
+the Add sign title to explain
+
+11024
+11:04:15,590 --> 11:04:18,050
+basically, what this contract
+is, it's fun, we contract is
+
+11025
+11:04:18,050 --> 11:04:20,270
+going to be a contract
+
+11026
+11:04:20,390 --> 11:04:27,980
+for crowdfunding, we'll add
+another star. And we can add the
+
+11027
+11:04:27,980 --> 11:04:31,610
+author of it, which is going to
+be your name, I'm going to put
+
+11028
+11:04:31,640 --> 11:04:35,030
+Patrick Collins, of course, then
+we'll add a notice, which is
+
+11029
+11:04:35,030 --> 11:04:39,800
+just kind of a note to people we
+can say this contract is is to
+
+11030
+11:04:39,800 --> 11:04:46,250
+demo a sample funding contract.
+And we can also add apt Dev,
+
+11031
+11:04:46,670 --> 11:04:49,820
+which is a note specifically to
+developers. And we can say this
+
+11032
+11:04:50,120 --> 11:04:54,770
+implements price feeds as our
+library. The reason that we want
+
+11033
+11:04:54,770 --> 11:04:58,850
+to add these tags here is
+actually because we can use the
+
+11034
+11:04:58,850 --> 11:05:02,360
+natspec to automatically create
+documentation for us if we
+
+11035
+11:05:02,360 --> 11:05:06,350
+download so we can actually run
+solc dash s user doc dash dash
+
+11036
+11:05:06,350 --> 11:05:10,220
+dev doc, and the name of our
+file to automatically generate
+
+11037
+11:05:10,220 --> 11:05:13,820
+documentation. So this is also
+really helpful for automatically
+
+11038
+11:05:13,820 --> 11:05:16,370
+creating documentation for other
+developers who interact with the
+
+11039
+11:05:16,370 --> 11:05:20,300
+protocol later on. You can use
+this natspec For as many or as
+
+11040
+11:05:20,300 --> 11:05:23,090
+few functions as you'd like.
+Most of us probably aren't going
+
+11041
+11:05:23,090 --> 11:05:26,120
+to be making documentation. So
+we really just want to follow
+
+11042
+11:05:26,120 --> 11:05:29,300
+those guidelines if we think
+some function or some section of
+
+11043
+11:05:29,300 --> 11:05:32,240
+our code is a little bit tricky
+for other developers. Now that
+
+11044
+11:05:32,240 --> 11:05:34,910
+we're inside of contract, we can
+follow the order of our
+
+11045
+11:05:34,910 --> 11:05:39,110
+contract. We're first going to
+start with type declarations
+
+11046
+11:05:41,870 --> 11:05:43,790
+which we don't really have any
+except for the fact that we're
+
+11047
+11:05:43,790 --> 11:05:48,410
+using our price converter for
+the UN 256 type. Okay, great.
+
+11048
+11:05:48,650 --> 11:05:51,140
+You Next, after our type
+declarations, we're going to do
+
+11049
+11:05:51,170 --> 11:05:54,380
+state variables. And in this
+state variables section, this is
+
+11050
+11:05:54,380 --> 11:05:57,410
+where we're actually going to
+change the name of some of our
+
+11051
+11:05:57,410 --> 11:06:00,170
+state variables. So we'll do a
+little common here state
+
+11052
+11:06:00,170 --> 11:06:04,370
+variables. Now in the solidity
+style guide, kind of adhere to
+
+11053
+11:06:04,400 --> 11:06:08,780
+the naming styles, we use upper
+and lowercase, we use total caps
+
+11054
+11:06:08,810 --> 11:06:12,080
+with underscores here. However,
+these naming variables are going
+
+11055
+11:06:12,080 --> 11:06:14,750
+to change in the future in this
+section. And if you're following
+
+11056
+11:06:14,750 --> 11:06:16,820
+along with the GitHub repo
+associated with this course,
+
+11057
+11:06:17,180 --> 11:06:19,340
+these are going to be actually a
+little bit different than what
+
+11058
+11:06:19,340 --> 11:06:22,400
+you see. However, for now, we're
+going to leave them as they are,
+
+11059
+11:06:22,400 --> 11:06:24,710
+because the reason why we're
+going to change them isn't going
+
+11060
+11:06:24,710 --> 11:06:27,980
+to be quite clear yet. Don't
+worry. So these names are going
+
+11061
+11:06:27,980 --> 11:06:31,310
+to change soon, but not yet.
+Alright, after state variables
+
+11062
+11:06:31,310 --> 11:06:34,940
+comes events, and modifiers. We
+don't have any events, but we do
+
+11063
+11:06:34,940 --> 11:06:39,560
+have a modifier. So we'll copy
+this. And actually, we'll delete
+
+11064
+11:06:39,560 --> 11:06:46,850
+this comment here. And we'll
+paste our modifier here. Oh, and
+
+11065
+11:06:46,850 --> 11:06:50,120
+it looks like looks like we're
+not auto formatting here. So
+
+11066
+11:06:50,450 --> 11:06:52,820
+we're going to uncomment
+immutable actually, so that it
+
+11067
+11:06:52,880 --> 11:06:55,160
+automatically auto formats.
+Okay, great. We're out of
+
+11068
+11:06:55,160 --> 11:06:57,440
+formatting now. And Cool.
+Alright, so now we have our
+
+11069
+11:06:57,440 --> 11:07:01,100
+modifiers. Next, we have right
+here, and then we have all of
+
+11070
+11:07:01,100 --> 11:07:05,030
+our functions. Great. We
+actually want to group our
+
+11071
+11:07:05,030 --> 11:07:08,390
+functions in this order that I
+just print here. So we want the
+
+11072
+11:07:08,390 --> 11:07:11,720
+constructor which we have
+received and fall back, we do
+
+11073
+11:07:11,720 --> 11:07:14,570
+have fall back and receive. So
+we're going to actually copy
+
+11074
+11:07:14,570 --> 11:07:20,690
+those and delete this comment.
+We're gonna stick those veterans
+
+11075
+11:07:20,690 --> 11:07:24,110
+Heath here looks like receive
+goes first. So we'll put that
+
+11076
+11:07:24,110 --> 11:07:28,460
+here. Then external functions,
+then public, internal, private.
+
+11077
+11:07:29,180 --> 11:07:32,480
+So we have public public. And
+that's it. And then we can
+
+11078
+11:07:32,480 --> 11:07:36,680
+delete this part down here.
+Okay. Cool. And if we want, we
+
+11079
+11:07:36,680 --> 11:07:39,920
+can do that syntax up here from
+the net spec for our functions.
+
+11080
+11:07:40,490 --> 11:07:44,060
+For example, for fund it, we
+could even just copy paste, we
+
+11081
+11:07:44,060 --> 11:07:48,710
+would remove title, we would
+remove author, and we just say
+
+11082
+11:07:48,710 --> 11:07:55,640
+add, notice, this function,
+funds this contract. And we can
+
+11083
+11:07:55,640 --> 11:07:58,850
+even leave a little dev thing
+here to talk about it. Now if we
+
+11084
+11:07:58,850 --> 11:08:02,660
+have parameters, you can do apt
+puram. And say like what the
+
+11085
+11:08:02,660 --> 11:08:06,470
+parameter is. And then if we
+have returns, we can say
+
+11086
+11:08:06,470 --> 11:08:10,400
+returns, or returns and then
+what it returns for the
+
+11087
+11:08:10,400 --> 11:08:13,400
+documentation. Since this
+doesn't have any parameters in
+
+11088
+11:08:13,400 --> 11:08:15,980
+here, and doesn't return
+anything, we can just leave it
+
+11089
+11:08:15,980 --> 11:08:18,680
+like this. And great, we've just
+revamped our contract here to
+
+11090
+11:08:18,680 --> 11:08:21,560
+make it a little bit more nicely
+formatted. Great job. Now, like
+
+11091
+11:08:21,560 --> 11:08:24,710
+I said, we actually are going to
+change the names of our state
+
+11092
+11:08:24,710 --> 11:08:26,900
+variables, and we're going to
+add some functions in here and a
+
+11093
+11:08:26,900 --> 11:08:29,300
+little bit. So if we're
+following with the GitHub repo,
+
+11094
+11:08:29,330 --> 11:08:31,940
+the state of the contract right
+now is going to look a little
+
+11095
+11:08:31,940 --> 11:08:34,670
+bit different. But it'll make
+sense why change this up in a
+
+11096
+11:08:34,670 --> 11:08:35,120
+little bit.
+
+11097
+11:08:37,910 --> 11:08:40,190
+Alright, so now that we've
+cleaned this up, we've got to
+
+11098
+11:08:40,190 --> 11:08:43,730
+deploy marks, deploy Funmi.
+Let's go ahead and start writing
+
+11099
+11:08:43,730 --> 11:08:46,640
+some tests. And after we write
+these tests, we're actually
+
+11100
+11:08:46,640 --> 11:08:50,000
+going to run that gas estimator
+and using that gas estimator,
+
+11101
+11:08:50,210 --> 11:08:52,370
+we're gonna go back, and we're
+going to update this contract
+
+11102
+11:08:52,370 --> 11:08:56,300
+one more time to make this even
+cheaper to use and work with.
+
+11103
+11:08:56,540 --> 11:08:58,850
+And remember, that's going to be
+one of the advantages of writing
+
+11104
+11:08:58,850 --> 11:09:01,700
+these tests is how we can
+optimize our contracts to be
+
+11105
+11:09:01,700 --> 11:09:05,780
+even faster, more gas efficient,
+etc, we want to make sure that
+
+11106
+11:09:05,780 --> 11:09:08,540
+we write really good tests, and
+this is going to be one of our
+
+11107
+11:09:08,540 --> 11:09:13,070
+first jumps into these more
+professional test setups. So
+
+11108
+11:09:13,100 --> 11:09:14,930
+we're going to jump into our
+test folder, we're going to
+
+11109
+11:09:14,930 --> 11:09:19,490
+delete this sample test.js. In
+our last section, we went over a
+
+11110
+11:09:19,490 --> 11:09:22,880
+really minimalistic test, which
+is great. However, when we get
+
+11111
+11:09:22,880 --> 11:09:24,950
+bigger and bigger projects,
+we're going to want to start
+
+11112
+11:09:24,950 --> 11:09:28,190
+testing more and more different
+things, we're going to get more
+
+11113
+11:09:28,190 --> 11:09:31,100
+and more into at least two
+different types of testing. So
+
+11114
+11:09:31,100 --> 11:09:33,800
+if we cd into our test folder,
+we're going to make one
+
+11115
+11:09:33,800 --> 11:09:37,310
+directory called staging. And
+then we're going to make another
+
+11116
+11:09:37,310 --> 11:09:41,090
+directory called unit. And now
+if we look in our test folder,
+
+11117
+11:09:41,150 --> 11:09:44,450
+we now have a staging folder,
+and a unit test folder. Now
+
+11118
+11:09:44,480 --> 11:09:47,330
+we're going to talk about two
+different types of tests. The
+
+11119
+11:09:47,330 --> 11:09:49,820
+first one is going to be
+something called a unit test.
+
+11120
+11:09:49,850 --> 11:09:53,090
+Now what is a unit test? Unit
+testing is a software testing
+
+11121
+11:09:53,090 --> 11:09:56,690
+method by which individual units
+of source code are tested.
+
+11122
+11:09:56,780 --> 11:10:00,320
+Basically, what we want to do is
+in our contracts, we want to
+
+11123
+11:10:00,320 --> 11:10:03,680
+test minimal portions of our
+code to make sure that they work
+
+11124
+11:10:03,710 --> 11:10:07,430
+correctly. Then once our small
+pieces of the test work, we want
+
+11125
+11:10:07,430 --> 11:10:11,360
+to do a staging test or maybe an
+integration test. This might be
+
+11126
+11:10:11,360 --> 11:10:15,020
+where we run our code on a test
+net or some actual network. You
+
+11127
+11:10:15,020 --> 11:10:17,630
+can think of a staging test,
+it's kind of the last stop
+
+11128
+11:10:17,660 --> 11:10:21,380
+before you deploy to a main net.
+They're not always 100%
+
+11129
+11:10:21,380 --> 11:10:24,080
+necessary, but they can be
+really, really helpful.
+
+11130
+11:10:24,110 --> 11:10:28,130
+Remember, we do want to be
+conscientious of how much we use
+
+11131
+11:10:28,160 --> 11:10:32,060
+our test nets, but we absolutely
+would 100% want to make sure
+
+11132
+11:10:32,060 --> 11:10:35,480
+that everything works locally
+and that we unit test and we run
+
+11133
+11:10:35,510 --> 11:10:39,500
+all of our code locally. Then we
+can use staging tests on an
+
+11134
+11:10:39,500 --> 11:10:43,400
+actual test net to make sure
+that our code will work with
+
+11135
+11:10:43,400 --> 11:10:48,740
+actual other contracts. Now unit
+tests can be done with local
+
+11136
+11:10:48,770 --> 11:10:52,070
+Hard Hat Network or a forked
+Hard Hat Network, we'll talk
+
+11137
+11:10:52,070 --> 11:10:55,820
+about this for tar Hat Network
+very soon, right, now, let's
+
+11138
+11:10:55,850 --> 11:10:58,340
+build these unit tests, these
+unit tests are going to be
+
+11139
+11:10:58,340 --> 11:11:02,090
+basically what we saw in our
+last section. So let's go in and
+
+11140
+11:11:02,090 --> 11:11:04,670
+let's jump in and write some of
+these unit tests. So let's
+
+11141
+11:11:04,670 --> 11:11:10,370
+create a new test, we'll call it
+on me dot test dot j, s. And
+
+11142
+11:11:10,370 --> 11:11:13,160
+we'll start making our tests in
+here. Now, we did test
+
+11143
+11:11:13,160 --> 11:11:15,920
+previously in our last section,
+but our tests here are going to
+
+11144
+11:11:15,920 --> 11:11:18,470
+look a little bit differently,
+we're actually going to use
+
+11145
+11:11:18,470 --> 11:11:22,130
+hardhat deploy, to automatically
+set up our tests as if both of
+
+11146
+11:11:22,130 --> 11:11:24,860
+these deployed functions had
+been run. So let's go ahead and
+
+11147
+11:11:24,860 --> 11:11:27,440
+get this started. So we're still
+going to do that same setup that
+
+11148
+11:11:27,440 --> 11:11:32,600
+we're gonna do describe, we're
+gonna say fund me. And this is
+
+11149
+11:11:32,600 --> 11:11:41,540
+going to have that async
+function like so. And in here,
+
+11150
+11:11:41,570 --> 11:11:46,670
+we're going to have a before
+each, and we're going to have
+
+11151
+11:11:46,670 --> 11:11:49,730
+some hits and some describes and
+everything. Now since we want to
+
+11152
+11:11:49,730 --> 11:11:52,280
+unit test this, we're gonna go a
+little bit heavier on the test
+
+11153
+11:11:52,280 --> 11:11:54,470
+here, and then with our last
+project, but in the future,
+
+11154
+11:11:54,470 --> 11:11:57,140
+we'll go a little bit lighter
+with some of the tests. So let's
+
+11155
+11:11:57,140 --> 11:12:02,750
+get started. If we run yarn
+Hardhead test right now, we're
+
+11156
+11:12:02,750 --> 11:12:06,770
+gonna get zero passing. Now, if
+we run yarn hardhat coverage,
+
+11157
+11:12:08,690 --> 11:12:11,180
+we're gonna get something that
+looks like this, saying, Hey,
+
+11158
+11:12:11,510 --> 11:12:15,440
+you're missing a lot of stuff.
+So let's try to cover some more
+
+11159
+11:12:15,440 --> 11:12:18,680
+lines with our tests. And one
+way we can do that is actually
+
+11160
+11:12:18,680 --> 11:12:22,760
+we can group our tests based off
+of different functions. So let's
+
+11161
+11:12:22,760 --> 11:12:26,150
+have our first set of tests be
+around our constructor. To do
+
+11162
+11:12:26,150 --> 11:12:29,300
+that inside of our first
+describe, we can add another
+
+11163
+11:12:29,300 --> 11:12:34,250
+describe, have this describe the
+just the constructor, this
+
+11164
+11:12:34,280 --> 11:12:37,610
+larger scope will be for the
+entire Funmi contract. And
+
+11165
+11:12:37,610 --> 11:12:41,690
+everything inside this one will
+just be for the constructor. So
+
+11166
+11:12:41,690 --> 11:12:45,530
+this will also be an async
+function. And these tasks will
+
+11167
+11:12:45,530 --> 11:12:48,560
+be just for the constructor. But
+before we even work on this
+
+11168
+11:12:48,560 --> 11:12:51,380
+describe, we probably want to
+deploy our Funmi contract. So
+
+11169
+11:12:51,380 --> 11:12:54,440
+let's learn how to do that. So
+we'll do a before each, which
+
+11170
+11:12:54,440 --> 11:13:00,950
+will be an async function. And
+we're going to deploy our Funmi
+
+11171
+11:13:00,950 --> 11:13:06,350
+contract using hard hat deploy.
+Since we use hard hat deploy,
+
+11172
+11:13:06,380 --> 11:13:09,350
+our Funmi contract will come
+even with our mocks and
+
+11173
+11:13:09,350 --> 11:13:11,540
+everything. So above the before
+each,
+
+11174
+11:13:11,570 --> 11:13:18,500
+let's do let me HDMI. And then
+here, we're going to deploy
+
+11175
+11:13:18,500 --> 11:13:21,380
+Funmi, where we're going to
+deploy our Funmi contract is
+
+11176
+11:13:21,380 --> 11:13:24,140
+first by pulling in our
+deployments object from Harnett
+
+11177
+11:13:24,140 --> 11:13:28,880
+deploy. So we'll do const
+deployments equals require
+
+11178
+11:13:29,930 --> 11:13:33,950
+hardhat. And this deployments
+object has, has a function
+
+11179
+11:13:33,950 --> 11:13:38,300
+called fixture with fixture does
+is it allows us to basically run
+
+11180
+11:13:38,300 --> 11:13:41,960
+our entire deploy folder with as
+many tags as we want. You'll
+
+11181
+11:13:41,960 --> 11:13:46,190
+notice I added this alt tag in
+both of our scripts. This means
+
+11182
+11:13:46,190 --> 11:13:49,940
+that in this deployment stuff
+fixtures, it's gonna be a wait
+
+11183
+11:13:49,970 --> 11:13:53,630
+deployment of fixtures. If I run
+away deployments dot fixture,
+
+11184
+11:13:53,720 --> 11:13:56,840
+I'll run through our deploy
+scripts on our local network and
+
+11185
+11:13:56,840 --> 11:14:00,200
+deploy all of the contracts that
+we can use them in our scripts
+
+11186
+11:14:00,230 --> 11:14:03,170
+and in our testing, and we can
+deploy everything in that deploy
+
+11187
+11:14:03,170 --> 11:14:07,040
+folder with just this one line.
+isn't that helpful. Now, once
+
+11188
+11:14:07,040 --> 11:14:09,590
+all of our contracts have been
+deployed, we can start getting
+
+11189
+11:14:09,590 --> 11:14:15,890
+them will say fund me equals
+await ethers, and we'll pull an
+
+11190
+11:14:15,890 --> 11:14:20,450
+ether some hard hat as well. dot
+and this is where hard hat
+
+11191
+11:14:20,450 --> 11:14:25,010
+deploy is helpful. Again, hard
+to deploy rapt ether is with a
+
+11192
+11:14:25,010 --> 11:14:29,180
+function called Get contract,
+this get contract function is
+
+11193
+11:14:29,180 --> 11:14:32,510
+going to get the most recent
+deployment of whatever contract
+
+11194
+11:14:32,510 --> 11:14:36,380
+we tell it. So we'll say get
+contract of fun to me. So this
+
+11195
+11:14:36,380 --> 11:14:40,820
+will give us the most recent Lee
+deployed Funmi contract in just
+
+11196
+11:14:40,850 --> 11:14:45,200
+this one line. And now Funmi
+will be equal to this line here.
+
+11197
+11:14:45,410 --> 11:14:48,350
+Now we're going to make a bunch
+of transactions on our Funmi. To
+
+11198
+11:14:48,350 --> 11:14:52,280
+test it. Of course, we can also
+tell ethers which account we
+
+11199
+11:14:52,280 --> 11:14:57,080
+want connected to fund me. So I
+can say const deployer equals
+
+11200
+11:14:57,620 --> 11:15:03,050
+goes away get named accounts,
+exactly like we did in our
+
+11201
+11:15:03,050 --> 11:15:06,770
+deploy scripts. And then we just
+need to import it from our tap
+
+11202
+11:15:06,920 --> 11:15:10,130
+in our deploy scripts we
+imported get named accounts
+
+11203
+11:15:10,220 --> 11:15:13,970
+inside of our input parameters
+for our deploy function.
+
+11204
+11:15:14,390 --> 11:15:17,240
+Remember getting named accounts
+and deployments was abstracted
+
+11205
+11:15:17,240 --> 11:15:20,390
+from if we look up here, from
+the hard hat runtime
+
+11206
+11:15:20,390 --> 11:15:23,030
+environment, and like I said,
+the hard hat runtime environment
+
+11207
+11:15:23,030 --> 11:15:25,580
+is basically the same thing as
+hard hat. So we can just go
+
+11208
+11:15:25,580 --> 11:15:29,180
+ahead and import it like this,
+actually like this. Because we
+
+11209
+11:15:29,180 --> 11:15:32,210
+actually need to abstract just
+the deployer from getting named
+
+11210
+11:15:32,210 --> 11:15:36,290
+accounts. And now what we can do
+is we can connect our Deployer
+
+11211
+11:15:36,350 --> 11:15:39,830
+to our Fund Me account. So
+whenever we call a function with
+
+11212
+11:15:39,830 --> 11:15:43,340
+fund me, it'll automatically be
+from that the player account,
+
+11213
+11:15:43,670 --> 11:15:46,070
+which is great. Another way you
+can get different accounts
+
+11214
+11:15:46,100 --> 11:15:49,250
+directly from your heart had
+config. Is you could take const
+
+11215
+11:15:49,280 --> 11:15:55,400
+accounts equals await ethers dot
+get signers, ethers dot get
+
+11216
+11:15:55,400 --> 11:15:58,640
+signers is going to return
+whatever is in this account
+
+11217
+11:15:58,640 --> 11:16:01,790
+section of your network. If
+you're on your default network
+
+11218
+11:16:01,790 --> 11:16:04,280
+hard hat, it's going to give you
+a list of 10 fake accounts that
+
+11219
+11:16:04,280 --> 11:16:06,470
+we can work with you then of
+course, can do something like
+
+11220
+11:16:06,470 --> 11:16:12,860
+const. Account one equals
+accounts. More correctly would
+
+11221
+11:16:12,860 --> 11:16:16,100
+be account zero equals account
+zero and work like that. We'll
+
+11222
+11:16:16,100 --> 11:16:17,960
+leave that comment that out,
+just in case you need a
+
+11223
+11:16:17,960 --> 11:16:20,390
+reference to it in the future.
+Okay, great. So now we have our
+
+11224
+11:16:20,390 --> 11:16:23,960
+Funmi contract. Let's go ahead
+and write some tests for testing
+
+11225
+11:16:23,960 --> 11:16:25,940
+the constructor. And we're
+probably going to want to use
+
+11226
+11:16:25,940 --> 11:16:30,320
+this deployer object down here.
+So we'll do let deployer above.
+
+11227
+11:16:30,410 --> 11:16:33,920
+And we'll do something a little
+finicky here. But we'll say
+
+11228
+11:16:33,920 --> 11:16:39,710
+deployer equals Wait, get named
+accounts, dot Deployer. And
+
+11229
+11:16:39,710 --> 11:16:42,170
+we'll just wrap this up so that
+we can just grab this deployer
+
+11230
+11:16:42,170 --> 11:16:45,410
+object and assign it to declare
+like so. Now in here, we'll
+
+11231
+11:16:45,410 --> 11:16:50,420
+create our first test, we'll say
+it will say it sets the Agra
+
+11232
+11:16:50,450 --> 11:16:56,480
+Gator addresses correctly. Comma
+will have this be an async
+
+11233
+11:16:56,480 --> 11:17:03,050
+function. And we'll say const
+response equals await fund me
+
+11234
+11:17:03,200 --> 11:17:07,850
+dot, let's get this price feed
+here, fund me dot price feed.
+
+11235
+11:17:08,240 --> 11:17:10,880
+And then we'll want to make sure
+this price feed is going to be
+
+11236
+11:17:10,880 --> 11:17:14,330
+the same as our Mk V three
+aggregator since we're going to
+
+11237
+11:17:14,330 --> 11:17:18,200
+be running these tests locally.
+So we should get our mark three
+
+11238
+11:17:18,230 --> 11:17:23,960
+V three aggregator up top. Let's
+do let mock v3 aggregate store.
+
+11239
+11:17:25,040 --> 11:17:27,950
+And we'll grab this address the
+same way mockbee Three
+
+11240
+11:17:27,950 --> 11:17:34,010
+aggregator equals await ethers
+dot get contract mockbee Three
+
+11241
+11:17:34,010 --> 11:17:37,460
+aggregator comma, we'll connect
+this one to the deployer as
+
+11242
+11:17:37,460 --> 11:17:43,880
+well. So we'll want to say cert
+dot equals cert dot equal
+
+11243
+11:17:44,660 --> 11:17:50,000
+response comma lock v3
+aggregator dot address. And of
+
+11244
+11:17:50,000 --> 11:17:58,040
+course we'll want to say const.
+Assert equals require gy. Import
+
+11245
+11:17:58,040 --> 11:18:00,170
+that from DJI. Okay, cool.
+
+11246
+11:18:00,500 --> 11:18:05,630
+Now, let's go ahead and try this
+out. Yarn hardhat. Test. Oops, I
+
+11247
+11:18:05,630 --> 11:18:10,850
+spelled response wrong. Let's
+try that again. Awesome. So this
+
+11248
+11:18:10,850 --> 11:18:14,960
+means that we are indeed
+assigning the price feed address
+
+11249
+11:18:14,990 --> 11:18:18,230
+correctly to the Mach v3
+aggregator. Okay, great.
+
+11250
+11:18:18,440 --> 11:18:21,080
+Awesome. I think for now, that's
+all we really want to do for our
+
+11251
+11:18:21,080 --> 11:18:24,200
+constructor. Now these two are
+kind of a nice to have, I showed
+
+11252
+11:18:24,200 --> 11:18:26,870
+them more just to kind of demo
+what they look like, we're going
+
+11253
+11:18:26,870 --> 11:18:29,420
+to skip writing tests for them
+for now. And we're actually
+
+11254
+11:18:29,420 --> 11:18:31,760
+going to go ahead and delete
+them directly from the contract.
+
+11255
+11:18:32,090 --> 11:18:34,190
+If you want to go ahead and
+write some tests for them and
+
+11256
+11:18:34,190 --> 11:18:36,920
+leave them in your examples for
+your learnings. You absolutely
+
+11257
+11:18:36,920 --> 11:18:39,440
+can pause the video and write
+some tests for it if you choose
+
+11258
+11:18:39,440 --> 11:18:42,470
+so, but we're going to skip
+them. Next though, we are going
+
+11259
+11:18:42,470 --> 11:18:46,250
+to move on to fund and running
+some tests for fun here. So
+
+11260
+11:18:46,250 --> 11:18:49,730
+let's go ahead and write
+describe fund. This will be an
+
+11261
+11:18:49,730 --> 11:18:55,730
+async function. And in here,
+we're going to do a number of
+
+11262
+11:18:55,730 --> 11:18:58,760
+tests. So if we're going to go
+line by line here, what's the
+
+11263
+11:18:58,760 --> 11:19:01,370
+first thing that we should look
+at? Well, we should look at this
+
+11264
+11:19:01,370 --> 11:19:04,790
+require line we should write a
+test to see if this contract
+
+11265
+11:19:04,790 --> 11:19:09,170
+actually does fail? If not
+enough, eath is sent. So let's
+
+11266
+11:19:09,170 --> 11:19:15,680
+go ahead and we'll say it fails,
+if you don't send enough eath
+
+11267
+11:19:17,030 --> 11:19:23,210
+have this be an async function?
+Now, how do we test to see if
+
+11268
+11:19:23,210 --> 11:19:26,810
+something fails? Right now we've
+done assert equals, but if
+
+11269
+11:19:26,810 --> 11:19:30,500
+something fails, we might run
+into an issue. So for example,
+
+11270
+11:19:30,530 --> 11:19:36,290
+if I run await fund me dot fund,
+but I don't pass any value to
+
+11271
+11:19:36,290 --> 11:19:39,410
+this transaction. Let's see what
+happens. I run yarn Hardhead
+
+11272
+11:19:39,410 --> 11:19:44,720
+test. Well, our test is actually
+going to break VM exception.
+
+11273
+11:19:44,930 --> 11:19:48,980
+While processing transaction
+reverted with reason string, you
+
+11274
+11:19:48,980 --> 11:19:51,950
+need to spend more eath. So our
+tests are going to break which
+
+11275
+11:19:51,950 --> 11:19:56,330
+is good. We want this to break.
+But we want to tell our test
+
+11276
+11:19:56,330 --> 11:20:00,710
+that this is okay. Right? Want
+to tell that this is okay. So
+
+11277
+11:20:00,860 --> 11:20:04,220
+the way we can do this, and this
+is where our waffle testing
+
+11278
+11:20:04,220 --> 11:20:07,580
+comes into play. With waffle and
+with testing, what we can
+
+11279
+11:20:07,580 --> 11:20:11,390
+actually do is we can use the
+expect keyword and expect
+
+11280
+11:20:11,510 --> 11:20:15,080
+transactions to be reverted and
+for transactions to fail. So
+
+11281
+11:20:15,080 --> 11:20:18,200
+instead of using assert here,
+we're actually going to run a
+
+11282
+11:20:18,200 --> 11:20:28,310
+wait expect fund me dot fun 2.2
+dot B, that reverted and we've
+
+11283
+11:20:28,310 --> 11:20:31,340
+actually even be more specific
+here by saying to be reverted
+
+11284
+11:20:31,430 --> 11:20:37,310
+with and then the exact reverted
+error, you need to spend more
+
+11285
+11:20:37,340 --> 11:20:42,950
+eath. Now if we run our tests,
+oops expect is not defined. So
+
+11286
+11:20:42,950 --> 11:20:47,570
+we need to import that from
+Chai. Which chai is being
+
+11287
+11:20:47,600 --> 11:20:52,790
+overwritten by waffle, we see
+that it does indeed Pass, which
+
+11288
+11:20:52,790 --> 11:20:57,860
+is perfect. So now we have a way
+to both assert things and expect
+
+11289
+11:20:57,860 --> 11:21:01,310
+things to fail. Awesome, even
+with the specific failure codes.
+
+11290
+11:21:01,580 --> 11:21:04,670
+Perfect. Let's write some more
+tests here. Well, we probably
+
+11291
+11:21:04,670 --> 11:21:09,170
+want it to correctly update this
+data structure. So we could say,
+
+11292
+11:21:09,680 --> 11:21:16,640
+it updates the amount funded
+data structure, it's going to be
+
+11293
+11:21:16,640 --> 11:21:20,630
+an async function. In here,
+we're going to need to call fund
+
+11294
+11:21:20,630 --> 11:21:25,070
+v dot fund. However, we're going
+to need to actually pass some
+
+11295
+11:21:25,070 --> 11:21:29,180
+value with this transaction. And
+for now, we'll just hard code
+
+11296
+11:21:29,180 --> 11:21:34,280
+the value that we're going to
+send, say const. Send value is
+
+11297
+11:21:34,280 --> 11:21:40,070
+going to be
+112345 678-910-1234 5678, which
+
+11298
+11:21:40,070 --> 11:21:43,640
+is going to be one eath. Another
+way we can write this though, is
+
+11299
+11:21:43,640 --> 11:21:46,790
+we can use the ethers utility to
+make this a little bit easier to
+
+11300
+11:21:46,790 --> 11:21:49,610
+read. Because all those zeros
+are kind of confusing, and it's
+
+11301
+11:21:49,610 --> 11:21:52,460
+hard to tell at first glance
+what this actually is. So we're
+
+11302
+11:21:52,460 --> 11:22:00,980
+gonna actually use ethers dot
+utils dot parse ether, one, this
+
+11303
+11:22:01,010 --> 11:22:05,570
+parse ethers utility converts
+this one into that one with 18
+
+11304
+11:22:05,570 --> 11:22:08,870
+zeros, which makes life a lot
+easier. If you go to the ethers
+
+11305
+11:22:08,870 --> 11:22:11,930
+documentation, there's also a
+parts units function where you
+
+11306
+11:22:11,930 --> 11:22:16,250
+can actually convert any unit,
+either ethers or Gwei. Or really
+
+11307
+11:22:16,250 --> 11:22:19,370
+whatever you want to do, you
+could convert any number to any
+
+11308
+11:22:19,370 --> 11:22:22,130
+other Aetherium you type. So
+this is the set value that we're
+
+11309
+11:22:22,130 --> 11:22:25,760
+going to use for our fund. And,
+and this is definitely going to
+
+11310
+11:22:25,760 --> 11:22:30,830
+be more than our minimum USD of
+50. So after we call this fun
+
+11311
+11:22:30,830 --> 11:22:34,790
+function, we'll say const
+response is going to be equal to
+
+11312
+11:22:34,850 --> 11:22:41,720
+a weight, fund me dot address to
+Mt funded address to Mt funded
+
+11313
+11:22:41,990 --> 11:22:45,440
+for the deployer dot address.
+Because remember, this is a
+
+11314
+11:22:45,440 --> 11:22:49,310
+mapping of each address and how
+much they've actually funded. So
+
+11315
+11:22:49,310 --> 11:22:51,980
+if we use the deployer address,
+it should give us the amount
+
+11316
+11:22:52,010 --> 11:22:55,130
+that we actually sent. So now we
+can run assert dot equal
+
+11317
+11:22:57,020 --> 11:23:00,950
+response.to string, right,
+because this response is going
+
+11318
+11:23:00,950 --> 11:23:04,880
+to be the big number version of
+how much has been funded by that
+
+11319
+11:23:04,880 --> 11:23:08,570
+account. And that should be the
+same as our send value.to
+
+11320
+11:23:08,570 --> 11:23:14,090
+string. Since send value, our
+one should be the exact same as
+
+11321
+11:23:14,090 --> 11:23:17,690
+the amount that we funded, we
+can run just this one test, or
+
+11322
+11:23:17,690 --> 11:23:23,090
+running yarn, art hat, test,
+dash dash grep. And we'll put
+
+11323
+11:23:23,090 --> 11:23:28,970
+this in quotes allow funded for
+this amount funded line. And it
+
+11324
+11:23:28,970 --> 11:23:32,630
+looks like we ran into an issue
+here, because we don't need to
+
+11325
+11:23:32,630 --> 11:23:36,860
+do deployed at address, we can
+just do deploy here. And great,
+
+11326
+11:23:36,890 --> 11:23:40,370
+it looks like we are indeed
+passing. Now if we even run yarn
+
+11327
+11:23:40,370 --> 11:23:44,390
+Hardhead coverage will now see
+we've got at least a little bit
+
+11328
+11:23:44,390 --> 11:23:47,570
+more coverage here. It's still
+not going to be great. But we
+
+11329
+11:23:47,570 --> 11:23:50,270
+have much better coverage. We
+have some statements, some
+
+11330
+11:23:50,270 --> 11:23:53,450
+branches, and at least some
+functions covered. So this is
+
+11331
+11:23:53,450 --> 11:23:56,990
+awesome. Let's keep going. Are
+we all done testing our fun
+
+11332
+11:23:56,990 --> 11:24:00,260
+function? Well, probably not.
+What else can we do with our fun
+
+11333
+11:24:00,260 --> 11:24:03,230
+function? Well, we're also
+adding funders to a funders
+
+11334
+11:24:03,230 --> 11:24:09,650
+array. So let's go ahead and
+test for that. So it adds funder
+
+11335
+11:24:09,680 --> 11:24:17,540
+to array of funders has been an
+async function. And we'll say
+
+11336
+11:24:17,570 --> 11:24:23,210
+await fund mean that fund value
+is going to be send value. We'll
+
+11337
+11:24:23,210 --> 11:24:30,650
+say const response equals await
+fund me dot calling the funders
+
+11338
+11:24:30,680 --> 11:24:38,030
+array at index zero. So this
+will be funder equals await fund
+
+11339
+11:24:38,030 --> 11:24:41,930
+me dot funders zero. And then
+we'll say assert dot equal
+
+11340
+11:24:42,680 --> 11:24:46,880
+funder should be the same as the
+Deployer. So let's go ahead and
+
+11341
+11:24:46,880 --> 11:24:49,850
+run this test. We'll hit up a
+couple times. And we'll change
+
+11342
+11:24:49,850 --> 11:24:56,990
+the GREP to under to array so
+that it looks for this line. And
+
+11343
+11:24:56,990 --> 11:25:00,590
+perfect. It looks like that one
+is also passing. Great. So the
+
+11344
+11:25:00,590 --> 11:25:03,890
+money's coming through, the
+minimum amount is coming through
+
+11345
+11:25:03,920 --> 11:25:07,400
+and our data structures are
+being updated. Awesome. Now we
+
+11346
+11:25:07,400 --> 11:25:10,340
+could be a little bit more
+verbose and do even more testing
+
+11347
+11:25:10,340 --> 11:25:12,980
+with this fun function. But I
+think for the most part, we've
+
+11348
+11:25:12,980 --> 11:25:16,280
+got the gist, right. So now
+let's go ahead and move on to
+
+11349
+11:25:16,310 --> 11:25:18,800
+the withdrawal function. So
+we're going to create a new
+
+11350
+11:25:18,800 --> 11:25:24,590
+describe or withdraw. This is
+going to be an async function.
+
+11351
+11:25:26,150 --> 11:25:29,480
+And let's see what the
+withdrawal function does. Only
+
+11352
+11:25:29,480 --> 11:25:32,120
+the owner of the contract is
+going to be able to get the
+
+11353
+11:25:32,120 --> 11:25:36,170
+balance, get the money back. And
+we're also going to reset all of
+
+11354
+11:25:36,170 --> 11:25:39,710
+the amounts that each one of
+these users is done. So let's go
+
+11355
+11:25:39,710 --> 11:25:42,980
+ahead and do some withdrawing.
+Now in order for us to test
+
+11356
+11:25:42,980 --> 11:25:47,630
+withdraw, we probably first want
+the contract to actually have
+
+11357
+11:25:47,630 --> 11:25:51,230
+some money and so what we can do
+actually is we can add another
+
+11358
+11:25:51,230 --> 11:25:55,250
+before each in the describe to
+automatically fund the contract
+
+11359
+11:25:55,460 --> 11:26:01,430
+before we run any tests. So we
+can say before each async
+
+11360
+11:26:01,430 --> 11:26:10,160
+function. We can say await, fund
+me dot fund. Value, send value.
+
+11361
+11:26:10,820 --> 11:26:14,660
+Now for all of our tests in this
+withdrawal scope, we're first
+
+11362
+11:26:14,660 --> 11:26:18,500
+going to fund it with eath.
+Let's say it can withdraw,
+
+11363
+11:26:19,940 --> 11:26:26,300
+withdraw eath. From a single
+founder, this would be an async
+
+11364
+11:26:26,300 --> 11:26:32,720
+function. And this is going to
+be a little bit longer test. So
+
+11365
+11:26:32,750 --> 11:26:39,050
+I'm going to set it up to be an
+arrange, act and assert test. So
+
+11366
+11:26:39,050 --> 11:26:42,290
+arrange act assert is just sort
+of a way to think about writing
+
+11367
+11:26:42,290 --> 11:26:45,500
+tests, you want to arrange the
+test, then you want to act. And
+
+11368
+11:26:45,500 --> 11:26:47,720
+then you want to run the
+asserts, and you'll see what I
+
+11369
+11:26:47,720 --> 11:26:50,630
+mean in just a second. So we're
+going to arrange this test,
+
+11370
+11:26:50,630 --> 11:26:53,360
+we're going to set this test up,
+we want to actually check that
+
+11371
+11:26:53,360 --> 11:26:56,930
+we're correctly withdrawing the
+ether from a single founder. So
+
+11372
+11:26:56,930 --> 11:26:59,360
+first, we're going to get the
+starting balance of the
+
+11373
+11:26:59,360 --> 11:27:01,550
+fundraising contract and the
+starting balance of the
+
+11374
+11:27:01,550 --> 11:27:08,090
+Deployer. So we'll say const.
+Starting under me, balance,
+
+11375
+11:27:09,200 --> 11:27:16,340
+equals await, fund me dot
+provider, dot get balance, fund
+
+11376
+11:27:16,340 --> 11:27:20,720
+me dot address. So we're gonna
+start with the balance of the
+
+11377
+11:27:20,720 --> 11:27:24,470
+fund V contract after it's been
+funded with some eath. And we're
+
+11378
+11:27:24,470 --> 11:27:29,840
+also gonna get costs start
+starting, deploy your balance
+
+11379
+11:27:30,560 --> 11:27:37,790
+goes await, fund me dot
+provider, dot get balance of
+
+11380
+11:27:38,360 --> 11:27:38,930
+deployed employer.
+
+11381
+11:27:39,770 --> 11:27:42,410
+So we're getting the starting
+balance of the Funmi, we're
+
+11382
+11:27:42,410 --> 11:27:44,930
+getting to the starting balance
+of the employer so that we can
+
+11383
+11:27:44,960 --> 11:27:48,320
+test later on how much these
+numbers have changed based off
+
+11384
+11:27:48,320 --> 11:27:50,750
+of what happens when we call the
+withdrawal function. Now that
+
+11385
+11:27:50,750 --> 11:27:53,690
+we've done a little bit of
+setup, we can actually run this
+
+11386
+11:27:53,690 --> 11:27:56,750
+withdrawal function, we can do
+the act here. So we're gonna say
+
+11387
+11:27:56,750 --> 11:28:02,570
+const, trans action response
+equals await, fund me dot
+
+11388
+11:28:02,570 --> 11:28:10,970
+withdraw. And then we can say
+const, transaction receipt
+
+11389
+11:28:11,630 --> 11:28:19,520
+equals await transaction
+response. That Wait, one, and
+
+11390
+11:28:19,520 --> 11:28:22,400
+now we should be able to check
+to see that the entire fund
+
+11391
+11:28:22,400 --> 11:28:26,360
+rebalance has been added to the
+deployer balance. So now we can
+
+11392
+11:28:26,360 --> 11:28:33,560
+say const ending fund me balance
+equals a weight on me that
+
+11393
+11:28:33,560 --> 11:28:41,150
+provider dot get balance of
+Unreal dot address. Then we can
+
+11394
+11:28:41,150 --> 11:28:49,460
+say const ending deployer
+balance equals await, fund me
+
+11395
+11:28:49,610 --> 11:28:52,220
+dot provider dot get balance
+
+11396
+11:28:54,080 --> 11:28:59,510
+of Deployer. And now we can just
+check to see if the numbers work
+
+11397
+11:28:59,510 --> 11:28:59,900
+out here.
+
+11398
+11:29:00,200 --> 11:29:09,770
+So we can say assert dot equal
+ending fund me balance is going
+
+11399
+11:29:09,770 --> 11:29:13,070
+to be zero, right, because we
+just withdrew all of the money.
+
+11400
+11:29:13,070 --> 11:29:16,940
+So ending funding balance should
+be zero. And we'll say assert
+
+11401
+11:29:17,180 --> 11:29:25,880
+dot equal starting fund me
+balance plus starting deployer
+
+11402
+11:29:25,880 --> 11:29:30,140
+balance. So the starting funds
+the balance plus the starting
+
+11403
+11:29:30,170 --> 11:29:34,700
+employer balance should equal
+the ending employer balance.
+
+11404
+11:29:34,730 --> 11:29:37,730
+Since we're grabbing whatever
+the starting deployer balance
+
+11405
+11:29:37,730 --> 11:29:40,400
+started with plus the starting
+fund to be balanced, because we
+
+11406
+11:29:40,400 --> 11:29:43,040
+just withdrew all of the
+starting fund, we balance that
+
+11407
+11:29:43,040 --> 11:29:46,220
+should equal the ending deployer
+bots. Now a couple of notes
+
+11408
+11:29:46,220 --> 11:29:48,830
+here, since starting Funmi
+balance is calling from the
+
+11409
+11:29:48,830 --> 11:29:52,340
+blockchain, it's going to be of
+type a big number, we want to
+
+11410
+11:29:52,340 --> 11:29:56,090
+use big number dot add actually,
+instead of the plus sign here,
+
+11411
+11:29:56,120 --> 11:29:58,400
+just because it'll it'll make
+working with our big numbers a
+
+11412
+11:29:58,400 --> 11:30:02,030
+little bit easier. So instead of
+starting Funmi balance, plus
+
+11413
+11:30:02,060 --> 11:30:06,770
+we're gonna be starting from the
+balance dot add. Like that. And
+
+11414
+11:30:06,770 --> 11:30:09,080
+that should be good. One other
+thing about this, though, is
+
+11415
+11:30:09,080 --> 11:30:13,940
+that when we called withdraw our
+Deployer did what our Deployer
+
+11416
+11:30:13,970 --> 11:30:20,510
+spent a little bit of gas. So
+this actually isn't accurate. We
+
+11417
+11:30:20,510 --> 11:30:24,110
+actually also need to calculate
+in the gas cost, so we wouldn't
+
+11418
+11:30:24,110 --> 11:30:29,930
+need to do dot add gas cost.
+We'd also have to do.to string
+
+11419
+11:30:29,930 --> 11:30:34,340
+because big numbers are objects
+and so identities a little bit
+
+11420
+11:30:34,340 --> 11:30:37,460
+weird. So to test to see if
+they're equal, we'll just make
+
+11421
+11:30:37,460 --> 11:30:44,120
+them both strings. Now we don't
+have gas costs. So let's figure
+
+11422
+11:30:44,120 --> 11:30:48,170
+out how to get the gas cost from
+this transaction. So we can add
+
+11423
+11:30:48,170 --> 11:30:51,260
+it to Are any deployer bounce,
+so we can run this assertion
+
+11424
+11:30:51,260 --> 11:30:54,230
+here. So what we can do is we
+can actually find the gas costs
+
+11425
+11:30:54,260 --> 11:30:57,290
+from our transaction receipt.
+And I'm going to show you a
+
+11426
+11:30:57,290 --> 11:31:01,190
+couple of phenomenal tricks you
+can use with VS code. And if
+
+11427
+11:31:01,190 --> 11:31:04,220
+using a different editor, then
+don't worry too much about this.
+
+11428
+11:31:04,250 --> 11:31:07,220
+What we can do in VS code
+actually is create something
+
+11429
+11:31:07,220 --> 11:31:10,970
+called breakpoints. unverified
+breakpoint file is modified to
+
+11430
+11:31:11,000 --> 11:31:14,510
+please restart the bug session,
+or let's put it right here, put
+
+11431
+11:31:14,510 --> 11:31:17,600
+it right in this line after
+transaction receipt is created.
+
+11432
+11:31:17,720 --> 11:31:21,650
+But before ending Funmi belts,
+what this breakpoint does is it
+
+11433
+11:31:21,650 --> 11:31:25,850
+stops the script at this line,
+and allows us to drop into
+
+11434
+11:31:25,850 --> 11:31:30,320
+something called a debug console
+and see all the variables that
+
+11435
+11:31:30,320 --> 11:31:33,590
+are happening. At this time, we
+want to look at the transaction
+
+11436
+11:31:33,590 --> 11:31:37,820
+receipt and see if the total gas
+cost is in there. This is also
+
+11437
+11:31:37,820 --> 11:31:40,700
+incredibly helpful for dropping
+into tests and dropping into
+
+11438
+11:31:40,700 --> 11:31:44,030
+scripts and seeing exactly
+what's going on that's wrong. So
+
+11439
+11:31:44,030 --> 11:31:47,090
+what we can do is we can move
+down to this run into bug
+
+11440
+11:31:47,210 --> 11:31:50,090
+section. And if it's not there,
+you can hit additional views.
+
+11441
+11:31:50,330 --> 11:31:54,440
+And we can click this JavaScript
+Debug Terminal, which will
+
+11442
+11:31:54,440 --> 11:31:58,550
+create a new terminal in our
+terminal section. Now, what
+
+11443
+11:31:58,550 --> 11:32:03,440
+happens here is if we run yarn,
+hard hat test, it'll run our
+
+11444
+11:32:03,440 --> 11:32:06,380
+testing and everything. But when
+it hits this breakpoint, it'll
+
+11445
+11:32:06,380 --> 11:32:09,140
+stop. Currently, there is no gas
+cost. So we're just going to
+
+11446
+11:32:09,140 --> 11:32:11,570
+delete this for now. So that we
+compile and we work in
+
+11447
+11:32:11,570 --> 11:32:17,000
+everything. But if we run yarn
+Hardhead test, see, it's gonna
+
+11448
+11:32:17,000 --> 11:32:21,500
+say debugger has been attached
+to start running our tests. And
+
+11449
+11:32:21,500 --> 11:32:25,460
+it's going to stop on this line
+here. And if we look in this
+
+11450
+11:32:25,460 --> 11:32:29,270
+variable section on the left
+hand side, we can actually see a
+
+11451
+11:32:29,270 --> 11:32:34,340
+ton of the variables that are in
+here. And we can read a little
+
+11452
+11:32:34,340 --> 11:32:37,910
+bit more about what's going on.
+And if we go over to our debug
+
+11453
+11:32:37,910 --> 11:32:44,270
+console, we can type in things
+like transaction receipt, and we
+
+11454
+11:32:44,270 --> 11:32:47,510
+can see a ton of information
+about that transaction receipt
+
+11455
+11:32:47,510 --> 11:32:50,420
+object, what we're looking for
+is we're looking to see this
+
+11456
+11:32:50,420 --> 11:32:53,480
+transaction receipt, which we
+could look in the debug console
+
+11457
+11:32:53,510 --> 11:32:56,870
+or over here, if there's
+anything to do with gas in here.
+
+11458
+11:32:57,110 --> 11:33:01,460
+And it looks like there is
+there's a gas used big number.
+
+11459
+11:33:01,700 --> 11:33:05,630
+And there's also an effective
+gas price. So the amount of gas
+
+11460
+11:33:05,630 --> 11:33:09,620
+used times the gas price is
+going to give us all the money
+
+11461
+11:33:09,620 --> 11:33:13,100
+that we paid for gas here. So
+now that we've figured out
+
+11462
+11:33:13,100 --> 11:33:17,030
+there's a gas used and effective
+gas price variables in this
+
+11463
+11:33:17,030 --> 11:33:20,240
+transaction receipt, which we
+could have also found in the
+
+11464
+11:33:20,240 --> 11:33:23,510
+documentation here. However,
+sometimes it's even quicker just
+
+11465
+11:33:23,510 --> 11:33:27,320
+to find it out yourself what we
+can do, we can exit the debugger
+
+11466
+11:33:27,530 --> 11:33:32,570
+by clicking this little thing
+here. Go back to terminal will
+
+11467
+11:33:32,570 --> 11:33:35,450
+trash can the JavaScript
+debugger, we'll remove the
+
+11468
+11:33:35,450 --> 11:33:42,860
+breakpoint. And we'll grab those
+two variables we can pull them
+
+11469
+11:33:42,890 --> 11:33:46,880
+right out of that transaction
+receipt object by typing const.
+
+11470
+11:33:48,230 --> 11:33:55,460
+Yes, used comma effective gas
+price equals transaction
+
+11471
+11:33:55,460 --> 11:33:59,930
+receipt. So again, with this
+curly bracket syntax, we can use
+
+11472
+11:33:59,930 --> 11:34:03,560
+this to pull out objects out of
+another object. And now that we
+
+11473
+11:34:03,560 --> 11:34:08,090
+have these two objects, we can
+create a const gas cost or total
+
+11474
+11:34:08,090 --> 11:34:13,310
+gas cost is going to be equal to
+the gas used times the effective
+
+11475
+11:34:13,520 --> 11:34:17,930
+gas price. Which again, since
+these are both big numbers, we
+
+11476
+11:34:17,930 --> 11:34:23,540
+can use a big number function
+called dot mol to multiply them
+
+11477
+11:34:23,540 --> 11:34:27,770
+together. Now that we have this
+total gas cost, we can come down
+
+11478
+11:34:27,860 --> 11:34:32,210
+and we can say the ending
+deployer balance plus that gas
+
+11479
+11:34:32,210 --> 11:34:36,830
+cost to string. Now the two of
+these should be equivalent. I
+
+11480
+11:34:36,830 --> 11:34:39,140
+know there's a lot of math that
+we're doing in this section and
+
+11481
+11:34:39,140 --> 11:34:42,830
+a lot of new things. So I want
+to just quickly rego over what
+
+11482
+11:34:42,830 --> 11:34:46,670
+we just learned. So first off,
+the font of the contract comes
+
+11483
+11:34:46,670 --> 11:34:49,550
+with a provider, we could have
+also done ethers dot provider
+
+11484
+11:34:49,580 --> 11:34:52,940
+dot get balance, but we're using
+fun v dot provider because we're
+
+11485
+11:34:52,940 --> 11:34:55,370
+using the provider of the Funmi
+contract. It doesn't really
+
+11486
+11:34:55,370 --> 11:34:58,790
+matter what we use here. We just
+wanted to use this get balanced
+
+11487
+11:34:58,790 --> 11:35:02,510
+function of the provider object
+which gets us the balance of any
+
+11488
+11:35:02,510 --> 11:35:06,140
+contract. We do the same thing
+with starting deplore balance.
+
+11489
+11:35:06,140 --> 11:35:08,810
+The reason that we needed the
+starting balances is because we
+
+11490
+11:35:08,810 --> 11:35:11,330
+wanted to compare it to the
+ending balances to see if all
+
+11491
+11:35:11,330 --> 11:35:13,760
+the money went to the right
+places, we then call the
+
+11492
+11:35:13,760 --> 11:35:17,630
+withdrawal function. And from
+the transaction receipt, we
+
+11493
+11:35:17,630 --> 11:35:22,250
+grabbed the gas used and the gas
+price. If you want to debug your
+
+11494
+11:35:22,250 --> 11:35:26,510
+JavaScript code, you can add a
+breakpoint like so go to run
+
+11495
+11:35:26,510 --> 11:35:30,800
+into bug, open your debug
+JavaScript terminal, which is
+
+11496
+11:35:30,800 --> 11:35:34,970
+different from your regular bash
+terminals. And when you run
+
+11497
+11:35:35,000 --> 11:35:38,210
+JavaScript commands in here,
+they will stop where your
+
+11498
+11:35:38,210 --> 11:35:40,550
+breakpoints are. Then you can
+read the different variables and
+
+11499
+11:35:40,550 --> 11:35:43,460
+see where different things are.
+Using that knowledge. We pulled
+
+11500
+11:35:43,460 --> 11:35:46,430
+out the gas use and effective
+gas price from the transaction
+
+11501
+11:35:46,430 --> 11:35:49,400
+receipt and used it to get the
+total gas cost of this
+
+11502
+11:35:49,400 --> 11:35:52,220
+transaction, we then got the
+ending fund, we balanced the
+
+11503
+11:35:52,220 --> 11:35:55,970
+ending deployer balance, and
+used all those variables to make
+
+11504
+11:35:55,970 --> 11:35:59,840
+sure all the money went to the
+right places. And we, we can
+
+11505
+11:35:59,840 --> 11:36:04,220
+check this by running yarn
+Hardhead test dash dash grep
+
+11506
+11:36:05,450 --> 11:36:09,200
+withdraw eath in quotes, since
+there's a space here, and we can
+
+11507
+11:36:09,200 --> 11:36:14,030
+see that our test does indeed
+pass. Great job. If we didn't
+
+11508
+11:36:14,570 --> 11:36:19,910
+add the gas cost here, and we
+just did.to string, we would see
+
+11509
+11:36:19,910 --> 11:36:25,040
+something like this, we would
+see that the numbers are ever so
+
+11510
+11:36:25,040 --> 11:36:28,010
+slightly off, because we're not
+anticipating we're not
+
+11511
+11:36:28,010 --> 11:36:31,220
+calculating the gas here. So we
+always want to make sure we're
+
+11512
+11:36:31,220 --> 11:36:36,740
+using the gas if we're doing
+calculations like this. Now
+
+11513
+11:36:36,740 --> 11:36:39,350
+another incredibly powerful
+debugging tool that we're not
+
+11514
+11:36:39,350 --> 11:36:41,720
+really going to go over here.
+But it's important to know about
+
+11515
+11:36:41,720 --> 11:36:43,850
+because it can be really helpful
+is that you can actually use
+
+11516
+11:36:43,850 --> 11:36:48,050
+console dot log in your solidity
+with hard hat. If you're inside
+
+11517
+11:36:48,050 --> 11:36:51,350
+of a heart hat project, you just
+import hard hat slash console
+
+11518
+11:36:51,350 --> 11:36:56,090
+dot soul. And then right in your
+solidity, you can do console dot
+
+11519
+11:36:56,090 --> 11:36:59,480
+log, and then type pretty much
+whatever you want. When you
+
+11520
+11:36:59,480 --> 11:37:02,840
+execute these functions, similar
+to how we do a console dot log
+
+11521
+11:37:02,840 --> 11:37:05,750
+in JavaScript, those will
+actually console dot log out to
+
+11522
+11:37:05,750 --> 11:37:09,260
+your terminal. Here's an example
+of if you run yarn, hard hat
+
+11523
+11:37:09,260 --> 11:37:12,650
+test and you have those console
+dot logs, you'll see stuff like
+
+11524
+11:37:12,650 --> 11:37:16,370
+this get printed out. So in
+addition to the Visual Studio
+
+11525
+11:37:16,370 --> 11:37:19,760
+Code debugger, importing hard
+hat slash console dot Sol, and
+
+11526
+11:37:19,760 --> 11:37:23,000
+using console dot logs in your
+solidity can also be an
+
+11527
+11:37:23,000 --> 11:37:25,610
+effective debugging strategy.
+Feel free to give this video a
+
+11528
+11:37:25,610 --> 11:37:29,210
+pause, implement this in some of
+our contracts and try it out in
+
+11529
+11:37:29,210 --> 11:37:35,210
+our tests. So we tested that
+withdrawing eath when there's a
+
+11530
+11:37:35,210 --> 11:37:38,930
+single funder works perfectly,
+let's test withdrawing eath if
+
+11531
+11:37:38,930 --> 11:37:44,450
+there are multiple funders, so
+we'll do it, let's say allows us
+
+11532
+11:37:44,450 --> 11:37:51,680
+to withdraw with multiple
+funders. Why would this be an
+
+11533
+11:37:51,680 --> 11:37:59,150
+async function. And let's do
+this await Funmi not fun, but
+
+11534
+11:37:59,150 --> 11:38:02,390
+with a number of different
+accounts. So we can create a
+
+11535
+11:38:02,390 --> 11:38:04,970
+whole bunch of different
+accounts of course, by saying
+
+11536
+11:38:04,970 --> 11:38:12,560
+const accounts equals await
+ethers dot get signers. And we
+
+11537
+11:38:12,560 --> 11:38:15,140
+can loop through these accounts
+and have each one of these
+
+11538
+11:38:15,140 --> 11:38:18,710
+accounts call the fund function.
+And we're going to do this with
+
+11539
+11:38:18,740 --> 11:38:25,490
+a for loop. So we're going to
+say for let i equals we'll start
+
+11540
+11:38:25,490 --> 11:38:28,670
+with the first index of the
+accounts because the zero with
+
+11541
+11:38:28,700 --> 11:38:31,310
+index is going to be the
+Deployer. So we'll say let i
+
+11542
+11:38:31,310 --> 11:38:36,140
+equals one is going to be less
+than let's say six. And we'll do
+
+11543
+11:38:36,170 --> 11:38:43,310
+i plus plus. And in here, we'll
+say const. And me contract Funmi
+
+11544
+11:38:43,310 --> 11:38:51,050
+connected contract equals await.
+And me dot connect two accounts,
+
+11545
+11:38:51,440 --> 11:38:55,610
+I, so we need to call this
+connect function because right
+
+11546
+11:38:55,610 --> 11:38:59,930
+now if we scroll up back to the
+top, our Funmi contract is
+
+11547
+11:38:59,930 --> 11:39:03,800
+connected to our Deployer
+account. And anytime we call a
+
+11548
+11:39:03,800 --> 11:39:08,090
+transaction with Funmi, the
+deployer is the account that is
+
+11549
+11:39:08,120 --> 11:39:11,300
+calling that transaction, we
+need to create new objects to
+
+11550
+11:39:11,300 --> 11:39:13,940
+connect to all of these
+different accounts. So we're
+
+11551
+11:39:13,940 --> 11:39:16,910
+gonna say fund me connected
+contract, which is now connected
+
+11552
+11:39:16,910 --> 11:39:20,780
+to one of these different
+accounts dot fund. And this is
+
+11553
+11:39:20,780 --> 11:39:25,310
+where we'll do value, send
+value. Or excuse me, we'll do
+
+11554
+11:39:25,310 --> 11:39:29,720
+await. Great. So this is going
+to be our our range section. And
+
+11555
+11:39:29,720 --> 11:39:33,020
+then same as we did above, we
+need to grab those starting
+
+11556
+11:39:33,020 --> 11:39:36,680
+balances. So we can just copy
+that, those two lines and paste
+
+11557
+11:39:36,680 --> 11:39:39,650
+that down here. Now we're going
+to move into act, I'm going to
+
+11558
+11:39:39,650 --> 11:39:43,730
+call that withdrawal function
+again. So let's say const,
+
+11559
+11:39:43,910 --> 11:39:50,000
+transaction action response
+equals await and MI dot
+
+11560
+11:39:50,810 --> 11:39:54,350
+withdraw. And we're going to do
+the exact same thing as we did
+
+11561
+11:39:54,350 --> 11:39:58,730
+above, getting the transaction
+receipt and the gas costs so we
+
+11562
+11:39:58,730 --> 11:40:01,790
+can get everything correct. Once
+we've done the act, we move on
+
+11563
+11:40:01,790 --> 11:40:05,420
+into assert. And we're going to
+do some very similar things to
+
+11564
+11:40:05,420 --> 11:40:08,570
+what we did above, like this,
+for example, this whole first
+
+11565
+11:40:08,570 --> 11:40:12,830
+part is going to be exactly the
+same. We also want to make sure
+
+11566
+11:40:12,920 --> 11:40:18,950
+the funders are reset properly.
+So we'll make sure that this
+
+11567
+11:40:18,950 --> 11:40:22,670
+funders array is reset properly.
+So to do that, we can actually
+
+11568
+11:40:22,670 --> 11:40:25,160
+just check to see that if
+looking at the zero with
+
+11569
+11:40:25,160 --> 11:40:30,260
+position throws an error so we
+can run a wait expect fund me
+
+11570
+11:40:30,260 --> 11:40:36,170
+dot get on me dot funder on me
+dot funders of zero. This should
+
+11571
+11:40:36,170 --> 11:40:41,780
+revert so we'll say await expect
+Funmi dot funders dot two dot b
+
+11572
+11:40:41,780 --> 11:40:47,060
+dot reverted and then we want to
+loop through all these accounts
+
+11573
+11:40:47,090 --> 11:40:50,840
+and make sure that it makes sure
+or that in our mapping here, all
+
+11574
+11:40:50,870 --> 11:40:58,760
+their amounts are zero. So we'll
+say, for I equals one is less
+
+11575
+11:40:58,760 --> 11:40:59,720
+than six,
+
+11576
+11:41:01,520 --> 11:41:11,450
+i plus plus, we'll say assert
+dot equal. Wait, fund me dot
+
+11577
+11:41:12,530 --> 11:41:21,980
+address to amount funded, of the
+accounts of I got address should
+
+11578
+11:41:21,980 --> 11:41:26,630
+be zero. So we're making sure
+that all of these mappings are
+
+11579
+11:41:26,630 --> 11:41:29,960
+correctly updated to zero. So
+let's go and test this. So we're
+
+11580
+11:41:29,960 --> 11:41:32,420
+withdrawing with multiple
+founders, we're going to go back
+
+11581
+11:41:32,420 --> 11:41:36,530
+to our terminal, we're going to
+hit up, we're going to change
+
+11582
+11:41:36,530 --> 11:41:42,020
+this GREP or this one. We'll see
+if this passes. And it does
+
+11583
+11:41:42,020 --> 11:41:45,530
+indeed, so this means that our
+withdraw function works really
+
+11584
+11:41:45,530 --> 11:41:49,250
+well even when there's multiple
+funders and we can be happy and
+
+11585
+11:41:49,250 --> 11:41:52,130
+go to sleep knowing that. Now
+the other thing we absolutely
+
+11586
+11:41:52,130 --> 11:41:55,880
+want 100% want to test is that
+our only owner modifier is
+
+11587
+11:41:55,880 --> 11:41:59,540
+working, we want only the owner
+to be able to withdraw the funds
+
+11588
+11:41:59,540 --> 11:42:04,580
+from here. So we'll create a new
+session, we'll say it only
+
+11589
+11:42:04,580 --> 11:42:10,220
+allows the owner to withdraw
+only allows you to withdraw.
+
+11590
+11:42:10,820 --> 11:42:15,740
+This will be an async function.
+And in here, we'll say const.
+
+11591
+11:42:17,420 --> 11:42:20,780
+Accounts equals ethers dot get
+signers again. And we'll say
+
+11592
+11:42:20,780 --> 11:42:27,680
+const attacker equals accounts
+of one. So we'll say the first
+
+11593
+11:42:27,680 --> 11:42:30,860
+account will be some random
+attacker will connect this
+
+11594
+11:42:30,860 --> 11:42:34,970
+attacker to a new contract,
+we'll say const attacker
+
+11595
+11:42:35,180 --> 11:42:44,360
+connected contract equals await
+on DB dot Connect. Attacker dot
+
+11596
+11:42:44,360 --> 11:42:49,190
+address, excuse me a dot connect
+attacker. Since we're not just
+
+11597
+11:42:49,190 --> 11:42:52,160
+connecting the address, we're
+connecting the account which
+
+11598
+11:42:52,220 --> 11:42:56,990
+attacker is an account object.
+And then we'll do a wait expect
+
+11599
+11:42:59,630 --> 11:43:10,670
+attacker connected contract dot
+withdraw dot two dot b dot
+
+11600
+11:43:11,210 --> 11:43:15,470
+reverted, they should not be
+able to withdraw. So let's go
+
+11601
+11:43:15,470 --> 11:43:19,010
+ahead, we can even just copy
+this whole thing if we want to
+
+11602
+11:43:19,190 --> 11:43:24,410
+hit up, we'll delete this
+section here. We'll paste that
+
+11603
+11:43:24,410 --> 11:43:29,510
+in. And boom. This means that
+when some other account tries to
+
+11604
+11:43:29,510 --> 11:43:32,360
+call withdraw, automatically
+gets reverted, which is what we
+
+11605
+11:43:32,360 --> 11:43:36,110
+want. Now we can be more
+explicit to make sure that the
+
+11606
+11:43:36,110 --> 11:43:39,410
+correct error code is being
+thrown, not just that it's
+
+11607
+11:43:39,440 --> 11:43:43,280
+reverted. Right, it can be very
+reverted because they sent ether
+
+11608
+11:43:43,280 --> 11:43:45,230
+did it they did something weird,
+we want to make sure it's
+
+11609
+11:43:45,230 --> 11:43:48,650
+reverted with our specific error
+code. So right now we have this
+
+11610
+11:43:48,680 --> 11:43:52,730
+not owner error code. But it's
+actually a best practice to put
+
+11611
+11:43:52,730 --> 11:43:57,620
+the contract name to underscores
+and then your custom error. This
+
+11612
+11:43:57,620 --> 11:44:00,110
+makes it a lot easier in the
+future when you have a ton of
+
+11613
+11:44:00,110 --> 11:44:02,960
+different contracts, and you're
+not sure where an error is
+
+11614
+11:44:02,960 --> 11:44:05,510
+coming from. So we're going to
+just update this really quickly
+
+11615
+11:44:05,510 --> 11:44:09,530
+to be fund me underscore
+underscore, not owner, now we
+
+11616
+11:44:09,530 --> 11:44:12,860
+can do is now that we have this
+custom error, we can say
+
+11617
+11:44:12,950 --> 11:44:17,690
+withdraw that to be reverted
+with, then we can add our custom
+
+11618
+11:44:17,690 --> 11:44:22,400
+error in here. Now, if we rerun
+our test, with only allows the
+
+11619
+11:44:22,400 --> 11:44:26,270
+owner to withdraw, oops, we need
+to do a wait here. My mistake,
+
+11620
+11:44:26,300 --> 11:44:29,870
+wait a Thursday, get signers.
+And now let's try this again.
+
+11621
+11:44:30,560 --> 11:44:32,900
+And we are indeed passing
+Perfect.
+
+11622
+11:44:35,690 --> 11:44:38,990
+Okay, great. We have some basic
+unit tests here. And we're going
+
+11623
+11:44:38,990 --> 11:44:41,780
+to write some staging tests
+pretty soon. But before we
+
+11624
+11:44:41,780 --> 11:44:46,490
+actually do that, let's go ahead
+and add the gas estimator. And
+
+11625
+11:44:46,490 --> 11:44:49,280
+we'll see how much gas these
+contracts in these functions are
+
+11626
+11:44:49,280 --> 11:44:52,160
+taking. It looks like the
+Hardhead gas reporter is already
+
+11627
+11:44:52,160 --> 11:44:57,620
+here. So let's scroll down.
+We'll do gas reporter true. And
+
+11628
+11:44:57,770 --> 11:45:01,250
+we won't do coin market cap
+here. And we'll just look purely
+
+11629
+11:45:01,250 --> 11:45:03,920
+at the GUI. So you can just
+comment it out like that. Now
+
+11630
+11:45:03,920 --> 11:45:09,710
+rerun all of our tests. So we'll
+say yarn, our test. And in doing
+
+11631
+11:45:09,710 --> 11:45:13,310
+so we're gonna get that that gas
+output in that gas report dash
+
+11632
+11:45:13,310 --> 11:45:17,210
+text here. So looks like all of
+our tests are passing, which is
+
+11633
+11:45:17,210 --> 11:45:21,830
+perfect. Now we can look into
+our gas report and see what's
+
+11634
+11:45:21,830 --> 11:45:25,220
+going on here. i Well, it looks
+like the fundraising function is
+
+11635
+11:45:25,220 --> 11:45:28,970
+taking a decent chunk of gas,
+the withdrawal function, take it
+
+11636
+11:45:28,970 --> 11:45:32,330
+some guests to we'd see the min,
+the max and the average. Of
+
+11637
+11:45:32,330 --> 11:45:35,300
+course, we can see how much each
+one of these contracts cost to
+
+11638
+11:45:35,300 --> 11:45:38,210
+actually output. We don't really
+care about the MOQ aggregator of
+
+11639
+11:45:38,210 --> 11:45:39,860
+course, because we're never
+actually going to use that.
+
+11640
+11:45:40,220 --> 11:45:42,800
+Let's say we look at the average
+gas for these and we go hmm,
+
+11641
+11:45:42,980 --> 11:45:45,980
+this looks like it's actually a
+lot more than what we originally
+
+11642
+11:45:45,980 --> 11:45:48,770
+expected. Is there a way for us
+to make this a little bit cheap.
+
+11643
+11:45:48,770 --> 11:45:51,740
+If we go back to our funding
+contract, we look at our
+
+11644
+11:45:51,740 --> 11:45:55,760
+withdrawal function. And we
+noticed something, oh, there is
+
+11645
+11:45:55,760 --> 11:45:58,940
+actually a way to make this a
+lot cheaper. And it has to do
+
+11646
+11:45:58,970 --> 11:46:02,600
+with something called storage
+variables, or these global
+
+11647
+11:46:02,600 --> 11:46:05,060
+variables that we've been
+working with this whole time.
+
+11648
+11:46:05,240 --> 11:46:07,790
+Let me let me paint you a little
+picture here, we're gonna look
+
+11649
+11:46:07,790 --> 11:46:10,610
+at one of the first gas
+optimization techniques you can
+
+11650
+11:46:10,610 --> 11:46:14,600
+take to drop these down. And it
+has to do with an R Funmi.
+
+11651
+11:46:14,600 --> 11:46:19,130
+Contract these state variables
+and how they're actually stored
+
+11652
+11:46:19,130 --> 11:46:22,070
+and how this contract actually
+keeps track of all this stuff,
+
+11653
+11:46:22,370 --> 11:46:25,280
+this section is going to be a
+little bit more advanced. So
+
+11654
+11:46:25,280 --> 11:46:27,560
+we'll have a note here saying
+that this is an advanced
+
+11655
+11:46:27,560 --> 11:46:30,410
+section, if you want to skip
+over it, you can, because now
+
+11656
+11:46:30,410 --> 11:46:32,630
+we're getting into gas
+optimizations here, this
+
+11657
+11:46:32,630 --> 11:46:35,180
+information still is really good
+to know. So if you want to skip
+
+11658
+11:46:35,180 --> 11:46:38,120
+it for now, and then come back
+later, you absolutely can. But
+
+11659
+11:46:38,120 --> 11:46:43,250
+let's talk about what happens
+when we actually save or store
+
+11660
+11:46:43,370 --> 11:46:47,870
+these global variables. Okay,
+these storage variables. Now,
+
+11661
+11:46:47,870 --> 11:46:50,180
+everything I'm about to go
+through is in the documentation.
+
+11662
+11:46:50,210 --> 11:46:52,550
+And there is a link to this, of
+course, in the GitHub repo
+
+11663
+11:46:52,580 --> 11:46:55,190
+associated with this course,
+whenever we have one of these
+
+11664
+11:46:55,190 --> 11:46:58,520
+global variables, or these
+variables that stay permanently,
+
+11665
+11:46:58,700 --> 11:47:01,550
+they're stuck in something
+called storage, you can think of
+
+11666
+11:47:01,550 --> 11:47:06,080
+storage as a big giant array, or
+a giant list of all the
+
+11667
+11:47:06,080 --> 11:47:08,930
+variables that we actually
+create. So when we say we have
+
+11668
+11:47:08,930 --> 11:47:11,510
+some contract called Son of
+storage, and we have a variable
+
+11669
+11:47:11,510 --> 11:47:14,420
+called favorite number, we're
+basically saying we want this
+
+11670
+11:47:14,420 --> 11:47:17,570
+favorite number variable to
+persist, right, we saw in a lot
+
+11671
+11:47:17,570 --> 11:47:20,210
+of our examples, we had a
+favorite number variable that we
+
+11672
+11:47:20,210 --> 11:47:23,000
+can always call to see what this
+contracts favorite number was,
+
+11673
+11:47:23,000 --> 11:47:27,020
+well, the way it persists, is it
+gets stored in this place called
+
+11674
+11:47:27,050 --> 11:47:30,560
+storage. A storage box is this
+giant list associated with this
+
+11675
+11:47:30,560 --> 11:47:33,800
+contract where every single
+variable and every single value
+
+11676
+11:47:33,800 --> 11:47:38,720
+in the storage section is
+slotted into a 32 byte long slot
+
+11677
+11:47:38,750 --> 11:47:43,430
+in this storage array. So for
+example, the number 25 in its
+
+11678
+11:47:43,430 --> 11:47:48,080
+bytes implementation is 000 with
+a ton of zeros 19. This is the
+
+11679
+11:47:48,080 --> 11:47:51,950
+hex version of the yuan 256.
+This is why we do so much hex
+
+11680
+11:47:51,950 --> 11:47:56,120
+translation, the bytes
+implementation of a yuan 256.
+
+11681
+11:47:56,270 --> 11:47:59,450
+And each store saw increments
+just like an array starting from
+
+11682
+11:47:59,480 --> 11:48:04,460
+zero. So for example, our next
+global variable or next storage
+
+11683
+11:48:04,460 --> 11:48:08,720
+variable just gets slotted at
+the next slot that's available.
+
+11684
+11:48:09,140 --> 11:48:12,800
+So bullions, for example, get
+transformed from their bull
+
+11685
+11:48:12,800 --> 11:48:16,220
+version two, their hex and we
+modified our some bool variable
+
+11686
+11:48:16,220 --> 11:48:22,010
+to be true and X edition of the
+true Boolean 0x 001. Every time
+
+11687
+11:48:22,010 --> 11:48:25,640
+you save an additional global
+variable, or more correctly, one
+
+11688
+11:48:25,640 --> 11:48:29,480
+of these storage variables, it
+takes up an additional storage
+
+11689
+11:48:29,510 --> 11:48:32,450
+slot. And what about variables
+that are dynamic in length, or
+
+11690
+11:48:32,450 --> 11:48:35,300
+that can change length? What
+about something that's dynamic?
+
+11691
+11:48:35,360 --> 11:48:39,080
+Well, for dynamic values, like a
+dynamic array, or a mapping
+
+11692
+11:48:39,230 --> 11:48:42,560
+elements inside the array or
+inside the mapping are actually
+
+11693
+11:48:42,560 --> 11:48:45,560
+stored using some type of
+hashing function. And you can
+
+11694
+11:48:45,560 --> 11:48:48,800
+see those specific functions in
+the documentation, the object
+
+11695
+11:48:48,800 --> 11:48:52,010
+itself does take up a storage
+slot, but it's not going to be
+
+11696
+11:48:52,010 --> 11:48:55,760
+the entire array. For example,
+my array variable here at
+
+11697
+11:48:55,760 --> 11:49:00,230
+storage, slot two doesn't have
+the entire array in storage slot
+
+11698
+11:49:00,230 --> 11:49:04,100
+two, what has actually is just
+the array length, the length of
+
+11699
+11:49:04,100 --> 11:49:07,730
+the array is stored at storage
+slot two. But for example, if we
+
+11700
+11:49:07,730 --> 11:49:12,500
+do my array dot push 222, we do
+some hashing function, which
+
+11701
+11:49:12,500 --> 11:49:15,140
+again, you can see in the
+documentation what that is, and
+
+11702
+11:49:15,140 --> 11:49:20,300
+we'll store the number 222. At
+that location in storage, the
+
+11703
+11:49:20,300 --> 11:49:26,390
+hex of 222 is 0x 0000 D, so it
+gets stored in this crazy spot.
+
+11704
+11:49:26,390 --> 11:49:29,780
+And this is good, this is
+intentional, because 32 Bytes
+
+11705
+11:49:29,900 --> 11:49:32,960
+may not be nearly big enough to
+store my array if our array gets
+
+11706
+11:49:32,960 --> 11:49:35,360
+massive. And it wouldn't make
+sense for to put the elements
+
+11707
+11:49:35,360 --> 11:49:38,900
+inside the array at subsequent
+numbers because again, the size
+
+11708
+11:49:38,900 --> 11:49:40,880
+of the array can change and
+you're never going to be sure
+
+11709
+11:49:40,910 --> 11:49:44,810
+how many subsequence that you
+need. So for my array, it does
+
+11710
+11:49:44,810 --> 11:49:47,630
+have a storage slot for the
+length for mappings. It does
+
+11711
+11:49:47,630 --> 11:49:50,810
+have a storage spot as well
+similar to array, but it's just
+
+11712
+11:49:50,810 --> 11:49:54,050
+blank. But it's blank
+intentionally so that solidity
+
+11713
+11:49:54,050 --> 11:49:57,830
+knows, okay, there is a mapping
+here, and it needs a storage
+
+11714
+11:49:57,830 --> 11:50:00,110
+slot for attaching functional
+work correctly. Now
+
+11715
+11:50:00,110 --> 11:50:03,110
+interestingly, constant
+variables and immutable
+
+11716
+11:50:03,110 --> 11:50:07,340
+variables do not take up spots
+in storage. The reason for this
+
+11717
+11:50:07,370 --> 11:50:10,820
+is because constant variables
+are actually part of the
+
+11718
+11:50:10,820 --> 11:50:14,120
+contracts byte code itself,
+which sounds a little bit weird.
+
+11719
+11:50:14,390 --> 11:50:17,870
+But you can imagine what
+solidity does is anytime it sees
+
+11720
+11:50:17,900 --> 11:50:21,320
+constant variables name is it
+just automatically swaps it out
+
+11721
+11:50:21,320 --> 11:50:24,320
+with whatever number it actually
+is. So you can kind of think of
+
+11722
+11:50:24,380 --> 11:50:28,940
+not in storage is just a pointer
+to 123 and it doesn't take up a
+
+11723
+11:50:28,940 --> 11:50:32,510
+storage slot. Well when we have
+variables inside of a function,
+
+11724
+11:50:32,690 --> 11:50:36,110
+those variables only exist for
+the duration of the function.
+
+11725
+11:50:36,290 --> 11:50:39,260
+They don't stay inside the
+contract. They don't persist
+
+11726
+11:50:39,260 --> 11:50:42,350
+they're not permanent. So
+variables inside these functions
+
+11727
+11:50:42,350 --> 11:50:46,400
+like new var and other var do
+not get added to storage. They
+
+11728
+11:50:46,400 --> 11:50:49,490
+get added in their own memory
+data structure. Which gets
+
+11729
+11:50:49,490 --> 11:50:52,850
+deleted after the function has
+finished running. Now you might
+
+11730
+11:50:52,850 --> 11:50:55,850
+be asking, Okay, well, why do we
+need this memory keyword,
+
+11731
+11:50:55,880 --> 11:50:59,210
+especially when it comes to
+strings, we saw before that we
+
+11732
+11:50:59,210 --> 11:51:02,360
+had to say String memory. The
+reason we need it for strings is
+
+11733
+11:51:02,360 --> 11:51:05,990
+because strings are technically
+this dynamically sized array.
+
+11734
+11:51:06,260 --> 11:51:08,960
+And we need to tell solidity,
+hey, we're going to do this on
+
+11735
+11:51:08,960 --> 11:51:11,180
+the storage location, or we're
+going to do it into the memory
+
+11736
+11:51:11,180 --> 11:51:14,690
+location where we can just wipe
+it. arrays and mappings can take
+
+11737
+11:51:14,690 --> 11:51:18,290
+up a lot more space. So slowly,
+just wants to make sure Okay,
+
+11738
+11:51:18,290 --> 11:51:21,080
+where are we working with this
+is it storage is a memory, you
+
+11739
+11:51:21,080 --> 11:51:24,110
+have to tell me, I need to know
+if I need to allocate space for
+
+11740
+11:51:24,110 --> 11:51:27,230
+it in our storage data
+structure. And again, everything
+
+11741
+11:51:27,230 --> 11:51:29,900
+here you can read in the
+solidity documentation. Now, in
+
+11742
+11:51:29,900 --> 11:51:33,200
+the GitHub repo associated with
+this course, if you go to
+
+11743
+11:51:33,200 --> 11:51:37,010
+contracts, we've actually got an
+example contract section called
+
+11744
+11:51:37,040 --> 11:51:39,920
+Fun with storage, where you can
+play with and look at a lot of
+
+11745
+11:51:39,920 --> 11:51:44,810
+this stuff. And we even wrote a
+little script called deploy
+
+11746
+11:51:44,810 --> 11:51:48,140
+storage fun, where it'll print
+out the storage location of some
+
+11747
+11:51:48,140 --> 11:51:50,750
+of the different variables, feel
+free to give it a run, if you
+
+11748
+11:51:50,750 --> 11:51:53,420
+want to try a challenge anybody
+to write some functions that
+
+11749
+11:51:53,420 --> 11:51:56,510
+find the storage slots of the
+elements of the arrays, and the
+
+11750
+11:51:56,510 --> 11:52:00,200
+mappings, and then find the data
+inside of those as well. We use
+
+11751
+11:52:00,200 --> 11:52:03,380
+a function here called Get
+storage app, which allows us to
+
+11752
+11:52:03,380 --> 11:52:06,890
+get the storage at any one of
+these slots. And this is to
+
+11753
+11:52:06,890 --> 11:52:10,910
+reinforce that even if you have
+a function as private or
+
+11754
+11:52:10,910 --> 11:52:14,930
+internal. Anybody can still read
+it. Anybody can read anything
+
+11755
+11:52:14,930 --> 11:52:18,260
+off the blockchain. And you can
+test it exactly what this if you
+
+11756
+11:52:18,260 --> 11:52:20,930
+go ahead and get clone that or
+copy paste the code yourself.
+
+11757
+11:52:21,260 --> 11:52:26,570
+You can then run yarn part at
+deploy dash test tags, storage.
+
+11758
+11:52:27,440 --> 11:52:30,260
+And you'll run the deploy script
+for that storage.
+
+11759
+11:52:30,260 --> 11:52:33,920
+And you'll see printing out the
+location of storage in each
+
+11760
+11:52:33,920 --> 11:52:40,430
+storage slot with a fun contract
+that we made as an example. And
+
+11761
+11:52:40,430 --> 11:52:42,620
+you might of course be asking,
+Okay, Patrick, why are you
+
+11762
+11:52:42,620 --> 11:52:45,290
+telling me all this? We're just
+trying to get this gas price
+
+11763
+11:52:45,290 --> 11:52:48,080
+down? Why are you telling me all
+about this storage thing? Well,
+
+11764
+11:52:48,080 --> 11:52:51,170
+the reason I'm telling you all
+about the storage thing. Anytime
+
+11765
+11:52:51,170 --> 11:52:55,520
+you read or you write to and
+from storage, you spend a ton of
+
+11766
+11:52:55,520 --> 11:52:58,880
+gas. Remember I said when we
+compile our code, we compile it
+
+11767
+11:52:58,880 --> 11:53:01,670
+down to some crazy weird
+bytecode. Well, let me show you
+
+11768
+11:53:01,670 --> 11:53:05,180
+on remix what this looks like.
+We go to compliation details, we
+
+11769
+11:53:05,180 --> 11:53:09,140
+can go to bytecode. And we see
+this weird hex object zero,
+
+11770
+11:53:09,140 --> 11:53:12,440
+blah, blah, blah. But we also
+see these things called op
+
+11771
+11:53:12,440 --> 11:53:16,730
+codes. Now, this bytecode here
+represents these op codes. Each
+
+11772
+11:53:16,730 --> 11:53:20,330
+one of these op codes represents
+a small piece of everything in
+
+11773
+11:53:20,330 --> 11:53:23,390
+this bytecode. And in fact, in
+our heart hat, we can go to
+
+11774
+11:53:23,450 --> 11:53:28,490
+artifacts, build info, and we
+can see, we can see these op
+
+11775
+11:53:28,490 --> 11:53:32,180
+codes in the build info, we can
+do a command F or Control F for
+
+11776
+11:53:32,600 --> 11:53:37,820
+opcodes. We can see op codes for
+different contracts. These op
+
+11777
+11:53:37,820 --> 11:53:40,100
+codes represent what the machine
+code is doing. And they
+
+11778
+11:53:40,100 --> 11:53:44,180
+represent how much computational
+work it takes to actually run
+
+11779
+11:53:44,180 --> 11:53:47,210
+our code and do stuff with our
+code. The way that gas is
+
+11780
+11:53:47,210 --> 11:53:50,720
+actually calculated is by these
+opcodes. There are a couple of
+
+11781
+11:53:50,720 --> 11:53:53,150
+lists here. But here's one that
+I'm going to use this EVM
+
+11782
+11:53:53,150 --> 11:53:56,000
+opcodes. And again, there's a
+link to this in the GitHub repo
+
+11783
+11:53:56,000 --> 11:53:59,300
+associated with this lesson.
+Well, if we scroll down, we can
+
+11784
+11:53:59,300 --> 11:54:03,200
+see exactly how much it costs
+for each one of these op codes.
+
+11785
+11:54:03,560 --> 11:54:08,660
+So for example, anytime we add,
+it costs three gas, anytime we
+
+11786
+11:54:08,660 --> 11:54:13,790
+multiply, that's five gas,
+subtracting three gas, we have
+
+11787
+11:54:13,820 --> 11:54:17,810
+all of these op codes that cost
+different amounts of gas in in
+
+11788
+11:54:17,810 --> 11:54:21,320
+our functions, here's kind of a
+sample contract. If we're doing
+
+11789
+11:54:21,350 --> 11:54:25,940
+adding, anytime we add it's
+going to cost three gas. Anytime
+
+11790
+11:54:25,940 --> 11:54:29,000
+we save to memory, it's going to
+cost gas from some other
+
+11791
+11:54:29,000 --> 11:54:33,110
+opcodes. These op codes combined
+show us how much gas we actually
+
+11792
+11:54:33,110 --> 11:54:36,800
+use. Now, let's look at a lot of
+these op codes and how much they
+
+11793
+11:54:36,800 --> 11:54:43,550
+cost three 510, three, three,
+balance is 700. So getting the
+
+11794
+11:54:43,550 --> 11:54:47,630
+balance is is a ton of gas.
+Let's keep going. Getting the
+
+11795
+11:54:47,630 --> 11:54:50,600
+sides of an Accounts code is a
+lot of gas copying and accounts
+
+11796
+11:54:50,600 --> 11:54:56,810
+code into memory. But oh my
+goodness, what is this save word
+
+11797
+11:54:56,810 --> 11:55:03,410
+to storage costs a ton of gas
+that is 20,000 gas and s load
+
+11798
+11:55:03,440 --> 11:55:08,330
+load word from storage cost 800
+gas. These are two of the most
+
+11799
+11:55:08,330 --> 11:55:12,620
+important opcodes s load and s
+store which stands for storage
+
+11800
+11:55:12,620 --> 11:55:17,720
+load and storage store. Anytime
+one of these op codes fires,
+
+11801
+11:55:17,930 --> 11:55:21,980
+we're spending 800 or 20,000.
+You know, there's a big asterisk
+
+11802
+11:55:21,980 --> 11:55:25,160
+there because that can change a
+lot. But we're spending a ton of
+
+11803
+11:55:25,160 --> 11:55:29,030
+gas anytime we work with storage
+as developers. Anytime we work
+
+11804
+11:55:29,030 --> 11:55:33,200
+with some stuff in storage, we
+want to go boy, this is about to
+
+11805
+11:55:33,200 --> 11:55:37,610
+cost me a lot of gas and the
+best convention or making sure
+
+11806
+11:55:37,610 --> 11:55:40,850
+we know that we're working with
+a stored variable and we're
+
+11807
+11:55:40,850 --> 11:55:46,070
+about to spend a lot of gas is
+to append an S underscore right
+
+11808
+11:55:46,070 --> 11:55:49,580
+before them which stands for
+storage right So we're saying
+
+11809
+11:55:49,610 --> 11:55:52,400
+address to amount funded is
+going to be a storage variable
+
+11810
+11:55:52,520 --> 11:55:56,570
+wonders is going to be a storage
+variable. Owner is not going to
+
+11811
+11:55:56,570 --> 11:55:59,750
+be a storage variable. It's
+immutable. The best practice for
+
+11812
+11:55:59,780 --> 11:56:02,330
+immutable variables is
+prefixing. It with an I
+
+11813
+11:56:02,330 --> 11:56:06,290
+underscore constant values are
+also not in storage. So for
+
+11814
+11:56:06,290 --> 11:56:09,230
+constant values, we want to keep
+them capslock, like that
+
+11815
+11:56:09,320 --> 11:56:12,950
+aggregator v3 interface public
+price feed. Yep, you know what
+
+11816
+11:56:12,980 --> 11:56:15,620
+that is going to be a storage
+variable. So we want to append
+
+11817
+11:56:15,620 --> 11:56:18,200
+an S underscore with it. So
+we're going to do a little bit
+
+11818
+11:56:18,200 --> 11:56:21,680
+more refactor, we've appended
+these appropriately to update
+
+11819
+11:56:21,680 --> 11:56:25,100
+everything. So instead of owner,
+it's going to be I underscore
+
+11820
+11:56:25,100 --> 11:56:28,010
+owner, and as a developer will
+read this, and we'll go ah, this
+
+11821
+11:56:28,010 --> 11:56:31,310
+is going to be much cheaper than
+a regular variable. Okay, that's
+
+11822
+11:56:31,310 --> 11:56:34,160
+great. I'm going to work with
+this. This I underscore owner
+
+11823
+11:56:34,190 --> 11:56:37,700
+for my modifier. Awesome. Is
+owner anywhere else in here?
+
+11824
+11:56:38,480 --> 11:56:42,260
+Okay, right in the constructor.
+I own underscore owner is
+
+11825
+11:56:42,260 --> 11:56:45,950
+message dot sender. Price feed
+is a storage variable. We should
+
+11826
+11:56:45,950 --> 11:56:49,100
+as developers, we should see the
+s underscore when reading this
+
+11827
+11:56:49,130 --> 11:56:53,420
+and go, Okay, we're spending a
+lot of gas to store this.
+
+11828
+11:56:53,480 --> 11:56:57,140
+Perfect. Okay, great. Let's keep
+going. Great. We've updated all
+
+11829
+11:56:57,140 --> 11:57:01,040
+the owners. Okay, well, what
+about address to amount funded?
+
+11830
+11:57:01,850 --> 11:57:06,590
+In VS code? If you do Command F,
+or Ctrl, F, and you hit this
+
+11831
+11:57:06,590 --> 11:57:10,070
+little down arrow, you can
+actually find and replace all of
+
+11832
+11:57:10,070 --> 11:57:14,750
+these address to amount funded
+with s underscore address to Mt
+
+11833
+11:57:14,750 --> 11:57:18,710
+funded. Hit it like that. And
+since I updated one, I got a
+
+11834
+11:57:18,740 --> 11:57:22,160
+backspace that one no. So now
+these are all updated. Let's do
+
+11835
+11:57:22,160 --> 11:57:26,120
+the same thing with s funders.
+Let's update everywhere. It has
+
+11836
+11:57:26,120 --> 11:57:29,810
+funders just to be s funders.
+And we probably doubled up here.
+
+11837
+11:57:29,810 --> 11:57:30,020
+Yep.
+
+11838
+11:57:30,020 --> 11:57:33,260
+Let's undo that. We already
+updated all the AI owners. So
+
+11839
+11:57:33,260 --> 11:57:36,350
+now it's updated all the price
+feeds. So let's look for price
+
+11840
+11:57:36,350 --> 11:57:39,740
+feed, we'll update it with ES
+price feed. And then we probably
+
+11841
+11:57:39,740 --> 11:57:42,740
+doubled up right here. So we'll
+undo that. Okay, great. Now that
+
+11842
+11:57:42,740 --> 11:57:45,890
+we've updated everything in
+here, we can scroll down and we
+
+11843
+11:57:45,890 --> 11:57:49,670
+can oops, sorry, doubled up
+there too. Sorry. We can we can
+
+11844
+11:57:49,670 --> 11:57:53,900
+green through our code and go
+okay, where are we reading and
+
+11845
+11:57:53,900 --> 11:57:57,230
+writing to storage way more
+often than we probably need to.
+
+11846
+11:57:57,560 --> 11:58:00,950
+And that's when we get to this
+withdrawal function, which seems
+
+11847
+11:58:00,980 --> 11:58:05,240
+rather suspect to reading and
+writing to storage a lot. So
+
+11848
+11:58:05,240 --> 11:58:08,030
+let's take a look at what we're
+doing here. Okay, so first of
+
+11849
+11:58:08,030 --> 11:58:13,040
+all, I can see that we're doing
+a for loop here. And every time
+
+11850
+11:58:13,040 --> 11:58:16,400
+we do a for loop, we're just
+constantly looping through all
+
+11851
+11:58:16,400 --> 11:58:20,330
+of this code. Every single time
+we're doing a little compare
+
+11852
+11:58:20,330 --> 11:58:24,530
+option here we're saying, okay,
+is our funder index less than s
+
+11853
+11:58:24,530 --> 11:58:28,940
+funders dot length? S funders
+dot length, this means the
+
+11854
+11:58:28,940 --> 11:58:32,000
+longer our funders array is, the
+more times we're going to be
+
+11855
+11:58:32,000 --> 11:58:36,110
+reading from storage, that's
+incredibly expensive. We're also
+
+11856
+11:58:36,110 --> 11:58:40,340
+recalling this, oh my goodness,
+we're reading from storage a lot
+
+11857
+11:58:40,340 --> 11:58:43,160
+and saving it to this memory
+variable, and then updating our
+
+11858
+11:58:43,160 --> 11:58:46,580
+storage variable with it. Wow.
+So we're reading from storage a
+
+11859
+11:58:46,580 --> 11:58:50,300
+ton here, and we're reading from
+storage a ton here, okay, then
+
+11860
+11:58:50,300 --> 11:58:52,640
+we have to reset our funders
+array, there's really no way
+
+11861
+11:58:52,640 --> 11:58:55,610
+around it. And that's pretty
+much it for our reading and
+
+11862
+11:58:55,610 --> 11:58:58,130
+writing to storage, we could
+probably create a withdrawal
+
+11863
+11:58:58,130 --> 11:59:01,640
+function, that's a lot cheaper.
+So let's go ahead and create a
+
+11864
+11:59:01,640 --> 11:59:05,480
+function called cheaper
+withdraw, function, cheaper
+
+11865
+11:59:05,480 --> 11:59:10,730
+withdraw. That's going to take
+what we've just learned and make
+
+11866
+11:59:10,730 --> 11:59:13,970
+a cheaper withdraw, that's much
+more gas efficient. So we'll
+
+11867
+11:59:13,970 --> 11:59:18,350
+keep this public payable. and
+have it be only owner, we're not
+
+11868
+11:59:18,350 --> 11:59:23,180
+going to change anything there.
+But what can we do for at least
+
+11869
+11:59:23,210 --> 11:59:26,630
+this part here, we don't want to
+keep reading from storage here.
+
+11870
+11:59:26,870 --> 11:59:29,150
+And we don't want to always have
+to keep reading from storage
+
+11871
+11:59:29,180 --> 11:59:32,240
+here. We're like doubling up the
+amount of storage we're reading
+
+11872
+11:59:32,240 --> 11:59:35,960
+from. So instead, what we can
+do, we can read this entire
+
+11873
+11:59:35,960 --> 11:59:41,720
+array into memory one time, and
+then read from memory instead of
+
+11874
+11:59:41,720 --> 11:59:43,940
+constantly reading from storage.
+And that's going to make our
+
+11875
+11:59:43,940 --> 11:59:49,430
+lives a lot cheaper. So we can
+create an address array. Memory
+
+11876
+11:59:49,460 --> 11:59:54,230
+funders equals s underscore,
+funders. And now it's going to
+
+11877
+11:59:54,230 --> 11:59:58,670
+start making sense why for
+arrays and strings in our
+
+11878
+11:59:58,670 --> 12:00:02,000
+functions, it makes us say, hey,
+is this memory is a storage?
+
+11879
+12:00:02,000 --> 12:00:04,700
+What is this? And we're telling
+it, we want it to be memory
+
+11880
+12:00:04,700 --> 12:00:07,340
+because memory is going to be a
+lot cheaper. So now that we're
+
+11881
+12:00:07,340 --> 12:00:12,110
+saving it into our funders, oh,
+and a quick note mappings can't
+
+11882
+12:00:12,140 --> 12:00:16,490
+be in memory. Sorry. They're
+just too weird and too wacky. So
+
+11883
+12:00:16,730 --> 12:00:19,250
+flooding just doesn't let you do
+that right now. But now that
+
+11884
+12:00:19,250 --> 12:00:24,350
+we've saved our storage variable
+into a memory variable, we can
+
+11885
+12:00:24,350 --> 12:00:28,100
+read and write from this memory
+variable, much, much cheaper,
+
+11886
+12:00:28,130 --> 12:00:31,400
+and then update storage when
+we're all done. So what we're
+
+11887
+12:00:31,400 --> 12:00:35,240
+going to do now is we're gonna
+say for you into V six, fund or
+
+11888
+12:00:35,240 --> 12:00:38,750
+index equals zero, and we're
+going to basically rewrite
+
+11889
+12:00:38,750 --> 12:00:43,220
+everything but just using this
+memory array. instead. We're
+
+11890
+12:00:43,220 --> 12:00:48,740
+gonna say funder index is less
+than funders dot length and
+
+11891
+12:00:48,770 --> 12:00:53,540
+instead of s funders dot length,
+and then we're gonna say funder
+
+11892
+12:00:53,570 --> 12:00:57,650
+index plus plus. And then in
+here we're gonna do nearly
+
+11893
+12:00:57,650 --> 12:01:00,800
+exactly the same thing, except
+we're gonna say address funder
+
+11894
+12:01:01,430 --> 12:01:08,060
+equals funders, using our memory
+array and not s funders have
+
+11895
+12:01:08,060 --> 12:01:13,310
+funder index. And then we're
+gonna say s address to amount
+
+11896
+12:01:13,340 --> 12:01:20,150
+funded. funder equals zero. So
+we're resetting our funders
+
+11897
+12:01:20,150 --> 12:01:24,080
+mapping here, we're using our
+memory variables instead, then
+
+11898
+12:01:24,080 --> 12:01:28,010
+we're going to do the same thing
+s underscore funders equals new
+
+11899
+12:01:28,370 --> 12:01:33,590
+address array of zero. And then
+we're gonna do the same thing
+
+11900
+12:01:33,590 --> 12:01:40,730
+bool success, comma equals S
+owner, dot call value,
+
+11901
+12:01:41,930 --> 12:01:47,000
+address this balance, and we're
+going to send it nothing and
+
+11902
+12:01:47,000 --> 12:01:53,780
+then require success. Like that
+actually, sorry, Iona on a sonar
+
+11903
+12:01:53,840 --> 12:01:56,810
+now that we have this function
+that we think is cheaper, let's
+
+11904
+12:01:56,810 --> 12:02:01,430
+go back to our test. And let's
+run this same multi test here,
+
+11905
+12:02:01,850 --> 12:02:05,060
+but with our cheaper function.
+So I know this can be a little
+
+11906
+12:02:05,060 --> 12:02:08,540
+bit tricky to copy, paste, but
+let's copy this entire massive
+
+11907
+12:02:08,540 --> 12:02:13,010
+test. Let's come down here,
+paste it, and we'll change the
+
+11908
+12:02:13,010 --> 12:02:19,400
+name saying cheaper withdraw,
+testing dot that done. And in
+
+11909
+12:02:19,400 --> 12:02:23,000
+here in in this giant it here,
+all we're going to change is
+
+11910
+12:02:23,000 --> 12:02:27,110
+we're going to change withdraw
+to cheaper withdraw, and the
+
+11911
+12:02:27,110 --> 12:02:30,200
+rest of the test is going to be
+exactly the same. So with that,
+
+11912
+12:02:30,200 --> 12:02:33,080
+let's see if if we were
+successful in making our
+
+11913
+12:02:33,080 --> 12:02:36,260
+withdraw function cheaper with
+cheaper withdraw, we're gonna
+
+11914
+12:02:36,260 --> 12:02:40,940
+pull apart our terminal now. And
+we do yarn, art hat test, which
+
+11915
+12:02:40,940 --> 12:02:43,310
+is going to run our gas
+estimator because it's enabled
+
+11916
+12:02:43,310 --> 12:02:45,950
+right now. And of course, all of
+our functions have been broken
+
+11917
+12:02:45,950 --> 12:02:49,790
+because we renamed everything.
+So we'll do a quick final
+
+11918
+12:02:49,790 --> 12:02:57,560
+replace of funders, to change
+funders to ask funders. And then
+
+11919
+12:02:57,590 --> 12:03:02,960
+we're gonna change price feed to
+ask price feed. And then do we
+
+11920
+12:03:02,960 --> 12:03:06,920
+have owner anywhere? We don't
+have owner or anywhere. We need
+
+11921
+12:03:06,920 --> 12:03:10,280
+to change this one. Address to
+amount funded. Let's come in
+
+11922
+12:03:10,280 --> 12:03:15,560
+here. Address to amount funded.
+S adderstone. well funded. What
+
+11923
+12:03:15,560 --> 12:03:18,530
+else do we need to change price?
+We price feed funders. Okay, I
+
+11924
+12:03:18,530 --> 12:03:20,930
+think we changed everything.
+Alright, so let's try our test
+
+11925
+12:03:20,930 --> 12:03:24,950
+now. Yarn Hardhead test. All
+right, great. Everything's
+
+11926
+12:03:24,950 --> 12:03:30,050
+passing. And we ran our cheaper
+withdraw testing. So now, if we
+
+11927
+12:03:30,050 --> 12:03:34,760
+go to our gas output here, our
+gas report, zoom out just a
+
+11928
+12:03:34,760 --> 12:03:38,450
+hair, we can see the difference
+between cheaper withdraw and
+
+11929
+12:03:38,450 --> 12:03:42,140
+withdraw, we see something
+really interesting. Here we see
+
+11930
+12:03:42,170 --> 12:03:46,790
+our cheaper withdraw on average
+was actually more expensive than
+
+11931
+12:03:46,790 --> 12:03:49,940
+our regular withdraw. And the
+reason for this is because
+
+11932
+12:03:49,940 --> 12:03:53,150
+actually, if we go to our tests
+are cheaper withdrawal, we only
+
+11933
+12:03:53,150 --> 12:03:57,170
+tested on the multi withdraw. So
+we had to reset many, many more
+
+11934
+12:03:57,170 --> 12:04:01,850
+accounts. But this was also
+technically its maximum as well.
+
+11935
+12:04:01,940 --> 12:04:04,670
+And if we compare the maximum of
+the cheaper withdrawal, the
+
+11936
+12:04:04,670 --> 12:04:07,520
+maximum of the withdraw, it
+looks like the cheaper
+
+11937
+12:04:07,520 --> 12:04:11,000
+withdrawal was indeed cheaper.
+And if we go to our hard hat dot
+
+11938
+12:04:11,000 --> 12:04:15,140
+config, and we add our API key
+back in, what we could even do
+
+11939
+12:04:15,260 --> 12:04:18,860
+is in our test, we could copy
+withdraw eath from a single
+
+11940
+12:04:18,860 --> 12:04:23,660
+funder, copy that, paste it in
+and just change withdraw to
+
+11941
+12:04:23,660 --> 12:04:27,290
+cheaper withdrawal, rerun it
+with the key and now do yarn
+
+11942
+12:04:27,290 --> 12:04:30,500
+Hardhead test, we can see
+exactly how many dollars we
+
+11943
+12:04:30,500 --> 12:04:36,770
+would save if we ran this on the
+Matic blockchain. Now let's go
+
+11944
+12:04:36,770 --> 12:04:41,120
+back, we'll reopen up our gas
+report. And we can see, in the
+
+11945
+12:04:41,120 --> 12:04:43,640
+minimum cheaper withdrawal was
+actually a little bit more
+
+11946
+12:04:43,640 --> 12:04:46,640
+expensive. This actually does
+make sense because if we look at
+
+11947
+12:04:46,640 --> 12:04:49,340
+funding, if we only have to
+withdraw when there was one
+
+11948
+12:04:49,340 --> 12:04:53,240
+funder, well this loop only runs
+one time. And our cheaper
+
+11949
+12:04:53,240 --> 12:04:56,960
+withdraw will do the exact same
+but it will have this this extra
+
+11950
+12:04:56,960 --> 12:05:00,470
+thing here of loading them all
+in, we see that the savings The
+
+11951
+12:05:00,470 --> 12:05:04,430
+more people our funders in our
+contracts. So automatic, we can
+
+11952
+12:05:04,430 --> 12:05:08,330
+see we pretty much didn't save
+anything. But if I change this
+
+11953
+12:05:08,330 --> 12:05:14,780
+one more time to eath run the
+test again. Now we can see
+
+11954
+12:05:14,870 --> 12:05:17,990
+people withdraw saved a few
+cents. This is how we can start
+
+11955
+12:05:18,020 --> 12:05:21,050
+optimizing our contracts will be
+cheaper and cheaper. And this
+
+11956
+12:05:21,050 --> 12:05:23,720
+two cents was just in the
+average. It's not even comparing
+
+11957
+12:05:23,750 --> 12:05:27,380
+the max to the max, which was a
+lot more gas than their
+
+11958
+12:05:27,380 --> 12:05:35,060
+averages. We have just learned
+an absolute ton here. Now, this
+
+11959
+12:05:35,060 --> 12:05:36,950
+next part is going to make some
+of you mad because we're going
+
+11960
+12:05:36,950 --> 12:05:39,620
+to refactor our code one more
+time if you don't want to
+
+11961
+12:05:39,620 --> 12:05:42,200
+refactor it and you want to
+leave all your tests as s
+
+11962
+12:05:42,200 --> 12:05:45,770
+underscores you absolutely can
+but to other users using our
+
+11963
+12:05:45,770 --> 12:05:48,920
+application. Dealing with this s
+underscore is a little Little
+
+11964
+12:05:48,920 --> 12:05:51,620
+bit gross and actually can make
+our code a little bit more
+
+11965
+12:05:51,620 --> 12:05:55,610
+confusing for those who use it.
+And additionally, right now all
+
+11966
+12:05:55,610 --> 12:05:58,250
+of our state variables are
+public. And actually internal
+
+11967
+12:05:58,250 --> 12:06:01,670
+variables and private variables
+are also cheaper gas wise. And
+
+11968
+12:06:01,670 --> 12:06:03,650
+we don't need to make every
+single one of our variables
+
+11969
+12:06:03,650 --> 12:06:07,070
+public, because anybody can read
+them off the chain anyways. So
+
+11970
+12:06:07,070 --> 12:06:09,710
+one more refactoring that we're
+going to do is we're actually
+
+11971
+12:06:09,710 --> 12:06:13,370
+going to set the visibility of
+these to private or internal,
+
+11972
+12:06:13,640 --> 12:06:16,250
+based off of whether or not they
+need to be private or internal,
+
+11973
+12:06:16,280 --> 12:06:20,480
+and then we'll create getters at
+the bottom of our function here.
+
+11974
+12:06:20,660 --> 12:06:23,540
+So minimum USD, we can keep this
+public because we want other
+
+11975
+12:06:23,540 --> 12:06:26,840
+people to know what the minimum
+USD of our contract is, without
+
+11976
+12:06:26,840 --> 12:06:29,060
+having to go right through
+storage, the owner of our
+
+11977
+12:06:29,060 --> 12:06:31,820
+contract isn't important for
+others to know or other
+
+11978
+12:06:31,820 --> 12:06:34,310
+contracts to know. So we can go
+ahead and make this private, and
+
+11979
+12:06:34,310 --> 12:06:36,260
+then at the bottom at a function
+
+11980
+12:06:37,490 --> 12:06:48,470
+get owner. That's a public view
+that returns I owner, turns
+
+11981
+12:06:49,640 --> 12:06:55,520
+address as funders, as funders
+can be private as well. So at
+
+11982
+12:06:55,520 --> 12:07:00,230
+the bottom, we're gonna say
+function, get funder, and we're
+
+11983
+12:07:00,230 --> 12:07:11,930
+going to pass a un 236 index,
+public U, turns, address, return
+
+11984
+12:07:12,470 --> 12:07:17,210
+as funders of index, the address
+to Mt funded can also be
+
+11985
+12:07:17,210 --> 12:07:21,920
+private. So the bottom, we're
+going to create function, get
+
+11986
+12:07:22,220 --> 12:07:28,340
+address to amount funded. And
+this is going to take an address
+
+11987
+12:07:29,210 --> 12:07:36,260
+under the public view returns,
+you went to 56. And we're going
+
+11988
+12:07:36,260 --> 12:07:41,960
+to return amount funded of the
+funder did this one we did this
+
+11989
+12:07:41,960 --> 12:07:46,310
+one, we did this one. And then
+price feed, function get price
+
+11990
+12:07:46,310 --> 12:07:50,840
+feed. This is going to be public
+view as well, that returns
+
+11991
+12:07:51,440 --> 12:07:55,070
+aggregate tour of the three
+interface that's going to return
+
+11992
+12:07:55,100 --> 12:07:58,400
+so I'm just gonna price feed.
+Oh, okay. The reason why we did
+
+11993
+12:07:58,400 --> 12:08:02,030
+that is because we want to have
+this s underscore so that we as
+
+11994
+12:08:02,030 --> 12:08:05,600
+developers can know, okay, this
+is a storage variable, I want to
+
+11995
+12:08:05,600 --> 12:08:08,780
+be very careful about how I
+interact with this. But we don't
+
+11996
+12:08:08,780 --> 12:08:11,300
+want people who interact with
+our code to have to deal with
+
+11997
+12:08:11,300 --> 12:08:14,180
+this s stuff. And we want to
+give them an API that makes
+
+11998
+12:08:14,180 --> 12:08:17,090
+sense, and that it's easy and
+readable. So we add these getter
+
+11999
+12:08:17,090 --> 12:08:20,240
+functions at the bottom to do
+that. And also changing the
+
+12000
+12:08:20,240 --> 12:08:24,110
+visibility can save us some gas
+in the long run as well, because
+

@@ -1,0 +1,4991 @@
+24001
+00:51:47,260 --> 00:51:50,590
+know the address and the token
+ID of the NF t and we own it, we
+
+24002
+00:51:50,590 --> 00:51:53,350
+can go ahead and relisted you're
+gonna place the address in here
+
+24003
+00:51:54,100 --> 00:51:58,480
+with the token Id give it some
+sort of price. We'll submit
+
+24004
+00:51:59,230 --> 00:52:03,280
+we'll approve giving the NFT
+marketplace access to our or
+
+24005
+00:52:03,400 --> 00:52:07,570
+NFT, to our little doggie. And
+then we'll go ahead and actually
+
+24006
+00:52:07,570 --> 00:52:12,490
+send the transaction to actually
+list the NFT on a marketplace
+
+24007
+00:52:12,970 --> 00:52:16,270
+that we get NF T listed
+successfully. After we move some
+
+24008
+00:52:16,270 --> 00:52:19,840
+blocks in the backend, we can go
+back to the front end. And we
+
+24009
+00:52:19,840 --> 00:52:23,740
+now see, it's owned by us,
+instead of the original owner,
+
+24010
+00:52:23,770 --> 00:52:27,940
+right and set for 10 ether. And
+then we can of course, switch
+
+24011
+00:52:27,940 --> 00:52:30,520
+back to a different user, and we
+can have
+
+24012
+00:52:30,550 --> 00:52:36,460
+them actually buy. Alright, so
+now that we have the contracts,
+
+24013
+00:52:36,460 --> 00:52:39,340
+we know what this looks like on
+the contract side. So now let's
+
+24014
+00:52:39,340 --> 00:52:42,520
+figure out how to do this on the
+front end side. So let's jump
+
+24015
+00:52:42,520 --> 00:52:46,570
+into our code editor. And begin
+if we're on our hard hat and my
+
+24016
+00:52:46,780 --> 00:52:50,410
+NFT marketplace Free Code Camp
+folder. That's great. But we're
+
+24017
+00:52:50,410 --> 00:52:52,870
+going to create another folder,
+we're going to CD down and
+
+24018
+00:52:52,870 --> 00:52:55,900
+directory. And we're going to
+make a new directory. I'm going
+
+24019
+00:52:55,900 --> 00:53:01,870
+to call it next Jas and if T
+marketplace dash FCC. Now you
+
+24020
+00:53:01,870 --> 00:53:05,650
+can do next Jas marketplace dash
+mirallas FCC if you want. Again,
+
+24021
+00:53:05,650 --> 00:53:10,090
+we're starting with mirallas CD
+next Jas NFT marketplace FCC. So
+
+24022
+00:53:10,120 --> 00:53:14,950
+now that we have this folder,
+will do code dot will open up a
+
+24023
+00:53:14,950 --> 00:53:18,820
+new VS code, or you can do File
+Open folder and open this new
+
+24024
+00:53:18,820 --> 00:53:22,330
+folder. And we can begin working
+in this new folder in here. Now
+
+24025
+00:53:22,330 --> 00:53:25,240
+that we're in our new project,
+we're in our new folder, we're
+
+24026
+00:53:25,240 --> 00:53:29,650
+gonna do exactly what we've done
+before. Yarn create next app,
+
+24027
+00:53:30,190 --> 00:53:36,040
+period. Okay, we've done our
+setup here. Now, I don't like es
+
+24028
+00:53:36,040 --> 00:53:37,930
+lint. So once again, I'm just
+going to go ahead and delete
+
+24029
+00:53:37,930 --> 00:53:42,010
+that. And what we're going to
+add in instead is our prettier
+
+24030
+00:53:42,010 --> 00:53:45,850
+stuff. So prettier, ignore
+prettier RC. Again, some people
+
+24031
+00:53:45,850 --> 00:53:48,790
+may strongly disagree with me on
+that, but to each their own
+
+24032
+00:53:48,790 --> 00:53:50,530
+right, this is what I like to
+do. So this is what I'm going to
+
+24033
+00:53:50,530 --> 00:53:54,850
+do. Now we have a minimalistic
+react project, right? If we run
+
+24034
+00:53:54,850 --> 00:54:00,460
+yarn Dev, we open up our UI on
+that site, copy this, or
+
+24035
+00:54:00,460 --> 00:54:04,120
+Command, click it. Tada. Welcome
+to next. Jas Yeah, we've got an
+
+24036
+00:54:04,120 --> 00:54:09,430
+x js application. As we know, we
+go to pages, we go to index.js.
+
+24037
+00:54:09,730 --> 00:54:16,030
+Let's delete everything in here.
+Bom will leave the stuff and
+
+24038
+00:54:16,030 --> 00:54:19,360
+head if it comes with stuff and
+head will write Hi, exclamation
+
+24039
+00:54:19,360 --> 00:54:22,240
+mark. We'll save we'll come
+back. And now we see Hi. And
+
+24040
+00:54:22,240 --> 00:54:25,270
+I'll zoom in a whole bunch.
+Boom. So now we have some
+
+24041
+00:54:25,270 --> 00:54:29,110
+minimalistic reacts minimalistic
+next, Jas. Now, I know we
+
+24042
+00:54:29,110 --> 00:54:32,290
+already started the project
+here. But let's jump to the
+
+24043
+00:54:32,290 --> 00:54:35,380
+readme that's given to us. And
+let's talk about how we want to
+
+24044
+00:54:35,380 --> 00:54:39,160
+do this what we want this to
+actually look like. Well, we're
+
+24045
+00:54:39,160 --> 00:54:42,340
+going to want to make a
+homepage. And in this homepage,
+
+24046
+00:54:42,340 --> 00:54:46,840
+we'll say we'll have it show
+recently listed, NF T's homepage
+
+24047
+00:54:46,840 --> 00:54:50,140
+will show recently listed
+entities that will say if you
+
+24048
+00:54:50,170 --> 00:54:55,150
+own the NFT, you can update the
+listing. If not, you can buy the
+
+24049
+00:54:55,150 --> 00:54:58,990
+listing. So we'll have that. And
+then we'll have a sell page. And
+
+24050
+00:54:58,990 --> 00:55:03,820
+in this page, you can list your
+NFT on the marketplace. So these
+
+24051
+00:55:03,820 --> 00:55:05,380
+are going to be our two main
+pages, we're gonna have a
+
+24052
+00:55:05,380 --> 00:55:08,440
+homepage and a sell page. Now
+we're going to have a ton of
+
+24053
+00:55:08,440 --> 00:55:10,990
+components, but we're really
+only going to have two main
+
+24054
+00:55:10,990 --> 00:55:15,460
+pages. So if we go back over to
+Pages, right, right now we have
+
+24055
+00:55:15,460 --> 00:55:19,330
+our apps dot j s, which serves
+our app, which is cool, which
+
+24056
+00:55:19,330 --> 00:55:21,700
+everything runs through. And
+then we have our homepage. Let's
+
+24057
+00:55:21,700 --> 00:55:27,280
+also create right now, our sell
+page or selling of T dot j s.
+
+24058
+00:55:27,610 --> 00:55:30,640
+And then in here, we'll just
+make this really minimal, that
+
+24059
+00:55:30,640 --> 00:55:33,460
+we can copy most of what's in
+here, we can actually just copy
+
+24060
+00:55:33,460 --> 00:55:36,340
+paste this whole thing, paste it
+in here. And instead of high,
+
+24061
+00:55:36,340 --> 00:55:42,070
+we'll say sell page. We'll save
+that. Now if we go to our
+
+24062
+00:55:42,070 --> 00:55:48,280
+localhost do debt slash sell.
+And if T oops, we gotta run. Run
+
+24063
+00:55:48,280 --> 00:55:51,730
+the front end again. With yarn
+Dev. Sorry, we'll run yarn dev
+
+24064
+00:55:51,730 --> 00:55:55,600
+again. Now we refresh. And now
+we can see sell page. So sell
+
+24065
+00:55:55,600 --> 00:55:58,330
+pages that slash sell page, and
+then home is just going to be
+
+24066
+00:55:58,330 --> 00:56:02,740
+high. Okay, cool. So we have our
+two pages. Which one should we
+
+24067
+00:56:02,740 --> 00:56:07,060
+work on first? Well, let's work
+on our homepage. So we're going
+
+24068
+00:56:07,060 --> 00:56:10,510
+to be in our index.js. I'm going
+to keep this front end bit
+
+24069
+00:56:10,510 --> 00:56:13,540
+running, we're going to hide it
+oops, that's the opposite of
+
+24070
+00:56:13,540 --> 00:56:16,960
+hiding it, push it down, we're
+going to hide it like that. And
+
+24071
+00:56:16,960 --> 00:56:19,630
+let's go ahead and let's start
+building this. So we see in our
+
+24072
+00:56:19,630 --> 00:56:22,210
+index js, we have some head
+stuff here, I'm going to change
+
+24073
+00:56:22,210 --> 00:56:28,540
+this to NFT. Marketplace.
+Description is going to be just
+
+24074
+00:56:28,540 --> 00:56:29,590
+an empty marketplace.
+
+24075
+00:56:32,050 --> 00:56:36,670
+Like so Fabcon looks great. Now
+if we do a little refresh, now
+
+24076
+00:56:36,700 --> 00:56:40,000
+it says NFT marketplace up at
+the top here, which is good.
+
+24077
+00:56:40,000 --> 00:56:42,610
+That's what we want. Well in our
+index page, what's one of the
+
+24078
+00:56:42,610 --> 00:56:45,280
+first things that we're always
+going to need to do? You guessed
+
+24079
+00:56:45,280 --> 00:56:47,890
+it, we're going to need a little
+connect button right? We're
+
+24080
+00:56:47,890 --> 00:56:51,400
+going to need our users to be
+able to connect to to web three
+
+24081
+00:56:51,400 --> 00:56:55,180
+to connect to a blockchain. So
+same as we've done before. Let's
+
+24082
+00:56:55,180 --> 00:56:57,340
+go ahead let's create a
+components folder. And we'll
+
+24083
+00:56:57,340 --> 00:57:01,870
+create a header component
+component Nance folder and we'll
+
+24084
+00:57:01,870 --> 00:57:06,460
+create a new file The header
+digests. Now remember, since
+
+24085
+00:57:06,460 --> 00:57:09,790
+we've done this before, with our
+front end lottery code, we can
+
+24086
+00:57:09,820 --> 00:57:12,580
+always refer back to the lottery
+code as well when we're building
+
+24087
+00:57:12,580 --> 00:57:16,120
+this, okay. And of course, we
+have all of the code for this on
+
+24088
+00:57:16,120 --> 00:57:19,120
+the GitHub repo. So you can use
+that to what I'm not going to
+
+24089
+00:57:19,120 --> 00:57:22,270
+have you all do is last time, we
+did that manual header thing,
+
+24090
+00:57:22,270 --> 00:57:24,880
+right, where we had to do all
+the local storage and do all
+
+24091
+00:57:24,880 --> 00:57:28,150
+that crazy stuff, we're not
+going to do that. This time,
+
+24092
+00:57:28,480 --> 00:57:30,850
+we're going to just do it the
+easy way, we're going to just
+
+24093
+00:57:30,850 --> 00:57:34,960
+use the web three UI kit. So to
+use this connect button, we're
+
+24094
+00:57:34,960 --> 00:57:38,920
+going to do yarn, add. And we're
+not going to do dash dash Dev,
+
+24095
+00:57:38,950 --> 00:57:42,550
+because this connect button is a
+necessary component for the
+
+24096
+00:57:42,550 --> 00:57:46,510
+front end, yarn add web through
+UI Kit. This also means we're
+
+24097
+00:57:46,510 --> 00:57:51,670
+going to do Morales and react
+mirallas. I said, and this is
+
+24098
+00:57:51,670 --> 00:57:54,460
+where it might be a little
+confusing. I know I said in here
+
+24099
+00:57:54,730 --> 00:57:59,170
+that we have both a Morales and
+other graph edition. So we're
+
+24100
+00:57:59,170 --> 00:58:02,560
+still going to use the Morales
+package in both of them. The
+
+24101
+00:58:02,560 --> 00:58:05,620
+only difference is we're going
+to use a Morales server as well
+
+24102
+00:58:05,620 --> 00:58:08,290
+in our Morales edition. And
+we're not going to use a morale
+
+24103
+00:58:08,290 --> 00:58:11,260
+server on our the graph edition,
+they're both can use the Morales
+
+24104
+00:58:11,260 --> 00:58:14,830
+package because all the open
+source hooks and tools are still
+
+24105
+00:58:14,830 --> 00:58:18,310
+incredibly powerful, even if we
+don't use the Morales server. So
+
+24106
+00:58:18,310 --> 00:58:20,440
+we're still going to use the
+Morales package even when we're
+
+24107
+00:58:20,440 --> 00:58:23,020
+going to be using the graph.
+Great. So now that we've added
+
+24108
+00:58:23,020 --> 00:58:26,680
+those all, we're going to do
+exactly what we did before on
+
+24109
+00:58:26,680 --> 00:58:30,760
+our last next Jas process. So in
+order to use our web through UI
+
+24110
+00:58:30,760 --> 00:58:37,480
+component in our app, dot j, s,
+and do import mirallas provider
+
+24111
+00:58:40,450 --> 00:58:45,190
+quotes and without sorry, and
+curly brace, it's from react
+
+24112
+00:58:45,700 --> 00:58:49,780
+mirallas like that. And then
+we're going to wrap our whole
+
+24113
+00:58:49,780 --> 00:58:53,650
+component thing in a morass
+provider. So we're gonna do
+
+24114
+00:58:53,650 --> 00:59:00,430
+return, little open parentheses,
+close parentheses here. We're
+
+24115
+00:59:00,430 --> 00:59:06,040
+gonna do rounds provider. And
+then we're gonna do in if she
+
+24116
+00:59:06,070 --> 00:59:12,280
+allies on Mount is going to
+equal false, because we're not
+
+24117
+00:59:12,280 --> 00:59:15,490
+going to use the server yet, or
+else provider. Okay, cool. Now
+
+24118
+00:59:15,490 --> 00:59:19,030
+that we've wrapped our app in a
+Morales provider, and go back to
+
+24119
+00:59:19,060 --> 00:59:24,820
+our header, we're gonna say
+Export default function header,
+
+24120
+00:59:26,650 --> 00:59:29,410
+we're going to grab our Connect
+button from what through your
+
+24121
+00:59:29,410 --> 00:59:35,920
+eye kit. So we'll do import
+connect button from web three UI
+
+24122
+00:59:35,920 --> 00:59:42,700
+kits. And then in here, we're
+just gonna say return. The next
+
+24123
+00:59:42,700 --> 00:59:46,570
+button. Now what we can do back
+in our app, J. S, is we can do
+
+24124
+00:59:46,600 --> 00:59:53,950
+import, import, do header from
+dot dot slash components header,
+
+24125
+00:59:54,460 --> 00:59:57,940
+and we have our header, we'll
+just put our header right above
+
+24126
+00:59:57,970 --> 01:00:01,030
+the component. And we're going
+to add some stuff to the header
+
+24127
+01:00:01,090 --> 01:00:03,400
+in a bit. Let's just make sure
+that we're importing the header
+
+24128
+01:00:03,400 --> 01:00:06,730
+correctly. Let's go back to our
+UI here. And okay, boom, we have
+
+24129
+01:00:06,730 --> 01:00:09,670
+our connects button. If we click
+it, you know, we'll get this
+
+24130
+01:00:09,670 --> 01:00:12,160
+little pop up. And I'm way
+zoomed in. So I'm going to anway
+
+24131
+01:00:12,160 --> 01:00:12,790
+zoom in.
+
+24132
+01:00:14,080 --> 01:00:16,030
+Now, what else do we want to put
+in our header? Well, we're
+
+24133
+01:00:16,030 --> 01:00:19,150
+probably going to want to like
+give this like a name and make
+
+24134
+01:00:19,150 --> 01:00:22,090
+this look a little bit nicer,
+probably going to want to a link
+
+24135
+01:00:22,090 --> 01:00:27,280
+as well to our cell NF T page.
+So let's create a navbar. So
+
+24136
+01:00:27,280 --> 01:00:29,950
+instead of just returning the
+connect button, put this in
+
+24137
+01:00:29,950 --> 01:00:33,310
+parenthesis and we'll have a
+return some other stuff too. So
+
+24138
+01:00:33,310 --> 01:00:37,150
+we can use this nav tag, which
+usually defines like a nav bar.
+
+24139
+01:00:37,330 --> 01:00:41,080
+So it's really similar to a div,
+it's just another tag. Right, so
+
+24140
+01:00:41,080 --> 01:00:44,710
+now we'll put everything into
+this nav tag. And in next Jas,
+
+24141
+01:00:44,710 --> 01:00:51,520
+we can actually make links using
+the next Jas link tag. So what
+
+24142
+01:00:51,520 --> 01:00:55,630
+we can do in this is link allows
+us to basically connect to
+
+24143
+01:00:55,660 --> 01:01:00,700
+different links or URLs in our
+application, like so. So we can
+
+24144
+01:01:00,700 --> 01:01:07,600
+do import link from next slash
+link. And in here, let's say if
+
+24145
+01:01:07,600 --> 01:01:10,930
+we want it to go to the
+homepage, we can make a link.
+
+24146
+01:01:11,500 --> 01:01:18,520
+And we'll say h ref equals slash
+equals slash. And inside of
+
+24147
+01:01:18,520 --> 01:01:23,440
+this, we would wrap this in an a
+tag to make it clickable. And
+
+24148
+01:01:23,440 --> 01:01:28,450
+then we could just say something
+like NFT marketplace. Now if we
+
+24149
+01:01:28,450 --> 01:01:32,830
+save that, we go to our front
+end, we now we see have a NFT
+
+24150
+01:01:32,830 --> 01:01:35,890
+marketplace button that we can
+click and since we're already at
+
+24151
+01:01:35,890 --> 01:01:38,530
+home, we're not going to go
+anywhere. But if we copy this
+
+24152
+01:01:38,560 --> 01:01:42,820
+link section, paste it below,
+and we make another one for cell
+
+24153
+01:01:42,850 --> 01:01:48,940
+and f t. And we title this cell
+NF t. Now we save we go back to
+
+24154
+01:01:48,940 --> 01:01:52,690
+our front end, we now have NFT
+marketplace and sell NFT if I
+
+24155
+01:01:52,690 --> 01:01:55,630
+click sell NF t we now get to
+the sell page right we'll go
+
+24156
+01:01:55,630 --> 01:02:01,600
+back to the homepage sell page
+flip back and forth. Awesome,
+
+24157
+01:02:01,780 --> 01:02:05,380
+very exciting. So now we have
+have an incredibly minimalistic
+
+24158
+01:02:05,620 --> 01:02:09,820
+header obviously looks terrible.
+So let's do just a little bit of
+
+24159
+01:02:09,820 --> 01:02:12,820
+formatting. And oftentimes
+you'll do the formatting last.
+
+24160
+01:02:12,820 --> 01:02:16,210
+But while we're here, we might
+as well do our formatting we're
+
+24161
+01:02:16,210 --> 01:02:19,870
+going to use what if you guessed
+tailwind? You guessed correctly.
+
+24162
+01:02:20,350 --> 01:02:25,330
+So remember, tailwind with.
+Next. Jas, you can always just
+
+24163
+01:02:25,330 --> 01:02:28,240
+follow along here. And we'll
+grab, we'll do the exact same
+
+24164
+01:02:28,240 --> 01:02:32,410
+thing we did before we'll do
+yarn, add dash dash Dev, that
+
+24165
+01:02:32,410 --> 01:02:36,580
+stuff right there. And then
+we'll run a knit after these
+
+24166
+01:02:36,580 --> 01:02:36,880
+finished
+
+24167
+01:02:36,880 --> 01:02:42,640
+installing. So we'll do yarn,
+and then paste that in. And
+
+24168
+01:02:42,640 --> 01:02:46,060
+there we go. So now we've got
+our post CSS config, we've got
+
+24169
+01:02:46,060 --> 01:02:50,200
+our tailwind config. We're going
+to grab tailwind.config.js.
+
+24170
+01:02:50,470 --> 01:02:54,400
+Paste it in here. And then we're
+going to grab Global's dot css
+
+24171
+01:02:54,430 --> 01:02:58,930
+and open up Global's dot css,
+paste that in there, and cool.
+
+24172
+01:02:58,960 --> 01:03:01,690
+Now we have tailwind in here.
+Now that we have tailwind, we
+
+24173
+01:03:01,690 --> 01:03:05,560
+can do some tailwind stuff to
+our header here. Let's let's
+
+24174
+01:03:05,560 --> 01:03:09,490
+create a div for all of these
+for everything here, we'll
+
+24175
+01:03:09,490 --> 01:03:12,160
+create a little div for all the
+stuff here, we'll make like a
+
+24176
+01:03:12,160 --> 01:03:15,910
+big section for almost like a
+big sign saying, Hey, you're at
+
+24177
+01:03:15,910 --> 01:03:20,170
+the NFC marketplace, h1, which
+stands for header one, and we'll
+
+24178
+01:03:20,170 --> 01:03:26,770
+give it a class name of padding
+y of form. Padding x of four,
+
+24179
+01:03:26,800 --> 01:03:33,070
+we'll do font bold text will be
+three XL, and then it'll just
+
+24180
+01:03:33,070 --> 01:03:36,940
+say NFT marketplace. Now we have
+this NFT marketplace, which is
+
+24181
+01:03:36,940 --> 01:03:40,150
+nice bolt. Awesome. If you're on
+your server you're going to kill
+
+24182
+01:03:40,150 --> 01:03:43,270
+it's going to kill it with Ctrl
+C, and then we're going to
+
+24183
+01:03:43,270 --> 01:03:46,780
+restart it. And that's going to
+pull in all the tailwind stuff.
+
+24184
+01:03:46,810 --> 01:03:51,370
+And now if we refresh our local
+main, we should now see okay,
+
+24185
+01:03:51,400 --> 01:03:56,530
+and if T and F c, r gets place,
+right, we now see this and big
+
+24186
+01:03:56,530 --> 01:03:59,020
+and bold, which looks a lot
+better. So let's keep going.
+
+24187
+01:03:59,260 --> 01:04:03,790
+Let's give our whole nav a class
+name. Equals we'll give it
+
+24188
+01:04:03,790 --> 01:04:12,880
+padding of five, border bottom
+to flex flex row justify just if
+
+24189
+01:04:13,390 --> 01:04:19,150
+between n items center. We'll
+see how that looks. Haha, looks
+
+24190
+01:04:19,150 --> 01:04:22,450
+a lot better. We're now kind of
+like setting this up with a
+
+24191
+01:04:22,450 --> 01:04:25,960
+bottom border kind of stick and
+some stuff like this, that looks
+
+24192
+01:04:25,990 --> 01:04:29,500
+much much nicer already. Let's
+go down here. Let's make our
+
+24193
+01:04:29,500 --> 01:04:36,970
+buttons have a class name equals
+lax lax row items center. And
+
+24194
+01:04:36,970 --> 01:04:40,720
+like I said, this is not a
+styling class. So we're not
+
+24195
+01:04:40,720 --> 01:04:43,270
+really going to go over exactly
+how we're styling this. And that
+
+24196
+01:04:43,270 --> 01:04:46,300
+is okay. But that's going to
+move that over make that look a
+
+24197
+01:04:46,300 --> 01:04:51,490
+little nicer. We'll give our
+link here, a class name equals
+
+24198
+01:04:51,550 --> 01:04:56,710
+Mr. For P six. And we'll give
+both of these the same class
+
+24199
+01:04:56,710 --> 01:05:00,040
+name both these links, give them
+some padding, so they moved away
+
+24200
+01:05:00,040 --> 01:05:02,320
+from each other some margin to
+the right, so they're away from
+
+24201
+01:05:02,320 --> 01:05:06,760
+each other. And oh, I forgot to
+do this Morales off equals
+
+24202
+01:05:07,840 --> 01:05:11,110
+false. We need Morales auth
+equals false so that we don't
+
+24203
+01:05:11,110 --> 01:05:13,510
+automatically connect to a
+Morales database or try to
+
+24204
+01:05:13,510 --> 01:05:15,730
+connect to Morales database,
+when we connect, we want to just
+
+24205
+01:05:15,730 --> 01:05:18,940
+connect with our Metamask. And
+we'll change this to home
+
+24206
+01:05:19,540 --> 01:05:21,940
+instead of the marketplace. But
+otherwise, that looks pretty
+
+24207
+01:05:21,940 --> 01:05:25,480
+good home selling of T Connect
+button. And we can adjust the
+
+24208
+01:05:25,480 --> 01:05:28,180
+formatting of this to make it
+look a little different. But I
+
+24209
+01:05:28,180 --> 01:05:29,980
+think for the most part, this
+looks much better,
+
+24210
+01:05:29,980 --> 01:05:35,320
+right? Alright, cool, much, much
+better looking header. Here, we
+
+24211
+01:05:35,320 --> 01:05:38,650
+have our app.js setup with the
+mouse provider headers
+
+24212
+01:05:38,650 --> 01:05:43,510
+components. Let's now move on to
+our index. Let's now move on to
+
+24213
+01:05:43,600 --> 01:05:47,770
+showing these NF T's showing all
+the NF T's in our marketplace.
+
+24214
+01:05:47,890 --> 01:05:51,280
+And here's where it's going to
+already start to heat up and get
+
+24215
+01:05:51,280 --> 01:05:53,830
+really interesting. And actually
+one more thing, we're going to
+
+24216
+01:05:53,830 --> 01:05:57,580
+grab this headpiece in the index
+if you haven't. And we're just
+
+24217
+01:05:57,580 --> 01:06:01,960
+going to have it be in the app
+JSX. So yeah, and our app.js
+
+24218
+01:06:02,080 --> 01:06:05,170
+we're going to put that header
+up at the top, and just put a
+
+24219
+01:06:05,170 --> 01:06:11,980
+little, little div, Div. div,
+like so wrapping around this
+
+24220
+01:06:11,980 --> 01:06:16,270
+whole thing. This goes here. And
+this way, no matter what page
+
+24221
+01:06:16,270 --> 01:06:19,030
+we're on, we're always going to
+have this as our header. And we
+
+24222
+01:06:19,030 --> 01:06:21,520
+don't have to define it each one
+of our little our things here.
+
+24223
+01:06:21,580 --> 01:06:25,720
+So we'll do a refresh. And it
+says head is not defined. Sorry,
+
+24224
+01:06:25,720 --> 01:06:28,000
+that's because we're going to
+need to copy import head from
+
+24225
+01:06:28,000 --> 01:06:32,470
+next slash head. Paste it into
+our app that Jas import head
+
+24226
+01:06:32,470 --> 01:06:35,680
+from next head. And now we can
+see we're going to empty
+
+24227
+01:06:35,680 --> 01:06:37,720
+marketplace no matter what page
+we're on, because we're defining
+
+24228
+01:06:37,720 --> 01:06:40,360
+it at our app level. We have the
+header in here, we have this
+
+24229
+01:06:40,360 --> 01:06:44,530
+stuff in here, index almost has
+nothing in it now. Let's do
+
+24230
+01:06:44,530 --> 01:06:48,340
+this. So what do we want to do?
+We want the homepage aka our
+
+24231
+01:06:48,340 --> 01:06:52,870
+index to show recently listed
+NFT. So the question is, how do
+
+24232
+01:06:52,870 --> 01:06:57,970
+we show the recently listed NF
+Ts. How do we do that? Well,
+
+24233
+01:06:58,000 --> 01:07:02,410
+let's go back to our contract.
+We go back to our hard hat NFT
+
+24234
+01:07:02,410 --> 01:07:05,110
+marketplace So we're looking at
+at the marketplace, what do we
+
+24235
+01:07:05,110 --> 01:07:08,800
+have in here? How do we actually
+see where NFT is stored? Well,
+
+24236
+01:07:08,800 --> 01:07:12,460
+they're stored in this listings
+mapping. However, how do we see
+
+24237
+01:07:12,490 --> 01:07:15,730
+all of the listings that are in
+here? Well, this is a mapping,
+
+24238
+01:07:15,760 --> 01:07:18,850
+which means we have every single
+address on the planet in here,
+
+24239
+01:07:18,850 --> 01:07:21,340
+we can't loop through the
+mapping, we'd have to loop
+
+24240
+01:07:21,340 --> 01:07:25,060
+through every single address on
+the planet, which is some
+
+24241
+01:07:25,120 --> 01:07:28,480
+insanely large number that you
+and I could never fathom how
+
+24242
+01:07:28,480 --> 01:07:31,360
+many addresses there are. So
+what are some solutions that we
+
+24243
+01:07:31,360 --> 01:07:34,510
+can take to this problem, right?
+Because we're obviously not
+
+24244
+01:07:34,510 --> 01:07:37,540
+going to loop through
+everything. So what do we do?
+
+24245
+01:07:37,780 --> 01:07:40,180
+What's what's kind of the first
+approach, one of the first
+
+24246
+01:07:40,180 --> 01:07:42,520
+approaches would be like,
+alright, Patrick, well, why
+
+24247
+01:07:42,520 --> 01:07:46,720
+don't we just create an array,
+an array of listings instead,
+
+24248
+01:07:46,810 --> 01:07:49,570
+and this might be a good
+approach. But what if then later
+
+24249
+01:07:49,570 --> 01:07:52,180
+on, we also want to get some
+other weird data, maybe we want
+
+24250
+01:07:52,180 --> 01:07:57,880
+to get all the NF t's a user
+owns NF t's a user owns, there's
+
+24251
+01:07:57,880 --> 01:08:01,000
+no array of NF T's that a user
+owns. Again, that's just a
+
+24252
+01:08:01,000 --> 01:08:04,480
+mapping. But what if we want to
+query some other weird data, or
+
+24253
+01:08:04,480 --> 01:08:10,300
+query some other weird data, or
+what if an array will be very
+
+24254
+01:08:10,330 --> 01:08:13,630
+gas expensive, which it is, if
+we make this an array to loop
+
+24255
+01:08:13,630 --> 01:08:16,330
+through, it'll be incredibly gas
+expensive. So we don't want to
+
+24256
+01:08:16,330 --> 01:08:19,690
+have to go back and change. So
+I'm going to I'm going to type
+
+24257
+01:08:19,690 --> 01:08:22,390
+this out. Because this is
+important. We don't want to
+
+24258
+01:08:22,390 --> 01:08:28,210
+change our protocol for just the
+website, we don't want to change
+
+24259
+01:08:28,210 --> 01:08:31,570
+our protocol for just the
+website, or we don't want to
+
+24260
+01:08:31,570 --> 01:08:34,510
+much change our protocol for the
+website. Because if we were to
+
+24261
+01:08:34,510 --> 01:08:37,360
+make this an array, it would
+become incredibly gas
+
+24262
+01:08:37,360 --> 01:08:40,300
+inefficient. And it would become
+much harder to use this NFT
+
+24263
+01:08:40,300 --> 01:08:43,150
+marketplace because it would be
+so much more expensive. And as
+
+24264
+01:08:43,150 --> 01:08:46,570
+you build more and more complex
+protocols, you're going to
+
+24265
+01:08:46,570 --> 01:08:50,590
+realize that having an array for
+every single mapping you have
+
+24266
+01:08:50,920 --> 01:08:54,910
+isn't feasible. This is one of
+the reasons where these events
+
+24267
+01:08:54,940 --> 01:09:00,550
+come into play. So every single
+time we list an NF t, we call
+
+24268
+01:09:00,550 --> 01:09:04,840
+this list item function. And we
+omit item listed, this item
+
+24269
+01:09:04,840 --> 01:09:09,190
+listed event is stored in a data
+structure that's still on chain,
+
+24270
+01:09:09,220 --> 01:09:12,460
+but just smart contracts can
+access it. However, guess what
+
+24271
+01:09:12,460 --> 01:09:16,510
+can't access it off chain
+services can access these
+
+24272
+01:09:16,510 --> 01:09:21,520
+events. So what we do in this
+case, is what we're going to do
+
+24273
+01:09:21,520 --> 01:09:27,880
+is we will index the events off
+chain and then read from our
+
+24274
+01:09:27,880 --> 01:09:30,400
+database. So what we're
+literally going to do is we're
+
+24275
+01:09:30,400 --> 01:09:34,120
+going to set up a server to
+listen for those events to be
+
+24276
+01:09:34,120 --> 01:09:39,310
+fired, fired. And we will add
+them to a database to query. So
+
+24277
+01:09:39,310 --> 01:09:43,960
+yes, we're literally going to
+take every single time an item
+
+24278
+01:09:43,960 --> 01:09:47,770
+is listed, we're going to index
+it in a database for ourself.
+
+24279
+01:09:47,950 --> 01:09:51,610
+And then we're going to call our
+centralized database to start
+
+24280
+01:09:51,640 --> 01:09:53,770
+and we're going to call that
+database to do that. Now the
+
+24281
+01:09:53,770 --> 01:09:58,150
+question then becomes Whoa,
+isn't that centralized? Hey,
+
+24282
+01:09:58,150 --> 01:10:00,700
+Patrick, we're talking isn't
+that centralized? What the
+
+24283
+01:10:00,700 --> 01:10:04,420
+Hickety heck, and the answer to
+that is, it's not necessarily.
+
+24284
+01:10:04,630 --> 01:10:08,200
+So the graph is a protocol that
+does exactly this. It's a
+
+24285
+01:10:08,200 --> 01:10:13,030
+protocol that indexes events off
+chain, and sticks them into this
+
+24286
+01:10:13,060 --> 01:10:16,960
+the Graph Protocol. And it does
+it in a decentralized way,
+
+24287
+01:10:17,230 --> 01:10:20,650
+Morales, the way we're going to
+show you first does it in a
+
+24288
+01:10:20,650 --> 01:10:23,950
+centralized way, Morales is
+going to do it in a centralized
+
+24289
+01:10:23,950 --> 01:10:27,370
+way, which might be the route
+that you want to go for speed
+
+24290
+01:10:27,460 --> 01:10:30,190
+for extra bells and whistles, so
+that you can do local
+
+24291
+01:10:30,190 --> 01:10:32,920
+development, which is what we're
+going to be focusing on here, or
+
+24292
+01:10:32,950 --> 01:10:35,710
+any of the other functionality
+that Morales comes with. Because
+
+24293
+01:10:35,710 --> 01:10:38,410
+Morales does a lot more than
+just that. That's something to
+
+24294
+01:10:38,410 --> 01:10:41,230
+keep in mind too, is even though
+we are adding a centralized
+
+24295
+01:10:41,230 --> 01:10:45,670
+component, or logic, our smart
+contracts, the real bulk of this
+
+24296
+01:10:45,670 --> 01:10:49,300
+application is decentralized.
+And you can verify all your
+
+24297
+01:10:49,300 --> 01:10:51,760
+interactions are working with
+this decentralized smart
+
+24298
+01:10:51,760 --> 01:10:54,820
+contract, we've actually been
+using a lot of protocols that
+
+24299
+01:10:54,820 --> 01:10:58,840
+are centralized, like ether
+scan, like open see, and some of
+
+24300
+01:10:58,840 --> 01:11:01,690
+these centralized protocols are
+really important to this space.
+
+24301
+01:11:01,750 --> 01:11:04,360
+So we're showing you Morales to
+get you familiar with working
+
+24302
+01:11:04,360 --> 01:11:06,880
+with one of these centralized
+servers, in case you optionally
+
+24303
+01:11:06,880 --> 01:11:10,120
+want to make an application that
+provides a centralized service.
+
+24304
+01:11:10,390 --> 01:11:12,820
+And there's a ton of tools in
+the space like opens up and
+
+24305
+01:11:12,820 --> 01:11:17,410
+defender tenderly and more, that
+are centralized, but give us
+
+24306
+01:11:17,440 --> 01:11:20,500
+massive, massive benefits. We as
+a community are bringing more
+
+24307
+01:11:20,500 --> 01:11:22,960
+and more things to being
+decentralized. And sometimes we
+
+24308
+01:11:22,960 --> 01:11:25,300
+need some training wheels to get
+there. And then the graph is
+
+24309
+01:11:25,300 --> 01:11:27,820
+going to be the decentralized
+way, which is a bit of a longer
+
+24310
+01:11:27,820 --> 01:11:30,640
+process to go main net, but
+we'll explain all that when we
+
+24311
+01:11:30,640 --> 01:11:33,820
+get there. Let's learn how we
+can list the most recently
+
+24312
+01:11:33,820 --> 01:11:37,360
+listed NF T's and Morales in the
+graph. Both have some really
+
+24313
+01:11:37,360 --> 01:11:40,300
+solid videos, I'm going to leave
+some links in the GitHub repo
+
+24314
+01:11:40,300 --> 01:11:42,340
+associated with this. So if you
+want to learn more, you should
+
+24315
+01:11:42,340 --> 01:11:44,590
+definitely watch both of those
+because they are absolutely
+
+24316
+01:11:44,590 --> 01:11:48,670
+fantastic and will help you
+understand this event stuff
+
+24317
+01:11:48,700 --> 01:11:51,580
+better. So normally, when we
+read from the blockchain, we do
+
+24318
+01:11:51,580 --> 01:11:55,990
+something like contract dot get,
+get listing, you know, and then
+
+24319
+01:11:55,990 --> 01:11:59,620
+we put it whatever our input
+parameters are. Contract double
+
+24320
+01:11:59,620 --> 01:12:02,830
+blah, so instead, so we're going
+to read from a database that
+
+24321
+01:12:02,830 --> 01:12:05,680
+houses All the mappings and an
+easier to read data structure.
+
+24322
+01:12:05,740 --> 01:12:07,960
+Both Morales and the graph do
+this.
+
+24323
+01:12:11,080 --> 01:12:13,870
+We've been using the morass,
+open source packages and tools.
+
+24324
+01:12:13,900 --> 01:12:17,260
+However, Morales also comes
+optionally with a server back
+
+24325
+01:12:17,260 --> 01:12:20,440
+end to give your web three
+applications more functionality.
+
+24326
+01:12:20,560 --> 01:12:23,050
+However, there's a ton of stuff
+that we're not going to cover
+
+24327
+01:12:23,200 --> 01:12:25,390
+that Morales can do to help
+build your web three
+
+24328
+01:12:25,390 --> 01:12:28,300
+applications. So instead of me
+continuing to talk about
+
+24329
+01:12:28,300 --> 01:12:31,630
+Morales, and what it can do, we
+have Ivan here to give a brief
+
+24330
+01:12:31,630 --> 01:12:34,300
+overview of some of the other
+things that Morales can do take
+
+24331
+01:12:34,300 --> 01:12:34,960
+it away, and
+
+24332
+01:12:34,990 --> 01:12:38,170
+my name is Ivan, I'm from
+rallis. And I'm here to tell you
+
+24333
+01:12:38,170 --> 01:12:41,320
+how you can speed up your
+development by 10 times and I'm
+
+24334
+01:12:41,320 --> 01:12:43,630
+not over exaggerating, when
+you're building something, you
+
+24335
+01:12:43,630 --> 01:12:47,500
+want to ensure that is scalable,
+because your DAP may go global,
+
+24336
+01:12:47,620 --> 01:12:51,610
+it may get viral, it may go
+mainstream, it can happen. And
+
+24337
+01:12:51,640 --> 01:12:55,240
+if it happens, you don't want to
+start from scratch, you want to
+
+24338
+01:12:55,240 --> 01:12:59,470
+use tools and services that
+allow you to go fast, and also
+
+24339
+01:12:59,470 --> 01:13:02,860
+to go big. And that's exactly
+what mirallas provides. At
+
+24340
+01:13:02,860 --> 01:13:06,190
+mirallas. We create tools, we
+create infrastructure for
+
+24341
+01:13:06,190 --> 01:13:11,200
+developers in a way that you
+have a single workflow, and they
+
+24342
+01:13:11,200 --> 01:13:13,240
+will soon explain what it means
+because this is what saves you
+
+24343
+01:13:13,240 --> 01:13:16,690
+time. If you have a single
+workflow for doing things. And
+
+24344
+01:13:16,690 --> 01:13:20,410
+workflow in web three really
+means that you have to have a
+
+24345
+01:13:20,410 --> 01:13:23,200
+smart contract, whether it's a
+token, the game, some kind of
+
+24346
+01:13:23,200 --> 01:13:25,960
+staking some kind of
+marketplace, some kind of defy,
+
+24347
+01:13:26,740 --> 01:13:29,800
+it will be on chain, but at the
+same time, you have to connect
+
+24348
+01:13:29,800 --> 01:13:32,500
+it to your back end. Because
+when something happens on chain,
+
+24349
+01:13:32,740 --> 01:13:35,650
+you need to monitor that. So you
+can create web hooks, you can
+
+24350
+01:13:35,650 --> 01:13:39,760
+create email, you can create a
+push notification, you can run
+
+24351
+01:13:39,760 --> 01:13:43,180
+some custom code, you can run
+some calculation, you can save
+
+24352
+01:13:43,180 --> 01:13:45,520
+something to the database,
+everything on chain at the end
+
+24353
+01:13:45,520 --> 01:13:49,180
+of the day needs to go into our
+back end. And when something is
+
+24354
+01:13:49,180 --> 01:13:51,370
+in your back end, it needs to go
+to the front end. So for
+
+24355
+01:13:51,370 --> 01:13:54,970
+example, you change the UI when
+something happens on chain or
+
+24356
+01:13:55,270 --> 01:13:58,660
+you change the UI. If your user
+receives a transfer there is
+
+24357
+01:13:58,660 --> 01:14:02,530
+above a specific threshold. Or
+if your user has this NFC, you
+
+24358
+01:14:02,530 --> 01:14:06,070
+can allow them access into some
+kind of chat or some kind of
+
+24359
+01:14:06,430 --> 01:14:09,490
+exclusive piece of content. So
+at Morales, we provide you with
+
+24360
+01:14:09,490 --> 01:14:13,870
+a full stack suite of tools that
+is used by over 100,000
+
+24361
+01:14:13,870 --> 01:14:17,380
+developers, it's really becoming
+one of the most adopted tech
+
+24362
+01:14:17,380 --> 01:14:21,040
+stacks in web three. And it all
+starts with Morales identity,
+
+24363
+01:14:21,280 --> 01:14:24,340
+which ensures that you get one
+piece of code, you write one
+
+24364
+01:14:24,340 --> 01:14:26,920
+piece of code and you can log in
+your users across different
+
+24365
+01:14:26,920 --> 01:14:30,010
+blockchains across different
+wallets. And in your morale is
+
+24366
+01:14:30,010 --> 01:14:33,580
+dashboard, you will get the user
+profile, and you will get a web
+
+24367
+01:14:33,580 --> 01:14:36,910
+session. So mirallas allows you
+to manage identities because a
+
+24368
+01:14:36,910 --> 01:14:39,220
+user profile can have many
+different wallets from many
+
+24369
+01:14:39,220 --> 01:14:42,820
+different chains connected to
+it. And all of the transactions
+
+24370
+01:14:42,820 --> 01:14:45,700
+will be synced from that user,
+all the real time transactions
+
+24371
+01:14:45,700 --> 01:14:50,440
+will be synced about that user.
+And also, you have established
+
+24372
+01:14:50,440 --> 01:14:53,080
+web session between your front
+end whether it is a game,
+
+24373
+01:14:53,260 --> 01:14:58,450
+whether it is a web website, we
+ensure that you have secure
+
+24374
+01:14:58,480 --> 01:15:01,510
+authenticated web sessions, and
+we provide you with session
+
+24375
+01:15:01,510 --> 01:15:04,480
+management. So in case you have
+your own bike, and then you have
+
+24376
+01:15:04,480 --> 01:15:07,810
+mirallas session identity
+management, you can invalidate
+
+24377
+01:15:07,810 --> 01:15:10,600
+sessions, you can log in users
+and do all of that great, all of
+
+24378
+01:15:10,600 --> 01:15:13,240
+these great things with one line
+of code. That's very important.
+
+24379
+01:15:13,600 --> 01:15:17,020
+Number two is Morales real time
+I already mentioned a bit of it.
+
+24380
+01:15:17,020 --> 01:15:19,390
+But basically when you have a
+user, you know exactly what's
+
+24381
+01:15:19,390 --> 01:15:22,630
+going on in real time. You can
+run custom code, whenever a user
+
+24382
+01:15:22,630 --> 01:15:26,110
+does a transaction, you can run
+custom code or do a web hook or
+
+24383
+01:15:26,140 --> 01:15:29,080
+email or push notification
+whenever a user interacts with a
+
+24384
+01:15:29,080 --> 01:15:32,890
+smart contracts or when a smart
+contract simply emits an event.
+
+24385
+01:15:33,040 --> 01:15:38,140
+This can be an trade in an NFC
+marketplace, this can be ERC 20
+
+24386
+01:15:38,140 --> 01:15:42,190
+transfer, you can be very
+flexible by setting filters. So
+
+24387
+01:15:42,190 --> 01:15:46,810
+you can say only give me alerts
+only give me web hooks when the
+
+24388
+01:15:46,840 --> 01:15:50,860
+user transfers more than 10
+NFCs. Or when this token
+
+24389
+01:15:50,860 --> 01:15:54,850
+transfer is above $1,000, and so
+on so forth. This is morale is
+
+24390
+01:15:54,850 --> 01:15:59,920
+real time very, very powerful
+things. Next are mirallas SDKs.
+
+24391
+01:15:59,950 --> 01:16:02,350
+So whether you're building a
+website, whether you're building
+
+24392
+01:16:02,350 --> 01:16:05,140
+a game where full integration
+with game engines, whether
+
+24393
+01:16:05,140 --> 01:16:09,640
+you're building for some other
+platform, we have extensive SDKs
+
+24394
+01:16:09,640 --> 01:16:13,420
+that are easy to use that allow
+you to do all of this that allow
+
+24395
+01:16:13,420 --> 01:16:16,690
+you to connect to Morales and do
+this very, very easily. And if
+
+24396
+01:16:16,690 --> 01:16:19,090
+you go to our documentation,
+which I highly recommend you to
+
+24397
+01:16:19,090 --> 01:16:23,080
+do, you go to Morales, Doc's dot
+morales.io, if you go to Doc's
+
+24398
+01:16:23,080 --> 01:16:26,200
+dot, Marisa Yo, you will first
+and foremost understand what
+
+24399
+01:16:26,200 --> 01:16:28,930
+mirallas is in depth. So you can
+think of it kind of like
+
+24400
+01:16:28,930 --> 01:16:31,570
+Firebase, but for crypto,
+basically, it's a managed
+
+24401
+01:16:31,660 --> 01:16:35,110
+backend, that you can connect
+your front end. Also, you can
+
+24402
+01:16:35,110 --> 01:16:38,170
+connect it to your own back end
+using no GS SDK, it's very, very
+
+24403
+01:16:38,170 --> 01:16:41,860
+easy. But what I wanted to show
+you here is cross platform. So
+
+24404
+01:16:41,890 --> 01:16:44,980
+for each thing we have, let's
+say you want to get nfts for
+
+24405
+01:16:44,980 --> 01:16:47,860
+your user, we'll show you how to
+do it in simple JavaScript,
+
+24406
+01:16:47,890 --> 01:16:51,610
+vanilla JavaScript, how to do it
+and react, how to do it using a
+
+24407
+01:16:51,610 --> 01:16:54,850
+web request. Let's say that you
+just want to use a raw web
+
+24408
+01:16:54,850 --> 01:16:57,760
+request. Let's say you're using
+some kind of language that we
+
+24409
+01:16:57,760 --> 01:17:00,880
+don't have SDK for you still can
+use Morales just that you have
+
+24410
+01:17:00,880 --> 01:17:04,270
+to call the raw HTTP request.
+And we'll also show you how to
+
+24411
+01:17:04,270 --> 01:17:07,570
+do it in Unity using C sharp in
+Unity game engine. So we're
+
+24412
+01:17:07,570 --> 01:17:12,160
+very, very clear cross platform.
+And we are cross chain. So this
+
+24413
+01:17:12,160 --> 01:17:15,460
+means for example, when you log
+in the user, you can create the
+
+24414
+01:17:15,460 --> 01:17:19,600
+user profile where you have the
+lambda address, let's say your
+
+24415
+01:17:19,600 --> 01:17:22,780
+user uses Solana then they can
+easily connect Aetherium, they
+
+24416
+01:17:22,780 --> 01:17:25,840
+can easily connect Binus chain,
+the end, we're gonna add more
+
+24417
+01:17:25,840 --> 01:17:28,780
+chain soon, they can easily
+connect L Ron, to one user
+
+24418
+01:17:28,780 --> 01:17:31,270
+profile. And then you have all
+kinds of different wallets,
+
+24419
+01:17:31,270 --> 01:17:34,570
+different chains, and you have
+one single user profile one
+
+24420
+01:17:34,570 --> 01:17:37,900
+single user ID. This is, by the
+way, how it will look like in
+
+24421
+01:17:37,900 --> 01:17:42,220
+your database. As you can see,
+you're going to have a user user
+
+24422
+01:17:42,430 --> 01:17:45,490
+table right here, you're going
+to have all of their accounts.
+
+24423
+01:17:45,490 --> 01:17:48,850
+So in this case, I only have
+eath. But if I have Solana, if I
+
+24424
+01:17:48,850 --> 01:17:52,450
+have other types of blockchains,
+it will all be right here. And
+
+24425
+01:17:52,450 --> 01:17:56,050
+this is a database that also has
+all my transactions. This is a
+
+24426
+01:17:56,050 --> 01:18:00,970
+database where I can set up
+different listen events or smart
+
+24427
+01:18:00,970 --> 01:18:04,240
+contracts. So for example, open
+see I can watch open see smart
+
+24428
+01:18:04,240 --> 01:18:06,730
+contracts or something else. And
+it's very, very variable,
+
+24429
+01:18:06,730 --> 01:18:10,540
+because this is MongoDB. This is
+MongoDB, you can run MongoDB
+
+24430
+01:18:10,540 --> 01:18:13,780
+queries, it's very, very
+variable. So in that sense,
+
+24431
+01:18:13,810 --> 01:18:16,750
+mirallas gives gives you a nice,
+nice dashboard with everything
+
+24432
+01:18:16,750 --> 01:18:18,850
+you need to know about your
+users, their sessions, their
+
+24433
+01:18:18,850 --> 01:18:21,340
+permissions, and so on, so
+forth. And of course, you can
+
+24434
+01:18:21,340 --> 01:18:25,180
+connect to your own back end
+using the Node js SDK. So this
+
+24435
+01:18:25,180 --> 01:18:29,200
+is Morales SDKs. And finally,
+when we're speaking about the
+
+24436
+01:18:29,200 --> 01:18:32,650
+workflow, the final thing is the
+API's, which I also already
+
+24437
+01:18:32,650 --> 01:18:36,310
+showed you, but the API is that
+you can do RAW requests from any
+
+24438
+01:18:36,310 --> 01:18:39,850
+programming language from any
+kind of architecture. So using
+
+24439
+01:18:39,850 --> 01:18:42,970
+this workflow, you can easily
+achieve anything you want very,
+
+24440
+01:18:42,970 --> 01:18:46,570
+very quickly. You really have to
+try Morales it is it will change
+
+24441
+01:18:46,570 --> 01:18:49,630
+your life. I can explain here
+all I want, I have limited time.
+
+24442
+01:18:49,630 --> 01:18:53,020
+But as you can already see, by
+this presentation, you're very
+
+24443
+01:18:53,020 --> 01:18:56,200
+curious, as you already can see,
+by this presentation, you want
+
+24444
+01:18:56,200 --> 01:18:59,440
+to try this as you already feel
+by watching me here, you are
+
+24445
+01:18:59,440 --> 01:19:04,060
+very, very excited. We have to
+get your hands dirty. So go,
+
+24446
+01:19:04,270 --> 01:19:07,870
+number one, two dogs, authorize
+the sale, and go here getting
+
+24447
+01:19:07,870 --> 01:19:12,250
+started connector SDK in vanilla
+or react and go through all of
+
+24448
+01:19:12,250 --> 01:19:14,620
+this. See the magic for
+yourself. And if you want
+
+24449
+01:19:14,620 --> 01:19:17,650
+practicalities, go to youtube
+channel and go to morality Oh,
+
+24450
+01:19:17,650 --> 01:19:21,880
+slash projects, guys, you all in
+the community. Using Morales,
+
+24451
+01:19:21,880 --> 01:19:25,480
+you will succeed using rallies,
+you will achieve your goal. And
+
+24452
+01:19:25,480 --> 01:19:28,810
+you're going to do sooner than
+you expect yourself. You're
+
+24453
+01:19:28,810 --> 01:19:32,140
+gonna surprise yourself. But
+don't let yourself down. Go to
+
+24454
+01:19:32,140 --> 01:19:34,720
+morales.io sign up, get started,
+
+24455
+01:19:34,750 --> 01:19:41,020
+you guys. Now that I've
+explained all of that, what does
+
+24456
+01:19:41,020 --> 01:19:42,970
+this look like? Well, this is
+where we're actually going to
+
+24457
+01:19:42,970 --> 01:19:46,360
+start using mirallas with its
+server capabilities. And we're
+
+24458
+01:19:46,360 --> 01:19:48,340
+going to sign up for a server
+here. And we're going to use
+
+24459
+01:19:48,340 --> 01:19:52,630
+Morales as our back end for our
+application. So to get set up
+
+24460
+01:19:52,630 --> 01:19:55,510
+with Morales, we go to
+morales.io. We can go ahead and
+
+24461
+01:19:55,510 --> 01:19:59,020
+sign up for free. We'll put our
+email in, we'll create some
+
+24462
+01:19:59,020 --> 01:20:03,280
+password. Why are you here?
+Other please specify Patrick's
+
+24463
+01:20:03,430 --> 01:20:06,940
+amazing hardhat video, you don't
+have to write that. But if you
+
+24464
+01:20:06,940 --> 01:20:09,640
+want to write that you can. What
+did you hear about Morales for
+
+24465
+01:20:09,640 --> 01:20:12,010
+the first time? Well, you all
+heard about it on YouTube,
+
+24466
+01:20:12,160 --> 01:20:14,290
+because you heard it from me,
+and then pick your roll, I'm
+
+24467
+01:20:14,290 --> 01:20:16,660
+going to be a developer, we'll
+hit next, I don't want to
+
+24468
+01:20:16,660 --> 01:20:19,540
+subscribe. But I'm going to not
+be a robot and create your
+
+24469
+01:20:19,540 --> 01:20:22,330
+account. And it even gives us a
+little property or create your
+
+24470
+01:20:22,330 --> 01:20:26,740
+first server. So our back end is
+going to use a server to do any
+
+24471
+01:20:26,740 --> 01:20:30,430
+stuff on the back. So we'll
+create a server. And if we were
+
+24472
+01:20:30,430 --> 01:20:32,710
+going to do a main net or a
+testament, we choose one of
+
+24473
+01:20:32,710 --> 01:20:35,650
+those. But for now we're going
+to do a local dev chain server.
+
+24474
+01:20:35,920 --> 01:20:38,680
+And again, this is one of the
+advantages of Morales is it
+
+24475
+01:20:38,680 --> 01:20:42,730
+allows us to work with our local
+dev chain. For indexing events,
+
+24476
+01:20:42,760 --> 01:20:46,270
+we can actually index our events
+from our local hard hat node,
+
+24477
+01:20:46,300 --> 01:20:48,760
+which is incredibly, incredibly
+powerful here, so check your
+
+24478
+01:20:48,760 --> 01:20:51,340
+email, and we'll have an
+activate my account thing,
+
+24479
+01:20:51,460 --> 01:20:54,520
+email, we'll hit activate your
+account. And it'll bring us back
+
+24480
+01:20:54,520 --> 01:20:56,800
+here and we'll recreate and
+we'll do local dev chain.
+
+24481
+01:20:56,920 --> 01:20:59,380
+Alright, so now we're going to
+create a new local dev chain
+
+24482
+01:20:59,380 --> 01:21:04,360
+server. So we're going to call
+this NFT marketplace, we're
+
+24483
+01:21:04,360 --> 01:21:06,640
+going to select the region,
+whatever region you want, I'm in
+
+24484
+01:21:06,640 --> 01:21:08,830
+the eastern United States. So
+I'm going to choose New York.
+
+24485
+01:21:08,860 --> 01:21:11,500
+But whatever location works for
+you, we're gonna do local dev
+
+24486
+01:21:11,500 --> 01:21:13,720
+chain, and we're going to do
+eath, local dev chain. And
+
+24487
+01:21:13,720 --> 01:21:15,970
+again, if you're building for
+polygon, if you're building for
+
+24488
+01:21:15,970 --> 01:21:17,980
+avalanche, if you're building
+for Phantom, if you're building
+
+24489
+01:21:17,980 --> 01:21:21,010
+for any of these EVM compatible
+chains, again, your eath local
+
+24490
+01:21:21,010 --> 01:21:23,200
+dev chain, it's going to work
+exactly the same. So we're going
+
+24491
+01:21:23,200 --> 01:21:26,290
+to add instance now. And we're
+going to create a new
+
+24492
+01:21:26,290 --> 01:21:30,100
+application here. So we're going
+to close now we have the server
+
+24493
+01:21:30,100 --> 01:21:32,350
+here, and it says ganache, but
+it's really hard hat. Don't
+
+24494
+01:21:32,350 --> 01:21:34,870
+worry about that. Now that we
+have our server up, we can go to
+
+24495
+01:21:34,870 --> 01:21:38,710
+the Morales documentation, what
+we're looking for is events,
+
+24496
+01:21:38,740 --> 01:21:41,650
+we're looking to sync with
+events. So we can even do a
+
+24497
+01:21:41,650 --> 01:21:45,370
+little search in here for
+events. And we see smart
+
+24498
+01:21:45,370 --> 01:21:48,610
+contract events platform
+Automatic Sync, and even tells
+
+24499
+01:21:48,610 --> 01:21:50,710
+us a little bit more about why
+do we need to sync and watch
+
+24500
+01:21:50,710 --> 01:21:53,710
+smart contract events. So
+basically, this server our
+
+24501
+01:21:53,710 --> 01:21:56,560
+database is going to be looking
+for these events to be emitted.
+
+24502
+01:21:56,590 --> 01:21:59,110
+But before we can do that, we
+need to hook up our application
+
+24503
+01:21:59,110 --> 01:22:02,590
+to our server and if you go to
+the React Morales GitHub right
+
+24504
+01:22:02,590 --> 01:22:05,230
+at the top And you'll probably
+see saw this before, when you
+
+24505
+01:22:05,230 --> 01:22:08,140
+have this Morales provider in
+their docks, they actually pass
+
+24506
+01:22:08,140 --> 01:22:11,560
+an app ID and a server URL. And
+this is how we can actually
+
+24507
+01:22:11,560 --> 01:22:16,390
+connect directly to our servers
+on mirallas. So what we're gonna
+
+24508
+01:22:16,390 --> 01:22:19,810
+do is right, now we're gonna go
+back to our app that Jas and
+
+24509
+01:22:19,840 --> 01:22:22,300
+originally we've been saying
+initialize on Mount equals
+
+24510
+01:22:22,300 --> 01:22:25,240
+false. When we say this, we're
+saying, Hey, we're not going to
+
+24511
+01:22:25,240 --> 01:22:28,150
+use a morale server, we're just
+going to use the open source
+
+24512
+01:22:28,150 --> 01:22:31,780
+morass tools that y'all provide.
+Now, we actually do want to use
+
+24513
+01:22:31,780 --> 01:22:33,880
+their server, right, we do want
+to use all these bells and
+
+24514
+01:22:33,880 --> 01:22:35,950
+whistles that Morales comes with
+out of the box. So we're going
+
+24515
+01:22:35,950 --> 01:22:38,530
+to change that. So instead of
+saying initialize on Mount
+
+24516
+01:22:38,530 --> 01:22:40,960
+equals false, we're just getting
+ready with the app ID and the
+
+24517
+01:22:40,960 --> 01:22:43,900
+server URL. So we're going to
+delete this. And just like it
+
+24518
+01:22:43,900 --> 01:22:46,210
+says, in the documentation,
+we're gonna give it an app ID
+
+24519
+01:22:46,270 --> 01:22:49,810
+and a server URL. So we're gonna
+say app ID equals, and this is
+
+24520
+01:22:49,810 --> 01:22:52,930
+where as a string, we'll put our
+app ID. So if we go back to our
+
+24521
+01:22:52,930 --> 01:22:56,860
+Morales database, we can go to
+view details. And we see all
+
+24522
+01:22:56,860 --> 01:23:00,220
+this information in here. And we
+can grab our application ID, we
+
+24523
+01:23:00,220 --> 01:23:04,810
+can copy it, paste it in here.
+And then we'll want to grab our
+
+24524
+01:23:04,810 --> 01:23:09,490
+server URL, which is at the top.
+So this is the URL of our unique
+
+24525
+01:23:09,490 --> 01:23:14,260
+custom morale server. So we'll
+say server, URL equals and then
+
+24526
+01:23:14,260 --> 01:23:16,390
+paste that in there like that.
+Now, if you've been following
+
+24527
+01:23:16,390 --> 01:23:18,610
+along with these tutorials, you
+might be thinking oh, we're
+
+24528
+01:23:18,640 --> 01:23:20,890
+we're kind of just hard coding
+that stuff right in there like
+
+24529
+01:23:20,890 --> 01:23:24,040
+that, how that seems kind of
+that seems kind of bad. Well, if
+
+24530
+01:23:24,040 --> 01:23:27,250
+that's your intuition, that is
+fantastic. So instead, we're
+
+24531
+01:23:27,250 --> 01:23:29,860
+actually going to put these into
+environment variables. So we're
+
+24532
+01:23:29,860 --> 01:23:34,120
+going to create a new file, a
+dot env file. And this is where
+
+24533
+01:23:34,120 --> 01:23:36,910
+we're going to put all of our
+environment variables. Now next,
+
+24534
+01:23:36,910 --> 01:23:39,640
+Jas comes with built in support
+for environment variables, which
+
+24535
+01:23:39,640 --> 01:23:43,000
+allow you to do the following
+use dot env, dot local to load
+
+24536
+01:23:43,030 --> 01:23:45,700
+environment variables or those
+environment variables to the
+
+24537
+01:23:45,700 --> 01:23:48,730
+browser by prefixing. It with
+next underscore public. So
+
+24538
+01:23:48,730 --> 01:23:50,680
+there's a couple of different
+environment variable paths we
+
+24539
+01:23:50,680 --> 01:23:53,440
+can use. We can do dot env, dot
+local, we can do dot env, dot
+
+24540
+01:23:53,440 --> 01:23:55,330
+this dot that that the other
+thing, we're just going to do
+
+24541
+01:23:55,330 --> 01:23:58,960
+dot env, to keep it simple here.
+But in order for our front ends,
+
+24542
+01:23:58,990 --> 01:24:01,810
+to read environment variables
+from our dot env file, we have
+
+24543
+01:24:01,810 --> 01:24:06,130
+to do next underscore public
+underscore, and next Jas will
+
+24544
+01:24:06,130 --> 01:24:09,460
+look into our dot env file for
+variables that start with this
+
+24545
+01:24:09,550 --> 01:24:12,970
+and only stick these environment
+variables into our application.
+
+24546
+01:24:13,060 --> 01:24:16,450
+If we were to just do like
+Morales server equals blah,
+
+24547
+01:24:16,450 --> 01:24:19,840
+blah, blah, it has no idea what
+this is because we need to do
+
+24548
+01:24:20,140 --> 01:24:24,190
+next underscore public
+underscore. And if we do that,
+
+24549
+01:24:24,220 --> 01:24:28,540
+and we'll do a console dot log,
+look here, process dot env. Next
+
+24550
+01:24:28,570 --> 01:24:31,660
+public morale server and we
+actually need to kill it and
+
+24551
+01:24:31,660 --> 01:24:34,390
+restart it. And then we go back,
+we do a little refresh here,
+
+24552
+01:24:34,450 --> 01:24:37,510
+it'll say Look here as a do bla
+bla bla, because that's what is
+
+24553
+01:24:37,510 --> 01:24:41,470
+in the dot env file with that
+next public. So we'll grab our
+
+24554
+01:24:41,470 --> 01:24:47,470
+app ID, we'll copy it. And then
+our dot env will do next public
+
+24555
+01:24:48,550 --> 01:24:52,780
+app ID equals and we'll paste
+that in there. We'll grab our
+
+24556
+01:24:52,780 --> 01:24:57,430
+server URL, we'll go back to
+here. We'll do next public
+
+24557
+01:24:57,760 --> 01:25:02,170
+server URL equals, we'll paste
+that like that. And now at the
+
+24558
+01:25:02,170 --> 01:25:09,940
+top, we'll say const. App ID
+equals process dot E and V dot
+
+24559
+01:25:10,330 --> 01:25:16,810
+next, public app ID. And then
+we'll say const. Server URL
+
+24560
+01:25:16,840 --> 01:25:23,290
+equals process dot E and V dot
+next public server URL. Now that
+
+24561
+01:25:23,290 --> 01:25:26,230
+we've had these variables, we'll
+stick them in like this.
+
+24562
+01:25:28,180 --> 01:25:32,620
+So this is how we can connect
+our application to our morale
+
+24563
+01:25:32,620 --> 01:25:35,500
+server. Now, of course, we
+haven't done anything yet. But
+
+24564
+01:25:35,530 --> 01:25:37,120
+we're getting started, right?
+This is how we're going to
+
+24565
+01:25:37,120 --> 01:25:40,150
+connect to it. Now that we've
+signed in, well, I told you that
+
+24566
+01:25:40,150 --> 01:25:43,090
+our morale server was going to
+be indexing our events. And if
+
+24567
+01:25:43,090 --> 01:25:46,210
+you go to this Dashboard button,
+this is our entire database.
+
+24568
+01:25:46,240 --> 01:25:49,120
+Everything in this browser tab
+is what's in our database right
+
+24569
+01:25:49,120 --> 01:25:51,490
+now. And as you can see, right
+now, there's not a whole lot of
+
+24570
+01:25:51,490 --> 01:25:55,150
+anything, if we had any events
+data in here, it would be in
+
+24571
+01:25:55,150 --> 01:25:58,540
+here. So we need to tell our
+server, hey, you need to start
+
+24572
+01:25:58,540 --> 01:26:01,570
+listening for events. So we can
+show the most recently listed
+
+24573
+01:26:01,570 --> 01:26:04,960
+entities. So morale server, you
+need to start listening, you
+
+24574
+01:26:04,960 --> 01:26:07,660
+need to create a database entry
+for every single one of these
+
+24575
+01:26:07,660 --> 01:26:11,800
+item listed events. And whenever
+somebody buys an item, right,
+
+24576
+01:26:11,800 --> 01:26:14,650
+whenever somebody buys that
+item, or cancels an item, you
+
+24577
+01:26:14,650 --> 01:26:17,740
+need to remove that from your
+database. How do we start
+
+24578
+01:26:17,740 --> 01:26:20,170
+telling Morales to start
+listening to our events? Well,
+
+24579
+01:26:20,170 --> 01:26:22,720
+first off, well, first off,
+we're gonna need to connect it
+
+24580
+01:26:22,750 --> 01:26:26,020
+back to to our blockchain. And
+then we're going to say, which
+
+24581
+01:26:26,020 --> 01:26:30,280
+contract which events and what
+to do when it hears those
+
+24582
+01:26:30,280 --> 01:26:32,590
+events. So we need to connect it
+and then we need to tell it what
+
+24583
+01:26:32,590 --> 01:26:35,170
+to do when it hears those
+events. So how do we connect our
+
+24584
+01:26:35,170 --> 01:26:38,800
+mirallas server to our hard hat
+blockchain? And right now, we're
+
+24585
+01:26:38,800 --> 01:26:41,770
+not running one. But let's go
+ahead and we'll start up our
+
+24586
+01:26:41,800 --> 01:26:45,670
+hard hat, our local host
+blockchain. So in one terminal,
+
+24587
+01:26:45,670 --> 01:26:48,190
+we're running the front end and
+another terminal will see the
+
+24588
+01:26:48,190 --> 01:26:52,630
+download directory. We'll cd
+into our hard hat NFT
+
+24589
+01:26:52,630 --> 01:26:56,350
+marketplace dot Free Code Camp
+or Free Code Camp, and we'll do
+
+24590
+01:26:56,500 --> 01:27:00,910
+yarn hard hat node. And if we've
+done everything correctly, it'll
+
+24591
+01:27:00,910 --> 01:27:03,970
+deploy our NFT marketplace.
+It'll deploy our Basic NFT and
+
+24592
+01:27:03,970 --> 01:27:07,300
+then it'll start local HTTP web
+socket at blah, blah, blah. So
+
+24593
+01:27:07,300 --> 01:27:09,670
+that's good. So now that we have
+that Node running, what we can
+
+24594
+01:27:09,670 --> 01:27:14,320
+do is we can go to view details,
+and go to dev chain proxy
+
+24595
+01:27:14,320 --> 01:27:18,130
+server. So this dev chain proxy
+server is going to be how we
+
+24596
+01:27:18,130 --> 01:27:22,420
+actually tell Morales to listen
+to our locally running hard hat
+
+24597
+01:27:22,420 --> 01:27:25,420
+node. Now, to do this, what
+you're going to need to do is
+
+24598
+01:27:25,420 --> 01:27:28,330
+we're going to need to download
+this what's called a reverse
+
+24599
+01:27:28,330 --> 01:27:32,290
+proxy. And I have a link to this
+in the GitHub as well, depending
+
+24600
+01:27:32,290 --> 01:27:35,200
+on what computer you're running
+on will tell you which one of
+
+24601
+01:27:35,200 --> 01:27:37,210
+these we actually need to
+download. And then there's some
+
+24602
+01:27:37,210 --> 01:27:40,450
+troubleshooting tips down here
+if you ever get lost, and if
+
+24603
+01:27:40,450 --> 01:27:46,450
+you're really, really confused,
+what we can do what Morales FRP
+
+24604
+01:27:46,480 --> 01:27:50,890
+to download, do a quick search
+on this. We even come right to
+
+24605
+01:27:50,890 --> 01:27:54,370
+the documentation, connecting
+ganache to Morales note for Mac
+
+24606
+01:27:54,370 --> 01:27:58,090
+users download FRP dot Darwin
+dot bla bla bla for the nosh
+
+24607
+01:27:58,090 --> 01:28:01,120
+proxy server. So I'm on a Mac.
+So I'm going to download this
+
+24608
+01:28:01,120 --> 01:28:05,170
+Darwin AMD 64. And for look at
+the releases, that's the first
+
+24609
+01:28:05,170 --> 01:28:08,590
+one at the top, Darwin AMD 64.
+So this is the one that I'm
+
+24610
+01:28:08,590 --> 01:28:09,520
+going to go ahead and download.
+
+24611
+01:28:10,900 --> 01:28:13,840
+I'm gonna click it, I'm going to
+download it. Once I have it
+
+24612
+01:28:13,840 --> 01:28:16,090
+downloaded, we're going to open
+it up, and we're gonna get a
+
+24613
+01:28:16,090 --> 01:28:18,850
+folder and we're gonna get a
+folder that looks like this. The
+
+24614
+01:28:18,850 --> 01:28:23,530
+main things that we need are
+going to be f RP and FRP C dot
+
+24615
+01:28:23,530 --> 01:28:27,010
+ini. F RPC is going to be the
+executable it's going to be what
+
+24616
+01:28:27,010 --> 01:28:31,000
+we're going to run to connect
+our blockchain node to Morales,
+
+24617
+01:28:31,030 --> 01:28:34,930
+and F RPC dot ini is going to be
+basically the config file to do
+
+24618
+01:28:34,930 --> 01:28:38,470
+this. Now, again, this is one of
+the sections where downloading
+
+24619
+01:28:38,470 --> 01:28:40,510
+this is going to be one of the
+hardest steps here. So if you
+
+24620
+01:28:40,510 --> 01:28:43,180
+get lost, please ask questions
+in the GitHub, please ask
+
+24621
+01:28:43,180 --> 01:28:46,060
+questions in the Morales forum,
+there is a Morales forum as
+
+24622
+01:28:46,060 --> 01:28:48,550
+well, where you can ask a ton of
+different questions. And please
+
+24623
+01:28:48,580 --> 01:28:51,400
+check out the troubleshooting as
+well. But what I'm going to do
+
+24624
+01:28:51,460 --> 01:28:54,490
+is I'm going to create a new
+folder in here new folder called
+
+24625
+01:28:55,150 --> 01:28:58,930
+F R P. And I'm doing it in here
+just to make it a little easier.
+
+24626
+01:28:58,930 --> 01:29:01,330
+But you could really put this
+wherever you want, and then
+
+24627
+01:29:01,330 --> 01:29:03,640
+always refer back to it. And
+what I'm going to do is I'm
+
+24628
+01:29:03,640 --> 01:29:07,210
+going to take I'm going to copy
+these two files, and place it
+
+24629
+01:29:07,210 --> 01:29:12,340
+into this FRP folder. So now I
+have FRP C, and F RPC that ini
+
+24630
+01:29:12,430 --> 01:29:15,490
+if you click on the F RPC, it's
+going to be like, hey, it's
+
+24631
+01:29:15,490 --> 01:29:18,280
+binary, you can't really look at
+this, don't click that, it'll
+
+24632
+01:29:18,280 --> 01:29:21,310
+just be a whole bunch of
+nonsense, but the F RPC dot ini
+
+24633
+01:29:21,340 --> 01:29:24,910
+looks like a pretty typical
+config file. And this is what
+
+24634
+01:29:24,910 --> 01:29:28,270
+we're going to adjust. If we
+even go back to our morale
+
+24635
+01:29:28,270 --> 01:29:32,140
+server, it'll give you what you
+need down here. And we're using
+
+24636
+01:29:32,140 --> 01:29:36,220
+hard hat. So we're going to copy
+everything here. We're gonna go
+
+24637
+01:29:36,220 --> 01:29:40,210
+back to our F RPC dot ini, and
+then just paste whatever is in
+
+24638
+01:29:40,210 --> 01:29:43,570
+there in here. And that's how
+we're going to tell this F RPC
+
+24639
+01:29:43,570 --> 01:29:46,720
+thing that we need to connect. I
+haven't tried this out for users
+
+24640
+01:29:46,720 --> 01:29:50,410
+using WsL. So if you're using
+WsL, let us know in the full
+
+24641
+01:29:50,410 --> 01:29:53,410
+blockchain solidity course, Jas,
+make a new discussion, if you
+
+24642
+01:29:53,410 --> 01:29:56,860
+haven't seen it already, saying,
+Hey, I'm using WsL for the F
+
+24643
+01:29:56,860 --> 01:29:59,920
+RPC. And here's what you need to
+use. And then at the bottom, it
+
+24644
+01:29:59,920 --> 01:30:03,490
+says, run and enjoy. I'm running
+on a Mac OS, which runs Linux
+
+24645
+01:30:03,490 --> 01:30:06,130
+commands, so I can just copy
+this, I'll create a new
+
+24646
+01:30:06,130 --> 01:30:09,790
+terminal. And what I'm going to
+do is I'm going to cd into that
+
+24647
+01:30:09,790 --> 01:30:14,710
+FRP folder. And I'm going to
+paste that thing that I just
+
+24648
+01:30:14,770 --> 01:30:17,380
+that I just copied from Ross. So
+we're running that F RPC
+
+24649
+01:30:17,380 --> 01:30:22,960
+executable dash c, which is dash
+config, F RPC dot ini. If I hit
+
+24650
+01:30:22,960 --> 01:30:27,670
+Enter, it's gonna say log into
+server success, get run ID,
+
+24651
+01:30:27,670 --> 01:30:30,580
+blah, blah, server, UDP port,
+and then a whole bunch of other
+
+24652
+01:30:30,580 --> 01:30:33,970
+stuff. If you're seeing success
+stuff here, that means you did
+
+24653
+01:30:33,970 --> 01:30:37,810
+it right. And you can hit CTRL C
+to cancel because we're not
+
+24654
+01:30:37,810 --> 01:30:40,720
+going to keep running it. Now,
+if you want to just run this,
+
+24655
+01:30:40,750 --> 01:30:43,390
+you absolutely can. But I'm
+going to show you another way to
+
+24656
+01:30:43,390 --> 01:30:48,220
+do this. And this is using the
+Morales admin CLI. So everything
+
+24657
+01:30:48,220 --> 01:30:50,770
+that we're doing here, all these
+buttons that we're pressing,
+
+24658
+01:30:50,890 --> 01:30:53,740
+Morales actually comes with this
+thing called the Morales admin
+
+24659
+01:30:53,740 --> 01:30:57,100
+CLI or the command line
+interface. So this is a way for
+
+24660
+01:30:57,100 --> 01:30:59,530
+us to connect and run all these
+buttons and stuff that we're
+
+24661
+01:30:59,530 --> 01:31:02,950
+pressing right from our terminal
+and right from our shell. So I'm
+
+24662
+01:31:02,950 --> 01:31:05,740
+going to show you a couple of
+commands on how to work with the
+
+24663
+01:31:05,740 --> 01:31:08,590
+admin CLI. And we're going to be
+working with a lot of admin CLI
+
+24664
+01:31:08,590 --> 01:31:11,500
+commands. But all we're going to
+do is npm install dash g
+
+24665
+01:31:11,500 --> 01:31:15,130
+Morales, admin CLI or for us
+yarn Global Add. So we're going
+
+24666
+01:31:15,130 --> 01:31:20,410
+to grab that will do yarn,
+Global Add routes, admin CLI
+
+24667
+01:31:20,440 --> 01:31:25,270
+like that. And now we should be
+able to run Morales admin CLI
+
+24668
+01:31:26,200 --> 01:31:28,420
+and see a whole bunch of stuff
+like that. And if you ran
+
+24669
+01:31:28,420 --> 01:31:32,530
+routes, admin CLI, we have all
+this stuff. And one of the big
+
+24670
+01:31:32,530 --> 01:31:34,390
+ones, one of the important ones
+that we're going to be working
+
+24671
+01:31:34,390 --> 01:31:39,250
+with is this connect local dev
+chain. So running this F RPC
+
+24672
+01:31:39,250 --> 01:31:43,600
+dash c dash f RPC ini. That's
+going to be the same as running
+
+24673
+01:31:43,600 --> 01:31:47,530
+this connect local dev chain.
+Now what I like to do is jump
+
+24674
+01:31:47,530 --> 01:31:51,010
+into our package dot JSON. And
+we'll create an additional
+
+24675
+01:31:51,010 --> 01:31:55,090
+script in here for us to just
+run yarn, whatever the name is
+
+24676
+01:31:55,090 --> 01:31:57,850
+that we want, and just to do
+that, and just to make it a lot
+
+24677
+01:31:57,880 --> 01:32:01,570
+easier for us to connect our
+local dev chain so underneath
+
+24678
+01:32:01,570 --> 01:32:04,420
+lint, I'm going to do a calm
+Ma'am, I'm going to create a new
+
+24679
+01:32:04,420 --> 01:32:09,310
+command. I'm gonna say Morales
+sync. And we're going to run the
+
+24680
+01:32:09,310 --> 01:32:14,230
+Morales admin CLI version of
+this f RPC dash c thing. So what
+
+24681
+01:32:14,230 --> 01:32:16,960
+we're going to do in here is
+we're going to say mirallas
+
+24682
+01:32:17,590 --> 01:32:27,010
+admin CLI, connect local dev
+chain, dash dash chain, hard
+
+24683
+01:32:27,010 --> 01:32:32,560
+hat, dash dash mirallas. Capital
+sub domain.
+
+24684
+01:32:33,760 --> 01:32:36,100
+This is where we're going to put
+the subdomain of a morale
+
+24685
+01:32:36,100 --> 01:32:40,900
+server, which if we go to, we go
+back to our routes, admin data
+
+24686
+01:32:40,900 --> 01:32:44,050
+servers, we can go back to
+server details. So it's going to
+
+24687
+01:32:44,050 --> 01:32:47,200
+be not the HTTPS, it's just
+going to be from here all the
+
+24688
+01:32:47,200 --> 01:32:51,100
+way to the.com. So not even the
+port, we're going to grab that
+
+24689
+01:32:51,220 --> 01:32:54,730
+we're going to paste that there.
+And then we're going to do space
+
+24690
+01:32:54,760 --> 01:33:04,570
+dash dash f RPC path is going to
+be dot slash F RPC, slash FRP
+
+24691
+01:33:04,570 --> 01:33:07,810
+slash F RPC. Now if we save
+this, and we run it, it's not
+
+24692
+01:33:07,810 --> 01:33:11,350
+going to work though. So if I
+run yarn with our new script,
+
+24693
+01:33:11,620 --> 01:33:14,770
+Morales sync, it's gonna say
+specify Morales API key, it's
+
+24694
+01:33:14,770 --> 01:33:18,400
+going to give us this prompt.
+And in our dashboard, we have
+
+24695
+01:33:18,400 --> 01:33:21,820
+our API key, which we can copy,
+we can paste it, and then API
+
+24696
+01:33:21,820 --> 01:33:24,580
+secret, we can copy and then
+paste it. And then we'll say
+
+24697
+01:33:24,580 --> 01:33:27,460
+starting connection to hard hat,
+which is great. But that's
+
+24698
+01:33:27,460 --> 01:33:29,980
+really annoying. And I don't
+want to have to do that. So
+
+24699
+01:33:29,980 --> 01:33:31,960
+we're going to Ctrl C, we're
+going to kill that. And what we
+
+24700
+01:33:31,960 --> 01:33:36,940
+can do is we can go into our dot
+env. And we can actually add
+
+24701
+01:33:36,970 --> 01:33:40,750
+those as environment variables
+that Morales is expecting. So
+
+24702
+01:33:40,780 --> 01:33:44,380
+when we run this Morales admin
+CLI, it'll check our dot env
+
+24703
+01:33:44,380 --> 01:33:50,530
+file for Morales API key, which
+we can copy right here. And then
+
+24704
+01:33:50,680 --> 01:33:57,040
+Morales API secret, which we can
+copy, and paste right here. Now,
+
+24705
+01:33:57,040 --> 01:33:59,920
+the reason that these aren't
+capital and doing next public,
+
+24706
+01:33:59,950 --> 01:34:03,670
+these are not going to be part
+of our front end piece. These
+
+24707
+01:34:03,670 --> 01:34:06,760
+are keys that we're using on the
+back end to test and for our
+
+24708
+01:34:06,760 --> 01:34:10,240
+local dev chain connection. So
+we don't need to do next public,
+
+24709
+01:34:10,240 --> 01:34:12,520
+we're just going to leave it
+like this. But now if I hit up
+
+24710
+01:34:12,670 --> 01:34:15,700
+and run yarn Morales sync,
+again, it's not going to prompt
+
+24711
+01:34:15,700 --> 01:34:18,640
+me this time, it's just gonna
+say starting connection to hard
+
+24712
+01:34:18,640 --> 01:34:21,730
+hat. And if you see this, this
+starting connection to hard hat
+
+24713
+01:34:21,730 --> 01:34:24,940
+bit, we can come back to our
+servers, we'll go to dev chain
+
+24714
+01:34:24,940 --> 01:34:28,930
+proxy servers, we'll hit this
+disconnected button and refresh.
+
+24715
+01:34:29,020 --> 01:34:32,530
+And if you see connected, you've
+successfully connected our heart
+
+24716
+01:34:32,530 --> 01:34:37,060
+add node, which is running here
+to our Morales server, which is
+
+24717
+01:34:37,090 --> 01:34:40,570
+awesome. And in fact, if you sit
+on your heart had no terminal,
+
+24718
+01:34:40,960 --> 01:34:45,520
+you'll see the actual RPC calls
+to our blockchain here. And
+
+24719
+01:34:45,520 --> 01:34:49,000
+you'll see Morales is
+consistently calling f block
+
+24720
+01:34:49,030 --> 01:34:55,780
+number to make sure it's up to
+date with what it has. So how do
+
+24721
+01:34:55,780 --> 01:34:59,440
+we tell a morale server to start
+listening for events? Well,
+
+24722
+01:34:59,470 --> 01:35:02,470
+there are two ways we can do
+this. The first way is with the
+
+24723
+01:35:02,470 --> 01:35:06,370
+user interface. So we can go to
+view details, we'll go to sync.
+
+24724
+01:35:06,520 --> 01:35:09,670
+And right now it says no sync
+services installed. So we'll hit
+
+24725
+01:35:09,700 --> 01:35:14,170
+Add a new sync. And we can see
+sync and watch address and sync
+
+24726
+01:35:14,170 --> 01:35:16,540
+and watch contract events, we
+can watch the address for
+
+24727
+01:35:16,540 --> 01:35:20,590
+transactions or we can watch
+some address for any events. And
+
+24728
+01:35:20,590 --> 01:35:23,050
+we can manually add all our
+information here, you can select
+
+24729
+01:35:23,050 --> 01:35:26,380
+the chain description, decide if
+we want to optionally sync
+
+24730
+01:35:26,380 --> 01:35:29,680
+historical, we could put the
+topic of the event, the ABI of
+
+24731
+01:35:29,680 --> 01:35:32,110
+the event, the address of the
+event filter, and then a table
+
+24732
+01:35:32,110 --> 01:35:34,990
+name. Or we could do all this
+programmatically, which is what
+
+24733
+01:35:34,990 --> 01:35:37,360
+we're going to do, we'll create
+a little script that we can run,
+
+24734
+01:35:37,390 --> 01:35:40,450
+tell our morale server to watch
+for those scripts. And we'll see
+
+24735
+01:35:40,450 --> 01:35:44,740
+our database get upgraded to
+listen for those events. So back
+
+24736
+01:35:44,740 --> 01:35:48,340
+in our code, we're going to
+create a new file called add
+
+24737
+01:35:48,490 --> 01:35:52,900
+events that Jas now we have one
+terminal that's running our
+
+24738
+01:35:52,930 --> 01:35:55,300
+front end one terminal that's
+running our blockchain one
+
+24739
+01:35:55,300 --> 01:35:58,120
+terminal that syncing our
+blockchain with morass. And now
+
+24740
+01:35:58,120 --> 01:36:00,340
+we're going to do another
+terminal. For anything else we
+
+24741
+01:36:00,340 --> 01:36:02,650
+want to do like run little
+scripts become the Morales
+
+24742
+01:36:02,650 --> 01:36:05,950
+docks, and you click connect
+with SDK, there's a ton of
+
+24743
+01:36:05,950 --> 01:36:08,260
+different ways we can actually
+connect with the SDK, we've
+
+24744
+01:36:08,290 --> 01:36:10,990
+already learned how to connect
+with react by using React
+
+24745
+01:36:10,990 --> 01:36:14,140
+Morales. Now we're going to
+connect with no JS since we're
+
+24746
+01:36:14,140 --> 01:36:17,350
+going to run a little Morales
+script. And here's like a little
+
+24747
+01:36:17,350 --> 01:36:20,020
+example of what it looks like in
+the documentation. But I'm gonna
+
+24748
+01:36:20,020 --> 01:36:25,600
+go ahead, so I'm gonna say const
+Morales, equals require oralis
+
+24749
+01:36:25,630 --> 01:36:29,410
+slash node. And we're going to
+import the node extension of the
+
+24750
+01:36:29,410 --> 01:36:33,100
+Morales package into our script
+here, we're going to require dot
+
+24751
+01:36:33,100 --> 01:36:33,640
+env
+
+24752
+01:36:34,930 --> 01:36:39,040
+dot config, which means we're
+going to need to install dot env
+
+24753
+01:36:39,160 --> 01:36:44,350
+yarn add dash dash dev dot env.
+And now we have to tell our
+
+24754
+01:36:44,350 --> 01:36:47,170
+morale server all the same
+information that we would need
+
+24755
+01:36:47,170 --> 01:36:49,270
+to tell it on the user
+interface. So one of the first
+
+24756
+01:36:49,270 --> 01:36:51,850
+things that we're going to need
+is the address of our contract.
+
+24757
+01:36:51,880 --> 01:36:55,450
+We're gonna need to say const
+contract address equals and this
+
+24758
+01:36:55,450 --> 01:36:58,360
+is where we go oh, well, how do
+we how do we get that contract
+
+24759
+01:36:58,360 --> 01:37:01,810
+address? The easy way to do this
+is we just go back where we're
+
+24760
+01:37:01,810 --> 01:37:05,350
+running the blockchain And we'd
+grab where that NFC marketplace
+
+24761
+01:37:05,350 --> 01:37:09,100
+is deployed. And similar to our
+smart contract lottery where we
+
+24762
+01:37:09,100 --> 01:37:11,590
+created an update front end
+script, we're gonna do the exact
+
+24763
+01:37:11,590 --> 01:37:15,250
+same thing here. So back in our
+heart hat, NFT marketplace, and
+
+24764
+01:37:15,250 --> 01:37:18,940
+if T code, we go to our deploy
+script or deploy folder, we're
+
+24765
+01:37:18,940 --> 01:37:25,510
+gonna create a new file called
+99 Dash update, front end dot j
+
+24766
+01:37:25,510 --> 01:37:27,970
+s, and we're gonna create a
+little bit of our deploy process
+
+24767
+01:37:27,970 --> 01:37:31,060
+that will automatically update
+our front end. So we can just
+
+24768
+01:37:31,060 --> 01:37:34,660
+grab the network address from a
+file that is programmatically
+
+24769
+01:37:34,660 --> 01:37:38,920
+created. So we're gonna do
+module dot exports equals async
+
+24770
+01:37:38,920 --> 01:37:44,080
+function. And now we'll say if
+process dot EMV that update
+
+24771
+01:37:44,140 --> 01:37:53,620
+front end, then console dot log,
+updating front end so that in
+
+24772
+01:37:53,620 --> 01:37:57,700
+our dot EMV, we have update
+front end equals true. And that
+
+24773
+01:37:57,700 --> 01:38:00,250
+will be how we decide whether or
+not we actually want to update
+
+24774
+01:38:00,250 --> 01:38:03,250
+the front end. And then we'll
+create a function called up date
+
+24775
+01:38:03,250 --> 01:38:07,960
+contract addresses, which we
+will await. And this will update
+
+24776
+01:38:07,960 --> 01:38:10,300
+the contract addresses of our
+front end. So let's make that
+
+24777
+01:38:10,300 --> 01:38:16,450
+function. Do async function
+update contract addresses, make
+
+24778
+01:38:16,450 --> 01:38:20,680
+sure those are spelled the same.
+So we'll say const NFT, market
+
+24779
+01:38:21,640 --> 01:38:27,160
+place equals await ethers dot
+get contract. And then yes, we
+
+24780
+01:38:27,160 --> 01:38:30,070
+need to import const ethers
+equals require hardhat, we'll
+
+24781
+01:38:30,070 --> 01:38:34,450
+grab the NFT market place. And
+then we're going to want to
+
+24782
+01:38:34,450 --> 01:38:39,130
+write our files in here to
+someplace in our front end code
+
+24783
+01:38:39,160 --> 01:38:43,540
+for us, we're going to do in a
+new folder constants. And we're
+
+24784
+01:38:43,540 --> 01:38:47,950
+going to create a new file in
+here called network mapping dot
+
+24785
+01:38:48,700 --> 01:38:52,150
+JSON. And we'll have this just
+be a JSON object which keeps
+
+24786
+01:38:52,150 --> 01:38:56,050
+track of all of our deployments.
+So if we deploy something to
+
+24787
+01:38:56,290 --> 01:38:59,410
+rink V chain will keep a list
+will keep a list of it will say
+
+24788
+01:38:59,410 --> 01:39:03,940
+NFT marketplace will keep a list
+of all the addresses of the IoT
+
+24789
+01:39:03,940 --> 01:39:08,980
+marketplace, comma basic NF T,
+right, and then I list of all
+
+24790
+01:39:08,980 --> 01:39:11,470
+those right now we don't have
+anything deployed. So we'll just
+
+24791
+01:39:11,470 --> 01:39:15,880
+have it be an empty JSON object.
+Now back in our deploy script in
+
+24792
+01:39:15,880 --> 01:39:19,360
+the hard hat NFT marketplace
+project, we're going to keep
+
+24793
+01:39:19,360 --> 01:39:22,120
+track of that location. So right
+at the top, we're gonna say
+
+24794
+01:39:22,120 --> 01:39:29,230
+const. Front, and contracts file
+equals, and we'll place where it
+
+24795
+01:39:29,230 --> 01:39:34,630
+is according to your file setup.
+So if I do cd dot dot slash,
+
+24796
+01:39:35,260 --> 01:39:39,820
+next JS NFT, marketplace, free
+code, Camp constants, network
+
+24797
+01:39:39,820 --> 01:39:42,760
+mapping dot JSON, this is where
+mine is. So you're going to want
+
+24798
+01:39:42,760 --> 01:39:46,780
+to put it wherever your location
+is in relation to your heart at
+
+24799
+01:39:46,780 --> 01:39:49,570
+Mt marketplace Free Code Camp,
+it's my front end contract file,
+
+24800
+01:39:49,600 --> 01:39:51,520
+it's going to be right here. Now
+that we have all that we're
+
+24801
+01:39:51,520 --> 01:39:55,120
+going to get the chain ID. So
+we're gonna say const, chain ID
+
+24802
+01:39:55,600 --> 01:40:01,690
+equals network dot config dot
+chain, id.to string. And we're
+
+24803
+01:40:01,690 --> 01:40:05,740
+going to need to import network
+from hard hat as well. And then
+
+24804
+01:40:05,770 --> 01:40:08,590
+we're going to want to read from
+this network mapping file to see
+
+24805
+01:40:08,590 --> 01:40:13,420
+what's currently in there. So
+we'll say const. Contract
+
+24806
+01:40:13,570 --> 01:40:19,510
+addresses equals and we're gonna
+do a JSON dot parse Fs dot read
+
+24807
+01:40:19,540 --> 01:40:28,660
+file sync, front, and front and
+contracts. File comma UTF,
+
+24808
+01:40:28,660 --> 01:40:33,010
+eight. Now here's what we're
+gonna say, if chain ID is in
+
+24809
+01:40:33,010 --> 01:40:38,080
+contract. addresses, let's say
+if this list of contract
+
+24810
+01:40:38,080 --> 01:40:41,860
+addresses doesn't include the
+marketplace, then added on,
+
+24811
+01:40:42,010 --> 01:40:46,540
+we're gonna say if contract
+addresses of chain ID of the
+
+24812
+01:40:46,570 --> 01:40:55,600
+NFT. Marketplace will say dot
+includes NF T, market, Mar get
+
+24813
+01:40:56,020 --> 01:41:02,290
+place dot address, then so we'll
+say contract address says chain
+
+24814
+01:41:02,290 --> 01:41:11,920
+ID NFT marketplace, dot push NFT
+marketplace dot address else
+
+24815
+01:41:12,010 --> 01:41:13,420
+we're gonna say contract
+
+24816
+01:41:14,440 --> 01:41:20,860
+address says of chain ID of NFT
+marketplace, which is going to
+
+24817
+01:41:20,860 --> 01:41:27,610
+be a new entry now equals NFT.
+Market market place dot address.
+
+24818
+01:41:28,300 --> 01:41:31,630
+So now we've updated our
+contract addresses object and we
+
+24819
+01:41:31,630 --> 01:41:34,540
+just need to write it back to
+the network mapping. So now
+
+24820
+01:41:34,540 --> 01:41:39,820
+we're gonna say Fs dot right
+file sync front and contracts
+
+24821
+01:41:39,970 --> 01:41:47,050
+file comma JSON dot string five
+contract addresses and then at
+
+24822
+01:41:47,050 --> 01:41:51,580
+the bottom we'll do module dot
+exports dot tags equals and
+
+24823
+01:41:51,580 --> 01:41:56,800
+we'll say all or front end. Now
+what we can do is we can run
+
+24824
+01:41:56,830 --> 01:42:02,110
+just this update front end
+script with yarn hardhat deploy
+
+24825
+01:42:02,620 --> 01:42:07,480
+dashed dash, network localhost.
+And we only want to do this
+
+24826
+01:42:07,510 --> 01:42:11,680
+update front end script. So we
+say dash dash tags front end,
+
+24827
+01:42:11,860 --> 01:42:15,790
+and we run this, and I ran into
+an error FS is not defined, oh,
+
+24828
+01:42:15,790 --> 01:42:22,300
+I forgot to do const Fs equals
+require Fs stride again, cannot
+
+24829
+01:42:22,300 --> 01:42:26,080
+set properties of undefined NFT
+marketplace. Oops. And that's
+
+24830
+01:42:26,080 --> 01:42:30,790
+because this line is off instead
+of this line, sorry. Basically,
+
+24831
+01:42:30,790 --> 01:42:32,890
+right now, what it's saying is,
+it's saying, hey, this NFT
+
+24832
+01:42:32,890 --> 01:42:36,670
+marketplace thing doesn't exist.
+So we need to make it exists. So
+
+24833
+01:42:36,670 --> 01:42:41,650
+now we'll say contract addresses
+of chain ID equals a new entry
+
+24834
+01:42:41,830 --> 01:42:45,550
+of NFT marketplace and adds its
+first parameter, it's going to
+
+24835
+01:42:45,550 --> 01:42:52,180
+be NF T, Mark gets placed dot
+address, like that. Now we can
+
+24836
+01:42:52,180 --> 01:42:56,110
+run it, and updating front end
+looks like it's done. So if we
+
+24837
+01:42:56,110 --> 01:42:59,620
+go back to our front end, we now
+see we have an entry for
+
+24838
+01:42:59,620 --> 01:43:03,040
+localhost with NFC marketplace
+with the address in our network
+
+24839
+01:43:03,040 --> 01:43:05,620
+mapping dot JSON. So if you did
+that correctly, you should get
+
+24840
+01:43:05,620 --> 01:43:08,620
+this. If not, if you're having a
+hard time with that you can, of
+
+24841
+01:43:08,620 --> 01:43:10,960
+course, just go ahead and hard
+coded in but I do highly
+
+24842
+01:43:10,960 --> 01:43:12,880
+recommend you do it
+programmatically, because your
+
+24843
+01:43:12,880 --> 01:43:14,890
+life is going to be a lot
+better. So cool. We have this
+
+24844
+01:43:14,890 --> 01:43:17,980
+update front end script that
+works now, so we can put this
+
+24845
+01:43:17,980 --> 01:43:21,370
+back off to the side. And let's
+keep going. So we now have this
+
+24846
+01:43:21,370 --> 01:43:24,640
+network mapping file with
+contract addresses based off of
+
+24847
+01:43:24,640 --> 01:43:27,820
+the chain ID. So what we can do
+is we can pull that in as well,
+
+24848
+01:43:28,150 --> 01:43:35,170
+we'll say const contract,
+address says equals require dot
+
+24849
+01:43:35,170 --> 01:43:41,530
+slash constants, slash network
+mapping dot JSON. And now we can
+
+24850
+01:43:41,530 --> 01:43:44,740
+get the contract address based
+off the chain ID. So we'll say
+
+24851
+01:43:44,770 --> 01:43:54,040
+chain ID equals process dot E
+and V dot chain ID, or 31337. So
+
+24852
+01:43:54,040 --> 01:43:59,020
+in our data and V, we'll make a
+new entry called Chain ID. And
+
+24853
+01:43:59,020 --> 01:44:03,250
+for now, we'll do 31337. And now
+we can get the contract address
+
+24854
+01:44:03,310 --> 01:44:07,930
+by saying contract address
+equals contract addresses at the
+
+24855
+01:44:07,930 --> 01:44:15,310
+chain ID of n, f t, Mark get
+place of zero. So we're going to
+
+24856
+01:44:15,310 --> 01:44:18,940
+go into that network mapping, go
+to the chain, Id go to the NFT
+
+24857
+01:44:18,940 --> 01:44:21,880
+marketplace and get the most
+recently deployed NFT
+
+24858
+01:44:21,880 --> 01:44:24,520
+marketplace boom. So now we have
+the contract address contract
+
+24859
+01:44:24,520 --> 01:44:28,120
+address says Excuse me. Now in
+our add events, we'll create a
+
+24860
+01:44:28,120 --> 01:44:31,390
+new function kind of similar to
+what we're doing, we'll do async
+
+24861
+01:44:31,930 --> 01:44:35,290
+function main. And this will be
+our main function. And then of
+
+24862
+01:44:35,290 --> 01:44:38,440
+course, we're going to copy
+paste that main script thing
+
+24863
+01:44:38,440 --> 01:44:42,400
+we've been doing this whole time
+domain dot then catch blah,
+
+24864
+01:44:42,400 --> 01:44:45,310
+blah, blah, we go back to the
+morass documentation, though, we
+
+24865
+01:44:45,310 --> 01:44:48,940
+can see we're going to need to
+grab our server URL, app ID
+
+24866
+01:44:49,000 --> 01:44:52,090
+master key, and then start it
+up. So we're gonna do the exact
+
+24867
+01:44:52,090 --> 01:44:55,120
+same thing. So once again,
+sorry, before we even get into
+
+24868
+01:44:55,120 --> 01:44:56,980
+our main, you can do it in your
+main function, if you want.
+
+24869
+01:44:57,160 --> 01:45:02,200
+We'll say const server URL
+equals, and we can just grab
+
+24870
+01:45:02,200 --> 01:45:07,210
+this once again, from our web.
+So we'll say process web dot
+
+24871
+01:45:07,240 --> 01:45:14,860
+next public Morales server URL,
+we'll get the app ID equals
+
+24872
+01:45:14,860 --> 01:45:21,070
+process Studien v dot next
+public Morales app ID, and then
+
+24873
+01:45:21,070 --> 01:45:25,990
+we'll say const, master key
+equals process study v dot
+
+24874
+01:45:26,080 --> 01:45:30,310
+master key. So we don't have a
+master key in here yet. So we'll
+
+24875
+01:45:30,310 --> 01:45:34,480
+create a new one called master
+key. We'll go back to our
+
+24876
+01:45:34,870 --> 01:45:38,350
+Morales front end, we'll close
+out of this, we'll hit View
+
+24877
+01:45:38,350 --> 01:45:42,400
+Details. And we'll grab that
+master key. So we'll copy that,
+
+24878
+01:45:42,460 --> 01:45:45,460
+go back to our code editor and
+paste it in. And now we have a
+
+24879
+01:45:45,460 --> 01:45:49,600
+master key in our web as well.
+We don't want our master key on
+
+24880
+01:45:49,600 --> 01:45:52,420
+our front end. So we're not
+going to put next public like
+
+24881
+01:45:52,420 --> 01:45:54,820
+that. Now, the first thing we're
+going to do in our main function
+
+24882
+01:45:55,060 --> 01:45:59,950
+is we're going to do await
+Morales dot start server URL,
+
+24883
+01:46:00,970 --> 01:46:05,380
+app ID and master key as the
+input parameters for this will
+
+24884
+01:46:05,380 --> 01:46:11,140
+do a little console dot log,
+working with contract address,
+
+24885
+01:46:11,500 --> 01:46:15,820
+contract address. Now we're
+gonna go ahead and add all those
+
+24886
+01:46:15,910 --> 01:46:18,880
+same pieces that we see on the
+UI. So what are the events we
+
+24887
+01:46:18,880 --> 01:46:23,110
+want to listen for? Well, if we
+go back to our code here, so we
+
+24888
+01:46:23,110 --> 01:46:27,010
+have our NFT marketplace, where
+just type in event we have item
+
+24889
+01:46:27,010 --> 01:46:30,190
+listed item bought an item
+cancelled. So we have three
+
+24890
+01:46:30,190 --> 01:46:33,550
+events we want to listen and a
+Morales, they have this add new
+
+24891
+01:46:33,550 --> 01:46:35,590
+events synced from code, which
+we're basically going to be
+
+24892
+01:46:35,590 --> 01:46:38,620
+following. To do this, we need
+to obviously start and then
+
+24893
+01:46:38,620 --> 01:46:42,940
+create our options for the
+event. We have the chain address
+
+24894
+01:46:43,000 --> 01:46:47,650
+topic, abi elimite, table name
+and sync historical and then we
+
+24895
+01:46:47,650 --> 01:46:51,940
+just do Morales dot Cloud dot
+run, watch cloud event options
+
+24896
+01:46:51,940 --> 01:46:54,040
+use master key. And that's
+pretty much it. So we're going
+
+24897
+01:46:54,040 --> 01:46:57,250
+to follow these documents here
+to do our code. So let's start
+
+24898
+01:46:57,250 --> 01:47:00,610
+with item listed. Let's create
+some options for our IDed listed
+
+24899
+01:47:00,640 --> 01:47:04,750
+event. So we'll say let item
+listed options, or we could do
+
+24900
+01:47:05,140 --> 01:47:08,410
+const if we want to, but I'm
+just gonna do let item listed
+
+24901
+01:47:08,410 --> 01:47:12,340
+options equals. And first we're
+gonna need the chain ID, which
+
+24902
+01:47:12,340 --> 01:47:16,180
+we have, because we're getting
+it from Morales. Now the first
+
+24903
+01:47:16,180 --> 01:47:20,620
+thing to point out about chain
+ID is that ralis understands a
+
+24904
+01:47:20,620 --> 01:47:25,930
+local chain is 1337. So even if
+you're on 31337, if you're doing
+
+24905
+01:47:25,930 --> 01:47:29,740
+a local development, you got to
+switch it to 1337. So we're
+
+24906
+01:47:29,740 --> 01:47:33,640
+going to make another variable
+called Morales chain ID. And
+
+24907
+01:47:33,640 --> 01:47:40,750
+we're just going to say, let
+Morales chain ID equals chain ID
+
+24908
+01:47:41,770 --> 01:47:52,150
+equals 31337. Question mark
+311337. Otherwise, chain ID but
+
+24909
+01:47:52,150 --> 01:47:55,840
+we're saying since Morales
+understands that any local Dev
+
+24910
+01:47:55,840 --> 01:48:01,210
+is going to be 1337, we're going
+to say if chain ID equals 31337.
+
+24911
+01:48:01,480 --> 01:48:06,580
+Then have Morales chain ID equal
+1337. Otherwise have an equal
+
+24912
+01:48:06,580 --> 01:48:10,090
+whatever whatever our chain
+ideas and in our dot env we can
+
+24913
+01:48:10,090 --> 01:48:14,320
+decide okay, if we want to do
+rink B, localhost main net, etc.
+
+24914
+01:48:14,350 --> 01:48:17,470
+We're gonna say Okay, chain ID
+morass will do your Morales
+
+24915
+01:48:17,470 --> 01:48:20,650
+chain ID, comma, we'll say what
+else do we need? We did the
+
+24916
+01:48:20,650 --> 01:48:24,220
+chain ID, we're gonna skip
+description, a sync historical.
+
+24917
+01:48:24,250 --> 01:48:27,880
+So hit sync historical allows
+the node to go back throughout
+
+24918
+01:48:27,880 --> 01:48:30,910
+the blockchain, grab all the
+events ever emitted by that
+
+24919
+01:48:30,910 --> 01:48:34,990
+contract. Since this is a very
+small local blockchain will just
+
+24920
+01:48:34,990 --> 01:48:40,120
+say sync historical is true.
+Like that. Okay, what else do we
+
+24921
+01:48:40,120 --> 01:48:43,450
+need? Okay, we need the topic,
+the topic is going to be your
+
+24922
+01:48:43,570 --> 01:48:47,020
+event information. So to get the
+topic, go back to our event
+
+24923
+01:48:47,020 --> 01:48:49,180
+code, and the topic is just
+gonna be the name of the event,
+
+24924
+01:48:49,660 --> 01:48:52,780
+plus the type of the parameters.
+So we're gonna go back to our
+
+24925
+01:48:52,780 --> 01:48:56,110
+code, we're gonna go back to
+here, we're gonna say, topic is
+
+24926
+01:48:56,110 --> 01:49:00,910
+going to be item listed, and it
+takes an address, an address, an
+
+24927
+01:49:00,910 --> 01:49:06,700
+address, you went to 56, and a
+UNT 256, address address, you
+
+24928
+01:49:06,700 --> 01:49:10,060
+interviewed six, YouTube and
+six. Those problems seem like
+
+24929
+01:49:10,060 --> 01:49:13,990
+that, we also need the API of
+just the event, which again, we
+
+24930
+01:49:13,990 --> 01:49:18,340
+can find we go back to our hard
+hat project, we go to artifacts,
+
+24931
+01:49:18,550 --> 01:49:22,840
+we go to contracts. And if the
+marketplace dot soul NFT
+
+24932
+01:49:22,840 --> 01:49:26,590
+marketplace dot JSON, our ABI
+starting from here is going to
+
+24933
+01:49:26,590 --> 01:49:29,620
+be the ABI of the whole
+contract. And we just want that
+
+24934
+01:49:29,830 --> 01:49:33,340
+item listed event. So we did
+Ctrl F, and we found it here.
+
+24935
+01:49:33,400 --> 01:49:36,460
+And we're going to grab from
+right after it says type event,
+
+24936
+01:49:36,520 --> 01:49:39,940
+we're going to copy we're going
+to scroll up to write up to
+
+24937
+01:49:39,970 --> 01:49:43,780
+anonymous false, right, so this
+bit describes the ABI of the
+
+24938
+01:49:43,780 --> 01:49:47,110
+event. So we have internal type,
+address, name, seller type,
+
+24939
+01:49:47,110 --> 01:49:50,950
+address, and if T address token
+ID price item listed, right, so
+
+24940
+01:49:50,950 --> 01:49:54,010
+this is going to be the ABI of
+our just our item listed event,
+
+24941
+01:49:54,040 --> 01:49:57,310
+we can take that and we just
+stick it in here, hit save, and
+
+24942
+01:49:57,310 --> 01:49:59,620
+mine auto format it to get rid
+of the parentheses. Okay, what
+
+24943
+01:49:59,620 --> 01:50:03,070
+else do we need, we have the
+topic, we have the ABI, we
+
+24944
+01:50:03,070 --> 01:50:05,650
+already have the address, we're
+not going to do a filter. And
+
+24945
+01:50:05,650 --> 01:50:08,230
+then we need a table name. So
+we're going to do a new line,
+
+24946
+01:50:08,230 --> 01:50:12,400
+we'll say table name, it's going
+to be item listed. And this is
+
+24947
+01:50:12,400 --> 01:50:15,670
+going to be the name of the
+table that we update in our
+
+24948
+01:50:15,670 --> 01:50:18,760
+database. So we're gonna get a
+new table in here called item
+
+24949
+01:50:18,760 --> 01:50:21,400
+listed, and it's just gonna be
+filled with information about
+
+24950
+01:50:21,400 --> 01:50:23,740
+the item listed event. And
+that's it right and we would hit
+
+24951
+01:50:23,740 --> 01:50:26,500
+confirm if we were doing this on
+the UI. And since we're doing
+
+24952
+01:50:26,500 --> 01:50:29,200
+here, we'll just hit save, this
+is one of our events, we want to
+
+24953
+01:50:29,200 --> 01:50:32,500
+do this for all of our events.
+Let's do it now for item bought.
+
+24954
+01:50:32,530 --> 01:50:37,060
+So we'll say let's, item bought
+options, equals and we'll repeat
+
+24955
+01:50:37,060 --> 01:50:39,700
+the process, some of the stuff
+at the top is gonna be the same,
+
+24956
+01:50:39,730 --> 01:50:41,950
+the chain it is gonna be the
+same sync historical is gonna be
+
+24957
+01:50:41,950 --> 01:50:44,920
+the same. So we can just grab
+those two, paste them down here
+
+24958
+01:50:44,920 --> 01:50:48,160
+for item, but the topic is going
+to be different. The topic is
+
+24959
+01:50:48,160 --> 01:50:51,820
+going to be item bot is the name
+of the event, it's going to take
+
+24960
+01:50:51,820 --> 01:50:59,380
+an address, an address, a un 256
+and a un 256. The ABI is going
+
+24961
+01:50:59,380 --> 01:51:02,680
+to be different. Once again,
+we're gonna go to our Hardhead
+
+24962
+01:51:02,680 --> 01:51:06,370
+NFT marketplace, we'll look for
+a bot, you'd find this event
+
+24963
+01:51:06,370 --> 01:51:10,420
+here. We'll copy this, go back,
+we'll paste it in here, we now
+
+24964
+01:51:10,420 --> 01:51:16,300
+have item bot, we'll give it a
+table name of item bot. And then
+
+24965
+01:51:16,300 --> 01:51:24,310
+one more then we have let item
+cancelled options equals and
+
+24966
+01:51:24,310 --> 01:51:29,890
+we'll do chain ID that's going
+to be rouse chain ID gonna be
+
+24967
+01:51:29,890 --> 01:51:34,120
+the same boilerplate from the
+top address. Contract address
+
+24968
+01:51:34,300 --> 01:51:37,210
+topic is going to be different.
+The topic for this it's called
+
+24969
+01:51:37,240 --> 01:51:42,550
+item cancelled, and it takes an
+address, an address and a UNT
+
+24970
+01:51:42,580 --> 01:51:48,700
+256 will say sync. Historical
+will be true, historical is
+
+24971
+01:51:48,700 --> 01:51:52,810
+true. And then we need the ABI.
+Once again we can go back to our
+
+24972
+01:51:52,810 --> 01:51:56,620
+hard hat, compile information we
+can look for item cancelled,
+
+24973
+01:51:57,370 --> 01:52:02,650
+grab that ABI of that event.
+Copy that. Come back to our
+
+24974
+01:52:03,040 --> 01:52:06,460
+running code pasted in. Oops and
+I didn't give item canceled.
+
+24975
+01:52:06,460 --> 01:52:07,750
+Let's give item canceled the
+
+24976
+01:52:08,530 --> 01:52:14,350
+table name, which will be item
+canceled. So now if I zoom out
+
+24977
+01:52:14,350 --> 01:52:17,560
+just a hair, I now have item
+cancelled options, item bought
+
+24978
+01:52:17,560 --> 01:52:21,580
+options. And item listed options
+are telling Ross Hey, listen for
+
+24979
+01:52:21,580 --> 01:52:25,660
+these events, whenever you hear
+an item canceled event, stick
+
+24980
+01:52:25,660 --> 01:52:28,750
+all this stuff into a database.
+Whenever you hear an item bought
+
+24981
+01:52:28,780 --> 01:52:31,360
+event, stick all this in a
+database, whenever it emits an
+
+24982
+01:52:31,360 --> 01:52:34,090
+item listed, stick all this in
+in a database so that we can
+
+24983
+01:52:34,090 --> 01:52:36,850
+read from it. So we're indexing
+these events so that we can
+
+24984
+01:52:36,850 --> 01:52:40,720
+query them much easier. Now to
+send them up to our our server
+
+24985
+01:52:40,840 --> 01:52:48,340
+will say const listed response
+equals await or Alice or Alice
+
+24986
+01:52:48,460 --> 01:52:55,750
+dot Cloud dot run, watch
+contract event will pass the
+
+24987
+01:52:55,780 --> 01:53:01,480
+item listed options. And then
+one more comma, and then we pass
+
+24988
+01:53:01,480 --> 01:53:05,500
+an object in here where we're
+just gonna say use master key is
+
+24989
+01:53:05,500 --> 01:53:08,080
+going to be true. And we'll do
+the same thing we'll say const
+
+24990
+01:53:08,410 --> 01:53:13,810
+bot response or passing the bot
+item options. So we'll say bot
+
+24991
+01:53:13,810 --> 01:53:19,960
+response equals await or else
+dot Cloud dot run, watch
+
+24992
+01:53:19,960 --> 01:53:28,180
+contract, event, comma, item
+bought options. Comma, use
+
+24993
+01:53:28,180 --> 01:53:34,060
+master key that's going to be
+true. And then finally Kant's
+
+24994
+01:53:34,150 --> 01:53:42,130
+canceled response equals await
+oralis dot Cloud dot run, watch
+
+24995
+01:53:42,130 --> 01:53:50,620
+contract event, comma, item
+canceled options, comma use
+
+24996
+01:53:50,620 --> 01:53:54,820
+master key is going to be true.
+Now this Morales dot Cloud dot
+
+24997
+01:53:54,820 --> 01:53:58,390
+run API call to our server that
+we're making is going to return
+
+24998
+01:53:58,480 --> 01:54:00,700
+a response. And let's look at
+the docs to actually see what
+
+24999
+01:54:00,700 --> 01:54:03,460
+that response looks like if it
+worked out. Well. In the
+
+25000
+01:54:03,460 --> 01:54:07,990
+terminal, you'll see success
+true. So this is the return
+

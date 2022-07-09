@@ -1,0 +1,4992 @@
+19001
+19:16:43,010 --> 19:16:46,760
+for decentralized finance, we've
+left some links in the GitHub
+
+19002
+19:16:46,760 --> 19:16:50,360
+repository for you to learn more
+about Defy. One of the main
+
+19003
+19:16:50,360 --> 19:16:53,630
+reasons we're so excited about
+defy is because we move away
+
+19004
+19:16:53,630 --> 19:16:56,000
+from this area of traditional
+agreement. And that's what smart
+
+19005
+19:16:56,000 --> 19:16:59,510
+contracts are all about. They're
+about removing this centralized
+
+19006
+19:16:59,510 --> 19:17:03,590
+entity, from our financial
+world, and especially from these
+
+19007
+19:17:03,590 --> 19:17:06,290
+financial institutions that have
+a conflict of interest. They're
+
+19008
+19:17:06,290 --> 19:17:08,870
+in business to make money not to
+keep our money safe not to make
+
+19009
+19:17:08,900 --> 19:17:12,620
+us money. And we want to work
+with a system where everything
+
+19010
+19:17:12,620 --> 19:17:15,800
+is transparent, especially when
+it comes to our financial
+
+19011
+19:17:15,800 --> 19:17:19,640
+services. So we want to move to
+this world of smart contracts,
+
+19012
+19:17:19,670 --> 19:17:22,550
+especially when it comes to our
+money. And in my mind, defi is
+
+19013
+19:17:22,550 --> 19:17:26,840
+going to be the industry that
+affects the masses, the quickest
+
+19014
+19:17:26,930 --> 19:17:29,690
+because of how much fair how
+much better decentralized
+
+19015
+19:17:29,690 --> 19:17:33,230
+finance is than centralized
+finance. And at the moment, the
+
+19016
+19:17:33,230 --> 19:17:36,200
+rates and the yields and the
+interest that you gain in defy
+
+19017
+19:17:36,200 --> 19:17:39,260
+is much better than centralized
+finance, because remember, will
+
+19018
+19:17:39,260 --> 19:17:41,930
+go away from these centralized
+protocols, saying, hey, trust
+
+19019
+19:17:41,930 --> 19:17:45,620
+us, we'll give you access to the
+markets or hate trust us put
+
+19020
+19:17:45,620 --> 19:17:49,310
+your money in us will keep your
+money safe to this cryptographic
+
+19021
+19:17:49,310 --> 19:17:52,700
+math base guarantees instead of
+having to trust these companies
+
+19022
+19:17:52,700 --> 19:17:55,490
+and these entities, which is
+what we want. And additionally,
+
+19023
+19:17:55,520 --> 19:17:58,610
+the more our Oracle networks get
+better, and the more Oracle's
+
+19024
+19:17:58,610 --> 19:18:00,740
+networks work with these smart
+contract platforms like
+
+19025
+19:18:00,740 --> 19:18:03,830
+Aetherium, like polygon, like
+arbitrage them, the more data
+
+19026
+19:18:03,830 --> 19:18:06,770
+and the more complex financial
+products that we can do. Now,
+
+19027
+19:18:06,770 --> 19:18:10,910
+one of the other reasons I'm so
+crazy excited about defy is if
+
+19028
+19:18:10,910 --> 19:18:13,310
+you look at this little chart
+right here, it shows the
+
+19029
+19:18:13,310 --> 19:18:16,910
+different markets by size. Now
+this this image is a little bit
+
+19030
+19:18:16,910 --> 19:18:19,640
+outdated, but it still shows you
+the relative sizes of all these
+
+19031
+19:18:19,640 --> 19:18:24,710
+different industries defy right
+now is a $200 billion market,
+
+19032
+19:18:24,770 --> 19:18:27,770
+there's about $200 billion
+locked in the defy industry. And
+
+19033
+19:18:27,770 --> 19:18:30,620
+I'll show you that in a minute.
+Cryptocurrency actually, at the
+
+19034
+19:18:30,620 --> 19:18:34,940
+time of recording isn't 360
+billion. It's actually like 1.8
+
+19035
+19:18:35,270 --> 19:18:38,120
+trillion. So it's a lot more
+than this. But still, it's a
+
+19036
+19:18:38,120 --> 19:18:42,290
+massive subset of all these
+other areas like gold is a $10
+
+19037
+19:18:42,290 --> 19:18:45,890
+trillion market. The stock
+market is almost $100 trillion
+
+19038
+19:18:46,640 --> 19:18:50,090
+global real estate, almost $300
+trillion derivatives as
+
+19039
+19:18:50,300 --> 19:18:55,490
+quadrillion dollars. So the FBI
+is a super tiny, tiny, tiny,
+
+19040
+19:18:55,490 --> 19:18:59,810
+tiny subset right now and in my
+mind, all of these areas can be
+
+19041
+19:18:59,810 --> 19:19:03,800
+re landscaped with Defy. So
+we're ramping up, we're getting
+
+19042
+19:19:03,800 --> 19:19:06,680
+there. So it's gonna be up to us
+to make some of these protocols
+
+19043
+19:19:06,710 --> 19:19:09,440
+and make it Much easier for
+people to get into the space
+
+19044
+19:19:09,440 --> 19:19:12,470
+where their finances are going
+to be more fair, more
+
+19045
+19:19:12,470 --> 19:19:15,800
+accountable and more
+transparent. And with better
+
+19046
+19:19:15,800 --> 19:19:19,370
+yield rates, we can actually see
+a pretty good summary of what's
+
+19047
+19:19:19,370 --> 19:19:23,390
+going on in defy this site
+called defy llama. It shows
+
+19048
+19:19:23,630 --> 19:19:27,710
+total value locked in all these
+different decentralized
+
+19049
+19:19:27,710 --> 19:19:31,760
+protocols. And we can see a lot
+of these are across multiple
+
+19050
+19:19:31,760 --> 19:19:34,520
+chains, right. And a lot of
+these are EVM compatible chains,
+
+19051
+19:19:34,940 --> 19:19:39,440
+Aetherium, Biden, smart chain,
+avalanche, Fanta, drawn polygon,
+
+19052
+19:19:39,740 --> 19:19:43,370
+all these are EVM, compatible
+blockchains, where we can see
+
+19053
+19:19:43,520 --> 19:19:46,760
+exactly how much money
+independent users have put into
+
+19054
+19:19:46,760 --> 19:19:50,090
+these protocols. The time of
+recording Ave is the number one
+
+19055
+19:19:50,090 --> 19:19:54,830
+protocol for total value locked.
+So there's $22 billion locked in
+
+19056
+19:19:54,860 --> 19:19:57,470
+Ave, which is the protocol that
+we're going to be going over
+
+19057
+19:19:57,470 --> 19:19:57,830
+today.
+
+19058
+19:20:00,560 --> 19:20:04,550
+So what is Ave So are they is a
+borrowing and lending protocol,
+
+19059
+19:20:04,580 --> 19:20:07,580
+it allows us to borrow and lend
+cryptocurrencies. So we can
+
+19060
+19:20:07,580 --> 19:20:10,430
+actually put down a token as
+collateral, it's kind of similar
+
+19061
+19:20:10,430 --> 19:20:14,210
+to like putting money in a bank,
+and earn yields on other people
+
+19062
+19:20:14,210 --> 19:20:17,540
+borrowing that collateral from
+us almost exactly what a bank
+
+19063
+19:20:17,540 --> 19:20:21,410
+does, except for the fact it's
+what's called noncustodial. To
+
+19064
+19:20:21,410 --> 19:20:24,140
+the Ave team never touches our
+money. Nobody ever touches the
+
+19065
+19:20:24,140 --> 19:20:27,170
+money. It's all just a smart
+contract. It's all just this
+
+19066
+19:20:27,170 --> 19:20:30,200
+programmatic code. So we can be
+rest assured, no one's going to
+
+19067
+19:20:30,200 --> 19:20:33,020
+run off with our money, no one's
+going to do anything bad. And we
+
+19068
+19:20:33,020 --> 19:20:35,870
+also gain these higher yields.
+borrowing and lending is a
+
+19069
+19:20:35,870 --> 19:20:39,410
+critical piece for creating
+really any interesting financial
+
+19070
+19:20:39,410 --> 19:20:42,140
+applications. If you want to
+short sell something, if you
+
+19071
+19:20:42,140 --> 19:20:44,900
+want to leverage up on some
+asset if you want to. If you
+
+19072
+19:20:44,900 --> 19:20:48,200
+want to do more complex
+financial products, you need
+
+19073
+19:20:48,200 --> 19:20:51,200
+borrowing and lending. Now a lot
+of the typical FinTech or
+
+19074
+19:20:51,200 --> 19:20:55,070
+financial technology or finance
+terms do apply here. And this
+
+19075
+19:20:55,070 --> 19:20:58,100
+course isn't going to be a deep
+dive into exactly how these
+
+19076
+19:20:58,100 --> 19:21:00,980
+financial products work. And
+it's also not going to be a
+
+19077
+19:21:00,980 --> 19:21:03,590
+course on finance. If you want
+to learn more about finance,
+
+19078
+19:21:03,620 --> 19:21:06,410
+we'll leave a number of links in
+our GitHub repo associated with
+
+19079
+19:21:06,410 --> 19:21:09,200
+this course. So you can learn
+more about finance and become
+
+19080
+19:21:09,230 --> 19:21:12,680
+what I like to call a defy
+quant, quantitative defy
+
+19081
+19:21:12,680 --> 19:21:15,650
+engineer. And I am so excited
+for more defi quants to get into
+
+19082
+19:21:15,650 --> 19:21:19,670
+this space. Alright, so here we
+are in the Ave application. It's
+
+19083
+19:21:19,670 --> 19:21:22,340
+at testament dot Ave dot
+markets, we are in the testament
+
+19084
+19:21:22,370 --> 19:21:24,380
+of Avi now, everything that
+we're going to do here is going
+
+19085
+19:21:24,380 --> 19:21:27,050
+to work on Main net as well, but
+we're going to use it on their
+
+19086
+19:21:27,050 --> 19:21:30,500
+test net. Now this is actually
+obvious older UI, and they have
+
+19087
+19:21:30,500 --> 19:21:33,440
+a new website that looks even
+better than this. But we're
+
+19088
+19:21:33,440 --> 19:21:35,570
+going to be going through a lot
+of the basic functionality
+
+19089
+19:21:35,630 --> 19:21:38,570
+depositing taking out a loan,
+potentially even shorting an
+
+19090
+19:21:38,570 --> 19:21:41,240
+asset, if we want, I don't
+recommend going to the site
+
+19091
+19:21:41,240 --> 19:21:43,640
+because it might not work and
+COVID the way you'd expect it
+
+19092
+19:21:43,640 --> 19:21:46,700
+to. So for this, just sit back,
+relax and watch. In order for us
+
+19093
+19:21:46,700 --> 19:21:49,490
+to actually short sell or margin
+trade. The first thing that
+
+19094
+19:21:49,490 --> 19:21:51,740
+we're going to need to do is
+actually deposit some
+
+19095
+19:21:51,740 --> 19:21:54,290
+collateral, we need to deposit
+some collateral in order to
+
+19096
+19:21:54,290 --> 19:21:57,320
+borrow this way. If we never
+repay back the loan that we took
+
+19097
+19:21:57,320 --> 19:21:59,990
+out or the the amount that we
+borrowed, Ave, we'll just go
+
+19098
+19:21:59,990 --> 19:22:02,240
+ahead and take the collateral
+that we put in here, we'll do
+
+19099
+19:22:02,240 --> 19:22:04,370
+what's called a liquidation
+call. And that's why this is
+
+19100
+19:22:04,370 --> 19:22:06,740
+actually a little bit safer than
+short selling in traditional
+
+19101
+19:22:06,740 --> 19:22:10,220
+markets. Because if your
+collateral is less than how much
+
+19102
+19:22:10,220 --> 19:22:12,410
+you have borrowed, you'll just
+immediately get liquidated, but
+
+19103
+19:22:12,410 --> 19:22:15,320
+you still lose a bunch of money
+so like don't get liquidated. So
+
+19104
+19:22:15,320 --> 19:22:17,990
+what we want to do now is we're
+gonna scroll to Aetherium, we're
+
+19105
+19:22:17,990 --> 19:22:21,110
+going to connect our wallet
+here, we're going to move to
+
+19106
+19:22:21,230 --> 19:22:26,120
+COVID test network browser here.
+And we're gonna go to this
+
+19107
+19:22:26,120 --> 19:22:29,420
+deposit piece. So it already
+shows our balance here we have
+
+19108
+19:22:29,420 --> 19:22:32,720
+point two COVID eath. Let's
+deposit 0.1.
+
+19109
+19:22:34,940 --> 19:22:39,170
+We're gonna hit deposit Metamask
+can pop up, confirm. But once
+
+19110
+19:22:39,170 --> 19:22:41,870
+this goes through, this means
+that we've have it deposited and
+
+19111
+19:22:41,870 --> 19:22:45,320
+we go to our dashboard, we can
+see we have some eath here,
+
+19112
+19:22:45,350 --> 19:22:49,040
+point one eath got some API,
+this is kind of like that
+
+19113
+19:22:49,040 --> 19:22:51,680
+percentage return that we're
+gonna get back for, for
+
+19114
+19:22:51,680 --> 19:22:55,880
+depositing into Ave. And yes, we
+can use it as collateral here,
+
+19115
+19:22:55,970 --> 19:22:59,090
+we have this, this marked as yes
+here. So that's exactly what
+
+19116
+19:22:59,090 --> 19:23:02,030
+we're going to do. And it says
+nothing borrowed. Yep, we can go
+
+19117
+19:23:02,030 --> 19:23:04,730
+ahead and hit this borrow now
+button. And we're gonna get
+
+19118
+19:23:04,730 --> 19:23:07,340
+brought to the borrower screen,
+and we're going to choose which
+
+19119
+19:23:07,340 --> 19:23:10,940
+asset we want to borrow. Now,
+whenever we borrow one of these,
+
+19120
+19:23:11,180 --> 19:23:15,590
+there are these API's, right?
+This is the percentage that over
+
+19121
+19:23:15,620 --> 19:23:17,960
+the course of a year that we're
+gonna have to pay, in order to
+
+19122
+19:23:17,960 --> 19:23:20,690
+actually borrow this asset. The
+stable one means it'll always be
+
+19123
+19:23:20,690 --> 19:23:23,900
+for or variable means it
+actually changes depending on
+
+19124
+19:23:23,900 --> 19:23:27,950
+kind of how much liquidity the
+protocol has, you can kind of
+
+19125
+19:23:27,980 --> 19:23:30,830
+pick which one you want to do
+stable is you're always gonna be
+
+19126
+19:23:30,830 --> 19:23:33,920
+a 4% variable is going to be a
+little bit riskier, but you
+
+19127
+19:23:33,920 --> 19:23:36,650
+might get a lower fee. So we're
+actually going to borrow some
+
+19128
+19:23:36,650 --> 19:23:40,640
+dye right, because dye is a
+stable coin. It's worth $1. In a
+
+19129
+19:23:40,640 --> 19:23:43,550
+way, you could call this taking
+out on margin because we're
+
+19130
+19:23:43,550 --> 19:23:46,820
+taking out dye to borrow and
+another way we could say we're
+
+19131
+19:23:46,820 --> 19:23:49,880
+shorting dye which is kind of
+funny to think about, but you
+
+19132
+19:23:49,880 --> 19:23:52,460
+get to choose how much you want
+to borrow here and you'll see
+
+19133
+19:23:52,460 --> 19:23:54,350
+this this thing called Health
+factor I'm going to zoom in a
+
+19134
+19:23:54,350 --> 19:23:56,990
+little bit this thing called
+Health factor here as we as we
+
+19135
+19:23:56,990 --> 19:24:00,740
+scroll this thing. So this
+health factor is how close to
+
+19136
+19:24:00,740 --> 19:24:03,260
+being liquidated you are
+remember how I said you can get
+
+19137
+19:24:03,260 --> 19:24:06,380
+liquidated this health factor
+represents how close we are to
+
+19138
+19:24:06,380 --> 19:24:08,660
+getting liquidated. This means
+means how close we are to always
+
+19139
+19:24:08,660 --> 19:24:12,140
+saying, You know what fu we're
+taking your funds. If it goes
+
+19140
+19:24:12,140 --> 19:24:15,500
+below one at any time, somebody
+can liquidate you and take a lot
+
+19141
+19:24:15,500 --> 19:24:18,080
+of that deposit that we put in,
+there's some math behind
+
+19142
+19:24:18,110 --> 19:24:21,350
+actually what the health factor
+actually is, you can head over
+
+19143
+19:24:21,350 --> 19:24:24,860
+to the Ave documentation, which
+I will leave a link in the
+
+19144
+19:24:24,860 --> 19:24:27,050
+description to kind of read more
+about the health factor. So
+
+19145
+19:24:27,050 --> 19:24:30,170
+we're going to borrow 29 die
+we're buying, we're borrowing
+
+19146
+19:24:30,170 --> 19:24:33,980
+basically 30 bucks. Gonna hit
+continue, I'm gonna do a
+
+19147
+19:24:33,980 --> 19:24:37,370
+variable, zoom back out,
+continue, we're gonna borrow
+
+19148
+19:24:37,760 --> 19:24:41,540
+metamath pops up, confirm
+transaction that's pending. And
+
+19149
+19:24:41,540 --> 19:24:44,000
+we're gonna go to the dashboard.
+And now we can see kind of our
+
+19150
+19:24:44,000 --> 19:24:47,630
+new balance here, right, we can
+see the point one eath,
+
+19151
+19:24:48,200 --> 19:24:52,970
+deposited and 29 die. And we can
+see our health factor up here,
+
+19152
+19:24:53,000 --> 19:24:55,310
+you can even click this little
+button, saying, hey, it
+
+19153
+19:24:55,310 --> 19:24:59,390
+represents how close you are to
+being liquidated, we can see the
+
+19154
+19:24:59,390 --> 19:25:03,200
+value here, our eath is worth
+like $200, or die is worth 30
+
+19155
+19:25:03,200 --> 19:25:05,930
+bucks. So we're good. We're
+pretty healthy here. In order
+
+19156
+19:25:05,930 --> 19:25:09,200
+for Avi to understand and under
+to price the underlying
+
+19157
+19:25:09,200 --> 19:25:12,110
+collateral, so it knows how much
+it can lend out. Obviously
+
+19158
+19:25:12,140 --> 19:25:15,170
+another one of these protocols
+that uses changing price feeds
+
+19159
+19:25:15,260 --> 19:25:17,870
+to price, the underlying
+collateral, many of these
+
+19160
+19:25:17,870 --> 19:25:21,170
+billion dollar defy protocols
+use chain link on the back end
+
+19161
+19:25:21,380 --> 19:25:24,200
+to do all their pricing
+mechanisms. And that's
+
+19162
+19:25:24,230 --> 19:25:27,560
+essentially it, we could then
+repay our debts, we could borrow
+
+19163
+19:25:27,560 --> 19:25:30,860
+more assets, we could swap
+assets around. And the interest
+
+19164
+19:25:30,860 --> 19:25:35,210
+return, we get onto pausing our
+assets is amazing. So now that
+
+19165
+19:25:35,210 --> 19:25:38,330
+we learned a little bit about
+how to use their UI, which is
+
+19166
+19:25:38,330 --> 19:25:41,750
+hosted on IPFS, by the way,
+let's go ahead and let's learn
+
+19167
+19:25:41,750 --> 19:25:45,200
+how to do all this and do even
+more programmatically so we can
+
+19168
+19:25:45,200 --> 19:25:47,510
+become defy quanta engineers.
+
+19169
+19:25:50,210 --> 19:25:53,090
+Now, like I said, we're going to
+be working with the Ave v two
+
+19170
+19:25:53,090 --> 19:25:56,840
+protocol, if you want to try out
+the v3, you absolutely can, if
+
+19171
+19:25:56,840 --> 19:25:59,090
+you can go there and play with
+it right now, it still has more
+
+19172
+19:25:59,090 --> 19:26:01,760
+money locked in it, which is
+great. But the v3 protocol is
+
+19173
+19:26:01,760 --> 19:26:04,310
+obviously the latest addition.
+So we're gonna be flipping back
+
+19174
+19:26:04,310 --> 19:26:06,410
+and forth between the
+documentation and our code base.
+
+19175
+19:26:06,440 --> 19:26:09,170
+So I recommend that you have the
+documentation up as well. And
+
+19176
+19:26:09,170 --> 19:26:11,630
+per usual, all of the code that
+we're going to be working with
+
+19177
+19:26:11,660 --> 19:26:15,980
+is in this hard hat defi Free
+Code Camp repository. So let's
+
+19178
+19:26:15,980 --> 19:26:19,850
+jump in. I'm in by VS code, I'm
+in my folder with this course,
+
+19179
+19:26:19,880 --> 19:26:21,770
+we're going to make a new
+folder, we're going to call it
+
+19180
+19:26:21,770 --> 19:26:26,480
+hard hat, defy FCC, we're going
+to cd into it. And then we're
+
+19181
+19:26:26,480 --> 19:26:30,170
+going to open it up with code
+period. Or you can also do per
+
+19182
+19:26:30,170 --> 19:26:34,370
+usual, File Open and then open
+that folder. Now we're in a new
+
+19183
+19:26:34,370 --> 19:26:38,450
+project, we're going to do yarn,
+add dash dash Dev, aren't hat.
+
+19184
+19:26:38,690 --> 19:26:41,540
+And we're going to add hard hat
+and start up our minimalistic
+
+19185
+19:26:41,540 --> 19:26:43,490
+hard hat project. Once again,
+for starting up your
+
+19186
+19:26:43,490 --> 19:26:45,860
+minimalistic hard hat projects,
+I usually just copy paste from
+
+19187
+19:26:45,860 --> 19:26:48,890
+another folder, or I just used
+that hard hat starter kit that
+
+19188
+19:26:48,890 --> 19:26:51,860
+we saw in the smart contract
+code repo. But whatever works
+
+19189
+19:26:51,860 --> 19:26:54,260
+best for you to get your project
+started, you can use now that
+
+19190
+19:26:54,260 --> 19:26:58,010
+we've got this, we can run yarn
+hardhat. And we'll just create
+
+19191
+19:26:58,010 --> 19:27:01,190
+an empty hardhat.config.js. Now
+to save us some boilerplate
+
+19192
+19:27:01,190 --> 19:27:05,180
+time, I am going to copy paste
+my hard hat.config.js from a
+
+19193
+19:27:05,180 --> 19:27:07,880
+past project into this one, just
+to make it so we don't have to
+
+19194
+19:27:07,880 --> 19:27:10,310
+go through that boilerplate
+setup again. And I'm also going
+
+19195
+19:27:10,310 --> 19:27:13,010
+to copy paste this line from our
+heart at smart contract lottery.
+
+19196
+19:27:13,010 --> 19:27:15,590
+Again, if you want to use your
+package JSON or your yarn dot
+
+19197
+19:27:15,590 --> 19:27:18,890
+lock to install dependencies,
+you absolutely can. But I'm just
+
+19198
+19:27:18,890 --> 19:27:22,250
+going to paste that in here and
+run it. And then I'm going to
+
+19199
+19:27:22,250 --> 19:27:26,030
+copy paste over my prettier
+files, so that all my JavaScript
+
+19200
+19:27:26,030 --> 19:27:28,790
+can be formatted the way I want
+it to be. Okay, great. Now we
+
+19201
+19:27:28,790 --> 19:27:31,190
+have a minimalistic project spun
+up, let's go ahead and get
+
+19202
+19:27:31,190 --> 19:27:33,980
+started learning how to interact
+with the AVI protocol here. So
+
+19203
+19:27:33,980 --> 19:27:36,200
+let's make a quick readme and
+talk about what we want to be
+
+19204
+19:27:36,200 --> 19:27:38,540
+able to do. So first, we're
+going to want to be able to
+
+19205
+19:27:38,540 --> 19:27:42,350
+learn how to programmatically
+deposit collateral. And if we
+
+19206
+19:27:42,350 --> 19:27:44,810
+stopped right there, that might
+be enough, we'd be able to
+
+19207
+19:27:44,810 --> 19:27:47,870
+programmatically deposit
+collateral, and in doing so we
+
+19208
+19:27:47,900 --> 19:27:51,230
+earn yield, we'd earn that
+percentage return just on our
+
+19209
+19:27:51,230 --> 19:27:54,770
+deposited collateral. So
+accomplishing this by itself is
+
+19210
+19:27:54,770 --> 19:27:57,650
+already a feat. But let's say we
+want to go one step further, we
+
+19211
+19:27:57,650 --> 19:28:00,590
+want to get into these more
+interesting financial products.
+
+19212
+19:28:00,770 --> 19:28:03,590
+So after we deposit some
+collateral, we're going to learn
+
+19213
+19:28:03,590 --> 19:28:07,040
+how to programmatically borrow
+and other asset, the deposited
+
+19214
+19:28:07,040 --> 19:28:10,340
+collateral is going to be eath,
+slash wrapped eath, which we'll
+
+19215
+19:28:10,340 --> 19:28:12,890
+talk about in a little bit,
+we're going to borrow another
+
+19216
+19:28:12,890 --> 19:28:16,310
+asset, which for this demo is
+going to be dye. And the reason
+
+19217
+19:28:16,310 --> 19:28:19,460
+that we're using dye is because
+dye is what's known as a stable
+
+19218
+19:28:19,460 --> 19:28:23,000
+coin. So dye is actually a token
+on the blockchain created by
+
+19219
+19:28:23,000 --> 19:28:26,600
+this maker Dow where the price
+of the dye token is always
+
+19220
+19:28:26,600 --> 19:28:30,290
+pegged to $1. So we're putting
+down eath as collateral and
+
+19221
+19:28:30,290 --> 19:28:33,680
+we're borrowing cryptocurrency,
+US dollars, sort of, we're
+
+19222
+19:28:33,680 --> 19:28:36,740
+borrowing this token, which
+represents a US dollar and then
+
+19223
+19:28:36,740 --> 19:28:40,100
+we'll just repay that I will
+repay almost everything back and
+
+19224
+19:28:40,100 --> 19:28:43,130
+you'll see why we don't repay
+everything back in a minute. One
+
+19225
+19:28:43,130 --> 19:28:45,440
+other protocol that I want to
+talk about quickly is the
+
+19226
+19:28:45,440 --> 19:28:48,680
+uniswap protocol. And the
+uniswap protocol has become this
+
+19227
+19:28:48,710 --> 19:28:52,760
+haven for trading. It's a
+decentralized application that
+
+19228
+19:28:52,760 --> 19:28:56,660
+allows us to trade assets and
+tokens with each other on
+
+19229
+19:28:56,660 --> 19:29:00,020
+something called an automated
+market maker. It ends basically
+
+19230
+19:29:00,020 --> 19:29:02,960
+a decentralized Stock Exchange,
+but with tokens and again,
+
+19231
+19:29:02,990 --> 19:29:05,900
+tokens aren't exactly stocks,
+they're very different. So when
+
+19232
+19:29:05,900 --> 19:29:08,540
+looking to get some of these
+assets It's like wrapped
+
+19233
+19:29:08,540 --> 19:29:12,830
+Aetherium or dye or link token.
+On a main net, oftentimes,
+
+19234
+19:29:12,830 --> 19:29:15,680
+you're going to use one of these
+decentralized exchanges. And
+
+19235
+19:29:15,680 --> 19:29:18,260
+obviously, these decentralized
+exchanges are much fairer,
+
+19236
+19:29:18,410 --> 19:29:21,590
+because everything that happens
+on them is transparent, much
+
+19237
+19:29:21,590 --> 19:29:24,590
+fairer than centralized finance,
+everything that happens on them
+
+19238
+19:29:24,590 --> 19:29:27,920
+is transparent. You can see
+everything that's going on on
+
+19239
+19:29:27,920 --> 19:29:31,100
+chain, which is absolutely
+phenomenal. So let's go ahead
+
+19240
+19:29:31,100 --> 19:29:34,160
+and get started here. And let's
+just create our scripts folder.
+
+19241
+19:29:34,190 --> 19:29:36,590
+Because in this project, we're
+actually not going to create any
+
+19242
+19:29:36,590 --> 19:29:39,410
+contracts ourselves, we're just
+going to learn how to interact
+
+19243
+19:29:39,410 --> 19:29:41,990
+with these protocols. If you do
+want to learn how to build some
+
+19244
+19:29:41,990 --> 19:29:45,230
+of these protocols, at the end
+of this session, we will give
+
+19245
+19:29:45,230 --> 19:29:48,620
+you a ton of links. And we'll
+have a special guest explain a
+
+19246
+19:29:48,650 --> 19:29:50,660
+few different ways to learn how
+to build more of these
+
+19247
+19:29:50,660 --> 19:29:53,390
+decentralized protocols.
+Although we've already built one
+
+19248
+19:29:53,420 --> 19:29:56,210
+with our decentralized lottery,
+which is fantastic. Let's create
+
+19249
+19:29:56,210 --> 19:29:59,030
+some scripts here. And for all
+of these things, deposit
+
+19250
+19:29:59,030 --> 19:30:02,210
+collateral, borrow and repay.
+We'll just put this all in a new
+
+19251
+19:30:02,210 --> 19:30:06,170
+script called Ave borrow dot
+Jas. So we're gonna do
+
+19252
+19:30:06,200 --> 19:30:09,500
+everything in here. And since
+this is a script, it's going to
+
+19253
+19:30:09,500 --> 19:30:12,290
+have the same setup, as we've
+seen before, right, so we're
+
+19254
+19:30:12,290 --> 19:30:17,660
+gonna have this main thing
+around an async function. Main,
+
+19255
+19:30:17,900 --> 19:30:20,690
+and then we'll have our imports,
+of course at the top. Now
+
+19256
+19:30:20,690 --> 19:30:23,360
+something that's important to
+note, go to avi, we go to the
+
+19257
+19:30:23,360 --> 19:30:26,180
+protocol, we kind of read
+through the docs, and eventually
+
+19258
+19:30:26,180 --> 19:30:32,180
+we would find out the protocol
+treats everything as an ERC 20
+
+19259
+19:30:32,180 --> 19:30:35,900
+token. And but we know that
+Aetherium or the native
+
+19260
+19:30:35,900 --> 19:30:39,890
+blockchain token that you're
+using, isn't an ERC 20 token.
+
+19261
+19:30:40,190 --> 19:30:42,440
+And the reason that treats
+everything like an ERC 20 token
+
+19262
+19:30:42,440 --> 19:30:45,110
+is that it's just much easier,
+right? If everything's using
+
+19263
+19:30:45,110 --> 19:30:48,440
+this ERC 20 token standard, it's
+much easier to send in and
+
+19264
+19:30:48,440 --> 19:30:49,340
+interact with stuff.
+
+19265
+19:30:52,100 --> 19:30:55,220
+On a lot of these protocols,
+when we go to deposit Aetherium,
+
+19266
+19:30:55,220 --> 19:30:58,880
+or polygon, or arbitrary marks
+cetera, what actually happens is
+
+19267
+19:30:58,880 --> 19:31:01,820
+they send your Aetherium through
+like what's called a web
+
+19268
+19:31:01,850 --> 19:31:07,370
+gateway, and swaps it for weath,
+which stands for rapt ether. And
+
+19269
+19:31:07,370 --> 19:31:12,080
+it's basically Aetherium. But in
+an ERC 20 token contract, so
+
+19270
+19:31:12,080 --> 19:31:14,780
+what we want to do is going to
+do that same thing, we're gonna
+
+19271
+19:31:14,780 --> 19:31:18,020
+skip kind of using this web
+gateway. And we'll just get the
+
+19272
+19:31:18,020 --> 19:31:21,410
+Web Token ourselves, and we'll
+use that as collateral. So in
+
+19273
+19:31:21,410 --> 19:31:25,700
+our script tag, I'm going to
+make another file called Get
+
+19274
+19:31:25,700 --> 19:31:29,960
+weath.js. And in here, we're
+actually going to go ahead, and
+
+19275
+19:31:29,960 --> 19:31:34,490
+we're going to build a script
+that will deposit our token for
+
+19276
+19:31:34,490 --> 19:31:37,430
+web token. Okay, so let's create
+the script. And there's a link
+
+19277
+19:31:37,430 --> 19:31:40,640
+to the web token on ether scan,
+and on Main net in the GitHub
+
+19278
+19:31:40,640 --> 19:31:44,360
+repo. And the way it works, is
+you actually deposit Aetherium.
+
+19279
+19:31:44,570 --> 19:31:47,900
+And in return, it'll give you
+the web token on Rigby right
+
+19280
+19:31:47,900 --> 19:31:53,270
+now, by deposit 0.05. Go ahead
+and write I'm connected to ether
+
+19281
+19:31:53,270 --> 19:31:55,550
+scan, I'll go ahead and write
+this transaction, I'm gonna
+
+19282
+19:31:55,550 --> 19:31:58,340
+drink pee. So I don't really
+care if it's if it's the actual
+
+19283
+19:31:58,340 --> 19:32:01,130
+contract or not, because it's
+not real money. But I'm going to
+
+19284
+19:32:01,130 --> 19:32:05,210
+deposit 0.05 eath. And after our
+transaction goes through, we
+
+19285
+19:32:05,210 --> 19:32:08,570
+copy the contract address, we
+add this token to our Metamask
+
+19286
+19:32:08,600 --> 19:32:12,020
+the same way we added link will
+import tokens, paste the address
+
+19287
+19:32:12,020 --> 19:32:16,340
+in here, add custom token,
+import tokens will now see we
+
+19288
+19:32:16,340 --> 19:32:21,710
+have some wet token in here, I
+deposited 0.1 before so 0.1 plus
+
+19289
+19:32:21,740 --> 19:32:26,420
+0.05, which is why it shows 0.15
+Because I did it twice, well,
+
+19290
+19:32:26,450 --> 19:32:29,450
+while I wasn't recording. So um,
+but this is how you can get this
+
+19291
+19:32:29,450 --> 19:32:32,990
+wet token into your contract.
+And then anytime you want, you
+
+19292
+19:32:32,990 --> 19:32:35,540
+can call this withdrawal
+function. And you can withdraw
+
+19293
+19:32:35,570 --> 19:32:38,750
+your Aetherium out of this and
+do what's called Burn your wet
+
+19294
+19:32:38,750 --> 19:32:42,620
+token. So when you swap back
+from weath to Aetherium, you hit
+
+19295
+19:32:42,620 --> 19:32:45,290
+this withdraw and boom, you
+basically swap them back because
+
+19296
+19:32:45,290 --> 19:32:49,100
+this contract itself right now
+is holding your Aetherium token.
+
+19297
+19:32:49,160 --> 19:32:52,010
+Pretty cool, right? So in our
+get wet function, we're not
+
+19298
+19:32:52,010 --> 19:32:54,620
+going to add this main thing
+here, we're going to create get
+
+19299
+19:32:54,620 --> 19:32:57,140
+West here just as kind of a
+module and we're going to import
+
+19300
+19:32:57,140 --> 19:33:00,800
+it into our Ave borrow. So we're
+not going to do this this main
+
+19301
+19:33:00,800 --> 19:33:03,170
+thing that you see here.
+Instead, we're going to create
+
+19302
+19:33:03,170 --> 19:33:08,270
+an async function called Get
+Wes. And then below, we're going
+
+19303
+19:33:08,270 --> 19:33:13,940
+to export it. So we'll do module
+dot exports equals get weath.
+
+19304
+19:33:14,240 --> 19:33:18,290
+And we're going to export it so
+our Avi borrow can use this get
+
+19305
+19:33:18,290 --> 19:33:21,410
+West script that we're creating
+right now, let's add let's go
+
+19306
+19:33:21,410 --> 19:33:23,990
+ahead and do this. Well, in
+order to interact with a
+
+19307
+19:33:23,990 --> 19:33:27,170
+contract, we're going to need an
+account. So we can do const
+
+19308
+19:33:27,740 --> 19:33:34,400
+deployer equals await get named
+accounts, per usual. We'll do
+
+19309
+19:33:34,400 --> 19:33:37,220
+const get name accounts equals
+require hardhat. My VS code
+
+19310
+19:33:37,220 --> 19:33:39,920
+automatically imported that
+thank you VS code now. And now
+
+19311
+19:33:39,920 --> 19:33:45,590
+we want to call the deposit
+function on the west contract.
+
+19312
+19:33:46,010 --> 19:33:49,550
+How do we call this deposit
+function on the west contract?
+
+19313
+19:33:49,610 --> 19:33:52,340
+Well, how do you call any
+contract? Well, what do you
+
+19314
+19:33:52,340 --> 19:33:56,210
+need? You need the ABI and then
+you need the contract address.
+
+19315
+19:33:56,300 --> 19:33:59,300
+Drill this in. You're always
+going to be the API and the
+
+19316
+19:33:59,300 --> 19:34:02,180
+contract address to interact
+with the contract. We know that
+
+19317
+19:34:02,180 --> 19:34:04,760
+if we give we know that if we
+give our project the whole
+
+19318
+19:34:04,760 --> 19:34:08,360
+contract, it'll get the API but
+we also know If we just do the
+
+19319
+19:34:08,390 --> 19:34:11,480
+interface, that's just as good,
+it won't give us all the
+
+19320
+19:34:11,480 --> 19:34:14,450
+functionality, but it will tell
+it will give us the API, it will
+
+19321
+19:34:14,450 --> 19:34:18,620
+tell our ethers, what functions
+it can use. So we're going to
+
+19322
+19:34:18,620 --> 19:34:22,130
+create a new folder, create our
+contracts folder. And in here,
+
+19323
+19:34:22,130 --> 19:34:24,170
+we're going to create a new
+folder inside of that called
+
+19324
+19:34:24,200 --> 19:34:27,230
+interfaces. And this is where
+we're going to create our web
+
+19325
+19:34:27,260 --> 19:34:31,010
+interface. Now a web interface
+is going to be really similar to
+
+19326
+19:34:31,040 --> 19:34:34,640
+an ERC 20 interface. So if you
+want to go ahead and try to add
+
+19327
+19:34:34,640 --> 19:34:38,330
+it yourself, feel free to do so.
+Or what you can just do is you
+
+19328
+19:34:38,330 --> 19:34:40,670
+can come to the GitHub repo
+associated with this lesson,
+
+19329
+19:34:41,240 --> 19:34:45,020
+come to iOS and just copy paste,
+right, you'll see the functions
+
+19330
+19:34:45,020 --> 19:34:49,490
+in here are exactly the same as
+an ERC 20, allowance approved
+
+19331
+19:34:49,520 --> 19:34:53,300
+balance of decimals named blah,
+blah, with these additional
+
+19332
+19:34:53,300 --> 19:34:56,450
+deposit and withdrawal
+functions. So I'm going to copy
+
+19333
+19:34:56,450 --> 19:35:00,590
+all this, move back over to my
+hard hat project, we'll create a
+
+19334
+19:35:00,590 --> 19:35:05,570
+new file, we'll call I left dot
+soul. And just to note,
+
+19335
+19:35:05,630 --> 19:35:09,710
+oftentimes, a good best practice
+is to have interfaces, start
+
+19336
+19:35:09,710 --> 19:35:12,740
+with eyes so that you know what
+to interface and then we'll
+
+19337
+19:35:12,740 --> 19:35:16,130
+paste it in here. Now in order
+for this to compile, we'll need
+
+19338
+19:35:16,130 --> 19:35:21,170
+to use 0.4 point 19 version of
+solidity. So what we can do is
+
+19339
+19:35:21,170 --> 19:35:25,850
+we can come over to our, our
+head.config.js. We have solidity
+
+19340
+19:35:25,850 --> 19:35:29,750
+compilers, version 0.07, or
+whatever versions that you have
+
+19341
+19:35:29,750 --> 19:35:32,480
+in here, we can add or just
+replace. So I'm going to put a
+
+19342
+19:35:32,480 --> 19:35:40,400
+comma here, version 0.4 point
+19. Save. And now in order to
+
+19343
+19:35:40,400 --> 19:35:45,200
+make sure we can get that API,
+do yarn, hardhats compile, or hh
+
+19344
+19:35:45,200 --> 19:35:48,800
+compiled, and great, we compile
+this interface. So now we have
+
+19345
+19:35:48,800 --> 19:35:52,160
+the ABI to interact with. Now
+that we have the ABI, a little
+
+19346
+19:35:52,160 --> 19:35:55,250
+check mark here, let's go ahead
+and get the contract address.
+
+19347
+19:35:55,370 --> 19:35:58,250
+But for reasons that we're going
+to learn about very soon, we're
+
+19348
+19:35:58,250 --> 19:36:01,280
+actually going to work just with
+main net set of getting the
+
+19349
+19:36:01,280 --> 19:36:04,610
+Rinkeby test and address, I'm
+going to look up with main net,
+
+19350
+19:36:04,970 --> 19:36:08,900
+we're going to find the web
+token on Main net. So I'm going
+
+19351
+19:36:08,900 --> 19:36:11,900
+to copy the address of main net.
+And again, you can just grab
+
+19352
+19:36:11,900 --> 19:36:15,020
+this address from the GitHub
+repo associated with this lesson
+
+19353
+19:36:15,020 --> 19:36:18,500
+as well. And for now, we're
+gonna say check a little check
+
+19354
+19:36:18,500 --> 19:36:23,000
+mark here, and paste the address
+there. So now we're have the ABI
+
+19355
+19:36:23,000 --> 19:36:25,640
+compiled from an interface, and
+we have the contract address for
+
+19356
+19:36:25,640 --> 19:36:28,850
+main net. But let's go ahead and
+create this contract now. So we
+
+19357
+19:36:28,850 --> 19:36:34,250
+can say const, iOS equals await
+ethers dot and then we'll need
+
+19358
+19:36:34,250 --> 19:36:38,870
+to import ethers from Hardhead
+as well. Ethers dot get contract
+
+19359
+19:36:38,960 --> 19:36:43,130
+at this is another one of these
+functions on ethers, it allows
+
+19360
+19:36:43,130 --> 19:36:46,490
+us to get a contract at a
+specific address, we'll say get
+
+19361
+19:36:46,490 --> 19:36:51,530
+contract app, we use the iOS ABI
+for now, we'll just hard code
+
+19362
+19:36:51,530 --> 19:36:54,200
+this address in here. And then
+we'll connect it to the
+
+19363
+19:36:54,200 --> 19:36:57,950
+Deployer. So we're saying let's
+get this web contract with the
+
+19364
+19:36:57,950 --> 19:37:02,750
+ABI of iOS at this address
+connected to Deployer. So we
+
+19365
+19:37:02,750 --> 19:37:08,300
+could go ahead and run await AI
+with dot deposit. And we'll set
+
+19366
+19:37:08,300 --> 19:37:11,870
+value which will be some
+amounts. Let's go ahead and at
+
+19367
+19:37:11,870 --> 19:37:17,360
+the top, we'll say const amount
+equals let's do ethers dot utils
+
+19368
+19:37:17,360 --> 19:37:24,890
+dot parse, ether, and then we'll
+do 0.0 0.02. So we'll deposit
+
+19369
+19:37:24,920 --> 19:37:30,710
+0.02 will say const TX equals
+that will do await TX dot wait
+
+19370
+19:37:30,740 --> 19:37:33,620
+one wait for one block to go
+through. And then we'll just get
+
+19371
+19:37:33,620 --> 19:37:40,310
+the balance will say const. With
+balance equals await I with that
+
+19372
+19:37:40,340 --> 19:37:44,630
+balance of employer. So we're
+going to call the balance of
+
+19373
+19:37:44,630 --> 19:37:48,440
+function on our iWeb ERC 20
+token. And then we'll just do
+
+19374
+19:37:48,440 --> 19:37:54,980
+console dot log got West
+balance.to string.
+
+19375
+19:37:56,389 --> 19:37:59,209
+So we're using the main net
+address in here. And we're gonna
+
+19376
+19:37:59,209 --> 19:38:01,609
+say okay, we're going to deposit
+some amount, we're going to
+
+19377
+19:38:01,609 --> 19:38:04,459
+wait. And then we're gonna go
+ahead and get the balance right,
+
+19378
+19:38:04,459 --> 19:38:07,099
+so we're just depositing our
+Aetherium so that we can get
+
+19379
+19:38:07,099 --> 19:38:11,119
+that ERC 20 version of
+Aetherium, that West token here.
+
+19380
+19:38:13,760 --> 19:38:16,580
+Now, you might be thinking,
+Okay, why are you putting the
+
+19381
+19:38:16,580 --> 19:38:19,940
+main address in here? Let's
+Patrick, slow down. Let's go
+
+19382
+19:38:19,940 --> 19:38:23,120
+ahead and let's create a mock
+Web Token contract address.
+
+19383
+19:38:23,240 --> 19:38:27,050
+Let's deploy the mocks first,
+and then we'll go ahead and use
+
+19384
+19:38:27,050 --> 19:38:29,600
+that same setup that we've been
+doing this whole time, why you
+
+19385
+19:38:29,630 --> 19:38:32,630
+why you directly hard coding
+this in here. Well, I've been
+
+19386
+19:38:32,630 --> 19:38:36,110
+alluding to this for some time.
+But there's another way that we
+
+19387
+19:38:36,110 --> 19:38:39,080
+can run tests in our smart
+contracts. And this is with
+
+19388
+19:38:39,080 --> 19:38:42,050
+something called main net
+forking, we can actually do
+
+19389
+19:38:42,050 --> 19:38:46,550
+something where we fork the main
+net, and run a local hard hat
+
+19390
+19:38:46,550 --> 19:38:51,170
+node. That's pretending to be a
+main net node. And all we have
+
+19391
+19:38:51,170 --> 19:38:55,250
+to do is update our hard head
+config to do so. So let's talk
+
+19392
+19:38:55,250 --> 19:38:58,190
+about forking for a minute. So
+on the left here, we have a
+
+19393
+19:38:58,190 --> 19:39:00,770
+blockchain an example of
+blockchain it's going to be
+
+19394
+19:39:00,770 --> 19:39:05,300
+something similar to a test net
+or main net like Rinkeby, eath,
+
+19395
+19:39:05,300 --> 19:39:09,650
+main net polygon etc. This is
+going to be a blockchain that we
+
+19396
+19:39:09,650 --> 19:39:12,290
+deploy to. Now there are a whole
+bunch of blocks in here, right?
+
+19397
+19:39:12,500 --> 19:39:15,470
+We have this huge chain that we
+can work with. And all this
+
+19398
+19:39:15,470 --> 19:39:18,530
+information on the blockchain is
+public information, like this
+
+19399
+19:39:18,530 --> 19:39:21,710
+block is going to have
+transaction transaction
+
+19400
+19:39:22,130 --> 19:39:25,310
+transaction, each one of these
+blocks is going to have a whole
+
+19401
+19:39:25,310 --> 19:39:28,400
+bunch of transactions. And all
+this information is on this
+
+19402
+19:39:28,400 --> 19:39:31,670
+public blockchain. In addition
+to all these transactions, it's
+
+19403
+19:39:31,670 --> 19:39:34,310
+going to have things like price
+feed contracts, it's going to
+
+19404
+19:39:34,310 --> 19:39:37,730
+have things like Ave contract,
+the Web token, contract, etc.
+
+19405
+19:39:37,850 --> 19:39:42,380
+All this contract information is
+public. So hypothetically, if
+
+19406
+19:39:42,380 --> 19:39:46,910
+it's already there, we should be
+basically able to copy this to
+
+19407
+19:39:46,910 --> 19:39:50,720
+our local environment and do
+some simulations ourselves. And
+
+19408
+19:39:50,720 --> 19:39:54,320
+that's exactly what forking
+does. A fork blockchain
+
+19409
+19:39:54,500 --> 19:39:58,160
+literally takes a copy of an
+existing blockchain like on the
+
+19410
+19:39:58,160 --> 19:40:02,150
+left here and brings it on our
+local computer. We actually have
+
+19411
+19:40:02,150 --> 19:40:05,180
+control over our blockchain
+that's running locally, because
+
+19412
+19:40:05,180 --> 19:40:08,390
+it's gonna run on a local
+computer, similar to hard hat.
+
+19413
+19:40:08,480 --> 19:40:12,530
+Now, everything we do on this
+local forked blockchain is not
+
+19414
+19:40:12,530 --> 19:40:15,140
+going to affect main them,
+because it's a simulated
+
+19415
+19:40:15,140 --> 19:40:18,590
+blockchain. It's just running in
+our local environment. So we can
+
+19416
+19:40:18,590 --> 19:40:21,260
+actually interact with this
+forking this kind of local
+
+19417
+19:40:21,260 --> 19:40:24,650
+blockchain that resembles that
+mimics the actual blockchain.
+
+19418
+19:40:24,830 --> 19:40:27,080
+And here's what forking doesn't
+do, it doesn't download the
+
+19419
+19:40:27,080 --> 19:40:30,500
+entire blockchain into our local
+setup. Anytime we reference an
+
+19420
+19:40:30,500 --> 19:40:33,320
+address. Anytime we reference,
+hey, there's something at a
+
+19421
+19:40:33,320 --> 19:40:37,730
+specific address, we make an API
+call to our Aetherium node,
+
+19422
+19:40:37,760 --> 19:40:41,570
+which again, we're using alchemy
+and say, hey, oh, what's at this
+
+19423
+19:40:41,570 --> 19:40:45,200
+address, and it'll return just
+that specific contract for us.
+
+19424
+19:40:45,290 --> 19:40:47,270
+This way, we don't have to
+download the whole blockchain.
+
+19425
+19:40:47,270 --> 19:40:50,270
+And it's a lot quicker. And we
+can also do this forking to run
+
+19426
+19:40:50,270 --> 19:40:53,300
+our tests to run our scripts to
+do everything. And now you might
+
+19427
+19:40:53,300 --> 19:40:55,940
+be thinking, wow, Patrick, this
+sounds awesome. Well, why don't
+
+19428
+19:40:55,940 --> 19:40:58,550
+we just do this for everything?
+Well, there's some trade offs.
+
+19429
+19:40:58,610 --> 19:41:01,190
+The pros are that it's quick,
+it's easy, and a test will
+
+19430
+19:41:01,190 --> 19:41:04,640
+resemble what's on Main net. Now
+the cons are that we need an
+
+19431
+19:41:04,640 --> 19:41:08,450
+API, and we can't do everything
+locally. Some contracts, some
+
+19432
+19:41:08,450 --> 19:41:11,150
+contracts are complex to work
+with, and mocks might just be
+
+19433
+19:41:11,150 --> 19:41:14,030
+better. But using a forked
+network might be a good way to
+
+19434
+19:41:14,030 --> 19:41:16,400
+run your tests, it might be a
+good alternate to just using
+
+19435
+19:41:16,400 --> 19:41:19,370
+mocks. So it really depends on
+what's right for you and right
+
+19436
+19:41:19,370 --> 19:41:23,240
+for your project. But it is a
+fantastic tool, especially for
+
+19437
+19:41:23,240 --> 19:41:25,730
+something like Avi, where we
+want to quickly test some
+
+19438
+19:41:25,730 --> 19:41:29,030
+things. Now the hard forking
+also will give us a bunch of
+
+19439
+19:41:29,030 --> 19:41:32,030
+fake accounts. So we'll still
+get a bunch of fake accounts on
+
+19440
+19:41:32,030 --> 19:41:36,140
+Main net that will be given a
+theorem. So we'll get fake main
+
+19441
+19:41:36,140 --> 19:41:38,870
+net accounts for this forking.
+So for the rest of this, we're
+
+19442
+19:41:38,870 --> 19:41:41,930
+going to be using this forking
+to run our scripts and run our
+
+19443
+19:41:41,930 --> 19:41:45,590
+tests. If you want to go back
+after this and try this all out
+
+19444
+19:41:45,590 --> 19:41:48,140
+on COVID. We've got a whole
+bunch of different addresses for
+
+19445
+19:41:48,140 --> 19:41:50,540
+the COVID network so that you
+can run these scripts directly
+
+19446
+19:41:50,540 --> 19:41:53,450
+on COVID. And you can see the
+transactions yourself. Just note
+
+19447
+19:41:53,450 --> 19:41:56,060
+that when using COVID, you'll
+want to make sure that you're
+
+19448
+19:41:56,060 --> 19:41:59,930
+using the same addresses, as are
+in the AVI docs for the COVID
+
+19449
+19:41:59,930 --> 19:42:03,110
+network, because they do change
+sometimes. Great, let's go
+
+19450
+19:42:03,110 --> 19:42:06,860
+ahead, we'll go to our RT head
+dot config dot j s. And now
+
+19451
+19:42:06,860 --> 19:42:09,740
+we'll go to our networks, which
+right now, I don't have
+
+19452
+19:42:09,740 --> 19:42:14,600
+anything, I only have ranking.
+And we'll add hard hat in here,
+
+19453
+19:42:15,140 --> 19:42:18,200
+we'll add a little comma down
+here. And we'll say, you know,
+
+19454
+19:42:18,200 --> 19:42:22,670
+the chain ID of course is going
+to be 31337. We'll add this
+
+19455
+19:42:22,670 --> 19:42:26,420
+forking keyword. And in here,
+we'll say the URL for a Forking
+
+19456
+19:42:26,450 --> 19:42:30,860
+is going to be our main net RPC
+URL. And this is another reason
+
+19457
+19:42:30,860 --> 19:42:34,430
+why we're using alchemy. Alchemy
+is fantastic at these forked
+
+19458
+19:42:34,430 --> 19:42:37,730
+blockchains, and has really good
+pieces here. So what we can do
+
+19459
+19:42:37,730 --> 19:42:40,640
+is we can come back to our
+alchemy dashboard, we'll create
+
+19460
+19:42:40,640 --> 19:42:44,450
+a new app. This one will be for
+Aetherium main net, and we'll
+
+19461
+19:42:44,450 --> 19:42:50,990
+say forking chain. We'll say for
+forking, we'll go ahead and
+
+19462
+19:42:50,990 --> 19:42:53,900
+create this on a theory and main
+net. Now that we have this
+
+19463
+19:42:53,900 --> 19:42:57,710
+forking chain, we can do the
+same thing. We'll grab our API
+
+19464
+19:42:57,710 --> 19:43:02,570
+key, we'll come back to our
+project, create this new file,
+
+19465
+19:43:02,870 --> 19:43:07,550
+we'll create our dot env. And
+we'll do main net RPC URL equals
+
+19466
+19:43:07,610 --> 19:43:10,430
+and paste that in there. In our
+Hardhead config, we are now
+
+19467
+19:43:10,430 --> 19:43:14,900
+going to be forking from mainnet
+RPC URL whenever we work with
+
+19468
+19:43:14,900 --> 19:43:18,050
+the heart at blockchain. So now
+that we have this in here, let's
+
+19469
+19:43:18,050 --> 19:43:22,040
+go ahead and try to run this get
+wet function. Because since
+
+19470
+19:43:22,040 --> 19:43:26,060
+we're forking the blockchain, we
+should be able to go ahead and
+
+19471
+19:43:26,060 --> 19:43:29,810
+simulate this. So backing off a
+borrow, we'll go ahead we'll do
+
+19472
+19:43:29,810 --> 19:43:31,640
+const, get weath
+
+19473
+19:43:33,139 --> 19:43:36,949
+equals require and then we'll
+pull this script that dot dot
+
+19474
+19:43:37,309 --> 19:43:43,459
+scripts slash get weath. And
+then, in our main function,
+
+19475
+19:43:43,459 --> 19:43:48,769
+we'll just run await yet. So to
+run our script here, we'll do
+
+19476
+19:43:48,799 --> 19:43:55,159
+yarn hard hat, run scripts
+avevamo.js. And our default
+
+19477
+19:43:55,159 --> 19:43:57,889
+network is hard hat. So we could
+either do dash dash network hard
+
+19478
+19:43:57,889 --> 19:44:01,549
+hat or just run it. And
+remember, since in our config,
+
+19479
+19:44:01,609 --> 19:44:04,819
+we're saying, hey, when we run
+the hard hat chain, use this
+
+19480
+19:44:04,819 --> 19:44:07,669
+forking, we're going to be
+forking, so let's go ahead Run
+
+19481
+19:44:07,669 --> 19:44:11,809
+this ran to air main. Net RPC
+URL is undefined. Well, that
+
+19482
+19:44:11,809 --> 19:44:15,529
+makes sense. Let's go ahead and
+add this consummated RPC rel
+
+19483
+19:44:15,559 --> 19:44:21,559
+equals process study and v dot
+made it RPC URL. Let's try this
+
+19484
+19:44:21,559 --> 19:44:26,059
+again. And we now see we got,
+you know, this much weath,
+
+19485
+19:44:26,089 --> 19:44:28,219
+which, again, that much wealth
+is gonna be
+
+19486
+19:44:28,219 --> 19:44:35,149
+1-234-567-8910 1234567 0.02
+wealth, which is exactly what we
+
+19487
+19:44:35,149 --> 19:44:39,799
+want. So now we have a way to
+interact with main net locally,
+
+19488
+19:44:39,859 --> 19:44:42,529
+which sounds kind of crazy. But
+he's incredibly powerful for
+
+19489
+19:44:42,529 --> 19:44:45,829
+exactly what we're doing right
+here. So we have a way to fork
+
+19490
+19:44:45,829 --> 19:44:48,589
+main that eath and run our
+scripts and kind of test to see
+
+19491
+19:44:48,739 --> 19:44:51,679
+and simulate what it would be
+like to actually run these
+
+19492
+19:44:51,679 --> 19:44:55,729
+transactions. So we're gonna do
+like that, our get with function
+
+19493
+19:44:55,759 --> 19:44:58,879
+looks good. And obviously, we
+would still modularize this, we
+
+19494
+19:44:58,879 --> 19:45:01,459
+put this in our helper Hardhead
+config, but we're going to skip
+
+19495
+19:45:01,459 --> 19:45:04,669
+doing that for now. So let's go
+head back to the AVI borrow. And
+
+19496
+19:45:04,669 --> 19:45:07,609
+let's go ahead and flesh the
+rest of this out. Now, let's go
+
+19497
+19:45:07,609 --> 19:45:09,919
+ahead and set up the rest of the
+boilerplate here. So we'll do
+
+19498
+19:45:09,919 --> 19:45:13,399
+const Deployer, because we need
+an account, obviously equals
+
+19499
+19:45:13,429 --> 19:45:17,959
+await, get named accounts. And
+then we'll do const get named
+
+19500
+19:45:17,959 --> 19:45:24,169
+accounts equals require. Now we
+want to start interacting with
+
+19501
+19:45:24,169 --> 19:45:26,599
+the ABI protocol, well, what do
+we need, we're gonna need the
+
+19502
+19:45:26,599 --> 19:45:30,079
+ABI and the address, nothing
+changes, we're gonna need these
+
+19503
+19:45:30,079 --> 19:45:33,979
+two. So what we can do is we can
+go to the Ave docs. And again,
+
+19504
+19:45:33,979 --> 19:45:37,909
+we're going to be on V two. And
+we can go ahead and find the
+
+19505
+19:45:37,939 --> 19:45:41,119
+contract address in here. Now
+the way it works is they
+
+19506
+19:45:41,119 --> 19:45:44,029
+actually have a contract, which
+will point us to the correct
+
+19507
+19:45:44,029 --> 19:45:46,729
+contract. The contract that
+we're going to be doing all the
+
+19508
+19:45:46,729 --> 19:45:50,749
+lending with is this lending
+pool. And there's actually a
+
+19509
+19:45:50,749 --> 19:45:55,129
+contract to get that contract
+address. And to get the lending
+
+19510
+19:45:55,129 --> 19:45:58,159
+pool address, we have to go to
+the lending pool address
+
+19511
+19:45:58,159 --> 19:46:00,709
+provider. It's this contract
+that will tell us what the
+
+19512
+19:46:00,709 --> 19:46:03,469
+address of the lending pullets.
+And we can actually see the
+
+19513
+19:46:03,469 --> 19:46:06,409
+deployed contract section, we
+can see the address of this
+
+19514
+19:46:06,409 --> 19:46:08,959
+contract. And we can see the
+address of all the main ones and
+
+19515
+19:46:08,959 --> 19:46:11,479
+the COVID. Once again, if you
+want to play with this on COVID.
+
+19516
+19:46:11,779 --> 19:46:14,659
+But we can see lending pool
+address provider is going to be
+
+19517
+19:46:14,689 --> 19:46:18,739
+located right here, we can copy
+this address. And we'll just
+
+19518
+19:46:18,739 --> 19:46:19,699
+take notes of this.
+
+19519
+19:46:21,860 --> 19:46:24,830
+And that lending pool, we're
+going to get from the lending
+
+19520
+19:46:24,830 --> 19:46:28,070
+pelagics provider. So let's
+actually create a function that
+
+19521
+19:46:28,070 --> 19:46:30,770
+will get us the lending pool
+address from the lending pool
+
+19522
+19:46:30,770 --> 19:46:35,270
+address provider. So down here,
+we'll create async function, get
+
+19523
+19:46:35,300 --> 19:46:38,480
+lending pool. Now in order to
+interact with this lending pool
+
+19524
+19:46:38,480 --> 19:46:41,450
+address provider. Same thing,
+we're going to need its address
+
+19525
+19:46:41,480 --> 19:46:44,750
+and its API, we have its
+address. So let's go ahead and
+
+19526
+19:46:44,750 --> 19:46:48,380
+get its API, you can go ahead to
+the GitHub repo associated with
+
+19527
+19:46:48,380 --> 19:46:51,650
+this lesson. And just copy paste
+it from the interfaces section.
+
+19528
+19:46:51,770 --> 19:46:55,370
+You could also look directly on
+the blockchain to see what this
+
+19529
+19:46:55,370 --> 19:46:58,100
+contract looks I can create your
+own interface. Or we can go
+
+19530
+19:46:58,100 --> 19:47:00,980
+ahead and use the interface
+right in the documentation. So
+
+19531
+19:47:00,980 --> 19:47:03,470
+we have islanding Palach.
+Provider, I'm just going to copy
+
+19532
+19:47:03,470 --> 19:47:07,160
+this from the ABI docs. But
+again, you've got a number of
+
+19533
+19:47:07,160 --> 19:47:10,670
+options. And so in our contracts
+in our interfaces, let's let's
+
+19534
+19:47:10,670 --> 19:47:14,420
+stick iwth in interfaces here.
+Let's create a new file. And
+
+19535
+19:47:14,420 --> 19:47:20,540
+we'll call it I lending pool
+address provider, dot soul. And
+
+19536
+19:47:20,540 --> 19:47:24,440
+we'll paste it in here, we just
+see we're using 0.6 point 12. So
+
+19537
+19:47:24,440 --> 19:47:27,950
+be sure to in our Hardhead
+config to make sure we have that
+
+19538
+19:47:27,950 --> 19:47:33,440
+we don't so we're just create a
+new one 0.6 point 12 And then
+
+19539
+19:47:33,440 --> 19:47:38,060
+we'll compile yarn Hardhead
+compile and compiles so awesome.
+
+19540
+19:47:38,090 --> 19:47:42,410
+We now have the ABI here, we'll
+get this contract by saying
+
+19541
+19:47:42,410 --> 19:47:50,600
+const lending pool address
+provider equals await ethers dot
+
+19542
+19:47:50,630 --> 19:47:59,270
+get contract at will say I
+lending pool address oops
+
+19543
+19:47:59,270 --> 19:48:03,230
+address as I lending pool
+addresses excuse me, I'm going
+
+19544
+19:48:03,230 --> 19:48:06,950
+to update the name I Lenny pull
+addresses provider islanding
+
+19545
+19:48:06,950 --> 19:48:11,720
+pool addresses provider, we're
+going to pass in that contract
+
+19546
+19:48:11,720 --> 19:48:15,830
+address that we got from the
+Ovid docs here. Paste that in.
+
+19547
+19:48:16,040 --> 19:48:19,550
+And then we're going to connect
+it to our Deployer. So we're
+
+19548
+19:48:19,550 --> 19:48:22,250
+going to have our get lending
+pool, get past that account
+
+19549
+19:48:22,250 --> 19:48:25,730
+variable and then we'll just use
+the account here to connect it
+
+19550
+19:48:25,730 --> 19:48:28,160
+and the account that we're going
+to pass is of course going to be
+
+19551
+19:48:28,160 --> 19:48:32,120
+our Deployer. In our lending
+pool address provider. There's a
+
+19552
+19:48:32,120 --> 19:48:37,130
+function called Get lending pool
+which returns the address of the
+
+19553
+19:48:37,130 --> 19:48:39,200
+lining pool and this is going to
+be the function that we're going
+
+19554
+19:48:39,200 --> 19:48:44,450
+to call so we're gonna say const
+lending pool address equals a
+
+19555
+19:48:44,450 --> 19:48:51,560
+weight lending pool address says
+probes address any pool address
+
+19556
+19:48:51,560 --> 19:48:56,150
+says provider dot get lending
+pool and that's it we'll have
+
+19557
+19:48:56,150 --> 19:48:59,090
+the lending pool address and
+then we'll have this contract
+
+19558
+19:48:59,090 --> 19:49:03,500
+give us the lending pool
+contract by doing const lending
+
+19559
+19:49:03,500 --> 19:49:10,040
+pool equals await ethers dot get
+contract Add. And we need to do
+
+19560
+19:49:10,040 --> 19:49:13,880
+the same thing, the interface,
+the interface, the address, and
+
+19561
+19:49:13,880 --> 19:49:17,390
+then the account. So back in the
+docs, we can grab the I lending
+
+19562
+19:49:17,390 --> 19:49:22,340
+pool by copying this like this.
+We'll go back to our contracts
+
+19563
+19:49:22,340 --> 19:49:27,860
+interfaces, new file, I lending
+pool, that's all. And we'll
+
+19564
+19:49:27,860 --> 19:49:30,920
+paste it in. Now with this one,
+if we scroll to the top, we
+
+19565
+19:49:30,920 --> 19:49:34,880
+noticed that we're importing
+from some local places that we
+
+19566
+19:49:34,880 --> 19:49:38,480
+actually don't have in our
+contracts area, we can once
+
+19567
+19:49:38,480 --> 19:49:44,360
+again go ahead and add the AVI
+protocol v2 from NPM. And just
+
+19568
+19:49:44,360 --> 19:49:49,730
+use this as our imports. So
+we'll do yarn, add dash dash dev
+
+19569
+19:49:49,850 --> 19:49:55,220
+apt have a slash proto call
+hyphen V two. And now that we
+
+19570
+19:49:55,220 --> 19:50:00,350
+have the Add Ave protocol in our
+node modules, we can update
+
+19571
+19:50:00,410 --> 19:50:03,350
+these imports to point to our
+node modules instead of our
+
+19572
+19:50:03,350 --> 19:50:07,010
+local files. So I'm just gonna
+go ahead and tell you that the
+
+19573
+19:50:07,010 --> 19:50:12,080
+islanding pledge provider is
+that Ave slash protocol hyphen V
+
+19574
+19:50:12,080 --> 19:50:17,660
+to slash contracts slash
+interfaces. And then data types
+
+19575
+19:50:17,660 --> 19:50:22,550
+dot soul is gonna be at of a
+protocol hyphen v2 slash
+
+19576
+19:50:22,550 --> 19:50:28,610
+contracts slash, proto call
+slash libraries, slash types,
+
+19577
+19:50:28,640 --> 19:50:32,030
+data types, that's all again to
+make sure this is right, yarn,
+
+19578
+19:50:32,030 --> 19:50:36,350
+Hardhead compile or hh, compile.
+And Cool. Looks like I did that
+
+19579
+19:50:36,350 --> 19:50:41,090
+right? Lending pool equals await
+ethers dot get contract at,
+
+19580
+19:50:41,150 --> 19:50:44,510
+we're going to be using lending
+pool, I lend the pool here,
+
+19581
+19:50:44,660 --> 19:50:47,750
+we're going to use this lending
+pool address got from the
+
+19582
+19:50:47,750 --> 19:50:51,890
+addresses provider. And then the
+account, which is going to be
+
+19583
+19:50:51,890 --> 19:50:57,290
+our Deployer. And now we can do
+return lending pool. And if we
+
+19584
+19:50:57,290 --> 19:51:03,080
+want, and now that we have this
+function get lending pool backup
+
+19585
+19:51:03,080 --> 19:51:08,210
+in our main function, we can say
+const lending pool equals a
+
+19586
+19:51:08,210 --> 19:51:12,020
+weight, get lending pool and
+then pass the Deployer. And then
+
+19587
+19:51:12,020 --> 19:51:14,240
+we can even do a little console
+dot log,
+
+19588
+19:51:15,710 --> 19:51:22,640
+lending pool address and then do
+lending pool dot address. And
+
+19589
+19:51:22,640 --> 19:51:24,980
+since we're making it forking,
+we can kind of just keep running
+
+19590
+19:51:24,980 --> 19:51:30,890
+this right. So we'll do yarn
+hardhat run scripts. Ave Baroda
+
+19591
+19:51:30,890 --> 19:51:33,710
+Jas, there are multiple
+artifacts for contract II
+
+19592
+19:51:33,710 --> 19:51:37,430
+lending pool addresses provider.
+And this is because in our node
+
+19593
+19:51:37,430 --> 19:51:42,350
+modules, import all this stuff
+from contracts and in here, and
+
+19594
+19:51:42,380 --> 19:51:45,530
+there's already in islanding,
+pool addresses provider in those
+
+19595
+19:51:45,530 --> 19:51:48,470
+add ons slash contracts. So
+actually, we don't even need
+
+19596
+19:51:48,470 --> 19:51:51,350
+this, I lending pool added
+service provider, we can go
+
+19597
+19:51:51,350 --> 19:51:54,050
+ahead and delete it. Our time
+right now is getting confused.
+
+19598
+19:51:54,080 --> 19:51:56,960
+It's saying Oh, are you
+referring to the one that you
+
+19599
+19:51:57,350 --> 19:52:01,220
+downloaded from NPM or the one
+that you made, which which one
+
+19600
+19:52:01,220 --> 19:52:04,160
+do you want to use. So we'll
+just make it easier for hardhat.
+
+19601
+19:52:04,220 --> 19:52:07,460
+And we'll say okay, well, we'll
+delete the one that we created,
+
+19602
+19:52:07,460 --> 19:52:09,830
+we'll use the one that we've
+downloaded here. And now we
+
+19603
+19:52:09,830 --> 19:52:12,980
+should be good to run this
+again. Because now there's only
+
+19604
+19:52:12,980 --> 19:52:15,770
+one for to pick from, which is
+the one we downloaded from NPM.
+
+19605
+19:52:16,550 --> 19:52:20,060
+And perfect, we get our get
+weath printout here, and then we
+
+19606
+19:52:20,060 --> 19:52:22,850
+get lending pool address is
+here. And this is going to be
+
+19607
+19:52:22,850 --> 19:52:26,420
+the actual lending pool address
+on ether Aetherium main net. So
+
+19608
+19:52:26,420 --> 19:52:29,720
+if we go back to ether scan,
+copy that address and paste it
+
+19609
+19:52:29,720 --> 19:52:34,250
+and ether scan, we can see it's
+even labeled Ave v two, and we
+
+19610
+19:52:34,250 --> 19:52:38,060
+can see a ton of transactions
+going through all the time. And
+
+19611
+19:52:38,060 --> 19:52:39,770
+ether scan is having a hard time
+keeping up with all the
+
+19612
+19:52:39,770 --> 19:52:42,920
+transactions. So we've got the
+lending pool address, we've got
+
+19613
+19:52:42,920 --> 19:52:47,090
+some web token, what do we need
+to do? Now we want a deposit of
+
+19614
+19:52:47,090 --> 19:52:50,300
+what do we need in order to
+deposit the token? Well, if we
+
+19615
+19:52:50,300 --> 19:52:54,290
+look at the deposit function in
+the avec GitHub, we can scroll
+
+19616
+19:52:54,290 --> 19:52:58,640
+in here and we see it eventually
+we'll call this safe transfer
+
+19617
+19:52:58,640 --> 19:53:01,370
+from which is basically going to
+be this transfer from function,
+
+19618
+19:53:01,490 --> 19:53:04,640
+since we're calling transfer
+from it's going to be this
+
+19619
+19:53:04,640 --> 19:53:08,420
+contract, that's actually going
+to pull the money out of our
+
+19620
+19:53:08,420 --> 19:53:12,500
+wallet. So in order to give the
+Ave contract, the ability to
+
+19621
+19:53:12,500 --> 19:53:15,500
+pull the money out of our
+wallet, we need to do what we're
+
+19622
+19:53:15,500 --> 19:53:19,580
+going to need to approve the
+contract. So first, before we
+
+19623
+19:53:19,580 --> 19:53:22,130
+can even deposit we're gonna
+need to approve it to get our
+
+19624
+19:53:22,130 --> 19:53:25,370
+web token, we're gonna have to
+get the Web Token first. So
+
+19625
+19:53:25,370 --> 19:53:29,150
+let's get the Web Token address
+we'll say const Web Token
+
+19626
+19:53:29,180 --> 19:53:33,470
+address, equals and this is
+where we marginalize it and get
+
+19627
+19:53:33,470 --> 19:53:36,470
+it from our hard head helper
+config. But for now, we can just
+
+19628
+19:53:36,470 --> 19:53:39,170
+hard code it, the Web Token
+contract address is going to be
+
+19629
+19:53:39,170 --> 19:53:42,920
+the exact same thing as what's
+in get web and then want to
+
+19630
+19:53:42,920 --> 19:53:46,280
+approve. So let's write an
+approved function because we're
+
+19631
+19:53:46,280 --> 19:53:48,890
+going to use this a couple
+times. So we'll make an async
+
+19632
+19:53:48,890 --> 19:53:52,460
+function and approve ERC 20
+
+19633
+19:53:54,080 --> 19:54:00,470
+And we'll take a contract
+address a spender address, which
+
+19634
+19:54:00,470 --> 19:54:03,440
+is going to be the contract that
+we're going to give the approval
+
+19635
+19:54:03,440 --> 19:54:08,630
+to to spend our token and amount
+to spend so exactly how much we
+
+19636
+19:54:08,630 --> 19:54:13,460
+want to prove it. And then an
+account to do all this on. So in
+
+19637
+19:54:13,460 --> 19:54:19,550
+here we'll say const ERC 20
+token equals await ethers dot
+
+19638
+19:54:19,580 --> 19:54:24,890
+get contract at. And we could
+say I WEF but maybe we just want
+
+19639
+19:54:24,890 --> 19:54:28,160
+like a simple ERC 20 token
+interface. And we're going to
+
+19640
+19:54:28,160 --> 19:54:31,820
+grab that by cheating a little
+bit coin to our hard head defy
+
+19641
+19:54:31,820 --> 19:54:34,700
+FCC. We're going to go to
+interfaces and grab this
+
+19642
+19:54:34,700 --> 19:54:37,640
+interface from here. So we're
+going to copy this, paste it in
+
+19643
+19:54:37,640 --> 19:54:43,580
+here New File IO ERC 20 dot som
+paste and now we have an ABI for
+
+19644
+19:54:43,580 --> 19:54:48,260
+ERC. 20s So we'll do get
+contract that ERC 20 Actually
+
+19645
+19:54:48,260 --> 19:54:51,770
+let's change this name to ERC.
+20 address so we're going to get
+
+19646
+19:54:51,770 --> 19:54:57,800
+the contract with the ABI of IRC
+ERC 20 at contract address ERC
+
+19647
+19:54:57,800 --> 19:55:01,760
+20 address and then we'll
+connect it to our account here.
+
+19648
+19:55:01,820 --> 19:55:06,560
+So and once we have the ERC 20
+We can do const TX, we're going
+
+19649
+19:55:06,560 --> 19:55:10,820
+to do that approve transaction
+we'll do a weight ERC 20 token
+
+19650
+19:55:11,300 --> 19:55:17,660
+dot approve spender address, and
+then amount amount to spend.
+
+19651
+19:55:18,290 --> 19:55:22,670
+We'll do we'll do a wait TX dot
+wait for one block. And we'll do
+
+19652
+19:55:22,670 --> 19:55:27,380
+a little console dot log saying
+approved. Now if you don't run
+
+19653
+19:55:27,380 --> 19:55:30,470
+this function before you try to
+deposit you'll just get an error
+
+19654
+19:55:30,470 --> 19:55:32,690
+saying hey, token is not
+approved, which is a pretty
+
+19655
+19:55:32,690 --> 19:55:36,470
+common error. So if you ever see
+that just know, I forgot to
+
+19656
+19:55:36,470 --> 19:55:39,830
+approve my token. So backup in
+our main script, we'll go ahead
+
+19657
+19:55:39,830 --> 19:55:44,630
+and run this function. We'll say
+await approve ERC 20 with the
+
+19658
+19:55:44,630 --> 19:55:48,530
+Web Token address lending pool
+dot address because we want to
+
+19659
+19:55:48,530 --> 19:55:53,840
+give the len pool the approval
+to pull our web token from our
+
+19660
+19:55:53,840 --> 19:55:57,440
+account. And then we'll give it
+some amount to actually will
+
+19661
+19:55:57,470 --> 19:56:01,640
+import a mount from get weath as
+well. Mount we gotta go back to
+
+19662
+19:56:01,640 --> 19:56:05,570
+get with an export it so we can
+actually import it. So get with
+
+19663
+19:56:05,600 --> 19:56:10,340
+exporting that amount that 0.02.
+So we'll prove the amount and
+
+19664
+19:56:10,340 --> 19:56:12,470
+then we'll connect we'll have
+our Deployer do it obviously
+
+19665
+19:56:12,470 --> 19:56:14,480
+because we're doing everything
+with the Deployer. So we'll
+
+19666
+19:56:14,480 --> 19:56:18,290
+approve the ERC 20. And then
+once we approve, we can go ahead
+
+19667
+19:56:18,290 --> 19:56:22,910
+and deposit it. So we'll say
+console dot log, depositing
+
+19668
+19:56:22,970 --> 19:56:28,850
+that. And then we'll run await
+lending pool dot deposit. If we
+
+19669
+19:56:28,850 --> 19:56:33,230
+look at the deposit function, we
+can see all the parameters that
+
+19670
+19:56:33,230 --> 19:56:37,340
+the deposit function takes. We
+can also see it in the Ave v2
+
+19671
+19:56:37,340 --> 19:56:40,640
+documentation and we just look
+forward the posit. And we can
+
+19672
+19:56:40,640 --> 19:56:42,710
+see it takes the address of the
+asset that we're going to
+
+19673
+19:56:42,710 --> 19:56:46,550
+deposit how much of that asset
+we're going to deposit address
+
+19674
+19:56:46,550 --> 19:56:49,670
+on behalf of we're going to do
+it on behalf of ourself and then
+
+19675
+19:56:49,670 --> 19:56:52,670
+a referral code, which right now
+is just always going to be zero
+
+19676
+19:56:52,700 --> 19:56:55,340
+because the referral code has
+been discontinued. So we're
+
+19677
+19:56:55,340 --> 19:56:58,670
+going to deposit the wet token
+address, we're going to deposit
+
+19678
+19:56:58,670 --> 19:57:04,250
+our web token, we're going to
+posit 0.02 of that web token.
+
+19679
+19:57:04,730 --> 19:57:07,610
+And then we're going to use a
+deployer ash and then referral
+
+19680
+19:57:07,610 --> 19:57:09,830
+code is going to be zero. And
+then we'll do a little console
+
+19681
+19:57:09,830 --> 19:57:14,510
+dot log the positive. So let's
+try this script. Let's see if it
+
+19682
+19:57:14,510 --> 19:57:18,050
+works. I'm just going to hit up
+to go ahead and rerun this
+
+19683
+19:57:18,080 --> 19:57:21,230
+script to rerun this command I
+just ran into doing a little
+
+19684
+19:57:21,230 --> 19:57:25,340
+compiling that ERC 20. That song
+was compiled one solidity file,
+
+19685
+19:57:25,700 --> 19:57:29,600
+got a bunch of wrapped Aetherium
+lending pool address. We
+
+19686
+19:57:29,600 --> 19:57:32,990
+approved it, we deposit we were
+depositing it and then we
+
+19687
+19:57:32,990 --> 19:57:37,400
+deposited it. So if we're
+looking at our little readme
+
+19688
+19:57:37,400 --> 19:57:39,650
+here, we get a little checkmark.
+
+19689
+19:57:42,470 --> 19:57:45,740
+We've done step one, we've
+deposited our collateral.
+
+19690
+19:57:46,070 --> 19:57:49,130
+Awesome. So now we have some
+collateral to use to borrow
+
+19691
+19:57:49,160 --> 19:57:53,510
+other assets. Great. So now
+we've deposited let's go ahead
+
+19692
+19:57:53,510 --> 19:57:56,960
+and learn how to borrow now
+through a couple of new lines,
+
+19693
+19:57:56,960 --> 19:58:01,640
+and we'll say borrowed time. So
+in order for us to borrow, we
+
+19694
+19:58:01,640 --> 19:58:05,540
+probably want to know how much
+we can borrow. And we want to
+
+19695
+19:58:05,540 --> 19:58:09,110
+know more about our account,
+right? We want to know how much
+
+19696
+19:58:09,110 --> 19:58:14,600
+we have borrowed, how much we
+have in collateral and how much
+
+19697
+19:58:14,990 --> 19:58:18,590
+we can borrow. So there's a
+function that Avi comes with
+
+19698
+19:58:18,590 --> 19:58:21,710
+called Get User account data,
+which will return the user's
+
+19699
+19:58:21,740 --> 19:58:24,920
+account data across all
+reserves, how much collateral we
+
+19700
+19:58:24,920 --> 19:58:28,940
+have down the total value it in
+its eath price, we have the
+
+19701
+19:58:28,940 --> 19:58:32,000
+available borrows and eath
+current liquidation threshold,
+
+19702
+19:58:32,060 --> 19:58:36,140
+loan to value etc. Now these are
+really important metrics. If we
+
+19703
+19:58:36,140 --> 19:58:39,770
+have one, eath and collateral
+that doesn't mean we can borrow
+
+19704
+19:58:39,800 --> 19:58:43,520
+one eath of assets. Each one of
+these tokens have some different
+
+19705
+19:58:43,520 --> 19:58:48,140
+values like loan to value. For
+example, if you have one eath
+
+19706
+19:58:48,170 --> 19:58:53,720
+you can only borrow zero point
+75 for the dye token, this is to
+
+19707
+19:58:53,720 --> 19:58:57,320
+reduce risk of the collateral
+and reduce risk of people not
+
+19708
+19:58:57,320 --> 19:59:01,340
+having enough collateral down as
+prices fluctuate. There's a
+
+19709
+19:59:01,340 --> 19:59:06,650
+liquidation threshold of 80% if
+you have one eath as collateral
+
+19710
+19:59:06,680 --> 19:59:10,490
+and point 81 eath borrowed,
+you'll get what's called
+
+19711
+19:59:10,520 --> 19:59:14,060
+liquidated. So what is
+liquidation? When you put down
+
+19712
+19:59:14,060 --> 19:59:16,490
+collateral and you borrow, if
+the amount that you have
+
+19713
+19:59:16,490 --> 19:59:20,720
+borrowed past this liquidation
+threshold is passed that 80% Or,
+
+19714
+19:59:20,810 --> 19:59:23,270
+or depending on different
+assets, it's different people
+
+19715
+19:59:23,270 --> 19:59:26,540
+can do what's called liquidate
+you. This is when they pay back
+
+19716
+19:59:26,540 --> 19:59:31,820
+some of your loan that you took
+out. And they also get to buy
+
+19717
+19:59:31,850 --> 19:59:35,000
+some of your collateral at a
+cheaper price. This keeps the
+
+19718
+19:59:35,000 --> 19:59:39,590
+Ave platform solvent, and it
+makes it so that there's never
+
+19719
+19:59:39,590 --> 19:59:43,430
+more borrows than there are
+collateral in order to borrow
+
+19720
+19:59:43,430 --> 19:59:46,340
+assets, we still need that
+collateral down. So basically,
+
+19721
+19:59:46,340 --> 19:59:49,610
+if you borrowed more money than
+you've put up, other users can
+
+19722
+19:59:49,640 --> 19:59:52,760
+can take the money that you've
+put up in return for them paying
+
+19723
+19:59:52,760 --> 19:59:56,000
+for your loans. So we obviously
+don't want this to happen. And
+
+19724
+19:59:56,000 --> 19:59:58,340
+the audit protocol
+programmatically doesn't want to
+
+19725
+19:59:58,340 --> 20:00:01,040
+have not enough money to do
+this. So they incentivize users
+
+19726
+20:00:01,040 --> 20:00:04,790
+to liquidate, in case of these
+failures is the protocols come
+
+19727
+20:00:04,790 --> 20:00:08,810
+with this thing called a health
+factor, which if this health
+
+19728
+20:00:08,810 --> 20:00:11,660
+factor is below one, you go
+ahead and you get liquidated,
+
+19729
+20:00:11,810 --> 20:00:15,200
+the actual function to liquidate
+somebody is called liquidation
+
+19730
+20:00:15,200 --> 20:00:18,530
+call. So you can actually build
+a bot and you can liquidate
+
+19731
+20:00:18,530 --> 20:00:21,830
+users who go insolvent and you
+can make a fee, you can make a
+
+19732
+20:00:21,830 --> 20:00:25,310
+reward for actually doing this.
+These protocols need to stay
+
+19733
+20:00:25,310 --> 20:00:28,310
+solvent, they need to have
+enough money to lend out. And
+
+19734
+20:00:28,310 --> 20:00:30,710
+they programmatically enforced
+this, which is why it's so
+
+19735
+20:00:30,710 --> 20:00:33,890
+great. You can learn more about
+liquidations in the liquidation
+
+19736
+20:00:33,920 --> 20:00:37,220
+documentation. So this get us
+account data will tell us how
+
+19737
+20:00:37,220 --> 20:00:40,250
+much we have collateral, how
+much we have in debt, and how
+
+19738
+20:00:40,250 --> 20:00:43,550
+much we have available to borrow
+based on how much collateral we
+
+19739
+20:00:43,550 --> 20:00:46,520
+have. We can see the current
+liquidation threshold we can see
+
+19740
+20:00:46,520 --> 20:00:49,490
+the loan to value and then we
+can see our health factor, which
+
+19741
+20:00:49,490 --> 20:00:53,150
+is obviously really important.
+If our health factor ever falls
+
+19742
+20:00:53,150 --> 20:00:56,480
+below one, we get liquidated. So
+we never want this hell factor
+
+19743
+20:00:56,480 --> 20:00:59,420
+to fall below one when we're
+borrowing assets. So let's
+
+19744
+20:00:59,420 --> 20:01:01,970
+create a function that can grab
+that first. So let's create a
+
+19745
+20:01:01,970 --> 20:01:08,600
+new function called async.
+Function get it borrow user
+
+19746
+20:01:08,600 --> 20:01:12,200
+data, and we'll pass in the
+lending pool contract, we'll
+
+19747
+20:01:12,200 --> 20:01:15,230
+pass in the lending pool
+contract and the account that we
+
+19748
+20:01:15,230 --> 20:01:18,800
+want to get the data for. So we
+can say const. And actually, we
+
+19749
+20:01:18,800 --> 20:01:21,380
+can pull out just the values
+that we want, we could pull out
+
+19750
+20:01:21,380 --> 20:01:24,920
+the total collateral eath total
+debt eath and the available to
+
+19751
+20:01:24,920 --> 20:01:30,140
+borrow. Let's just pull out the
+total collateral eath the total
+
+19752
+20:01:31,400 --> 20:01:40,700
+debt if and the available,
+borrows. So this equals await,
+
+19753
+20:01:41,300 --> 20:01:49,340
+lending pool dot get user
+account data of account. And now
+
+19754
+20:01:49,340 --> 20:01:53,090
+we'll even just kind of logged
+us out we'll say console dot log
+
+19755
+20:01:54,560 --> 20:02:03,500
+you have total collateral eath
+worth of eath the positive
+
+19756
+20:02:04,850 --> 20:02:19,190
+console. Log you have total debt
+eath worth of eath borrowed and
+
+19757
+20:02:19,190 --> 20:02:22,970
+then console dot log you can
+borrow
+
+19758
+20:02:24,350 --> 20:02:32,240
+available borrows eath worth of
+eath. And then we'll just return
+
+19759
+20:02:32,540 --> 20:02:36,380
+available to borrow will turn
+available borrows eath. And
+
+19760
+20:02:36,380 --> 20:02:39,320
+we'll return or total debt, we
+don't really need to return
+
+19761
+20:02:39,320 --> 20:02:41,720
+total collateral we could if we
+want we really just want to
+
+19762
+20:02:41,720 --> 20:02:46,610
+print it out here. So now back
+in our function, we can do in
+
+19763
+20:02:46,610 --> 20:02:50,570
+our main function, we can run
+let, I'm going to do that
+
+19764
+20:02:50,570 --> 20:02:52,550
+because we're going to be
+calling this a few times
+
+19765
+20:02:53,270 --> 20:02:59,240
+available borrows eath. And
+total debt eath
+
+19766
+20:03:00,740 --> 20:03:05,810
+equals await, get borrow user
+data of lending pool and
+
+19767
+20:03:05,810 --> 20:03:08,780
+Deployer. And if we run this,
+we'll see how much we can
+
+19768
+20:03:08,780 --> 20:03:14,480
+actually borrow yarn hard hat or
+just h h run scripts on a
+
+19769
+20:03:14,480 --> 20:03:18,770
+borrowed.js and work on our
+forked blockchain here. And
+
+19770
+20:03:18,770 --> 20:03:20,990
+remember, it is going to be a
+little bit slower. And this is
+
+19771
+20:03:20,990 --> 20:03:23,210
+kind of one of the disadvantages
+too because it does have to make
+
+19772
+20:03:23,240 --> 20:03:26,840
+API calls whenever we want to
+interact with these chains. And
+
+19773
+20:03:26,840 --> 20:03:29,930
+then we got total collateral
+eath is not defined. And that's
+
+19774
+20:03:29,930 --> 20:03:34,250
+because I spelt total wrong. So
+let's spell total correctly. And
+
+19775
+20:03:34,250 --> 20:03:38,420
+we'll run this again. But okay,
+great. So you have this month's
+
+19776
+20:03:38,420 --> 20:03:42,350
+worth of eath deposited, you
+have zero worth of eath borrowed
+
+19777
+20:03:42,350 --> 20:03:44,510
+because we haven't borrowed
+anything, and you can borrow
+
+19778
+20:03:44,540 --> 20:03:47,810
+this much worth of eath.
+Remember, the amount that we can
+
+19779
+20:03:47,810 --> 20:03:50,840
+borrow is always going to be
+less than the total amount that
+
+19780
+20:03:50,840 --> 20:03:54,380
+we have as deposited. That's why
+we see this lower number here.
+
+19781
+20:03:54,590 --> 20:03:57,770
+So cool. So that's how much we
+can borrow. Let's use that to go
+
+19782
+20:03:57,770 --> 20:04:01,070
+and borrow some time. So we have
+this total amount we can borrow
+
+19783
+20:04:01,070 --> 20:04:04,700
+an eighth and we're gonna get to
+borrow time. I promise we're
+
+19784
+20:04:04,700 --> 20:04:07,670
+gonna get to borrow time, but we
+need to figure out What's the
+
+19785
+20:04:07,670 --> 20:04:10,970
+conversion rate of diets? We're
+gonna get how much we can borrow
+
+19786
+20:04:10,970 --> 20:04:14,660
+in eath. But we want to borrow
+dye. So how much of dye can we
+
+19787
+20:04:14,660 --> 20:04:17,810
+borrow based off of the value of
+eath? And to do that, we're
+
+19788
+20:04:17,810 --> 20:04:20,930
+gonna have to get the dye price.
+And how are we going to do that?
+
+19789
+20:04:20,930 --> 20:04:22,970
+Well, you guessed it, we're
+going to use chain link price
+
+19790
+20:04:22,970 --> 20:04:25,880
+feeds. If you look in the AVI
+documentation, you can find
+
+19791
+20:04:25,880 --> 20:04:28,400
+price Oracle, which is a
+contract that you could actually
+
+19792
+20:04:28,400 --> 20:04:32,390
+use right directly from Avi. But
+the first thing it does is check
+
+19793
+20:04:32,390 --> 20:04:34,820
+from a chain link aggregator,
+which we already know how to do.
+
+19794
+20:04:34,850 --> 20:04:37,310
+So we're gonna go ahead and just
+call directly from the chain
+
+19795
+20:04:37,310 --> 20:04:40,340
+link aggregator. So let's create
+a new function function, we'll
+
+19796
+20:04:40,340 --> 20:04:44,360
+call it get dye price is first
+we're going to need to get that
+
+19797
+20:04:44,360 --> 20:04:48,290
+interface, same thing. So you
+can either go right to Hardhead
+
+19798
+20:04:48,290 --> 20:04:52,460
+defy and just grab the interface
+right from here, we could swap
+
+19799
+20:04:52,460 --> 20:04:56,330
+this out with just an import
+from chainlink NPM, as well. But
+
+19800
+20:04:56,330 --> 20:04:59,390
+I'm just going to go ahead and
+copy paste a new file, this is
+
+19801
+20:04:59,390 --> 20:05:04,340
+going to be the Ag reg gate, Tor
+v3 interface. Dot saw that we've
+
+19802
+20:05:04,340 --> 20:05:07,220
+worked with so many times. Now
+that we have this interface,
+
+19803
+20:05:07,250 --> 20:05:10,790
+this will compile, we're
+obviously looking for latest
+
+19804
+20:05:10,790 --> 20:05:13,520
+round data, which will give us
+this answer here, which is going
+
+19805
+20:05:13,520 --> 20:05:15,470
+to be the price. So let's go
+ahead and grab that. So we'll
+
+19806
+20:05:15,470 --> 20:05:21,170
+say const di eath price feed
+equals await ethers dot get
+
+19807
+20:05:21,170 --> 20:05:27,500
+contract at and we'll use the
+air, Greg a Tor v3 interface
+
+19808
+20:05:27,680 --> 20:05:30,860
+will get the dye eath price feed
+right from the chain link Docs.
+
+19809
+20:05:30,890 --> 20:05:35,030
+So we go to docs dot chain dot
+link UVM chains will go to
+
+19810
+20:05:35,510 --> 20:05:39,920
+contract addresses on Aetherium.
+Or look for di eath on Main net.
+
+19811
+20:05:40,370 --> 20:05:43,370
+And we see di eath is right
+here. So we'll grab this and
+
+19812
+20:05:43,370 --> 20:05:46,100
+again, we're just hard coding it
+in the GitHub repo associated
+
+19813
+20:05:46,100 --> 20:05:50,240
+with it. With this, we put it in
+a little config file, but we can
+
+19814
+20:05:50,240 --> 20:05:53,420
+just go ahead and hard coded in.
+And for this one, we don't need
+
+19815
+20:05:53,420 --> 20:05:56,930
+to connect this to the deployer
+account. Since we're not going
+
+19816
+20:05:56,930 --> 20:05:59,930
+to be sending any transactions,
+we're just going to be reading
+
+19817
+20:05:59,930 --> 20:06:02,720
+from this contract, right. So
+reading don't need a signer
+
+19818
+20:06:02,840 --> 20:06:08,300
+sending me to signer. Now we can
+say const price equals a weight
+
+19819
+20:06:08,390 --> 20:06:15,470
+dye eath price feed dot latest
+round data. Now latest round
+
+19820
+20:06:15,470 --> 20:06:19,370
+data, as we know is going to
+return us this huge thing. And
+
+19821
+20:06:19,370 --> 20:06:23,270
+we only want the answer at the
+first index. So another way we
+
+19822
+20:06:23,270 --> 20:06:25,970
+could do this, we could just
+wrap this whole thing up. And
+
+19823
+20:06:25,970 --> 20:06:28,760
+then once this returns, we're
+gonna say okay, just grab that
+
+19824
+20:06:28,760 --> 20:06:31,760
+first index here, which will be
+that price. And then we could do
+
+19825
+20:06:31,760 --> 20:06:39,770
+a little console dot log, the dy
+eath. Price is in price dot two,
+
+19826
+20:06:40,580 --> 20:06:43,730
+like that, and then return
+price. So we can go ahead and
+
+19827
+20:06:43,730 --> 20:06:46,940
+run this as well test this out,
+just by hitting up and then
+
+19828
+20:06:46,940 --> 20:06:51,050
+enter. Depositing we deposited
+this is how much we can deposit.
+
+19829
+20:06:51,380 --> 20:06:54,620
+Nothing Oh, and I forgot to call
+it oh, excuse me, let's go up.
+
+19830
+20:06:54,920 --> 20:07:01,880
+This, let's say const dye price
+equals await get dye price. And
+
+19831
+20:07:01,880 --> 20:07:05,210
+tada. The dye youth price is
+this big number, which of course
+
+19832
+20:07:05,210 --> 20:07:09,320
+we know is going to be $3,289
+which is which of course is
+
+19833
+20:07:09,320 --> 20:07:15,050
+gonna be 3289 di per eath. Now
+that we have the dye price, we
+
+19834
+20:07:15,050 --> 20:07:18,620
+can figure out how much dye we
+want to borrow. So great, we
+
+19835
+20:07:18,620 --> 20:07:21,740
+have the price. Now let's figure
+out the amount that we can
+
+19836
+20:07:21,740 --> 20:07:25,010
+borrow in dye, we have the
+amount we can borrow eath, we
+
+19837
+20:07:25,010 --> 20:07:29,480
+need to convert it to die. So
+we'll say const amount die to
+
+19838
+20:07:29,480 --> 20:07:36,890
+borrow equals available, be the
+available borrows in eath.to
+
+19839
+20:07:36,890 --> 20:07:41,330
+string. And then in JavaScript,
+we can do this.to string but
+
+19840
+20:07:41,330 --> 20:07:47,240
+still do math. So times 0.95
+times and then we'll do the
+
+19841
+20:07:47,240 --> 20:07:53,300
+reciprocal of that die. So one
+divided by die price.to number.
+
+19842
+20:07:53,780 --> 20:07:58,280
+So this will give us the amount
+of die that we can borrow. And
+
+19843
+20:07:58,280 --> 20:08:01,430
+then we'll want to get this in
+way. So if we print this out
+
+19844
+20:08:01,430 --> 20:08:05,810
+right now, console dot log, you
+can borrow.
+
+19845
+20:08:08,150 --> 20:08:14,330
+Run this now, you can borrow
+amount die to borrow. Not in way
+
+19846
+20:08:14,330 --> 20:08:17,480
+units, which we need in way
+units, but you can borrow 48
+
+19847
+20:08:17,480 --> 20:08:21,020
+Die, which based off the price
+looks about right. So to get the
+
+19848
+20:08:21,020 --> 20:08:27,440
+correct units, we'll say const
+amount, di to borrow way. That's
+
+19849
+20:08:27,440 --> 20:08:33,320
+going to equal ethers dot utils
+dot parse ether, MT di to
+
+19850
+20:08:33,320 --> 20:08:37,850
+borrow.to string. This is just
+purely the amount of dye to
+
+19851
+20:08:37,850 --> 20:08:42,020
+borrow right so we get 48.79
+die. But again, we want that in
+
+19852
+20:08:42,020 --> 20:08:47,180
+way the die token has 18 decimal
+places similar to Aetherium. So
+
+19853
+20:08:47,180 --> 20:08:50,870
+we need that amount in way and
+then we can go ahead and start
+
+19854
+20:08:50,870 --> 20:08:53,390
+actually borrowing now. So we'll
+create a new function called
+
+19855
+20:08:53,390 --> 20:08:58,850
+borrow die async function,
+borrow die will take the die
+
+19856
+20:08:58,850 --> 20:09:05,390
+address. Take the lending pool,
+take the amount die to borrow
+
+19857
+20:09:05,630 --> 20:09:09,440
+and weigh in Then of course,
+we'll take the account. And all
+
+19858
+20:09:09,440 --> 20:09:13,190
+we'll do is we'll do const.
+Borrow TX is going to be a
+
+19859
+20:09:13,190 --> 20:09:20,330
+weight, lending pool dot borrow,
+die address, amount die to
+
+19860
+20:09:20,330 --> 20:09:25,250
+borrow. And again, we can go
+right to the documentation, if
+
+19861
+20:09:25,250 --> 20:09:28,310
+we want, it takes the address of
+the asset, the amount, we want
+
+19862
+20:09:28,310 --> 20:09:30,590
+to borrow the interest rate
+mode, which is going to be
+
+19863
+20:09:30,590 --> 20:09:34,280
+variable or stable, the referral
+code and then address on behalf
+
+19864
+20:09:34,280 --> 20:09:37,790
+of, we're going to say one for
+the interest rate mode, where
+
+19865
+20:09:37,790 --> 20:09:41,900
+one is going to be stable. And
+then we're going to do zero or
+
+19866
+20:09:41,900 --> 20:09:44,840
+this referral code because
+that's debunked now, and then
+
+19867
+20:09:44,840 --> 20:09:49,640
+we'll do a count, then we'll do
+a wait, borrow TX dot Wait, wait
+
+19868
+20:09:49,640 --> 20:09:54,470
+one transaction, and then we'll
+do console dot log you've
+
+19869
+20:09:56,150 --> 20:10:00,170
+borrowed. Well, and that's it.
+So we now have this borrowed I
+
+19870
+20:10:00,170 --> 20:10:04,550
+function. So back up in our main
+function, right, now, we can
+
+19871
+20:10:04,550 --> 20:10:09,020
+finally do the borrow time. So
+we'll do a wait, borrow die. And
+
+19872
+20:10:09,020 --> 20:10:12,380
+we'll pass those parameters in
+here. So we're going to do
+
+19873
+20:10:12,380 --> 20:10:16,730
+const, die token address, equals
+and we're just going to hard
+
+19874
+20:10:16,730 --> 20:10:20,870
+code this from main net. So we
+can look up die token address,
+
+19875
+20:10:21,110 --> 20:10:24,320
+main net, we'll grab this
+address here, this looks like
+
+19876
+20:10:24,320 --> 20:10:27,500
+this is indeed the DI token, we
+check right on the object get
+
+19877
+20:10:27,500 --> 20:10:30,380
+up, we could check right on the
+ABI of actual code, since we're
+
+19878
+20:10:30,380 --> 20:10:32,690
+just testing, we're just gonna
+go ahead and grab from ether
+
+19879
+20:10:32,690 --> 20:10:36,290
+scan here. So for borrow dye,
+we're gonna need the dye token
+
+19880
+20:10:36,290 --> 20:10:40,760
+address, we're gonna need the
+lending pool contract the amount
+
+19881
+20:10:41,720 --> 20:10:46,220
+of dye to borrow in way, and
+then our Deployer. And then
+
+19882
+20:10:46,220 --> 20:10:51,650
+we'll await borrow dye. And then
+we will run this get bar user
+
+19883
+20:10:51,650 --> 20:10:55,130
+data again, just print out the
+information about where we are
+
+19884
+20:10:55,220 --> 20:10:58,520
+after we do that. So when we can
+run this, again, we should see
+
+19885
+20:10:58,550 --> 20:11:02,000
+the amount that we have
+borrowed, updated, our first
+
+19886
+20:11:02,030 --> 20:11:05,660
+call to that function is gonna
+say, Hey, you have this much eat
+
+19887
+20:11:05,660 --> 20:11:08,150
+the positive Do you have nothing
+borrowed, you can borrow this
+
+19888
+20:11:08,150 --> 20:11:11,030
+much eath, we get the price, we
+get how much we borrowed, we
+
+19889
+20:11:11,030 --> 20:11:15,770
+borrow. And now it says you have
+this much where the eath
+
+19890
+20:11:15,770 --> 20:11:18,980
+deposited and you have this much
+worth of eath borrowed and you
+
+19891
+20:11:18,980 --> 20:11:23,000
+can borrow this much eat. So we
+actually now have bought a bunch
+
+19892
+20:11:23,000 --> 20:11:26,090
+of this dye actually borrowed.
+And the reason we're doing times
+
+19893
+20:11:26,090 --> 20:11:29,240
+zero point 95, we don't want to
+hit that cap of the maximum
+
+19894
+20:11:29,240 --> 20:11:32,840
+amount that we can borrow. So
+we're saying hey, let's get 95%
+
+19895
+20:11:33,290 --> 20:11:35,570
+of the amount that we actually
+can borrow. So we're not going
+
+19896
+20:11:35,570 --> 20:11:39,140
+to borrow everything, we're just
+gonna borrow 95%. And you can
+
+19897
+20:11:39,140 --> 20:11:41,840
+see that the amount of eath we
+have deposited is actually
+
+19898
+20:11:41,840 --> 20:11:46,070
+higher. This is because we're
+actually gaining interest just
+
+19899
+20:11:46,070 --> 20:11:50,330
+by having this eath deposited.
+And now that we have some dye
+
+19900
+20:11:50,330 --> 20:11:54,500
+borrowed, we borrowed 48 dye,
+which is equivalent to this much
+
+19901
+20:11:54,530 --> 20:11:56,960
+Aetherium. And then we still
+have a little bit more we can
+
+19902
+20:11:56,960 --> 20:12:00,830
+borrow because we only borrowed
+95%, which is great.
+
+19903
+20:12:03,440 --> 20:12:07,760
+Awesome, we've taken out a
+borrow programmatically, let's
+
+19904
+20:12:07,790 --> 20:12:10,730
+repay at least some of it here.
+So we're gonna have to create a
+
+19905
+20:12:10,730 --> 20:12:15,050
+new function that's going to use
+the repay function in the
+
+19906
+20:12:15,050 --> 20:12:19,160
+contract. So we're gonna do
+async function repay, and this
+
+19907
+20:12:19,160 --> 20:12:24,290
+is going to take the amount that
+we want to repay the dye address
+
+19908
+20:12:24,290 --> 20:12:27,410
+that we're going to repay the
+lending pool and then the
+
+19909
+20:12:27,410 --> 20:12:32,000
+account now to repay once again,
+we're going to have to approve
+
+19910
+20:12:32,030 --> 20:12:36,620
+sending our dye back to Ave So
+in here, the first thing we need
+
+19911
+20:12:36,620 --> 20:12:43,700
+to do is we actually need to
+call wait prove ERC 20 with the
+
+19912
+20:12:43,700 --> 20:12:49,670
+dye address, lending pool dot
+address, mount and then
+
+19913
+20:12:49,670 --> 20:12:53,630
+accounts, right because approve
+ERC 20. That's the input
+
+19914
+20:12:53,630 --> 20:12:56,900
+parameters it takes, and we need
+to approve sending the dye back
+
+19915
+20:12:56,900 --> 20:12:59,600
+to the contract. So we borrowed
+it, and we're gonna send it
+
+19916
+20:12:59,600 --> 20:13:02,600
+back. Now we're actually going
+to send it back. So let's say
+
+19917
+20:13:02,600 --> 20:13:08,420
+const, repay TX equals await,
+lending, cool that repay the
+
+19918
+20:13:08,420 --> 20:13:14,780
+address, amount, one account.
+And then we'll say await repay
+
+19919
+20:13:14,780 --> 20:13:21,230
+TX dot Wait, that will do
+console dot log repaid up in our
+
+19920
+20:13:21,230 --> 20:13:25,400
+main function, we're going to do
+a weight repay, and we're going
+
+19921
+20:13:25,400 --> 20:13:30,410
+to give it the amount dye to
+borrow in way. We're gonna give
+
+19922
+20:13:30,410 --> 20:13:34,610
+it the dye token address, give
+it lending pool, and then we'll
+
+19923
+20:13:34,610 --> 20:13:38,120
+give it deployer get you borrow
+user data one more time just so
+
+19924
+20:13:38,120 --> 20:13:41,930
+we can print out the final
+amounts. Now, you'll notice
+
+19925
+20:13:41,930 --> 20:13:45,410
+something though, we're going to
+give back all of the dye that we
+
+19926
+20:13:45,410 --> 20:13:48,650
+borrowed. However, we're still
+going to have a dye balance,
+
+19927
+20:13:48,680 --> 20:13:51,980
+you'll see that when I run this
+that we're still have a little
+
+19928
+20:13:51,980 --> 20:13:54,050
+bit of Aetherium borrowed,
+basically, we'll still have a
+
+19929
+20:13:54,050 --> 20:13:56,750
+dye balance because we'll still
+have a little bit of die borrow
+
+19930
+20:13:56,780 --> 20:14:01,040
+and try to figure out why before
+I answer it actually. So we have
+
+19931
+20:14:01,040 --> 20:14:05,090
+this tiny, tiny tiny amount of
+eath borrowed here and we have a
+
+19932
+20:14:05,090 --> 20:14:08,090
+much larger amount of eath
+deposited so Why do we still
+
+19933
+20:14:08,090 --> 20:14:12,170
+have this tiny, tiny amount of
+eath borrowed? Well, the reason
+
+19934
+20:14:12,200 --> 20:14:16,760
+is because as we borrow dye, we
+actually accrued interest. So we
+
+19935
+20:14:16,760 --> 20:14:20,120
+still owe dye back. Now what we
+can do is we can do something
+
+19936
+20:14:20,120 --> 20:14:25,130
+like uniswap, to actually swap
+our Aetherium, for dye to repay
+
+19937
+20:14:25,160 --> 20:14:27,830
+the rest of our debt here. And
+that's how we could actually
+
+19938
+20:14:27,860 --> 20:14:31,070
+finish repaying all the debt is
+to get a little bit more dye to
+
+19939
+20:14:31,070 --> 20:14:34,280
+pay off that interest that we
+had accrued. And if you want,
+
+19940
+20:14:34,310 --> 20:14:37,490
+you can go back and you can do
+the exact same thing we did here
+
+19941
+20:14:37,550 --> 20:14:41,360
+to grab the uniswap code, place
+it in here to programmatically
+
+19942
+20:14:41,360 --> 20:14:45,020
+repay your debt as well. But at
+this point, you have just gone
+
+19943
+20:14:45,020 --> 20:14:48,410
+through the entire lifecycle
+here. And that is absolutely
+
+19944
+20:14:48,500 --> 20:14:53,030
+massive, huge congratulations.
+You've just deposited borrowed
+
+19945
+20:14:53,300 --> 20:15:00,260
+and repaid tokens from the AVI
+protocol. Now I'm going to go
+
+19946
+20:15:00,260 --> 20:15:03,530
+briefly show you what some of
+these transactions are going to
+
+19947
+20:15:03,530 --> 20:15:08,390
+look like on an actual test net,
+on an ether scan, you'll see
+
+19948
+20:15:08,420 --> 20:15:12,050
+that when we deposit our
+collateral, we actually get back
+
+19949
+20:15:12,080 --> 20:15:16,280
+what's called an A token, or an
+interest bearing token, these
+
+19950
+20:15:16,280 --> 20:15:20,480
+tokens keep track of how much
+collateral or in our case how
+
+19951
+20:15:20,480 --> 20:15:25,550
+much web token we have deposited
+in the AVI protocol. And when we
+
+19952
+20:15:25,550 --> 20:15:29,510
+want to withdraw our wealth
+back, we burn these eight
+
+19953
+20:15:29,510 --> 20:15:32,330
+tokens, we remove these eight
+tokens, you can see that our
+
+19954
+20:15:32,330 --> 20:15:35,600
+first transaction is going to be
+deposit and I wanted to show you
+
+19955
+20:15:35,600 --> 20:15:37,610
+what it looks like when you
+actually deposit one of these
+
+19956
+20:15:37,610 --> 20:15:40,340
+tokens, this transaction
+associated with this lending
+
+19957
+20:15:40,340 --> 20:15:43,700
+pool, that deposit right here,
+if you look at tokens transfer
+
+19958
+20:15:43,700 --> 20:15:47,120
+down here, you can see we
+actually we deposited, you can
+
+19959
+20:15:47,120 --> 20:15:52,550
+see that we actually sent rapt
+ether to the ARB a contract. Now
+
+19960
+20:15:52,550 --> 20:15:56,390
+you'll also see this a weath
+stuff here. So what is this a
+
+19961
+20:15:56,390 --> 20:16:00,380
+with stuff. So to keep track of
+how much you've actually
+
+19962
+20:16:00,380 --> 20:16:05,270
+deposited into Ave, Ave will
+give you your own a wealth token
+
+19963
+20:16:05,300 --> 20:16:09,020
+or a token to keep track. And
+this is this interest bearing
+
+19964
+20:16:09,020 --> 20:16:11,720
+token, you actually can see up
+here a little bit of interest
+
+19965
+20:16:11,720 --> 20:16:15,560
+already for actually depositing
+these tokens into the protocol.
+
+19966
+20:16:15,650 --> 20:16:19,340
+And it's this token, that will
+keep going up, the more people
+
+19967
+20:16:19,340 --> 20:16:21,500
+borrow and the more people use
+the protocol. So you can
+
+19968
+20:16:21,500 --> 20:16:24,740
+actually grab this token
+address, interest bearing token
+
+19969
+20:16:24,740 --> 20:16:29,330
+this a token, I can import it
+into my meta mask. And I can see
+
+19970
+20:16:29,390 --> 20:16:32,720
+that I have 0.1, which
+represents my initial deposit
+
+19971
+20:16:32,960 --> 20:16:39,320
+00517 dot that dot A with and if
+you keep this up long enough,
+
+19972
+20:16:39,500 --> 20:16:44,210
+this number will slowly go up as
+you get more and more. Because
+
+19973
+20:16:44,480 --> 20:16:48,290
+the interest keep out and you
+can see just went went up right
+
+19974
+20:16:48,290 --> 20:16:51,350
+there, the interest will keep
+changing and keep going up.
+
+19975
+20:16:51,470 --> 20:16:53,930
+Obviously, we have so little
+deposited that the interest
+
+19976
+20:16:53,930 --> 20:16:56,750
+isn't gonna go up very quickly,
+but it will go up, the more
+
+19977
+20:16:56,750 --> 20:16:59,960
+people use the protocol. And
+since I'm using a test net, the
+
+19978
+20:16:59,990 --> 20:17:03,050
+actual usage of the protocol
+isn't very high, but you get the
+
+19979
+20:17:03,050 --> 20:17:03,470
+picture.
+
+19980
+20:17:06,080 --> 20:17:09,470
+Awesome, you've done phenomenal
+to get this far. Let's do a
+
+19981
+20:17:09,470 --> 20:17:12,440
+quick recap of everything that
+we've learned. And then we'll
+
+19982
+20:17:12,440 --> 20:17:16,070
+head on to the next section. So
+first, we learned about the web
+
+19983
+20:17:16,070 --> 20:17:20,000
+token or the wrapped Aetherium
+token, it's a way to tokenize
+
+19984
+20:17:20,060 --> 20:17:24,200
+our Aetherium or layer one
+blockchain native token. Then we
+
+19985
+20:17:24,200 --> 20:17:27,770
+learned a little bit about the
+AVI protocol, and how it's this
+
+19986
+20:17:27,770 --> 20:17:30,980
+defy primitive for borrowing and
+lending assets. And we can
+
+19987
+20:17:30,980 --> 20:17:34,040
+actually gain interest by
+depositing our tokens and our
+
+19988
+20:17:34,040 --> 20:17:37,040
+assets into Ave we learned a
+little bit of also about
+
+19989
+20:17:37,250 --> 20:17:40,250
+uniswap, which is another
+incredibly important defy
+
+19990
+20:17:40,250 --> 20:17:43,340
+protocol, which allows us to
+swap tokens between each other
+
+19991
+20:17:43,610 --> 20:17:47,420
+in the decentralized context,
+then we learned that we can
+
+19992
+20:17:47,420 --> 20:17:51,260
+actually deposit some of our
+tokens into the AVI protocol,
+
+19993
+20:17:51,260 --> 20:17:53,960
+which is a decentralized
+borrowing and lending platform
+
+19994
+20:17:53,990 --> 20:17:57,260
+and similar to a bank will
+actually gain interest on our
+
+19995
+20:17:57,290 --> 20:18:00,950
+deposited tokens. But first, we
+have to approve them. Because
+
+19996
+20:18:00,980 --> 20:18:04,820
+anytime you want a contract to
+interact with your tokens, you
+
+19997
+20:18:04,820 --> 20:18:07,940
+need to approve the contract to
+do so. And then we go ahead and
+
+19998
+20:18:07,940 --> 20:18:12,110
+deposit once we deposited we got
+the dye price. And then we
+
+19999
+20:18:12,110 --> 20:18:16,130
+learned that we can actually
+borrow dye we can borrow an
+
+20000
+20:18:16,130 --> 20:18:19,460
+asset based off of how much
+collateral we put down. And then
+

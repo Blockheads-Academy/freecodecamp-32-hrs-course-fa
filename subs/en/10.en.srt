@@ -1,0 +1,4993 @@
+10001
+10:00:10,570 --> 10:00:13,420
+ethers dot contract factory. So
+what we just need to do is we
+
+10002
+10:00:13,420 --> 10:00:17,410
+need to wrap this in a simple
+storage factory type. So We'll
+
+10003
+10:00:17,410 --> 10:00:21,250
+just do a little wrap like this.
+And we'll say, as simple
+
+10004
+10:00:21,670 --> 10:00:25,960
+storage, I'm just going to sort
+of factory. And that's good to
+
+10005
+10:00:25,960 --> 10:00:28,930
+go. Now that we've added all
+this, we can run yarn, Hardhead
+
+10006
+10:00:28,930 --> 10:00:33,970
+test. And boom, our test run is
+normal, but with TypeScript and
+
+10007
+10:00:33,970 --> 10:00:37,060
+with this additional typing that
+makes our lives substantially
+
+10008
+10:00:37,060 --> 10:00:39,880
+substantially better. And that's
+going to be all you need to know
+
+10009
+10:00:39,880 --> 10:00:43,510
+for TypeScript, reusable, all of
+the branches have an optional
+
+10010
+10:00:43,540 --> 10:00:46,870
+TypeScript branch that you can
+use to reference to work with
+
+10011
+10:00:46,870 --> 10:00:47,410
+TypeScript.
+
+10012
+10:00:51,350 --> 10:00:53,660
+We've learned really just the
+basics of all the different
+
+10013
+10:00:53,660 --> 10:00:56,960
+things we can do with hardhat.
+And these next few lessons
+
+10014
+10:00:56,960 --> 10:00:59,720
+Hardhead fun meme and hard hat
+smart contract lottery are
+
+10015
+10:00:59,720 --> 10:01:02,480
+really going to be the basics
+for all the fundamentals of all
+
+10016
+10:01:02,480 --> 10:01:05,120
+the tools that we're going to
+learn in hardhat. Lesson Eight
+
+10017
+10:01:05,150 --> 10:01:07,970
+is going to be our introduction
+to full stack and working with
+
+10018
+10:01:07,970 --> 10:01:11,870
+front end and building full
+stack applications. Getting all
+
+10019
+10:01:11,870 --> 10:01:14,540
+the way through this course will
+give you all the tools to start
+
+10020
+10:01:14,540 --> 10:01:17,450
+your web three journey. But if
+you're looking to just learn
+
+10021
+10:01:17,450 --> 10:01:20,780
+just the basics, make sure you
+absolutely get all the way to
+
+10022
+10:01:20,780 --> 10:01:24,110
+Lesson Nine. And if you get all
+the way through lesson 18, you
+
+10023
+10:01:24,110 --> 10:01:26,750
+are going to know all of the
+cutting edge tools for this
+
+10024
+10:01:26,750 --> 10:01:29,690
+space. And you're going to have
+the knowledge to become easily
+
+10025
+10:01:29,870 --> 10:01:32,540
+one of the best developers in
+the space. So hope you make it
+
+10026
+10:01:32,540 --> 10:01:35,120
+all the way through to the end.
+Now one of the most important
+
+10027
+10:01:35,120 --> 10:01:38,420
+parts of this section of this
+lesson is going to be pushing
+
+10028
+10:01:38,420 --> 10:01:42,530
+our code up to GitHub, and then
+sending a tweet celebrating that
+
+10029
+10:01:42,530 --> 10:01:45,860
+we pushed our first smart
+contract our first web three
+
+10030
+10:01:45,860 --> 10:01:49,880
+GitHub repository to GitHub. So
+before moving on to the next
+
+10031
+10:01:49,880 --> 10:01:53,750
+lesson, be absolutely sure to
+get to the end of this and push
+
+10032
+10:01:53,750 --> 10:01:56,960
+this code up to GitHub. And then
+optionally, if you want to
+
+10033
+10:01:57,080 --> 10:02:00,050
+celebrate by sending a tweet,
+but be absolutely sure to get to
+
+10034
+10:02:00,050 --> 10:02:02,870
+the GitHub section, because as
+I've said, many times the web
+
+10035
+10:02:02,870 --> 10:02:05,570
+three space is this incredibly
+collaborative community and
+
+10036
+10:02:05,570 --> 10:02:09,530
+working with GitHub or GitLab,
+or any other version control
+
+10037
+10:02:09,530 --> 10:02:12,710
+tool is going to be essential
+for your success in the space.
+
+10038
+10:02:12,710 --> 10:02:16,610
+So be sure to get to that part.
+All right. Now, welcome back to
+
+10039
+10:02:16,610 --> 10:02:21,470
+the hard hat Fund Me section of
+our course. This is the section
+
+10040
+10:02:21,500 --> 10:02:24,770
+where we're actually going to
+upload our first code repository
+
+10041
+10:02:24,770 --> 10:02:28,190
+to GitHub if you've never done
+this before, this is going to be
+
+10042
+10:02:28,190 --> 10:02:31,310
+the section where we're going to
+learn even more about hardhat
+
+10043
+10:02:31,370 --> 10:02:34,340
+using a familiar contract base
+we've already worked with, which
+
+10044
+10:02:34,370 --> 10:02:37,790
+is the fund me contract. And
+again, if you're using the
+
+10045
+10:02:37,790 --> 10:02:40,850
+GitHub repo associated with this
+course, you can scroll down to
+
+10046
+10:02:40,850 --> 10:02:46,010
+the Hardhead Funmi. And all the
+code is located in our repo. If
+
+10047
+10:02:46,010 --> 10:02:48,680
+you'd like to do a quickstart,
+you can go ahead and get clone
+
+10048
+10:02:48,680 --> 10:02:52,760
+it CVU into it, and then run
+yarn, and then just run yarn
+
+10049
+10:02:52,760 --> 10:02:56,570
+hardhat deploy this, I'm going
+to briefly show you what that
+
+10050
+10:02:56,570 --> 10:03:00,470
+looks like. So in your in your
+VS code, you can do git clone,
+
+10051
+10:03:01,550 --> 10:03:08,690
+grab the package, cd into it,
+and then type code period. To
+
+10052
+10:03:08,690 --> 10:03:12,200
+open it up in a new VS code.
+Once you're in your folder, you
+
+10053
+10:03:12,200 --> 10:03:15,290
+can go ahead and run yarn. To
+install all the dependencies for
+
+10054
+10:03:15,290 --> 10:03:17,780
+working with this project, you
+plan on working with the test
+
+10055
+10:03:17,780 --> 10:03:21,260
+net or working with ether scan
+or coin market cap, feel free to
+
+10056
+10:03:21,260 --> 10:03:25,790
+fill out your Dotty and V with a
+private key RPC URL, corn market
+
+10057
+10:03:25,790 --> 10:03:28,910
+cap key and ether scan key. And
+then you can just follow along
+
+10058
+10:03:28,910 --> 10:03:33,290
+with the readme to use this repo
+to run yarn, hard hat deploy.
+
+10059
+10:03:34,670 --> 10:03:37,310
+And it'll show you deploying
+some contracts and some mocks,
+
+10060
+10:03:37,310 --> 10:03:43,400
+etc. So let's get to building
+this ourselves though. Now we're
+
+10061
+10:03:43,400 --> 10:03:45,920
+gonna make a new directory for
+this project, it's gonna be the
+
+10062
+10:03:45,920 --> 10:03:52,820
+same setup we've seen before. MK
+dir, hard hat. And me, FCC,
+
+10063
+10:03:53,180 --> 10:03:56,690
+we're gonna cd into heart at
+Funmi, FCC, and then type code
+
+10064
+10:03:56,750 --> 10:03:59,810
+period. And if code period
+doesn't work for you, you can
+
+10065
+10:03:59,810 --> 10:04:04,640
+absolutely open this up by
+hitting File, Open Folder, like
+
+10066
+10:04:04,640 --> 10:04:07,910
+we showed you before. Now, we're
+in a brand new folder here. And
+
+10067
+10:04:07,910 --> 10:04:10,940
+we're gonna go ahead and add
+hard hat here. And we're gonna
+
+10068
+10:04:10,940 --> 10:04:19,310
+run yarn, add dash dash Dev,
+hard hat. Now that we have hard
+
+10069
+10:04:19,310 --> 10:04:23,240
+hat, in our package, JSON, and
+in our node modules, we can go
+
+10070
+10:04:23,240 --> 10:04:27,800
+ahead and run yarn, start app.
+And this will say, What do you
+
+10071
+10:04:27,800 --> 10:04:30,530
+want to do? I'm going to choose
+the advanced sample project
+
+10072
+10:04:30,530 --> 10:04:33,560
+here, just to show you what's
+going on. And we're going to set
+
+10073
+10:04:33,560 --> 10:04:36,410
+this up in a way that I think
+works best. So we'll go ahead
+
+10074
+10:04:36,410 --> 10:04:38,510
+and do the advanced sample
+project. Yes, we're going to
+
+10075
+10:04:38,510 --> 10:04:41,420
+have that as the root. Yes, we
+want to add a Git ignore. And
+
+10076
+10:04:41,420 --> 10:04:44,210
+there are a lot of sample
+project dependencies that it
+
+10077
+10:04:44,210 --> 10:04:47,780
+wants us to add. We're gonna go
+ahead and hit yes. But we're
+
+10078
+10:04:47,810 --> 10:04:50,180
+going to end up not using all of
+these and I'll show you which
+
+10079
+10:04:50,180 --> 10:04:53,060
+ones we're not going to use and
+why. But for now, let's go ahead
+
+10080
+10:04:53,060 --> 10:04:53,720
+and hit yes.
+
+10081
+10:05:02,990 --> 10:05:06,110
+All right, awesome. And now we
+have an advanced project in
+
+10082
+10:05:06,110 --> 10:05:08,810
+here. Let me walk you through
+the additional things that are
+
+10083
+10:05:08,810 --> 10:05:11,720
+in here. So we have a
+traditional contract node
+
+10084
+10:05:11,720 --> 10:05:14,060
+modules, which is going to be
+the same scripts is going to be
+
+10085
+10:05:14,060 --> 10:05:18,410
+the same test is going to be the
+same. But this comes with a dot
+
+10086
+10:05:18,440 --> 10:05:21,980
+E and V dot example already
+packed in for us. It also comes
+
+10087
+10:05:21,980 --> 10:05:27,980
+with.es lint files.es lint, RC
+dot j s.es. Lint, ignore es Lint
+
+10088
+10:05:28,010 --> 10:05:31,340
+is known as a JavaScript linter,
+which helps you find and
+
+10089
+10:05:31,370 --> 10:05:34,460
+automatically fix problems in
+your code for the JavaScript
+
+10090
+10:05:34,460 --> 10:05:37,670
+that I work with. I'm not a big
+fan of ES lint, so I typically
+
+10091
+10:05:37,670 --> 10:05:40,190
+don't use it. So I'm going to go
+ahead and delete the two of
+
+10092
+10:05:40,190 --> 10:05:43,490
+these. If you want to keep them
+in you absolutely can dot Git
+
+10093
+10:05:43,490 --> 10:05:46,100
+ignore. We're going to finally
+understand what this file does
+
+10094
+10:05:46,130 --> 10:05:50,090
+in this lesson that NPM ignore
+helps Ignore files if you want
+
+10095
+10:05:50,090 --> 10:05:53,120
+to push your project up to be an
+NPM package, which we're not
+
+10096
+10:05:53,120 --> 10:05:55,760
+going to do. So if you want to
+delete this, you can as well
+
+10097
+10:05:56,540 --> 10:05:58,880
+pretty or ignore it and pretty
+DRC. We already know what these
+
+10098
+10:05:58,880 --> 10:06:01,340
+do small hint. And so hint
+ignore, which we're going to
+
+10099
+10:06:01,340 --> 10:06:04,580
+talk about it in a minute, or
+Hardhead config, which just
+
+10100
+10:06:04,580 --> 10:06:08,300
+comes already with a ropsten
+network, a gas reporter and
+
+10101
+10:06:08,330 --> 10:06:11,930
+ether scan package dot JSON with
+all the additional packages, the
+
+10102
+10:06:11,930 --> 10:06:14,630
+readme is a little bit more
+robust. And then of course, our
+
+10103
+10:06:14,630 --> 10:06:17,840
+yarn dot lock. So this advanced
+project looks pretty similar to
+
+10104
+10:06:17,840 --> 10:06:22,700
+what we're going to be working
+with anyways. Now I do want to
+
+10105
+10:06:22,700 --> 10:06:25,790
+talk about this soul hint,
+though. So what is solvent
+
+10106
+10:06:25,970 --> 10:06:30,530
+solvent is known as a solidity
+linter that we can use to lint
+
+10107
+10:06:30,560 --> 10:06:33,620
+our code linting is the process
+of running a program that will
+
+10108
+10:06:33,620 --> 10:06:36,800
+analyze code for potential
+errors. It also does a little
+
+10109
+10:06:36,800 --> 10:06:41,000
+bit of formatting, oftentimes,
+es Lint is a way to lint for
+
+10110
+10:06:41,000 --> 10:06:45,110
+JavaScript code. So hint is a
+way to lint for solidity code,
+
+10111
+10:06:45,530 --> 10:06:48,830
+we use prettier to format our
+code, and we can use soul hint
+
+10112
+10:06:48,860 --> 10:06:51,590
+to lint, our code, they are
+often used a little bit
+
+10113
+10:06:51,590 --> 10:06:54,290
+interchangeably, even though
+that's not exactly correct, as
+
+10114
+10:06:54,290 --> 10:06:56,930
+they are a little bit different.
+We can run this linter on our
+
+10115
+10:06:56,930 --> 10:07:01,460
+code by running yarn, sole hint,
+and then type the name of the
+
+10116
+10:07:01,460 --> 10:07:06,020
+files that we want to lint. So
+we do contracts, slash and then
+
+10117
+10:07:06,020 --> 10:07:10,520
+you can just do start out so
+everything looks okay, nothing
+
+10118
+10:07:10,520 --> 10:07:13,040
+will happen. Well, let's say we
+have a variable that we don't
+
+10119
+10:07:13,040 --> 10:07:18,320
+explicitly say the visibility of
+it is. This isn't the best
+
+10120
+10:07:18,320 --> 10:07:22,100
+practice because ideally, we
+always say exactly what the
+
+10121
+10:07:22,100 --> 10:07:25,640
+visibility of some variable is.
+This obviously gets defaulted.
+
+10122
+10:07:25,670 --> 10:07:28,400
+But it's usually better to be
+more explicit. So now if we run
+
+10123
+10:07:28,400 --> 10:07:35,660
+yarn, so hint, contracts start
+up so it'll give us a warning,
+
+10124
+10:07:35,690 --> 10:07:39,380
+saying we should explicitly Mark
+visibility of state, this linter
+
+10125
+10:07:39,410 --> 10:07:42,950
+is a good way to check for some
+best practices for running our
+
+10126
+10:07:42,950 --> 10:07:48,860
+code. So we're definitely going
+to keep a small hint around. Now
+
+10127
+10:07:48,860 --> 10:07:51,230
+that we've got a repo here,
+let's add a couple of our common
+
+10128
+10:07:51,230 --> 10:07:56,030
+setup pieces here. So in
+prettier.rc, we're going to swap
+
+10129
+10:07:56,030 --> 10:08:00,230
+this out with what we've been
+using so far. Tab of the form us
+
+10130
+10:08:00,230 --> 10:08:04,760
+tab is false, semi false, single
+quote, also false. We're going
+
+10131
+10:08:04,760 --> 10:08:08,780
+to update our prettier dot
+ignore node modules, package dot
+
+10132
+10:08:08,780 --> 10:08:12,860
+JSON image artifacts, cache
+coverage ID v dot star, readme,
+
+10133
+10:08:12,860 --> 10:08:16,280
+and coverage and anything else
+you want to add in here. And
+
+10134
+10:08:16,280 --> 10:08:19,010
+we're going to scroll up to our
+contracts folder. And we're
+
+10135
+10:08:19,010 --> 10:08:22,550
+going to swap this greeter dot
+soul out with our fund me dot
+
+10136
+10:08:22,550 --> 10:08:26,210
+soul. Now let's go ahead and add
+our contracts in here. If you're
+
+10137
+10:08:26,210 --> 10:08:29,150
+following along with the repo,
+you go to the contracts folder,
+
+10138
+10:08:29,540 --> 10:08:33,710
+there's actually another folder
+in here and the contracts look a
+
+10139
+10:08:33,710 --> 10:08:36,740
+little bit different. So if you
+have those contracts, steal from
+
+10140
+10:08:36,740 --> 10:08:39,350
+remix, let's actually grab them
+from remix because we're going
+
+10141
+10:08:39,350 --> 10:08:42,350
+to make a couple of changes to
+them. If you don't have remix up
+
+10142
+10:08:42,350 --> 10:08:44,510
+anymore, which you probably
+shouldn't, because you should be
+
+10143
+10:08:44,510 --> 10:08:48,110
+taking breaks, you can jump back
+over to Lesson four remix Funmi
+
+10144
+10:08:48,620 --> 10:08:51,980
+jump into the repo here and grab
+the contracts from inside here.
+
+10145
+10:08:52,370 --> 10:08:55,820
+Just go to the fun v dash Free
+Code Camp tutorial and grab the
+
+10146
+10:08:55,820 --> 10:08:58,790
+code from there. So we're gonna
+grab just fun me and price
+
+10147
+10:08:58,790 --> 10:09:02,090
+converter dot soul. So go ahead
+and delete that old file, create
+
+10148
+10:09:02,090 --> 10:09:07,760
+a new one and call it fund me
+dot song. Paste it in there. And
+
+10149
+10:09:07,760 --> 10:09:13,340
+then we're going to create the
+price converter. That's all. Now
+
+10150
+10:09:13,340 --> 10:09:17,030
+we have both our Funmi and our
+price converter contracts in
+
+10151
+10:09:17,030 --> 10:09:19,820
+here. Now one of the first
+things that we want to do one of
+
+10152
+10:09:19,820 --> 10:09:21,980
+the first things that we did
+last time was we ran yarn
+
+10153
+10:09:21,980 --> 10:09:24,740
+compile to make sure that our
+code is actually working the way
+
+10154
+10:09:24,740 --> 10:09:27,590
+we want to. And before we
+actually hit Compile, one of the
+
+10155
+10:09:27,590 --> 10:09:29,630
+things that we're going to need
+to do is come to our Hardhead
+
+10156
+10:09:29,630 --> 10:09:31,910
+dot config, we're going to make
+sure we're on the correct
+
+10157
+10:09:31,910 --> 10:09:35,270
+solidity version. So we're going
+to do zero point 8.8 here. And
+
+10158
+10:09:35,270 --> 10:09:36,590
+let's go ahead and try to
+compile.
+
+10159
+10:09:39,350 --> 10:09:44,390
+So we can run yarn Hardhead
+compile. And you'll see we
+
+10160
+10:09:44,390 --> 10:09:47,480
+actually get an error here.
+Library at chain link slash
+
+10161
+10:09:47,480 --> 10:09:50,630
+contracts imported from
+contracts slash fund me dot soul
+
+10162
+10:09:50,660 --> 10:09:55,370
+is not installed, try installing
+it using npm. In remix, we went
+
+10163
+10:09:55,370 --> 10:09:58,640
+ahead and just imported at
+chainlink slash contracts, right
+
+10164
+10:09:58,640 --> 10:10:02,600
+from our NPM and or GitHub. But
+in our local code, we have to
+
+10165
+10:10:02,600 --> 10:10:07,070
+tell Hardhead specifically,
+where to get this from, we want
+
+10166
+10:10:07,070 --> 10:10:11,270
+to download this specifically
+from the NPM package manager at
+
+10167
+10:10:11,270 --> 10:10:14,420
+chainlink slash contracts, we
+can download it simply by
+
+10168
+10:10:14,420 --> 10:10:20,690
+running yarn, add dash dash dev
+at chainlink slash contracts.
+
+10169
+10:10:23,000 --> 10:10:25,610
+Now that we've downloaded it
+into our file, we'll be able to
+
+10170
+10:10:25,610 --> 10:10:30,170
+see it in Node modules here.
+Hardhead is now smart enough to
+
+10171
+10:10:30,170 --> 10:10:32,510
+know that at chain link slash
+contracts is going to point to
+
+10172
+10:10:32,510 --> 10:10:36,290
+that node module that we have.
+So we can now run yarn Hardhead
+
+10173
+10:10:36,290 --> 10:10:40,610
+compile boom, now we can see
+compiled three solidity files
+
+10174
+10:10:40,640 --> 10:10:47,000
+successfully. So now we have our
+contracts in here and our code
+
+10175
+10:10:47,000 --> 10:10:50,000
+is compiling successfully. We're
+probably going Want to deploy
+
+10176
+10:10:50,030 --> 10:10:52,910
+our code? Now in our last
+section, I know we use the
+
+10177
+10:10:52,910 --> 10:10:56,360
+scripts module. And we made our
+own manual deploy script.
+
+10178
+10:10:56,390 --> 10:10:58,730
+However, something that you'd
+notice, the more that you work
+
+10179
+10:10:58,730 --> 10:11:01,940
+with just raw ethers, or even
+just hard hat is that keeping
+
+10180
+10:11:01,940 --> 10:11:05,390
+track of all our deployments can
+get a little bit tricky. If you
+
+10181
+10:11:05,390 --> 10:11:08,480
+just use a deploy script, it's
+not saving our deployments to
+
+10182
+10:11:08,480 --> 10:11:11,630
+any file. Additionally, having
+everything in the deploy script
+
+10183
+10:11:11,630 --> 10:11:15,020
+for deploying can make the tests
+and the deploy scripts, maybe
+
+10184
+10:11:15,020 --> 10:11:18,200
+not work exactly hand in hand.
+And there are a couple of other
+
+10185
+10:11:18,200 --> 10:11:20,390
+things that might be a little
+bit tricky to work on, we're
+
+10186
+10:11:20,390 --> 10:11:22,820
+actually going to work with a
+package that makes everything I
+
+10187
+10:11:22,820 --> 10:11:26,450
+just mentioned, and a couple
+other things way easier. And
+
+10188
+10:11:26,450 --> 10:11:29,060
+this package that I'm talking
+about is going to be the hard
+
+10189
+10:11:29,060 --> 10:11:32,570
+hat deploy package. There's a
+link to this package in the
+
+10190
+10:11:32,570 --> 10:11:35,330
+GitHub repository associated
+with this course. It's a hardhat
+
+10191
+10:11:35,330 --> 10:11:38,060
+plugin for replicable
+deployments and easy testing.
+
+10192
+10:11:38,450 --> 10:11:40,760
+And if we scroll down to
+installation, we can see we
+
+10193
+10:11:40,760 --> 10:11:44,570
+install it basically the normal
+way. They're using npm. And
+
+10194
+10:11:44,570 --> 10:11:48,200
+we're gonna go ahead and use
+yarn. So for us to add it, we'll
+
+10195
+10:11:48,200 --> 10:11:53,060
+do yarn, add hardhat dash
+deploy. And then of course,
+
+10196
+10:11:53,060 --> 10:11:59,270
+we're gonna do dash dash Dev.
+Once done deploying this require
+
+10197
+10:11:59,270 --> 10:12:04,880
+statement to our hard
+hat.config.js. Once again,
+
+10198
+10:12:04,880 --> 10:12:07,640
+basically the config is our
+entry point. This is where we're
+
+10199
+10:12:07,640 --> 10:12:11,540
+gonna get started. And we can go
+ahead and delete our deploy.js
+
+10200
+10:12:11,540 --> 10:12:15,170
+script. Now if we run yarn
+hardhat, you see that we have a
+
+10201
+10:12:15,170 --> 10:12:19,640
+bunch of new tasks in here, with
+one of them being this deploy
+
+10202
+10:12:19,700 --> 10:12:23,060
+task, this deploy task is going
+to be the main task that we use
+
+10203
+10:12:23,060 --> 10:12:26,030
+to deploy our contracts. Instead
+of writing our deploy scripts in
+
+10204
+10:12:26,030 --> 10:12:28,430
+the Scripts folder, we're
+actually going to create a new
+
+10205
+10:12:28,430 --> 10:12:31,880
+folder, we can create a new
+folder by just doing MK dir
+
+10206
+10:12:32,090 --> 10:12:36,860
+deploy. Or you can always right
+click and hit New Folder. This
+
+10207
+10:12:36,860 --> 10:12:39,290
+deploy folder is going to be
+where a lot of hard hat Deploy
+
+10208
+10:12:39,290 --> 10:12:42,410
+Module looks to deploy code. And
+it's going to be where we are
+
+10209
+10:12:42,410 --> 10:12:45,140
+writing our scripts. To write
+our scripts, we usually need to
+
+10210
+10:12:45,140 --> 10:12:48,230
+add one more thing in here.
+Since we're going to be using
+
+10211
+10:12:48,260 --> 10:12:51,770
+ethers JS in all of our scripts,
+we want to add Hardhead deploy
+
+10212
+10:12:51,800 --> 10:12:55,370
+ethers to our package here. Now,
+instead of just doing yarn, add
+
+10213
+10:12:55,370 --> 10:12:58,190
+dash dev hard at deploy ethers,
+we're going to do something a
+
+10214
+10:12:58,190 --> 10:13:02,390
+little bit weird. We're going to
+do yarn add or npm install dash
+
+10215
+10:13:02,390 --> 10:13:05,780
+dash Dev, and we're going to
+install it like this. So let me
+
+10216
+10:13:05,780 --> 10:13:08,900
+just copy this. And you can just
+copy that from the repo. And
+
+10217
+10:13:08,900 --> 10:13:11,990
+we'll do yarn, add dash dash
+Dev, and paste that in here.
+
+10218
+10:13:12,380 --> 10:13:16,130
+What we're doing is we're taking
+at nomic labs, hard hat ethers,
+
+10219
+10:13:16,160 --> 10:13:19,700
+which we've used before, and
+we're overriding it with hard
+
+10220
+10:13:19,700 --> 10:13:23,450
+hat deploy ethers. Remember how
+in our last project, we used
+
+10221
+10:13:23,450 --> 10:13:27,260
+hard hat ethers. So that hard
+hat could override ethers to use
+
+10222
+10:13:27,260 --> 10:13:30,350
+hard hat deploy. We use hard hat
+deploy ethers, so that hard hat
+
+10223
+10:13:30,350 --> 10:13:34,370
+deploy can override Hardhead,
+which overrides ethers, which is
+
+10224
+10:13:34,370 --> 10:13:38,210
+kind of funny. When you say like
+that, this will enable ethers to
+
+10225
+10:13:38,210 --> 10:13:41,570
+keep track of and remember all
+the different deployments that
+
+10226
+10:13:41,570 --> 10:13:44,030
+we actually make in our
+contract. So if we look at our
+
+10227
+10:13:44,030 --> 10:13:48,410
+package, JSON, and now we can
+see our nomic labs dashboard had
+
+10228
+10:13:48,410 --> 10:13:52,850
+ethers. Now the version of it is
+going to be MPM. Hardhead deploy
+
+10229
+10:13:52,880 --> 10:13:56,030
+ethers. This is our package dot
+JSON, basically saying the hard
+
+10230
+10:13:56,060 --> 10:13:59,540
+hat ethers package is now
+overwritten by the hard hat
+
+10231
+10:13:59,540 --> 10:14:03,140
+deploy ethers package, which is
+what we want. Alright, great. So
+
+10232
+10:14:03,140 --> 10:14:05,570
+now that we have that setup, we
+can start writing our deploy
+
+10233
+10:14:05,570 --> 10:14:08,630
+scripts, the way that Hart had
+to play works is all the scripts
+
+10234
+10:14:08,660 --> 10:14:12,080
+that get added to our deploy
+folder will get run when we run
+
+10235
+10:14:12,080 --> 10:14:16,070
+yarn, hard hat deploy. So a good
+practice is usually to number
+
+10236
+10:14:16,070 --> 10:14:18,800
+them so that they run in the
+order that you want them to run
+
+10237
+10:14:18,800 --> 10:14:22,130
+in. So since we only have one
+contract that we want to deploy
+
+10238
+10:14:22,160 --> 10:14:28,340
+the Funmi contract, we're going
+to do 01 Deploy Funmi Jas, and
+
+10239
+10:14:28,340 --> 10:14:31,760
+in this script, this is going to
+be where we define how to deploy
+
+10240
+10:14:31,760 --> 10:14:35,150
+the fundament contract. Alright,
+so we're in our deploy Funmi
+
+10241
+10:14:35,150 --> 10:14:39,350
+scripts. Now traditionally, what
+did we do, we did imports, we
+
+10242
+10:14:39,350 --> 10:14:43,460
+did the main function. And then
+we did calling of main function,
+
+10243
+10:14:44,210 --> 10:14:47,120
+that Hardhead deploy is a little
+bit different, we're still going
+
+10244
+10:14:47,120 --> 10:14:49,700
+to import our libraries and
+packages, but we're not going to
+
+10245
+10:14:49,700 --> 10:14:52,460
+have main function. And we're
+also not going to call the main
+
+10246
+10:14:52,460 --> 10:14:56,000
+function when we run Hardhead
+deploy Harnett deploy is
+
+10247
+10:14:56,000 --> 10:14:59,750
+actually going to call a
+function that we specify. In
+
+10248
+10:14:59,780 --> 10:15:02,030
+this script here. What we're
+going to do is we're gonna
+
+10249
+10:15:02,030 --> 10:15:05,510
+create a function, we'll call it
+deploy funk.
+
+10250
+10:15:06,530 --> 10:15:08,990
+We're going to export this
+deploy function as the default
+
+10251
+10:15:08,990 --> 10:15:12,500
+function for Hardhead deploy to
+look for, so we could say,
+
+10252
+10:15:13,040 --> 10:15:20,240
+module that exports dot default
+equals deploy funk. To test it
+
+10253
+10:15:20,240 --> 10:15:25,370
+out, we can go ahead and do
+console dot log, hi. And then in
+
+10254
+10:15:25,370 --> 10:15:31,880
+our terminal, run yarn, hard
+hat, deploy. Oops, get rid of
+
+10255
+10:15:31,880 --> 10:15:37,220
+the parentheses here. Sorry. Run
+it again. And we can see it went
+
+10256
+10:15:37,370 --> 10:15:41,420
+and ran our deploy func here.
+Now if this syntax is easier for
+
+10257
+10:15:41,420 --> 10:15:44,510
+you to understand, go ahead and
+use this syntax and we're going
+
+10258
+10:15:44,510 --> 10:15:47,270
+to be passing the heart at
+runtime environment as a
+
+10259
+10:15:47,270 --> 10:15:51,500
+parameter to this function.
+However, if we go to the heart
+
+10260
+10:15:51,500 --> 10:15:55,610
+hat deploy documentation, and we
+scroll down to an example
+
+10261
+10:15:55,640 --> 10:15:58,700
+script, the syntax looks a
+little bit different. And let me
+
+10262
+10:15:58,700 --> 10:16:01,670
+just explain what's going on
+here and how we're going to be
+
+10263
+10:16:01,670 --> 10:16:04,370
+writing ours. So instead of kind
+of defining everything like
+
+10264
+10:16:04,370 --> 10:16:07,640
+this, and defining the function
+name, similar to what we were
+
+10265
+10:16:07,640 --> 10:16:10,730
+doing before, we're actually
+going to using a nameless, a
+
+10266
+10:16:10,730 --> 10:16:13,580
+synchronous function, we're
+going to make it an anonymous
+
+10267
+10:16:13,580 --> 10:16:17,120
+function, similar to what we've
+seen before. So instead, we're
+
+10268
+10:16:17,120 --> 10:16:21,770
+going to say async parameters
+like this, I'm going to pass our
+
+10269
+10:16:21,770 --> 10:16:24,830
+parameters our heart at runtime
+environment in here. And it's
+
+10270
+10:16:24,830 --> 10:16:28,490
+going to be an arrow function.
+And then we're going to wrap
+
+10271
+10:16:28,490 --> 10:16:32,480
+this whole thing in module dot
+exports. So we're gonna say,
+
+10272
+10:16:33,320 --> 10:16:40,640
+module, dot exports, equals this
+async function like this. This
+
+10273
+10:16:40,670 --> 10:16:45,200
+syntax here is nearly identical
+to what's up here, we just don't
+
+10274
+10:16:45,200 --> 10:16:48,710
+have a name for our async
+function. So this is how we're
+
+10275
+10:16:48,710 --> 10:16:52,040
+going to set it up instead. But
+if this syntax is a little bit
+
+10276
+10:16:52,040 --> 10:16:55,070
+confusing for you feel free to
+use this above as the two of
+
+10277
+10:16:55,070 --> 10:16:58,580
+these are going to be the same.
+Now the next thing that most of
+
+10278
+10:16:58,580 --> 10:17:01,100
+the documentation does is it
+pulls out the variables and
+
+10279
+10:17:01,100 --> 10:17:05,240
+functions out of the HRV that
+we're going to use. HRV is the
+
+10280
+10:17:05,240 --> 10:17:09,290
+heart hat runtime environment.
+Whenever we run a deploy script,
+
+10281
+10:17:09,350 --> 10:17:12,710
+heart hat deploy automatically
+calls this function and just
+
+10282
+10:17:12,710 --> 10:17:16,580
+passes the hard hat object into
+it similar to in back in hard
+
+10283
+10:17:16,580 --> 10:17:21,020
+hat simple storage. In our
+deploy script. We had ethers run
+
+10284
+10:17:21,050 --> 10:17:24,350
+in network come from hard hat,
+instead of coming from hard hat.
+
+10285
+10:17:24,680 --> 10:17:27,770
+We're coming from HRV, which is
+basically the same thing as hard
+
+10286
+10:17:27,770 --> 10:17:30,740
+hat. For our script, we're only
+going to use two variables from
+
+10287
+10:17:30,740 --> 10:17:38,450
+a jury when you use const. Get
+named accounts. And deployments.
+
+10288
+10:17:41,060 --> 10:17:44,450
+This syntax might look a little
+bit weird for you. But it's just
+
+10289
+10:17:44,450 --> 10:17:47,930
+a way to pull these exact
+variables out of a tree. It's
+
+10290
+10:17:47,930 --> 10:17:51,170
+kind of the same thing as just
+doing a tree dot get named
+
+10291
+10:17:51,170 --> 10:17:56,990
+accounts and HRA dot
+deployments. But pulling them
+
+10292
+10:17:56,990 --> 10:17:58,970
+out like this means we don't
+have to add a tree at the
+
+10293
+10:17:58,970 --> 10:18:01,940
+beginning anymore. And then
+additionally, additionally,
+
+10294
+10:18:02,150 --> 10:18:05,480
+JavaScript has something called
+syntactic sugar. So instead of
+
+10295
+10:18:05,480 --> 10:18:09,110
+doing this on two lines like
+this, we can actually do that
+
+10296
+10:18:09,110 --> 10:18:14,180
+whole bit on one line. So
+instead, we just extrapolate
+
+10297
+10:18:14,300 --> 10:18:18,260
+those two variables, right in
+the function declaration. So
+
+10298
+10:18:18,290 --> 10:18:22,250
+this line is the exact same
+thing as doing this line. This
+
+10299
+10:18:22,250 --> 10:18:25,430
+is an asynchronous, nameless
+function using the arrow
+
+10300
+10:18:25,430 --> 10:18:29,150
+notation, or working with our
+deploy scripts here. And we're
+
+10301
+10:18:29,150 --> 10:18:32,750
+default, exporting it with
+module dot exports. I don't know
+
+10302
+10:18:32,750 --> 10:18:35,510
+that was a lot. And another is
+kind of a lot of syntactic sugar
+
+10303
+10:18:35,510 --> 10:18:38,270
+here. But if that's really
+confusing for you, just feel
+
+10304
+10:18:38,270 --> 10:18:41,270
+free to use the above. And
+whenever we refer to get named
+
+10305
+10:18:41,270 --> 10:18:48,560
+accounts, you can also just do a
+three dot get named accounts, or
+
+10306
+10:18:48,590 --> 10:18:53,210
+a three dot deployments. So
+hopefully, that's clear that
+
+10307
+10:18:53,210 --> 10:18:55,760
+this top part is gonna be the
+same as this bottom part right
+
+10308
+10:18:55,760 --> 10:18:58,460
+here, whichever one you feel
+more comfortable working with.
+
+10309
+10:18:59,360 --> 10:19:01,460
+But alright, now that we've
+gotten all that out of the way,
+
+10310
+10:19:01,580 --> 10:19:04,790
+let's continue with the script.
+So we're using this deployments
+
+10311
+10:19:04,820 --> 10:19:08,150
+object, reason this deployments
+object to get two functions,
+
+10312
+10:19:08,870 --> 10:19:11,690
+those two functions are going to
+be the deploy function, and the
+
+10313
+10:19:11,690 --> 10:19:14,540
+log function. So we're gonna say
+const, deploy log equals
+
+10314
+10:19:14,540 --> 10:19:18,350
+deployments. So we're going to
+pull these two functions out of
+
+10315
+10:19:18,350 --> 10:19:22,100
+deployments. And then we're also
+going to do const Deployer.
+
+10316
+10:19:23,150 --> 10:19:28,310
+Equals await, get named
+accounts. So we are grabbing
+
+10317
+10:19:28,310 --> 10:19:31,310
+this new deploy function, this
+new log function, and we're
+
+10318
+10:19:31,310 --> 10:19:34,880
+grabbing this deployer account
+from this weird get named
+
+10319
+10:19:34,880 --> 10:19:38,420
+accounts function. What's this
+get named accounts function,
+
+10320
+10:19:38,660 --> 10:19:42,350
+this get named accounts is a way
+for us to get named accounts.
+
+10321
+10:19:42,710 --> 10:19:45,620
+When working with ethers we saw
+when working with ethers, we can
+
+10322
+10:19:45,620 --> 10:19:49,400
+actually get our accounts based
+off of the number in the Account
+
+10323
+10:19:49,400 --> 10:19:51,710
+section of each network. So for
+example,
+
+10324
+10:19:54,800 --> 10:19:57,800
+in this list of private keys,
+private keys zero private key
+
+10325
+10:19:57,800 --> 10:20:00,770
+one private key two, it might
+get a little confusing to
+
+10326
+10:20:00,770 --> 10:20:04,460
+remember which ones which so
+instead of working like that, we
+
+10327
+10:20:04,460 --> 10:20:07,880
+can add a section at the bottom
+called named accounts where we
+
+10328
+10:20:07,880 --> 10:20:11,900
+can name each one of those spots
+in the accounts array. So we'll
+
+10329
+10:20:11,900 --> 10:20:15,470
+do named accounts. And we'll say
+one of the accounts that will
+
+10330
+10:20:15,470 --> 10:20:18,710
+name is going to be named
+Deployer. And we're gonna say by
+
+10331
+10:20:18,710 --> 10:20:23,240
+default, the zero with account
+is going to be Deployer. We can
+
+10332
+10:20:23,240 --> 10:20:27,560
+also specify which number is
+going to be the deployer account
+
+10333
+10:20:27,560 --> 10:20:31,070
+across different chains. For
+example, on Rigby we wanted the
+
+10334
+10:20:31,070 --> 10:20:33,770
+deployer account to be the first
+position, we could do something
+
+10335
+10:20:33,770 --> 10:20:37,130
+like this or on hard hat, we
+could do it like this. We can
+
+10336
+10:20:37,130 --> 10:20:40,160
+create multiple users. Like for
+example, if we wanted to do a
+
+10337
+10:20:40,160 --> 10:20:44,510
+user for some test or something,
+and we'll just say the default
+
+10338
+10:20:44,540 --> 10:20:48,380
+is one or whatever we wanted in
+here. So back in our deploy fun
+
+10339
+10:20:48,380 --> 10:20:51,170
+me We're going to say we're
+going to grab that deployer
+
+10340
+10:20:51,260 --> 10:20:54,320
+account from our named accounts.
+And then finally, we're going to
+
+10341
+10:20:54,320 --> 10:20:57,530
+grab our chain ID for reasons
+that will come clear pretty
+
+10342
+10:20:57,530 --> 10:21:03,320
+soon. So we'll do const, chain
+ID equals network dot config dot
+
+10343
+10:21:03,320 --> 10:21:09,920
+chain ID. Now, how do we
+actually deploy this fund me
+
+10344
+10:21:09,920 --> 10:21:12,590
+contract? Well, let's think
+about this for a little bit.
+
+10345
+10:21:12,830 --> 10:21:15,260
+When working with remix, it was
+pretty easy, right? We just
+
+10346
+10:21:15,260 --> 10:21:18,830
+deployed it to a test net. Ah,
+that's kind of the issue there,
+
+10347
+10:21:18,830 --> 10:21:21,590
+isn't it deploying to a rink,
+the test net is a little bit
+
+10348
+10:21:21,590 --> 10:21:24,680
+slow. We don't always want to
+have to deploy to one of these
+
+10349
+10:21:24,680 --> 10:21:27,920
+slow test nets or even a main
+net when tinkering and fiddling
+
+10350
+10:21:27,920 --> 10:21:31,010
+with our contracts, do we know
+that's gonna be really bad, we
+
+10351
+10:21:31,010 --> 10:21:34,700
+really want to deploy to a test
+net as a last stop after we've
+
+10352
+10:21:34,700 --> 10:21:37,580
+done all our testing locally. Or
+we can deploy it to a test that
+
+10353
+10:21:37,580 --> 10:21:41,450
+to see some very specific code
+work, like for example, with the
+
+10354
+10:21:41,450 --> 10:21:44,870
+chain link documentation. So
+ideally, we deploy this to a
+
+10355
+10:21:44,870 --> 10:21:48,020
+local network first. But can we
+just do that? Well, if we look
+
+10356
+10:21:48,020 --> 10:21:51,260
+in our price converter, dot
+Seoul, we have this hard coded
+
+10357
+10:21:51,260 --> 10:21:55,220
+address in here, this 0x
+address, if we go to Doc's dot
+
+10358
+10:21:55,220 --> 10:21:59,570
+chain that link EVM chains,
+contract addresses for Aetherium
+
+10359
+10:21:59,570 --> 10:22:03,560
+data feeds. That address is the
+eth USD, specifically for
+
+10360
+10:22:03,560 --> 10:22:07,400
+Rinkeby. What if we work on the
+Hard Hat Network? Example?
+
+10361
+10:22:07,580 --> 10:22:08,630
+default network?
+
+10362
+10:22:10,010 --> 10:22:13,250
+Hard Hat. And then like I said
+before, if you don't write this
+
+10363
+10:22:13,250 --> 10:22:16,640
+in part, it is automatically the
+default network. But if we're to
+
+10364
+10:22:16,640 --> 10:22:19,430
+point to the Hard Hat Network,
+harder network is a blank
+
+10365
+10:22:19,430 --> 10:22:21,860
+blockchain. And it gets
+destroyed every time our scripts
+
+10366
+10:22:21,860 --> 10:22:24,950
+finish, or even if we're working
+with a local node, this price
+
+10367
+10:22:24,950 --> 10:22:28,220
+feed contract won't exist, one
+of the code there won't be
+
+10368
+10:22:28,220 --> 10:22:31,880
+updated with data. So what do we
+do? How do we test and interact
+
+10369
+10:22:31,880 --> 10:22:34,550
+with our code locally? Is there
+a way we can do this? Well, one
+
+10370
+10:22:34,550 --> 10:22:36,770
+of the ways that we can do this
+that we'll learn a little bit
+
+10371
+10:22:36,770 --> 10:22:39,920
+later is actually forking a
+blockchain, where you can keep
+
+10372
+10:22:39,920 --> 10:22:42,920
+stuff hard coded. But usually,
+it's still better to figure out
+
+10373
+10:22:42,920 --> 10:22:46,370
+how to do everything with
+something called mocks. There's
+
+10374
+10:22:46,370 --> 10:22:49,460
+a great Stack Overflow question
+that just says, What is mocking
+
+10375
+10:22:49,520 --> 10:22:52,550
+and mocking is primarily used
+for unit testing, which we'll
+
+10376
+10:22:52,550 --> 10:22:55,880
+talk about in a little bit. And
+object under test may have
+
+10377
+10:22:55,880 --> 10:22:59,480
+dependencies on other complex
+objects. To isolate the behavior
+
+10378
+10:22:59,480 --> 10:23:03,860
+of the object, you want to
+replace other objects by mocks
+
+10379
+10:23:03,890 --> 10:23:07,490
+that simulate the behavior of
+the real objects. In short,
+
+10380
+10:23:07,490 --> 10:23:10,490
+mocking is creating objects that
+simulate behavior of real
+
+10381
+10:23:10,520 --> 10:23:13,670
+objects. Now, this might seem
+like a lot of words. But
+
+10382
+10:23:14,090 --> 10:23:17,060
+basically, what we want to do is
+we want to make a fake price
+
+10383
+10:23:17,060 --> 10:23:20,330
+feed contract that we can use
+and we can control when working
+
+10384
+10:23:20,360 --> 10:23:23,270
+locally. So back here, I'm just
+going to leave a note in here
+
+10385
+10:23:23,270 --> 10:23:30,350
+saying, When going for local
+host or Hard Hat Network, we
+
+10386
+10:23:30,560 --> 10:23:33,800
+want to use a mock. Okay, great,
+well, we can use a mock and
+
+10387
+10:23:33,800 --> 10:23:36,110
+we'll learn how to make one of
+those in a little bit. Well,
+
+10388
+10:23:36,110 --> 10:23:42,290
+what happens when we want to
+change chains, for example, back
+
+10389
+10:23:42,290 --> 10:23:46,490
+in dots dot chain to link EVM
+chains, contract addresses,
+
+10390
+10:23:46,940 --> 10:23:50,150
+there are a ton of different
+block chains that have price
+
+10391
+10:23:50,150 --> 10:23:53,840
+feeds on them. And on each one
+of these blockchains, the eth
+
+10392
+10:23:53,840 --> 10:23:56,060
+USD price feed is going to be a
+little bit different. For
+
+10393
+10:23:56,060 --> 10:23:59,900
+example, we're looking at ETH
+USD, the address of eth USD for
+
+10394
+10:23:59,900 --> 10:24:03,740
+Aetherium main net is different
+from the address of eth USD for
+
+10395
+10:24:03,740 --> 10:24:05,840
+Rigby, which makes sense,
+they're totally different
+
+10396
+10:24:05,840 --> 10:24:08,150
+contracts on different chains,
+they have very similar
+
+10397
+10:24:08,150 --> 10:24:10,970
+functionality. And they do
+nearly the exact same thing. But
+
+10398
+10:24:11,000 --> 10:24:13,580
+they're still different. We're
+also going to need a way for us
+
+10399
+10:24:13,580 --> 10:24:18,230
+to modularize or parameterize,
+this address in here, so that no
+
+10400
+10:24:18,230 --> 10:24:21,410
+matter what chain we deploy to,
+we don't have to change any of
+
+10401
+10:24:21,410 --> 10:24:23,810
+our code, we can always have our
+code be exactly the same. And we
+
+10402
+10:24:23,810 --> 10:24:26,180
+don't have to come in here and
+like flip values and flip
+
+10403
+10:24:26,180 --> 10:24:29,720
+variables and stuff. So let's
+keep that all of that in mind as
+
+10404
+10:24:29,720 --> 10:24:32,990
+we write the rest of this. Now
+in order to parameterize. This,
+
+10405
+10:24:33,170 --> 10:24:36,500
+we actually want to prioritize
+and do a little refactoring of
+
+10406
+10:24:36,500 --> 10:24:39,440
+our fundamental soul.
+Refactoring basically means
+
+10407
+10:24:39,440 --> 10:24:43,370
+going back and, and changing the
+way your code works. Right now
+
+10408
+10:24:43,400 --> 10:24:46,340
+we have this constructor
+function, right the constructor
+
+10409
+10:24:46,340 --> 10:24:49,190
+function is the function that
+automatically gets called
+
+10410
+10:24:49,220 --> 10:24:52,280
+whenever we deploy our contract.
+Right now it's not doing a whole
+
+10411
+10:24:52,280 --> 10:24:55,040
+lot right now it's just updating
+the owner variable to be whoever
+
+10412
+10:24:55,040 --> 10:24:58,970
+sent in the contract. But we can
+actually have a do much more
+
+10413
+10:24:58,970 --> 10:25:02,030
+than that. Since this
+constructor is a function just
+
+10414
+10:25:02,030 --> 10:25:04,520
+like every other function, we
+can actually have it take
+
+10415
+10:25:04,520 --> 10:25:07,250
+parameters, one of the
+parameters that we might like
+
+10416
+10:25:07,250 --> 10:25:11,270
+for it to have is going to be
+the address of a price feed. So
+
+10417
+10:25:11,270 --> 10:25:13,220
+let's go ahead and add this and
+figure out how to refactor all
+
+10418
+10:25:13,220 --> 10:25:17,900
+this code. So we're going to add
+constructor address, price feed
+
+10419
+10:25:18,380 --> 10:25:21,500
+for the constructor in here.
+When we deploy our contract. Now
+
+10420
+10:25:21,530 --> 10:25:24,890
+we're going to pass it the eth
+USD price feed address depending
+
+10421
+10:25:24,890 --> 10:25:27,500
+on what chain we're on. If we're
+on rink B, we'll use this
+
+10422
+10:25:27,500 --> 10:25:30,470
+address if one polygon will use
+a different one b&b, different
+
+10423
+10:25:30,470 --> 10:25:34,100
+one, Gnosis hecho, avalanche,
+etc, you get the picture. So
+
+10424
+10:25:34,100 --> 10:25:37,730
+we're going to marginalize this
+like so. Now that our
+
+10425
+10:25:37,730 --> 10:25:40,700
+constructor takes a parameter
+for the price feed, we can
+
+10426
+10:25:40,700 --> 10:25:44,420
+actually save an aggregator v3
+interface object as a global
+
+10427
+10:25:44,420 --> 10:25:47,540
+variable in our price converter,
+we just create a price feed
+
+10428
+10:25:47,540 --> 10:25:51,290
+variable of type aggregator v3
+interface, which again, we're
+
+10429
+10:25:51,290 --> 10:25:54,020
+importing from the chainlink
+repo, which is an interface
+
+10430
+10:25:54,020 --> 10:25:57,590
+object which gets compiled down
+to the ABI. If you match an ABI
+
+10431
+10:25:57,590 --> 10:26:00,590
+with up with an address, you get
+a contract that you can interact
+
+10432
+10:26:00,590 --> 10:26:02,690
+with. So we're going to do the
+same thing here. We're gonna
+
+10433
+10:26:02,690 --> 10:26:09,530
+say, aggregate Tor, v3
+interface, public price feed,
+
+10434
+10:26:10,670 --> 10:26:13,940
+ration and call this price feed
+address so that these don't have
+
+10435
+10:26:13,940 --> 10:26:17,690
+the same name. And in our
+constructor, we're going to say
+
+10436
+10:26:17,690 --> 10:26:21,440
+price feed equals, and we're
+going to do the exact same thing
+
+10437
+10:26:21,470 --> 10:26:26,360
+we did with our price converter
+equals aggregate tore the three
+
+10438
+10:26:26,360 --> 10:26:27,440
+interface
+
+10439
+10:26:28,580 --> 10:26:36,680
+of price feed address. Like so
+now, we have this price feed
+
+10440
+10:26:36,680 --> 10:26:40,520
+address that's variable and
+modularized, depending on
+
+10441
+10:26:40,520 --> 10:26:44,030
+whatever chain that we're on.
+Now, what we can do is we can
+
+10442
+10:26:44,030 --> 10:26:47,720
+grab this price feed address,
+and we can use it for our price
+
+10443
+10:26:47,720 --> 10:26:51,170
+converter. So where are we using
+our price converter? Well, just
+
+10444
+10:26:51,170 --> 10:26:55,550
+a quick reminder, we're using
+using price converter for you at
+
+10445
+10:26:55,550 --> 10:26:59,690
+256. We're using this as a
+library on top of our unit 256
+
+10446
+10:26:59,720 --> 10:27:03,200
+type. So we're calling message
+dot value dot get conversion
+
+10447
+10:27:03,200 --> 10:27:06,200
+rate. So we look at our price
+converter, we have this function
+
+10448
+10:27:06,200 --> 10:27:09,860
+get conversion rate, which takes
+an FML as its initial parameter,
+
+10449
+10:27:09,860 --> 10:27:13,490
+which again, since this is a
+library, it automatically passes
+
+10450
+10:27:13,490 --> 10:27:16,550
+the message dot value into this
+get conversion rate function.
+
+10451
+10:27:17,150 --> 10:27:22,280
+But we could also pass in this
+price feed, and therefore we
+
+10452
+10:27:22,280 --> 10:27:25,640
+wouldn't need to hard code it in
+the get price anymore. So let's
+
+10453
+10:27:25,640 --> 10:27:28,310
+go ahead and figure out how to
+do that. Well, what we can do is
+
+10454
+10:27:28,310 --> 10:27:31,430
+we can do message dot value dot
+get conversion rate, we'll stick
+
+10455
+10:27:31,430 --> 10:27:34,520
+price feed in here. And then
+we'll have to update our get
+
+10456
+10:27:34,520 --> 10:27:38,240
+conversion rate to do a comma so
+that it takes a second
+
+10457
+10:27:38,240 --> 10:27:41,960
+parameter, because remember,
+again, the initial parameter is
+
+10458
+10:27:41,960 --> 10:27:44,540
+going to be message dot value.
+And the second parameter is
+
+10459
+10:27:44,540 --> 10:27:50,210
+going to be what we define here.
+So we'll do s amount, comma ag
+
+10460
+10:27:50,210 --> 10:27:58,610
+reg gate Tor v3 interface. And
+we'll call this price feed. And
+
+10461
+10:27:58,610 --> 10:28:03,680
+now, when we call our get price
+function, we can pass the price
+
+10462
+10:28:03,680 --> 10:28:07,430
+feed to the get price function.
+And up here we can have get
+
+10463
+10:28:07,430 --> 10:28:14,420
+price. Take, you guessed it an
+aggregate or the three interface
+
+10464
+10:28:15,410 --> 10:28:22,220
+called price feed. And now we no
+longer need to hard code in the
+
+10465
+10:28:22,220 --> 10:28:25,430
+price feed. And we can just
+delete those lines and have it
+
+10466
+10:28:25,430 --> 10:28:30,020
+compile like this, which is
+awesome. So quick refresher,
+
+10467
+10:28:30,170 --> 10:28:33,590
+we're parameterizing that price
+feed address and passing it in
+
+10468
+10:28:33,590 --> 10:28:37,250
+with a constructor that gets
+saved as a global variable to an
+
+10469
+10:28:37,250 --> 10:28:41,570
+aggregator v3 interface type, or
+passing it to a get conversion
+
+10470
+10:28:41,570 --> 10:28:45,770
+rate function, which passes it
+to the get price function, which
+
+10471
+10:28:45,770 --> 10:28:48,680
+then just calls latest round
+data. And we probably could have
+
+10472
+10:28:48,680 --> 10:28:50,720
+made this even easier, probably
+could have just got rid of the
+
+10473
+10:28:50,720 --> 10:28:54,080
+get price function and stuck
+this code in the get conversion
+
+10474
+10:28:54,080 --> 10:28:56,630
+rate. But we'll leave it there
+for now. Now that we've done
+
+10475
+10:28:56,660 --> 10:28:59,630
+that refactoring, let's make
+sure it works. Yarn Hardhead,
+
+10476
+10:28:59,630 --> 10:29:03,140
+compile, invalid value undefined
+for hardhat dot config dot
+
+10477
+10:29:03,140 --> 10:29:07,010
+networks. Let's go to the let's
+go to the config real quick.
+
+10478
+10:29:07,100 --> 10:29:09,860
+That's because the default
+network needs to be outside of
+
+10479
+10:29:09,860 --> 10:29:14,300
+networks. My mistake. Let's try
+that again. I spelled interface
+
+10480
+10:29:14,300 --> 10:29:17,360
+wrong and the price converter.
+And a quick note, if gives you
+
+10481
+10:29:17,360 --> 10:29:20,750
+an error like this, oftentimes,
+you can command click or control
+
+10482
+10:29:20,750 --> 10:29:23,930
+click and open that file up
+right in the editor, which saves
+
+10483
+10:29:23,930 --> 10:29:26,240
+you some time, we're going to
+have defined the line and find
+
+10484
+10:29:26,240 --> 10:29:29,540
+the file. But yeah, let's spell
+that correctly. And let's try
+
+10485
+10:29:29,540 --> 10:29:33,620
+this again. And awesome. It
+looks like it's compiling
+
+10486
+10:29:33,620 --> 10:29:36,560
+correctly. And we just have some
+warnings, it looks like these
+
+10487
+10:29:36,560 --> 10:29:39,560
+warnings are just about this git
+version, which is because we're
+
+10488
+10:29:39,560 --> 10:29:42,650
+shadowing this, we're creating a
+new price variable down here,
+
+10489
+10:29:42,920 --> 10:29:45,590
+you've no we just created a
+global price free variable.
+
+10490
+10:29:46,100 --> 10:29:48,200
+Let's just go ahead and delete
+the get version function
+
+10491
+10:29:48,200 --> 10:29:51,140
+altogether since we're not even
+going to really need it. And we
+
+10492
+10:29:51,140 --> 10:29:53,690
+only use the Git version to show
+you how to actually start
+
+10493
+10:29:53,690 --> 10:29:56,480
+working with interfaces. And
+then we'll compile it one more
+
+10494
+10:29:56,480 --> 10:30:01,100
+time for good measure. Boom
+compiled successfully. Awesome.
+
+10495
+10:30:01,130 --> 10:30:04,970
+So now we've just refactored our
+code. So we can pass a price
+
+10496
+10:30:04,970 --> 10:30:08,990
+feed address depending on the
+network that we're on. Okay,
+
+10497
+10:30:08,990 --> 10:30:12,320
+great. With all that being said,
+let's come back to our deploy
+
+10498
+10:30:12,320 --> 10:30:15,110
+Funmi script, and let's learn
+how to actually deploy the rest
+
+10499
+10:30:15,110 --> 10:30:18,350
+of it. In order for us to deploy
+a contract we remember from our
+
+10500
+10:30:18,350 --> 10:30:22,100
+last sections that we use the
+contract factories, with heart
+
+10501
+10:30:22,100 --> 10:30:25,640
+hit Deploy, we can just use this
+deploy function. And to use the
+
+10502
+10:30:25,640 --> 10:30:28,700
+deploy function, we'll say const
+Funmi, which is going to be the
+
+10503
+10:30:28,700 --> 10:30:32,300
+name of our contract, equals
+await. And we'll call this
+
+10504
+10:30:32,300 --> 10:30:36,200
+deploy function, the name of the
+contract that we're deploying
+
+10505
+10:30:36,200 --> 10:30:39,710
+right now, and then a list of
+overrides that we want to add
+
+10506
+10:30:39,710 --> 10:30:42,650
+here. So we're gonna say who is
+actually deploying this by
+
+10507
+10:30:42,650 --> 10:30:45,980
+saying from, we're gonna say
+it's from the Deployer. We're
+
+10508
+10:30:45,980 --> 10:30:49,880
+gonna pass any arguments to the
+constructor In this args piece
+
+10509
+10:30:49,880 --> 10:30:55,250
+here, which we just added a
+single Argh. So these brackets,
+
+10510
+10:30:55,250 --> 10:30:57,530
+we're going to make it a list of
+arguments, we're going to put
+
+10511
+10:30:57,530 --> 10:30:59,660
+the price feed address in here,
+which we'll show you how to do
+
+10512
+10:30:59,660 --> 10:31:03,980
+in a second, put price feed
+address. And then we're also
+
+10513
+10:31:03,980 --> 10:31:06,260
+going to do some custom logging
+here so that we don't have to do
+
+10514
+10:31:06,260 --> 10:31:08,600
+all that console dot log stuff
+that we've been doing this whole
+
+10515
+10:31:08,600 --> 10:31:12,080
+time. And we need to put
+something in here. We need to
+
+10516
+10:31:12,080 --> 10:31:15,290
+put an address in here. And you
+can use this backslash star to
+
+10517
+10:31:15,290 --> 10:31:17,600
+put like a common in between
+your code.
+
+10518
+10:31:18,950 --> 10:31:22,130
+We can't just do const address
+equals, you know the address and
+
+10519
+10:31:22,190 --> 10:31:24,740
+stick it in here. Well, I mean,
+we could but we're not really
+
+10520
+10:31:24,740 --> 10:31:27,620
+prioritizing now. Right? We're
+kind of back to just hard coding
+
+10521
+10:31:27,620 --> 10:31:30,860
+it here. So what can we do
+instead? Well, what we can do is
+
+10522
+10:31:30,860 --> 10:31:35,990
+we can actually use the chain ID
+to do something like if chain ID
+
+10523
+10:31:35,990 --> 10:31:45,500
+is x, use address, Y, or if
+chain ID is Z use address A. So
+
+10524
+10:31:45,500 --> 10:31:48,140
+we can do something that looks
+like this. And to enable this
+
+10525
+10:31:48,140 --> 10:31:51,860
+functionality, we actually take
+a page out of the Ave GitHub. So
+
+10526
+10:31:51,890 --> 10:31:54,830
+Ave is another protocol that's
+on multiple chains and has to
+
+10527
+10:31:54,830 --> 10:31:57,590
+deploy their code to multiple
+chains and work with multiple
+
+10528
+10:31:57,590 --> 10:32:01,220
+different addresses. So what
+they do is they use a number of
+
+10529
+10:32:01,220 --> 10:32:04,070
+different useful tricks. But one
+of the main ones is using this
+
+10530
+10:32:04,070 --> 10:32:07,340
+helper hardhat config. Now
+they're using TypeScript with
+
+10531
+10:32:07,340 --> 10:32:10,280
+JavaScript, but it's gonna be
+the same thing. With this
+
+10532
+10:32:10,280 --> 10:32:14,630
+config, they have different
+variables, depending on what
+
+10533
+10:32:14,630 --> 10:32:17,690
+network that they're actually
+on. And depending on the network
+
+10534
+10:32:17,690 --> 10:32:20,270
+that they're on, they use
+different variables. So they use
+
+10535
+10:32:20,270 --> 10:32:24,020
+this network config almost to do
+exactly what we're trying to do
+
+10536
+10:32:24,020 --> 10:32:27,710
+here. So what we want to do is
+we're going to create a new file
+
+10537
+10:32:28,250 --> 10:32:32,900
+at the root directory, so just
+click down here, new file. And
+
+10538
+10:32:32,900 --> 10:32:39,170
+we're going to call it helper,
+hard hat config dot j, s. And
+
+10539
+10:32:39,170 --> 10:32:41,840
+this is where we're going to
+define that network config. And
+
+10540
+10:32:41,840 --> 10:32:43,940
+this is where we're going to
+say, hey, if you're on network,
+
+10541
+10:32:43,970 --> 10:32:48,050
+a, use this address network, be
+this use this address, etc. So
+
+10542
+10:32:48,080 --> 10:32:52,280
+we're going to create an object
+called const. Network config.
+
+10543
+10:32:53,000 --> 10:32:55,730
+equals and we're going to add a
+bunch of stuff in here. So our
+
+10544
+10:32:55,730 --> 10:32:58,700
+main network that we're working
+with right now is rinky. dinky
+
+10545
+10:32:58,700 --> 10:33:04,250
+has a chain ID of four. So we'll
+say chain ID four is going to be
+
+10546
+10:33:04,310 --> 10:33:12,410
+named Rinkeby. And the eth USD
+price feed address is going to
+
+10547
+10:33:12,410 --> 10:33:16,370
+be the price feed address of
+rank B of the eth USD price
+
+10548
+10:33:16,370 --> 10:33:19,190
+feed. So we're going to copied
+from the documentation or from
+
+10549
+10:33:19,190 --> 10:33:22,820
+the GitHub, whatever you want to
+do, and paste it in here. Now we
+
+10550
+10:33:22,820 --> 10:33:26,000
+have a simple methodology of
+keeping track of different price
+
+10551
+10:33:26,000 --> 10:33:29,270
+feeds a different contract
+addresses across different
+
+10552
+10:33:29,270 --> 10:33:33,140
+chains. Let's say for example,
+we wanted to deploy to Polygon
+
+10553
+10:33:33,170 --> 10:33:36,110
+as well. Well, first, what are
+we going to need? Well, we're
+
+10554
+10:33:36,110 --> 10:33:39,590
+going to need the chain ID of
+polygon. So a quick little
+
+10555
+10:33:39,590 --> 10:33:43,040
+Google Search brings us to the
+polygon documentation. And we
+
+10556
+10:33:43,040 --> 10:33:48,170
+see the chain ID is 137. So I'll
+do 137. What's a little brackets
+
+10557
+10:33:48,170 --> 10:33:54,260
+here, we'll say name, polygon.
+Then we'll do a comma eth USD,
+
+10558
+10:33:54,800 --> 10:33:58,700
+price feed. And then we'll add
+the price feed of eth USD on
+
+10559
+10:33:58,700 --> 10:34:04,130
+polygon. So docstoc, chain link,
+polygon or Matic and then we'll
+
+10560
+10:34:04,130 --> 10:34:09,200
+look up eth, USD. And boom, we
+see it right here. We've grabbed
+
+10561
+10:34:09,200 --> 10:34:12,770
+this address, and we paste it
+in. Well, what about the
+
+10562
+10:34:12,770 --> 10:34:15,620
+Hardhead? Network? We'll get to
+that in just a second, don't you
+
+10563
+10:34:15,620 --> 10:34:18,620
+worry. And then at the bottom,
+we need to export this network
+
+10564
+10:34:18,620 --> 10:34:21,710
+config. So our other scripts can
+actually work with it. So we'll
+
+10565
+10:34:21,710 --> 10:34:28,100
+do module dot exports equals
+network config. And we're going
+
+10566
+10:34:28,100 --> 10:34:31,070
+to actually export a couple of
+things from this file, which is
+
+10567
+10:34:31,070 --> 10:34:34,160
+why we're doing it like this
+instead of that default way that
+
+10568
+10:34:34,160 --> 10:34:37,580
+I showed you before. So back in
+our script, now, what can we do?
+
+10569
+10:34:37,760 --> 10:34:41,390
+Well, first, we want to go ahead
+and import that network config.
+
+10570
+10:34:41,420 --> 10:34:47,810
+So we'll say const. Network
+config equals require, and then
+
+10571
+10:34:47,810 --> 10:34:51,590
+we'll import it, we'll go down
+and directory to help our
+
+10572
+10:34:51,590 --> 10:34:54,920
+Hardhead config and save. And I
+just want to mention this one
+
+10573
+10:34:54,920 --> 10:34:57,410
+more time, just so that it
+doesn't confuse anybody. This
+
+10574
+10:34:57,410 --> 10:35:00,710
+syntax here, constant network
+config with the little curly
+
+10575
+10:35:00,710 --> 10:35:08,990
+braces around it is the same is
+if I went const. Helper config
+
+10576
+10:35:10,100 --> 10:35:13,280
+equals this thing, which helper
+config is now kind of this whole
+
+10577
+10:35:13,280 --> 10:35:21,020
+file. And then const network
+config equals Hopper config dot
+
+10578
+10:35:21,440 --> 10:35:24,890
+network config. So again, this
+index is just kind of an easy
+
+10579
+10:35:24,890 --> 10:35:28,610
+way to extrapolate or pull out
+just the network config from
+
+10580
+10:35:28,610 --> 10:35:31,850
+this file. So that's how that
+works. And that's why we export
+
+10581
+10:35:31,850 --> 10:35:35,600
+it at the bottom so that we can
+do this, please use the GitHub
+
+10582
+10:35:35,600 --> 10:35:39,410
+repository to ask questions and
+discussions especially about
+
+10583
+10:35:39,410 --> 10:35:41,840
+some of this JavaScript stuff.
+Alright, great. So now that we
+
+10584
+10:35:41,840 --> 10:35:44,630
+have this network configured
+here, we can now do this part of
+
+10585
+10:35:44,630 --> 10:35:48,950
+where we say if China d z use a
+if chain ID is x use y. So Since
+
+10586
+10:35:48,950 --> 10:35:52,670
+our helper config is nicely in
+this kind of dictionary, key
+
+10587
+10:35:52,670 --> 10:35:58,490
+value pair style, what we can do
+is we can say const. eth USD.
+
+10588
+10:35:59,060 --> 10:36:08,360
+Price feed address equals
+network config at the chain ID,
+
+10589
+10:36:08,690 --> 10:36:12,770
+because if Francina D, or it'll
+be this object, French entity
+
+10590
+10:36:12,770 --> 10:36:21,470
+polygon, it'll be this object at
+the eth USD price feed, we're
+
+10591
+10:36:21,470 --> 10:36:24,950
+going to save this to eth USD
+price feed address. And now no
+
+10592
+10:36:24,950 --> 10:36:27,980
+matter what chain we're on,
+whenever we run hard hat deploy,
+
+10593
+10:36:28,130 --> 10:36:34,550
+if I run yarn, hard hat deploy
+dash dash network Rinkeby. This
+
+10594
+10:36:34,550 --> 10:36:37,940
+chain ID is going to be four.
+And so it's going to use this
+
+10595
+10:36:37,940 --> 10:36:42,500
+price feed address. If I do dash
+test network polygon, and I
+
+10596
+10:36:42,500 --> 10:36:45,560
+remember to add both ring P and
+polygon to my networks, like
+
+10597
+10:36:45,560 --> 10:36:48,770
+here, the channel is going to be
+137. It's going to use this
+
+10598
+10:36:48,770 --> 10:36:52,310
+price feed address. So this is
+awesome. This is exactly what we
+
+10599
+10:36:52,310 --> 10:36:55,340
+want. But is it everything that
+we want? Those of you who have
+
+10600
+10:36:55,340 --> 10:36:58,040
+been questioning while I have
+been coding and talking, you
+
+10601
+10:36:58,040 --> 10:37:00,590
+might be thinking, Okay, well,
+you talked about this marking
+
+10602
+10:37:00,590 --> 10:37:03,500
+thing. You talked about
+localhost and hard hat. And how
+
+10603
+10:37:03,500 --> 10:37:06,410
+do we test this locally? Like
+this is how we go to a test net
+
+10604
+10:37:06,410 --> 10:37:09,740
+and a main net. But what about a
+local network? And that is
+
+10605
+10:37:09,740 --> 10:37:13,370
+exactly what we're going to talk
+about now. So we've modularized,
+
+10606
+10:37:13,370 --> 10:37:16,760
+our code and parameterize our
+code so that we're going to use
+
+10607
+10:37:16,760 --> 10:37:20,240
+the address based off of the
+chain that we're on. But what if
+
+10608
+10:37:20,240 --> 10:37:24,020
+we use a chain that doesn't even
+have a price feed address on it?
+
+10609
+10:37:24,080 --> 10:37:27,470
+What do we do there? This is
+where we actually create those
+
+10610
+10:37:27,500 --> 10:37:32,120
+mock contracts. The idea of mock
+contracts here is if the
+
+10611
+10:37:32,120 --> 10:37:37,550
+contract doesn't exist, we
+deploy a minimal version of it
+
+10612
+10:37:37,580 --> 10:37:42,530
+for our local testing, or our
+local testing. And deploying
+
+10613
+10:37:42,530 --> 10:37:48,200
+mocks is technically a deploy
+script. So what we do actually
+
+10614
+10:37:48,230 --> 10:37:51,080
+is back in our deploy folder is
+we're going to create a new
+
+10615
+10:37:51,080 --> 10:37:58,340
+file, and we're going to call it
+00 Dash deploy mocks dot j s, we
+
+10616
+10:37:58,340 --> 10:38:01,670
+started with 00. Because this is
+almost like the pre deploy
+
+10617
+10:38:01,670 --> 10:38:05,480
+stuff, we only do this,
+sometimes we don't always deploy
+
+10618
+10:38:05,480 --> 10:38:08,750
+mocks, right, we don't need to
+deploy mocks to Rinkeby, or
+
+10619
+10:38:08,750 --> 10:38:11,810
+polygon or or Aetherium main
+net, because those already have
+
+10620
+10:38:11,810 --> 10:38:15,200
+these price feeds, we're
+actually going to deploy our own
+
+10621
+10:38:15,350 --> 10:38:19,700
+mock price feed contracts. And
+in our deploy Funmi script,
+
+10622
+10:38:19,730 --> 10:38:23,780
+we're going to use our own
+contracts, instead of already
+
+10623
+10:38:23,780 --> 10:38:26,990
+established contracts. If we're
+on a network that doesn't have
+
+10624
+10:38:27,020 --> 10:38:30,770
+any price, few contracts, like
+hard hat or locos, for example.
+
+10625
+10:38:30,860 --> 10:38:34,160
+So let's write our deploy mock
+script. So the setup of this is
+
+10626
+10:38:34,160 --> 10:38:37,430
+going to look nearly identical
+to our deploy Funmi. And again,
+
+10627
+10:38:37,430 --> 10:38:41,270
+if you want to set it up like
+this, you absolutely can. But
+
+10628
+10:38:41,270 --> 10:38:43,880
+I'm actually just going to copy
+this, this part, paste it in
+
+10629
+10:38:43,880 --> 10:38:46,820
+here, because that initial part
+is going to be exactly the same.
+
+10630
+10:38:47,000 --> 10:38:49,340
+Oh, and over here, I just
+realized that we're calling this
+
+10631
+10:38:49,340 --> 10:38:52,160
+network thing without being
+defined, JavaScript will kind of
+
+10632
+10:38:52,160 --> 10:38:54,770
+be smart enough to know where
+this network thing is coming
+
+10633
+10:38:54,770 --> 10:38:57,860
+from. But it can be a little bit
+confusing. So it's better to be
+
+10634
+10:38:57,860 --> 10:39:03,740
+really explicit, and say, const.
+Network equals require hard hat,
+
+10635
+10:39:03,980 --> 10:39:07,130
+this network thing is coming
+from hard hat. And we're going
+
+10636
+10:39:07,130 --> 10:39:10,370
+to grab this line. And we're
+also going to use this at the
+
+10637
+10:39:10,370 --> 10:39:13,460
+top of our script here. And then
+our top section is going to look
+
+10638
+10:39:13,490 --> 10:39:16,160
+exactly the same as well, we're
+going to grab these three lines,
+
+10639
+10:39:16,250 --> 10:39:19,490
+and paste them in deploy
+deployer chain ID, boom, it's
+
+10640
+10:39:19,490 --> 10:39:21,530
+all going to be the same here,
+because we're setting up to
+
+10641
+10:39:21,530 --> 10:39:25,100
+deploy some stuff. Now we want
+to deploy a new contract. But if
+
+10642
+10:39:25,100 --> 10:39:28,460
+we look at our contracts folder,
+this is all we have right now.
+
+10643
+10:39:28,580 --> 10:39:32,450
+So we're going to need to add
+this mock this fake contract to
+
+10644
+10:39:32,450 --> 10:39:35,330
+our contracts folder. Now what
+we can do is in our contracts
+
+10645
+10:39:35,330 --> 10:39:38,810
+folder, we want to separate this
+file from the rest of our file
+
+10646
+10:39:38,810 --> 10:39:41,900
+so that we know okay, this isn't
+part of our project, but it is
+
+10647
+10:39:41,900 --> 10:39:44,990
+part of our testing. So we're
+going to right click Create New
+
+10648
+10:39:44,990 --> 10:39:49,160
+Folder. And we can either call
+it mocks, or test I like to call
+
+10649
+10:39:49,160 --> 10:39:52,220
+mine test. And inside of this
+folder, we can go ahead and
+
+10650
+10:39:52,220 --> 10:39:54,890
+right click create a new file,
+I'm going to create a new file
+
+10651
+10:39:54,920 --> 10:40:01,940
+and call it mock, v3 aggregate
+tore that soul. And this is
+
+10652
+10:40:01,940 --> 10:40:05,360
+where we're going to define our
+mock price feed aggregator
+
+10653
+10:40:05,390 --> 10:40:09,650
+ourselves. So how can we create
+our own fake price feed
+
+10654
+10:40:09,650 --> 10:40:12,620
+contract, so we can test
+everything locally? Well, one
+
+10655
+10:40:12,620 --> 10:40:16,010
+thing we could do is we go to
+the chain link GitHub repo, and
+
+10656
+10:40:16,010 --> 10:40:18,470
+go through the contracts and
+find one of these price feed
+
+10657
+10:40:18,470 --> 10:40:22,640
+addresses, source eight, or
+maybe we'll go back to source
+
+10658
+10:40:22,640 --> 10:40:24,500
+we'll maybe we'll check in V
+six.
+
+10659
+10:40:26,360 --> 10:40:29,510
+Looks like we could find some
+stuff and look around and we
+
+10660
+10:40:29,510 --> 10:40:32,690
+probably copy paste all this
+code, but it really seems like
+
+10661
+10:40:32,690 --> 10:40:35,060
+kind of a huge pain in the butt
+to have to copy all this code.
+
+10662
+10:40:35,210 --> 10:40:38,210
+Now we absolutely could we copy
+paste the code in here, but
+
+10663
+10:40:38,210 --> 10:40:40,460
+we're gonna do something a
+little bit more clever. So the
+
+10664
+10:40:40,460 --> 10:40:44,750
+chainlink repo actually comes
+with some mocks. If we go to
+
+10665
+10:40:44,750 --> 10:40:52,040
+contracts, SRC V 0.6 tests They
+actually have a mock v3
+
+10666
+10:40:52,040 --> 10:40:56,210
+aggregator dot soul in here that
+we can use as our mock. So we
+
+10667
+10:40:56,210 --> 10:40:59,690
+can copy paste everything, but
+we'd have to revamp a little bit
+
+10668
+10:40:59,690 --> 10:41:03,080
+of it because it's doing some
+dot dot stuff. It's talking to
+
+10669
+10:41:03,080 --> 10:41:06,530
+other contracts that are locally
+in this file structure that are
+
+10670
+10:41:06,530 --> 10:41:10,010
+not going to be in our file
+structure. So instead though,
+
+10671
+10:41:10,040 --> 10:41:13,340
+what we can do is we can use
+this node modules package to our
+
+10672
+10:41:13,340 --> 10:41:19,130
+advantage, we can just say
+pragma, solidity, carrot zero,
+
+10673
+10:41:19,670 --> 10:41:22,610
+point 6.0, we'll use the same
+version that that package is
+
+10674
+10:41:22,610 --> 10:41:28,130
+doing. And then just do import
+at a chain link slash contracts
+
+10675
+10:41:28,160 --> 10:41:35,840
+slash SRC slash v 0.6. Slash
+tests slash mock, B, three egg,
+
+10676
+10:41:35,840 --> 10:41:40,340
+Reg, gay tore that soul. And
+then we'll add, and then of
+
+10677
+10:41:40,340 --> 10:41:46,040
+course, we'll add spdx, license
+identifier, MIT. And boom, this
+
+10678
+10:41:46,040 --> 10:41:50,930
+is actually all we need. If we
+just import the code like this,
+
+10679
+10:41:50,960 --> 10:41:54,830
+remember, this is exactly the
+same as copy pasting this
+
+10680
+10:41:54,830 --> 10:41:59,000
+contract into our project, of
+course, with this path resolve
+
+10681
+10:41:59,000 --> 10:42:03,140
+to where it actually is in our
+node modules. Now, actually, I
+
+10682
+10:42:03,140 --> 10:42:07,910
+can run yarn hardhat compile,
+and it will also compile this
+
+10683
+10:42:07,910 --> 10:42:12,350
+contract. Except for of course,
+we have an issue, hey, compiler
+
+10684
+10:42:12,350 --> 10:42:15,530
+versions don't match. Right?
+What's What's up with that now,
+
+10685
+10:42:15,560 --> 10:42:18,020
+you're going to get into
+situations where you will be
+
+10686
+10:42:18,020 --> 10:42:20,780
+working with contracts that are
+not the same version of solidity
+
+10687
+10:42:20,780 --> 10:42:23,840
+as you why well because
+contracts keep being deployed
+
+10688
+10:42:23,870 --> 10:42:26,660
+all the time. And there are a
+ton of contracts that are in
+
+10689
+10:42:26,660 --> 10:42:32,540
+version 0.4, solidity,
+0.5 0.678, and probably 910, or
+
+10690
+10:42:32,540 --> 10:42:35,180
+15 billion, or however many
+solidity versions will come to
+
+10691
+10:42:35,180 --> 10:42:38,930
+be. So in our config, in our
+hard hat dot config, when you
+
+10692
+10:42:38,930 --> 10:42:41,870
+scroll to the bottom, we can
+scroll to where we're defining
+
+10693
+10:42:41,900 --> 10:42:45,500
+our solidity version. And we can
+actually add multiple solidity
+
+10694
+10:42:45,500 --> 10:42:49,520
+versions, so that our compiler
+can compile multiple versions of
+
+10695
+10:42:49,520 --> 10:42:54,110
+solidity. To do that, we'll say,
+so Lyd, did T. And we'll turn it
+
+10696
+10:42:54,110 --> 10:42:57,890
+into an object here, we'll make
+sure to put this comma here. And
+
+10697
+10:42:57,890 --> 10:43:01,850
+inside our solidity object,
+we'll put compilers and we'll
+
+10698
+10:43:01,850 --> 10:43:05,840
+have a list of compilers. Our
+first one we'll say is version,
+
+10699
+10:43:06,260 --> 10:43:09,770
+zero, point 8.8. And we'll say
+our second one is going to be
+
+10700
+10:43:09,770 --> 10:43:15,080
+version 0.6, point six, and then
+we'll go ahead and save that.
+
+10701
+10:43:15,680 --> 10:43:17,900
+And it looks like mine wanted to
+format it like this, which is
+
+10702
+10:43:17,900 --> 10:43:21,830
+fine. Now, we can go ahead,
+rerun, yarn, Hardhead, compile,
+
+10703
+10:43:22,430 --> 10:43:26,360
+and boom, compiled five solidity
+files successfully. This means
+
+10704
+10:43:26,360 --> 10:43:29,840
+that our Mark V aggregator
+should also have been compiled.
+
+10705
+10:43:29,900 --> 10:43:34,340
+And if we look in artifacts, at
+chain link, do indeed see this
+
+10706
+10:43:34,340 --> 10:43:38,870
+at chain link slash contract
+slash SRC bid, and a v 0.6. In
+
+10707
+10:43:38,870 --> 10:43:41,570
+tests, we see this mock
+aggregator dot soul, which has
+
+10708
+10:43:41,570 --> 10:43:45,620
+been compiled. Awesome. So now
+that we have our mock contract
+
+10709
+10:43:45,650 --> 10:43:50,180
+compiled, we now have a contract
+that we can use to deploy a fake
+
+10710
+10:43:50,180 --> 10:43:53,660
+price feed to a blockchain. So
+how do we actually do this?
+
+10711
+10:43:53,780 --> 10:43:56,690
+Well, it's going to be the exact
+same way that we deployed the
+
+10712
+10:43:56,690 --> 10:43:59,420
+Funmi contract. But we're going
+to add a little if statement in
+
+10713
+10:43:59,420 --> 10:44:04,400
+here, we don't want to deploy
+this mock contract to a test net
+
+10714
+10:44:04,400 --> 10:44:08,390
+or a network that actually has a
+price feed on it, we could just
+
+10715
+10:44:08,390 --> 10:44:13,220
+do something like if chain ID
+does not equal, you know, some
+
+10716
+10:44:13,220 --> 10:44:17,270
+chain ID, then deploy marks,
+right. And then this is kind of
+
+10717
+10:44:17,270 --> 10:44:19,640
+pseudocode. Obviously, this code
+won't actually work. But
+
+10718
+10:44:19,640 --> 10:44:22,910
+instead, what I like is I
+actually like to specify which
+
+10719
+10:44:22,910 --> 10:44:25,550
+chains are going to be my
+development chains, which chains
+
+10720
+10:44:25,550 --> 10:44:29,600
+are going to be the one that I
+can deploy these mocks to, in my
+
+10721
+10:44:29,600 --> 10:44:32,960
+helper, hard hat config, I'll
+define these chains. So I'll say
+
+10722
+10:44:32,960 --> 10:44:38,630
+const, development chains,
+equals, and then I'll just say
+
+10723
+10:44:38,630 --> 10:44:45,980
+hard hat, and local host. I'll
+export these. And back in my
+
+10724
+10:44:45,980 --> 10:44:51,350
+deploy mocks, I'll import these
+with const. Development chains
+
+10725
+10:44:51,380 --> 10:44:58,040
+equals require dot dot slash
+helper Hardhead config. And now
+
+10726
+10:44:58,160 --> 10:45:06,170
+I'll say if development chains
+dot includes chain ID. This
+
+10727
+10:45:06,170 --> 10:45:10,040
+includes keyword basically is a
+function that checks to see if
+
+10728
+10:45:10,190 --> 10:45:13,430
+some variable is inside an
+array, then we're gonna go ahead
+
+10729
+10:45:13,430 --> 10:45:17,030
+and deploy Max, and which is
+what we want to do. So we'll do
+
+10730
+10:45:17,090 --> 10:45:19,760
+log, which we're getting from
+deployments, which is basically
+
+10731
+10:45:19,760 --> 10:45:24,980
+console dot log. And we'll say
+local network detected,
+
+10732
+10:45:25,640 --> 10:45:27,620
+deploying mocks.
+
+10733
+10:45:28,970 --> 10:45:34,940
+And we'll do a weight ploy, and
+we'll deploy our new mock v3
+
+10734
+10:45:34,940 --> 10:45:40,130
+aggregator mock v3 aggregator
+will do a comma. There a little
+
+10735
+10:45:40,130 --> 10:45:43,430
+colons here. If we want to get
+really specific, we can say
+
+10736
+10:45:43,430 --> 10:45:47,630
+contract v3 aggregator which
+we're kind of already saying
+
+10737
+10:45:47,660 --> 10:45:51,680
+we'll say from deployer We'll
+say logging is going to be true.
+
+10738
+10:45:53,030 --> 10:45:56,390
+And then we need to pass some
+arguments, we need to pass the
+
+10739
+10:45:56,390 --> 10:46:00,080
+constructor parameters for the
+mock v3 aggregator, which are
+
+10740
+10:46:00,170 --> 10:46:04,310
+what? Well, let's go to docs
+chain to link to find out. Or
+
+10741
+10:46:04,340 --> 10:46:09,800
+you can also just go to Node
+modules chainlink, SRC V 06,
+
+10742
+10:46:10,010 --> 10:46:13,790
+tests, and then all the way down
+to mock V three, aggregated out.
+
+10743
+10:46:13,790 --> 10:46:17,270
+So where you could also find the
+constructor in here, whatever
+
+10744
+10:46:17,270 --> 10:46:19,640
+one you like better, sometimes I
+find it easier just to read
+
+10745
+10:46:19,640 --> 10:46:24,680
+GitHub Ctrl plus F or Command
+plus F for constructor. We see
+
+10746
+10:46:25,160 --> 10:46:29,570
+it takes a decimals and an
+initial answer. And if we read
+
+10747
+10:46:29,570 --> 10:46:33,050
+through the code, we'll learn
+that the decimals object is
+
+10748
+10:46:33,050 --> 10:46:36,380
+going to be equivalent to the
+decimals parameter is going to
+
+10749
+10:46:36,380 --> 10:46:40,700
+be equivalent to this decimals
+function and the initial answer.
+
+10750
+10:46:40,970 --> 10:46:43,190
+And the initial answer is
+basically just going to be what
+
+10751
+10:46:43,190 --> 10:46:45,680
+is the price feed starting at,
+we actually get to pick the
+
+10752
+10:46:45,680 --> 10:46:48,710
+price of the price feed, which
+works out really well, because
+
+10753
+10:46:48,710 --> 10:46:51,170
+that works out great for
+testing. I usually like to
+
+10754
+10:46:51,170 --> 10:46:53,780
+define the decimals and the
+initial answers somewhere
+
+10755
+10:46:53,780 --> 10:46:57,050
+outside of this function so that
+I can access it later. One good
+
+10756
+10:46:57,050 --> 10:47:00,410
+place you can add it is once
+again in our helper Hardhead
+
+10757
+10:47:00,410 --> 10:47:06,740
+config.js. So I might do const
+decimals equals eight. And then
+
+10758
+10:47:06,740 --> 10:47:15,740
+const initial answer. Answer
+equals, and we'll do 2000. So
+
+10759
+10:47:15,770 --> 10:47:20,930
+since we have a decimals, we'll
+do 2000 And then 123456788
+
+10760
+10:47:20,930 --> 10:47:24,650
+decimal places, and then we'll
+export these as well. Export
+
+10761
+10:47:24,650 --> 10:47:28,760
+decimals, and export initial
+answer. We could of course, just
+
+10762
+10:47:28,760 --> 10:47:32,480
+do you know, const decimals
+equals eight at the top and then
+
+10763
+10:47:32,480 --> 10:47:35,540
+initial answer and then use them
+down here. But I like to do it
+
+10764
+10:47:35,540 --> 10:47:38,660
+like that. So Conce. So now we
+have to import them in here.
+
+10765
+10:47:39,260 --> 10:47:43,640
+const development chains. It's
+also grabbed decimals. It's also
+
+10766
+10:47:43,640 --> 10:47:47,120
+grabbed initial answer, we'll
+save it. We'll take a look back
+
+10767
+10:47:47,120 --> 10:47:49,550
+at the constructor looks like
+it's decimals first, initial
+
+10768
+10:47:49,550 --> 10:47:52,820
+answers second. So in our
+arguments, we'll do decimals
+
+10769
+10:47:52,820 --> 10:47:57,440
+first, initial answers second,
+and tada. And then we will be
+
+10770
+10:47:57,440 --> 10:48:01,940
+all done that we'll do a quick
+log box deployed. And then I
+
+10771
+10:48:01,940 --> 10:48:05,450
+also like to do kind of like a
+big line at the end of all of my
+
+10772
+10:48:05,450 --> 10:48:08,030
+deploy scripts just to be like,
+hey, that's the end of this
+
+10773
+10:48:08,030 --> 10:48:11,180
+deploy script. Anything else
+after this is going to be a
+
+10774
+10:48:11,180 --> 10:48:14,390
+different deploy script. All
+right, great. Now our deployed
+
+10775
+10:48:14,390 --> 10:48:17,600
+mocks script is actually done.
+But our deploy Funmi script
+
+10776
+10:48:17,840 --> 10:48:21,770
+isn't quite done. Is there a way
+that we could run only our
+
+10777
+10:48:21,770 --> 10:48:25,190
+deploy mock script? Well, yes,
+there is. Great, thanks for
+
+10778
+10:48:25,190 --> 10:48:27,890
+asking. What we can do at the
+bottom of our deploy mock script
+
+10779
+10:48:27,920 --> 10:48:35,000
+is we can add a module that
+exports dot tags, equals, and
+
+10780
+10:48:35,000 --> 10:48:40,430
+we'll say all and marks. Now
+what we can do is if we run
+
+10781
+10:48:40,430 --> 10:48:45,770
+yarn, hard hat deploy, we can
+add this flag dash dash tags.
+
+10782
+10:48:46,190 --> 10:48:50,540
+And it will only run the deploy
+scripts that have a special tag.
+
+10783
+10:48:50,930 --> 10:48:55,310
+So we'll run our mocks tag,
+which means it'll only run our
+
+10784
+10:48:55,310 --> 10:48:59,840
+deploy mock script. And, and
+oops, actually, in our helper
+
+10785
+10:48:59,840 --> 10:49:03,440
+config development chains is
+actually hard hat and localhost.
+
+10786
+10:49:03,440 --> 10:49:06,860
+And I said, we're going to try
+to do with the chain ID, sorry,
+
+10787
+10:49:06,890 --> 10:49:09,380
+we're going to do this, we're
+gonna do development chains dot
+
+10788
+10:49:09,380 --> 10:49:11,990
+includes network dot name.
+
+10789
+10:49:15,350 --> 10:49:19,880
+Because our helper config is
+using names and not chain IDs,
+
+10790
+10:49:19,910 --> 10:49:23,030
+so if development chains that
+includes that network the names,
+
+10791
+10:49:23,060 --> 10:49:25,670
+then we're gonna go ahead and
+deploy the mocks. So let's go
+
+10792
+10:49:25,670 --> 10:49:28,730
+ahead and run this yarn here and
+hit Deploy dash dash tags,
+
+10793
+10:49:28,730 --> 10:49:32,990
+mocks. And perfect we do indeed
+see our mocks getting deployed
+
+10794
+10:49:32,990 --> 10:49:36,620
+here. This log true means that
+it's going to spit out stuff
+
+10795
+10:49:36,620 --> 10:49:39,560
+like this. It'll say contract,
+it's deploying, it'll say the
+
+10796
+10:49:39,560 --> 10:49:42,830
+transaction it's doing and it'll
+say where it was deployed with
+
+10797
+10:49:42,830 --> 10:49:47,000
+how much gas and awesome This
+means our deployed Mach script
+
+10798
+10:49:47,000 --> 10:49:50,570
+is working perfectly. So now we
+have our deploy mocks script
+
+10799
+10:49:50,600 --> 10:49:54,170
+working perfectly. So how do we
+apply that back to our deploy
+
+10800
+10:49:54,200 --> 10:49:57,440
+Funmi script? Well, we're gonna
+do the exact same thing here.
+
+10801
+10:49:57,980 --> 10:50:01,070
+Instead of making eth USD price
+feed address constant variable,
+
+10802
+10:50:01,100 --> 10:50:04,700
+we're gonna say let at USD price
+you'd variable so that we can
+
+10803
+10:50:04,700 --> 10:50:09,800
+actually update it. And we'll
+say, if development chains dot
+
+10804
+10:50:09,800 --> 10:50:15,650
+includes network dot name, what
+we can do with hard hat deploy
+
+10805
+10:50:15,680 --> 10:50:19,010
+is we can just get the most
+recent deployment using a
+
+10806
+10:50:19,010 --> 10:50:23,840
+command called literally get. So
+we'll say const. eth USD
+
+10807
+10:50:23,840 --> 10:50:30,200
+aggregator equals await
+deployments dot get. And then
+
+10808
+10:50:30,200 --> 10:50:34,280
+the name of the contract that we
+deployed Mach v3 aggregator, and
+
+10809
+10:50:34,280 --> 10:50:37,040
+if you wanted to just do get
+instead of deployments dot get,
+
+10810
+10:50:37,220 --> 10:50:42,020
+we absolutely could, just by
+doing it like this. Those are
+
+10811
+10:50:42,020 --> 10:50:45,080
+exactly the same. So we'll get
+the address like this and then
+
+10812
+10:50:45,080 --> 10:50:52,400
+we'll say eth USD price feed
+address equals that eth USD
+
+10813
+10:50:52,400 --> 10:50:56,900
+aggregator contract dot address.
+And then if we're not on a
+
+10814
+10:50:56,900 --> 10:51:00,380
+development chain, if we didn't
+deploy a mock, we're just going
+
+10815
+10:51:00,380 --> 10:51:04,160
+to do exactly what we did
+before. With using the network
+
+10816
+10:51:04,160 --> 10:51:09,740
+config. Oh, my goodness. Now,
+now that we've done all of these
+
+10817
+10:51:09,740 --> 10:51:13,070
+steps, let's add a little log
+thing at the bottom here with
+
+10818
+10:51:13,070 --> 10:51:18,260
+just a bunch of hyphens. Now, we
+should have a very robust script
+
+10819
+10:51:18,440 --> 10:51:22,340
+to flip between a local
+development chain, a test net
+
+10820
+10:51:22,340 --> 10:51:25,820
+chain, a main net chain, and
+allow us to deploy literally
+
+10821
+10:51:25,820 --> 10:51:29,330
+everywhere without changing any
+of our solidity. And then we
+
+10822
+10:51:29,330 --> 10:51:33,770
+just take this, this eth USD
+price feed address and stick it
+
+10823
+10:51:34,460 --> 10:51:38,450
+into logs here. And then at the
+bottom, we can do module dot
+
+10824
+10:51:38,450 --> 10:51:43,490
+exports, dot tags equals and
+then we'll just do all and then
+
+10825
+10:51:43,490 --> 10:51:48,650
+we'll call this one Funmi. Oh,
+now moment of truth. If we did
+
+10826
+10:51:48,650 --> 10:51:52,430
+all this, right, we should just
+be able to run yarn, hard hat
+
+10827
+10:51:52,430 --> 10:51:57,110
+deploy. And it should work on
+our local chain, our hard hat
+
+10828
+10:51:57,110 --> 10:52:00,500
+chain. And then it should also
+work on any test net that we
+
+10829
+10:52:00,500 --> 10:52:03,950
+give it. So let's give this a
+try. Yarn, Hardhead deploy.
+
+10830
+10:52:04,340 --> 10:52:07,460
+Let's see if this works.
+Awesome. And we got this all to
+
+10831
+10:52:07,460 --> 10:52:11,780
+deploy locally to our Hard Hat
+Network, we can see that we went
+
+10832
+10:52:11,780 --> 10:52:14,780
+ahead and we deployed mocks, we
+did our little underline here.
+
+10833
+10:52:15,170 --> 10:52:18,020
+And then we deployed Funmi
+deployed at this address with
+
+10834
+10:52:18,050 --> 10:52:21,560
+this much gas. Now, what are the
+other awesome things about hard
+
+10835
+10:52:21,560 --> 10:52:24,680
+hat deploy? When we run our
+local blockchain, our own
+
+10836
+10:52:24,680 --> 10:52:28,880
+blockchain node, hard hat deploy
+will automatically run through
+
+10837
+10:52:29,060 --> 10:52:33,290
+all of our deploy scripts and
+add them to our node. So now if
+
+10838
+10:52:33,290 --> 10:52:38,420
+I run yarn, hard hat node, we're
+going to spin up a new
+
+10839
+10:52:38,420 --> 10:52:41,690
+blockchain node, but it's
+already going to have all of our
+
+10840
+10:52:41,690 --> 10:52:45,140
+deployed contracts on it. So
+every time we spin up a local
+
+10841
+10:52:45,140 --> 10:52:48,530
+node, now it's going to come
+automatically packed with the
+
+10842
+10:52:48,530 --> 10:52:54,500
+contracts that we want on it. So
+we are going to show us doing
+
+10843
+10:52:54,500 --> 10:52:57,740
+this on a test net on Rinkeby.
+But before we actually test it
+
+10844
+10:52:57,740 --> 10:53:00,530
+on Rinkeby, I'm going to add a
+little bit of the auto
+
+10845
+10:53:00,530 --> 10:53:03,440
+verification piece in here as
+well, because we did that in the
+
+10846
+10:53:03,440 --> 10:53:06,290
+last lesson. And we wanted to
+show how to do it in hard hat
+
+10847
+10:53:06,290 --> 10:53:09,770
+deploy as well. So right after
+we deploy our Funmi, we can do
+
+10848
+10:53:09,770 --> 10:53:13,100
+something similar here, we'll
+say, if developer chains
+
+10849
+10:53:13,100 --> 10:53:17,150
+includes network dot name, we'll
+say if developer chains doesn't
+
+10850
+10:53:17,150 --> 10:53:19,670
+include network dot name,
+because we don't want to verify
+
+10851
+10:53:19,700 --> 10:53:25,010
+on a local network. So we'll say
+if not development chains dot
+
+10852
+10:53:25,010 --> 10:53:28,670
+includes network dot name, the
+exclamation mark, aka the bang
+
+10853
+10:53:29,000 --> 10:53:32,690
+means not when we're talking
+about booleans. So we're saying,
+
+10854
+10:53:32,960 --> 10:53:36,080
+if the name of the network isn't
+a development chain, we want to
+
+10855
+10:53:36,080 --> 10:53:41,450
+go ahead and verify and same as
+last time. And if process dot e
+
+10856
+10:53:41,450 --> 10:53:45,170
+NV dot ether scan API key,
+
+10857
+10:53:46,490 --> 10:53:50,270
+then we're going to go ahead and
+verify. Now before we had our
+
+10858
+10:53:50,270 --> 10:53:53,450
+verify code, right in our deploy
+code, we're gonna do something a
+
+10859
+10:53:53,450 --> 10:53:56,450
+little bit different here.
+Instead of having our verify
+
+10860
+10:53:56,450 --> 10:53:59,810
+code in our deploy scripts here,
+we're actually going to create a
+
+10861
+10:53:59,810 --> 10:54:04,250
+new folder called utils, which
+stands for utilities. And this
+
+10862
+10:54:04,250 --> 10:54:07,010
+is where we're going to add
+different scripts that we can
+
+10863
+10:54:07,010 --> 10:54:09,200
+use across different
+deployments. Because let's say
+
+10864
+10:54:09,200 --> 10:54:12,320
+we have 50 Deploy scripts, we're
+not going to make 50 Deploy
+
+10865
+10:54:12,320 --> 10:54:15,350
+functions, we're just going to
+add them to our utils folder,
+
+10866
+10:54:15,470 --> 10:54:19,460
+and in our utils folder, or
+create a new file called verify
+
+10867
+10:54:19,580 --> 10:54:23,270
+dot j s, we're going to add that
+code from our last project in
+
+10868
+10:54:23,270 --> 10:54:26,540
+here. So if you want, you can go
+ahead copy paste from our last
+
+10869
+10:54:26,540 --> 10:54:30,200
+project over to this one, or you
+can pause the video to type it
+
+10870
+10:54:30,200 --> 10:54:33,320
+out yourself. Since we're using
+the run command here, we're
+
+10871
+10:54:33,320 --> 10:54:38,810
+gonna do const run equals
+require RT hat. And then at the
+
+10872
+10:54:38,810 --> 10:54:47,750
+bottom, we're going to do module
+exports. Exports equals verify.
+
+10873
+10:54:48,470 --> 10:54:53,180
+Now that we have a verify script
+in our utils folder, back in our
+
+10874
+10:54:53,180 --> 10:54:59,090
+deploy Funmi we're going to say
+const. Verify equals require dot
+
+10875
+10:54:59,090 --> 10:55:04,970
+dot slash utils. Slash verify.
+And since now in our verified
+
+10876
+10:55:05,000 --> 10:55:08,540
+Jas, we have a lot of this
+trycatch stuff in here, we can
+
+10877
+10:55:08,540 --> 10:55:15,140
+just do a wait. Verify and a
+verify once again takes a
+
+10878
+10:55:15,140 --> 10:55:18,320
+contract address and a list of
+arguments. We'll say await
+
+10879
+10:55:18,350 --> 10:55:24,680
+verify, fund me dot address and
+then the list of arguments. To
+
+10880
+10:55:24,680 --> 10:55:27,740
+make the list of arguments
+easier to put in. You can go
+
+10881
+10:55:27,740 --> 10:55:32,540
+const args, equals and then
+we'll just stick our eth USD
+
+10882
+10:55:32,540 --> 10:55:37,640
+price feed in here and then
+replace this with args and then
+
+10883
+10:55:37,640 --> 10:55:42,410
+take this args and pop it on
+down into the second parameter
+
+10884
+10:55:42,410 --> 10:55:48,560
+here. All right, great. Now
+let's go ahead and deploy this
+
+10885
+10:55:48,590 --> 10:55:51,470
+to With the Rinkeby test net,
+and what do we need to deploy
+
+10886
+10:55:51,470 --> 10:55:53,900
+this to the Rinkeby test net?
+Well, let's jump into our hard
+
+10887
+10:55:53,900 --> 10:55:57,140
+hat config first. And let's
+clean this up, we don't really
+
+10888
+10:55:57,140 --> 10:56:00,410
+need this accounts task, so I'm
+just going to delete it, I don't
+
+10889
+10:56:00,410 --> 10:56:03,710
+really need this comment. So I'm
+going to delete this too. And
+
+10890
+10:56:03,710 --> 10:56:06,470
+let's jump into the network
+section, we're not going to be
+
+10891
+10:56:06,470 --> 10:56:09,560
+working with ropsten. So we're
+gonna go ahead and dump that. We
+
+10892
+10:56:09,560 --> 10:56:13,370
+are however, going to be working
+with rink B, the URL is going to
+
+10893
+10:56:13,370 --> 10:56:18,410
+be that same Rinkeby RPC URL. So
+we're going to define that up
+
+10894
+10:56:18,410 --> 10:56:21,950
+here, like we did before. And if
+you want to copy paste from your
+
+10895
+10:56:21,950 --> 10:56:25,280
+last project, feel free to do so
+you can also follow along with
+
+10896
+10:56:25,280 --> 10:56:38,540
+me or fastforward me the counts
+is going to be the same. I'm
+
+10897
+10:56:38,540 --> 10:56:41,360
+going to go ahead and just copy
+paste the gas reporter with what
+
+10898
+10:56:41,360 --> 10:56:44,960
+we had from before. So we're
+going to add this constant corn
+
+10899
+10:56:44,960 --> 10:56:49,340
+market cap API key equals
+process dot EMV dot corn market
+
+10900
+10:56:49,340 --> 10:56:53,600
+cap API key. Do the same thing
+with the ether scan API key
+
+10901
+10:56:53,600 --> 10:57:00,920
+Licious add everything in here.
+Now. We have our ether scan
+
+10902
+10:57:00,920 --> 10:57:04,160
+section in here already, we're
+gonna have our gas reporter be
+
+10903
+10:57:04,160 --> 10:57:06,800
+false, because I don't really
+feel like using it right now.
+
+10904
+10:57:07,070 --> 10:57:09,920
+And then finally, we're going to
+add one more thing in here.
+
+10905
+10:57:10,130 --> 10:57:12,830
+Remember how in our last
+project, before we actually
+
+10906
+10:57:12,830 --> 10:57:16,100
+verified we waited some block
+confirmations. That way ether
+
+10907
+10:57:16,100 --> 10:57:19,130
+scan could make sure to catch
+up. Well, we can do the exact
+
+10908
+10:57:19,130 --> 10:57:22,910
+same thing in here in our hard
+hat dot config, we can add a
+
+10909
+10:57:22,910 --> 10:57:26,300
+section for each test net for
+how many blocks we want to wait,
+
+10910
+10:57:26,570 --> 10:57:33,320
+I'm going to add block
+confirmations of six. Now back
+
+10911
+10:57:33,320 --> 10:57:36,920
+on our deploy Funmi. In a new
+section, I can add wait
+
+10912
+10:57:37,130 --> 10:57:46,340
+confirmations of network dot
+config. That block on for
+
+10913
+10:57:47,180 --> 10:57:53,480
+motions, or one is or one means
+if no block confirmations is
+
+10914
+10:57:53,480 --> 10:57:57,110
+given in our Hardhead dot config
+will just wait for one block.
+
+10915
+10:57:57,290 --> 10:57:59,960
+And again, the reason we want to
+wait for approximately six block
+
+10916
+10:57:59,960 --> 10:58:03,410
+confirmations is we want to give
+ether scan a chance to index our
+
+10917
+10:58:03,410 --> 10:58:07,490
+transaction. And I added a chain
+ID 42 when it should be for my
+
+10918
+10:58:07,490 --> 10:58:11,240
+mistake. And of course, we're
+going to need our dot env file,
+
+10919
+10:58:11,420 --> 10:58:14,660
+where we add all of our stuff
+from the last session, the RIP
+
+10920
+10:58:14,660 --> 10:58:18,650
+ERP CRL private key ether scan
+API and then coin market cap
+
+10921
+10:58:18,650 --> 10:58:23,000
+API. All right moment of truth.
+Let's try this out. If we run
+
+10922
+10:58:23,000 --> 10:58:30,020
+yarn Hardhead deploy dash dash
+network Rinkeby. It should not
+
+10923
+10:58:30,050 --> 10:58:34,040
+deploy any marks because we have
+this if statement in our mock
+
+10924
+10:58:34,040 --> 10:58:39,050
+deployment. But it should deploy
+our Funmi contract using the
+
+10925
+10:58:39,050 --> 10:58:43,250
+correct price feed address. And
+then it'll go ahead and verify
+
+10926
+10:58:43,250 --> 10:58:47,300
+it. Since we're waiting for six
+block confirmations, we can even
+
+10927
+10:58:47,300 --> 10:58:51,500
+be super secure by adding dash
+dash tags and just running the
+
+10928
+10:58:51,500 --> 10:58:55,790
+funding tag. But we're just
+going to do yarn hearted deploy
+
+10929
+10:58:55,820 --> 10:58:59,930
+network Rigby. And let's see
+what happens. All right, and
+
+10930
+10:58:59,930 --> 10:59:03,950
+we're deploying funding. And we
+can see the transaction that we
+
+10931
+10:59:03,950 --> 10:59:08,630
+have for fun me, this is that
+logging feature, we have log is
+
+10932
+10:59:08,630 --> 10:59:12,860
+true for deploying Funmi. So it
+gives us the transaction once it
+
+10933
+10:59:12,860 --> 10:59:16,160
+has a transaction, and it will
+give us the address once we have
+
+10934
+10:59:16,160 --> 10:59:20,120
+the address. So we're going to
+wait six block confirmations for
+
+10935
+10:59:20,120 --> 10:59:23,240
+this transaction to finish going
+through. Now we see we've
+
+10936
+10:59:23,240 --> 10:59:27,230
+deployed this contract address
+with X amount of gas. And now
+
+10937
+10:59:27,260 --> 10:59:30,410
+we're running the verification
+process. While the verification
+
+10938
+10:59:30,410 --> 10:59:35,630
+process is running, we can pull
+up Rinkeby ether scan, paste our
+
+10939
+10:59:35,630 --> 10:59:39,560
+address in here and see that we
+have indeed created this
+
+10940
+10:59:39,560 --> 10:59:42,620
+contract. And now it looks like
+we've successfully verified the
+
+10941
+10:59:42,620 --> 10:59:46,760
+contract on ether scan. So if we
+hit refresh, we can indeed see
+
+10942
+10:59:46,790 --> 10:59:50,030
+that the contract has been
+verified. Awesome. All right. So
+
+10943
+10:59:50,030 --> 10:59:53,570
+this is fantastic. Our deploy
+script is looking great, we're
+
+10944
+10:59:53,570 --> 10:59:57,110
+able to deploy to a local chain,
+we're able to deploy to a test
+
+10945
+10:59:57,110 --> 11:00:00,050
+that and if we wanted to, we
+could deploy to any network that
+
+10946
+11:00:00,050 --> 11:00:03,860
+we wanted simply by updating our
+hard hat config, and then
+
+10947
+11:00:03,890 --> 11:00:07,700
+updating our helper config. This
+is fantastic.
+
+10948
+11:00:07,730 --> 11:00:13,610
+Great work so far. Now we're
+about to jump in and level up
+
+10949
+11:00:13,610 --> 11:00:16,430
+our tests. But before we do
+that, we're going to clean up
+
+10950
+11:00:16,460 --> 11:00:19,130
+our Funmi contract a little bit
+to make it look a little bit
+
+10951
+11:00:19,130 --> 11:00:22,190
+more professional. And I'm going
+to talk about some of the syntax
+
+10952
+11:00:22,190 --> 11:00:25,520
+and some of the reasons why some
+conventions exist. We're not
+
+10953
+11:00:25,520 --> 11:00:28,970
+going to do this full force on
+all the projects moving forward.
+
+10954
+11:00:29,210 --> 11:00:31,820
+But they are good to know and
+they are good to keep in mind
+
+10955
+11:00:31,910 --> 11:00:35,330
+when moving forward and working
+with our contracts. While we go
+
+10956
+11:00:35,330 --> 11:00:37,640
+through this we're going to
+learn why some of these
+
+10957
+11:00:37,640 --> 11:00:40,460
+conventions exist including
+learning a little bit of low
+
+10958
+11:00:40,460 --> 11:00:43,400
+level solidity. So don't skip
+this part. When we get to later
+
+10959
+11:00:43,400 --> 11:00:46,460
+sections. We're going to be a
+little bit looser and not be as
+
+10960
+11:00:46,460 --> 11:00:49,700
+strict with the code style
+guides but That's basically what
+
+10961
+11:00:49,700 --> 11:00:52,400
+we're gonna go over now. And for
+now, you might see this event
+
+10962
+11:00:52,400 --> 11:00:55,250
+funded thing here, please just
+ignore that for now, in an
+
+10963
+11:00:55,250 --> 11:00:58,730
+earlier take, I'd introduced the
+events much earlier. And now
+
+10964
+11:00:58,730 --> 11:01:00,530
+we're actually going to learn
+about events a little bit later
+
+10965
+11:01:00,530 --> 11:01:04,070
+in the course. So please ignore
+that event funded for now. So
+
+10966
+11:01:04,070 --> 11:01:06,380
+let's go ahead and tweak a
+little bit of our contracts
+
+10967
+11:01:06,380 --> 11:01:08,900
+here. Now what I'm talking about
+tweaking this to make it look
+
+10968
+11:01:08,900 --> 11:01:11,240
+professional, a little bit more
+professional, I'm talking about
+
+10969
+11:01:11,240 --> 11:01:14,690
+the solidity style guide, there
+are some conventions for naming
+
+10970
+11:01:14,690 --> 11:01:17,810
+and ordering that we can follow
+to make our code look a little
+
+10971
+11:01:17,810 --> 11:01:20,390
+bit better. Now, like I said,
+this is going to be a little bit
+
+10972
+11:01:20,390 --> 11:01:23,360
+more optional, because it can be
+a little bit verbose. And it
+
+10973
+11:01:23,510 --> 11:01:26,330
+doesn't really make that big of
+a difference. But it can
+
+10974
+11:01:26,330 --> 11:01:29,870
+increase readability of your
+contracts by a lot and make your
+
+10975
+11:01:29,870 --> 11:01:33,350
+code look a lot nicer. So if you
+want, you can go through this
+
+10976
+11:01:33,380 --> 11:01:36,800
+style guide to learn more about
+what kind of makes solidity look
+
+10977
+11:01:36,800 --> 11:01:39,290
+nice, and what makes it not look
+nice. But well, that's some of
+
+10978
+11:01:39,290 --> 11:01:41,360
+these style guides in here,
+we're not going to follow the
+
+10979
+11:01:41,360 --> 11:01:44,090
+style guide exactly to a tee.
+But we are going to make some
+
+10980
+11:01:44,090 --> 11:01:47,060
+best efforts to make our code
+follow the style guide, we've
+
+10981
+11:01:47,060 --> 11:01:50,150
+got a link to the style guide in
+the GitHub repository for this
+
+10982
+11:01:50,150 --> 11:01:53,210
+section, we can read some more
+about the layout. But the main
+
+10983
+11:01:53,210 --> 11:01:55,700
+thing we want to look at is this
+order of the layout, we want to
+
+10984
+11:01:55,700 --> 11:01:59,180
+start with our imports with our
+pragma statement, our imports,
+
+10985
+11:01:59,210 --> 11:02:02,450
+interfaces, libraries, and then
+contracts. And then inside each
+
+10986
+11:02:02,450 --> 11:02:05,480
+contract type declarations,
+state variables, events,
+
+10987
+11:02:05,510 --> 11:02:08,990
+modifiers, and functions. So
+let's go back here and make sure
+
+10988
+11:02:08,990 --> 11:02:12,530
+that we're up to speed, we want
+our pragma first. Alright,
+
+10989
+11:02:12,530 --> 11:02:16,610
+awesome, we did exactly that,
+then we want our imports. Okay,
+
+10990
+11:02:16,640 --> 11:02:19,460
+awesome, we have those too.
+Something that's not in the
+
+10991
+11:02:19,460 --> 11:02:22,820
+style guide is going to be error
+codes, which we definitely want
+
+10992
+11:02:22,820 --> 11:02:27,140
+next. So next is going to be
+error codes. Now this is where
+
+10993
+11:02:27,140 --> 11:02:30,410
+we're going to bump into one of
+our first updates here. As of
+
+10994
+11:02:30,410 --> 11:02:34,400
+recent, it's sort of becoming a
+best practice to add the name of
+
+10995
+11:02:34,400 --> 11:02:37,820
+your contract, some underscores,
+and then the name of your error.
+
+10996
+11:02:38,000 --> 11:02:40,580
+Whenever you're running into an
+error. This makes it a lot
+
+10997
+11:02:40,610 --> 11:02:43,970
+easier to understand which
+contract is throwing the error.
+
+10998
+11:02:44,030 --> 11:02:48,350
+So for this, we're going to say
+error Funmi, two underscores not
+
+10999
+11:02:48,350 --> 11:02:52,190
+owner, then we're going to
+scroll down to the our revert
+
+11000
+11:02:52,490 --> 11:02:56,120
+and set it like this. This way,
+when if we ever run into this
+

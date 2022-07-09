@@ -1,0 +1,4992 @@
+7001
+06:54:46,390 --> 06:54:49,660
+typing that whole thing out, as
+long as we're in the same folder
+
+7002
+06:54:49,660 --> 06:54:54,340
+that our package json is in, we
+can run yarn compile. And this
+
+7003
+06:54:54,340 --> 06:54:57,880
+will run that whole script for
+us without us having to type the
+
+7004
+06:54:57,880 --> 06:55:00,550
+whole thing out scripts are a
+really useful way to make it
+
+7005
+06:55:00,580 --> 06:55:03,760
+easier for us to run long
+commands. All right, great. Now
+
+7006
+06:55:03,760 --> 06:55:07,270
+we have our code compiled, this
+is going to be equivalent to US
+
+7007
+06:55:07,270 --> 06:55:10,300
+hitting this compile button for
+us to actually go ahead and
+
+7008
+06:55:10,300 --> 06:55:10,780
+deploy.
+
+7009
+06:55:13,570 --> 06:55:16,060
+So now we have our simple
+storage. That's all compiled,
+
+7010
+06:55:16,330 --> 06:55:19,750
+let's learn how we can actually
+deploy this thing. Remember, in
+
+7011
+06:55:19,750 --> 06:55:22,780
+remix, we actually deployed it
+to one of two different places,
+
+7012
+06:55:22,900 --> 06:55:27,250
+we deployed it to either a
+JavaScript VM, or with our
+
+7013
+06:55:27,250 --> 06:55:31,180
+injected web three, with our
+Metamask. Let's learn first ad,
+
+7014
+06:55:31,180 --> 06:55:34,450
+do the JavaScript VM. And then
+we'll learn how to use the
+
+7015
+06:55:34,450 --> 06:55:38,410
+injected web three, or a meta
+mask or some connection to an
+
+7016
+06:55:38,410 --> 06:55:41,530
+actual test net. So in order to
+deploy this to a JavaScript
+
+7017
+06:55:41,530 --> 06:55:44,710
+virtual invite I'm in or kind of
+a fake blockchain, we're gonna
+
+7018
+06:55:44,710 --> 06:55:48,190
+need to get a fake blockchain.
+Now in the future, we're going
+
+7019
+06:55:48,190 --> 06:55:51,550
+to be using the Hardhead runtime
+environment as our JavaScript
+
+7020
+06:55:51,550 --> 06:55:55,810
+virtual machine or aka our fake
+blockchain. But for this
+
+7021
+06:55:55,810 --> 06:55:59,440
+section, I want us to use a tool
+called ganache. There's a link
+
+7022
+06:55:59,440 --> 06:56:02,320
+to this in the GitHub
+repository. Ganache is similar
+
+7023
+06:56:02,320 --> 06:56:06,220
+to a virtual machine in remix.
+It's a fake blockchain that we
+
+7024
+06:56:06,220 --> 06:56:10,390
+can run locally to actually
+test, deploy and run code. It's
+
+7025
+06:56:10,390 --> 06:56:14,200
+also a nice way to see things
+that are going on in a
+
+7026
+06:56:14,200 --> 06:56:17,500
+blockchain. Let's go ahead and
+spin up the ganache application
+
+7027
+06:56:17,500 --> 06:56:20,320
+after you install it, the
+ganache application will look a
+
+7028
+06:56:20,320 --> 06:56:24,220
+little something like this. And
+to spin up a fake blockchain
+
+7029
+06:56:24,220 --> 06:56:28,150
+really quickly, you can just go
+ahead and click Quickstart. This
+
+7030
+06:56:28,150 --> 06:56:31,390
+will spin up a fake blockchain
+that's running locally on your
+
+7031
+06:56:31,390 --> 06:56:35,170
+computer right here, which is
+fantastic. It comes with a whole
+
+7032
+06:56:35,170 --> 06:56:39,370
+bunch of fake accounts exactly
+like how remix comes with a ton
+
+7033
+06:56:39,370 --> 06:56:42,940
+of fake accounts with 100 ether
+each ganache comes with a bunch
+
+7034
+06:56:42,940 --> 06:56:46,750
+of fake accounts with 100 ether
+each. They also come with the
+
+7035
+06:56:46,750 --> 06:56:50,770
+private keys that we can use in
+our applications to actually
+
+7036
+06:56:50,800 --> 06:56:54,310
+take control of these fake
+accounts. Remember, don't use
+
+7037
+06:56:54,310 --> 06:56:56,620
+these private keys on a public
+blockchain. They're for
+
+7038
+06:56:56,620 --> 06:56:59,530
+development purposes only
+because a lot of people know
+
+7039
+06:56:59,530 --> 06:57:02,710
+these private keys in our code.
+One of the first things that
+
+7040
+06:57:02,710 --> 06:57:05,440
+we're going to need to do is
+actually connect to our
+
+7041
+06:57:05,440 --> 06:57:09,100
+blockchain remix does this a
+little bit behind the scenes, if
+
+7042
+06:57:09,100 --> 06:57:12,160
+we're choosing JavaScript
+virtual machine remix chooses
+
+7043
+06:57:12,160 --> 06:57:15,760
+its own fake blockchain that it
+runs. If we choose injected web
+
+7044
+06:57:15,760 --> 06:57:19,420
+three, as we know, meta mask
+pops up, and it connects to our
+
+7045
+06:57:19,420 --> 06:57:22,120
+meta mask, this connection that
+remix does, is actually doing
+
+7046
+06:57:22,120 --> 06:57:25,600
+something really interesting.
+It's not just connecting to our
+
+7047
+06:57:25,600 --> 06:57:29,140
+meta mask by some magical
+powers. It's actually connecting
+
+7048
+06:57:29,140 --> 06:57:32,530
+to our meta mask, which has a
+connection to the blockchain
+
+7049
+06:57:32,560 --> 06:57:36,040
+behind the scenes. If you open
+up your meta mask, and you go
+
+7050
+06:57:36,040 --> 06:57:39,580
+down to you select the networks
+and you select ad networks,
+
+7051
+06:57:40,000 --> 06:57:43,570
+you'll get popped up into a UI
+that looks like this. If we go
+
+7052
+06:57:43,570 --> 06:57:47,530
+back and hit select networks
+over here, we can actually see
+
+7053
+06:57:47,650 --> 06:57:50,290
+information about these
+different networks. One of the
+
+7054
+06:57:50,290 --> 06:57:53,230
+main things that we can see is
+that all these networks have
+
+7055
+06:57:53,260 --> 06:57:58,480
+something called an RPC URL. RPC
+stands for remote procedure
+
+7056
+06:57:58,480 --> 06:58:03,820
+call. And then URL is uniform
+resource locator. This RPC URL
+
+7057
+06:58:04,030 --> 06:58:07,750
+stands for a connection to a
+blockchain node that somebody is
+
+7058
+06:58:07,750 --> 06:58:12,370
+running this this URL connects
+us to make API calls and to
+
+7059
+06:58:12,370 --> 06:58:15,790
+interact with a blockchain node.
+Blockchain nodes run with
+
+7060
+06:58:15,790 --> 06:58:19,810
+software, and some of them
+expose an API call. If you look
+
+7061
+06:58:19,810 --> 06:58:23,590
+at the NGO Aetherium website,
+there actually are instructions
+
+7062
+06:58:23,620 --> 06:58:26,560
+for you to run your own
+blockchain node for a real
+
+7063
+06:58:26,560 --> 06:58:30,370
+blockchain like Aetherium. Most
+of these have flags like dash
+
+7064
+06:58:30,370 --> 06:58:36,250
+HTTP dot ADR to expose these RPC
+endpoints. So if you ever want
+
+7065
+06:58:36,250 --> 06:58:39,430
+to run your own node, your own
+real blockchain node, instead of
+
+7066
+06:58:39,430 --> 06:58:42,250
+using meta masks or any other
+the providers that we're going
+
+7067
+06:58:42,250 --> 06:58:44,410
+to go through, you can use go
+Aetherium, or whatever
+
+7068
+06:58:44,410 --> 06:58:47,080
+blockchain you're working with
+software to run your own notes.
+
+7069
+06:58:47,110 --> 06:58:50,770
+But it's this RPC URL that
+allows us to connect to Rinkeby,
+
+7070
+06:58:50,800 --> 06:58:54,730
+if on Rinkeby ropsten, if we're
+on ropsten main net if we're on
+
+7071
+06:58:54,730 --> 06:58:57,550
+Main net, etc. And it's going to
+be the way that we're going to
+
+7072
+06:58:57,550 --> 06:59:01,210
+connect to our ganache
+blockchain that we're running
+
+7073
+06:59:01,270 --> 06:59:04,660
+inside of this application. So
+if you look at the top of your
+
+7074
+06:59:04,660 --> 06:59:08,710
+ganache here, there's a section
+called the RPC server. And this
+
+7075
+06:59:08,710 --> 06:59:11,830
+is the endpoint of our ganache
+node right now. So what we can
+
+7076
+06:59:11,830 --> 06:59:16,420
+do is we can copy this and go
+back to our VS code, and paste
+
+7077
+06:59:16,420 --> 06:59:20,110
+it in here to see if we can
+connect instead of HTTP. With
+
+7078
+06:59:20,110 --> 06:59:22,240
+these capitals, we're gonna have
+a B lowercase instead of the
+
+7079
+06:59:22,270 --> 06:59:25,270
+uppercase, because the lowercase
+is more correct, and it looks
+
+7080
+06:59:25,270 --> 06:59:27,910
+nicer. But now we have the
+endpoint. Hypothetically, with
+
+7081
+06:59:27,910 --> 06:59:31,870
+just this, we can start making
+calls and API calls to this
+
+7082
+06:59:31,870 --> 06:59:35,740
+endpoint, go to this JSON RPC
+specification. Again, link will
+
+7083
+06:59:35,740 --> 06:59:38,950
+be in the GitHub repo, we can
+actually see different calls we
+
+7084
+06:59:38,950 --> 06:59:42,310
+can make directly to our node to
+get different information. eath
+
+7085
+06:59:42,310 --> 06:59:45,910
+get blocked by hash eath get
+blocked by number. And all of
+
+7086
+06:59:45,910 --> 06:59:49,450
+these wonderful pieces in here.
+Making these API calls directly
+
+7087
+06:59:49,450 --> 06:59:52,630
+is is a little bit annoying to
+do ourselves. If you want to do
+
+7088
+06:59:52,630 --> 06:59:56,680
+it yourself, you absolutely can
+using an API endpoint like Axios
+
+7089
+06:59:56,770 --> 06:59:59,560
+or fetch. However, we're going
+to use a rapper to interact with
+
+7090
+06:59:59,560 --> 07:00:02,710
+our node and do things like
+deploy and interact and other
+
+7091
+07:00:02,710 --> 07:00:06,280
+such things with our blockchain
+node. This is finally where
+
+7092
+07:00:06,460 --> 07:00:07,420
+ethers comes
+
+7093
+07:00:07,420 --> 07:00:13,780
+into play. Ethers js is one of
+the most popular JavaScript
+
+7094
+07:00:13,780 --> 07:00:16,840
+based tooling kits, that allows
+us to interact with different
+
+7095
+07:00:16,840 --> 07:00:20,590
+blockchains and has all these
+rappers that make all these API
+
+7096
+07:00:20,590 --> 07:00:24,190
+calls and do all these things
+with Aetherium, and polygon and
+
+7097
+07:00:24,190 --> 07:00:27,430
+avalanche and any EVM compatible
+chain. The other incredibly
+
+7098
+07:00:27,430 --> 07:00:30,100
+popular package that does the
+same thing is going to be web
+
+7099
+07:00:30,100 --> 07:00:32,500
+three.js. And you've probably
+heard about this and you'll
+
+7100
+07:00:32,500 --> 07:00:34,840
+probably see it a little bit
+more throughout this course and
+
+7101
+07:00:34,840 --> 07:00:36,940
+throughout your web three
+journey. The reason that we're
+
+7102
+07:00:36,940 --> 07:00:40,540
+using ethers is that ethers is
+the main tool that powers the
+
+7103
+07:00:40,540 --> 07:00:43,780
+hard hat environment and I
+really enjoy it myself. And
+
+7104
+07:00:43,780 --> 07:00:46,060
+remember, if you ever get lost
+with any of this, you can always
+
+7105
+07:00:46,060 --> 07:00:49,360
+come back to their documentation
+to install it. As you can see
+
+7106
+07:00:49,360 --> 07:00:52,480
+here, you can just run npm
+install ethers, we're just going
+
+7107
+07:00:52,480 --> 07:00:55,330
+to do yarn, add ethers.
+
+7108
+07:00:56,950 --> 07:01:01,030
+And now you should see in your
+package json, we now have ethers
+
+7109
+07:01:01,030 --> 07:01:04,150
+added in here. Awesome. Now back
+in our code, we're going to
+
+7110
+07:01:04,150 --> 07:01:07,090
+import ethers into our
+deployed.js script so that we
+
+7111
+07:01:07,090 --> 07:01:09,640
+can use all the wonderful tools
+that comes with so we'll say
+
+7112
+07:01:09,640 --> 07:01:16,090
+const ethers equals require
+ethers. For those of you doing
+
+7113
+07:01:16,090 --> 07:01:18,730
+the TypeScript edition of this
+course, this will be import
+
+7114
+07:01:18,730 --> 07:01:21,430
+instead of require now that we
+have ethers in here, we can
+
+7115
+07:01:21,430 --> 07:01:25,390
+create our provider object in
+our main function. The reason we
+
+7116
+07:01:25,420 --> 07:01:28,270
+we pull ethers outside of the
+main function is because we do
+
+7117
+07:01:28,270 --> 07:01:32,080
+want to pull our package into
+our script. Before we call main,
+
+7118
+07:01:32,110 --> 07:01:35,260
+we want to make sure all of this
+is done first. So you'll see
+
+7119
+07:01:35,290 --> 07:01:38,560
+this is kind of the the normal
+setup of our scripts. At the
+
+7120
+07:01:38,560 --> 07:01:42,310
+top, we import any dependencies
+or external packages, we'll have
+
+7121
+07:01:42,310 --> 07:01:45,220
+our main function, and then
+we'll call our main function at
+
+7122
+07:01:45,220 --> 07:01:49,270
+the bottom. const is a keyword
+similar to let the const keyword
+
+7123
+07:01:49,300 --> 07:01:52,690
+makes it so that ethers can't be
+changed. So we can't change
+
+7124
+07:01:52,690 --> 07:01:56,440
+this. Our ethers variable,
+anytime we use const require is
+
+7125
+07:01:56,440 --> 07:01:59,620
+a function for us to import the
+ethers package. Now remix does
+
+7126
+07:01:59,650 --> 07:02:02,170
+all this behind the scenes. But
+the way we're going to do it in
+
+7127
+07:02:02,170 --> 07:02:07,780
+our code here is we're going to
+say const provider equals new
+
+7128
+07:02:08,320 --> 07:02:15,040
+ethers dot providers dot JSON
+RPC provider. And then we're
+
+7129
+07:02:15,040 --> 07:02:20,440
+going to pass this string as our
+provider. So we're saying hey,
+
+7130
+07:02:20,470 --> 07:02:24,520
+we're going to connect to this
+URL right here. Awesome. So this
+
+7131
+07:02:24,520 --> 07:02:27,850
+is the way that our script is
+going to connect to our
+
+7132
+07:02:27,850 --> 07:02:30,580
+blockchain, our local
+blockchain. Now let's get an
+
+7133
+07:02:30,580 --> 07:02:33,730
+actual wallet here. With a
+private key and a balance and
+
+7134
+07:02:33,730 --> 07:02:37,720
+everything, we can see all of
+our wallets and private keys in
+
+7135
+07:02:37,720 --> 07:02:40,960
+our ganache here. So the way to
+get this set up is we can say
+
+7136
+07:02:40,960 --> 07:02:47,650
+const. Wallet equals new ethers
+dot wallet. And this wallet
+
+7137
+07:02:47,650 --> 07:02:50,890
+function takes in a couple of
+input parameters, like a private
+
+7138
+07:02:50,890 --> 07:02:55,210
+key, and a provider, the private
+key will go to Kenosha and just
+
+7139
+07:02:55,210 --> 07:02:57,580
+choose one of these private
+keys. And we're going to paste
+
+7140
+07:02:57,580 --> 07:03:00,670
+this right into our code. And
+then we're gonna do comma
+
+7141
+07:03:00,880 --> 07:03:04,930
+provider and save that. Now
+pasting your private key
+
+7142
+07:03:04,960 --> 07:03:08,170
+directly into your code is a
+huge nono. And we're going to
+
+7143
+07:03:08,170 --> 07:03:11,410
+learn how to avoid this in the
+future. It's okay right now,
+
+7144
+07:03:11,440 --> 07:03:14,440
+since we're just using one of
+the ganache private keys, and
+
+7145
+07:03:14,470 --> 07:03:17,290
+you have no risk of having any
+money associated with this
+
+7146
+07:03:17,290 --> 07:03:20,950
+account. These two lines alone
+give us everything that we need
+
+7147
+07:03:20,980 --> 07:03:24,340
+to interact with smart contract,
+they give us our connection to
+
+7148
+07:03:24,340 --> 07:03:28,060
+the blockchain, and they give us
+a wallet with a private key so
+
+7149
+07:03:28,060 --> 07:03:30,640
+we can sign different
+transactions. If you remember
+
+7150
+07:03:30,640 --> 07:03:34,090
+back to our blockchain basics
+section. This is the private key
+
+7151
+07:03:34,270 --> 07:03:37,720
+that we're using to sign all of
+our transactions to encrypt our
+
+7152
+07:03:37,720 --> 07:03:40,960
+transactions. Now that we have a
+provider and a wallet, let's go
+
+7153
+07:03:40,960 --> 07:03:44,830
+ahead and grab our contract
+objects from these two files
+
+7154
+07:03:44,830 --> 07:03:47,800
+here. In order to deploy our
+contract, we're gonna need the
+
+7155
+07:03:47,800 --> 07:03:52,300
+ABI and we're going to need the
+binary compiled code of the
+
+7156
+07:03:52,300 --> 07:03:55,630
+contract. So we're going to need
+to read from these two files to
+
+7157
+07:03:55,630 --> 07:03:58,360
+read from these two files, we're
+going to need to use a package
+
+7158
+07:03:58,360 --> 07:04:03,280
+called Fs. So back at the top,
+we're gonna do const Fs equals
+
+7159
+07:04:03,280 --> 07:04:08,290
+require Fs extra I autosave, all
+the time, you'll see like, I'll
+
+7160
+07:04:08,290 --> 07:04:11,800
+do something and then my white
+dot will go away a lot. It's
+
+7161
+07:04:11,800 --> 07:04:14,920
+because my fingers have a habit
+of pretty much anytime I stop
+
+7162
+07:04:14,920 --> 07:04:18,910
+typing I save so so please
+remember to save early and
+
+7163
+07:04:18,910 --> 07:04:22,600
+often, this Fs extra should come
+directly with your node project.
+
+7164
+07:04:22,600 --> 07:04:26,920
+But if not, you can always add
+it with yarn, add Fs extra, and
+
+7165
+07:04:26,920 --> 07:04:31,510
+you should see it in our package
+dot JSON. Now we can get the ABI
+
+7166
+07:04:31,510 --> 07:04:37,900
+and the binary, we can say
+const, abi equals Fs dot read
+
+7167
+07:04:38,620 --> 07:04:42,880
+file sync, which means we're
+going to synchronously read from
+
+7168
+07:04:42,880 --> 07:04:46,240
+this file, we could do it
+asynchronously. But we want to
+
+7169
+07:04:46,240 --> 07:04:48,790
+wait for this file to get done.
+So we're gonna say read file
+
+7170
+07:04:48,790 --> 07:04:52,330
+sync. And depending on your VS
+code, if you scroll over, you
+
+7171
+07:04:52,330 --> 07:04:55,900
+might even get some information
+about this function popup like
+
+7172
+07:04:55,900 --> 07:04:58,450
+this, which can be really
+helpful, we can see that we need
+
+7173
+07:04:58,450 --> 07:05:01,810
+the path for the file we want to
+read. And then any options as
+
+7174
+07:05:01,810 --> 07:05:04,930
+well path the file that we want
+to read the at the ABI located
+
+7175
+07:05:04,930 --> 07:05:11,140
+at dot slash simple storage,
+underscore soul underscore
+
+7176
+07:05:11,170 --> 07:05:17,980
+simple storage dot AVI and then
+we're going to do a comma of U
+
+7177
+07:05:18,070 --> 07:05:22,270
+T, F eight is UTF. Eight is the
+encoding that we do for this
+
+7178
+07:05:22,270 --> 07:05:24,940
+file here. Don't worry too much
+about what that means for now.
+
+7179
+07:05:24,970 --> 07:05:29,860
+So we need the ABI. And we also
+need the binary, which is in
+
+7180
+07:05:29,980 --> 07:05:34,300
+this second file. Simple Storage
+underscore soul underscore
+
+7181
+07:05:34,300 --> 07:05:38,710
+simple storage dot bin. So we're
+gonna say const binary equals Fs
+
+7182
+07:05:38,740 --> 07:05:43,150
+dot read file sync. We're gonna
+give it the path Hear, which is
+
+7183
+07:05:43,150 --> 07:05:51,100
+going to be dot slash, simple
+storage soul, simple storage dot
+
+7184
+07:05:51,100 --> 07:05:54,280
+bin, and then the encoding
+option, which again is going to
+
+7185
+07:05:54,280 --> 07:05:57,100
+be, and it should look like
+this. Now that we have the
+
+7186
+07:05:57,100 --> 07:06:00,820
+binary, we have the ABI, we can
+create something called a
+
+7187
+07:06:00,820 --> 07:06:04,090
+contract factory, which is not
+to be confused with the factory
+
+7188
+07:06:04,090 --> 07:06:07,720
+pattern in ethers. A contract
+factory is just an object that
+
+7189
+07:06:07,720 --> 07:06:10,900
+you can use to deploy contracts.
+So we're gonna say const,
+
+7190
+07:06:11,530 --> 07:06:20,800
+contract factory equals new
+ethers dot contract, factory.
+
+7191
+07:06:21,670 --> 07:06:28,300
+And we're going to pass it, the
+API binary. And the wallet, we
+
+7192
+07:06:28,300 --> 07:06:31,420
+pass the ABI so that our code
+knows how to interact with the
+
+7193
+07:06:31,420 --> 07:06:34,180
+contract the binary, obviously,
+because this is the main
+
+7194
+07:06:34,180 --> 07:06:37,690
+compiled code in our wallet so
+that we have a private key we
+
+7195
+07:06:37,690 --> 07:06:41,200
+can use to sign deploying this
+contract, then I usually like to
+
+7196
+07:06:41,200 --> 07:06:44,890
+write a little console dot log,
+saying something like deploying
+
+7197
+07:06:45,190 --> 07:06:50,890
+these wait. And we can actually
+deploy this contract with ethers
+
+7198
+07:06:50,950 --> 07:06:59,020
+by doing const. Contract equals
+await, contract factory dot
+
+7199
+07:06:59,020 --> 07:07:02,770
+deploy. Now, this is the first
+time we've seen this await
+
+7200
+07:07:02,770 --> 07:07:06,820
+keyword and you can only use the
+await keyword inside of an async
+
+7201
+07:07:06,850 --> 07:07:10,030
+function. The reason we want
+this await keyword we're telling
+
+7202
+07:07:10,030 --> 07:07:16,270
+our code to stop here, wait for
+contract to deploy. And this
+
+7203
+07:07:16,270 --> 07:07:19,840
+await keyword means that this
+will resolve the promise
+
+7204
+07:07:19,870 --> 07:07:22,600
+contract in this contract
+factory dot deploy with the
+
+7205
+07:07:22,600 --> 07:07:26,050
+await here returns a contract
+object. So now I could do
+
+7206
+07:07:26,050 --> 07:07:30,580
+something like console dot log
+contract. Let's see what happens
+
+7207
+07:07:30,580 --> 07:07:37,810
+when we run this code node
+deploy dot j s, we scroll up, we
+
+7208
+07:07:37,810 --> 07:07:42,400
+see deploying, please wait. And
+then we see this massive object
+
+7209
+07:07:42,400 --> 07:07:45,970
+that gets printed out. This is
+the contract object that we just
+
+7210
+07:07:45,970 --> 07:07:50,830
+deployed. And in fact, if we go
+over to our ganache, we can see
+
+7211
+07:07:50,920 --> 07:07:54,100
+that the address that we're used
+for our wallet has a little bit
+
+7212
+07:07:54,100 --> 07:07:57,820
+less balance and has a
+transaction count of one. If we
+
+7213
+07:07:57,820 --> 07:08:00,550
+were working with truffle, we'd
+be able to see the contracts
+
+7214
+07:08:00,550 --> 07:08:02,920
+here we're working with hard
+hat, so you won't be able to see
+
+7215
+07:08:02,920 --> 07:08:05,950
+the contracts in here. But if
+you go to transactions, we can
+
+7216
+07:08:05,950 --> 07:08:09,160
+indeed see the transaction that
+we just created. This is similar
+
+7217
+07:08:09,160 --> 07:08:12,550
+to ether scan. But for our local
+blockchain, we can see the
+
+7218
+07:08:12,550 --> 07:08:15,970
+sender address, the creation
+address, the value, gas price,
+
+7219
+07:08:16,000 --> 07:08:19,840
+all this stuff associated with
+this contract. You can also see
+
+7220
+07:08:19,870 --> 07:08:22,480
+the different blocks. Since
+we've only made one transaction
+
+7221
+07:08:22,510 --> 07:08:25,900
+only one block has been mined.
+And this is awesome. We have all
+
+7222
+07:08:25,900 --> 07:08:30,100
+this other stuff associated with
+it. Great job. You just deployed
+
+7223
+07:08:30,340 --> 07:08:35,170
+a contract to your own local
+blockchain with ethers. Jas.
+
+7224
+07:08:35,200 --> 07:08:41,680
+This is fantastic, Awesome work.
+Now let me show you what happens
+
+7225
+07:08:41,710 --> 07:08:45,010
+if we don't use the await
+keyword here. We're not telling
+
+7226
+07:08:45,010 --> 07:08:48,520
+our code to stop. We're saying
+hey, deploy this contract and
+
+7227
+07:08:48,520 --> 07:08:51,250
+then just keep going. So we
+never actually checked to see if
+
+7228
+07:08:51,250 --> 07:08:53,980
+this deploy function finished.
+So let's see what happens when
+
+7229
+07:08:53,980 --> 07:08:57,970
+we run this instead. Instead of
+that big contract object, we get
+
+7230
+07:08:57,970 --> 07:09:01,630
+this promise in its pending
+state because our code actually
+
+7231
+07:09:01,630 --> 07:09:05,650
+finished before our contract
+could finish deploying. So we
+
+7232
+07:09:05,650 --> 07:09:09,490
+see promise pending here
+instead, this is why the await
+
+7233
+07:09:09,490 --> 07:09:12,580
+keyword is so important. We're
+saying hey, wait for this to
+
+7234
+07:09:12,580 --> 07:09:17,710
+finish the await keyword also
+resolves a promise. So it'll
+
+7235
+07:09:17,710 --> 07:09:21,340
+wait for the promise to exit
+it's pending state. And then
+
+7236
+07:09:21,340 --> 07:09:25,000
+it'll return whatever the
+pending promise returns. So
+
+7237
+07:09:25,000 --> 07:09:29,080
+contract factory to deploy
+returns a promise that returns a
+
+7238
+07:09:29,080 --> 07:09:32,680
+contract. In fact, if we go to
+the ethers documentation, we
+
+7239
+07:09:32,680 --> 07:09:36,040
+look up deploy. And here we can
+see contract factory methods
+
+7240
+07:09:36,040 --> 07:09:40,420
+contract factory dot deploy. If
+we look at the definition of the
+
+7241
+07:09:40,420 --> 07:09:43,720
+function, it says contract
+factory dot deploy takes a whole
+
+7242
+07:09:43,720 --> 07:09:47,440
+bunch of arguments and some
+overrides this arrow is saying
+
+7243
+07:09:47,440 --> 07:09:52,120
+this is what it returns, it
+returns a promise that resolves
+
+7244
+07:09:52,120 --> 07:09:55,570
+to a contract. And that's why we
+need this await keyword because
+
+7245
+07:09:55,570 --> 07:09:59,440
+contract factory to deploy by
+itself just returns a promise.
+
+7246
+07:09:59,710 --> 07:10:03,250
+But if we do await contract
+factory dot deploy, we're saying
+
+7247
+07:10:03,250 --> 07:10:06,490
+it returns a promise that
+resolves to a contract. And
+
+7248
+07:10:06,490 --> 07:10:09,520
+we're waiting for it to finish
+deploying to resolve to a
+
+7249
+07:10:09,520 --> 07:10:12,760
+contract object. So that's gonna
+be a major difference here.
+
+7250
+07:10:12,790 --> 07:10:15,820
+Awesome work. So that's gonna be
+why this await keyword is so
+
+7251
+07:10:15,820 --> 07:10:18,730
+important. And again, you can
+only do that in asynchronous
+
+7252
+07:10:18,730 --> 07:10:21,910
+functions. So you need this
+async keyword at the top of your
+
+7253
+07:10:21,910 --> 07:10:28,390
+function names. Awesome work. So
+we've deployed a contract to our
+
+7254
+07:10:28,390 --> 07:10:31,240
+ganache. Shane, this is
+fantastic. Let's play with this
+
+7255
+07:10:31,240 --> 07:10:34,810
+a little bit more. So what else
+can we do? Remember how in remix
+
+7256
+07:10:34,810 --> 07:10:38,020
+and in Metamask, we could add a
+whole bunch of stuff. We could
+
+7257
+07:10:38,020 --> 07:10:41,770
+add a gas limit, we could add
+some value when we were doing
+
+7258
+07:10:41,770 --> 07:10:44,440
+our trends. that we could press
+the transact button. We know
+
+7259
+07:10:44,440 --> 07:10:47,140
+that when we're working with
+Metamask, and we want to send
+
+7260
+07:10:47,140 --> 07:10:48,730
+some money between our accounts,
+
+7261
+07:10:50,980 --> 07:10:53,740
+we can actually choose our gas
+price, our priority fee, all
+
+7262
+07:10:53,740 --> 07:10:56,620
+this other stuff, we can
+actually do all that in ethers
+
+7263
+07:10:56,620 --> 07:11:00,130
+as well. So if we wanted to
+await contract factory to
+
+7264
+07:11:00,130 --> 07:11:03,370
+deploy, but with a certain gas
+price, we can add these
+
+7265
+07:11:03,400 --> 07:11:06,010
+overrides in this deploy
+function here. Another really
+
+7266
+07:11:06,010 --> 07:11:09,160
+neat trick that your Visual
+Studio code might have is if you
+
+7267
+07:11:09,190 --> 07:11:13,480
+click Command or Control,
+depending on your setup, you can
+
+7268
+07:11:13,480 --> 07:11:17,890
+actually click into a function
+and see where it's defined and
+
+7269
+07:11:17,890 --> 07:11:20,770
+see everything about this
+function. So if I command
+
+7270
+07:11:20,770 --> 07:11:23,680
+clicked, I could see that I'm
+now in Node modules ethers
+
+7271
+07:11:23,680 --> 07:11:28,120
+project contract source of Ts,
+all this stuff. And I can see
+
+7272
+07:11:28,150 --> 07:11:33,160
+exactly the function definition
+of this deploy function on the
+
+7273
+07:11:33,160 --> 07:11:36,610
+contract factory object, which
+shows us the same code as what
+
+7274
+07:11:36,610 --> 07:11:40,600
+we saw in the documentation. We
+see we have a deploy function,
+
+7275
+07:11:40,630 --> 07:11:44,230
+it takes some arguments, and
+then it returns this little
+
+7276
+07:11:44,470 --> 07:11:47,290
+semicolon means it returns a
+promise that resolves to a
+
+7277
+07:11:47,290 --> 07:11:50,920
+contract, which is really nice.
+These are in here are actually a
+
+7278
+07:11:50,920 --> 07:11:54,820
+list of overrides that we can
+specify with some brackets. So
+
+7279
+07:11:54,820 --> 07:11:57,790
+what we can do is we can put
+some brackets in our deploy
+
+7280
+07:11:57,790 --> 07:12:01,300
+function here and specify
+certain things like for example,
+
+7281
+07:12:01,330 --> 07:12:06,460
+we can specify the gas price to
+being some number. And now if we
+
+7282
+07:12:06,460 --> 07:12:09,070
+were to run this, we would
+deploy this contract with a gas
+
+7283
+07:12:09,070 --> 07:12:12,160
+price of this, we could add a
+gas limit, we can add a whole
+
+7284
+07:12:12,160 --> 07:12:18,490
+bunch of different overrides in
+our deploy function here. Well,
+
+7285
+07:12:18,490 --> 07:12:21,670
+what else can we do? Well, we
+can wait for a certain number of
+
+7286
+07:12:21,670 --> 07:12:25,120
+blocks for our contract finish
+with so we've deployed the
+
+7287
+07:12:25,120 --> 07:12:28,960
+contract. But maybe we want to
+wait one block to make sure it
+
+7288
+07:12:28,960 --> 07:12:32,290
+actually gets attached to the
+chain. So we can say const.
+
+7289
+07:12:33,010 --> 07:12:39,850
+Deployment received equals
+await, contract dot deploy
+
+7290
+07:12:40,240 --> 07:12:43,570
+transaction dot Wait, and
+specify the number of
+
+7291
+07:12:43,570 --> 07:12:46,780
+confirmations that we want to
+actually wait. So we'll wait one
+
+7292
+07:12:46,780 --> 07:12:50,140
+block confirmation to make sure
+that this happened. And then we
+
+7293
+07:12:50,140 --> 07:12:55,420
+can do console dot log, this
+deployment receipt option. So if
+
+7294
+07:12:55,420 --> 07:13:01,030
+we run the code now, we can see
+all this information about our
+
+7295
+07:13:01,060 --> 07:13:04,840
+transaction, and we can see
+exactly what our transaction
+
+7296
+07:13:04,840 --> 07:13:09,130
+looks like, we can see there's
+two is no because we're creating
+
+7297
+07:13:09,130 --> 07:13:13,630
+a contract from is going to be
+this ganache address that we got
+
+7298
+07:13:13,630 --> 07:13:17,110
+the private key for, we see the
+contract address that we created
+
+7299
+07:13:17,140 --> 07:13:21,250
+transaction index, we can see
+gas use gas use log bloom block
+
+7300
+07:13:21,250 --> 07:13:24,850
+hash transaction, and we can see
+all this information about our
+
+7301
+07:13:24,850 --> 07:13:27,550
+transaction, something I want
+you to take note of is the
+
+7302
+07:13:27,550 --> 07:13:31,480
+deployment receipt and the
+deployment transaction, I want
+
+7303
+07:13:31,480 --> 07:13:33,550
+you to separate these two
+because it's going to make your
+
+7304
+07:13:33,550 --> 07:13:36,640
+life a lot easier. So we're
+going to do quick console dot
+
+7305
+07:13:36,640 --> 07:13:43,990
+log, here is the deployment
+transaction. And then we'll do
+
+7306
+07:13:43,990 --> 07:13:50,620
+console dot log contract, dot
+deploy transaction. And then I'm
+
+7307
+07:13:50,620 --> 07:13:54,370
+going to copy this whole line by
+just typing Command C or Ctrl. C
+
+7308
+07:13:54,370 --> 07:13:59,890
+right there. And then here is
+the deployment. Here is the
+
+7309
+07:13:59,920 --> 07:14:04,690
+transaction receipt. And then
+this deployment is receipt is
+
+7310
+07:14:04,690 --> 07:14:07,120
+the transaction receipt. So I'm
+just going to rename this to
+
+7311
+07:14:07,120 --> 07:14:10,960
+transaction receipt. To make it
+a little bit clearer, which ones
+
+7312
+07:14:10,960 --> 07:14:15,040
+which, and we'll run this one
+more time. You only get a
+
+7313
+07:14:15,040 --> 07:14:19,090
+transaction receipt, when you
+wait for a block confirmation.
+
+7314
+07:14:19,150 --> 07:14:21,880
+Otherwise, you're gonna get the
+contract object, which has the
+
+7315
+07:14:21,880 --> 07:14:24,610
+deploy transaction with it, this
+distinction will be more
+
+7316
+07:14:24,610 --> 07:14:27,460
+important later on. But I wanted
+you to know what the difference
+
+7317
+07:14:27,460 --> 07:14:30,850
+between the two transaction
+receipt is what you get when you
+
+7318
+07:14:30,850 --> 07:14:34,240
+wait for a block confirmation,
+the deployment transaction or
+
+7319
+07:14:34,240 --> 07:14:38,650
+the transaction response,
+transaction response is what you
+
+7320
+07:14:38,650 --> 07:14:41,680
+get just when you create your
+transaction. So transaction
+
+7321
+07:14:41,680 --> 07:14:44,560
+receipts transactional response,
+they're different receipt is
+
+7322
+07:14:44,560 --> 07:14:47,140
+what you get when you wait for a
+transaction to finish. And then
+
+7323
+07:14:47,140 --> 07:14:49,990
+response is just what you
+initially get. Make sense? Okay,
+
+7324
+07:14:49,990 --> 07:14:52,600
+great. We're gonna go ahead and
+delete those. But those lines
+
+7325
+07:14:52,600 --> 07:14:58,570
+will be in the code associated
+with the GitHub. Now you saw
+
+7326
+07:14:58,810 --> 07:15:01,600
+when we actually printed out
+those receipts, we got all this
+
+7327
+07:15:01,600 --> 07:15:04,990
+stuff in here, because deploying
+a contract is actually just
+
+7328
+07:15:04,990 --> 07:15:08,260
+sending a transaction, as we've
+said before, so if we want to
+
+7329
+07:15:08,260 --> 07:15:12,700
+see what's really going on under
+the hood, we can actually create
+
+7330
+07:15:12,730 --> 07:15:16,960
+a transaction ourselves and
+create a contract ourselves just
+
+7331
+07:15:16,960 --> 07:15:20,200
+by specifying the transaction
+information. So how will we do
+
+7332
+07:15:20,200 --> 07:15:24,760
+that? Let's deploy this contract
+again, but only purely using
+
+7333
+07:15:24,790 --> 07:15:27,640
+transaction data. So we'll do a
+console dot log.
+
+7334
+07:15:28,900 --> 07:15:34,600
+Let's deploy with only
+transaction data. And this is
+
+7335
+07:15:34,600 --> 07:15:37,120
+going to be the way you can
+actually deploy or send
+
+7336
+07:15:37,120 --> 07:15:39,910
+transactions purely with
+transaction data you can send
+
+7337
+07:15:39,940 --> 07:15:43,330
+any transaction this gives you
+unlimited flux. ability with the
+
+7338
+07:15:43,330 --> 07:15:46,720
+transactions you want to send,
+what we can do is we can say
+
+7339
+07:15:46,720 --> 07:15:50,680
+const, or let TX which is going
+to stand for our transaction
+
+7340
+07:15:51,130 --> 07:15:54,370
+equals, and we can just add all
+of our transaction information
+
+7341
+07:15:54,400 --> 07:15:57,790
+in here. So the first thing that
+we're going to need is our nuts,
+
+7342
+07:15:57,820 --> 07:16:01,000
+or the number that we only use
+once we go back to our
+
+7343
+07:16:01,000 --> 07:16:05,110
+transaction count, we're on four
+transactions here. So we'll use
+
+7344
+07:16:05,110 --> 07:16:07,630
+the nonce five, because that's
+going to be a nonce that we
+
+7345
+07:16:07,630 --> 07:16:11,320
+haven't used before. Every time
+you send a transaction, it comes
+
+7346
+07:16:11,320 --> 07:16:15,070
+with one of those nonces. Right,
+so the nonce is a bit of a over
+
+7347
+07:16:15,130 --> 07:16:18,730
+overused term, we saw it back in
+our blockchain basics that we
+
+7348
+07:16:18,730 --> 07:16:23,650
+use the nonce to solve that hard
+problem. nonces are also used in
+
+7349
+07:16:23,650 --> 07:16:26,920
+wallets and in signers, to send
+transactions and they use a
+
+7350
+07:16:26,920 --> 07:16:30,340
+different nones for every
+transaction. So nonce, when
+
+7351
+07:16:30,340 --> 07:16:33,190
+we're talking about wallets
+talks about a number associated
+
+7352
+07:16:33,190 --> 07:16:36,490
+with a unique transaction.
+nonce, when we're talking about
+
+7353
+07:16:36,490 --> 07:16:40,060
+blockchain mining is a value
+used to solve that hard problem,
+
+7354
+07:16:40,150 --> 07:16:42,670
+they both mean the same thing.
+They both mean a number only
+
+7355
+07:16:42,670 --> 07:16:45,910
+used once. But they're different
+in these different contexts. So
+
+7356
+07:16:45,910 --> 07:16:48,550
+we're going to use this number
+only use once this unique number
+
+7357
+07:16:48,550 --> 07:16:51,130
+for a transaction to send this,
+so we're going to say nonce is
+
+7358
+07:16:51,130 --> 07:16:55,780
+going to be five, we're going to
+pick a gas price of, of this
+
+7359
+07:16:55,780 --> 07:16:58,720
+right here, we're just going to
+use the gas price of ganache
+
+7360
+07:16:59,170 --> 07:17:02,920
+like that, we're going to pick a
+gas limit of some big number,
+
+7361
+07:17:02,920 --> 07:17:08,620
+we'll use 1123456, we'll just
+use that we're gonna say two is
+
+7362
+07:17:08,620 --> 07:17:13,000
+going to be no, right, exactly
+like what we saw in our receipts
+
+7363
+07:17:13,000 --> 07:17:17,470
+and responses down here. Since
+we're creating a contract value
+
+7364
+07:17:17,500 --> 07:17:20,200
+is going to be zero. Since we're
+creating a contract, we don't
+
+7365
+07:17:20,200 --> 07:17:25,090
+want to send an ether polygon or
+avalanche. And then data is
+
+7366
+07:17:25,090 --> 07:17:30,790
+going to be that massive binary
+object in our binary bit. So in
+
+7367
+07:17:30,790 --> 07:17:34,540
+the binary section, we're gonna
+copy this massive binary piece,
+
+7368
+07:17:34,840 --> 07:17:37,090
+and we're going to put some
+quotes in here, we're gonna do
+
+7369
+07:17:37,090 --> 07:17:42,460
+0x, and paste that in here. So
+this massive, massive data piece
+
+7370
+07:17:42,490 --> 07:17:44,800
+is the binary that we're
+sending. Whenever you send a
+
+7371
+07:17:44,800 --> 07:17:47,920
+transaction, you have this this
+data object that you can fill
+
+7372
+07:17:47,920 --> 07:17:51,340
+this stuff, we're filling our
+data object with the binary with
+
+7373
+07:17:51,340 --> 07:17:54,760
+the code that tells the theory
+that tells our blockchain to
+
+7374
+07:17:54,760 --> 07:17:58,630
+deploy our smart contract that's
+going to look exactly like this.
+
+7375
+07:17:58,690 --> 07:18:01,120
+And then finally, we want to add
+the chain ID.
+
+7376
+07:18:02,470 --> 07:18:05,680
+As we've seen before with
+Metamask, if we go back over to
+
+7377
+07:18:05,680 --> 07:18:09,970
+our networks, each one of these
+EVM chains has a different chain
+
+7378
+07:18:09,970 --> 07:18:13,870
+ID Etherium. Main net is one
+ropsten is three Rinke, B is
+
+7379
+07:18:13,870 --> 07:18:18,820
+four COVID is 42, etc. And other
+EVM chains like avalanche like
+
+7380
+07:18:18,820 --> 07:18:22,570
+polygon, are going to have their
+unique chain IDs as well, or
+
+7381
+07:18:22,570 --> 07:18:27,640
+ganache, we can see the network
+ID appear is 1337 in some
+
+7382
+07:18:27,640 --> 07:18:30,490
+people, so we can just paste
+that in here. Some people have
+
+7383
+07:18:30,490 --> 07:18:33,430
+run into some issues where the
+chain ID and the network ID are
+
+7384
+07:18:33,430 --> 07:18:38,290
+different. And the chain ID is
+actually 31337. So if you have a
+
+7385
+07:18:38,290 --> 07:18:43,420
+problem with this, try 31337
+instead, but it should be 1337.
+
+7386
+07:18:43,510 --> 07:18:46,780
+Now this is a transaction with
+all this information propagated,
+
+7387
+07:18:46,930 --> 07:18:50,770
+which is awesome. However, this
+transaction isn't signed. So
+
+7388
+07:18:50,770 --> 07:18:52,720
+nobody's sending this
+transaction right now this is
+
+7389
+07:18:52,720 --> 07:18:55,900
+just the transaction details of
+what somebody wants to do, we
+
+7390
+07:18:55,900 --> 07:18:59,080
+actually need to sign this
+transaction, and then send it to
+
+7391
+07:18:59,080 --> 07:19:09,160
+our blockchain. Cons sign, TX
+response equals await, wallet
+
+7392
+07:19:09,190 --> 07:19:15,970
+dot sign transaction, and we can
+pass that TX object. And then
+
+7393
+07:19:15,970 --> 07:19:20,800
+we'll do a console dot log of
+the sign TX response in
+
+7394
+07:19:20,800 --> 07:19:25,570
+JavaScript. Same as solidity. If
+you type two backslashes, before
+
+7395
+07:19:25,570 --> 07:19:29,380
+some code, it won't run that
+code. So I'm gonna go ahead and
+
+7396
+07:19:29,380 --> 07:19:33,040
+comment out the three lines
+above. And the way that I'm
+
+7397
+07:19:33,040 --> 07:19:35,590
+doing it is by highlighting the
+sections and hitting Command
+
+7398
+07:19:35,590 --> 07:19:39,040
+backslash, or you might hit Ctrl
+backslash, but this is a
+
+7399
+07:19:39,040 --> 07:19:42,910
+keyboard shortcut you can use to
+quickly comment out entire
+
+7400
+07:19:42,910 --> 07:19:45,310
+sections. And the reason I'm
+doing this is because I want to
+
+7401
+07:19:45,310 --> 07:19:49,120
+show you what happens when we
+just run scientex response
+
+7402
+07:19:49,150 --> 07:19:53,110
+wallet that signed transaction
+back in nosh, we see that we
+
+7403
+07:19:53,110 --> 07:19:56,440
+have four blocks in here. Let me
+ask if we do this sign
+
+7404
+07:19:56,440 --> 07:19:59,320
+transaction and we get the
+signed transaction response,
+
+7405
+07:19:59,470 --> 07:20:03,280
+will we propagate another block?
+Well, let's find out run no
+
+7406
+07:20:03,280 --> 07:20:08,950
+deploy.js, we get this massive
+thing here. But if we go back to
+
+7407
+07:20:08,950 --> 07:20:13,360
+ganache refresh, we actually
+don't see another transaction
+
+7408
+07:20:13,360 --> 07:20:17,140
+sent. That's because we're only
+signing a transaction here,
+
+7409
+07:20:17,140 --> 07:20:20,200
+we're not actually sending it.
+So the signed transaction
+
+7410
+07:20:20,200 --> 07:20:25,150
+response. This big number here
+represents a signed transaction
+
+7411
+07:20:25,180 --> 07:20:28,060
+but not a cent transaction,
+which is different. You can
+
+7412
+07:20:28,060 --> 07:20:31,030
+actually send one of these
+transactions by changing this
+
+7413
+07:20:31,030 --> 07:20:35,020
+line a little bit. So instead of
+scientex response, we'll change
+
+7414
+07:20:35,020 --> 07:20:39,550
+this to send TX response equals
+await wallet dot send
+
+7415
+07:20:39,550 --> 07:20:44,440
+transaction TX then once We send
+the transaction here, we can do
+
+7416
+07:20:44,470 --> 07:20:50,020
+a wait, send transaction
+response, that Wait, one, we're
+
+7417
+07:20:50,020 --> 07:20:53,230
+gonna wait one block
+confirmation to make sure this
+
+7418
+07:20:53,230 --> 07:20:57,640
+transaction actually goes
+through. And we can run node.js.
+
+7419
+07:20:58,210 --> 07:21:01,270
+And it looks like it's done. But
+if we actually scroll up, we
+
+7420
+07:21:01,270 --> 07:21:05,380
+actually got an error here. So
+there's this huge, massive thing
+
+7421
+07:21:05,380 --> 07:21:10,600
+here. And if we scroll up, we'll
+eventually see TX reject error,
+
+7422
+07:21:10,630 --> 07:21:13,990
+the TX doesn't have the correct
+nuts, which just for some
+
+7423
+07:21:13,990 --> 07:21:18,040
+practice, let's go ahead, type
+this into Google and see what we
+
+7424
+07:21:18,040 --> 07:21:22,660
+get. We actually get a web three
+Jas from four years ago, trying
+
+7425
+07:21:22,660 --> 07:21:25,960
+to call leaf picked, blah, blah,
+blah, blah, blah, blah, blah,
+
+7426
+07:21:25,960 --> 07:21:29,200
+blah. It looks like this is a
+meta mask issue that they ran
+
+7427
+07:21:29,200 --> 07:21:32,020
+into. And they said, you have to
+reset your account in meta mask,
+
+7428
+07:21:32,020 --> 07:21:35,260
+which we could do. But let's
+make this a little bit more
+
+7429
+07:21:35,260 --> 07:21:40,780
+specific. Let's say ethers. JS
+looks like we don't get it looks
+
+7430
+07:21:40,780 --> 07:21:44,290
+like as of right now, from this
+recording, we don't get a Stack
+
+7431
+07:21:44,290 --> 07:21:46,900
+Exchange eath or a Stack
+Overflow question for this
+
+7432
+07:21:46,930 --> 07:21:49,360
+trolley, because this is pretty
+straightforward. We don't have
+
+7433
+07:21:49,360 --> 07:21:51,940
+the correct nonce for our
+transaction. But this would be a
+
+7434
+07:21:51,940 --> 07:21:55,480
+good time to actually make this
+a question on Stack Overflow or
+
+7435
+07:21:55,480 --> 07:21:58,720
+Stack Exchange Aetherium so that
+it shows up first. So we
+
+7436
+07:21:58,720 --> 07:22:00,700
+actually don't get the correct
+nuts, we're going to want to
+
+7437
+07:22:00,700 --> 07:22:03,490
+make this a nonce of four you
+can see here account has a nonce
+
+7438
+07:22:03,490 --> 07:22:07,390
+of four TX has a nonce of five.
+So we actually would want this
+
+7439
+07:22:07,390 --> 07:22:10,900
+to be four. Now an easier way to
+always get the correct nonce
+
+7440
+07:22:10,900 --> 07:22:14,050
+here is going to be actually
+just calling the transaction
+
+7441
+07:22:14,050 --> 07:22:16,810
+count from the wallet. So back
+in the ethers documentation,
+
+7442
+07:22:16,840 --> 07:22:19,780
+there's actually some good
+samples here on how to assigning
+
+7443
+07:22:19,780 --> 07:22:23,200
+a message and then how to
+actually send these messages. So
+
+7444
+07:22:23,200 --> 07:22:26,980
+we can do a weight wallet dot
+get transaction count to get the
+
+7445
+07:22:26,980 --> 07:22:32,260
+nuts. So back in our code, we
+could do const nuns equals
+
+7446
+07:22:32,320 --> 07:22:37,060
+await, oops, copy pasted, await
+wallet dot get transaction
+
+7447
+07:22:37,060 --> 07:22:39,940
+count. And then we can just
+place the nonce right here.
+
+7448
+07:22:40,300 --> 07:22:44,200
+Now, let's try running this
+again. And it looks like this
+
+7449
+07:22:44,200 --> 07:22:48,460
+one did indeed go through. We
+can verify on ganache here. We
+
+7450
+07:22:48,460 --> 07:22:51,370
+do indeed see we're currently on
+block five now and we have one
+
+7451
+07:22:51,370 --> 07:22:54,370
+extra transaction. Now we could
+go ahead and just run this
+
+7452
+07:22:54,370 --> 07:22:57,130
+again. And we'll never have to
+worry about actually updating
+
+7453
+07:22:57,340 --> 07:23:00,340
+this nonce ourselves. Since
+we're just calling wallet dot
+
+7454
+07:23:00,340 --> 07:23:03,820
+get transaction count to keep
+updating it current block is six
+
+7455
+07:23:03,850 --> 07:23:06,400
+and the our additional
+transaction has indeed gone
+
+7456
+07:23:06,400 --> 07:23:09,100
+through awesome. I showed you
+how to actually sign the
+
+7457
+07:23:09,100 --> 07:23:12,130
+transaction. But we didn't sign
+the transaction for our central
+
+7458
+07:23:12,130 --> 07:23:16,330
+injection. Well, why not? If you
+command click or control click,
+
+7459
+07:23:16,390 --> 07:23:20,380
+or you go to the documentation
+for ethers, we can see the code
+
+7460
+07:23:20,380 --> 07:23:23,080
+for send transaction. So first,
+it does some check provider
+
+7461
+07:23:23,080 --> 07:23:25,930
+stuff. There's some stuff to
+populate the transaction. But we
+
+7462
+07:23:25,930 --> 07:23:29,890
+can actually see that before it
+sends the transaction even in
+
+7463
+07:23:29,920 --> 07:23:34,480
+ethers, it signs the transaction
+first, and then calls this dot
+
+7464
+07:23:34,480 --> 07:23:37,480
+provider dot send transaction.
+So if you just call send
+
+7465
+07:23:37,480 --> 07:23:41,950
+transaction with the transaction
+details like we did here, it's
+
+7466
+07:23:41,950 --> 07:23:44,650
+the same as signing it first and
+then sending it with the
+
+7467
+07:23:44,650 --> 07:23:47,050
+provider. Okay, great. So we've
+learned how to send a
+
+7468
+07:23:47,050 --> 07:23:50,620
+transaction using pure
+JavaScript and using pure
+
+7469
+07:23:50,770 --> 07:23:53,800
+ethers. One of the main
+takeaways from this is that
+
+7470
+07:23:53,950 --> 07:23:56,830
+every time we change the
+blockchain, every time we change
+
+7471
+07:23:56,830 --> 07:24:00,220
+state, every time we use gas,
+we're sending a transaction that
+
+7472
+07:24:00,220 --> 07:24:04,120
+looks pretty much exactly like
+this, the data is going to be
+
+7473
+07:24:04,120 --> 07:24:07,360
+the differentiator, the data for
+us here was data saying to
+
+7474
+07:24:07,360 --> 07:24:11,320
+create a new contract, when we
+make transactions, like adding
+
+7475
+07:24:11,320 --> 07:24:14,620
+people or storing the data that
+we're going to be passing in our
+
+7476
+07:24:14,620 --> 07:24:17,980
+transaction is going to be data
+associated with calling these
+
+7477
+07:24:17,980 --> 07:24:21,310
+functions. And when we actually
+call functions in ethers, or in
+
+7478
+07:24:21,310 --> 07:24:24,670
+Hardhead. We're not going to do
+this kind of raw const, TX, and
+
+7479
+07:24:24,880 --> 07:24:27,400
+list out all the stuff like here
+and list out the raw data,
+
+7480
+07:24:27,400 --> 07:24:30,220
+right? Because that's really,
+really hard ethers and hard hat
+
+7481
+07:24:30,250 --> 07:24:33,640
+are going to make this process a
+lot easier. So for now, let's go
+
+7482
+07:24:33,640 --> 07:24:36,820
+ahead, comment out this whole
+section, which again, if we copy
+
+7483
+07:24:36,820 --> 07:24:40,120
+this whole thing, and then hit
+Command, slash, or control
+
+7484
+07:24:40,120 --> 07:24:42,670
+slash, or whatever the shortcut
+is on your environment, that'll
+
+7485
+07:24:42,670 --> 07:24:45,220
+actually comment this out. Let's
+go ahead and uncomment this
+
+7486
+07:24:45,220 --> 07:24:48,340
+section so that we deploy our
+contract using kind of the ether
+
+7487
+07:24:48,340 --> 07:24:52,540
+is much easier to read way than
+this weird TX stuff. Oh, cool.
+
+7488
+07:24:52,540 --> 07:24:55,690
+So we've changed our script back
+to deploy our contracts like
+
+7489
+07:24:55,690 --> 07:25:00,430
+this. Now that we've actually
+deployed our contract, we can
+
+7490
+07:25:00,430 --> 07:25:03,130
+learn how to interact with our
+contract through code as well,
+
+7491
+07:25:03,160 --> 07:25:06,700
+the same way that we click these
+buttons in remix, we're going to
+
+7492
+07:25:06,730 --> 07:25:10,330
+code it out for ourselves here.
+So if we look at symbol storage,
+
+7493
+07:25:10,600 --> 07:25:14,050
+we have a button for add person
+for store. And then we have
+
+7494
+07:25:14,050 --> 07:25:16,720
+these view functions as well.
+The easiest one is going to be
+
+7495
+07:25:16,720 --> 07:25:19,450
+the Retrieve function, which
+grabs our favorite number,
+
+7496
+07:25:19,660 --> 07:25:23,590
+retrieve returns favorite
+number. So we can call that in
+
+7497
+07:25:23,590 --> 07:25:31,090
+ethers by doing const. current
+favorite number equals await.
+
+7498
+07:25:31,900 --> 07:25:37,960
+contract.we retrieve. The
+contract object that we have is
+
+7499
+07:25:37,960 --> 07:25:40,750
+what's returned from our
+contract factory as long as
+
+7500
+07:25:40,750 --> 07:25:43,480
+we've awaited it the contract
+object is going to come with all
+
+7501
+07:25:43,480 --> 07:25:46,630
+the functionality described in
+our API. That's why we had to
+
+7502
+07:25:46,630 --> 07:25:51,010
+pass the API to our contract
+factory. If we look inside our
+
+7503
+07:25:51,010 --> 07:25:55,180
+API piece here, we can see it
+has a ton of information on the
+
+7504
+07:25:55,180 --> 07:25:58,270
+different functions that we can
+call and the types that it has
+
+7505
+07:25:58,270 --> 07:26:00,670
+and the return types and
+everything like that. For
+
+7506
+07:26:00,670 --> 07:26:05,890
+example, if I look up retrieve,
+I can see down here, we have
+
+7507
+07:26:05,920 --> 07:26:08,710
+retrieve, we can see that the
+name of this function is going
+
+7508
+07:26:08,710 --> 07:26:13,060
+to be retrieved. And the outputs
+are going to be a un 256, of
+
+7509
+07:26:13,060 --> 07:26:16,840
+type Nuun 256. Now, this is a
+little bit difficult to read
+
+7510
+07:26:16,840 --> 07:26:19,960
+because it's not formatted.
+Since we call this dot API, it's
+
+7511
+07:26:19,960 --> 07:26:22,930
+going to be a little bit hard to
+read. But we could change it the
+
+7512
+07:26:22,960 --> 07:26:27,100
+dot JSON. And then you'll see
+it's highlighted a little bit, I
+
+7513
+07:26:27,310 --> 07:26:32,110
+can even do format document with
+prettier. And you'll see it
+
+7514
+07:26:32,110 --> 07:26:35,170
+actually formats to be a lot
+easier to read now and go back
+
+7515
+07:26:35,170 --> 07:26:40,480
+to retrieve. And we can see,
+this block of code here defines
+
+7516
+07:26:40,720 --> 07:26:43,210
+what the Retrieve function can
+and can't do. I'm going to
+
+7517
+07:26:43,210 --> 07:26:46,210
+change it back to abi. And it
+looks like my formatting has
+
+7518
+07:26:46,210 --> 07:26:49,150
+stayed, which is great. This is
+much easier to read than it was
+
+7519
+07:26:49,150 --> 07:26:52,690
+before. As I said, the ABI or
+the application binary interface
+
+7520
+07:26:52,720 --> 07:26:55,330
+is incredibly important for
+working with our contracts. If
+
+7521
+07:26:55,330 --> 07:26:58,480
+we give our code just this huge
+bytecode thing, it's gonna be
+
+7522
+07:26:58,480 --> 07:27:03,040
+really hard for any processor to
+decompile this or understand
+
+7523
+07:27:03,040 --> 07:27:05,860
+what exactly what the functions
+are that are going on here.
+
+7524
+07:27:05,950 --> 07:27:09,610
+There are decompiler options out
+there, like ether VM, that IO
+
+7525
+07:27:09,610 --> 07:27:13,840
+slash decompile. That can
+decompile some bytecode into the
+
+7526
+07:27:13,840 --> 07:27:17,320
+solidity. But it can be really
+tricky to get it exactly right.
+
+7527
+07:27:17,350 --> 07:27:20,860
+So it's much easier just to have
+the ABI to say, hey, this lump
+
+7528
+07:27:20,860 --> 07:27:25,330
+of code, this lump of numbers
+and garbled nonsense is this.
+
+7529
+07:27:25,360 --> 07:27:28,000
+When we deploy this bytecode to
+the blockchain, and we call
+
+7530
+07:27:28,000 --> 07:27:30,610
+functions on it, the code will
+automatically allow those
+
+7531
+07:27:30,610 --> 07:27:33,910
+functions to get called if they
+do exist. But in order for our
+
+7532
+07:27:33,910 --> 07:27:36,640
+code to know that they exist,
+it's much easier just to give it
+
+7533
+07:27:36,640 --> 07:27:39,850
+the API. So we can get our
+current favorite number like
+
+7534
+07:27:39,850 --> 07:27:44,410
+this. Let's go ahead and console
+dot log, the current favorite
+
+7535
+07:27:44,410 --> 07:27:48,790
+number. Now that we've edited
+this code, we're going to let me
+
+7536
+07:27:48,790 --> 07:27:51,430
+zoom out a little bit. Now that
+we've edited this code, we're
+
+7537
+07:27:51,430 --> 07:27:54,460
+going to connect organ nosh
+instance, we're going to connect
+
+7538
+07:27:54,490 --> 07:27:58,210
+a wallet with a private key that
+we got from the top of our
+
+7539
+07:27:58,210 --> 07:28:01,510
+ganache here, we're gonna grab
+the ABI and the binary of our
+
+7540
+07:28:01,510 --> 07:28:05,830
+contracts, and connect them to a
+new contract factory object,
+
+7541
+07:28:05,890 --> 07:28:09,010
+which is connected to that
+wallet. So that wallet will be
+
+7542
+07:28:09,010 --> 07:28:12,130
+the one to actually deploy the
+contract, we'll deploy the
+
+7543
+07:28:12,130 --> 07:28:15,130
+contract with const contract
+equals await contract factory
+
+7544
+07:28:15,130 --> 07:28:18,940
+dot deploy, we will wait one
+block for that transaction to
+
+7545
+07:28:18,940 --> 07:28:20,980
+finish. And in fact, we're not
+going to use transaction
+
+7546
+07:28:20,980 --> 07:28:24,610
+receipt. So for now, we're just
+going to delete that part. We're
+
+7547
+07:28:24,610 --> 07:28:27,130
+not going to do any of this
+here. So I'm going to delete it
+
+7548
+07:28:27,130 --> 07:28:29,680
+for now. However, I'll leave
+this section commented out in
+
+7549
+07:28:29,680 --> 07:28:33,280
+the GitHub repo. And then we're
+going to call contract retrieve
+
+7550
+07:28:33,280 --> 07:28:36,100
+which should return our current
+favorite number. Since this is a
+
+7551
+07:28:36,100 --> 07:28:40,990
+view function, this contract
+call won't cost us any gas. If
+
+7552
+07:28:40,990 --> 07:28:44,560
+we look at simple storage, that
+soul we can see retrieve is a
+
+7553
+07:28:44,560 --> 07:28:48,460
+view function. And remember view
+and pure functions, if called
+
+7554
+07:28:48,490 --> 07:28:52,390
+outside of a contract function
+call don't cost any gas, we're
+
+7555
+07:28:52,390 --> 07:28:55,450
+just reading up the blockchain,
+we're not changing any variables
+
+7556
+07:28:55,450 --> 07:28:58,780
+on chain, we're not changing the
+state of the blockchain. So this
+
+7557
+07:28:58,780 --> 07:29:00,730
+won't cost any gas. So let's go
+
+7558
+07:29:00,730 --> 07:29:06,730
+ahead and run this. Perfect, we
+get deploying, please wait. And
+
+7559
+07:29:06,730 --> 07:29:09,700
+then we get this big number
+response. So what's this big
+
+7560
+07:29:09,700 --> 07:29:13,660
+number response here? Big number
+is a library that comes with the
+
+7561
+07:29:13,660 --> 07:29:16,840
+ethers application that helps us
+work with numbers. If you
+
+7562
+07:29:16,840 --> 07:29:20,290
+actually scroll down, they even
+have a section saying why can I
+
+7563
+07:29:20,290 --> 07:29:23,080
+just use numbers, you'd expect
+current favorite number to just
+
+7564
+07:29:23,080 --> 07:29:25,930
+be zero, but it returns this
+weird hex thing that says his
+
+7565
+07:29:25,930 --> 07:29:29,230
+big number true this weird, big
+number thing. So solidity can't
+
+7566
+07:29:29,230 --> 07:29:32,350
+use decimal places, and
+JavaScript has a hard time with
+
+7567
+07:29:32,350 --> 07:29:35,800
+decimal places. And this is kind
+of the more specific rationale
+
+7568
+07:29:35,800 --> 07:29:38,950
+for why not to use numbers, what
+you'll see a lot of the time
+
+7569
+07:29:38,980 --> 07:29:42,970
+instead of numbers is you'll see
+strings like zero, you'll see
+
+7570
+07:29:42,970 --> 07:29:47,110
+JavaScript use strings like
+this, or big numbers. Now, if I
+
+7571
+07:29:47,110 --> 07:29:51,040
+were to try to pass a number
+like this in JavaScript, this
+
+7572
+07:29:51,040 --> 07:29:53,920
+number would be too big for
+JavaScript to understand. So we
+
+7573
+07:29:53,920 --> 07:29:56,320
+want to use big numbers or
+strings when working with
+
+7574
+07:29:56,320 --> 07:29:59,800
+ethers. Now we can make this
+more readable by adding.to
+
+7575
+07:29:59,800 --> 07:30:03,220
+string at the end and printing
+out the string version of this
+
+7576
+07:30:03,220 --> 07:30:08,320
+big number. Now, if I rerun this
+code, we can see we get zero,
+
+7577
+07:30:08,350 --> 07:30:11,680
+which makes sense again, because
+our favorite number gets
+
+7578
+07:30:11,710 --> 07:30:16,030
+initialized to the zero value,
+if not specified, and we haven't
+
+7579
+07:30:16,030 --> 07:30:19,870
+called store yet. So awesome. So
+that is, that's working
+
+7580
+07:30:19,870 --> 07:30:22,480
+perfectly. So this is what our
+current favorite number is.
+
+7581
+07:30:22,540 --> 07:30:25,720
+Let's make this console dot log
+a little bit more syntactical.
+
+7582
+07:30:25,750 --> 07:30:28,150
+We're going to use something
+called string interpolation. So
+
+7583
+07:30:28,150 --> 07:30:32,320
+we can interpolate our string
+here with variables. Typically
+
+7584
+07:30:32,320 --> 07:30:34,960
+in JavaScript when working with
+strings, use double quotes.
+
+7585
+07:30:34,990 --> 07:30:39,460
+However, if you want to mix
+variables with actual strings,
+
+7586
+07:30:39,490 --> 07:30:42,250
+you can use backticks instead.
+So we're going to use some that
+
+7587
+07:30:42,250 --> 07:30:47,500
+backticks here, and we're gonna
+say current favorite number to
+
+7588
+07:30:47,500 --> 07:30:50,980
+call in here. And to tell
+JavaScript that this is a
+
+7589
+07:30:50,980 --> 07:30:54,400
+variable that we want to read,
+we put a little dollar sign and
+
+7590
+07:30:54,400 --> 07:30:59,320
+a bracket around it, like this.
+Now, if we run this code again,
+
+7591
+07:30:59,860 --> 07:31:02,530
+it's saying deploying, please
+wait, and we get current
+
+7592
+07:31:02,530 --> 07:31:05,710
+favorite number is zero, because
+JavaScript goes, Okay, this is a
+
+7593
+07:31:05,710 --> 07:31:09,610
+string, ah, dollar sign, curly
+brace looks like this is going
+
+7594
+07:31:09,610 --> 07:31:12,310
+to be some variable or some
+JavaScript that you want me to
+
+7595
+07:31:12,340 --> 07:31:16,060
+interpret and close it off, and
+then backtick. Cool. So our
+
+7596
+07:31:16,060 --> 07:31:18,700
+current favorite number is going
+to be zero. Great. So let's
+
+7597
+07:31:18,730 --> 07:31:21,490
+update on the contract the
+number by calling the store
+
+7598
+07:31:21,490 --> 07:31:27,760
+function. So we'll say const,
+transaction response equals
+
+7599
+07:31:27,910 --> 07:31:32,980
+await, contract dot store, and
+we'll add seven. Now since seven
+
+7600
+07:31:32,980 --> 07:31:35,980
+is a small number, you can just
+pass it like seven. But passing
+
+7601
+07:31:35,980 --> 07:31:39,640
+it like seven in a string also
+works. Again, this is because if
+
+7602
+07:31:39,640 --> 07:31:43,210
+we want to pass some crazy
+massive number, JavaScript would
+
+7603
+07:31:43,210 --> 07:31:47,380
+get confused. So it's usually
+best practice to pass variables
+
+7604
+07:31:47,410 --> 07:31:49,960
+to contract functions as
+strings, even though that might
+
+7605
+07:31:49,960 --> 07:31:52,870
+be a little bit confusing ethers
+is smart enough to know that
+
+7606
+07:31:53,020 --> 07:31:56,650
+this seventh string is actually
+seven the number then we can do
+
+7607
+07:31:56,650 --> 07:32:03,190
+const. Transaction received
+equals await transaction
+
+7608
+07:32:03,820 --> 07:32:09,520
+response that Wait, one. So
+we'll wait one block here. This
+
+7609
+07:32:09,520 --> 07:32:12,970
+is similar to us doing contract
+dot deploy transaction dot Wait,
+
+7610
+07:32:13,510 --> 07:32:16,240
+the syntax here is a little bit
+different than what we saw up
+
+7611
+07:32:16,240 --> 07:32:18,940
+here. Because this is using a
+contract factory. And this is
+
+7612
+07:32:18,940 --> 07:32:22,180
+calling a function on a
+contract. So when we call the
+
+7613
+07:32:22,180 --> 07:32:25,330
+function on the contract, we get
+a transaction response. When we
+
+7614
+07:32:25,330 --> 07:32:27,940
+wait for the transaction
+response to finish, we get the
+
+7615
+07:32:27,940 --> 07:32:32,590
+transaction receipt. Now I can
+do const, updated, favorite
+
+7616
+07:32:32,590 --> 07:32:39,880
+number two equals await on track
+dot retrieve. And then console
+
+7617
+07:32:39,880 --> 07:32:46,750
+dot log updated. favorite number
+is, and we'll do a little string
+
+7618
+07:32:46,750 --> 07:32:51,010
+interpolation, updated, favorite
+number like that? Now let's go
+
+7619
+07:32:51,010 --> 07:32:53,830
+ahead and run this. So in this
+process, what are we doing,
+
+7620
+07:32:54,220 --> 07:32:57,550
+we're deploying the contract,
+we're getting the initial value,
+
+7621
+07:32:57,730 --> 07:33:01,360
+we're going to update our
+contract by calling store which
+
+7622
+07:33:01,390 --> 07:33:05,110
+is going to cost gas. So this is
+a transaction, we're going to
+
+7623
+07:33:05,110 --> 07:33:07,810
+get the transaction response,
+then we're gonna get the
+
+7624
+07:33:07,810 --> 07:33:10,570
+transaction receipt, we're not
+going to do anything with the
+
+7625
+07:33:10,570 --> 07:33:13,660
+transaction receipt, I want to
+ingrain in you all that these
+
+7626
+07:33:13,660 --> 07:33:16,600
+two are different transaction
+response and transaction
+
+7627
+07:33:16,600 --> 07:33:19,450
+receipt, and you'll see why in
+the future. And then we'll get
+
+7628
+07:33:19,450 --> 07:33:21,610
+the updated favorite number, and
+then we're just going to print
+
+7629
+07:33:21,610 --> 07:33:26,560
+it out. So let's do this. Boom,
+and perfect. Deploying, please
+
+7630
+07:33:26,560 --> 07:33:30,400
+wait, current favorite number is
+zero, updated favorite number is
+
+7631
+07:33:30,400 --> 07:33:33,430
+seven. And if we go to our
+ganache instance, we go to
+
+7632
+07:33:33,430 --> 07:33:38,230
+transactions, we can see, we now
+have a contract call at the top,
+
+7633
+07:33:38,680 --> 07:33:42,220
+we have the sender, the contract
+address, the gas price, all this
+
+7634
+07:33:42,220 --> 07:33:46,060
+stuff, and we see our
+transaction data right here. So
+
+7635
+07:33:46,060 --> 07:33:49,960
+this transaction data is what
+gets sent in that data slot of
+
+7636
+07:33:49,960 --> 07:33:53,170
+our transaction object. Ethers
+is just doing that on the back
+
+7637
+07:33:53,170 --> 07:33:56,560
+end for us so that we don't have
+to make that big transaction
+
+7638
+07:33:56,560 --> 07:33:59,680
+object there. All right,
+awesome. You've successfully
+
+7639
+07:33:59,680 --> 07:34:04,360
+deployed a contract to your own
+local ganache instance, or your
+
+7640
+07:34:04,360 --> 07:34:07,120
+own JavaScript virtual machine.
+This is great.
+
+7641
+07:34:09,790 --> 07:34:12,820
+Now let's clean this up a little
+bit. Because if we look up here,
+
+7642
+07:34:12,850 --> 07:34:17,470
+we have both our connection to
+the blockchain and our private
+
+7643
+07:34:17,470 --> 07:34:21,550
+key stored directly in our code,
+we were to push this code up to
+
+7644
+07:34:21,580 --> 07:34:24,250
+a GitHub or some other code
+repository, if you will, will be
+
+7645
+07:34:24,280 --> 07:34:27,760
+able to see our code. If we look
+into ploy dot j s of my code,
+
+7646
+07:34:28,120 --> 07:34:31,360
+ah, there's something else in
+here, we don't actually see the
+
+7647
+07:34:31,360 --> 07:34:34,720
+private key or the RPC URL in
+here. So what's going on?
+
+7648
+07:34:34,810 --> 07:34:37,360
+Remember, if you give out your
+private key, whoever has your
+
+7649
+07:34:37,360 --> 07:34:40,960
+private key owns your funds. So
+even though this is a fake,
+
+7650
+07:34:40,960 --> 07:34:43,540
+private key that doesn't have
+any real money in it, we still
+
+7651
+07:34:43,540 --> 07:34:46,030
+don't want to have to hard code
+our private keys into our code,
+
+7652
+07:34:46,060 --> 07:34:49,090
+just in case we accidentally
+share code with somebody. So
+
+7653
+07:34:49,090 --> 07:34:52,510
+what can we do? Well, one of the
+most popular methods is actually
+
+7654
+07:34:52,540 --> 07:34:55,900
+creating something called a dot
+EMV file or an environment
+
+7655
+07:34:55,900 --> 07:34:58,570
+variable. And if you're familiar
+with environment variables, you
+
+7656
+07:34:58,570 --> 07:35:01,600
+can actually set them right in
+your terminal, but we're gonna
+
+7657
+07:35:01,600 --> 07:35:04,630
+set them in our dot env. So what
+you want to do is you're gonna
+
+7658
+07:35:04,630 --> 07:35:07,990
+want to create a dot env file.
+And this is going to be a file
+
+7659
+07:35:07,990 --> 07:35:10,450
+where you store its sensitive
+information. And this is going
+
+7660
+07:35:10,450 --> 07:35:13,180
+to be a file, we're never going
+to share this with anybody. This
+
+7661
+07:35:13,180 --> 07:35:16,810
+dot env file will stick
+variables of our choosing into
+
+7662
+07:35:16,840 --> 07:35:20,410
+the environment of our code. So
+for example, if I pull up my
+
+7663
+07:35:20,410 --> 07:35:25,570
+terminal here, and I do echo
+cat, this is going to reflect
+
+7664
+07:35:25,870 --> 07:35:29,320
+what the cat environment
+variable is for us. Right now
+
+7665
+07:35:29,350 --> 07:35:32,380
+there is no cat environment
+variable. However, if I do
+
+7666
+07:35:32,410 --> 07:35:41,920
+export, cat equals dog, and now
+I do echo dollar sign cat, I get
+
+7667
+07:35:41,980 --> 07:35:45,010
+dog output. This is what an
+environment variable is, it's a
+
+7668
+07:35:45,010 --> 07:35:48,670
+variable in our terminal or in
+our scripting environment, since
+
+7669
+07:35:48,700 --> 07:35:52,720
+I don't want to have to type
+export, private key equals blah,
+
+7670
+07:35:52,720 --> 07:35:55,750
+blah, blah, every time, what
+we're going to do instead is
+
+7671
+07:35:55,750 --> 07:35:58,870
+we're going to stick them into
+this dot env file. So when this
+
+7672
+07:35:58,870 --> 07:36:04,900
+dot env, we can put private key
+equals. And we can grab this
+
+7673
+07:36:04,900 --> 07:36:08,440
+private key from our script, and
+paste it in like this. And a
+
+7674
+07:36:08,440 --> 07:36:11,680
+note, some tools look for the
+0x, at the beginning of the
+
+7675
+07:36:11,680 --> 07:36:14,890
+private key ethers, and hard hat
+is smart enough that either one
+
+7676
+07:36:14,890 --> 07:36:18,490
+works, but if you run into some
+issues, just know that sometimes
+
+7677
+07:36:18,490 --> 07:36:21,460
+you might have to put your 0x at
+the front of this. Great. So now
+
+7678
+07:36:21,460 --> 07:36:23,950
+we have a private key in an
+environment variable. What do we
+
+7679
+07:36:23,950 --> 07:36:28,570
+do now? Well, in our deploy.js,
+we want to grab this environment
+
+7680
+07:36:28,570 --> 07:36:32,140
+variable and stick it into our
+script here, so that our script
+
+7681
+07:36:32,140 --> 07:36:34,930
+can then stick it into our
+environment. So we're going to
+
+7682
+07:36:34,930 --> 07:36:38,920
+add a tool called dot env. To
+make this easier, so we're gonna
+
+7683
+07:36:38,920 --> 07:36:44,620
+do yarn, add dot env. And if we
+look at the dot env package, can
+
+7684
+07:36:44,620 --> 07:36:47,470
+read more about it and read
+about how to add it with NPM.
+
+7685
+07:36:47,500 --> 07:36:51,220
+Again, we're just using yarn
+add. But then we can just call
+
+7686
+07:36:51,220 --> 07:36:54,670
+this require dot E and V dot
+config. And this will pull in
+
+7687
+07:36:54,880 --> 07:36:58,240
+all our environment variables.
+So we can just do require
+
+7688
+07:36:59,260 --> 07:37:04,060
+dot EMV config, we should see
+this on our package that JSON,
+
+7689
+07:37:04,180 --> 07:37:07,750
+we do. Excellent. Now that we
+pulled it in, we actually get
+
+7690
+07:37:07,750 --> 07:37:11,290
+access to our private key
+environment variable, you can
+
+7691
+07:37:11,290 --> 07:37:14,500
+access environment variables in
+JavaScript, are using process
+
+7692
+07:37:14,500 --> 07:37:17,800
+dot EMV. So instead of putting
+our private key here, we're
+
+7693
+07:37:17,800 --> 07:37:21,190
+gonna delete that whole thing
+and substitute it with process
+
+7694
+07:37:21,370 --> 07:37:26,860
+dot EMV, that private key, and
+we'll save and it'll reformat
+
+7695
+07:37:26,860 --> 07:37:29,890
+for us to make sure this is
+actually working, we can just
+
+7696
+07:37:29,890 --> 07:37:34,660
+hit up after we save up, up up
+up up a bunch and go back to no
+
+7697
+07:37:34,660 --> 07:37:38,710
+deploy to Jas. And we see we get
+the exact same setup. And if we
+
+7698
+07:37:38,710 --> 07:37:41,350
+scroll back, you can see a
+transaction has indeed gone
+
+7699
+07:37:41,350 --> 07:37:43,750
+through. If you want to double
+check that this is actually
+
+7700
+07:37:43,750 --> 07:37:47,320
+printing out your private key,
+we could do console dot log,
+
+7701
+07:37:47,860 --> 07:37:51,640
+press study and via private key
+we run, we see that that is
+
+7702
+07:37:51,640 --> 07:37:54,640
+indeed the private key coming
+from our environment variable
+
+7703
+07:37:54,640 --> 07:37:59,110
+here. Awesome. Now our RPC URL
+here is isn't really something
+
+7704
+07:37:59,110 --> 07:38:01,510
+that we need to secure however,
+maybe we're going to use a
+
+7705
+07:38:01,510 --> 07:38:05,140
+certain API key or maybe a
+certain endpoint that only we
+
+7706
+07:38:05,140 --> 07:38:07,480
+want to have access to. And we
+don't want anybody else to be
+
+7707
+07:38:07,480 --> 07:38:11,350
+using our RPC endpoint. So we're
+going to add this to our dot env
+
+7708
+07:38:11,350 --> 07:38:16,720
+file as well. So in our dot env.
+When I copy this here, I'm gonna
+
+7709
+07:38:16,720 --> 07:38:22,300
+say RPC URL equals, and I paste
+that in there, just like that.
+
+7710
+07:38:22,900 --> 07:38:25,600
+And we're gonna delete here. And
+we're gonna do the exact same
+
+7711
+07:38:25,600 --> 07:38:30,490
+thing, say process dot e NV dot
+RPC URL. And now we're going to
+
+7712
+07:38:30,490 --> 07:38:33,550
+run this again. And I'm going to
+take out that console dot log.
+
+7713
+07:38:33,820 --> 07:38:37,360
+And we should get the exact same
+response because all we did was
+
+7714
+07:38:37,360 --> 07:38:41,080
+swap out our RPC URL with our
+environment variable, which is
+
+7715
+07:38:41,080 --> 07:38:43,600
+going to be exactly what it was
+before. So we go ahead and run
+
+7716
+07:38:43,600 --> 07:38:46,930
+this, and we get the exact same
+response. And if we go to
+
+7717
+07:38:46,930 --> 07:38:50,260
+ganache, we see that we do
+indeed get a transaction here,
+
+7718
+07:38:50,500 --> 07:38:54,070
+which is perfect. Awesome. So
+we've learned how to add
+
+7719
+07:38:54,070 --> 07:38:58,030
+environment variables to our dot
+env file. So that so that just
+
+7720
+07:38:58,030 --> 07:39:00,670
+in case, we want to share our
+code, or we push our code up to
+
+7721
+07:39:00,670 --> 07:39:03,610
+GitHub, which we'll do in later
+sections, we don't accidentally
+
+7722
+07:39:03,610 --> 07:39:07,450
+expose our private keys or our
+RPC URLs. Now all the code that
+
+7723
+07:39:07,450 --> 07:39:11,080
+we have in our project here, if
+we push it up to GitHub, or
+
+7724
+07:39:11,320 --> 07:39:14,230
+share it with somebody else, all
+this code will get pushed up,
+
+7725
+07:39:14,260 --> 07:39:17,710
+including our dot env file.
+However, if you look at my code
+
+7726
+07:39:17,710 --> 07:39:22,120
+samples here for this course, we
+don't see a dot env file in
+
+7727
+07:39:22,120 --> 07:39:25,630
+here. So how is that possible?
+Well, what we want to do
+
+7728
+07:39:25,660 --> 07:39:30,400
+whenever we have a project is
+create a dot Git ignore file.
+
+7729
+07:39:30,580 --> 07:39:34,450
+And in here, we want to put in
+v. And we also want to put in
+
+7730
+07:39:34,480 --> 07:39:38,530
+Node modules. This means that
+when working with Git and
+
+7731
+07:39:38,530 --> 07:39:40,720
+working with version control,
+which we're going to do a little
+
+7732
+07:39:40,720 --> 07:39:44,680
+bit later, we won't push our dot
+env file up to GitHub. And we
+
+7733
+07:39:44,680 --> 07:39:47,710
+also won't push up known
+modules. So if we go back to my
+
+7734
+07:39:47,710 --> 07:39:52,300
+example here, we don't see, we
+don't see a dot env file, but we
+
+7735
+07:39:52,300 --> 07:39:56,020
+do see a dot env dot example,
+just to show you what one would
+
+7736
+07:39:56,020 --> 07:39:58,570
+look like. So it doesn't really
+matter that I have them in here.
+
+7737
+07:40:01,270 --> 07:40:03,400
+Now, if you're really paranoid,
+there's something else you can
+
+7738
+07:40:03,400 --> 07:40:05,590
+actually do when running your
+scripts and running your
+
+7739
+07:40:05,590 --> 07:40:08,560
+commands. Let's say you didn't
+want to put your private key
+
+7740
+07:40:08,560 --> 07:40:11,230
+into a dot env file because you
+were nervous that you would
+
+7741
+07:40:11,230 --> 07:40:13,540
+accidentally push it up or
+something. What you can do is
+
+7742
+07:40:13,540 --> 07:40:16,870
+you can add your private key in
+your RPC URL as environment
+
+7743
+07:40:16,870 --> 07:40:20,200
+variables right in the command
+line. So before you run Node
+
+7744
+07:40:20,200 --> 07:40:25,450
+deploy, that's as well you can
+do, you can say RPC URL equals,
+
+7745
+07:40:25,870 --> 07:40:32,020
+paste your RPC around. And then
+you can say private key. equals
+
+7746
+07:40:32,290 --> 07:40:36,610
+and then paste your private key
+and then do node deploy.js.
+
+7747
+07:40:37,240 --> 07:40:40,390
+Setting these right before we
+run our script is the exact same
+
+7748
+07:40:40,390 --> 07:40:43,690
+as if we had set them into dot
+env. Here If we hit run, we see
+
+7749
+07:40:43,690 --> 07:40:46,690
+the exact same output, which
+means that our RPC URL and our
+
+7750
+07:40:46,690 --> 07:40:49,360
+private key went through
+successfully. This way for key
+
+7751
+07:40:49,360 --> 07:40:52,060
+management is fine. But our
+rights doing this, it's going to
+
+7752
+07:40:52,060 --> 07:40:55,390
+be much better. But it still
+makes me a little bit nervous in
+
+7753
+07:40:55,390 --> 07:40:57,700
+our development environments
+with our fake private keys,
+
+7754
+07:40:57,730 --> 07:41:01,060
+having our code in the dot env
+file like this is, is okay,
+
+7755
+07:41:01,090 --> 07:41:04,030
+right? Because we don't really
+care if this key gets hacked,
+
+7756
+07:41:04,060 --> 07:41:06,790
+like nobody's using it. But when
+we move to a more professional
+
+7757
+07:41:06,790 --> 07:41:10,630
+setup, this can be a little bit
+scary. So how can we make this
+
+7758
+07:41:10,660 --> 07:41:14,050
+even more secure? Well, what we
+can do is actually we can
+
+7759
+07:41:14,050 --> 07:41:17,890
+encrypt our private key and
+store our encrypted key locally.
+
+7760
+07:41:17,950 --> 07:41:20,980
+That way, if for some reason
+somebody does get into our
+
+7761
+07:41:20,980 --> 07:41:23,560
+account, our private key isn't
+just sitting around in plain
+
+7762
+07:41:23,560 --> 07:41:26,410
+text, it's encrypted. And you'll
+need to know a password that
+
+7763
+07:41:26,410 --> 07:41:29,860
+only you know to get into it. So
+how do we add that? Well, first,
+
+7764
+07:41:29,860 --> 07:41:36,010
+we're going to create a new file
+called encrypt key.js. And this
+
+7765
+07:41:36,010 --> 07:41:39,250
+is some code that we're going to
+use to actually encrypt a key.
+
+7766
+07:41:39,520 --> 07:41:41,920
+And we'll store that locally
+instead of our private key in
+
+7767
+07:41:41,920 --> 07:41:45,100
+plain text. This will make us
+even more secure so that we
+
+7768
+07:41:45,100 --> 07:41:47,290
+don't have our private key just
+hanging around in plain text
+
+7769
+07:41:47,290 --> 07:41:50,200
+here. So let's go ahead and
+build the script to encrypt our
+
+7770
+07:41:50,200 --> 07:41:52,780
+private key. So we're going to
+use the exact same setup as we
+
+7771
+07:41:52,780 --> 07:41:55,690
+did for our deploy script. We're
+going to do an async function
+
+7772
+07:41:55,690 --> 07:41:56,110
+main.
+
+7773
+07:41:57,460 --> 07:41:59,650
+And then down here, I'm just
+gonna go ahead and copy from
+
+7774
+07:41:59,650 --> 07:42:03,730
+deployed J S. We're gonna use
+this exact same setup, and paste
+
+7775
+07:42:03,730 --> 07:42:07,330
+it. Okay, great. We're gonna be
+using ethers J, s, and r dot E
+
+7776
+07:42:07,330 --> 07:42:10,420
+and V again. So we're going to
+add these in const ethers equals
+
+7777
+07:42:10,420 --> 07:42:20,170
+require ethers const, FS equals
+require Fs extra. And then
+
+7778
+07:42:20,170 --> 07:42:27,880
+require dot env. Config.
+Alright, so right now, in our
+
+7779
+07:42:27,880 --> 07:42:30,850
+dot env, we do have this private
+key. And again, if you don't
+
+7780
+07:42:30,850 --> 07:42:33,340
+want to have the private key in
+their way you can just do is you
+
+7781
+07:42:33,340 --> 07:42:36,610
+can do private key equals and
+then you know, node, whatever
+
+7782
+07:42:36,610 --> 07:42:39,790
+script you want to run. So we're
+going to set this script up to
+
+7783
+07:42:39,790 --> 07:42:43,600
+run our encrypt key one time.
+And then we can remove our
+
+7784
+07:42:43,600 --> 07:42:46,420
+private key from anywhere in our
+workspace so that it's no longer
+
+7785
+07:42:46,420 --> 07:42:48,730
+in plain text anywhere. So what
+we want to do is we want to say
+
+7786
+07:42:48,730 --> 07:42:53,260
+const wallet, and we're gonna
+create a new wallet, but a
+
+7787
+07:42:53,260 --> 07:42:56,950
+little bit differently. We're
+gonna say equals new ethers dot
+
+7788
+07:42:56,980 --> 07:43:03,580
+wallet, process dot E and V dot
+private key. So we do need our
+
+7789
+07:43:03,580 --> 07:43:06,250
+private key to stick in here.
+But then once we create this
+
+7790
+07:43:06,250 --> 07:43:13,810
+wallet, we're gonna say const.
+Encrypted JSON key equals await
+
+7791
+07:43:14,230 --> 07:43:19,030
+ethers dot encrypt, this encrypt
+function is going to return an
+
+7792
+07:43:19,030 --> 07:43:23,170
+encrypted JSON key that we can
+store locally and that we can
+
+7793
+07:43:23,170 --> 07:43:26,350
+only decrypt it with the
+password. And it takes two
+
+7794
+07:43:26,350 --> 07:43:30,190
+parameters. It takes a private
+key password and a private key.
+
+7795
+07:43:30,250 --> 07:43:33,430
+So in our dot EMV, just for
+right, now we're going to create
+
+7796
+07:43:33,430 --> 07:43:38,500
+a private key password. And I'm
+going to say it's password. But
+
+7797
+07:43:38,500 --> 07:43:40,540
+obviously, this is a terrible
+password. And you should never
+
+7798
+07:43:40,540 --> 07:43:43,600
+use password as your password.
+But for now, we're just going to
+
+7799
+07:43:43,600 --> 07:43:46,720
+leave it as password since I'm
+encrypting this big key anyways.
+
+7800
+07:43:46,780 --> 07:43:49,660
+So we're going to encrypt it by
+passing the password process
+
+7801
+07:43:49,660 --> 07:43:53,890
+study and v dot private key
+password. And we're also going
+
+7802
+07:43:53,890 --> 07:43:56,500
+to pass the private key, it's
+going to be ethers, it's going
+
+7803
+07:43:56,500 --> 07:44:00,640
+to be wallet dot encrypt. We're
+also going to pass it process
+
+7804
+07:44:00,670 --> 07:44:04,990
+dot EMV dot private key. Now
+let's go ahead and run this
+
+7805
+07:44:04,990 --> 07:44:08,140
+right now. And then we'll
+console dot log out this
+
+7806
+07:44:08,140 --> 07:44:12,040
+encrypted JSON key and see what
+happens when we run this. So to
+
+7807
+07:44:12,040 --> 07:44:16,240
+run this, we're going to do
+node, encrypt key.js. And hit
+
+7808
+07:44:16,240 --> 07:44:19,270
+enter. And we'll see what
+happens when we console log it
+
+7809
+07:44:19,270 --> 07:44:23,260
+out this JSON object here is
+what our key looks like,
+
+7810
+07:44:23,530 --> 07:44:27,640
+encrypted. So it's got the
+address this ID version, all
+
+7811
+07:44:27,640 --> 07:44:31,060
+this other stuff. And all this
+other stuff is the encrypted
+
+7812
+07:44:31,060 --> 07:44:34,270
+version of this key. If somebody
+gets into our account and they
+
+7813
+07:44:34,270 --> 07:44:38,590
+see this, they'll have to know
+the password to decrypt this
+
+7814
+07:44:38,620 --> 07:44:40,930
+private key, they'll need to
+know the password to decrypt
+
+7815
+07:44:40,930 --> 07:44:44,260
+this JSON object back into a
+private key. So what we're going
+
+7816
+07:44:44,260 --> 07:44:47,140
+to do, now that we've encrypted
+it, we're going to save it. So
+
+7817
+07:44:47,140 --> 07:44:52,120
+we'll do Fs dot write, file
+sync, we're going to pass it to
+
+7818
+07:44:52,120 --> 07:44:59,320
+dot slash dot encrypted key dot
+JSON, comma encrypted JSON key.
+
+7819
+07:44:59,680 --> 07:45:02,950
+So we're saving it to a new file
+called dot encrypted key dot
+
+7820
+07:45:02,950 --> 07:45:06,340
+JSON. And we're passing it this
+encrypted key that we just made.
+
+7821
+07:45:06,700 --> 07:45:09,430
+So if we open up our file
+explorer, and we run this
+
+7822
+07:45:09,430 --> 07:45:10,150
+command,
+
+7823
+07:45:12,160 --> 07:45:15,940
+you'll see we get a new file
+called dot encrypted key dot
+
+7824
+07:45:15,940 --> 07:45:19,570
+JSON. And it's this encrypted
+key here, which is awesome. So
+
+7825
+07:45:19,570 --> 07:45:22,900
+now what we want to do in our
+dot Git ignore is add dot
+
+7826
+07:45:22,900 --> 07:45:28,270
+encrypted key dot JSON, so that
+we don't accidentally push this
+
+7827
+07:45:28,270 --> 07:45:31,450
+up to GitHub. And now we have an
+encrypted key and we can go to
+
+7828
+07:45:31,450 --> 07:45:35,950
+our private key and delete this
+from our dot env file. We can
+
+7829
+07:45:35,950 --> 07:45:39,250
+also delete our private key
+password from our WMV file so
+
+7830
+07:45:39,250 --> 07:45:41,710
+that the password isn't just
+hanging around in plain text.
+
+7831
+07:45:41,860 --> 07:45:45,580
+Now that We have an encrypted
+key. Back in our deploy script,
+
+7832
+07:45:45,880 --> 07:45:49,570
+we can change the way that we
+actually get a wallet. So at the
+
+7833
+07:45:49,570 --> 07:45:52,210
+top, we're getting our wallet
+just by passing in the private
+
+7834
+07:45:52,210 --> 07:45:54,820
+key like this, we're not going
+to do that, we're going to use
+
+7835
+07:45:54,850 --> 07:45:58,300
+our encrypted key that we just
+created. So we're going to do is
+
+7836
+07:45:58,300 --> 07:46:03,160
+we're going to say const
+encrypted JSON equals Fs dot
+
+7837
+07:46:03,190 --> 07:46:11,470
+read file sync. That slash dot
+encrypted key dot JSON, comma
+
+7838
+07:46:12,100 --> 07:46:16,510
+UTF eight, this Fs dot read file
+sync is just going to read from
+
+7839
+07:46:16,510 --> 07:46:20,320
+our encrypted key dot JSON into
+this encrypted JSON variable
+
+7840
+07:46:20,320 --> 07:46:24,040
+here. Next, we're going to
+create a wallet from this
+
+7841
+07:46:24,040 --> 07:46:30,460
+encrypted key. We're gonna say
+let wallet equals new ethers dot
+
+7842
+07:46:30,460 --> 07:46:38,860
+wallet, dot from encrypted JSON
+sync. And all these commands
+
+7843
+07:46:38,920 --> 07:46:42,700
+that we're working with ethers,
+we can of course, find them in
+
+7844
+07:46:42,700 --> 07:46:46,000
+the documentation from encrypted
+JSON sync takes the encrypted
+
+7845
+07:46:46,000 --> 07:46:49,600
+JSON and a password and returns
+a Wallet Object. So we're going
+
+7846
+07:46:49,600 --> 07:46:53,530
+to pass it that encrypted JSON
+that we just read. And then
+
+7847
+07:46:53,530 --> 07:46:57,190
+we're going to pass it password
+which we're going to do process
+
+7848
+07:46:57,220 --> 07:47:03,340
+dot EMP dot private key
+password. And then finally, the
+
+7849
+07:47:03,340 --> 07:47:06,130
+reason I use let here is because
+now we have to connect this
+
+7850
+07:47:06,130 --> 07:47:09,520
+wallet back to our provider. If
+you look here, we're not
+
+7851
+07:47:09,520 --> 07:47:11,860
+connecting our wallet with a
+provider. When we make our
+
+7852
+07:47:11,860 --> 07:47:14,710
+transactions with our contract
+factory, we need to make sure
+
+7853
+07:47:14,710 --> 07:47:17,830
+the wallet knows about the
+provider here. So we can just
+
+7854
+07:47:17,830 --> 07:47:24,850
+say wallet equals await wallet
+dot connect provider. Now, if we
+
+7855
+07:47:24,850 --> 07:47:28,720
+run our deploy dot j s with our
+private key password as an
+
+7856
+07:47:28,720 --> 07:47:31,480
+environment variable, it should
+still deploy. So we can do
+
+7857
+07:47:31,480 --> 07:47:34,840
+private key password equals
+password, which yes, we know is
+
+7858
+07:47:34,840 --> 07:47:38,500
+terrible. But that's what we're
+using for now node deploy dot j
+
+7859
+07:47:38,500 --> 07:47:41,680
+s, we should get the same output
+we've been seeing this whole
+
+7860
+07:47:41,680 --> 07:47:47,050
+time and we do we're able to no
+longer have our private key in
+
+7861
+07:47:47,050 --> 07:47:49,990
+our dot env file not in
+plaintext anymore, it's in this
+
+7862
+07:47:49,990 --> 07:47:52,840
+encrypted key. So that just in
+case somebody hacks our
+
+7863
+07:47:52,840 --> 07:47:55,900
+computer, they still won't be
+able to send in new transactions
+
+7864
+07:47:55,930 --> 07:47:58,900
+unless they know the password.
+This is awesome. One more thing
+
+7865
+07:47:58,900 --> 07:48:02,620
+to know, if you type history, if
+somebody got into your computer,
+
+7866
+07:48:02,650 --> 07:48:05,170
+a hacker could actually see
+private key password equals
+
+7867
+07:48:05,170 --> 07:48:10,600
+password in your bash history.
+If you run history, dash c, you
+
+7868
+07:48:10,600 --> 07:48:14,080
+actually will clear your
+history. Now if I type history,
+
+7869
+07:48:14,080 --> 07:48:16,300
+I can just see that the most
+recent command I wrote was
+
+7870
+07:48:16,300 --> 07:48:19,150
+history, this is really just
+some of the bare minimum for
+
+7871
+07:48:19,180 --> 07:48:21,940
+encryption and keeping your key
+safe. And it might seem
+
+7872
+07:48:21,940 --> 07:48:24,310
+ridiculous that somebody might
+be able to hack your computer
+
+7873
+07:48:24,340 --> 07:48:26,680
+and read your encrypted private
+keys and everything. But as your
+
+7874
+07:48:26,680 --> 07:48:29,230
+projects get bigger and bigger,
+it is really important to know
+
+7875
+07:48:29,260 --> 07:48:32,710
+about private key security and
+private key safety and, and for
+
+7876
+07:48:32,710 --> 07:48:35,110
+this course really just giving
+you the bare minimum here and
+
+7877
+07:48:35,110 --> 07:48:38,170
+showing you how to encrypt keys
+and how to be a little bit safer
+
+7878
+07:48:38,170 --> 07:48:41,320
+here. Now for the rest of this
+course, we are going to be just
+
+7879
+07:48:41,320 --> 07:48:46,360
+using this syntax with our
+private key in a dot env file.
+
+7880
+07:48:46,390 --> 07:48:48,340
+The reason why we're doing like
+this for the rest of the course
+
+7881
+07:48:48,340 --> 07:48:51,070
+is it is a little bit easier,
+I'm really hoping Hardhead add
+
+7882
+07:48:51,070 --> 07:48:53,830
+some additional features to make
+private key encryption much
+
+7883
+07:48:53,830 --> 07:48:56,590
+safer and also easier to use in
+the future. And they probably
+
+7884
+07:48:56,590 --> 07:48:58,810
+will. And the other reason that
+we're okay to do this here is
+
+7885
+07:48:58,810 --> 07:49:01,360
+because you've solemnly sworn
+that you're not going to use an
+
+7886
+07:49:01,360 --> 07:49:03,760
+account that has any real money
+in it for the duration of this
+
+7887
+07:49:03,760 --> 07:49:06,160
+course, you're only going to use
+private keys that have tests on
+
+7888
+07:49:06,160 --> 07:49:08,800
+Aetherium or are fake private
+keys like this one that we got
+
+7889
+07:49:08,800 --> 07:49:12,790
+from ganache. In fact just to
+really hone this in in the smart
+
+7890
+07:49:12,790 --> 07:49:16,330
+contract kit slash full blocked
+in solidity course, Jas GitHub
+
+7891
+07:49:16,330 --> 07:49:20,710
+repo in the discussions tab, you
+go to announcements, I've
+
+7892
+07:49:20,710 --> 07:49:23,980
+created one called the dot end
+pledge. Because recently I've
+
+7893
+07:49:23,980 --> 07:49:27,070
+seen too many people follow a
+tutorial that doesn't tell them
+
+7894
+07:49:27,070 --> 07:49:30,370
+about the security risks of
+doing this. And I've made this
+
+7895
+07:49:30,370 --> 07:49:33,460
+dot EMV pledge, I would love
+everyone to jump on and read.
+
+7896
+07:49:33,460 --> 07:49:37,030
+And if you agree, at the bottom,
+leave a comment saying I will be
+
+7897
+07:49:37,030 --> 07:49:41,170
+safe, I will be safe, make sure
+you read and you understand
+
+7898
+07:49:41,170 --> 07:49:44,320
+what's going on in here. And I'm
+not doing this to scare you.
+
+7899
+07:49:44,350 --> 07:49:47,320
+Because again, at the end of the
+day, if you use a Metamask that
+
+7900
+07:49:47,350 --> 07:49:50,530
+only has tests that funds for
+the duration of this course, you
+
+7901
+07:49:50,530 --> 07:49:52,750
+will never have to be worried
+because of your key gets
+
+7902
+07:49:52,750 --> 07:49:56,170
+compromised. It's just test it.
+So who cares? This is if you're
+
+7903
+07:49:56,170 --> 07:49:58,810
+using a meta mask or you're
+working with a meta mask that
+
+7904
+07:49:58,810 --> 07:50:02,260
+has real funds. So I'm going to
+read up the pledge because it is
+
+7905
+07:50:02,350 --> 07:50:05,260
+really important. You understand
+this when you're working with
+
+7906
+07:50:05,260 --> 07:50:07,900
+real funds. And if you're like,
+Hey, I'm not working with real
+
+7907
+07:50:07,900 --> 07:50:11,920
+funds, I don't care, great move
+past this, whatever. But when
+
+7908
+07:50:11,920 --> 07:50:14,590
+you do work with real funds,
+when you do decide, hey, I
+
+7909
+07:50:14,590 --> 07:50:17,590
+actually want to deploy this to
+a real network. Now I need real
+
+7910
+07:50:17,590 --> 07:50:21,310
+money to do that. Come back to
+this pledge. Scroll the bottom
+
+7911
+07:50:21,310 --> 07:50:24,370
+say I will be safe and make sure
+you read and you understand
+
+7912
+07:50:24,370 --> 07:50:28,270
+this. Okay, so the pledge is, I
+solemnly swear that I will never
+
+7913
+07:50:28,270 --> 07:50:32,320
+place a private key or secret
+phrase or pneumonic in a dot env
+
+7914
+07:50:32,320 --> 07:50:35,980
+file that is associated with any
+real funds. Basically, you
+
+7915
+07:50:36,610 --> 07:50:39,340
+basically never have your
+private key or your pneumonic
+
+7916
+07:50:39,340 --> 07:50:43,840
+phrase, in plain text, anywhere.
+You'll all only place private
+
+7917
+07:50:43,840 --> 07:50:48,040
+keys in a web file that only
+have tested e FF link or other
+
+7918
+07:50:48,040 --> 07:50:51,790
+cryptocurrencies. Because again,
+if your private key has only
+
+7919
+07:50:51,790 --> 07:50:54,670
+test net funds, then that's
+great. I don't care, we are
+
+7920
+07:50:54,670 --> 07:50:58,540
+aware that if we forget a dot
+Git ignore, and we push our key
+
+7921
+07:50:58,540 --> 07:51:02,350
+phrase to GitHub, even for a
+split second, or even show our
+
+7922
+07:51:02,350 --> 07:51:05,590
+key slash phrase on the
+internet, wherever it may be for
+
+7923
+07:51:05,590 --> 07:51:08,680
+a split second, it should be
+considered compromised. And you
+
+7924
+07:51:08,680 --> 07:51:11,740
+should remove all funds
+immediately. So even if you
+
+7925
+07:51:11,770 --> 07:51:14,410
+deploy your private key to a
+website, and then immediately
+
+7926
+07:51:14,410 --> 07:51:17,620
+delete your website and think,
+Oh, nobody probably got to it,
+
+7927
+07:51:17,830 --> 07:51:20,350
+you should consider that private
+key compromised, and you should
+
+7928
+07:51:20,470 --> 07:51:23,440
+remove all your funds. And
+again, this is just for real
+
+7929
+07:51:23,440 --> 07:51:25,960
+funds. If your private key was
+only tested, funds gets
+
+7930
+07:51:25,960 --> 07:51:28,690
+compromised. Well, who cares? I
+do that all the time, you've
+
+7931
+07:51:28,690 --> 07:51:30,790
+been seeing me do that all the
+time, because it only has tested
+
+7932
+07:51:30,790 --> 07:51:33,040
+funds in it. If at the end of
+this course, you want to steal
+
+7933
+07:51:33,040 --> 07:51:36,250
+all of my tests that funds I
+mean, have a blast, it would be
+
+7934
+07:51:36,250 --> 07:51:39,910
+annoying to me at worst. If I'm
+unsure if my account has real
+
+7935
+07:51:39,910 --> 07:51:43,090
+funds in it, I will assume it
+has real funds in it. So if you
+
+7936
+07:51:43,090 --> 07:51:46,270
+don't know if it has real funds,
+assume it has real funds, and
+
+7937
+07:51:46,270 --> 07:51:48,940
+you will not use it for
+developing purposes. And then
+
+7938
+07:51:48,940 --> 07:51:52,600
+finally, I am aware that even if
+I hit Add Account on my meta
+
+7939
+07:51:52,600 --> 07:51:55,810
+mask or other eath wallet, I
+will get a new private key, but
+
+7940
+07:51:55,810 --> 07:51:59,620
+it will share the same secret
+phrase slash pneumonic of all
+
+7941
+07:51:59,620 --> 07:52:02,500
+the other accounts generated in
+the meta mask or other eath
+
+7942
+07:52:02,500 --> 07:52:06,580
+Wallet. So if I'm in my meta
+mask here, and I hit Create
+
+7943
+07:52:06,610 --> 07:52:09,850
+account, I will get a new
+private key with the new
+
+7944
+07:52:09,850 --> 07:52:13,210
+account. However, all of these
+accounts that I've created with
+
+7945
+07:52:13,210 --> 07:52:16,570
+this Create Account button have
+the exact same pneumonic phrase
+
+7946
+07:52:16,570 --> 07:52:20,080
+or secret phrase. If I import an
+account with a private key, it's
+
+7947
+07:52:20,080 --> 07:52:22,570
+going to have a different
+pneumonic phrase. But all of the
+
+7948
+07:52:22,570 --> 07:52:25,480
+ones that I generate inside the
+wallet are all going to have the
+
+7949
+07:52:25,480 --> 07:52:28,750
+same phrase. Okay, great.
+Hopefully that'll make sense. I
+
+7950
+07:52:28,750 --> 07:52:31,900
+have some pledge additions here.
+For this course, I will only use
+
+7951
+07:52:31,900 --> 07:52:34,780
+funds associated with a brand
+new never before use meta mask
+
+7952
+07:52:34,810 --> 07:52:37,870
+or other eath wallet. Again,
+this is not to scare you, if you
+
+7953
+07:52:37,870 --> 07:52:40,180
+just work with a brand new meta
+mask, you don't have to worry
+
+7954
+07:52:40,180 --> 07:52:42,910
+about any of this and just refer
+back to this when you start
+
+7955
+07:52:42,910 --> 07:52:46,300
+looking at real money and real
+private keys. I'm aware that my
+
+7956
+07:52:46,300 --> 07:52:49,420
+account associated with my
+private key is the same on test
+
+7957
+07:52:49,420 --> 07:52:53,200
+nets that it is on Main nets. So
+like I was showing you, my
+
+7958
+07:52:53,200 --> 07:52:55,870
+private key on Rinkeby is going
+to be the same as my private key
+
+7959
+07:52:55,870 --> 07:52:58,990
+I'm on a main net, if I must use
+a private key associated with
+
+7960
+07:52:58,990 --> 07:53:02,710
+real funds in the future, until
+I am 100% sure what I am doing,
+
+7961
+07:53:02,770 --> 07:53:06,250
+I will always either use one of
+the encrypted methods that
+
+7962
+07:53:06,250 --> 07:53:09,610
+Patrick showed you some better
+encryption stuff that I didn't
+
+7963
+07:53:09,610 --> 07:53:13,330
+show or use the command line way
+to pass private keys and then
+
+7964
+07:53:13,330 --> 07:53:16,330
+delete the command line history
+right after. If I'm never
+
+7965
+07:53:16,330 --> 07:53:18,910
+actually deploying anything to
+make that myself or work with a
+
+7966
+07:53:18,910 --> 07:53:21,340
+private key with real funds. I
+do not need to be concerned.
+
+7967
+07:53:21,520 --> 07:53:24,670
+Take a look at this. Read this
+internalize it, it should make
+
+7968
+07:53:24,670 --> 07:53:27,070
+you confident. Now again, I'm
+not saying this to scare you.
+
+7969
+07:53:27,100 --> 07:53:30,250
+I'm saying this to instill
+confidence in you that these are
+
+7970
+07:53:30,250 --> 07:53:33,610
+some of the things that we want
+to think about. Okay, great. In
+
+7971
+07:53:33,610 --> 07:53:36,250
+here, I will be safe.
+
+7972
+07:53:37,900 --> 07:53:41,440
+Boom, I will be safe. And if you
+want to copy paste this on
+
+7973
+07:53:41,440 --> 07:53:44,860
+Twitter, put this in a huge
+tweet thread. Go for it. The
+
+7974
+07:53:44,860 --> 07:53:48,370
+more people who know about this,
+the more people who understand
+
+7975
+07:53:48,520 --> 07:53:51,700
+the security risks of their WMV
+files and their private keys,
+
+7976
+07:53:51,850 --> 07:53:54,430
+the better. So thank you for
+listening to this. I know I
+
+7977
+07:53:54,430 --> 07:53:57,160
+definitely belabor the point,
+but it is really important.
+
+7978
+07:53:57,550 --> 07:54:02,590
+Let's continue with the course.
+Alright, so we're just about
+
+7979
+07:54:02,590 --> 07:54:05,020
+done here. However, there's one
+or two more things we want to do
+
+7980
+07:54:05,020 --> 07:54:07,930
+just to clean this all up right
+now when we're auto saving
+
+7981
+07:54:07,960 --> 07:54:11,830
+reason, the VS code plugin for
+us to auto format. However, in
+
+7982
+07:54:11,830 --> 07:54:14,650
+the future, if anybody else
+comes across our repository,
+
+7983
+07:54:14,950 --> 07:54:18,010
+they might not have the Vyas
+code auto format or on. So we
+
+7984
+07:54:18,010 --> 07:54:21,760
+want to give users a way to
+format their code. So it matches
+
+7985
+07:54:21,790 --> 07:54:25,870
+the styles that we use. So we
+have prettier the extension
+
+7986
+07:54:25,870 --> 07:54:31,420
+installed. We can also add
+prettier as a Node js module
+
+7987
+07:54:31,480 --> 07:54:35,290
+that can tell other users who
+don't have a Vyas code exactly
+
+7988
+07:54:35,290 --> 07:54:38,170
+how to format both their
+JavaScript and the solidity.
+
+7989
+07:54:38,290 --> 07:54:41,440
+There is a prettier plugin
+solidity located here, there
+
+7990
+07:54:41,440 --> 07:54:44,350
+will be a link to it in our
+GitHub repo. And if we scroll
+
+7991
+07:54:44,350 --> 07:54:47,980
+down, we can see how to install
+with npm install dash dash save
+
+7992
+07:54:47,980 --> 07:54:50,950
+Dev, which again, we're just
+going to use yarn, so we're
+
+7993
+07:54:50,950 --> 07:54:58,960
+going to do yarn, add prettier,
+and then prettier plugin
+
+7994
+07:54:58,960 --> 07:55:03,430
+solidity. So we're installing
+both prettier, and the solidity
+
+7995
+07:55:03,430 --> 07:55:07,060
+plugin for prettier. And if we
+check our package, JSON, we can
+
+7996
+07:55:07,060 --> 07:55:09,820
+see that these two have been
+added. And what we can do now is
+
+7997
+07:55:09,820 --> 07:55:17,770
+we can create a new file called
+dot prettier, R C. And in this
+
+7998
+07:55:17,770 --> 07:55:22,000
+file, we can define some little
+curly braces. And here, we can
+
+7999
+07:55:22,000 --> 07:55:26,710
+define what we want for both our
+solidity and for a JavaScript,
+
+8000
+07:55:26,860 --> 07:55:30,610
+so for example, our simple
+storage has a tab width of
+

@@ -1,0 +1,4990 @@
+12001
+12:08:24,140 --> 12:08:26,270
+we're gonna be calling from
+private variables or internal
+
+12002
+12:08:26,270 --> 12:08:29,300
+variables, which are cheaper gas
+wise, of course, we do need to
+
+12003
+12:08:29,300 --> 12:08:31,970
+upgrade our test one more time.
+And like I said, if you want to
+
+12004
+12:08:31,970 --> 12:08:34,250
+just leave them with the S
+underscores, that's absolutely
+
+12005
+12:08:34,250 --> 12:08:40,160
+fine. So s underscore price feed
+is now going to be replaced with
+
+12006
+12:08:40,340 --> 12:08:44,420
+get price feed, s underscore
+amount to fund it is going to be
+
+12007
+12:08:44,450 --> 12:08:49,340
+now replaced with get address to
+amount funded. For now going to
+
+12008
+12:08:49,340 --> 12:08:56,330
+change SW, underscore funders,
+to get funder. We're going to
+
+12009
+12:08:56,330 --> 12:08:59,360
+change Iona, there's nowhere
+else in their mind, we don't
+
+12010
+12:08:59,360 --> 12:09:01,760
+need to change them. And I think
+that was everything. Let's just
+
+12011
+12:09:01,760 --> 12:09:05,240
+look for s underscore, we don't
+see it, I underscore, we don't
+
+12012
+12:09:05,240 --> 12:09:08,180
+see that either. Let's just run
+our tests one more time to make
+
+12013
+12:09:08,180 --> 12:09:13,100
+sure we refactor that correctly.
+And it looks like we did
+
+12014
+12:09:13,280 --> 12:09:17,240
+awesome. Okay, we have just
+learned a ton. we've refactored
+
+12015
+12:09:17,240 --> 12:09:20,930
+our code a ton. And everything
+is starting to look really,
+
+12016
+12:09:20,960 --> 12:09:24,650
+really good here. One more gas
+optimization we could make. And
+
+12017
+12:09:24,650 --> 12:09:28,520
+an optimization for errors as
+well is we could update all of
+
+12018
+12:09:28,520 --> 12:09:33,470
+our requires to instead be to
+instead be reverts. Because
+
+12019
+12:09:33,470 --> 12:09:37,130
+without requires, we're actually
+storing this massive string,
+
+12020
+12:09:37,130 --> 12:09:42,200
+this massive array of text on
+chain, these error codes are
+
+12021
+12:09:42,200 --> 12:09:44,720
+much cheaper. But that's
+optional. If you want to do
+
+12022
+12:09:44,720 --> 12:09:47,150
+that. The whole reason we were
+doing this is we were going
+
+12023
+12:09:47,150 --> 12:09:50,240
+through the style guide in
+updating things here. So we have
+
+12024
+12:09:50,240 --> 12:09:53,210
+public internal private, and the
+bottom is going to be our view
+
+12025
+12:09:53,210 --> 12:09:56,480
+slash pure functions, which they
+are they're just all these
+
+12026
+12:09:56,480 --> 12:09:57,800
+getters that we just added.
+
+12027
+12:10:00,860 --> 12:10:03,770
+So now our style in here looks
+good. We've learned a lot about
+
+12028
+12:10:03,770 --> 12:10:06,620
+gas, we've learned a lot about
+storage. This is fantastic.
+
+12029
+12:10:06,620 --> 12:10:09,500
+Let's do a quick refresher on
+everything we just learned
+
+12030
+12:10:09,500 --> 12:10:13,100
+because we went through a lot
+right there. And like I said,
+
+12031
+12:10:13,100 --> 12:10:16,610
+this is one of the harder parts
+of this course. Any variable
+
+12032
+12:10:16,610 --> 12:10:20,000
+that is changeable that we want
+to persist across contract
+
+12033
+12:10:20,000 --> 12:10:24,140
+executions and transactions. We
+save to a giant array called
+
+12034
+12:10:24,170 --> 12:10:27,440
+storage this array is
+sequentially indexed starting at
+
+12035
+12:10:27,440 --> 12:10:31,220
+zero. So the first variable the
+first value that we have in our
+
+12036
+12:10:31,220 --> 12:10:35,330
+contract gets stored to the zero
+with index. The next one gets
+
+12037
+12:10:35,330 --> 12:10:39,110
+stored to one and so on and so
+forth. Dynamic arrays and
+
+12038
+12:10:39,110 --> 12:10:43,100
+mappings and other dynamically
+sized objects use specific
+
+12039
+12:10:43,100 --> 12:10:46,010
+hashing function that you can
+find in the documentation to
+
+12040
+12:10:46,010 --> 12:10:50,210
+determine where the elements of
+those dynamic Data Structures go
+
+12041
+12:10:50,390 --> 12:10:53,360
+memory variables, constant
+variables and immutable
+
+12042
+12:10:53,360 --> 12:10:57,140
+variables don't go in storage.
+And one of the main reasons
+
+12043
+12:10:57,140 --> 12:11:01,190
+talking about storage is so
+important is because the op
+
+12044
+12:11:01,190 --> 12:11:05,120
+codes for loading from storage
+and for reading from storage and
+
+12045
+12:11:05,120 --> 12:11:09,020
+writing to storage are
+incredibly gas expensive. So in
+
+12046
+12:11:09,050 --> 12:11:12,560
+everywhere we can we want to
+reduce the amount that we read
+
+12047
+12:11:12,560 --> 12:11:16,310
+and load from storage. And it's
+one of the easiest ways to save
+
+12048
+12:11:16,310 --> 12:11:20,060
+gas and try to optimize our code
+to be gas efficient. Like I
+
+12049
+12:11:20,060 --> 12:11:22,580
+said, some of this gas stuff can
+be a little tricky and a little
+
+12050
+12:11:22,580 --> 12:11:25,580
+bit confusing. So if you don't
+get this right away, it's okay.
+
+12051
+12:11:25,610 --> 12:11:28,610
+It is totally fine. If you're a
+little bit confused, and you're
+
+12052
+12:11:28,610 --> 12:11:31,670
+like, What is he talking about?
+Like I said, this is some of the
+
+12053
+12:11:31,670 --> 12:11:34,490
+more advanced stuff it'll come,
+the more you work with solidity,
+
+12054
+12:11:34,490 --> 12:11:36,890
+and the more you work with
+everything here. So don't let it
+
+12055
+12:11:36,890 --> 12:11:39,620
+stress you out. Don't let it
+stop you from continuing. You're
+
+12056
+12:11:39,620 --> 12:11:45,740
+doing fantastic being here. So
+far. We've written some really
+
+12057
+12:11:45,740 --> 12:11:50,240
+good unit tests. Let's now write
+some staging tests. And these
+
+12058
+12:11:50,240 --> 12:11:54,440
+are the tests that we can use on
+an actual test net. This is a
+
+12059
+12:11:54,440 --> 12:11:57,320
+test that we're basically going
+to run after we've deployed some
+
+12060
+12:11:57,320 --> 12:12:01,220
+code just to see if everything
+is working approximately the way
+
+12061
+12:12:01,220 --> 12:12:03,740
+we want it to. So let's go ahead
+and we'll create a new file
+
+12062
+12:12:03,740 --> 12:12:10,280
+here. We'll call it fund me. Dot
+staging dot test, dot j s. And
+
+12063
+12:12:10,280 --> 12:12:12,410
+it's going to look really
+similar to what we were just
+
+12064
+12:12:12,410 --> 12:12:15,020
+doing with our unit tests. And
+we're going to assume this is on
+
+12065
+12:12:15,020 --> 12:12:18,260
+a test net. So these are tests
+that we're going to run, right
+
+12066
+12:12:18,260 --> 12:12:21,710
+before we deploy this to a main
+net, this is the last step in
+
+12067
+12:12:21,710 --> 12:12:24,410
+your development journey, we
+want to just make sure that
+
+12068
+12:12:24,590 --> 12:12:27,140
+everything is working
+approximately correctly on an
+
+12069
+12:12:27,140 --> 12:12:29,870
+actual test net. So what we're
+gonna do is we're gonna do the
+
+12070
+12:12:29,870 --> 12:12:34,280
+same thing describe, fund me,
+and I'm gonna go a little quick
+
+12071
+12:12:34,310 --> 12:12:37,040
+through these tests here,
+because we've basically written
+
+12072
+12:12:37,040 --> 12:12:39,560
+this type of test before, so
+we're gonna say before each,
+
+12073
+12:12:39,890 --> 12:12:44,510
+it's gonna be an async.
+function. We're gonna do the
+
+12074
+12:12:44,510 --> 12:12:47,540
+same thing as our unit tests. So
+we're gonna have a Funmi
+
+12075
+12:12:48,740 --> 12:12:51,980
+variable, we're gonna have our
+let Deployer, we're gonna have
+
+12076
+12:12:51,980 --> 12:12:59,930
+our constant send value equals
+ethers.utils.rs ether of one,
+
+12077
+12:13:00,410 --> 12:13:04,640
+and in here, we're going to do
+const. Get named accounts.
+
+12078
+12:13:05,990 --> 12:13:11,990
+Equals require hardhats, we're
+going to say deployer equals
+
+12079
+12:13:12,200 --> 12:13:17,750
+weight, get named accounts,
+we're going to wrap this up, dot
+
+12080
+12:13:17,750 --> 12:13:23,000
+Deployer. We're gonna say fun me
+equals await ethers dot get
+
+12081
+12:13:23,000 --> 12:13:23,870
+contract.
+
+12082
+12:13:25,580 --> 12:13:29,180
+And me, comma, we're going to
+connect it to our Deployer,
+
+12083
+12:13:29,450 --> 12:13:32,090
+we're not going to deploy this,
+we're not going to do any
+
+12084
+12:13:32,090 --> 12:13:35,000
+fixtures like we did in our unit
+tests, because in our staging
+
+12085
+12:13:35,000 --> 12:13:38,600
+tests, we're assuming that it's
+already deployed here. And we
+
+12086
+12:13:38,630 --> 12:13:43,100
+also don't need a mock because
+on a staging, we're assuming
+
+12087
+12:13:43,130 --> 12:13:46,250
+that we're on a test net, now we
+can actually wrap this whole
+
+12088
+12:13:46,250 --> 12:13:49,970
+thing to make sure that we're on
+a test net by using our helper
+
+12089
+12:13:49,970 --> 12:13:53,150
+config. And looking for our
+development chains, we can say
+
+12090
+12:13:53,150 --> 12:13:57,410
+we only want to run our describe
+bit if we're on a development
+
+12091
+12:13:57,410 --> 12:14:04,100
+chain. So first, we'll say
+const. Development chains equals
+
+12092
+12:14:04,100 --> 12:14:10,160
+require, we'll pull that that
+helper config in. And we'll say,
+
+12093
+12:14:10,220 --> 12:14:15,230
+development chains dot includes
+network dot name. And we'll
+
+12094
+12:14:15,230 --> 12:14:18,650
+basically will say if developer
+chains that includes network dot
+
+12095
+12:14:18,650 --> 12:14:22,340
+name, we're going to skip and we
+can actually skip using this,
+
+12096
+12:14:22,610 --> 12:14:25,370
+we're going to use something
+called a ternary operator is
+
+12097
+12:14:25,370 --> 12:14:28,190
+basically like a one liner if
+statement. And you can think of
+
+12098
+12:14:28,190 --> 12:14:31,130
+this as a special type of F.
+I've got a link to this and the
+
+12099
+12:14:31,130 --> 12:14:33,680
+GitHub repo associated with this
+course. And here's some
+
+12100
+12:14:33,680 --> 12:14:37,400
+JavaScript documentation,
+showing it in action. You say,
+
+12101
+12:14:37,400 --> 12:14:43,250
+Okay, return is member. And if
+it's true, have it be $2.
+
+12102
+12:14:43,430 --> 12:14:47,090
+Otherwise have a B $10. And
+that's pretty much it. So
+
+12103
+12:14:47,180 --> 12:14:50,990
+another way of thinking about is
+like, you say, let variable
+
+12104
+12:14:51,020 --> 12:14:57,530
+equals true, then we could say,
+let some var equals variable
+
+12105
+12:14:57,650 --> 12:15:03,860
+question. Yes? Or no? Some var
+will end up being Yes. Because
+
+12106
+12:15:03,860 --> 12:15:07,460
+variable is true. If variable
+was false than some var would be
+
+12107
+12:15:07,460 --> 12:15:12,650
+no. So it's literally saying, If
+variable, if variable, then some
+
+12108
+12:15:12,650 --> 12:15:19,010
+var equals yes. Else. Some var
+equals no, these lines are
+
+12109
+12:15:19,010 --> 12:15:21,770
+literally the exact same thing.
+This one is just a little bit
+
+12110
+12:15:21,770 --> 12:15:24,500
+more succinct. That's really it.
+So that's what this operator
+
+12111
+12:15:24,500 --> 12:15:26,720
+does. We're gonna say
+development chains that includes
+
+12112
+12:15:26,750 --> 12:15:30,710
+network dot name. So if our
+network is a development chain,
+
+12113
+12:15:30,710 --> 12:15:33,650
+which we're going to import
+network as well from hard hat
+
+12114
+12:15:33,650 --> 12:15:37,550
+and ethers as well. Then we're
+going to do describe that
+
+12115
+12:15:37,550 --> 12:15:41,150
+skipped and this tells our test
+to just skip this whole
+
+12116
+12:15:41,150 --> 12:15:43,520
+describe, and then we're going
+to put this little colon here
+
+12117
+12:15:43,520 --> 12:15:48,260
+thing and save and boom. So now
+we're only going to run this if
+
+12118
+12:15:48,290 --> 12:15:50,990
+we're not On a development
+chain, and we want to take this
+
+12119
+12:15:50,990 --> 12:15:54,650
+exact same syntax, we'll go to
+our unit testing here, and we'll
+
+12120
+12:15:54,650 --> 12:15:58,100
+do the exact same thing, we'll
+paste it will have this be the
+
+12121
+12:15:58,100 --> 12:16:01,640
+opposite by putting a little
+knot here, sticking that colon
+
+12122
+12:16:01,640 --> 12:16:05,600
+in. So now, our unit tests only
+run on development chains in our
+
+12123
+12:16:05,600 --> 12:16:09,320
+staging tests, only run on test
+nets. Perfect. That's what we
+
+12124
+12:16:09,320 --> 12:16:15,020
+want, allows people to fund and
+own and withdraw. And this will
+
+12125
+12:16:15,020 --> 12:16:18,260
+be an async function, of course,
+and we probably can make this
+
+12126
+12:16:18,260 --> 12:16:23,360
+pretty robust, but we'll just
+say await, fund me dot fund is
+
+12127
+12:16:23,360 --> 12:16:28,490
+going to be send a value. And
+then we'll say a weight on me
+
+12128
+12:16:28,910 --> 12:16:36,110
+dot withdraw. CERT equals
+require try. Now we'll do kind
+
+12129
+12:16:36,110 --> 12:16:40,400
+of a lame final one, we'll say
+const ending balance equals a
+
+12130
+12:16:40,400 --> 12:16:47,510
+weight on me dot provider dot
+get balance, fund me dot
+
+12131
+12:16:47,510 --> 12:16:52,790
+address. And then we'll say
+assert dot equals ending
+
+12132
+12:16:52,820 --> 12:16:58,310
+balance.to string, comma zero as
+a string, we're only going to
+
+12133
+12:16:58,310 --> 12:17:00,950
+run this on a test net, I'm just
+going to give you this one more
+
+12134
+12:17:00,950 --> 12:17:04,400
+run to show you it in action.
+Feel free to skip this part
+
+12135
+12:17:04,400 --> 12:17:06,560
+again, because we are going to
+be working with a test net, I'm
+
+12136
+12:17:06,560 --> 12:17:11,270
+going to run yarn, hard hat
+deploy dash test network
+
+12137
+12:17:11,900 --> 12:17:17,330
+Rinkeby. And it's going to run
+through our deploy. And after
+
+12138
+12:17:17,330 --> 12:17:20,750
+it's all deployed, we're going
+to run our staging tests to make
+
+12139
+12:17:20,750 --> 12:17:24,560
+sure that everything works even
+with a price feed on a real test
+
+12140
+12:17:24,560 --> 12:17:28,370
+net, and I need to do const
+development chains equals
+
+12141
+12:17:28,370 --> 12:17:34,490
+require dot dot slash dot dot
+slash helper heart config. Now
+
+12142
+12:17:34,490 --> 12:17:40,790
+for run yarn, hard hat test,
+we'll see just our unit tests
+
+12143
+12:17:40,790 --> 12:17:44,540
+get run. But if we run yarn hard
+to test dash dash network
+
+12144
+12:17:44,720 --> 12:17:47,960
+Rinkeby, we're not going to run
+nine tests, we're only going to
+
+12145
+12:17:47,960 --> 12:17:51,830
+run our singular staging test.
+And of course, this is going to
+
+12146
+12:17:51,830 --> 12:17:54,440
+be a lot slower, because we're
+on a
+
+12147
+12:17:54,500 --> 12:18:02,210
+test net. Net will we write
+written all these tests, we can
+
+12148
+12:18:02,210 --> 12:18:05,090
+write a couple of scripts. And
+then we're going to finish this
+
+12149
+12:18:05,090 --> 12:18:08,780
+out by pushing this up to GitHub
+making this our first smart
+
+12150
+12:18:08,780 --> 12:18:11,840
+contract GitHub repository, when
+it comes to the blockchain, when
+
+12151
+12:18:11,840 --> 12:18:14,870
+it comes to smart contracts,
+interacting with community
+
+12152
+12:18:14,900 --> 12:18:18,410
+interacting with open source
+being a part of GitHub, or git
+
+12153
+12:18:18,410 --> 12:18:21,320
+labs or whatever Git hosting
+service you're using is
+
+12154
+12:18:21,320 --> 12:18:24,080
+essential to being successful
+here. So let's write our
+
+12155
+12:18:24,080 --> 12:18:27,500
+scripts. And then we'll upload
+this to GitHub to start building
+
+12156
+12:18:27,530 --> 12:18:30,230
+our portfolio. So first, we're
+going to create a script to
+
+12157
+12:18:30,230 --> 12:18:34,130
+interact with our code called
+fund dot j s. And this is going
+
+12158
+12:18:34,130 --> 12:18:37,550
+to be really similar to our
+tests. And this way, in the
+
+12159
+12:18:37,550 --> 12:18:39,710
+future. If we want to just fund
+one of our contracts very
+
+12160
+12:18:39,710 --> 12:18:42,980
+quickly, we can just run this
+and we can do it, we're gonna do
+
+12161
+12:18:42,980 --> 12:18:45,470
+the same thing that we've been
+doing, we're gonna do an async
+
+12162
+12:18:45,470 --> 12:18:49,100
+function main. And down below,
+I'm just going to copy paste
+
+12163
+12:18:49,100 --> 12:18:51,800
+this because we're going to be
+copy pasting in a lot. We're
+
+12164
+12:18:51,800 --> 12:18:55,310
+going to paste this little
+syntax here. So let's write a
+
+12165
+12:18:55,310 --> 12:18:59,360
+script that allows us to fund
+our contracts. So first, we're
+
+12166
+12:18:59,360 --> 12:19:04,370
+going to need const get named
+accounts just like in our tests,
+
+12167
+12:19:04,730 --> 12:19:15,200
+equals require arhat we're gonna
+say const Deployer. Equals await
+
+12168
+12:19:15,710 --> 12:19:20,570
+yet named accounts, just like
+that. And then we're gonna say
+
+12169
+12:19:20,570 --> 12:19:27,080
+const fund me equals await
+ethers dot get contract. From
+
+12170
+12:19:27,080 --> 12:19:31,820
+funding comm a Deployer.
+Literally, almost exactly the
+
+12171
+12:19:31,820 --> 12:19:36,710
+same as our tests, then we'll do
+a little console dot log funding
+
+12172
+12:19:36,710 --> 12:19:43,190
+contract that that and we'll do
+const transaction response
+
+12173
+12:19:43,910 --> 12:19:49,190
+equals await funding dot fund.
+And for the value, we'll do
+
+12174
+12:19:49,190 --> 12:19:56,240
+something like ethers dot utils,
+that parse ether of 0.1 or
+
+12175
+12:19:56,240 --> 12:19:58,910
+something, whatever you want to
+do here, we of course, need to
+
+12176
+12:19:58,910 --> 12:20:01,790
+import ethers, which it looks
+like we already have. We'll do
+
+12177
+12:20:01,790 --> 12:20:06,950
+await transaction response dot
+wait for one transaction. And
+
+12178
+12:20:06,950 --> 12:20:12,080
+then we'll do console dot log
+funded, we can run this little
+
+12179
+12:20:12,080 --> 12:20:17,990
+script by running yarn, RT head
+node will run a local node with
+
+12180
+12:20:17,990 --> 12:20:21,560
+all of our contracts deployed.
+We'll see if our script looks
+
+12181
+12:20:21,560 --> 12:20:27,830
+okay by running yarn, hard hat
+run scripts fund dot j s dash
+
+12182
+12:20:27,830 --> 12:20:31,940
+dash network localhost. And it
+looks like it's funding Great.
+
+12183
+12:20:32,210 --> 12:20:37,010
+Let's now write a withdraw
+script withdraw that J S. And we
+
+12184
+12:20:37,010 --> 12:20:41,000
+can even leave our localhost
+Node running because we're going
+
+12185
+12:20:41,000 --> 12:20:43,850
+to withdraw the funds that we've
+just funded it with. So we're
+
+12186
+12:20:43,850 --> 12:20:47,300
+going to do the exact same setup
+here. We can even copy this main
+
+12187
+12:20:47,300 --> 12:20:54,140
+bit to our withdraw Ah, the top
+will do async function main will
+
+12188
+12:20:54,140 --> 12:21:00,230
+say const deployer equals await,
+get named accounts, which wow, I
+
+12189
+12:21:00,230 --> 12:21:03,980
+hit enter and my VS code auto
+imported it, that's pretty nice.
+
+12190
+12:21:03,980 --> 12:21:06,080
+Maybe yours will too, maybe
+won't if it won't, you just
+
+12191
+12:21:06,080 --> 12:21:08,240
+gotta write it out or copy paste
+from the other one. And then
+
+12192
+12:21:08,240 --> 12:21:13,610
+we'll do cars Funmi equals await
+ethers dot get contract on me,
+
+12193
+12:21:13,910 --> 12:21:17,480
+course. And this is going to be
+the exact same. Now we're going
+
+12194
+12:21:17,480 --> 12:21:23,390
+to do console dot log funding
+data dot, we'll say const
+
+12195
+12:21:23,690 --> 12:21:29,930
+transaction response equals
+await on v dot withdraw, await
+
+12196
+12:21:30,620 --> 12:21:35,720
+transaction response dot wait
+one, then console dot log. Got
+
+12197
+12:21:35,750 --> 12:21:42,050
+it? Back. And we can test this
+out by running yarn, hard hit
+
+12198
+12:21:42,050 --> 12:21:46,970
+run scripts, withdraw dash dash
+network localhost, we'll see if
+
+12199
+12:21:46,970 --> 12:21:51,530
+this works. And cool and our
+script is working. Fantastic
+
+12200
+12:21:51,530 --> 12:21:54,200
+crushed out two scripts
+incredibly quickly. And now we
+
+12201
+12:21:54,200 --> 12:21:57,560
+have a way to easily interact
+with our code with our contracts
+
+12202
+12:21:57,590 --> 12:22:03,440
+if we want to via a script.
+There's actually one more thing
+
+12203
+12:22:03,440 --> 12:22:05,900
+I want to show you before we
+actually work and we push all
+
+12204
+12:22:05,900 --> 12:22:09,800
+this wonderful code up to GitHub
+in our package dot JSON. I've
+
+12205
+12:22:09,800 --> 12:22:12,350
+shown you a little bit of this
+before, but we can add this
+
+12206
+12:22:12,380 --> 12:22:17,180
+scripts section to make our
+lives a lot easier and condense
+
+12207
+12:22:17,210 --> 12:22:22,130
+all these long tests into a yarn
+script for us. So usually, what
+
+12208
+12:22:22,130 --> 12:22:25,460
+you'll see in common package dot
+JSON is you'll see a list of
+
+12209
+12:22:25,460 --> 12:22:29,000
+these in here for people to look
+and just automatically run, one
+
+12210
+12:22:29,000 --> 12:22:32,720
+of the most common ones is going
+to be test. And to run test,
+
+12211
+12:22:32,930 --> 12:22:37,430
+we're going to do yarn, hard hat
+test. So now instead of running
+
+12212
+12:22:37,430 --> 12:22:40,400
+yarn, Hardhead test, someone can
+just come to your package once
+
+12213
+12:22:40,400 --> 12:22:44,120
+this is saved and just run yarn
+test. And this will grab this
+
+12214
+12:22:44,120 --> 12:22:47,060
+test from your script section
+and it will run yarn heart at
+
+12215
+12:22:47,060 --> 12:22:49,700
+test and Bada bing, bada boom,
+
+12216
+12:22:49,730 --> 12:22:52,010
+okay, cool. What else do we
+probably probably want to do in
+
+12217
+12:22:52,010 --> 12:22:55,880
+here? Well, we probably want to
+have a test staging section
+
+12218
+12:22:55,940 --> 12:23:02,930
+that'll run yarn Hardhead test
+dash dash, network Rinkeby. I'm
+
+12219
+12:23:02,930 --> 12:23:05,000
+not going to run that. But
+that's probably something we
+
+12220
+12:23:05,000 --> 12:23:07,370
+want to have in here, we're
+probably going to want some
+
+12221
+12:23:07,370 --> 12:23:11,570
+linting. So we showed you
+briefly that linting thing. So
+
+12222
+12:23:11,600 --> 12:23:16,280
+we'll have a yarn lint, which
+will just run yarn, sole hint.
+
+12223
+12:23:16,520 --> 12:23:20,900
+And then we'll just have it so
+hence the contracts folder. And
+
+12224
+12:23:20,900 --> 12:23:24,530
+anything that starts out soul.
+So now if I run yarn, lint,
+
+12225
+12:23:24,800 --> 12:23:29,120
+it'll run soul hint, and all of
+our code here and it'll give us
+
+12226
+12:23:29,120 --> 12:23:32,270
+some warnings here, which we can
+pretty much all ignore. And
+
+12227
+12:23:32,270 --> 12:23:36,290
+Solon actually has an auto fix
+and auto fix that we can add, by
+
+12228
+12:23:36,290 --> 12:23:42,740
+doing yarn lint fix, we'll say
+yarn. So hint, contracts slash
+
+12229
+12:23:42,740 --> 12:23:48,230
+start out. So we'll do dash dash
+fix. So now we run yarn, lint
+
+12230
+12:23:48,230 --> 12:23:52,310
+fix, it'll auto fix, which
+there's nothing to auto fix. So
+
+12231
+12:23:52,670 --> 12:23:55,490
+nothing happens. But it's good
+to have anyways. And then we can
+
+12232
+12:23:55,490 --> 12:23:59,240
+do our formatter, we're just
+going to format our code format,
+
+12233
+12:23:59,600 --> 12:24:03,710
+that which will do yarn,
+prettier, dash dash write to,
+
+12234
+12:24:03,710 --> 12:24:06,800
+and we'll just do a period to do
+everything. And then we can just
+
+12235
+12:24:06,800 --> 12:24:11,240
+do yarn format. And it's gonna
+fix all of our, it's going to
+
+12236
+12:24:11,240 --> 12:24:15,080
+fix everything for us, which is
+great. And then we finally can
+
+12237
+12:24:15,080 --> 12:24:20,630
+have coverage. By running yarn
+hardhat coverage, now we can
+
+12238
+12:24:20,630 --> 12:24:24,350
+just run yarn coverage, will
+give us this wonderful little
+
+12239
+12:24:24,350 --> 12:24:28,250
+coverage report. Awesome. So our
+packages looking fantastic.
+
+12240
+12:24:28,280 --> 12:24:31,130
+Maybe we'll even come into
+package json. We'll give this a
+
+12241
+12:24:31,130 --> 12:24:38,090
+name. We'll call this hard hat.
+And me give it an author, which
+
+12242
+12:24:38,090 --> 12:24:41,000
+is going to be your name. So I'm
+just gonna say Patrick Collins,
+
+12243
+12:24:41,660 --> 12:24:48,740
+and we'll give it a version in
+here. of 1.0 Point Oh, oops. And
+
+12244
+12:24:48,740 --> 12:24:53,840
+let's do icons instead of
+spaces. Oh, and one more thing.
+
+12245
+12:24:53,870 --> 12:24:57,740
+We're not using ES lint. So all
+this es lint stuff, we can dump
+
+12246
+12:24:57,830 --> 12:25:00,710
+and we could delete the yarn dot
+lock and reinstall. But yeah,
+
+12247
+12:25:00,740 --> 12:25:03,590
+whatever. We don't have a
+readme, but that's okay. If you
+
+12248
+12:25:03,590 --> 12:25:06,740
+want to go back, like I said, go
+check out that best readme
+
+12249
+12:25:06,740 --> 12:25:10,310
+template and go update your
+READMEs to make them look as
+
+12250
+12:25:10,310 --> 12:25:12,740
+awesome as this, you can do that
+as well. But other than that,
+
+12251
+12:25:12,770 --> 12:25:19,070
+we've got an awesome code repo
+here. What do we want to do with
+
+12252
+12:25:19,070 --> 12:25:21,770
+it? Well, we've been playing
+around with GitHub so much,
+
+12253
+12:25:21,770 --> 12:25:24,800
+we've been looking at all these
+good hubs. It's time for us to
+
+12254
+12:25:24,800 --> 12:25:29,720
+join GitHub with our own with
+our first repository. Let's go
+
+12255
+12:25:29,720 --> 12:25:33,320
+ahead and let's make this happen
+in the lesson seven full
+
+12256
+12:25:33,320 --> 12:25:36,110
+blockchain solidity course, yes,
+there is a link to this GitHub
+
+12257
+12:25:36,110 --> 12:25:39,080
+Quickstart that we're going to
+follow to set up our first
+
+12258
+12:25:39,080 --> 12:25:42,440
+repository. This is going to be
+the moment where you are
+
+12259
+12:25:42,440 --> 12:25:45,290
+starting to build your portfolio
+building and GitHub is
+
+12260
+12:25:45,290 --> 12:25:48,200
+borderline crucial for your
+development journey. It's going
+
+12261
+12:25:48,200 --> 12:25:50,420
+to be your portal folio, it's
+going to be where you say, Hey,
+
+12262
+12:25:50,690 --> 12:25:53,150
+look at all the cool products
+that I'm engaging with, that I'm
+
+12263
+12:25:53,150 --> 12:25:55,910
+working with, that I'm
+participating in. If you've
+
+12264
+12:25:55,910 --> 12:25:58,670
+already made GitHub before, I
+highly recommend you still push
+
+12265
+12:25:58,670 --> 12:26:01,700
+this up to GitHub as proof that
+you've done it. And then you can
+
+12266
+12:26:01,700 --> 12:26:04,760
+also tweet it at me saying, hey,
+look how far I've gotten. Look
+
+12267
+12:26:04,760 --> 12:26:07,790
+where I've done, look at how
+fantastic I'm learning smart
+
+12268
+12:26:07,790 --> 12:26:10,160
+contracts, and be incredibly
+excited about now, this
+
+12269
+12:26:10,160 --> 12:26:13,130
+quickstart will walk you through
+creating a repository, creating
+
+12270
+12:26:13,130 --> 12:26:16,100
+a branch and teaching all this
+stuff, we're going to follow the
+
+12271
+12:26:16,100 --> 12:26:18,680
+instructions from the GitHub
+documentation about adding
+
+12272
+12:26:18,680 --> 12:26:21,770
+locally hosted code to GitHub,
+we already have a project, and
+
+12273
+12:26:21,770 --> 12:26:25,430
+we're just pushing it up. Since
+the Windows users are using WsL,
+
+12274
+12:26:25,520 --> 12:26:28,370
+you can just follow the Mac or
+Linux instructions here, the
+
+12275
+12:26:28,370 --> 12:26:31,550
+first thing that we're going to
+do is in your GitHub profile, or
+
+12276
+12:26:31,550 --> 12:26:34,760
+your GitHub login, we're gonna
+hit this little plus thing, and
+
+12277
+12:26:34,760 --> 12:26:37,880
+hit new repository, you can call
+this whatever you want, let's
+
+12278
+12:26:37,880 --> 12:26:43,940
+call it hard hat, fund me b code
+camp, you can put a description
+
+12279
+12:26:43,940 --> 12:26:49,910
+if you want, learning from
+recode camp, and Patrick, about
+
+12280
+12:26:49,910 --> 12:26:51,320
+smart contracts.
+
+12281
+12:26:52,670 --> 12:26:55,070
+We'll make it public because we
+want other people to see you
+
+12282
+12:26:55,070 --> 12:26:57,740
+being fantastic and learning
+smart contracts. We'll leave
+
+12283
+12:26:57,740 --> 12:27:01,820
+this blank, and we'll hit Create
+repository. Now, this is our
+
+12284
+12:27:01,850 --> 12:27:04,970
+public code repository. This is
+our first one, if you've done
+
+12285
+12:27:04,970 --> 12:27:08,000
+these already, this will be your
+first smart contract one. It
+
+12286
+12:27:08,030 --> 12:27:11,810
+even has some instructions in
+here, too, that teaches us how
+
+12287
+12:27:11,810 --> 12:27:14,900
+to create a new repository from
+the command line, you can follow
+
+12288
+12:27:14,900 --> 12:27:18,470
+this if you want, or you can
+follow like so the first thing
+
+12289
+12:27:18,470 --> 12:27:23,000
+we're going to do is we're going
+to initialize a git branch. And
+
+12290
+12:27:23,120 --> 12:27:26,300
+from way back when you should
+already have Git installed.
+
+12291
+12:27:26,390 --> 12:27:29,150
+Remember, you can check by
+running git dash dash version
+
+12292
+12:27:29,150 --> 12:27:32,270
+like this. Git is a little
+different from GitHub, Git is
+
+12293
+12:27:32,270 --> 12:27:35,780
+known as version control. And it
+allows us to make changes to our
+
+12294
+12:27:35,780 --> 12:27:39,200
+code, but keep a history of all
+the code changes that we've
+
+12295
+12:27:39,200 --> 12:27:43,040
+made. GitHub is a place where we
+can push all of these changes
+
+12296
+12:27:43,040 --> 12:27:45,560
+and keep track of all of our
+code. So the first thing that
+
+12297
+12:27:45,560 --> 12:27:48,290
+we're going to do is we're going
+to create a new branch. And I'm
+
+12298
+12:27:48,290 --> 12:27:51,500
+not going to explain Git and
+working with Git too, too
+
+12299
+12:27:51,500 --> 12:27:54,620
+deeply. But if you want to learn
+about Git Free Code Camp, of
+
+12300
+12:27:54,620 --> 12:27:58,130
+course, has a video on Git and
+GitHub for beginners. So we're
+
+12301
+12:27:58,130 --> 12:28:02,000
+going to create this new branch
+with git init dash b main, now
+
+12302
+12:28:02,000 --> 12:28:05,090
+your Visual Studio code might
+automatically start formatting
+
+12303
+12:28:05,090 --> 12:28:07,910
+some stuff. And if it does,
+that's great. And if it doesn't,
+
+12304
+12:28:07,970 --> 12:28:10,670
+don't worry about it. But what
+you'll see here on the left is
+
+12305
+12:28:10,670 --> 12:28:14,930
+you'll see some stuff is green,
+and some stuff is gray, open
+
+12306
+12:28:14,930 --> 12:28:17,960
+back up that dot Git ignore,
+you'll see that all the gray
+
+12307
+12:28:17,960 --> 12:28:21,050
+stuff is the stuff that we have
+in this dot Git ignore this is
+
+12308
+12:28:21,050 --> 12:28:23,840
+intentional, this is what we
+want. This is just some some
+
+12309
+12:28:23,840 --> 12:28:26,270
+highlighting saying, hey, this
+green stuff is what you're
+
+12310
+12:28:26,270 --> 12:28:29,360
+working with on GitHub. And this
+gray stuff is what you're not
+
+12311
+12:28:29,360 --> 12:28:31,970
+working with and GitHub. And
+that's what we want. You don't
+
+12312
+12:28:31,970 --> 12:28:35,420
+need to push artifacts, or cash
+or coverage or node modules,
+
+12313
+12:28:35,420 --> 12:28:39,530
+people can install and compile
+on their own machines, we
+
+12314
+12:28:39,560 --> 12:28:43,070
+definitely don't want to push up
+our Dotty and V if we're using a
+
+12315
+12:28:43,070 --> 12:28:46,070
+Dotty and V. And we don't really
+need to push up coverage dot
+
+12316
+12:28:46,070 --> 12:28:50,420
+JSON, either the rest of this we
+do. So now what's next, after we
+
+12317
+12:28:50,450 --> 12:28:54,380
+initialize our main branch, you
+now should be able to run git
+
+12318
+12:28:54,380 --> 12:28:59,450
+status in your terminal and see
+this huge red output of all
+
+12319
+12:28:59,450 --> 12:29:03,140
+these things that are untracked,
+and we don't have any commits
+
+12320
+12:29:03,140 --> 12:29:07,370
+for, what we can do now is we
+can stage all of our code with
+
+12321
+12:29:07,370 --> 12:29:11,570
+git add period, and then commit
+it with Git commit, we're going
+
+12322
+12:29:11,570 --> 12:29:14,420
+to run these one at a time
+instead of together. Before I
+
+12323
+12:29:14,420 --> 12:29:17,570
+run git add, I'm going to add
+deployments to this list too,
+
+12324
+12:29:17,570 --> 12:29:19,760
+because GitHub doesn't really
+need to know about all the
+
+12325
+12:29:19,760 --> 12:29:22,340
+different deployments I make,
+especially when I make a ton of
+
+12326
+12:29:22,340 --> 12:29:24,800
+deployments to my local hosts,
+they don't need to know. So
+
+12327
+12:29:24,800 --> 12:29:28,880
+we're going to add that to, then
+we're going to run git add dot.
+
+12328
+12:29:29,090 --> 12:29:34,400
+And if we do a git status, now,
+we can see all of our code has
+
+12329
+12:29:34,400 --> 12:29:38,420
+been staged for being committed
+for being a part of this history
+
+12330
+12:29:38,720 --> 12:29:41,810
+of our code. And then take a
+quick look at all these files
+
+12331
+12:29:41,810 --> 12:29:46,220
+and make sure your dot E and V
+file is not and never in here.
+
+12332
+12:29:46,340 --> 12:29:49,370
+So now we're going to run git
+commit dash m and then this
+
+12333
+12:29:49,370 --> 12:29:55,580
+message for our commit, okay, so
+we'll run git commit dash m, we
+
+12334
+12:29:55,580 --> 12:29:59,180
+can say, initial commit, or
+whatever you want in this
+
+12335
+12:29:59,180 --> 12:30:02,000
+message here, first commit,
+initial commit, who cares, and
+
+12336
+12:30:02,000 --> 12:30:04,490
+it's gonna say, create mode,
+blah, blah, blah, for all of
+
+12337
+12:30:04,490 --> 12:30:08,120
+these files. And if we do git
+status, now, it's blank on
+
+12338
+12:30:08,120 --> 12:30:11,120
+branch main, nothing to commit.
+And then you might get something
+
+12339
+12:30:11,120 --> 12:30:13,730
+like this. If you've never
+worked with Git before your name
+
+12340
+12:30:13,730 --> 12:30:16,490
+and email were added
+automatically. We're a little
+
+12341
+12:30:16,490 --> 12:30:20,060
+bit confused here. We'll talk
+about this in just a second. So
+
+12342
+12:30:20,060 --> 12:30:23,630
+next, what we can do is we're
+actually going to copy the URL
+
+12343
+12:30:23,660 --> 12:30:27,110
+of our GitHub repo. So you can
+grab that just by copying here
+
+12344
+12:30:27,140 --> 12:30:30,620
+or right at the top, that URL
+right there. And what we're
+
+12345
+12:30:30,620 --> 12:30:33,710
+going to do is we're going to
+add this as a remote repo. To do
+
+12346
+12:30:33,710 --> 12:30:39,380
+that. We'll do git remote add,
+and we'll give this remote repo
+
+12347
+12:30:39,410 --> 12:30:44,330
+a name. For us. We'll say origin
+and then we'll paste that URL
+
+12348
+12:30:44,330 --> 12:30:48,770
+there. We're now saying the the
+origin remote repo is good.
+
+12349
+12:30:48,770 --> 12:30:54,020
+Gonna be at this URL, we run git
+remote dash v, we can see that
+
+12350
+12:30:54,230 --> 12:30:58,850
+the origin repo for fetching is
+at this branch. And the origin
+
+12351
+12:30:58,850 --> 12:31:02,600
+repo for pushing is also at this
+branch. So when we want to get
+
+12352
+12:31:02,600 --> 12:31:06,650
+new code, a fetch code will
+fetch it from here. And if we
+
+12353
+12:31:06,650 --> 12:31:09,950
+want to push code up, we want to
+give code to the GitHub. We'll
+
+12354
+12:31:09,980 --> 12:31:13,490
+also get it from here. So now
+we've set the new remote with
+
+12355
+12:31:13,490 --> 12:31:17,990
+that remote URL. Now we're going
+to actually push the changes to
+
+12356
+12:31:17,990 --> 12:31:22,730
+github.com. And the way we do
+that is with Git push, and we
+
+12357
+12:31:22,730 --> 12:31:25,250
+pick which remote we want to
+push to, and we're going to push
+
+12358
+12:31:25,250 --> 12:31:29,060
+the origin. And then which
+branch we want to push to which
+
+12359
+12:31:29,060 --> 12:31:32,090
+we're going to push to Maine,
+it'll probably prompt you for
+
+12360
+12:31:32,090 --> 12:31:34,520
+your username and your password,
+and maybe your email and
+
+12361
+12:31:34,520 --> 12:31:36,530
+everything. Now, if
+authentication doesn't work for
+
+12362
+12:31:36,530 --> 12:31:39,410
+you, for some reason, you can
+come over to Settings. Or if you
+
+12363
+12:31:39,410 --> 12:31:44,090
+scroll down to developer
+settings, Personal Access Tokens
+
+12364
+12:31:44,090 --> 12:31:46,760
+and create generate new token,
+some token,
+
+12365
+12:31:48,020 --> 12:31:51,980
+give yourself repo access, write
+access, and hit Generate token.
+
+12366
+12:31:52,610 --> 12:31:55,580
+And try to use this token as
+your password. Instead, be sure
+
+12367
+12:31:55,580 --> 12:31:58,970
+to use the GitHub documentation
+and the GitHub discussion
+
+12368
+12:31:59,000 --> 12:32:01,760
+associated with this course, if
+you get lost or if something
+
+12369
+12:32:01,760 --> 12:32:05,540
+doesn't work, as shown here. But
+once it's done, once you add all
+
+12370
+12:32:05,540 --> 12:32:08,270
+that information in correctly,
+you come back to your get up and
+
+12371
+12:32:08,270 --> 12:32:11,930
+you will have your first GitHub
+repo with all the code and
+
+12372
+12:32:11,930 --> 12:32:15,650
+everything in it like this. And
+once you complete this step,
+
+12373
+12:32:15,650 --> 12:32:18,770
+once you do this, you should
+absolutely celebrate. If you
+
+12374
+12:32:18,770 --> 12:32:21,770
+like, you can shoot a tweet web
+three community in the
+
+12375
+12:32:21,770 --> 12:32:24,260
+blockchain community is
+absolutely this collaborative
+
+12376
+12:32:24,260 --> 12:32:26,660
+space. So Twitter crypto is
+where a lot of these people
+
+12377
+12:32:26,660 --> 12:32:30,500
+congregate to share ideas. So
+definitely be sure to celebrate
+
+12378
+12:32:30,500 --> 12:32:33,200
+and share this and be really,
+really excited. And shoot a
+
+12379
+12:32:33,200 --> 12:32:35,990
+tweet out like this. Give your
+friends a high five, share it on
+
+12380
+12:32:35,990 --> 12:32:38,810
+Twitter, share it on Discord
+shared on Reddit, be excited for
+
+12381
+12:32:38,810 --> 12:32:41,510
+how far you've gotten, we've got
+a lot more to go. But by
+
+12382
+12:32:41,510 --> 12:32:44,690
+completing this part, you have
+done fantastically, and I'm so
+
+12383
+12:32:44,690 --> 12:32:47,660
+excited for you to start the
+next section. Now, we're not
+
+12384
+12:32:47,660 --> 12:32:50,150
+going to go over the TypeScript
+addition to this because there's
+
+12385
+12:32:50,150 --> 12:32:53,210
+nothing really new here.
+However, again, if you want to
+
+12386
+12:32:53,210 --> 12:32:56,060
+see TypeScript, feel free to
+jump into the GitHub repository
+
+12387
+12:32:56,090 --> 12:32:57,380
+associated with this course.
+
+12388
+12:33:00,250 --> 12:33:03,610
+Alright, awesome. You've just
+completed Lesson Seven, the
+
+12389
+12:33:03,610 --> 12:33:07,210
+heart had fun me. And now it's
+time to move on to lesson eight,
+
+12390
+12:33:07,210 --> 12:33:11,080
+which is going to be our HTML
+slash JavaScript to fund me, you
+
+12391
+12:33:11,080 --> 12:33:13,360
+can find all the code for what
+we're about to go through, of
+
+12392
+12:33:13,360 --> 12:33:16,810
+course, on my GitHub repo. And
+for this section, we're now
+
+12393
+12:33:16,810 --> 12:33:20,050
+going to start to see some of
+the differences between Node js
+
+12394
+12:33:20,050 --> 12:33:23,080
+between that back end
+JavaScript, and JavaScript in
+
+12395
+12:33:23,080 --> 12:33:25,540
+the browser or front end
+JavaScript. And if you come to
+
+12396
+12:33:25,540 --> 12:33:28,900
+the GitHub repo associated with
+this lesson, our main version
+
+12397
+12:33:28,900 --> 12:33:32,710
+we'll be using what's considered
+better front end JavaScript. But
+
+12398
+12:33:32,710 --> 12:33:36,010
+we'll also have a no JS
+addition, as well, if some of
+
+12399
+12:33:36,010 --> 12:33:38,650
+the front end JavaScript is
+really confusing, and you'll see
+
+12400
+12:33:38,650 --> 12:33:41,680
+what I mean with some of those
+differences very soon. Now,
+
+12401
+12:33:41,680 --> 12:33:43,600
+people can programmatically
+interact with our smart
+
+12402
+12:33:43,600 --> 12:33:47,170
+contracts at any time. However,
+most of our users are not
+
+12403
+12:33:47,170 --> 12:33:49,900
+compete developers. So we need
+to create a website, we need to
+
+12404
+12:33:49,900 --> 12:33:52,690
+create a user interface for them
+to interact with our smart
+
+12405
+12:33:52,690 --> 12:33:55,090
+contracts and interact with our
+protocols. And that's what this
+
+12406
+12:33:55,090 --> 12:33:57,550
+section is going to teach us,
+it's going to be an introduction
+
+12407
+12:33:57,790 --> 12:34:00,490
+to building these fullstack.
+building these front ends on top
+
+12408
+12:34:00,490 --> 12:34:03,100
+of our smart contracts. Now, I
+wanted to show you what this is
+
+12409
+12:34:03,100 --> 12:34:06,130
+actually going to look like when
+we finish it. Because here,
+
+12410
+12:34:06,130 --> 12:34:09,130
+we're actually going to make our
+first front end our first
+
+12411
+12:34:09,130 --> 12:34:12,820
+website using the blockchain
+using web three. And it's going
+
+12412
+12:34:12,820 --> 12:34:16,000
+to be an incredibly minimalistic
+website. As you can see right
+
+12413
+12:34:16,000 --> 12:34:18,400
+here, we're not going to have
+any styling, we're just going to
+
+12414
+12:34:18,400 --> 12:34:21,580
+show you how to get the
+functionality. And additionally,
+
+12415
+12:34:21,610 --> 12:34:23,920
+we're going to do a couple of
+things that aren't really
+
+12416
+12:34:23,920 --> 12:34:27,100
+recommended and are definitely
+not best practices. The reason
+
+12417
+12:34:27,100 --> 12:34:29,350
+we're going to do it like this
+is the same reason that in math
+
+12418
+12:34:29,350 --> 12:34:31,390
+class, before you learn the
+tricks for derivatives, you
+
+12419
+12:34:31,390 --> 12:34:34,270
+learn what a derivative actually
+is. We're teaching it like this
+
+12420
+12:34:34,270 --> 12:34:37,090
+first, so that you can
+understand what's going on on
+
+12421
+12:34:37,090 --> 12:34:39,790
+the websites when you interact
+with them. And when you work
+
+12422
+12:34:39,790 --> 12:34:42,730
+with them. We saw already with
+Foston, touching the link where
+
+12423
+12:34:42,730 --> 12:34:45,310
+we can connect our wallets and
+we can work with the faucets.
+
+12424
+12:34:45,490 --> 12:34:48,250
+All decentralized applications
+have this website and have this
+
+12425
+12:34:48,280 --> 12:34:50,980
+setup where you connect your
+wallet and then you interact by
+
+12426
+12:34:50,980 --> 12:34:53,560
+clicking buttons, which make
+these function calls to the
+
+12427
+12:34:53,560 --> 12:34:56,470
+blockchain. And here's going to
+be our minimalistic website that
+
+12428
+12:34:56,470 --> 12:34:59,410
+does exactly that. So this
+section is just going to teach
+
+12429
+12:34:59,410 --> 12:35:01,750
+you what's going on under the
+hood. So you can really
+
+12430
+12:35:01,780 --> 12:35:04,930
+understand how to build these
+applications at a professional
+
+12431
+12:35:04,930 --> 12:35:07,900
+level. So for this section, if
+you don't want to code along
+
+12432
+12:35:07,900 --> 12:35:10,780
+with me, you definitely don't
+have to however, coding along
+
+12433
+12:35:10,780 --> 12:35:13,600
+with me will definitely ingrain
+everything in your memory here.
+
+12434
+12:35:13,630 --> 12:35:17,320
+So here's what an application is
+going to look like. We have our
+
+12435
+12:35:17,320 --> 12:35:20,680
+website here, which is connected
+to our hard hat, our local
+
+12436
+12:35:20,680 --> 12:35:24,460
+blockchain, but it's gonna run
+exactly the same as if it was on
+
+12437
+12:35:24,460 --> 12:35:27,580
+a real test net, the first thing
+you'll notice is in our meta
+
+12438
+12:35:27,580 --> 12:35:31,330
+mask, we are not connected. And
+we'll go ahead and hit Connect,
+
+12439
+12:35:31,360 --> 12:35:34,420
+and meta masks will pop up
+asking us if we want to connect,
+
+12440
+12:35:34,540 --> 12:35:38,260
+we'll go ahead and connect to
+it. And now we'll be able to
+
+12441
+12:35:38,260 --> 12:35:40,750
+interact with our heart at
+Funmi. You'll notice two buttons
+
+12442
+12:35:40,750 --> 12:35:43,030
+here are functions that we're
+familiar with, we have our
+
+12443
+12:35:43,030 --> 12:35:45,310
+withdrawal function, which is
+going to be our withdrawal
+
+12444
+12:35:45,310 --> 12:35:48,340
+function that we just created.
+And then of course, we also have
+
+12445
+12:35:48,370 --> 12:35:52,330
+our fund function here where we
+push or we send Aetherium or
+
+12446
+12:35:52,540 --> 12:35:56,140
+Matic or whatever, native
+blockchain token to our smart
+
+12447
+12:35:56,140 --> 12:35:58,630
+contract. So we can do it
+through this user interface. So
+
+12448
+12:35:58,630 --> 12:36:01,180
+once we're connected, if we want
+to see the balance, we can
+
+12449
+12:36:01,180 --> 12:36:04,660
+actually right click, hit
+Inspect, come over to our
+
+12450
+12:36:04,660 --> 12:36:08,500
+console. And we'll print out to
+the JavaScript console, the
+
+12451
+12:36:08,500 --> 12:36:12,040
+current balance of our smart
+contract. So nobody has funded
+
+12452
+12:36:12,040 --> 12:36:15,130
+this yet, we can come down, we
+can choose an amount we want to
+
+12453
+12:36:15,130 --> 12:36:19,210
+fund. So for example, maybe 0.1,
+eath, we'll go ahead, we'll hit
+
+12454
+12:36:19,210 --> 12:36:22,300
+fund, meta masks will pop up,
+we'll get a little council
+
+12455
+12:36:22,300 --> 12:36:25,720
+saying funding with 0.1. And
+it'll give us all the
+
+12456
+12:36:25,720 --> 12:36:30,190
+transaction details that we need
+to send 0.1 eath, to our smart
+
+12457
+12:36:30,190 --> 12:36:33,580
+contract, we can go ahead and
+hit Confirm. And after it's been
+
+12458
+12:36:33,580 --> 12:36:36,910
+confirmed after it's been mined
+on our local blockchain, we had
+
+12459
+12:36:36,910 --> 12:36:41,260
+get balance, we now see that
+it's 0.1. We could call fund
+
+12460
+12:36:41,260 --> 12:36:44,050
+again, we could have multiple
+funders, we could switch between
+
+12461
+12:36:44,050 --> 12:36:46,690
+different accounts and fund with
+different amounts. And we can
+
+12462
+12:36:46,690 --> 12:36:49,480
+see that funding amount
+increase, then we can call the
+
+12463
+12:36:49,480 --> 12:36:52,510
+withdrawal function. As long as
+we're the owner, we can confirm
+
+12464
+12:36:52,540 --> 12:36:54,490
+and we can pull out all the
+money out of our funding
+
+12465
+12:36:54,490 --> 12:36:57,370
+contract. And we'll get balance.
+Now we'll see the balance is
+
+12466
+12:36:57,370 --> 12:37:00,370
+reset to zero. So this is what
+we're going to be building. Are
+
+12467
+12:37:00,370 --> 12:37:01,930
+you ready? I sure am.
+
+12468
+12:37:01,960 --> 12:37:04,810
+Let's get into it. This is the
+introduction to building
+
+12469
+12:37:04,810 --> 12:37:07,810
+websites with web three. All the
+information here is available in
+
+12470
+12:37:07,810 --> 12:37:10,840
+our GitHub repo, so feel free to
+follow along there. Alright, so
+
+12471
+12:37:10,840 --> 12:37:14,440
+if you're in your heart head
+Funmi dash Free Code Camp repo,
+
+12472
+12:37:14,470 --> 12:37:17,080
+we're still going to want to
+have this open as well. But
+
+12473
+12:37:17,080 --> 12:37:20,290
+we're also going to want to
+create a new Visual Studio code
+
+12474
+12:37:20,320 --> 12:37:24,490
+for working with our new repo.
+So let's go ahead and CD down a
+
+12475
+12:37:24,490 --> 12:37:31,630
+directory. We'll type MK dir,
+we'll call this HTML, Fund Me
+
+12476
+12:37:32,050 --> 12:37:36,460
+Free Code Camp. We'll cd into
+that. And we'll open this up by
+
+12477
+12:37:36,460 --> 12:37:40,870
+typing code period. You can also
+do File Open Folder, but we just
+
+12478
+12:37:40,870 --> 12:37:45,460
+want to open this up in a new
+Visual Studio Code. New VS code
+
+12479
+12:37:45,460 --> 12:37:49,450
+will pop up but before we flip
+over to that, we do want to CD
+
+12480
+12:37:49,450 --> 12:37:54,550
+down CD back into hard hat fun
+we Free Code Camp because we are
+
+12481
+12:37:54,550 --> 12:37:57,130
+still going to use everything in
+here. We're still going to
+
+12482
+12:37:57,130 --> 12:38:01,120
+deploy In a smart contract using
+this folder and using this repo,
+
+12483
+12:38:01,180 --> 12:38:04,120
+when you're building daps, or
+websites that are connected to
+
+12484
+12:38:04,120 --> 12:38:08,140
+the blockchain, you'll usually
+have two repositories or repos.
+
+12485
+12:38:08,470 --> 12:38:10,990
+One is going to be for the smart
+contracts, like what we see
+
+12486
+12:38:10,990 --> 12:38:13,690
+here. This is our repo that has
+all the code for our smart
+
+12487
+12:38:13,690 --> 12:38:16,480
+contracts. And then you'll also
+have one for the front end slash
+
+12488
+12:38:16,480 --> 12:38:18,880
+website. And it's going to be
+the combination of these two
+
+12489
+12:38:18,880 --> 12:38:22,120
+repos, which makes up the full
+stack. So when people are
+
+12490
+12:38:22,120 --> 12:38:25,360
+talking about full stack,
+they're talking about the smart
+
+12491
+12:38:25,360 --> 12:38:31,150
+contracts, which is going to be
+our back end, plus, plus our
+
+12492
+12:38:31,150 --> 12:38:36,010
+HTML slash JavaScript slash
+website stuff, which is going to
+
+12493
+12:38:36,010 --> 12:38:39,910
+be our front end. So smart
+contracts are the back end, HTML
+
+12494
+12:38:39,910 --> 12:38:42,610
+slash JavaScript slash website
+stuff is going to be our front
+
+12495
+12:38:42,610 --> 12:38:45,640
+end. So we have our back end
+already. And now we're going to
+
+12496
+12:38:45,640 --> 12:38:48,040
+build our front end, we want to
+keep this up because we're going
+
+12497
+12:38:48,040 --> 12:38:51,940
+to need it to test and interact
+with our front end. Awesome. So
+
+12498
+12:38:52,150 --> 12:38:56,650
+we have this new folder now,
+HTML Funmi, Free Code Camp. Now
+
+12499
+12:38:56,650 --> 12:38:59,860
+this course is not a how to
+learn front end course, we are
+
+12500
+12:38:59,860 --> 12:39:02,980
+going to teach you a number of
+front end concepts. But if you
+
+12501
+12:39:02,980 --> 12:39:06,670
+want to learn a full traditional
+front end course, once again,
+
+12502
+12:39:06,670 --> 12:39:08,920
+you can check out Free Code
+Camp, they've got a ton of
+
+12503
+12:39:08,920 --> 12:39:11,710
+fantastic tutorials, I'm
+teaching you front end, if you
+
+12504
+12:39:11,710 --> 12:39:13,720
+go ahead and follow along with
+me, though, you'll definitely
+
+12505
+12:39:13,720 --> 12:39:17,200
+get a basic understanding of
+front end as well as front ends
+
+12506
+12:39:17,200 --> 12:39:19,690
+and how it relates to our smart
+contracts. Additionally, you
+
+12507
+12:39:19,690 --> 12:39:22,450
+don't have to do the front end
+parts or the full stack parts.
+
+12508
+12:39:22,480 --> 12:39:25,900
+If you only want to take this
+course, to learn back end and to
+
+12509
+12:39:25,900 --> 12:39:28,990
+learn JavaScript, and to learn
+solidity and learn how to do
+
+12510
+12:39:28,990 --> 12:39:31,150
+these smart contracts
+programmatically, then you can
+
+12511
+12:39:31,180 --> 12:39:34,210
+absolutely skip these front end
+parts. However, if you want to
+
+12512
+12:39:34,210 --> 12:39:36,640
+learn to build exciting
+websites, and you want to have
+
+12513
+12:39:36,670 --> 12:39:39,160
+other people other than
+developers interact with your
+
+12514
+12:39:39,160 --> 12:39:41,800
+protocols, you definitely want
+to watch this part. Now before
+
+12515
+12:39:41,800 --> 12:39:44,590
+we actually jump in here and
+start writing our code. We need
+
+12516
+12:39:44,590 --> 12:39:48,880
+to understand what exactly is
+going on when work with one of
+
+12517
+12:39:48,880 --> 12:39:51,910
+these websites that use the
+blockchain. So I actually made a
+
+12518
+12:39:51,910 --> 12:39:55,030
+video about this recently. So
+let's watch a segment from that
+
+12519
+12:39:55,030 --> 12:39:57,430
+really quick, just so that we
+can get up to speed with with
+
+12520
+12:39:57,430 --> 12:40:00,520
+exactly what's going on behind
+the scenes of these websites
+
+12521
+12:40:00,730 --> 12:40:06,040
+that interact with the
+blockchain. All right. So here
+
+12522
+12:40:06,040 --> 12:40:10,000
+we are, with a website or a
+front end on top of some smart
+
+12523
+12:40:10,000 --> 12:40:12,430
+contracts that we've deployed,
+doesn't really matter what it is
+
+12524
+12:40:12,430 --> 12:40:16,240
+right now. This is typically the
+interface that you'll see boiled
+
+12525
+12:40:16,240 --> 12:40:20,350
+down to a really, really
+minimalistic level. Typically,
+
+12526
+12:40:20,350 --> 12:40:22,270
+you'll see something like
+connect function, right, and
+
+12527
+12:40:22,270 --> 12:40:25,180
+Metamask, or some other wallet
+connector thing will pop up,
+
+12528
+12:40:25,390 --> 12:40:28,420
+we'll hit Next we'll connect
+here might even say something
+
+12529
+12:40:28,420 --> 12:40:30,970
+like connected. And we can also
+execute functions, we can
+
+12530
+12:40:31,000 --> 12:40:33,580
+interact with our smart
+contracts, we can confirm, etc.
+
+12531
+12:40:33,610 --> 12:40:35,950
+Right? This is something you
+might see something like Avi
+
+12532
+12:40:35,950 --> 12:40:39,010
+right, I'll hit Connect on the
+application, it'll say, hey, how
+
+12533
+12:40:39,010 --> 12:40:41,890
+would you like to connect? I'll
+choose Metamask. I'm going to
+
+12534
+12:40:41,950 --> 12:40:45,040
+change my Metamask to main net,
+but you get the picture, right?
+
+12535
+12:40:45,040 --> 12:40:48,760
+This is a simple example of what
+that would look like. So what is
+
+12536
+12:40:48,820 --> 12:40:52,630
+actually going on in the browser
+when we connect what is actually
+
+12537
+12:40:52,630 --> 12:40:55,450
+going on? And what do we
+actually need to do, we're going
+
+12538
+12:40:55,450 --> 12:40:59,500
+to right click, hit Inspect. And
+on the right side, we're gonna
+
+12539
+12:40:59,500 --> 12:41:04,810
+see our debugger here. Now if we
+go over to sources, on the top
+
+12540
+12:41:04,810 --> 12:41:09,790
+of our browser, you'll see a few
+things. If you look down over
+
+12541
+12:41:09,790 --> 12:41:14,050
+here, right, we'll see this URL,
+right, which right now is going
+
+12542
+12:41:14,050 --> 12:41:18,010
+to be my localhost. And we'll
+also see meta mask and Phantom
+
+12543
+12:41:18,010 --> 12:41:20,710
+and a whole bunch of other
+stuff. These other things that
+
+12544
+12:41:20,710 --> 12:41:24,130
+we see here are going to be
+what's injected from our browser
+
+12545
+12:41:24,130 --> 12:41:27,130
+extensions. The reason we see
+this meta mask thing here is
+
+12546
+12:41:27,130 --> 12:41:30,250
+because I've meta mask
+installed, right? The reason I
+
+12547
+12:41:30,250 --> 12:41:33,160
+see Phantom here is because I
+have the Phantom app installed.
+
+12548
+12:41:33,910 --> 12:41:37,630
+Meta masks, of course, being an
+EVM, wallet and Phantom being a
+
+12549
+12:41:37,630 --> 12:41:40,990
+Solana based wallet. Now what
+happens when we have these
+
+12550
+12:41:41,260 --> 12:41:45,010
+extensions installed is they
+automatically get injected into
+
+12551
+12:41:45,040 --> 12:41:49,240
+a window object in JavaScript,
+and in fact, we scroll down
+
+12552
+12:41:51,520 --> 12:41:54,880
+to here in the console, again,
+you can find console, you can
+
+12553
+12:41:54,880 --> 12:41:59,020
+click here and click anything up
+there. And we type in window.
+
+12554
+12:41:59,950 --> 12:42:02,890
+We'll see we have this big
+window object with all this
+
+12555
+12:42:02,890 --> 12:42:06,880
+stuff, right? This window object
+represents this our window
+
+12556
+12:42:06,970 --> 12:42:09,760
+basically right? Now if we
+scroll all the way to the bottom
+
+12557
+12:42:11,350 --> 12:42:16,180
+and we do window dot Aetherium.
+We also see an object here. Now
+
+12558
+12:42:16,180 --> 12:42:20,800
+this window dot Aetherium object
+only exists if you have a meta
+
+12559
+12:42:20,800 --> 12:42:25,210
+mask or meta mask like browser
+or if you want to look at some
+
+12560
+12:42:25,210 --> 12:42:29,320
+other web three wallet you do
+window dot Solana. So Alana
+
+12561
+12:42:30,010 --> 12:42:33,340
+right and we see this window dot
+Solana. Now let's look at a
+
+12562
+12:42:33,340 --> 12:42:36,610
+browser that doesn't have
+Metamask or phantom installed.
+
+12563
+12:42:36,640 --> 12:42:38,830
+What do you think is going to
+happen in the window now let's
+
+12564
+12:42:38,830 --> 12:42:41,140
+go ahead and right click hit
+Inspect. We'll go to the
+
+12565
+12:42:41,140 --> 12:42:45,130
+console. Now let's see what's
+going on in here. If we go to
+
+12566
+12:42:45,130 --> 12:42:48,880
+sources, we first off we don't
+see that Metamask or that Solana
+
+12567
+12:42:48,880 --> 12:42:52,990
+source here. And if we go to
+console, we still see window if
+
+12568
+12:42:52,990 --> 12:42:55,870
+I let me zoom in a little bit.
+We still see window here. But if
+
+12569
+12:42:55,870 --> 12:42:59,920
+I do window dot Aetherium If we
+get nothing, or if I do window
+
+12570
+12:42:59,920 --> 12:43:04,450
+dot Solana, we also get nothing.
+So in order for our browsers to
+
+12571
+12:43:04,450 --> 12:43:08,110
+know that there's a Metamask, or
+that there's a phantom, those
+
+12572
+12:43:08,110 --> 12:43:11,500
+extensions automatically add
+these to our window objects, and
+
+12573
+12:43:11,500 --> 12:43:14,740
+that's something that we can
+check for in our JavaScript. The
+
+12574
+12:43:14,740 --> 12:43:17,500
+reason these wallets are so
+important is built into them
+
+12575
+12:43:17,530 --> 12:43:21,310
+underneath the hood, they have a
+blockchain node connected to
+
+12576
+12:43:21,310 --> 12:43:24,340
+them. And in order to interact
+with the blockchain, we always
+
+12577
+12:43:24,340 --> 12:43:28,570
+need a note. And you might have
+seen URLs from alchemy, or in
+
+12578
+12:43:28,570 --> 12:43:31,600
+FIRA because you need them to
+interact with the blockchain,
+
+12579
+12:43:32,050 --> 12:43:35,410
+Alchemy, and infura are examples
+of third party blockchains that
+
+12580
+12:43:35,650 --> 12:43:38,530
+you can interact with and
+basically rent, right. But you
+
+12581
+12:43:38,530 --> 12:43:42,340
+need them to create a provider,
+or a node to send your
+
+12582
+12:43:42,340 --> 12:43:45,790
+transactions to. So you could do
+it in JavaScript, like something
+
+12583
+12:43:45,790 --> 12:43:48,370
+like this is the alchemy
+documentation where you take
+
+12584
+12:43:48,370 --> 12:43:52,600
+that alchemy URL, you stick it
+into some object and use that to
+
+12585
+12:43:52,600 --> 12:43:56,410
+send your transaction. This is a
+way that you could do it in the
+
+12586
+12:43:56,410 --> 12:43:59,440
+back end. But on the front end,
+what you normally want to use is
+
+12587
+12:43:59,440 --> 12:44:03,040
+you just want to use the user's
+Metamask, or their Solana or
+
+12588
+12:44:03,040 --> 12:44:06,970
+their wallet as the main wallet.
+Now, there are a ton of other
+
+12589
+12:44:06,970 --> 12:44:09,610
+different types of wallets to
+connect, like ledger, mu,
+
+12590
+12:44:09,610 --> 12:44:13,210
+Coinbase, wallet, connect, etc.
+And there are different ways to
+
+12591
+12:44:13,210 --> 12:44:17,380
+set those up. But they all do
+the same thing where they expose
+
+12592
+12:44:17,410 --> 12:44:21,460
+some URL, they expose some node
+under the hood, they give us
+
+12593
+12:44:21,460 --> 12:44:25,960
+that URL. They give us that
+provider. The way metamath Does
+
+12594
+12:44:25,960 --> 12:44:30,580
+it is with window dot Aetherium.
+Boom, this is now our URL. This
+
+12595
+12:44:30,580 --> 12:44:34,480
+is now our connection. In fact,
+if you go up to your Metamask,
+
+12596
+12:44:35,380 --> 12:44:41,740
+hit the little three dots,
+expand view. hit Add Network,
+
+12597
+12:44:42,160 --> 12:44:45,820
+and then just hit the X so we
+can get to networks. You can see
+
+12598
+12:44:45,850 --> 12:44:49,960
+all of these blockchains that I
+have in here all have an RPC
+
+12599
+12:44:49,960 --> 12:44:54,580
+URL, this the HTTP RPC URL
+connection of the blockchain No,
+
+12600
+12:44:54,580 --> 12:44:56,980
+that's running. I happen to have
+one running locally right now.
+
+12601
+12:44:59,260 --> 12:45:03,070
+All of these also have a node
+RPC URL and you can actually see
+
+12602
+12:45:03,070 --> 12:45:06,280
+them right in your meta mask
+right. This is connected to in
+
+12603
+12:45:06,280 --> 12:45:10,240
+Fira, these are all connected to
+in Fira. It's all the exact same
+
+12604
+12:45:10,240 --> 12:45:13,270
+thing. Meta mask just has a
+really nice way of taking that
+
+12605
+12:45:13,270 --> 12:45:16,960
+URL, sticking it in the browser
+for us in this window dot
+
+12606
+12:45:16,960 --> 12:45:21,310
+Aetherium or window dot Solana
+you know or whatever. So this is
+
+12607
+12:45:21,310 --> 12:45:23,920
+the main thing that we need to
+know we need. We always need a
+
+12608
+12:45:23,920 --> 12:45:27,460
+connection with the blockchain.
+And these browser wallets are an
+
+12609
+12:45:27,490 --> 12:45:31,360
+easy way to do that. Make sense?
+Great. Let's take this knowledge
+
+12610
+12:45:31,360 --> 12:45:32,230
+now. And let's
+
+12611
+12:45:32,260 --> 12:45:38,920
+apply it. So in here, let's make
+a quick readme.md. Just so we
+
+12612
+12:45:38,920 --> 12:45:40,990
+can talk about what we're going
+to be making here. So in this
+
+12613
+12:45:40,990 --> 12:45:44,620
+section, we're gonna be using
+raw HTML slash JavaScript in
+
+12614
+12:45:44,620 --> 12:45:47,470
+conjunction with our smart
+contracts to build this website.
+
+12615
+12:45:47,590 --> 12:45:52,000
+Later on. We will use next Jas
+slash react, which is a more
+
+12616
+12:45:52,000 --> 12:45:55,390
+modern stack to build our
+websites here. But learning
+
+12617
+12:45:55,420 --> 12:45:57,220
+understanding how to do
+everything with HTML and
+
+12618
+12:45:57,220 --> 12:46:01,270
+JavaScript first, is going to
+make our lives a lot easier come
+
+12619
+12:46:01,270 --> 12:46:05,440
+later on down the road. But as
+we know, all websites use HTML
+
+12620
+12:46:05,560 --> 12:46:08,620
+as kind of their scaffolding for
+what they look like. So let's go
+
+12621
+12:46:08,620 --> 12:46:12,610
+ahead and create our HTML for
+our website, we'll call it index
+
+12622
+12:46:12,640 --> 12:46:17,680
+dot HTML. And this is going to
+be the basic scaffolding or the
+
+12623
+12:46:17,680 --> 12:46:21,130
+basic bones of what our website
+is going to look like. Now, in
+
+12624
+12:46:21,130 --> 12:46:24,940
+VS code, if you go ahead and
+just type exclamation mark index
+
+12625
+12:46:24,940 --> 12:46:28,240
+dot HTML, and you click the
+first thing that pops up, it'll
+
+12626
+12:46:28,270 --> 12:46:32,350
+automatically populate your code
+your file here with some basic
+
+12627
+12:46:32,380 --> 12:46:36,760
+HTML setup. If it doesn't do
+this for you, feel free to copy
+
+12628
+12:46:36,760 --> 12:46:40,360
+paste the basic setup from the
+GitHub repository associated
+
+12629
+12:46:40,360 --> 12:46:43,840
+with this course, we have our
+doctype. HTML, we have some HTML
+
+12630
+12:46:43,840 --> 12:46:46,600
+tags telling us that everything
+in between here is going to be
+
+12631
+12:46:46,660 --> 12:46:49,600
+an HTML, which is great.
+However, for simplicity, we
+
+12632
+12:46:49,600 --> 12:46:51,550
+don't need most of this. So
+we're going to make this a
+
+12633
+12:46:51,550 --> 12:46:54,160
+little bit easier. We're going
+to delete this line, this line
+
+12634
+12:46:54,160 --> 12:46:56,950
+and this line. And we're just
+going to change the title to
+
+12635
+12:46:57,220 --> 12:47:01,090
+fund me app. And then inside of
+our body, we can do something
+
+12636
+12:47:01,090 --> 12:47:05,410
+like or Hello. And now we have
+the bare bones to create a
+
+12637
+12:47:05,410 --> 12:47:09,160
+website just with this. Now to
+show this on a website, we can
+
+12638
+12:47:09,160 --> 12:47:12,040
+do one of two things. If you are
+using Visual Studio code, I'm
+
+12639
+12:47:12,040 --> 12:47:16,240
+going to recommend you install
+the extension live server. And
+
+12640
+12:47:16,240 --> 12:47:18,610
+it looks like this. And I'll
+have the extension ID for this
+
+12641
+12:47:18,610 --> 12:47:21,310
+extension in the GitHub
+repository associated with this
+
+12642
+12:47:21,310 --> 12:47:23,920
+course, this is going to allow
+us to easily spin up an HTML
+
+12643
+12:47:23,920 --> 12:47:27,070
+website. So we'll go ahead and
+install this. And if you're not
+
+12644
+12:47:27,070 --> 12:47:29,890
+using Visual Studio Code, I'll
+show you a different way in just
+
+12645
+12:47:29,890 --> 12:47:33,340
+a second. Once this is
+installed, you should have this
+
+12646
+12:47:33,340 --> 12:47:36,880
+little go live button at the
+bottom. And if you don't, you
+
+12647
+12:47:36,880 --> 12:47:39,460
+can always open up your command
+palette, which again, you can
+
+12648
+12:47:39,460 --> 12:47:43,240
+open up by hitting View command
+palette, and you can type in
+
+12649
+12:47:43,270 --> 12:47:46,810
+live server and just say open
+with live server but we're going
+
+12650
+12:47:46,810 --> 12:47:49,240
+to just click this go live
+button. And it's going to say
+
+12651
+12:47:49,240 --> 12:47:53,680
+starting and it's actually going
+to open up your browser with our
+
+12652
+12:47:53,710 --> 12:47:57,460
+index dot HTML. We can actually
+see our website is being called
+
+12653
+12:47:57,490 --> 12:48:02,500
+Save on 120 7.0 point 0.1. This
+is known as the loopback, or
+
+12654
+12:48:02,530 --> 12:48:06,430
+local host endpoint, we're on
+port 5501. If you're not
+
+12655
+12:48:06,430 --> 12:48:09,010
+familiar with the ports, don't
+worry about that for now, we
+
+12656
+12:48:09,010 --> 12:48:12,310
+have our index dot HTML here.
+And if we change this to
+
+12657
+12:48:12,340 --> 12:48:16,630
+something like what's good, we
+hit save. If it doesn't
+
+12658
+12:48:16,630 --> 12:48:19,060
+automatically refresh, we'd come
+over here and refresh. And we'd
+
+12659
+12:48:19,060 --> 12:48:21,640
+see that being reflected here.
+If you've never created a
+
+12660
+12:48:21,640 --> 12:48:23,980
+website before, you've
+essentially just done it,
+
+12661
+12:48:24,040 --> 12:48:28,150
+congratulations, you might get
+this.vs code folder. a.vs code
+
+12662
+12:48:28,180 --> 12:48:32,680
+folder allows you to make
+settings specifically for the
+
+12663
+12:48:32,680 --> 12:48:35,530
+repo that you're working with,
+for your code editor for VS
+
+12664
+12:48:35,530 --> 12:48:38,740
+code, but we're going to mostly
+ignore it for now. Now, if
+
+12665
+12:48:38,740 --> 12:48:41,680
+you're not using Visual Studio
+Code, what you can do is you can
+
+12666
+12:48:41,680 --> 12:48:45,610
+just run this in the browser. So
+one thing you could do is you
+
+12667
+12:48:45,610 --> 12:48:48,340
+could right click it, and I'm
+using a Mac. So I'm going to hit
+
+12668
+12:48:48,340 --> 12:48:52,270
+Reveal in Finder, aka reveal
+where it's located. And you can
+
+12669
+12:48:52,270 --> 12:48:54,970
+just double click it, and boom,
+now it's running right in your
+
+12670
+12:48:54,970 --> 12:48:57,790
+browser. Instead of pointing to
+your localhost, it's going to be
+
+12671
+12:48:57,790 --> 12:49:01,660
+pointing directly to your local
+file path. Now one final version
+
+12672
+12:49:01,660 --> 12:49:03,970
+that we could do that I'm going
+to highly recommend you don't
+
+12673
+12:49:03,970 --> 12:49:06,850
+do. But it's another option,
+we're actually going to download
+
+12674
+12:49:06,850 --> 12:49:10,180
+a package for you using no Jas,
+which allows us to serve up
+
+12675
+12:49:10,210 --> 12:49:12,910
+HTTP. And we're gonna install it
+the exact same way we've
+
+12676
+12:49:12,910 --> 12:49:17,620
+installed our other packages, we
+can do yarn, add dash dash dev
+
+12677
+12:49:17,680 --> 12:49:22,870
+HTTP hyphen server. And you may
+still want to add it anyways.
+
+12678
+12:49:22,900 --> 12:49:26,470
+But now, we'll get some node
+modules for this HTTP server
+
+12679
+12:49:26,470 --> 12:49:30,010
+package, we'll get a package
+json, and of course, a yarn dot
+
+12680
+12:49:30,010 --> 12:49:34,180
+lock as well. And what we can do
+is we can stop this down here,
+
+12681
+12:49:34,210 --> 12:49:36,940
+stop that live server. And if we
+go back to our website, refresh,
+
+12682
+12:49:37,240 --> 12:49:42,400
+it'll now be blank. And we can
+run yarn HTTP server. And this
+
+12683
+12:49:42,400 --> 12:49:45,670
+will do the exact same thing.
+And we get, and if we come over,
+
+12684
+12:49:45,730 --> 12:49:49,060
+and we refresh, we'll see what's
+good. Now this one is a little
+
+12685
+12:49:49,060 --> 12:49:52,900
+bit more finicky. And after you
+make a change, like, Hey, what's
+
+12686
+12:49:52,900 --> 12:49:56,200
+good, you might have to close
+it, and then reopen it and then
+
+12687
+12:49:56,200 --> 12:50:00,100
+refresh. So I do recommend that
+if you're on Visual Studio code,
+
+12688
+12:50:00,280 --> 12:50:02,590
+you definitely just use this
+little go live button, because
+
+12689
+12:50:02,590 --> 12:50:04,390
+it'll reflect your changes a lot
+nicer.
+
+12690
+12:50:04,420 --> 12:50:07,000
+So let's go ahead and hit the Go
+Live button. Hey, what's good
+
+12691
+12:50:07,000 --> 12:50:10,000
+pops up. Okay, cool. Our HTML is
+working perfectly.
+
+12692
+12:50:12,790 --> 12:50:15,730
+So the title, of course, is
+going to be the Funmi app, which
+
+12693
+12:50:15,730 --> 12:50:19,180
+we see up here in the title
+section. So let's update this
+
+12694
+12:50:19,210 --> 12:50:22,270
+HTML, so that it has those
+buttons, and it can actually
+
+12695
+12:50:22,270 --> 12:50:25,210
+connect and work with our
+blockchain and work with any
+
+12696
+12:50:25,210 --> 12:50:27,910
+blockchain. Something else that
+you can do in HTML is you can
+
+12697
+12:50:27,910 --> 12:50:31,660
+actually write JavaScript inside
+your HTML. And the way we can do
+
+12698
+12:50:31,660 --> 12:50:35,440
+that is by doing this script
+tag, and then we'll do a closing
+
+12699
+12:50:35,440 --> 12:50:39,490
+script tag. And anything inside
+here inside of our script tags
+
+12700
+12:50:39,490 --> 12:50:42,910
+is going to be JavaScript. So I
+could do something like console
+
+12701
+12:50:42,970 --> 12:50:46,390
+dot log, hi, with a bunch of
+exclamation marks, I'm going to
+
+12702
+12:50:46,390 --> 12:50:49,600
+save it. We'll go back to our
+front end, we're going to right
+
+12703
+12:50:49,600 --> 12:50:53,320
+click, we'll hit Inspect, we'll
+go to the console. And we can
+
+12704
+12:50:53,320 --> 12:50:56,380
+see that Hi prints it out, we
+refresh, we can see the hi
+
+12705
+12:50:56,380 --> 12:51:00,730
+consistently printed out hi from
+script tag, we'll save it, we'll
+
+12706
+12:51:00,730 --> 12:51:04,000
+move back, we see hi from script
+tag printed out. I know it's a
+
+12707
+12:51:04,000 --> 12:51:08,680
+little bit small. So let me zoom
+in. Alright, great. So we can
+
+12708
+12:51:08,740 --> 12:51:12,220
+type our JavaScript in here,
+it's inside the script tag is
+
+12709
+12:51:12,220 --> 12:51:14,740
+where we're going to write our
+JavaScript to write the
+
+12710
+12:51:14,740 --> 12:51:17,830
+functions that our front end is
+going to interact with. Now, as
+
+12711
+12:51:17,830 --> 12:51:21,670
+we saw before, in this little
+console, we can check for window
+
+12712
+12:51:21,700 --> 12:51:26,230
+dot Etherium, to see if Metamask
+or is installed. And again, a
+
+12713
+12:51:26,230 --> 12:51:28,300
+lot of what we're working with
+is actually right in the
+
+12714
+12:51:28,300 --> 12:51:31,840
+Metamask documentation. If you
+go to their basic section, they
+
+12715
+12:51:31,840 --> 12:51:34,450
+talk a little bit about the
+provider, which is this window
+
+12716
+12:51:34,450 --> 12:51:37,750
+dot Aetherium, you can read how
+to actually interact directly
+
+12717
+12:51:37,750 --> 12:51:41,020
+with meta mask in the meta mask
+documentation as well. Now using
+
+12718
+12:51:41,020 --> 12:51:43,360
+window dot Aetherium is just one
+of the ways we're actually going
+
+12719
+12:51:43,360 --> 12:51:46,000
+to connect to the blockchain,
+there's actually multiple ways
+
+12720
+12:51:46,000 --> 12:51:48,010
+because there's multiple
+different kinds of wallets out
+
+12721
+12:51:48,010 --> 12:51:50,680
+there. But for now, we're just
+going to pretend that window dot
+
+12722
+12:51:50,680 --> 12:51:54,070
+Aetherium and meta mask is the
+only extension out there. So
+
+12723
+12:51:54,070 --> 12:51:56,710
+what we want to do is we want to
+check to see if this wind of
+
+12724
+12:51:56,710 --> 12:51:59,530
+that Aetherium exists. This is
+the first thing that we should
+
+12725
+12:51:59,530 --> 12:52:02,320
+be doing. Because if this
+doesn't exist, this means that
+
+12726
+12:52:02,350 --> 12:52:04,180
+they can't connect to the
+blockchain, one of the first
+
+12727
+12:52:04,180 --> 12:52:06,430
+things that we're going to want
+to do is we're going to want to
+
+12728
+12:52:06,430 --> 12:52:10,750
+check to see if that exists. So
+we can do something like if we
+
+12729
+12:52:10,750 --> 12:52:16,690
+can say type of window that
+Aetherium does not equal,
+
+12730
+12:52:17,110 --> 12:52:23,800
+undefined. Then we'll do console
+dot log, I see a meta mask. So
+
+12731
+12:52:23,800 --> 12:52:27,970
+now if we save, we come back to
+our front end, we do see I see a
+
+12732
+12:52:27,970 --> 12:52:31,450
+Metamask. I've got a Google
+Chrome up without Metamask that
+
+12733
+12:52:31,450 --> 12:52:35,680
+if we look in the console, and
+we hit refresh it the same URL
+
+12734
+12:52:35,680 --> 12:52:39,130
+where our live server is
+running. We don't see that I see
+
+12735
+12:52:39,130 --> 12:52:42,550
+a meta mask because it doesn't
+see a meta mask. We can do else.
+
+12736
+12:52:43,450 --> 12:52:49,090
+console dot log, no Metamask
+refresh, we still see ICD a meta
+
+12737
+12:52:49,090 --> 12:52:51,670
+mask where we have a meta mask.
+You don't have to open up a
+
+12738
+12:52:51,670 --> 12:52:54,940
+browser without one but we see
+no meta mask for Chrome because
+
+12739
+12:52:54,940 --> 12:52:57,730
+it doesn't see a meta mask. Now
+what we could do is We can
+
+12740
+12:52:57,760 --> 12:53:02,080
+automatically try to connect to
+meta mask if we see that there
+
+12741
+12:53:02,080 --> 12:53:04,960
+is a meta mask, right? Remember
+how before, when we hit that
+
+12742
+12:53:04,960 --> 12:53:07,150
+connect button meta mask popped
+up and said, Are you sure you
+
+12743
+12:53:07,150 --> 12:53:10,420
+want to connect? So what we can
+do is, and you can, again, you
+
+12744
+12:53:10,420 --> 12:53:13,870
+can find this in the meta mask
+docs, we can run this eath
+
+12745
+12:53:13,870 --> 12:53:17,200
+request accounts method, which
+is basically going to be how we
+
+12746
+12:53:17,200 --> 12:53:22,240
+connect our Metamask. Now, this
+is specified by a new EIP and an
+
+12747
+12:53:22,240 --> 12:53:25,000
+older documentations. And in
+older tutorials, you might see
+
+12748
+12:53:25,030 --> 12:53:27,940
+Aetherium dot enable, which
+essentially does the exact same
+
+12749
+12:53:27,940 --> 12:53:31,840
+thing. So what we could do here
+is we could say, a cerium, or
+
+12750
+12:53:31,840 --> 12:53:36,730
+excuse me, window dot Aetherium
+dot request. And we could put
+
+12751
+12:53:36,940 --> 12:53:43,360
+method F request accounts. And
+we'll save that. Now if we go
+
+12752
+12:53:43,360 --> 12:53:47,200
+back to our browser, we'll
+actually see, you'll actually
+
+12753
+12:53:47,200 --> 12:53:50,800
+see Metamask, go ahead and pop
+up and say, let's connect so we
+
+12754
+12:53:50,800 --> 12:53:54,820
+can choose an account. And we'll
+hit Connect, will automatically
+
+12755
+12:53:54,820 --> 12:53:58,270
+connect our meta mask to our
+website. And now if we look at
+
+12756
+12:53:58,270 --> 12:54:01,030
+our meta mask, we can see this
+little connected thing. It's
+
+12757
+12:54:01,030 --> 12:54:04,510
+saying that our account one is
+now connected to our website.
+
+12758
+12:54:04,780 --> 12:54:08,860
+This means that the website can
+now make API calls to our meta
+
+12759
+12:54:08,860 --> 12:54:12,280
+mask, we still have to be the
+ones to approve them. But it can
+
+12760
+12:54:12,280 --> 12:54:15,640
+go ahead and connect and try to
+run transactions, which is
+
+12761
+12:54:15,670 --> 12:54:18,310
+awesome, which is what we want.
+If you want to disconnect, we
+
+12762
+12:54:18,310 --> 12:54:20,890
+can go ahead and click that
+little button and hit disconnect
+
+12763
+12:54:20,890 --> 12:54:23,530
+this account. Well that we have
+our code currently is anytime we
+
+12764
+12:54:23,530 --> 12:54:25,930
+hit refresh, this is going to
+pop up which is going to be
+
+12765
+12:54:26,140 --> 12:54:29,440
+really annoying. So what we're
+going to do instead is we're
+
+12766
+12:54:29,440 --> 12:54:33,070
+going to wrap this up into an
+asynchronous function, the exact
+
+12767
+12:54:33,070 --> 12:54:35,530
+same as we've been doing, we'll
+do we'll create an async
+
+12768
+12:54:36,190 --> 12:54:40,330
+function called Connect. And
+we'll wrap it up these curly
+
+12769
+12:54:40,330 --> 12:54:43,570
+braces here. And then we'll just
+format this a little bit to make
+
+12770
+12:54:43,570 --> 12:54:47,350
+it look nicer. And now if we
+save, we go back to our website,
+
+12771
+12:54:47,410 --> 12:54:50,260
+and we refresh. And we go ahead
+and disconnect.
+
+12772
+12:54:51,550 --> 12:54:54,670
+If we refresh Metamask won't
+keep asking us Hey, do you want
+
+12773
+12:54:54,670 --> 12:54:56,110
+to connect Hey, do you want to
+connect here do you want to
+
+12774
+12:54:56,110 --> 12:54:58,960
+connect, because we need to call
+this connect function where we
+
+12775
+12:54:58,960 --> 12:55:01,960
+can do that is we can add a
+little button here. So right
+
+12776
+12:55:01,990 --> 12:55:06,160
+underneath our script tag, we're
+going to add a button tag. So
+
+12777
+12:55:06,160 --> 12:55:08,950
+this is the opening button tag.
+And then here's the closing
+
+12778
+12:55:08,950 --> 12:55:11,800
+button tag. And inside the
+opening button tag declaration,
+
+12779
+12:55:12,040 --> 12:55:16,690
+we'll give it an ID, which will
+be Connect button. And we'll say
+
+12780
+12:55:16,690 --> 12:55:23,440
+on click equals the Connect
+connects function. And we'll
+
+12781
+12:55:23,440 --> 12:55:25,930
+call this button connect in
+between these little button
+
+12782
+12:55:25,930 --> 12:55:29,560
+tags, we'll call it connect will
+say when we click it will call
+
+12783
+12:55:29,560 --> 12:55:32,950
+the Connect function. So if we
+save, and we go back to our
+
+12784
+12:55:32,950 --> 12:55:35,320
+front end, we can now see we
+have a little Connect button.
+
+12785
+12:55:35,620 --> 12:55:39,010
+And now if we press Connect,
+Metamask is going to pop up,
+
+12786
+12:55:39,190 --> 12:55:43,930
+we'll hit next and connect like
+that. And boom, now we are
+
+12787
+12:55:43,930 --> 12:55:47,950
+connected. And we can even do a
+little await here so that we
+
+12788
+12:55:47,980 --> 12:55:50,980
+wait for this to finish before
+moving on. And then after we
+
+12789
+12:55:50,980 --> 12:55:56,500
+connect, we can say console dot
+log connected. So let's actually
+
+12790
+12:55:56,500 --> 12:55:59,650
+go ahead and test this out,
+we'll go back to Metamask. we'll
+
+12791
+12:55:59,680 --> 12:56:03,730
+disconnect here, try to never be
+on Main net if we don't have to
+
+12792
+12:56:03,730 --> 12:56:07,510
+be. And let's go ahead run
+connect, we'll hit Next connect.
+
+12793
+12:56:07,720 --> 12:56:10,270
+And now we see a little console
+dot log come out saying
+
+12794
+12:56:10,300 --> 12:56:13,660
+connected. Okay, great. We can
+also update our website
+
+12795
+12:56:13,660 --> 12:56:16,870
+accordingly. So that we can let
+users know that we're connected.
+
+12796
+12:56:17,110 --> 12:56:20,950
+So we can grab the connect
+button element ID and say that
+
+12797
+12:56:20,950 --> 12:56:24,220
+we're connected once we're
+connected. So after we await to
+
+12798
+12:56:24,220 --> 12:56:30,370
+be connected, we can go ahead
+and do document dot get element
+
+12799
+12:56:30,940 --> 12:56:38,380
+by ID Connect button. And then
+we'll say dot inner HTML equals
+
+12800
+12:56:39,220 --> 12:56:42,730
+connected like that. And then
+instead of saying no minimize
+
+12801
+12:56:42,730 --> 12:56:45,700
+down here, we'll do just the
+opposite. So we'll copy this
+
+12802
+12:56:45,700 --> 12:56:51,280
+line. And instead of connected,
+we'll say please install meta
+
+12803
+12:56:51,280 --> 12:56:55,630
+mask. And we'll save we'll go
+back to our front end, we'll hit
+
+12804
+12:56:55,630 --> 12:56:58,780
+connect. And now if we're
+already connected, it'll just
+
+12805
+12:56:58,780 --> 12:57:01,150
+automatically go to connected.
+If we're not connected, it'll
+
+12806
+12:57:01,150 --> 12:57:03,550
+pop up, we'll get connected. And
+now we have this button that
+
+12807
+12:57:03,550 --> 12:57:06,700
+says connected, which is great.
+So now we already know that
+
+12808
+12:57:06,700 --> 12:57:12,790
+we're connected. So we've
+connected our Metamask to our
+
+12809
+12:57:12,790 --> 12:57:15,370
+front end. Now we want to
+actually go ahead and do some
+
+12810
+12:57:15,370 --> 12:57:18,010
+functions here. And this is
+where we want to create some
+
+12811
+12:57:18,010 --> 12:57:21,310
+more functions and some more
+buttons that are going to use
+
+12812
+12:57:21,370 --> 12:57:24,670
+ethers that package that we
+become so familiar with. Now, as
+
+12813
+12:57:24,670 --> 12:57:27,790
+we code, our script section is
+going to get bigger and bigger
+
+12814
+12:57:27,790 --> 12:57:31,240
+and bigger. So oftentimes, we
+actually want to put our code in
+
+12815
+12:57:31,270 --> 12:57:34,270
+a JavaScript file itself. So
+we're gonna go ahead, come over
+
+12816
+12:57:34,270 --> 12:57:37,270
+here, we're going to create a
+new file, and we'll call it
+
+12817
+12:57:37,330 --> 12:57:42,370
+index dot j s. And instead of
+putting our JavaScript in these
+
+12818
+12:57:42,400 --> 12:57:46,360
+script tags, we're going to put
+it in this index and then import
+
+12819
+12:57:46,390 --> 12:57:49,180
+this index file into our HTML.
+And the way that we're going to
+
+12820
+12:57:49,180 --> 12:57:51,580
+do that is we're actually just
+going to grab this function.
+
+12821
+12:57:52,360 --> 12:57:55,600
+We're going to copy it, delete
+everything for now. We're going
+
+12822
+12:57:55,600 --> 12:57:59,860
+to paste it into our end ext dot
+j s, and then in our index dot
+
+12823
+12:57:59,860 --> 12:58:05,890
+HTML, we're just going to tell
+our script tag to use index.js.
+
+12824
+12:58:06,550 --> 12:58:10,240
+So we're just going to say the
+source is going to be equal to
+
+12825
+12:58:10,270 --> 12:58:16,600
+dot slash index dot j s. And
+then we're going to say, the
+
+12826
+12:58:16,600 --> 12:58:21,550
+type of this is going to be text
+slash JavaScript. Now if we save
+
+12827
+12:58:21,550 --> 12:58:25,150
+that, and we save our index dot
+HTML, we come back to our front
+
+12828
+12:58:25,150 --> 12:58:28,720
+end, we do a little refresh. And
+we make sure that we go ahead
+
+12829
+12:58:29,320 --> 12:58:34,210
+and disconnect. And we do
+another refresh, we can see that
+
+12830
+12:58:34,240 --> 12:58:38,740
+even with our index.js in a
+different file, because we're
+
+12831
+12:58:38,740 --> 12:58:42,490
+doing src equals index.js, and
+we're importing it into our
+
+12832
+12:58:42,490 --> 12:58:46,120
+HTML, when we hit Connect, it
+still calls our Connect
+
+12833
+12:58:46,120 --> 12:58:49,900
+function. That's how we can kind
+of separate our JavaScript into
+
+12834
+12:58:49,900 --> 12:58:52,720
+its own js file that we're a
+little bit more familiar with.
+
+12835
+12:58:52,780 --> 12:58:55,000
+Now, if you look in the GitHub
+repo associated with this
+
+12836
+12:58:55,000 --> 12:58:58,570
+course, and you look in the
+index dot j s, you'll see our
+
+12837
+12:58:58,570 --> 12:59:01,360
+Connect function, we've added
+some quality of life stuff,
+
+12838
+12:59:01,720 --> 12:59:05,230
+we've added some try catches
+just to make handling errors a
+
+12839
+12:59:05,230 --> 12:59:08,020
+little bit better, you can go
+ahead and add those try catches
+
+12840
+12:59:08,020 --> 12:59:10,630
+in yourself if you'd like. But
+I'm not going to demo them in
+
+12841
+12:59:10,630 --> 12:59:11,110
+this video
+
+12842
+12:59:11,110 --> 12:59:36,520
+here. Now we want to create our
+fun function. And then later on,
+
+12843
+12:59:36,520 --> 12:59:39,460
+we're going to create our
+withdrawal function. And this is
+
+12844
+12:59:39,460 --> 12:59:44,140
+where front end JavaScript code.
+And no Gs are a little bit
+
+12845
+12:59:44,140 --> 12:59:48,070
+different. In no JS, we've been
+using this require keyword to
+
+12846
+12:59:48,100 --> 12:59:52,570
+import dependencies in front end
+JavaScript, you can't use
+
+12847
+12:59:52,570 --> 12:59:56,230
+require, and it won't exactly
+work. Now later on, we're going
+
+12848
+12:59:56,230 --> 12:59:59,500
+to use the Import keyword, which
+is really the better way to do
+
+12849
+12:59:59,500 --> 13:00:02,680
+this. And this is where our
+first differences going to be
+
+12850
+13:00:02,830 --> 13:00:06,340
+using the Import keyword for
+front end is much better than
+
+12851
+13:00:06,340 --> 13:00:09,160
+the require keyword, especially
+since the require keyword
+
+12852
+13:00:09,160 --> 13:00:12,430
+doesn't actually work. And for
+those you who might struggle
+
+12853
+13:00:12,430 --> 13:00:15,340
+with this disconnect in this
+change. Once again, in the
+
+12854
+13:00:15,340 --> 13:00:18,760
+GitHub repo associated with
+this, we do have a Node js
+
+12855
+13:00:18,760 --> 13:00:22,510
+edition of this, where you can
+use the require keyword, you
+
+12856
+13:00:22,510 --> 13:00:24,700
+just have to go through the
+readme and download some
+
+12857
+13:00:24,700 --> 13:00:28,000
+packages and run some scripts
+that basically transform your
+
+12858
+13:00:28,000 --> 13:00:32,380
+code that uses require into code
+that works with imports. But
+
+12859
+13:00:32,380 --> 13:00:35,260
+we're going to teach you the way
+to work with your front end code
+
+12860
+13:00:35,260 --> 13:00:38,740
+here using imports. Now you'll
+see when we get to next Jas that
+
+12861
+13:00:38,740 --> 13:00:43,510
+we will still download code from
+node modules and using a yarn
+
+12862
+13:00:43,540 --> 13:00:47,650
+lock and a package json etc. So
+summary in future seconds, we
+
+12863
+13:00:47,650 --> 13:00:51,400
+are still going to do yarn add.
+But outside of a framework when
+
+12864
+13:00:51,400 --> 13:00:55,090
+we're using this raw JavaScript,
+this raw HTML setup, like what
+
+12865
+13:00:55,090 --> 13:00:57,520
+we're working with here, we're
+not going to be doing yarn, add
+
+12866
+13:00:57,520 --> 13:01:00,430
+node modules will add node
+modules for framework like next
+
+12867
+13:01:00,430 --> 13:01:03,220
+react. But for raw JavaScript,
+we'll be using a different
+
+12868
+13:01:03,220 --> 13:01:05,710
+syntax, which I'll show you
+soon. So let's go ahead and
+
+12869
+13:01:05,710 --> 13:01:08,470
+start building our fund function
+here. To make our fun functions,
+
+12870
+13:01:08,470 --> 13:01:11,590
+what would we normally do? Well,
+we'd create an async function
+
+12871
+13:01:11,860 --> 13:01:14,950
+called fund. And in this
+function, we probably would want
+
+12872
+13:01:14,950 --> 13:01:18,610
+to take some ether mount as a
+parameter, because we're going
+
+12873
+13:01:18,610 --> 13:01:21,670
+to want to fund it with some
+amount of Aetherium. When we
+
+12874
+13:01:21,670 --> 13:01:26,740
+call this function, we might
+want to run console dot log will
+
+12875
+13:01:26,740 --> 13:01:31,720
+do a little string interpolation
+here. Funding with eth amount,
+
+12876
+13:01:32,470 --> 13:01:36,460
+dot dot dot, these semicolons
+are going to drive me absolutely
+
+12877
+13:01:36,460 --> 13:01:40,630
+insane. So I'm going to add a
+our dot prettier dot our rc file
+
+12878
+13:01:40,750 --> 13:01:43,630
+into this, and I'm going to go
+ahead and add prettier in here.
+
+12879
+13:01:43,660 --> 13:01:46,630
+Otherwise, I'm going to lose my
+mind. So we're gonna do yarn add
+
+12880
+13:01:46,630 --> 13:01:50,620
+dash dash Dev, prettier, just so
+we can format our JavaScript
+
+12881
+13:01:50,620 --> 13:01:53,740
+with prettier come back to
+index.js. I'm gonna hit command
+
+12882
+13:01:53,740 --> 13:01:55,930
+S, and it looks like it does
+indeed, auto format with
+
+12883
+13:01:55,930 --> 13:02:00,100
+prettier now yay, no matter
+semicolons, we can call this fun
+
+12884
+13:02:00,100 --> 13:02:04,060
+function the same way we call
+connect. So in in our index dot
+
+12885
+13:02:04,060 --> 13:02:08,980
+HTML, maybe we'll create a new
+button. Button. We'll give it an
+
+12886
+13:02:08,980 --> 13:02:17,470
+ID of fund will say on click
+equals fund. And we'll say fund.
+
+12887
+13:02:18,100 --> 13:02:20,800
+And this will be our button
+here, we save it, we're looking
+
+12888
+13:02:20,800 --> 13:02:24,340
+at our front end. Now the fund
+button that if we call, we say
+
+12889
+13:02:24,340 --> 13:02:27,430
+funding with undefined because
+we're not passing it an amount
+
+12890
+13:02:27,430 --> 13:02:31,150
+here. So back in our index
+console dot log funding with and
+
+12891
+13:02:31,150 --> 13:02:33,550
+we'll just want to make sure
+that we can actually call that
+
+12892
+13:02:33,550 --> 13:02:37,540
+Funmi function. So we'll copy
+this line again and we'll say
+
+12893
+13:02:37,660 --> 13:02:40,630
+type of window dot Aetherium
+does not equal undefined. We'll
+
+12894
+13:02:40,630 --> 13:02:43,930
+go ahead and try to fund here to
+send a transaction. What are the
+
+12895
+13:02:43,930 --> 13:02:47,560
+things that we absolutely 100%
+Always need? Well, we need a
+
+12896
+13:02:47,560 --> 13:02:51,610
+provider slash connection to the
+blockchain. And we need a signer
+
+12897
+13:02:51,910 --> 13:02:57,340
+slash wallet, slash someone with
+some gas to actually send it and
+
+12898
+13:02:57,340 --> 13:03:01,390
+then And we're probably going to
+need the contract that we are
+
+12899
+13:03:01,390 --> 13:03:04,180
+interacting with. And to get
+that contract, we're going to
+
+12900
+13:03:04,180 --> 13:03:08,800
+need ABI and address. And with
+these all together, we can send
+
+12901
+13:03:08,800 --> 13:03:11,530
+any transaction. So to get our
+provider, we're going to
+
+12902
+13:03:11,530 --> 13:03:14,860
+actually go ahead and work with
+ethers again. Now, we're going
+
+12903
+13:03:14,860 --> 13:03:17,680
+to do it a little bit
+differently, though, before, the
+
+12904
+13:03:17,680 --> 13:03:23,380
+way we worked with ethers is we
+said const ethers equals require
+
+12905
+13:03:23,980 --> 13:03:27,160
+ethers, right. And this is how
+we pulled ethers. And now like I
+
+12906
+13:03:27,160 --> 13:03:30,190
+just said to you, though,
+require doesn't work in the
+
+12907
+13:03:30,190 --> 13:03:33,610
+front end. And we actually don't
+want to install ethers with a
+
+12908
+13:03:33,610 --> 13:03:37,510
+node modules package. So what we
+can actually do instead is let's
+
+12909
+13:03:37,510 --> 13:03:41,860
+go to the ethers documentation.
+If you go to the Getting Started
+
+12910
+13:03:41,860 --> 13:03:46,030
+section, scroll down, they have
+a section about importing using
+
+12911
+13:03:46,030 --> 13:03:50,950
+Node js, which uses require or
+imports. And then they also have
+
+12912
+13:03:51,070 --> 13:03:55,270
+some documentation for working
+with the web browser. So instead
+
+12913
+13:03:55,270 --> 13:03:59,110
+of us doing a node module, what
+we'll do is we'll copy the
+
+12914
+13:03:59,140 --> 13:04:02,500
+ethers library to our own
+directories and serve it
+
+12915
+13:04:02,500 --> 13:04:06,250
+ourselves. So what we do is we
+can come in here, we can copy
+
+12916
+13:04:06,250 --> 13:04:10,300
+this massive file, which is
+ethers, but in front end
+
+12917
+13:04:10,330 --> 13:04:14,410
+addition, and come back to our
+file. And we'll make a new file
+
+12918
+13:04:14,410 --> 13:04:14,860
+in here.
+
+12919
+13:04:16,540 --> 13:04:24,940
+Called ethers. We'll do 5.6
+point esm.min.js. And we'll
+
+12920
+13:04:24,940 --> 13:04:28,150
+paste that massive thing in
+here. Now, since I have prettier
+
+12921
+13:04:28,150 --> 13:04:31,180
+when I save it, it's going to
+auto format. And it's just this
+
+12922
+13:04:31,210 --> 13:04:37,030
+huge file, which has everything
+ethers, but front end defied if
+
+12923
+13:04:37,030 --> 13:04:41,680
+you will. Now what we can do is
+we can import this into our
+
+12924
+13:04:41,680 --> 13:04:46,210
+index.js. So instead of using
+require in here, we'll say
+
+12925
+13:04:46,210 --> 13:04:51,400
+import ethers from and then
+we'll just refer to that file
+
+12926
+13:04:51,400 --> 13:05:00,760
+that we just got ethers dash 5.6
+point esm.min.js. Now, we only
+
+12927
+13:05:00,760 --> 13:05:04,960
+need to do this weird copy
+pasting of the file import thing
+
+12928
+13:05:05,050 --> 13:05:09,430
+in this HTML JavaScript lesson.
+In future lessons with Node js,
+
+12929
+13:05:09,460 --> 13:05:12,580
+we are going to do yarn, add
+ethers, kinda like we've
+
+12930
+13:05:12,580 --> 13:05:15,790
+normally seen. The frameworks
+like React and next Jas that
+
+12931
+13:05:15,790 --> 13:05:19,900
+we're going to use are going to
+automatically convert those yarn
+
+12932
+13:05:19,930 --> 13:05:23,650
+added packages to their front
+end to five versions. But for
+
+12933
+13:05:23,650 --> 13:05:25,990
+this section, this is how we're
+going to actually import the
+
+12934
+13:05:25,990 --> 13:05:29,830
+ethers package. Now the other
+thing we'll have to do is on our
+
+12935
+13:05:29,830 --> 13:05:34,180
+front end, we'll have to change
+this from type text slash
+
+12936
+13:05:34,180 --> 13:05:39,340
+JavaScript to type module
+changes. The type module allows
+
+12937
+13:05:39,340 --> 13:05:42,040
+us to import modules into our
+code, which we're going to be
+
+12938
+13:05:42,040 --> 13:05:45,310
+importing this, and we're going
+to import another module as
+
+12939
+13:05:45,310 --> 13:05:49,900
+well. Awesome. And now though,
+if we go back to our front end,
+
+12940
+13:05:50,410 --> 13:05:53,830
+do a little refresh with the
+connect button, we get Connect
+
+12941
+13:05:53,830 --> 13:05:57,430
+is not defined at HTML
+button.on. Click, so instead of
+
+12942
+13:05:57,430 --> 13:06:00,580
+calling our Connect button from
+the front end here, we're going
+
+12943
+13:06:00,580 --> 13:06:05,980
+to remove these on clicks from
+our index dot HTML, and go into
+
+12944
+13:06:05,980 --> 13:06:10,660
+our index.js and add those
+connect buttons in here. So
+
+12945
+13:06:10,660 --> 13:06:17,980
+we'll say const. Connect button
+equals document, dot get element
+
+12946
+13:06:18,880 --> 13:06:27,280
+by ID, Connect button. And then
+we'll say const. One button
+
+12947
+13:06:27,880 --> 13:06:35,350
+equals Doc, you meant dot get
+element by ID. One button, the
+
+12948
+13:06:35,350 --> 13:06:37,810
+idea of the connect button is
+Connect button. The idea the fun
+
+12949
+13:06:37,810 --> 13:06:43,750
+button is fun button. And then
+we'll say connect button.on
+
+12950
+13:06:43,750 --> 13:06:53,380
+Click equals connect. And one
+button.on Click equals fond. We
+
+12951
+13:06:53,380 --> 13:06:56,530
+go back to our front end, do a
+little refresh. We'll hit
+
+12952
+13:06:56,530 --> 13:06:59,620
+connect now. And it's actually
+working, we'll go to our
+
+12953
+13:06:59,620 --> 13:07:05,050
+Metamask will disconnect,
+refresh, hit Connect, and boom,
+
+12954
+13:07:05,050 --> 13:07:08,320
+it's popping up again. This is
+just due to that type being
+
+12955
+13:07:08,350 --> 13:07:12,460
+module, if it was text slash
+JavaScript, that on click button
+
+12956
+13:07:12,460 --> 13:07:15,070
+adding in here, but since we're
+doing module, we're going to add
+
+12957
+13:07:15,070 --> 13:07:17,890
+those on clicks right in our
+JavaScript. But now that we've
+
+12958
+13:07:17,890 --> 13:07:20,920
+got ethers in here, what we can
+do is we can even do like a
+
+12959
+13:07:20,920 --> 13:07:25,540
+little console dot log, just
+paste ethers in here, or
+
+12960
+13:07:25,540 --> 13:07:28,330
+actually better yet. We'll add
+it right above the Connect
+
+12961
+13:07:28,330 --> 13:07:31,660
+button. Go back to our front
+end, we'll do a refresh and we
+
+12962
+13:07:31,660 --> 13:07:35,650
+see the entire ethers object
+right in our front end which is
+
+12963
+13:07:35,650 --> 13:07:38,950
+perfect, which is exactly what
+we want here. And since we've
+
+12964
+13:07:38,950 --> 13:07:43,000
+got these two variables here, we
+might as well update this to
+
+12965
+13:07:43,000 --> 13:07:47,260
+just say connect button dot
+innerHTML equals connected and
+
+12966
+13:07:47,260 --> 13:07:50,740
+here as well. Connects button
+dot innerHTML equals please
+
+12967
+13:07:50,740 --> 13:07:53,110
+install meta mask because now
+connect button is going to be
+
+12968
+13:07:53,110 --> 13:07:56,620
+the same as running this
+document dot get element by ID
+
+12969
+13:07:56,620 --> 13:07:56,800
+right
+
+12970
+13:07:56,800 --> 13:08:03,040
+here. and great. Let's go back
+to continuing our font function.
+
+12971
+13:08:03,280 --> 13:08:09,820
+So we'll say const provider
+equals new ethers dot providers
+
+12972
+13:08:09,880 --> 13:08:14,500
+dot web three provider, window
+dot Aetherium. Web three
+
+12973
+13:08:14,500 --> 13:08:18,670
+provider is an object in ethers
+that allows us to basically wrap
+
+12974
+13:08:18,670 --> 13:08:22,000
+around stuff like Metamask is
+web three provider is really
+
+12975
+13:08:22,000 --> 13:08:25,900
+similar to that JSON RPC
+provider, which we use before,
+
+12976
+13:08:25,930 --> 13:08:30,070
+which is where we put in exactly
+that endpoint, our alchemy
+
+12977
+13:08:30,070 --> 13:08:33,220
+endpoint, or when we're working
+with Metamask. Here, whatever
+
+12978
+13:08:33,220 --> 13:08:36,520
+endpoint that we have in our
+network section is web three
+
+12979
+13:08:36,520 --> 13:08:40,300
+provider takes that HTTP
+endpoint and automatically
+
+12980
+13:08:40,300 --> 13:08:44,200
+sticks it in ethers for us. So
+this line of code basically
+
+12981
+13:08:44,200 --> 13:08:47,920
+looks at our Metamask and goes,
+Ah, okay, I found the HTTP
+
+12982
+13:08:47,920 --> 13:08:50,890
+endpoint inside there, Metamask.
+That's going to be what we're
+
+12983
+13:08:50,890 --> 13:08:53,560
+going to use as our provider
+here. Since our provider is
+
+12984
+13:08:53,560 --> 13:08:57,160
+connected to our Metamask. Here,
+we can get a signer or we can
+
+12985
+13:08:57,160 --> 13:09:04,750
+get a wallet just by running
+const signer equals provider,
+
+12986
+13:09:05,140 --> 13:09:09,670
+dot get signer, this is going to
+return whichever wallet is
+
+12987
+13:09:09,670 --> 13:09:13,150
+connected from the provider,
+which again, our provider is our
+
+12988
+13:09:13,150 --> 13:09:17,770
+Metamask. So if we're connected
+with with account one, it's
+
+12989
+13:09:17,770 --> 13:09:20,530
+going to return account one as
+the signer connected with
+
+12990
+13:09:20,530 --> 13:09:28,240
+account two, it'll return
+account two, etc. Now, I'm going
+
+12991
+13:09:28,240 --> 13:09:31,810
+to add console dot log signer
+here, and then flip to the front
+
+12992
+13:09:31,810 --> 13:09:34,360
+end now and show you what
+happens when we hit the fund
+
+12993
+13:09:34,360 --> 13:09:38,440
+button. You can see in here we
+have our JSON RPC signer, the
+
+12994
+13:09:38,440 --> 13:09:42,010
+signer is going to be the
+account that we've connected to
+
+12995
+13:09:42,040 --> 13:09:45,850
+our front end. Now we have our
+provider, we have our signer.
+
+12996
+13:09:45,880 --> 13:09:49,210
+Now, we're going to need our
+contract by getting the API and
+
+12997
+13:09:49,210 --> 13:09:53,350
+the address. So we're gonna need
+to say const. Contract equals
+
+12998
+13:09:53,680 --> 13:09:57,520
+what? How are we going to get
+our contract? Well, this is
+
+12999
+13:09:57,520 --> 13:10:01,840
+where we're going to need to
+know the ABI and the address of
+
+13000
+13:10:01,840 --> 13:10:04,930
+a working with typically, what
+you'll see a lot of projects do
+

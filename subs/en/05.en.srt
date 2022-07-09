@@ -1,0 +1,4993 @@
+5001
+04:55:29,160 --> 04:55:29,970
+declaration,
+
+5002
+04:55:30,060 --> 04:55:33,660
+we're saying, hey, for this
+withdrawal function, before you
+
+5003
+04:55:33,660 --> 04:55:37,410
+read all this code inside of it,
+look down at the only owner
+
+5004
+04:55:37,410 --> 04:55:42,510
+modifier and do whatever is in
+there first, and then do
+
+5005
+04:55:42,510 --> 04:55:45,540
+whatever's in the underscore,
+this underscore represents doing
+
+5006
+04:55:45,540 --> 04:55:48,330
+the rest of the code. So now,
+when we go call the withdraw
+
+5007
+04:55:48,330 --> 04:55:53,730
+function, we actually do this
+require statement first, and
+
+5008
+04:55:53,730 --> 04:55:57,900
+then call the rest of the code.
+If this require statement, we're
+
+5009
+04:55:57,900 --> 04:56:02,100
+below the underscore, this would
+tell our function to go ahead
+
+5010
+04:56:02,100 --> 04:56:06,900
+and do all this code first. And
+then run the require. Because
+
+5011
+04:56:06,900 --> 04:56:09,690
+again, we have this only only
+keyword, we're saying, Great,
+
+5012
+04:56:09,690 --> 04:56:12,810
+we've got a function, it's
+withdraw its public, oh, only
+
+5013
+04:56:12,810 --> 04:56:16,710
+odor modifier. Let's look at how
+that works. Okay, it tells us
+
+5014
+04:56:16,710 --> 04:56:19,350
+how to do all the code of the
+original function first. So
+
+5015
+04:56:19,350 --> 04:56:22,320
+let's go ahead and do that.
+Okay, now we're done. Now, what
+
+5016
+04:56:22,320 --> 04:56:25,800
+do we do? Okay, now we'll run
+the require, we want to go ahead
+
+5017
+04:56:25,800 --> 04:56:29,670
+and put the require here first.
+So this is how modifiers work,
+
+5018
+04:56:30,030 --> 04:56:35,820
+and how we can use them to
+improve our functionality. All
+
+5019
+04:56:35,820 --> 04:56:39,600
+right, awesome. We have all the
+basic functionality of our
+
+5020
+04:56:39,600 --> 04:56:42,840
+contract that we need here. Now
+we're finally actually going to
+
+5021
+04:56:42,840 --> 04:56:46,740
+run everything on a test and see
+everything happened live before
+
+5022
+04:56:46,740 --> 04:56:49,290
+our eyes. Are you ready? Let's
+do this.
+
+5023
+04:56:49,350 --> 04:56:52,590
+So let's go over to the deploy
+tab. And we're going to switch
+
+5024
+04:56:52,650 --> 04:56:55,710
+of course to injected web three.
+Remember But we're using
+
+5025
+04:56:55,710 --> 04:56:59,580
+injected web three, because our
+price converter dot soul is
+
+5026
+04:56:59,580 --> 04:57:02,760
+using chainlink Oracle's that
+actually exist and are actually
+
+5027
+04:57:02,760 --> 04:57:05,430
+monitoring the Rinkeby network
+for us. Now we're going to
+
+5028
+04:57:05,430 --> 04:57:09,690
+scroll down to, and we're going
+to choose the Funmi contract.
+
+5029
+04:57:09,780 --> 04:57:12,780
+And we're going to go ahead and
+deploy. Once again, we want to
+
+5030
+04:57:12,780 --> 04:57:16,380
+make sure we're on the Rinkeby
+test net. And we have a little
+
+5031
+04:57:16,380 --> 04:57:19,620
+bit of rinky eath in our wallet,
+let's go ahead and deploy,
+
+5032
+04:57:20,730 --> 04:57:24,510
+confirm. And we'll wait a little
+bit. And I'll pull up our log
+
+5033
+04:57:24,510 --> 04:57:28,320
+here. And we'll wait a little
+bit for our contract to get
+
+5034
+04:57:28,320 --> 04:57:31,290
+deployed. Alright, great. It
+looks like our contract has
+
+5035
+04:57:31,290 --> 04:57:35,040
+indeed been deployed. If we
+scroll down, we can see all of
+
+5036
+04:57:35,040 --> 04:57:40,500
+our functionality, minimum USD
+is going to be that $50. But
+
+5037
+04:57:40,500 --> 04:57:44,580
+with 18 zeros so that the units
+are the same as Aetherium, the
+
+5038
+04:57:44,580 --> 04:57:49,980
+owner of our contract was set to
+our address, the instant we
+
+5039
+04:57:49,980 --> 04:57:53,070
+deployed this contract, it was
+deployed by calling our
+
+5040
+04:57:53,070 --> 04:57:58,440
+constructor function. So this
+address 0x 106 x is going to be
+
+5041
+04:57:58,440 --> 04:58:02,760
+the same as the address in our
+meta mask, your address here, of
+
+5042
+04:58:02,760 --> 04:58:05,460
+course, is going to be a little
+bit different than mine, we have
+
+5043
+04:58:05,460 --> 04:58:08,850
+our funders array, which, of
+course is going to be blank, we
+
+5044
+04:58:08,850 --> 04:58:11,640
+have our address array, which is
+also going to be blank. And then
+
+5045
+04:58:11,640 --> 04:58:14,730
+we have two functions that we
+can use to modify the state of
+
+5046
+04:58:14,730 --> 04:58:18,300
+the blockchain withdraw is going
+to be orange, because we're not
+
+5047
+04:58:18,330 --> 04:58:22,290
+paying any Aetherium we're
+actually gaining Aetherium or
+
+5048
+04:58:22,290 --> 04:58:25,290
+whatever native blockchain
+currency fund is going to be
+
+5049
+04:58:25,290 --> 04:58:29,310
+read, because fun is a payable
+function that we are going to be
+
+5050
+04:58:29,310 --> 04:58:33,030
+sending Aetherium to or sending
+whatever native blockchain
+
+5051
+04:58:33,030 --> 04:58:35,820
+currency that you're working
+with. So let's go ahead and see
+
+5052
+04:58:35,850 --> 04:58:39,540
+how this all works. So first,
+let's go ahead and fund this
+
+5053
+04:58:39,540 --> 04:58:43,620
+contract. Again, funding, we got
+to do a little bit of math,
+
+5054
+04:58:43,680 --> 04:58:47,790
+right now, since the price of
+eath is around $3,000. And we're
+
+5055
+04:58:47,790 --> 04:58:53,460
+looking for $50. Minimum, we do
+50 divided by 3000. We can do
+
+5056
+04:58:53,460 --> 04:58:58,710
+3000 divided by 50, we can do 50
+divided by 3000. So we know that
+
+5057
+04:58:58,740 --> 04:59:04,860
+around 0.02 Aetherium, should be
+enough for this contract to
+
+5058
+04:59:04,860 --> 04:59:11,250
+work. So 0.02 Aetherium is this
+much way, we can copy that,
+
+5059
+04:59:12,240 --> 04:59:16,020
+paste that into here. So when we
+hit fund, it should actually
+
+5060
+04:59:16,020 --> 04:59:20,610
+pass. And we do indeed see meta
+masks pop up. And we'll go ahead
+
+5061
+04:59:20,610 --> 04:59:23,760
+and confirm. Once this
+transaction goes through, we'll
+
+5062
+04:59:23,760 --> 04:59:28,110
+be able to see this contract on
+ether scan with the funds in it.
+
+5063
+04:59:28,290 --> 04:59:31,860
+Now if we don't add way here, if
+we don't add a value, once
+
+5064
+04:59:31,860 --> 04:59:35,880
+again, we had fund will say gas
+estimation failed because we're
+
+5065
+04:59:35,880 --> 04:59:39,450
+not sending enough here. And in
+fact, we even see execution
+
+5066
+04:59:39,450 --> 04:59:42,660
+reverted didn't send enough, we
+can absolutely send this
+
+5067
+04:59:42,660 --> 04:59:46,320
+transaction however, it's going
+to fail. Great. So now that our
+
+5068
+04:59:46,320 --> 04:59:49,680
+transaction has gone through, if
+we go on to the rink the ether
+
+5069
+04:59:49,680 --> 04:59:53,430
+scan, once we wait a little bit
+for it to finish indexing here
+
+5070
+04:59:53,430 --> 04:59:56,700
+on the Rinkeby ether scan, we
+can see that transaction
+
+5071
+04:59:56,730 --> 04:59:59,970
+actually went through for doing
+the funding, we can actually see
+
+5072
+05:00:00,000 --> 05:00:03,240
+a lot of different details going
+on with this transaction as
+
+5073
+05:00:03,240 --> 05:00:06,750
+well. And if we scroll down, we
+once again, you can see all the
+
+5074
+05:00:06,750 --> 05:00:10,530
+information about us calling
+this fun function, gas limit
+
+5075
+05:00:10,560 --> 05:00:15,660
+gas, you should the gas fees,
+gas price, and we can see the
+
+5076
+05:00:15,660 --> 05:00:20,040
+input data as well, we can see
+that we called the fund function
+
+5077
+05:00:20,070 --> 05:00:23,370
+down here. We'll learn more
+about the input data later. If
+
+5078
+05:00:23,370 --> 05:00:27,750
+we go to the contract that we
+deployed, we can now see two
+
+5079
+05:00:27,750 --> 05:00:31,680
+transactions, we can see our
+contract created transaction.
+
+5080
+05:00:32,130 --> 05:00:36,150
+And we can also see we called a
+font method. And if we look at
+
+5081
+05:00:36,150 --> 05:00:40,950
+the balance of our contract, and
+now has 0.02 ether, which makes
+
+5082
+05:00:40,950 --> 05:00:46,710
+sense, since we just sent it
+0.02. If we put that 0.02 eath
+
+5083
+05:00:46,710 --> 05:00:51,840
+in terms of way back into the
+value section, and we call font
+
+5084
+05:00:51,840 --> 05:00:57,660
+again, after this transaction
+goes through, we should see this
+
+5085
+05:00:57,660 --> 05:01:04,350
+number go from 0.02 to 0.04. Now
+after we wait a brief delay, we
+
+5086
+05:01:04,350 --> 05:01:09,030
+do indeed see the balance has
+gone up to 0.04, which is
+
+5087
+05:01:09,030 --> 05:01:12,240
+exactly what we'd expect.
+Awesome. So our funding
+
+5088
+05:01:12,240 --> 05:01:16,170
+mechanism is working correctly.
+And if we go down into our
+
+5089
+05:01:16,200 --> 05:01:18,090
+array, and our mapping
+
+5090
+05:01:20,190 --> 05:01:25,140
+to do address to array, and we
+paste our address, we should see
+
+5091
+05:01:25,470 --> 05:01:29,700
+the phone number show up. And if
+we go to funders of zero, we see
+
+5092
+05:01:29,700 --> 05:01:33,390
+our address. And if we go to
+funders of one, we also see our
+
+5093
+05:01:33,390 --> 05:01:37,500
+address and we see that and we
+see this call going through if
+
+5094
+05:01:37,500 --> 05:01:41,040
+we go to funders have to in our
+log over here, we actually see
+
+5095
+05:01:41,040 --> 05:01:44,130
+that we get an error an
+optimization that we could make
+
+5096
+05:01:44,130 --> 05:01:48,420
+to our contract in the future is
+to check to see if an address is
+
+5097
+05:01:48,420 --> 05:01:51,210
+already in the funders array and
+then not add it if it's already
+
+5098
+05:01:51,210 --> 05:01:54,690
+there. Now let's go ahead and
+try to call this withdrawal
+
+5099
+05:01:54,690 --> 05:01:58,110
+function. But let's try to call
+it with a different address than
+
+5100
+05:01:58,110 --> 05:02:00,750
+the address we originally
+deployed this contract with. So
+
+5101
+05:02:00,750 --> 05:02:05,610
+to do that, scroll all the way
+to the top of this here. And I'm
+
+5102
+05:02:05,610 --> 05:02:11,100
+going to go to my Metamask. And
+I'm going to switch to a second
+
+5103
+05:02:11,130 --> 05:02:16,500
+account and hit connect. Now,
+our remixes should be updated
+
+5104
+05:02:16,530 --> 05:02:19,560
+with the new account that's in
+here, you'll see that if I
+
+5105
+05:02:19,560 --> 05:02:24,240
+switch back to account one, it
+switches back to account one, so
+
+5106
+05:02:24,240 --> 05:02:27,690
+long as they're both connected,
+you can see which accounts are
+
+5107
+05:02:27,690 --> 05:02:30,870
+connected to applications by
+clicking this connected button
+
+5108
+05:02:31,080 --> 05:02:33,300
+and see which ones are
+connected. If you ever want to
+
+5109
+05:02:33,300 --> 05:02:36,780
+disconnect that account, you can
+click the three little dots and
+
+5110
+05:02:36,780 --> 05:02:40,200
+it disconnect the account. And
+now we can see that this account
+
+5111
+05:02:40,230 --> 05:02:45,330
+is not connected. However, count
+two is connected. Let's go back
+
+5112
+05:02:45,330 --> 05:02:49,320
+to account one and Connect
+account one so that both of them
+
+5113
+05:02:49,350 --> 05:02:53,640
+are now connected. But we'll
+switch to account two, let's
+
+5114
+05:02:53,640 --> 05:02:57,180
+switch to account two, because
+again, account two isn't the
+
+5115
+05:02:57,180 --> 05:03:02,130
+owner of this contract. We
+scroll down to owner, we can see
+
+5116
+05:03:02,130 --> 05:03:07,290
+owner's 0x 1066 Something
+something and account two is
+
+5117
+05:03:07,680 --> 05:03:11,460
+0x 043. Something something
+awesome. So what do you think
+
+5118
+05:03:11,460 --> 05:03:15,390
+will happen when we hit withdraw
+here? Well, our modifier only
+
+5119
+05:03:15,390 --> 05:03:19,140
+owner should kick in. And we
+should get notified that if we
+
+5120
+05:03:19,140 --> 05:03:23,130
+send the transaction, we'll get
+this error sender is not owner.
+
+5121
+05:03:23,340 --> 05:03:27,360
+So let's try it. Ah gas
+estimation failed, we do get
+
+5122
+05:03:27,360 --> 05:03:31,560
+this error. Sender is not owner,
+which is perfect. This is
+
+5123
+05:03:31,560 --> 05:03:34,650
+exactly what we want, we could
+absolutely send this transaction
+
+5124
+05:03:34,680 --> 05:03:37,860
+if we wanted to. But that would
+just be a waste of gas because
+
+5125
+05:03:37,860 --> 05:03:41,880
+this transaction is going to
+fail. However, if we switch back
+
+5126
+05:03:42,150 --> 05:03:48,780
+to account one, and we hit
+withdraw, meta mask will pop up,
+
+5127
+05:03:48,990 --> 05:03:53,940
+enabling us to confirm and
+withdraw the ether out of this
+
+5128
+05:03:53,940 --> 05:03:57,180
+contract address. Now if we look
+at this contract address on
+
+5129
+05:03:57,180 --> 05:04:01,710
+ether scan, after a brief delay,
+we'll see the balance go from
+
+5130
+05:04:01,710 --> 05:04:07,200
+0.04 back down to zero. And
+we'll see our wallet balance go
+
+5131
+05:04:07,290 --> 05:04:12,000
+up from what it is back to 0.04
+plus what it was. And after a
+
+5132
+05:04:12,000 --> 05:04:15,810
+brief delay, you can see our
+balance is indeed back down to
+
+5133
+05:04:15,810 --> 05:04:20,010
+zero in our contract. Now, if we
+do address to amount for our
+
+5134
+05:04:20,010 --> 05:04:22,770
+wallet address that was doing
+the funding, it's back down to
+
+5135
+05:04:22,770 --> 05:04:27,060
+zero. And if we try to check the
+address of funders at index
+
+5136
+05:04:27,060 --> 05:04:30,900
+zero, we get called to funders
+that fund me errored execution
+
+5137
+05:04:30,900 --> 05:04:31,440
+reverted.
+
+5138
+05:04:40,590 --> 05:04:43,650
+We've completed all the basics
+of this section that I wanted to
+
+5139
+05:04:43,650 --> 05:04:46,350
+go through. And you should be
+incredibly proud of yourself for
+
+5140
+05:04:46,350 --> 05:04:49,320
+getting this far, you've just
+deployed a really advanced smart
+
+5141
+05:04:49,320 --> 05:04:53,370
+contract, we're using a library
+and chainlink contracts to build
+
+5142
+05:04:53,400 --> 05:04:55,860
+some of the most powerful
+applications in the planet,
+
+5143
+05:04:55,890 --> 05:04:59,370
+we've learned to use a library
+for any type we want in our
+
+5144
+05:04:59,370 --> 05:05:03,150
+smart contracts. We've learned
+more about multiplication, and
+
+5145
+05:05:03,150 --> 05:05:06,240
+then units of measure in
+solidity and smart contracts.
+
+5146
+05:05:06,540 --> 05:05:09,000
+We've learned about mappings
+more about arrays what the
+
+5147
+05:05:09,000 --> 05:05:12,180
+constructor does, we've learned
+how to send money we've learned
+
+5148
+05:05:12,180 --> 05:05:15,270
+about for loops, we've learned
+about the different ways we can
+
+5149
+05:05:15,270 --> 05:05:18,030
+actually send money, at least
+from a low level. And we've
+
+5150
+05:05:18,030 --> 05:05:20,940
+learned about modifiers. This
+section is one of the tougher
+
+5151
+05:05:20,940 --> 05:05:23,460
+sections in this course. So if
+you completed this, you should
+
+5152
+05:05:23,460 --> 05:05:26,460
+be incredibly excited. We're
+going to go through our code
+
+5153
+05:05:26,460 --> 05:05:29,760
+now. And we're going to make a
+number of tweaks. Now this
+
+5154
+05:05:29,760 --> 05:05:32,400
+section, we are going to do a
+little bit more advanced
+
+5155
+05:05:32,430 --> 05:05:36,120
+solidity here. So if you get a
+little bit lost, don't sweat it
+
+5156
+05:05:36,120 --> 05:05:39,570
+too much. And feel free to try
+some of this stuff in the future
+
+5157
+05:05:39,570 --> 05:05:44,670
+on your own. We're going to
+modify this contract to make it
+
+5158
+05:05:44,700 --> 05:05:47,430
+a little bit more professional.
+It's not going to be end to end
+
+5159
+05:05:47,430 --> 05:05:49,650
+amazing, but it's going to be a
+little bit better. And you'll
+
+5160
+05:05:49,650 --> 05:05:51,690
+see why in a minute. So the
+first thing that we're going to
+
+5161
+05:05:51,690 --> 05:05:53,940
+do is we're looking we're going
+to look at some of these
+
+5162
+05:05:53,940 --> 05:05:58,860
+variables here. In particular
+owner and minimum USD, owner
+
+5163
+05:05:58,860 --> 05:06:02,700
+gets set one time in our
+contract here. And then it never
+
+5164
+05:06:02,700 --> 05:06:08,460
+changes. Again, minimum USD gets
+set one time, even outside of
+
+5165
+05:06:08,460 --> 05:06:12,210
+the constructor. If we have
+variables that only get set one
+
+5166
+05:06:12,210 --> 05:06:16,440
+time, we can actually use some
+tools in solidity to make them
+
+5167
+05:06:16,440 --> 05:06:19,200
+more gas efficient. For now
+let's compile our Funmi
+
+5168
+05:06:19,200 --> 05:06:22,500
+contract, and then deploy it to
+a JavaScript virtual machine.
+
+5169
+05:06:22,710 --> 05:06:25,980
+Remember, we can go ahead and
+deploy it right now. However,
+
+5170
+05:06:26,040 --> 05:06:29,400
+funding and withdrawing and
+doing in the money stuff isn't
+
+5171
+05:06:29,400 --> 05:06:32,790
+going to work. Because again, we
+don't have a chain link network
+
+5172
+05:06:33,000 --> 05:06:36,270
+on our JavaScript VM. So those
+aren't going to work so well.
+
+5173
+05:06:36,300 --> 05:06:38,640
+But for what we're gonna do
+right now, we don't really care
+
+5174
+05:06:38,640 --> 05:06:42,300
+so much. Here's what we do care
+about. You do care about how
+
+5175
+05:06:42,300 --> 05:06:46,020
+much gas this costs to actually
+send. We do care about how much
+
+5176
+05:06:46,020 --> 05:06:50,460
+gas is costs to create right now
+creating this contract costs
+
+5177
+05:06:50,880 --> 05:06:56,400
+about 859,000 gas and we're
+going to Add a couple of tricks.
+
+5178
+05:06:56,580 --> 05:06:59,310
+Right now to bring this number
+down, we're going to add some
+
+5179
+05:06:59,310 --> 05:07:02,610
+stuff back in in the bid, which
+will bring it back up. But for
+
+5180
+05:07:02,610 --> 05:07:04,260
+now, we're going to learn some
+tricks to bring this number
+
+5181
+05:07:04,260 --> 05:07:07,470
+down. The two tricks that we're
+going to learn are the constant
+
+5182
+05:07:07,470 --> 05:07:10,950
+keyword and the immutable
+keyword, in their solidity.
+
+5183
+05:07:10,980 --> 05:07:14,700
+There are two keywords that make
+it so that your variables can't
+
+5184
+05:07:14,700 --> 05:07:18,300
+be changed. And those keywords
+are constant and immutable. You
+
+5185
+05:07:18,300 --> 05:07:21,270
+can learn more about them in the
+solidity documentation, if you
+
+5186
+05:07:21,270 --> 05:07:24,630
+assign a variable once outside
+of a function, and then never
+
+5187
+05:07:24,630 --> 05:07:28,350
+change it, so if if it's
+assigned at compile time, you
+
+5188
+05:07:28,350 --> 05:07:32,250
+can go ahead and add this
+constant keyword. We'll learn
+
+5189
+05:07:32,250 --> 05:07:35,520
+later about storage. But when
+you add a constant keyword, this
+
+5190
+05:07:35,520 --> 05:07:40,080
+minimum USD no longer takes up a
+storage spot, and is much easier
+
+5191
+05:07:40,110 --> 05:07:43,860
+to read too. So now we recompile
+this, and we deploy this new
+
+5192
+05:07:43,860 --> 05:07:48,300
+contract. Let's see if we saved
+any gas. We look in the
+
+5193
+05:07:48,300 --> 05:07:52,770
+transaction logs, now, we can
+grab the transaction cost of how
+
+5194
+05:07:52,770 --> 05:07:55,920
+much this cost to deploy, let's
+compare it to how much it was
+
+5195
+05:07:55,920 --> 05:08:00,270
+before. Well, we saved almost
+19,000 gas, that's almost as
+
+5196
+05:08:00,270 --> 05:08:03,420
+much gas as a cost to send
+Aetherium. Typically, constant
+
+5197
+05:08:03,420 --> 05:08:06,870
+variables have a different
+naming convention. Typically,
+
+5198
+05:08:06,900 --> 05:08:11,430
+you'll want to do them all caps
+like Min imaam. Underscore, who
+
+5199
+05:08:11,430 --> 05:08:15,030
+is the CIO all caps with
+underscores. So now let's just
+
+5200
+05:08:15,030 --> 05:08:18,780
+find minimum use D, and replace
+that with all caps as well. With
+
+5201
+05:08:18,780 --> 05:08:22,050
+this interaction, we know that
+this variable is a constant
+
+5202
+05:08:22,050 --> 05:08:25,560
+variable, and it's much cheaper
+to read from now, if we go ahead
+
+5203
+05:08:25,560 --> 05:08:30,330
+and compile this and redeploy.
+In our Funmi contract, even
+
+5204
+05:08:30,330 --> 05:08:34,290
+though this is a view function,
+remember, view functions do have
+
+5205
+05:08:34,290 --> 05:08:38,670
+gas costs when when called by
+contract as a constant variable,
+
+5206
+05:08:38,700 --> 05:08:44,370
+we can see the execution cost of
+this variable 21,415 gas. So
+
+5207
+05:08:44,400 --> 05:08:46,380
+let's put a little note rather
+Nathan.
+
+5208
+05:08:47,610 --> 05:08:50,880
+If we remove the constant
+variable, we delete this
+
+5209
+05:08:50,880 --> 05:08:56,160
+contract. And we redeploy, like
+Funmi. And we hit minimum ust
+
+5210
+05:08:56,160 --> 05:09:00,000
+again, we can now see how much
+gas this was cost. If it wasn't
+
+5211
+05:09:00,000 --> 05:09:03,810
+a constant variable, we can see
+the gas cost did indeed go up.
+
+5212
+05:09:03,900 --> 05:09:06,510
+Now on chains that are much
+cheaper, this gas difference
+
+5213
+05:09:06,540 --> 05:09:08,940
+probably won't make that much of
+a difference. But on more
+
+5214
+05:09:08,940 --> 05:09:11,550
+expensive chains like Aetherium,
+this is going to make a big
+
+5215
+05:09:11,550 --> 05:09:15,210
+difference. For example, on
+Aetherium, we can actually see
+
+5216
+05:09:15,240 --> 05:09:19,200
+current gas prices on Aetherium.
+Here, we can see the current gas
+
+5217
+05:09:19,200 --> 05:09:23,580
+price of Aetherium is about 141
+way, so we'll go to our
+
+5218
+05:09:23,580 --> 05:09:28,620
+converter, way to way we'll copy
+the way price times this will
+
+5219
+05:09:28,620 --> 05:09:32,610
+get the gas price of calling our
+minimum USD, which is this
+
+5220
+05:09:32,610 --> 05:09:36,660
+number here, which if we put
+back in our Aetherium
+
+5221
+05:09:36,690 --> 05:09:41,520
+uniconverter, we can see cost
+this much gas. And if we times
+
+5222
+05:09:41,520 --> 05:09:45,120
+that by the approximate current
+price of Aetherium, which is
+
+5223
+05:09:45,120 --> 05:09:49,920
+around $3,000. Calling minimum
+use D as a constant is going to
+
+5224
+05:09:49,920 --> 05:09:54,870
+cost $9 on the inside is at a
+nonconstant is going to cost
+
+5225
+05:09:54,930 --> 05:09:58,860
+almost an entire dollar more,
+you can see how all these little
+
+5226
+05:09:58,860 --> 05:10:01,470
+gas optimization tricks are
+going to make your life a lot
+
+5227
+05:10:01,470 --> 05:10:04,350
+better. So let's keep this
+constant keyword in here. We'll
+
+5228
+05:10:04,350 --> 05:10:07,890
+learn more about constant and
+storage in later sections of
+
+5229
+05:10:07,890 --> 05:10:10,440
+this course. Now, as you're just
+getting started with this
+
+5230
+05:10:10,440 --> 05:10:15,420
+course, and with slip the Do not
+struggle. And do not worry about
+
+5231
+05:10:15,420 --> 05:10:19,200
+making your contracts as gas
+efficient as possible in the
+
+5232
+05:10:19,200 --> 05:10:22,500
+beginning, and especially right
+now. Just write your contracts
+
+5233
+05:10:22,500 --> 05:10:26,490
+as best as you can. Once you get
+really good at gas. And once you
+
+5234
+05:10:26,490 --> 05:10:30,210
+get much later on in the course,
+and much more advanced with
+
+5235
+05:10:30,210 --> 05:10:33,240
+solidity, then you can start
+going back and working on gas
+
+5236
+05:10:33,270 --> 05:10:37,290
+optimizations. But do not let
+gas optimizations hold you back.
+
+5237
+05:10:37,290 --> 05:10:41,250
+Or if you start stressing over
+it, just let it go. Don't worry
+
+5238
+05:10:41,250 --> 05:10:44,970
+about it and just write your
+code as best you can. So long
+
+5239
+05:10:44,970 --> 05:10:48,270
+story short, Do not stress about
+gas optimizations right now. Now
+
+5240
+05:10:48,300 --> 05:10:51,390
+another variable we only set one
+time is going to be our owner
+
+5241
+05:10:51,390 --> 05:10:56,040
+variable. Owner equals message
+dot sender. We set this one time
+
+5242
+05:10:56,070 --> 05:11:00,300
+in the constructor variables
+that we set one time but outside
+
+5243
+05:11:00,300 --> 05:11:02,910
+of the same line that they're
+declared. And we set them for
+
+5244
+05:11:02,910 --> 05:11:06,540
+example, in the constructor, we
+can mark as a mutable typically
+
+5245
+05:11:06,540 --> 05:11:09,330
+a good convention for marking
+immutable variables is going to
+
+5246
+05:11:09,360 --> 05:11:13,470
+be doing I underscore so that we
+know that these are immutable
+
+5247
+05:11:13,470 --> 05:11:16,350
+variables, they have very
+similar gas savings to the
+
+5248
+05:11:16,350 --> 05:11:19,140
+constant keyword. Owner, of
+course, is a variable that we
+
+5249
+05:11:19,140 --> 05:11:23,190
+can't set on the line here
+because inside the global scope,
+
+5250
+05:11:23,220 --> 05:11:26,610
+there's no function going on.
+However, inside functions,
+
+5251
+05:11:27,030 --> 05:11:29,730
+because inside the global scope,
+there's going to be no message
+
+5252
+05:11:29,730 --> 05:11:32,880
+that sender, there's only going
+to be a message dot sender when
+
+5253
+05:11:32,880 --> 05:11:36,150
+we're inside of a function. So
+inside here, we might say I
+
+5254
+05:11:36,150 --> 05:11:39,600
+owner equals message dot sender.
+And then of course, we'll scroll
+
+5255
+05:11:39,600 --> 05:11:44,610
+down and we'll change this
+require only owner now equals i
+
+5256
+05:11:44,610 --> 05:11:50,100
+owner. Now if we compile that
+deploy up, we can see how much
+
+5257
+05:11:50,100 --> 05:11:53,880
+gas we can see how much gas
+calling I owner is going to be
+
+5258
+05:11:53,880 --> 05:11:59,520
+by with immutable notice, we get
+21,508, which we'll go ahead and
+
+5259
+05:11:59,520 --> 05:12:02,340
+copy for now. And we'll put
+right here, we'll say,
+
+5260
+05:12:02,880 --> 05:12:08,760
+immutable. Now, if we remove the
+immutable keyword, let's close
+
+5261
+05:12:08,760 --> 05:12:13,920
+this redeploy. If we scroll down
+to I owner, screw up the logs,
+
+5262
+05:12:13,950 --> 05:12:17,940
+we go down to the call, scroll
+down, we see the execution cost
+
+5263
+05:12:17,970 --> 05:12:24,900
+was much more. So we'll do the
+backslash, a seven here, yes, or
+
+5264
+05:12:24,900 --> 05:12:28,350
+non immutable. So you want to
+keep some of these tricks in
+
+5265
+05:12:28,350 --> 05:12:32,310
+mind, when it comes to storing
+variables. The reason that these
+
+5266
+05:12:32,310 --> 05:12:35,940
+two save gas is because instead
+of storing these variables
+
+5267
+05:12:36,270 --> 05:12:39,270
+inside of a storage slot, we
+actually store them directly
+
+5268
+05:12:39,270 --> 05:12:41,940
+into the bytecode of the
+contract. And like I said, don't
+
+5269
+05:12:41,940 --> 05:12:44,760
+worry too much about that for
+now, later on in the course,
+
+5270
+05:12:44,790 --> 05:12:47,940
+we'll teach you more about
+storage and a lot of this low
+
+5271
+05:12:47,940 --> 05:12:50,820
+level stuff that comes to these
+contracts. But for now, just
+
+5272
+05:12:50,820 --> 05:12:54,210
+know that these exist. And
+they're nice gas savers, if
+
+5273
+05:12:54,210 --> 05:12:59,100
+you're only setting your
+variables once. Alright, great.
+
+5274
+05:12:59,100 --> 05:13:02,130
+So we've just made our contract
+a little bit more gas efficient,
+
+5275
+05:13:02,400 --> 05:13:04,770
+little gas efficiency
+improvements are going to be
+
+5276
+05:13:04,770 --> 05:13:07,620
+concept I sprinkled throughout
+this course. And when we get to
+
+5277
+05:13:07,620 --> 05:13:10,680
+the more advanced section, I'm
+going to break down exactly
+
+5278
+05:13:10,680 --> 05:13:13,590
+what's going on and why all
+these gas efficiencies exist and
+
+5279
+05:13:13,590 --> 05:13:15,960
+what's going on behind the
+scenes for these gas
+
+5280
+05:13:15,960 --> 05:13:18,930
+efficiencies to occur. It's a
+little bit in the weeds, which
+
+5281
+05:13:18,930 --> 05:13:20,820
+is why I'm going to gloss over
+it right now.
+
+5282
+05:13:20,850 --> 05:13:23,790
+So if it's confusing, don't
+worry, I wouldn't let these gas
+
+5283
+05:13:23,790 --> 05:13:26,700
+efficiencies be the thing that
+slow you down. Awesome. So we
+
+5284
+05:13:26,700 --> 05:13:29,550
+have these two gas
+optimizations? How else can we
+
+5285
+05:13:29,550 --> 05:13:32,910
+make this contract a little bit
+more gas efficient? Well, one of
+
+5286
+05:13:32,910 --> 05:13:35,910
+the ways we can make this more
+gas efficient, is by updating
+
+5287
+05:13:35,940 --> 05:13:39,570
+our requires right now with our
+require statement, we actually
+
+5288
+05:13:39,570 --> 05:13:43,860
+have to store this sender is not
+an owner as a string array,
+
+5289
+05:13:44,070 --> 05:13:46,710
+every single one of these
+characters in this errorlog
+
+5290
+05:13:46,950 --> 05:13:49,860
+needs to get stored
+individually, this string may
+
+5291
+05:13:49,860 --> 05:13:52,710
+not seem very big, but it's a
+lot bigger than the alternative
+
+5292
+05:13:52,710 --> 05:13:56,340
+with what we can do. As of zero,
+point 8.4 of solidity, you can
+
+5293
+05:13:56,340 --> 05:14:01,530
+now actually do custom errors.
+For our reverts, we declare them
+
+5294
+05:14:01,530 --> 05:14:05,730
+at the top and then use ifs,
+instead of require and then just
+
+5295
+05:14:05,730 --> 05:14:09,450
+add a revert statements. This
+ends up saving a lot of gas,
+
+5296
+05:14:09,480 --> 05:14:12,930
+since we just call the error
+code, as opposed to calling the
+
+5297
+05:14:12,930 --> 05:14:17,040
+entire string associated with
+the air. So for example, with
+
+5298
+05:14:17,040 --> 05:14:20,040
+our require down here, and with
+actually with all of our
+
+5299
+05:14:20,040 --> 05:14:23,820
+requires, well we could do is
+instead of having this require
+
+5300
+05:14:23,820 --> 05:14:28,410
+we could create a custom error.
+So at the top, what we could do
+
+5301
+05:14:28,710 --> 05:14:35,850
+is we could say error, not
+owner. And you'll notice that
+
+5302
+05:14:35,850 --> 05:14:39,150
+this is actually outside of the
+contract here. Now what we can
+
+5303
+05:14:39,150 --> 05:14:42,660
+do is we can take this error not
+owner scroll down into our only
+
+5304
+05:14:42,660 --> 05:14:45,480
+owner, instead of doing a
+require we'll do an if
+
+5305
+05:14:45,480 --> 05:14:53,400
+statement, we'll say if message
+dot sender is not owner, then
+
+5306
+05:14:53,580 --> 05:14:59,940
+we're going to go ahead and
+revert with a non owner error.
+
+5307
+05:15:00,360 --> 05:15:03,270
+This ends up saving us a lot of
+gas, since we don't have to
+
+5308
+05:15:03,270 --> 05:15:07,230
+store and emit this long string
+here. Now in a lot of code
+
+5309
+05:15:07,230 --> 05:15:10,350
+today, you'll still see require
+a lot of places because these
+
+5310
+05:15:10,380 --> 05:15:13,680
+these custom errors are pretty
+new in solidity. So you'll want
+
+5311
+05:15:13,680 --> 05:15:16,380
+to get used to writing in both
+ways. I wouldn't be surprised if
+
+5312
+05:15:16,380 --> 05:15:19,710
+in the future, the syntax for
+some of these errors looks like
+
+5313
+05:15:19,710 --> 05:15:22,920
+this so that it's more readable.
+But for now, if you want to do a
+
+5314
+05:15:22,920 --> 05:15:25,530
+more gas efficient way than
+required, you can use something
+
+5315
+05:15:25,530 --> 05:15:28,710
+like this, we could update all
+of our requires here for these
+
+5316
+05:15:28,710 --> 05:15:31,380
+customers. But for now, I'm
+going to leave both in just to
+
+5317
+05:15:31,380 --> 05:15:34,140
+show you the differences. This
+revert keyword does the exact
+
+5318
+05:15:34,140 --> 05:15:37,200
+same thing that required us
+without the conditional
+
+5319
+05:15:37,200 --> 05:15:40,350
+beforehand. So you can actually
+go ahead and revert any
+
+5320
+05:15:40,350 --> 05:15:43,050
+transaction or any function call
+in the middle of the function
+
+5321
+05:15:43,050 --> 05:15:49,230
+call. Now let's look at one more
+way to improve this contract.
+
+5322
+05:15:49,320 --> 05:15:51,570
+Sometimes people will try to
+interact with the contract that
+
+5323
+05:15:51,570 --> 05:15:54,360
+takes Aetherium or the native
+blockchain token without
+
+5324
+05:15:54,360 --> 05:15:57,120
+actually going through the
+required function calls that
+
+5325
+05:15:57,150 --> 05:16:01,200
+that are needed. For example, on
+a JavaScript EVM here, I could
+
+5326
+05:16:01,200 --> 05:16:04,830
+actually try to send this
+contract money without calling
+
+5327
+05:16:04,830 --> 05:16:08,310
+the fund function. However, if I
+were to do that, what would
+
+5328
+05:16:08,310 --> 05:16:11,520
+happen with our fund function
+get triggered? No, it wouldn't
+
+5329
+05:16:11,520 --> 05:16:14,250
+get triggered, we wouldn't keep
+track of that funder, we
+
+5330
+05:16:14,250 --> 05:16:17,100
+wouldn't have that person's
+information updated in this
+
+5331
+05:16:17,100 --> 05:16:20,490
+contract. So if later on we want
+to give rewards or something we
+
+5332
+05:16:20,490 --> 05:16:23,520
+wouldn't know about those
+funders. And this wouldn't be
+
+5333
+05:16:23,520 --> 05:16:26,160
+great because people would send
+our contract money without us
+
+5334
+05:16:26,160 --> 05:16:28,770
+ever knowing and we wouldn't be
+able to give them any credit or
+
+5335
+05:16:28,770 --> 05:16:32,940
+anything. Additionally, maybe
+they called the wrong function
+
+5336
+05:16:32,940 --> 05:16:35,760
+by accident, and they they
+weren't using Metamask. And they
+
+5337
+05:16:35,760 --> 05:16:38,070
+weren't using a tool to tell
+them, hey, this transaction is
+
+5338
+05:16:38,070 --> 05:16:41,580
+likely going to fail. So what
+can we do in this case? What
+
+5339
+05:16:41,580 --> 05:16:48,900
+happens if someone sends this
+contract, ether without calling
+
+5340
+05:16:49,290 --> 05:16:52,860
+the fun function? Right now, if
+we were to send this Funmi
+
+5341
+05:16:52,860 --> 05:16:55,800
+contract, ie it would just go to
+the contract Right, and this
+
+5342
+05:16:55,800 --> 05:16:58,410
+contract just wouldn't keep
+track of those people. But
+
+5343
+05:16:58,410 --> 05:17:00,840
+there's actually a way for when
+people send money to this
+
+5344
+05:17:00,840 --> 05:17:04,050
+contract, or people call a
+function that doesn't exist for
+
+5345
+05:17:04,050 --> 05:17:07,410
+us to still trigger some code.
+And now there are two special
+
+5346
+05:17:07,410 --> 05:17:12,690
+functions in solidity one is
+called receive, and one is
+
+5347
+05:17:12,690 --> 05:17:16,830
+called the fallback. Now in
+solidity, there are actually a
+
+5348
+05:17:16,830 --> 05:17:19,830
+number of special functions and
+two of these special functions
+
+5349
+05:17:19,860 --> 05:17:23,190
+are the receive special
+function. And the fallback
+
+5350
+05:17:23,220 --> 05:17:26,340
+special function, a contract can
+have at most one receive
+
+5351
+05:17:26,340 --> 05:17:29,250
+function declared using the
+received external payable.
+
+5352
+05:17:29,580 --> 05:17:32,700
+Without the function keyword.
+This function cannot have
+
+5353
+05:17:32,700 --> 05:17:34,980
+arguments cannot return anything
+and must have external
+
+5354
+05:17:34,980 --> 05:17:38,670
+visibility, and a payable state
+mutability. What does that
+
+5355
+05:17:38,670 --> 05:17:42,000
+actually mean? And or look like?
+Well, let's create a separate
+
+5356
+05:17:42,000 --> 05:17:44,820
+contract to go ahead and play
+with this. So in here, we're
+
+5357
+05:17:44,820 --> 05:17:48,960
+going to create a new file
+called fallback example, dot
+
+5358
+05:17:48,960 --> 05:17:52,710
+soul. And in here, we're going
+to add our basic pieces, SPX
+
+5359
+05:17:52,710 --> 05:18:00,660
+license identifier, MIT pragma,
+solidity zero, point 8.7. And
+
+5360
+05:18:00,660 --> 05:18:06,090
+we'll do contract fallback
+example, like so, feel free to
+
+5361
+05:18:06,090 --> 05:18:09,210
+pause the video to catch up to
+this point, let's recreate our
+
+5362
+05:18:09,210 --> 05:18:12,480
+fallback contract, let's create
+a variable to go ahead and try
+
+5363
+05:18:12,480 --> 05:18:17,490
+to test this function, we'll
+create a un 256 public result
+
+5364
+05:18:17,490 --> 05:18:20,820
+variable. And let's create this
+receive function. So we'll say
+
+5365
+05:18:20,820 --> 05:18:24,180
+receive, it's going to be an
+external payable.
+
+5366
+05:18:25,740 --> 05:18:30,210
+function, we don't add the
+function keyword for receive,
+
+5367
+05:18:30,510 --> 05:18:34,170
+since solidity knows that
+receive is a special function
+
+5368
+05:18:34,200 --> 05:18:38,610
+whenever we send Aetherium or
+make a transaction to this
+
+5369
+05:18:38,610 --> 05:18:41,880
+contract. Now, as long as
+there's no data associated with
+
+5370
+05:18:41,880 --> 05:18:45,030
+that transaction, this receive
+function will get triggered.
+
+5371
+05:18:45,300 --> 05:18:50,850
+What we can do in here now is we
+can say result equals one. So
+
+5372
+05:18:50,880 --> 05:18:53,610
+let's go ahead and test this out
+on the JavaScript virtual
+
+5373
+05:18:53,610 --> 05:18:56,820
+machine, we compile this, so
+we're gonna go ahead and compile
+
+5374
+05:18:56,820 --> 05:19:00,420
+this. And we'll go deploy it on
+the Java Virtual Machine, we're
+
+5375
+05:19:00,420 --> 05:19:04,200
+going to deploy our fallback
+example. And we're going to see
+
+5376
+05:19:04,200 --> 05:19:07,560
+what result is initialized to,
+since we haven't set anything
+
+5377
+05:19:07,560 --> 05:19:12,270
+for result, result, of course,
+is initialized zero. But what if
+
+5378
+05:19:12,270 --> 05:19:16,530
+we were to send this contract
+some Aetherium? Well receive
+
+5379
+05:19:16,530 --> 05:19:19,530
+would go ahead and be triggered
+here, we can actually send this
+
+5380
+05:19:19,530 --> 05:19:22,380
+contract some material directly
+by working with this low level
+
+5381
+05:19:22,380 --> 05:19:25,050
+interactions. But here, don't
+worry about what call data means
+
+5382
+05:19:25,050 --> 05:19:28,830
+for now, just know that this
+area down here is a way we can
+
+5383
+05:19:28,830 --> 05:19:32,070
+send and work with different
+functions. And we can add
+
+5384
+05:19:32,070 --> 05:19:35,580
+parameters to this transaction,
+by going up here and adjusting
+
+5385
+05:19:35,580 --> 05:19:39,090
+the variables up here. If we
+keep called Data blank, it'll be
+
+5386
+05:19:39,090 --> 05:19:42,360
+the same as if we were in
+Metamask. And just hitting send
+
+5387
+05:19:42,390 --> 05:19:45,360
+in the choosing this contract
+address. Again, we can't
+
+5388
+05:19:45,360 --> 05:19:48,570
+actually use Metamask, since
+this is a virtual machine, and
+
+5389
+05:19:48,570 --> 05:19:51,270
+not one of the networks that
+we're working with. So if I do,
+
+5390
+05:19:51,270 --> 05:19:55,860
+for example, I change this value
+to one way, and I keep
+
+5391
+05:19:55,860 --> 05:19:59,490
+everything blank. And I go ahead
+and hit this transaction button,
+
+5392
+05:19:59,520 --> 05:20:02,460
+which again, is going to be the
+same as hitting this Send
+
+5393
+05:20:02,460 --> 05:20:05,640
+button, but only sending one
+way. What do you think will
+
+5394
+05:20:05,640 --> 05:20:10,110
+happen? Well, let's try it. We
+can see in the log area that we
+
+5395
+05:20:10,110 --> 05:20:14,370
+did indeed send a transaction.
+And if you look at the
+
+5396
+05:20:14,370 --> 05:20:17,850
+description here, you can even
+see it says from so and so to
+
+5397
+05:20:17,880 --> 05:20:22,500
+fall back example, dot receive,
+it looks like it called our
+
+5398
+05:20:22,500 --> 05:20:26,190
+received function, which should
+have updated our result to one.
+
+5399
+05:20:26,610 --> 05:20:30,660
+So if we hit result, now we can
+indeed see that result has been
+
+5400
+05:20:30,690 --> 05:20:33,930
+updated to the value of one.
+Well, let's go ahead and delete
+
+5401
+05:20:33,930 --> 05:20:38,010
+this. Let's deploy this contract
+again. And this time, let's have
+
+5402
+05:20:38,010 --> 05:20:42,120
+this value be zero, does receive
+get triggered this time. So
+
+5403
+05:20:42,120 --> 05:20:45,630
+let's pull this down. Let's hit
+transact. Let's leave the call
+
+5404
+05:20:45,630 --> 05:20:49,860
+data blank, we'll leave value at
+zero. So this will be the same
+
+5405
+05:20:50,100 --> 05:20:55,200
+as if we had sent zero Aetherium
+to this contract. Let's hit
+
+5406
+05:20:55,200 --> 05:20:58,860
+transact. It looks like that
+went through, do you think
+
+5407
+05:20:58,860 --> 05:21:02,310
+result is going to be one or
+zero? You thought one you were
+
+5408
+05:21:02,310 --> 05:21:05,700
+correct or receive function gets
+triggered anytime we send a
+
+5409
+05:21:05,700 --> 05:21:09,600
+transaction to this contract
+now, and we don't specify a
+
+5410
+05:21:09,600 --> 05:21:13,260
+function. And we keep the call
+data blank when working with any
+
+5411
+05:21:13,260 --> 05:21:16,620
+other contract like Funmi. For
+example, when we call one of
+
+5412
+05:21:16,620 --> 05:21:19,500
+these functions, we're actually
+just populating this call data
+
+5413
+05:21:19,500 --> 05:21:22,860
+bit with certain data that
+points to one of these functions
+
+5414
+05:21:22,860 --> 05:21:26,190
+up here. If we send a
+transaction and we add data to
+
+5415
+05:21:26,190 --> 05:21:29,010
+it, we could actually call one
+of these functions. Now let's
+
+5416
+05:21:29,010 --> 05:21:32,130
+try this again. Let's delete the
+contract again we'll redeploy
+
+5417
+05:21:32,430 --> 05:21:36,690
+open this up result is currently
+zero receive like I said only is
+
+5418
+05:21:36,690 --> 05:21:41,280
+triggered if our call data to it
+is blank. Now this time if I had
+
+5419
+05:21:41,280 --> 05:21:44,040
+some call data to this
+transaction, do you think
+
+5420
+05:21:44,040 --> 05:21:46,800
+receive will be triggered this
+time? If we hit transact and
+
+5421
+05:21:46,800 --> 05:21:50,340
+remix we actually get a pop up
+saying fallback function is not
+
+5422
+05:21:50,340 --> 05:21:53,880
+defined. This is because
+whenever data is sent with a
+
+5423
+05:21:53,880 --> 05:21:58,140
+transaction solidity says, Oh,
+well, since you're sending data
+
+5424
+05:21:58,380 --> 05:22:00,900
+you're not looking for receive,
+you're looking for some
+
+5425
+05:22:00,900 --> 05:22:04,350
+function. So let me look for
+that function for you. Hmm, I
+
+5426
+05:22:04,350 --> 05:22:08,130
+don't see any function that
+matches the 0x 00. So I'm going
+
+5427
+05:22:08,130 --> 05:22:11,430
+to look for your fallback
+function. Remix is smart enough
+
+5428
+05:22:11,430 --> 05:22:14,760
+to know that we don't have a
+fallback function. The second
+
+5429
+05:22:14,760 --> 05:22:17,670
+special function in solidity is
+called the fallback function.
+
+5430
+05:22:17,970 --> 05:22:21,420
+This is very similar to the
+receive function, except for the
+
+5431
+05:22:21,420 --> 05:22:24,720
+fact that can work even when
+data is sent along with
+
+5432
+05:22:24,720 --> 05:22:27,360
+transaction. So our fallback
+will look something like this
+
+5433
+05:22:27,960 --> 05:22:28,650
+callback,
+
+5434
+05:22:29,730 --> 05:22:38,610
+external payable. result equals
+to Fallback is another one of
+
+5435
+05:22:38,610 --> 05:22:40,890
+these functions where we're not
+going to put the function
+
+5436
+05:22:40,890 --> 05:22:44,310
+selector because solidity is
+expecting this, actually, you're
+
+5437
+05:22:44,310 --> 05:22:48,000
+already familiar with one other
+special function, we go back to
+
+5438
+05:22:48,000 --> 05:22:52,470
+our Funmi. Our constructor, for
+example, is a another type of
+
+5439
+05:22:52,470 --> 05:22:56,130
+special function. There's no
+function keyword. solidity knows
+
+5440
+05:22:56,130 --> 05:22:58,710
+that this constructor is
+immediately called when we
+
+5441
+05:22:58,710 --> 05:23:01,860
+deploy this contract. So now we
+have our fallback function.
+
+5442
+05:23:02,250 --> 05:23:05,700
+Let's go ahead and compile this.
+Let's delete our old contract.
+
+5443
+05:23:06,660 --> 05:23:11,340
+Let's go ahead and deploy this
+new contract. Like here, we hit
+
+5444
+05:23:11,340 --> 05:23:15,900
+result, we do indeed, see, it's
+set to zero. Now, if I add this
+
+5445
+05:23:15,930 --> 05:23:21,390
+0x 00, and I send this, and I
+hit transact, this is equivalent
+
+5446
+05:23:21,630 --> 05:23:25,050
+to calling our contract here
+without a valid function. So our
+
+5447
+05:23:25,050 --> 05:23:27,270
+contract goes, Huh, I don't
+recognize what you're trying to
+
+5448
+05:23:27,270 --> 05:23:30,720
+tell me here, I'm going to refer
+you to our fallback. And now if
+
+5449
+05:23:30,720 --> 05:23:34,590
+we hit result, we see that it's
+been updated to two. If we take
+
+5450
+05:23:34,590 --> 05:23:38,100
+this away, solidity will go,
+Hmm, it looks like you're trying
+
+5451
+05:23:38,100 --> 05:23:40,950
+to send some Aetherium, or call
+this contract without specifying
+
+5452
+05:23:40,950 --> 05:23:43,980
+what you want to do. Well, I
+have a receipt function. So I'm
+
+5453
+05:23:43,980 --> 05:23:46,380
+just gonna go ahead and forward
+you to that. So if we call
+
+5454
+05:23:46,380 --> 05:23:50,790
+transact, we hit result, we see
+it updates back to one, add some
+
+5455
+05:23:50,790 --> 05:23:56,190
+data, hit transact, we see it
+updates to to no data, updates
+
+5456
+05:23:56,190 --> 05:24:00,120
+to one slowly by example, that
+org has a wonderful little chart
+
+5457
+05:24:00,240 --> 05:24:03,630
+that we can use to figure out
+whether or not receive is going
+
+5458
+05:24:03,630 --> 05:24:06,480
+to get triggered, or Fallback is
+going to get triggered. If it is
+
+5459
+05:24:06,480 --> 05:24:09,300
+empty, and there's a receive
+function, it'll call the receive
+
+5460
+05:24:09,300 --> 05:24:13,290
+function. If it is data, and
+there's no receive function,
+
+5461
+05:24:13,320 --> 05:24:16,200
+it'll just go to the fallback
+function. And if there's no
+
+5462
+05:24:16,200 --> 05:24:19,770
+fallback function, it might just
+it might air out. So this is a
+
+5463
+05:24:19,770 --> 05:24:22,260
+lot of really fantastic
+information here. How can we
+
+5464
+05:24:22,260 --> 05:24:26,550
+apply this to our fund mi
+contract here, or what we can do
+
+5465
+05:24:26,550 --> 05:24:30,450
+now in our Funmi is we can add
+these fallback and receive
+
+5466
+05:24:30,450 --> 05:24:34,080
+functions, just in case somebody
+actually sends us contract money
+
+5467
+05:24:34,110 --> 05:24:36,750
+instead of calling the fund
+function correctly. So what we
+
+5468
+05:24:36,750 --> 05:24:40,110
+can do is let's add a receive
+function. So if somebody
+
+5469
+05:24:40,110 --> 05:24:42,660
+accidentally sends it money, we
+can still process the
+
+5470
+05:24:42,660 --> 05:24:46,680
+transaction will say receive is
+going to be external payable.
+
+5471
+05:24:48,840 --> 05:24:52,860
+And we'll just have the receive
+function call fund. And we'll do
+
+5472
+05:24:52,860 --> 05:24:57,420
+the same thing with our fallback
+function will have fallback
+
+5473
+05:24:57,870 --> 05:25:04,140
+external payable. We'll just
+have it automatically call fund.
+
+5474
+05:25:04,620 --> 05:25:07,980
+Now, if somebody accidentally
+sends us money without calling
+
+5475
+05:25:07,980 --> 05:25:12,330
+our fund function, it'll still
+automatically route them over to
+
+5476
+05:25:12,330 --> 05:25:15,990
+the fund function. This means to
+that if somebody doesn't send us
+
+5477
+05:25:16,020 --> 05:25:19,500
+enough funding, it'll, that
+transaction will still get
+
+5478
+05:25:19,500 --> 05:25:22,710
+reverted. So let's go ahead now.
+And let's switch to rink B to
+
+5479
+05:25:22,710 --> 05:25:26,460
+test this on a real test net,
+Amman rink B and my Metamask.
+
+5480
+05:25:26,880 --> 05:25:30,990
+Let's switch over to injected
+web three. And we'll scroll down
+
+5481
+05:25:31,020 --> 05:25:34,740
+we'll choose our Funmi contract.
+And we'll go ahead and deploy
+
+5482
+05:25:34,740 --> 05:25:38,970
+this Metamask pops up, I'm gonna
+go ahead and confirm the
+
+5483
+05:25:38,970 --> 05:25:42,390
+transaction. And we see our
+Funmi contract here right now we
+
+5484
+05:25:42,390 --> 05:25:45,360
+can see the owner we can see I'm
+the owner, we can see minimum
+
+5485
+05:25:45,360 --> 05:25:49,350
+USD. And we can see of course
+that it's a blank contract, and
+
+5486
+05:25:49,350 --> 05:25:52,560
+there's nothing funded in here.
+If we the copy the address, and
+
+5487
+05:25:52,560 --> 05:25:58,110
+then go to rink the ether scan,
+paste the address in, we can see
+
+5488
+05:25:58,110 --> 05:26:01,170
+that there's no ether in here.
+And the only transaction
+
+5489
+05:26:01,170 --> 05:26:03,870
+associated with this has been
+the contract creation. We saw
+
+5490
+05:26:03,870 --> 05:26:06,960
+what happened before when we hit
+the fun function, our contract
+
+5491
+05:26:06,960 --> 05:26:11,430
+was updated with a new balance,
+and that funder was added to our
+
+5492
+05:26:11,430 --> 05:26:15,240
+an array. Let's see what happens
+now if we just directly send
+
+5493
+05:26:15,270 --> 05:26:19,170
+this contract money without
+calling the fund function here.
+
+5494
+05:26:19,590 --> 05:26:23,160
+If we did this right, our
+receive function should pick it
+
+5495
+05:26:23,160 --> 05:26:28,230
+up and kick the transaction over
+the font. So let's copy this
+
+5496
+05:26:28,230 --> 05:26:33,480
+address. We'll go to our meta
+mask. We'll hit send, paste the
+
+5497
+05:26:33,480 --> 05:26:38,340
+address in here with 0.02 eath.
+Again, because this should be
+
+5498
+05:26:38,790 --> 05:26:43,290
+more than the minimum amount in
+USD, we'll hit next. I'll go
+
+5499
+05:26:43,290 --> 05:26:47,610
+ahead and confirm this. After a
+slight delay, if we did this
+
+5500
+05:26:47,610 --> 05:26:51,750
+right, we should see the
+transaction having called the
+
+5501
+05:26:51,750 --> 05:26:54,720
+fund function here, now that our
+transaction has gone through
+
+5502
+05:26:55,080 --> 05:26:58,590
+After a brief delay in waiting
+for ethers can update, we do
+
+5503
+05:26:58,590 --> 05:27:02,580
+indeed see that our balance has
+updated to 0.02, which of
+
+5504
+05:27:02,580 --> 05:27:06,690
+course, this makes sense. And we
+see in the transactions list
+
+5505
+05:27:06,690 --> 05:27:09,810
+here, we see that this actually
+went through as a, as a transfer
+
+5506
+05:27:09,840 --> 05:27:12,810
+instead of us calling the fund
+function. Let's go ahead and
+
+5507
+05:27:12,810 --> 05:27:15,510
+remix and see if our funders was
+updated.
+
+5508
+05:27:16,800 --> 05:27:20,580
+It looks like it was at the zero
+with position of funders, we
+
+5509
+05:27:20,580 --> 05:27:23,760
+have our address. And if we take
+our address and pop it into
+
+5510
+05:27:23,760 --> 05:27:27,570
+address to amount funded, we can
+see exactly how much we had
+
+5511
+05:27:27,570 --> 05:27:30,540
+funded. This means that since we
+added this receive function in
+
+5512
+05:27:30,540 --> 05:27:34,530
+here, we automatically had to
+call our fun function up here.
+
+5513
+05:27:34,740 --> 05:27:38,580
+So awesome work, we were able to
+add a receive function to help
+
+5514
+05:27:38,580 --> 05:27:42,450
+people who accidentally call the
+wrong function or accidentally
+
+5515
+05:27:42,450 --> 05:27:45,570
+send this contract money,
+instead of correctly calling the
+
+5516
+05:27:45,570 --> 05:27:48,630
+fun function. Now, if they had
+directly called the fun
+
+5517
+05:27:48,630 --> 05:27:51,570
+function, it would have cost
+them a little bit less gas, but
+
+5518
+05:27:51,570 --> 05:27:54,180
+at least this time, they're
+gonna get credit and add it to
+
+5519
+05:27:54,180 --> 05:27:57,150
+our funders array for having
+sent our funding contract money.
+
+5520
+05:27:59,940 --> 05:28:03,390
+We've even learned some advanced
+sections of solidity. And this
+
+5521
+05:28:03,390 --> 05:28:05,760
+is going to be the last time
+that we start our projects in
+
+5522
+05:28:05,760 --> 05:28:10,080
+remix, we're going to be moving
+over to a code editor now, where
+
+5523
+05:28:10,080 --> 05:28:13,140
+we can get even more advanced
+with our solidity on our setups.
+
+5524
+05:28:13,680 --> 05:28:16,440
+For the most part, you've gone
+over the vast majority of
+
+5525
+05:28:16,440 --> 05:28:19,140
+solidity basics, there are a
+number of things that we still
+
+5526
+05:28:19,140 --> 05:28:21,810
+haven't learned yet. And the
+reason we haven't gotten into
+
+5527
+05:28:21,810 --> 05:28:24,180
+them is because they get more
+advanced. And understanding the
+
+5528
+05:28:24,180 --> 05:28:27,060
+real use doesn't really make too
+much sense until a little bit
+
+5529
+05:28:27,060 --> 05:28:30,060
+later. Some of the things that
+we're going to go over are itams
+
+5530
+05:28:30,120 --> 05:28:34,140
+events, try catch function
+selectors, abi encoding,
+
+5531
+05:28:34,170 --> 05:28:36,480
+hashing, and then you will slash
+and then you will slash
+
+5532
+05:28:36,480 --> 05:28:39,240
+assembly. However, if you've
+gotten this far, you probably
+
+5533
+05:28:39,240 --> 05:28:42,600
+can read most solidity code and
+understand what's going on,
+
+5534
+05:28:42,870 --> 05:28:45,870
+which is absolutely fantastic.
+So you should give yourself a
+
+5535
+05:28:45,870 --> 05:28:48,690
+huge round of applause for
+getting this far. And doing
+
+5536
+05:28:48,690 --> 05:28:51,900
+this. Let's do a quick summary
+of this more advanced section
+
+5537
+05:28:51,930 --> 05:28:54,540
+and make sure we understand what
+we learned in solidity there are
+
+5538
+05:28:54,540 --> 05:28:58,350
+a couple special functions. Some
+of them are receive fallback,
+
+5539
+05:28:58,950 --> 05:29:03,060
+and Constructor. These functions
+don't need to have the function
+
+5540
+05:29:03,060 --> 05:29:07,050
+keyword. And instead it can just
+be called like so. Receive and
+
+5541
+05:29:07,050 --> 05:29:10,470
+fallback are two very special
+functions. If data is sent with
+
+5542
+05:29:10,470 --> 05:29:14,670
+a transaction, and no function
+was specified, the transaction
+
+5543
+05:29:14,670 --> 05:29:17,220
+will default to the fallback
+function if that fallback
+
+5544
+05:29:17,220 --> 05:29:20,640
+function exists. If data is
+empty, and there's a receive
+
+5545
+05:29:20,640 --> 05:29:24,480
+function, it'll call the receive
+function. There are a couple of
+
+5546
+05:29:24,480 --> 05:29:28,110
+keywords that can help us save
+gas in the long run. Some of
+
+5547
+05:29:28,110 --> 05:29:31,200
+those keywords are going to be
+constant and immutable. Constant
+
+5548
+05:29:31,200 --> 05:29:34,290
+and immutable are for variables
+that can only be declared and
+
+5549
+05:29:34,290 --> 05:29:39,420
+updated once. Once we say
+minimum USD is 50 times 118.
+
+5550
+05:29:39,750 --> 05:29:43,470
+This minimum USD can never be
+changed again. And this helps us
+
+5551
+05:29:43,500 --> 05:29:47,310
+save gas. Immutable can also
+save gas similar to constant.
+
+5552
+05:29:47,580 --> 05:29:50,940
+However, immutable variables can
+be declared one time in the
+
+5553
+05:29:50,940 --> 05:29:55,110
+constructor, once an immutable
+variable is declared, it can't
+
+5554
+05:29:55,110 --> 05:29:58,770
+be changed later on. In fact, if
+we even tried to update an
+
+5555
+05:29:58,770 --> 05:30:02,700
+immutable variable or constant
+variable, and we compiled, a
+
+5556
+05:30:02,700 --> 05:30:06,390
+compiler would give us an error
+saying, Can't write to a mutable
+
+5557
+05:30:06,390 --> 05:30:11,250
+here. Or if we tried to change a
+constant variable. Our compiler
+
+5558
+05:30:11,250 --> 05:30:14,610
+would say, Hey, you can't assign
+to a constant variable, sorry.
+
+5559
+05:30:14,820 --> 05:30:17,550
+In remix, if we want to send
+ether to a contract that's on
+
+5560
+05:30:17,550 --> 05:30:21,360
+the JavaScript virtual machine,
+we can deploy that contract. And
+
+5561
+05:30:21,360 --> 05:30:23,790
+then in the contract, we can
+just hit the transact button
+
+5562
+05:30:24,090 --> 05:30:27,450
+without any call data and update
+the value that we send with the
+
+5563
+05:30:27,450 --> 05:30:30,720
+transaction. If call data is
+blank, it will trigger the
+
+5564
+05:30:30,780 --> 05:30:34,680
+receive function if it exists.
+But if there's data that doesn't
+
+5565
+05:30:34,680 --> 05:30:37,590
+specify any of the other
+functions, it'll trigger the
+
+5566
+05:30:37,590 --> 05:30:38,370
+fallback function
+
+5567
+05:30:47,500 --> 05:30:50,470
+Awesome, you've done
+fantastically to get this far.
+
+5568
+05:30:50,800 --> 05:30:54,100
+And for this section before we
+get started actually moving over
+
+5569
+05:30:54,100 --> 05:30:57,040
+to Hardhead. And moving over to
+JavaScript and understanding why
+
+5570
+05:30:57,040 --> 05:31:00,280
+we need to do that. Let's
+understand a little bit about
+
+5571
+05:31:00,310 --> 05:31:03,460
+getting help and running into
+problems. So let's say we have
+
+5572
+05:31:03,460 --> 05:31:07,090
+our Funmi contract here that we
+just worked on. And we run into
+
+5573
+05:31:07,090 --> 05:31:11,020
+an error. Let's say for example,
+we forgot the payable keyword,
+
+5574
+05:31:11,230 --> 05:31:15,130
+right, and we go ahead and
+compile this compile fund, we
+
+5575
+05:31:15,130 --> 05:31:18,880
+did so. And we scroll down. And
+we see obviously, we have two
+
+5576
+05:31:18,880 --> 05:31:20,950
+errors here, right, we're
+getting some errors, and we
+
+5577
+05:31:20,950 --> 05:31:25,480
+scroll down. And we see type
+error message dot value and call
+
+5578
+05:31:25,480 --> 05:31:28,630
+value can only be used and
+payable public functions, make
+
+5579
+05:31:28,630 --> 05:31:31,540
+the function payable or using an
+internal function to avoid this
+
+5580
+05:31:31,540 --> 05:31:34,030
+error. And then it goes ahead
+and gives the line that's
+
+5581
+05:31:34,030 --> 05:31:38,230
+airing. Now this error is pretty
+clear, this error code is pretty
+
+5582
+05:31:38,230 --> 05:31:41,530
+clear. It's saying Hey, make the
+function payable, or using an
+
+5583
+05:31:41,530 --> 05:31:44,200
+internal function to avoid this
+error, right? This should be
+
+5584
+05:31:44,200 --> 05:31:48,220
+pretty easy to to add payable,
+and then recompile and be good
+
+5585
+05:31:48,220 --> 05:31:51,010
+to go. And this is actually a
+good example of what to do when
+
+5586
+05:31:51,010 --> 05:31:53,680
+you run into errors. When you
+run into errors. The first thing
+
+5587
+05:31:53,680 --> 05:31:56,290
+you want to do is you want to
+try to figure out exactly what's
+
+5588
+05:31:56,290 --> 05:32:00,310
+going on yourself based off of
+what the error says. This one's
+
+5589
+05:32:00,310 --> 05:32:02,740
+pretty straightforward, but some
+of them can be a little bit more
+
+5590
+05:32:02,740 --> 05:32:06,790
+obscure step one when trying to
+get unblocked trying to tinker
+
+5591
+05:32:06,790 --> 05:32:10,240
+and figure out errors yourself,
+right? Because maybe you go
+
+5592
+05:32:10,240 --> 05:32:14,410
+okay, I'll make this payable,
+right? And you go to save. And
+
+5593
+05:32:14,410 --> 05:32:17,020
+then it gives a different error
+saying, hey, you know, payable
+
+5594
+05:32:17,020 --> 05:32:21,460
+doesn't go here. You resave you
+recompile it goes, Hey, we're
+
+5595
+05:32:21,460 --> 05:32:24,430
+still missing that payable
+thing. First step is always
+
+5596
+05:32:24,430 --> 05:32:27,340
+going to be trying to tinker and
+figure it out yourself. For this
+
+5597
+05:32:27,340 --> 05:32:31,750
+course, I want you to limit
+tinkering, slash triaging to 20
+
+5598
+05:32:31,750 --> 05:32:36,490
+minutes, if you take more than
+20 minutes to tinker and triage,
+
+5599
+05:32:36,610 --> 05:32:40,150
+then move on to the next step.
+But I also want you to take at
+
+5600
+05:32:40,150 --> 05:32:48,700
+least 15 minutes yourself or be
+100% Sure, you exhausted all
+
+5601
+05:32:48,700 --> 05:32:51,910
+options, you're completely out
+of ideas. So typically try to
+
+5602
+05:32:51,910 --> 05:32:55,360
+tinker try some stuff for 15
+minutes. And if you're under 15
+
+5603
+05:32:55,360 --> 05:32:58,420
+minutes, and you're saying, Hey,
+I'm 100% Certain I've tried
+
+5604
+05:32:58,420 --> 05:33:01,330
+everything that I can think of,
+then you can move on to the next
+
+5605
+05:33:01,330 --> 05:33:04,090
+step. So step one, when you run
+into errors is always going to
+
+5606
+05:33:04,090 --> 05:33:11,200
+be tinker and try to pinpoint
+exactly what's going on. Try to
+
+5607
+05:33:11,200 --> 05:33:14,320
+pinpoint exactly what's going
+wrong. Step two, let's say you
+
+5608
+05:33:14,320 --> 05:33:16,960
+tinkered and you tried payable
+all over the place, and you
+
+5609
+05:33:16,960 --> 05:33:19,960
+couldn't figure out what this
+error was and how to debug this
+
+5610
+05:33:19,960 --> 05:33:24,790
+here. Step two is always going
+to be Google the exact error and
+
+5611
+05:33:24,790 --> 05:33:27,070
+see if you can learn from that.
+So zoom out a little bit, I'll
+
+5612
+05:33:27,070 --> 05:33:32,440
+roll my mouse over this, grab
+this, copy it, or quotes around
+
+5613
+05:33:32,440 --> 05:33:36,250
+it, and do exactly that, in
+Google search that exact error
+
+5614
+05:33:36,280 --> 05:33:38,920
+and take some time going through
+Google going through Stack
+
+5615
+05:33:38,920 --> 05:33:41,710
+Overflow going through Stack
+Exchange eath, and look to see
+
+5616
+05:33:41,710 --> 05:33:44,140
+if somebody has asked this
+question already. And it looks
+
+5617
+05:33:44,140 --> 05:33:47,230
+like down here looks like
+somebody has type error missed a
+
+5618
+05:33:47,230 --> 05:33:49,780
+value and call though can only
+be used on PayPal public
+
+5619
+05:33:49,780 --> 05:33:53,740
+functions. And if we scroll
+down, we see that somebody ran
+
+5620
+05:33:53,740 --> 05:33:56,470
+into exactly this. And they went
+ahead and solved it. They go, I
+
+5621
+05:33:56,470 --> 05:33:59,620
+realized my mistake, I needed to
+add the PayPal keyword to my own
+
+5622
+05:33:59,620 --> 05:34:02,440
+implementation. And they go
+ahead in this question, they've
+
+5623
+05:34:02,440 --> 05:34:05,710
+added the payable. And hopefully
+this would give you the insight
+
+5624
+05:34:05,710 --> 05:34:08,590
+to say, Ah, okay, great. I do
+need to come back here and add
+
+5625
+05:34:08,590 --> 05:34:11,710
+payable. Let's say this
+StackOverflow question didn't
+
+5626
+05:34:11,710 --> 05:34:14,620
+show up. Right? This forum
+wasn't here. What do we do next?
+
+5627
+05:34:14,650 --> 05:34:19,270
+So step one, tinker. Step two,
+Google the exact error, I'm
+
+5628
+05:34:19,270 --> 05:34:25,120
+going to do a step 2.5 That only
+is for this class, go to our
+
+5629
+05:34:25,120 --> 05:34:30,460
+GitHub, repo discussions, and or
+updates for this course,
+
+5630
+05:34:30,460 --> 05:34:34,330
+specifically, go to this GitHub
+repo, full blockchain solidity
+
+5631
+05:34:34,330 --> 05:34:36,400
+course, Jas, it'll look a little
+bit different when you all get
+
+5632
+05:34:36,400 --> 05:34:39,850
+to it. But come to this repo,
+and look in this chronological
+
+5633
+05:34:39,880 --> 05:34:43,960
+update section to see if there's
+an update on that section that
+
+5634
+05:34:43,960 --> 05:34:46,390
+you're doing. Obviously, since
+I'm recording right now, there's
+
+5635
+05:34:46,390 --> 05:34:50,050
+no update. And if you don't get
+anything, feel free to jump into
+
+5636
+05:34:50,050 --> 05:34:52,990
+the discussion section. And ask
+a question in here, right,
+
+5637
+05:34:52,990 --> 05:34:55,480
+there's going to be a community
+of people looking to help each
+
+5638
+05:34:55,480 --> 05:34:58,390
+other out and looking to make
+this a lot of fun. And the
+
+5639
+05:34:58,390 --> 05:35:02,200
+reason I say 2.5 is because in
+the real world, you're not going
+
+5640
+05:35:02,200 --> 05:35:05,530
+to have our GitHub repo, when
+working on stuff outside of this
+
+5641
+05:35:05,530 --> 05:35:09,100
+course, you're not going to have
+this GitHub repo. So instead, in
+
+5642
+05:35:09,100 --> 05:35:11,500
+the real world, I'm still going
+to give you the keys, I'm going
+
+5643
+05:35:11,500 --> 05:35:15,070
+to give you what it takes to
+still unblock yourself on
+
+5644
+05:35:15,100 --> 05:35:19,210
+anything. Okay. So number three
+is going to be asked a question
+
+5645
+05:35:19,690 --> 05:35:27,400
+on a forum, like stack, exchange
+eath and Stack Overflow. Stack
+
+5646
+05:35:27,430 --> 05:35:31,870
+Overflow is a question and
+answering tech forum like this,
+
+5647
+05:35:31,900 --> 05:35:35,290
+right? You can ask tech
+questions, and then you can
+
+5648
+05:35:35,290 --> 05:35:38,110
+answer them as well. And as you
+can see, when you search for
+
+5649
+05:35:38,110 --> 05:35:41,890
+these issues, they'll show up so
+Stack Overflow is more for
+
+5650
+05:35:41,890 --> 05:35:45,940
+general Role programming
+questions and Stack Exchange
+
+5651
+05:35:45,970 --> 05:35:50,410
+Aetherium or Stack Exchange eath
+Aetherium Stack Exchange, this
+
+5652
+05:35:50,410 --> 05:35:53,860
+is for more Aetherium or EVM
+based question and all the
+
+5653
+05:35:53,860 --> 05:35:56,710
+solidity code that we're gonna
+be working with, whether it's
+
+5654
+05:35:56,710 --> 05:35:59,920
+polygon, whether it's avalanche,
+whether it's whatever, those
+
+5655
+05:35:59,920 --> 05:36:03,040
+questions are going to be valid
+here, and you can ask here. So
+
+5656
+05:36:03,040 --> 05:36:06,190
+what you'd want to do is you'd
+want to sign up or log in, and
+
+5657
+05:36:06,190 --> 05:36:09,070
+ask and format your questions on
+these forms, you'll want to sign
+
+5658
+05:36:09,070 --> 05:36:11,650
+up for GitHub, you want to sign
+up for Stack Exchange, you'll
+
+5659
+05:36:11,650 --> 05:36:14,260
+want to sign up for Stack
+Overflow, so you can participate
+
+5660
+05:36:14,590 --> 05:36:17,440
+in these forums. In fact, if you
+haven't already, let's sign up
+
+5661
+05:36:17,440 --> 05:36:20,890
+for GitHub right now. And let me
+walk you through formatting one
+
+5662
+05:36:20,890 --> 05:36:22,990
+of these questions, because the
+better you format your
+
+5663
+05:36:22,990 --> 05:36:25,720
+questions, the better chance you
+have of actually getting the
+
+5664
+05:36:25,720 --> 05:36:28,000
+answer. And remember, when
+asking questions on these
+
+5665
+05:36:28,000 --> 05:36:31,870
+forums, when asking questions,
+in these discussion communities,
+
+5666
+05:36:31,930 --> 05:36:34,060
+people answer these questions
+out of the goodness of their
+
+5667
+05:36:34,060 --> 05:36:37,180
+heart, right? So if you don't
+get a response, there's a chance
+
+5668
+05:36:37,180 --> 05:36:40,120
+that maybe nobody knows, maybe
+it's your question isn't
+
+5669
+05:36:40,120 --> 05:36:43,630
+formatted very well, and etc. So
+we're going to learn how to ask
+
+5670
+05:36:43,630 --> 05:36:46,270
+really good questions here. And
+if you're new to blockchain, do
+
+5671
+05:36:46,270 --> 05:36:49,030
+not skip this section. Okay,
+this is going to be that piece
+
+5672
+05:36:49,030 --> 05:36:51,370
+that's going to give you the
+superpower to unblock yourself
+
+5673
+05:36:51,370 --> 05:36:54,490
+from any coding issue you run
+into. So don't skip this
+
+5674
+05:36:54,490 --> 05:36:57,220
+powerup. Be sure to follow
+along. Okay. So if you don't
+
+5675
+05:36:57,220 --> 05:36:59,920
+have a GitHub already, you do
+need an email to get started. So
+
+5676
+05:37:00,220 --> 05:37:03,190
+I'm going to go ahead and sign
+in, I made a burner account just
+
+5677
+05:37:03,190 --> 05:37:05,440
+for this video. So what we're
+gonna do, we're gonna go ahead
+
+5678
+05:37:05,440 --> 05:37:08,020
+and sign up GitHub, enter your
+email
+
+5679
+05:37:16,300 --> 05:37:18,310
+and we hit Create Account,
+they're going to send us an
+
+5680
+05:37:18,310 --> 05:37:20,800
+email. So we're going to come
+back to our email, and we got
+
+5681
+05:37:20,800 --> 05:37:25,570
+our launch code here, paste it
+in. And so a little bit of
+
+5682
+05:37:25,570 --> 05:37:32,290
+information. We're going to
+choose the free version. and
+
+5683
+05:37:32,290 --> 05:37:35,920
+fantastic. We've now created a
+GitHub profile. Now back over in
+
+5684
+05:37:35,920 --> 05:37:38,740
+the smart contract kid full
+blockchain solidity course, Jas,
+
+5685
+05:37:39,070 --> 05:37:41,920
+I'm going to create a new
+discussion, a new thread, and I
+
+5686
+05:37:41,920 --> 05:37:44,230
+want you all to comment on to
+make sure you understand how to
+
+5687
+05:37:44,230 --> 05:37:47,950
+format and how to ask questions.
+Okay, general thread for
+
+5688
+05:37:47,950 --> 05:37:53,770
+practicing. Question formatting.
+Oops. And so let's go back here.
+
+5689
+05:37:53,800 --> 05:37:57,190
+So first, I'm going to format
+this question poorly, two ways,
+
+5690
+05:37:57,220 --> 05:38:00,190
+and then we're gonna format it
+really, really well. So the
+
+5691
+05:38:00,190 --> 05:38:03,430
+first way we're going to format
+it poorly, is by not giving
+
+5692
+05:38:03,490 --> 05:38:07,060
+enough information. So what
+we're going to do is I'm gonna
+
+5693
+05:38:07,060 --> 05:38:11,260
+just copy this issue we're going
+to do is we'll just say like,
+
+5694
+05:38:11,290 --> 05:38:19,060
+Hey, I'm having trouble with
+remix and an error. Can someone
+
+5695
+05:38:19,060 --> 05:38:23,410
+help me? Why is this not a well
+formatted question? If this is
+
+5696
+05:38:23,410 --> 05:38:27,220
+my question, there's not nearly
+enough information here, I, as a
+
+5697
+05:38:27,220 --> 05:38:30,700
+helper, have no idea what this
+person's asking. So let's do
+
+5698
+05:38:30,700 --> 05:38:34,630
+something else. What I'm going
+to do is I'm going to copy this
+
+5699
+05:38:34,630 --> 05:38:38,800
+entire contract all the fun,
+read outsole, paste it in here,
+
+5700
+05:38:39,040 --> 05:38:46,000
+and go, Hi, I'm having issues
+here. Can someone help? I'm
+
+5701
+05:38:46,000 --> 05:38:49,450
+gonna head start discussion here
+want to hit start discussion, it
+
+5702
+05:38:49,450 --> 05:38:52,120
+formats this all weird. And once
+again, there's not really enough
+
+5703
+05:38:52,150 --> 05:38:56,140
+information here. I don't know
+what the issue is. But at least
+
+5704
+05:38:56,140 --> 05:38:58,150
+with this one, we have some
+code, we have some way to
+
+5705
+05:38:58,150 --> 05:39:00,490
+actually debug. So this is a
+little bit better. But it's
+
+5706
+05:39:00,490 --> 05:39:03,130
+still not that good. Let's go
+ahead and edit this. To make
+
+5707
+05:39:03,130 --> 05:39:06,640
+this even better. We hit three
+dots, we can hit edit, what we
+
+5708
+05:39:06,640 --> 05:39:10,870
+can do is we can use something
+called Markdown syntax, and
+
+5709
+05:39:10,930 --> 05:39:13,480
+highly recommend learning a
+little bit of markdown, it's
+
+5710
+05:39:13,480 --> 05:39:17,470
+basically some syntax help make
+discussions on GitHub. And also,
+
+5711
+05:39:17,650 --> 05:39:21,400
+questions on Stack Overflow and
+Stack Exchange a lot easier. So
+
+5712
+05:39:21,400 --> 05:39:25,450
+we're going to format this code
+by adding these three backticks
+
+5713
+05:39:25,510 --> 05:39:31,090
+at the start, and then also at
+the end of our code. And then
+
+5714
+05:39:31,090 --> 05:39:34,300
+additionally, next, the first
+three backticks, we're going to
+
+5715
+05:39:34,300 --> 05:39:40,990
+type so lid did T which tells
+the format or to to use solidity
+
+5716
+05:39:40,990 --> 05:39:44,830
+to format this code here. Now if
+we update discussion, we notice
+
+5717
+05:39:44,830 --> 05:39:49,300
+we get some nice highlighting
+here. So this becomes much, much
+
+5718
+05:39:49,300 --> 05:39:53,950
+easier to read. Right? This is
+way easier to read now than than
+
+5719
+05:39:53,950 --> 05:39:57,130
+it was before. However, it's
+still not specific enough. We've
+
+5720
+05:39:57,130 --> 05:40:00,100
+given a ton of code here, and we
+haven't given the specific
+
+5721
+05:40:00,100 --> 05:40:03,370
+answer. So this is gonna be
+really hard for somebody to
+
+5722
+05:40:03,550 --> 05:40:06,730
+answer. So let's make this more
+specific. So let's edit this
+
+5723
+05:40:06,730 --> 05:40:10,780
+question again. And let's
+specify, so we see here, our
+
+5724
+05:40:10,780 --> 05:40:15,640
+issue is specifically on this
+function. We're going to copy
+
+5725
+05:40:15,640 --> 05:40:18,340
+this function and we're going to
+delete everything else in here.
+
+5726
+05:40:19,630 --> 05:40:23,290
+And now we have just this code
+inside of here. Now we're going
+
+5727
+05:40:23,290 --> 05:40:26,500
+to make this really specific.
+We're going to say, on this
+
+5728
+05:40:26,500 --> 05:40:31,300
+function, I'm running into an
+error. And then what we're going
+
+5729
+05:40:31,300 --> 05:40:33,220
+to do is we're going to come
+back here, we're going to roll
+
+5730
+05:40:33,220 --> 05:40:36,100
+the over this. We're going to
+copy this we could have pull our
+
+5731
+05:40:36,100 --> 05:40:39,250
+code if we want but we're going
+to format this error like this.
+
+5732
+05:40:39,580 --> 05:40:43,960
+And then we're gonna say Can
+someone tell me What's going on?
+
+5733
+05:40:44,770 --> 05:40:49,810
+Update? Now this is a much, much
+easier question to debug. Right?
+
+5734
+05:40:49,810 --> 05:40:52,630
+We have some minimalistic code,
+we have the error that we're
+
+5735
+05:40:52,630 --> 05:40:56,080
+getting. And we have Can someone
+tell me what's going on?
+
+5736
+05:40:56,170 --> 05:41:00,100
+Obviously, the answer to this
+would be to add payable to this.
+
+5737
+05:41:00,130 --> 05:41:02,110
+And that's what somebody would
+say, hey, like, you need to add
+
+5738
+05:41:02,110 --> 05:41:04,960
+payable to this, I want you all
+to practice doing some
+
+5739
+05:41:04,960 --> 05:41:08,380
+formatting, go ahead and add a
+comment on this with your own
+
+5740
+05:41:08,380 --> 05:41:11,470
+formatted question. So that you
+understand how to actually do
+
+5741
+05:41:11,470 --> 05:41:14,590
+the formatting. And this
+markdown format. It's this
+
+5742
+05:41:14,590 --> 05:41:17,290
+format here, that's gonna be the
+exact same for asking questions
+
+5743
+05:41:17,290 --> 05:41:21,070
+on Stack Overflow, or Stack
+Exchange for this course, go
+
+5744
+05:41:21,070 --> 05:41:24,730
+ahead and practice if you want
+to create more new discussions,
+
+5745
+05:41:24,730 --> 05:41:27,280
+feel free to create new
+discussions. If you want to use
+
+5746
+05:41:27,280 --> 05:41:31,030
+Stack Overflow or Stack Exchange
+eath actually highly recommend
+
+5747
+05:41:31,030 --> 05:41:33,790
+you Stack Overflow or Stack
+Exchange eath as well, because
+
+5748
+05:41:33,790 --> 05:41:36,760
+those are gonna get indexed a
+lot better than GitHub here.
+
+5749
+05:41:37,360 --> 05:41:39,850
+However, feel free to ask
+questions, obviously, in this
+
+5750
+05:41:39,850 --> 05:41:42,580
+GitHub as well. Now that I've
+given you kind of the basics
+
+5751
+05:41:42,580 --> 05:41:45,610
+rundown, we're going to watch a
+video that I made that goes even
+
+5752
+05:41:45,610 --> 05:41:48,820
+deeper into why and how to
+format all these questions and
+
+5753
+05:41:48,820 --> 05:41:50,650
+what to use. So let's go ahead
+
+5754
+05:41:50,739 --> 05:42:00,009
+and watch that. Every developer
+has run into this. Something
+
+5755
+05:42:00,009 --> 05:42:01,959
+breaks or maybe you don't know
+something, but you don't have
+
+5756
+05:42:01,959 --> 05:42:04,809
+time to let these stop you.
+There are a series of steps that
+
+5757
+05:42:04,809 --> 05:42:08,379
+one should take to maximize
+one's chances of solving any
+
+5758
+05:42:08,379 --> 05:42:11,499
+coding problem, but you'd be
+surprised at how few developers
+
+5759
+05:42:11,499 --> 05:42:14,289
+currently use the superpower
+effectively, our first one we'll
+
+5760
+05:42:14,289 --> 05:42:16,629
+spend the least time on, because
+it's just tinker and experiment.
+
+5761
+05:42:16,809 --> 05:42:19,059
+When you run into an issue. Keep
+trying different things you
+
+5762
+05:42:19,089 --> 05:42:21,519
+think might work, maybe try
+doing print statements
+
+5763
+05:42:21,519 --> 05:42:23,829
+throughout the file, learn some
+debugging tips, but don't be so
+
+5764
+05:42:23,829 --> 05:42:27,639
+cocky that you only do this
+first step. And this shouldn't
+
+5765
+05:42:27,639 --> 05:42:30,309
+just be random running around.
+This should be trying to
+
+5766
+05:42:30,309 --> 05:42:33,639
+pinpoint exactly what's going
+wrong in your code, so that you
+
+5767
+05:42:33,639 --> 05:42:36,279
+can either ask an effective
+question, or figure it out
+
+5768
+05:42:36,279 --> 05:42:39,909
+yourself. So pinpoint exactly
+what's going wrong, because
+
+5769
+05:42:39,909 --> 05:42:42,699
+you'll need it for the next
+steps. Anyways, next, check the
+
+5770
+05:42:42,699 --> 05:42:46,659
+documentation. Not all tools
+have good documentation. But
+
+5771
+05:42:46,659 --> 05:42:49,689
+taking some time to explore
+documentation can be a quick way
+
+5772
+05:42:49,689 --> 05:42:52,599
+to find your answer, you'll want
+to learn how to search a webpage
+
+5773
+05:42:52,599 --> 05:42:55,209
+with Command F or Control F.
+That way, you can look for
+
+5774
+05:42:55,209 --> 05:42:58,569
+specific keywords on a page, or
+hopefully they have a good
+
+5775
+05:42:58,569 --> 05:43:01,119
+search bar that works well.
+Sometimes documentation can be
+
+5776
+05:43:01,119 --> 05:43:03,879
+really dense. So maybe you'll
+move to the next step, which is
+
+5777
+05:43:03,879 --> 05:43:06,669
+doing a web search. At the end
+of the day, good software
+
+5778
+05:43:06,669 --> 05:43:09,969
+engineers are secretly just
+professional Googlers. And this
+
+5779
+05:43:09,969 --> 05:43:12,369
+is one of their most powerful
+tools, being able to search the
+
+5780
+05:43:12,369 --> 05:43:15,459
+web for somebody else who has
+already run into the problem
+
+5781
+05:43:15,459 --> 05:43:17,919
+that you've just run into, and
+then solved it. Most search
+
+5782
+05:43:17,919 --> 05:43:20,649
+engines like Google have tools
+you can use to get even more
+
+5783
+05:43:20,649 --> 05:43:23,889
+specific about what you're
+looking for. Often for specific
+
+5784
+05:43:23,919 --> 05:43:26,859
+errors, the best thing to do is
+actually just copy the exact
+
+5785
+05:43:26,859 --> 05:43:29,439
+error and paste it in the search
+bar with quotes or use the
+
+5786
+05:43:29,439 --> 05:43:32,259
+Asterix in spots, your error
+might be too specific. Most of
+
+5787
+05:43:32,259 --> 05:43:35,979
+the results you'll get will be
+from forums and q&a sites, which
+
+5788
+05:43:36,009 --> 05:43:38,949
+leads us to our next step,
+asking questions in these forums
+
+5789
+05:43:38,949 --> 05:43:42,999
+and q&a sites. Just make sure
+that before you ask a question,
+
+5790
+05:43:42,999 --> 05:43:46,779
+you've done some ample Googling
+around yourself beforehand. This
+
+5791
+05:43:46,779 --> 05:43:49,659
+way you don't waste yours and
+anybody else's time. And by
+
+5792
+05:43:49,659 --> 05:43:52,659
+asking questions that you swear
+you will promise me that at some
+
+5793
+05:43:52,659 --> 05:43:56,319
+point, you will go back and help
+other people learn as well got
+
+5794
+05:43:56,319 --> 05:43:59,619
+it good. Before even asking your
+question though, we should learn
+
+5795
+05:43:59,769 --> 05:44:03,879
+where is going to be the best
+place to ask. This is why I've
+
+5796
+05:44:03,879 --> 05:44:07,149
+categorized for different types
+of forums and QA sites, feel
+
+5797
+05:44:07,149 --> 05:44:10,029
+free to pause to read them over.
+And here's some specific
+
+5798
+05:44:10,029 --> 05:44:13,239
+examples of each one of these
+index code base forms like Stack
+
+5799
+05:44:13,239 --> 05:44:17,439
+Overflow, index repositories
+like GitHub issues, index
+
+5800
+05:44:17,439 --> 05:44:21,219
+technology, specific forums,
+like our slash eat dev or
+
+5801
+05:44:21,249 --> 05:44:24,759
+unindexed discussion platforms
+like chainlink discord, one of
+
+5802
+05:44:24,759 --> 05:44:28,419
+the key differentiators in these
+categories is the index keyword.
+
+5803
+05:44:28,449 --> 05:44:31,419
+We typically want to ask
+questions on forums that web
+
+5804
+05:44:31,419 --> 05:44:34,239
+crawlers have gone through and
+stuck them in their database or
+
+5805
+05:44:34,269 --> 05:44:37,419
+index them this way. And three
+weeks when we look back at the
+
+5806
+05:44:37,419 --> 05:44:40,449
+code that we wrote, we can just
+Google what was going on when we
+
+5807
+05:44:40,449 --> 05:44:43,269
+forget what it does. And this
+will help out other developers
+
+5808
+05:44:43,269 --> 05:44:46,359
+who run into the same problem,
+which in turn, they might go
+
+5809
+05:44:46,359 --> 05:44:49,659
+ahead and help you out later.
+Ideally, most of your questions
+
+5810
+05:44:49,689 --> 05:44:52,779
+should be asked on one of these
+index forms for this reason for
+
+5811
+05:44:52,779 --> 05:44:54,849
+their searchability and
+discoverability. However, at
+
+5812
+05:44:54,849 --> 05:44:58,329
+some questions are a better fit
+for DMS, Twitter or discord that
+
+5813
+05:44:58,359 --> 05:45:00,879
+aren't index and we made a
+little chart here to figure out
+
+5814
+05:45:00,909 --> 05:45:03,219
+where's the best place to post
+your questions, feel free to
+
+5815
+05:45:03,219 --> 05:45:05,409
+pause the video take a look or
+read our blog and the
+
+5816
+05:45:05,409 --> 05:45:07,959
+descriptions with the picture as
+well to take another look at it.
+
+5817
+05:45:07,989 --> 05:45:10,089
+And of course, before actually
+posting that in one of these
+
+5818
+05:45:10,089 --> 05:45:13,359
+forums, be sure to read their
+rules as they might state that
+
+5819
+05:45:13,419 --> 05:45:15,849
+some kind of questions are
+specifically for Ben. But
+
+5820
+05:45:15,849 --> 05:45:19,059
+basically the breakdown looks
+like this. Theoretical big
+
+5821
+05:45:19,059 --> 05:45:23,619
+picture or opinionated questions
+can go great on general q&a
+
+5822
+05:45:23,619 --> 05:45:27,759
+forums like Quora or specific
+technical forums like specific
+
+5823
+05:45:27,759 --> 05:45:31,269
+subreddits or discord forums,
+specific coding questions can go
+
+5824
+05:45:31,269 --> 05:45:35,619
+on these forums as well, but
+will often get more eyes on
+
+5825
+05:45:35,649 --> 05:45:38,829
+coding forums like Stack
+Overflow or Stack Exchange
+
+5826
+05:45:38,829 --> 05:45:41,709
+communities often the question
+of Oh, should I post this on
+
+5827
+05:45:41,739 --> 05:45:45,249
+stack URL? flow or maybe a Stack
+Exchange community is incredibly
+
+5828
+05:45:45,249 --> 05:45:47,979
+blurry. And sometimes it doesn't
+really matter which one you post
+
+5829
+05:45:47,979 --> 05:45:51,489
+on. Now, if you run into a bug
+or an issue with a technology
+
+5830
+05:45:51,489 --> 05:45:54,069
+you're really familiar with, and
+you think it shouldn't be
+
+5831
+05:45:54,069 --> 05:45:57,249
+breaking, this is your chance to
+pop an issue into their open
+
+5832
+05:45:57,249 --> 05:46:00,609
+source code repository and
+potentially improve the tool.
+
+5833
+05:46:00,639 --> 05:46:03,429
+They don't have an open source
+code repository, you throw that
+
+5834
+05:46:03,429 --> 05:46:06,879
+closed source piece of shit into
+the garbage, but just kidding
+
+5835
+05:46:06,879 --> 05:46:09,699
+closed source Tech has its place
+in our lives, too. Additionally,
+
+5836
+05:46:09,729 --> 05:46:12,489
+if you're following a tutorial,
+and they have a Git repo
+
+5837
+05:46:12,489 --> 05:46:16,179
+associated with it, like all of
+my videos that do, that's gonna
+
+5838
+05:46:16,179 --> 05:46:19,029
+be the best place to leave your
+issues. So as much as I hate to
+
+5839
+05:46:19,029 --> 05:46:22,449
+say it, putting your issues onto
+my GitHub repositories is going
+
+5840
+05:46:22,449 --> 05:46:25,869
+to be much more effective for us
+answering your questions than
+
+5841
+05:46:25,869 --> 05:46:29,139
+posting it in the YouTube
+comments. Now finally, Discord,
+
+5842
+05:46:29,169 --> 05:46:33,279
+element, email, text message or
+any other these unindexed chats
+
+5843
+05:46:33,309 --> 05:46:36,279
+are still good places to ask
+questions, but please try to use
+
+5844
+05:46:36,279 --> 05:46:39,309
+them as a last resort. And if
+they do end up answering one of
+
+5845
+05:46:39,309 --> 05:46:42,189
+your questions, maybe go back
+and add that question and answer
+
+5846
+05:46:42,189 --> 05:46:44,979
+to one of the other forums that
+we were talking about this way
+
+5847
+05:46:44,979 --> 05:46:47,829
+it will be indexed next time you
+or somebody else, Google's it
+
+5848
+05:46:47,889 --> 05:46:50,199
+now these quicker chat forums
+are places more for the
+
+5849
+05:46:50,199 --> 05:46:53,139
+community to congregate and have
+quick conversations with each
+
+5850
+05:46:53,139 --> 05:46:56,469
+other. They're places to theory
+craft, talk about new things
+
+5851
+05:46:56,469 --> 05:47:00,669
+coming out new ideas, events,
+and other things that shouldn't
+
+5852
+05:47:00,669 --> 05:47:03,879
+be indexed by web crawlers.
+They're also great places to
+
+5853
+05:47:03,879 --> 05:47:06,819
+meet and network with people
+that you might be able to bounce
+
+5854
+05:47:06,819 --> 05:47:09,549
+ideas off directly as you get to
+know each other, which leads
+
+5855
+05:47:09,549 --> 05:47:12,759
+into our last section. But
+before we do that, Oh, do you
+
+5856
+05:47:12,759 --> 05:47:17,109
+hear that? Oh, that's the video
+inside another video alarm
+
+5857
+05:47:17,109 --> 05:47:20,049
+ringing. When you ask a question
+in one of these forums, the
+
+5858
+05:47:20,049 --> 05:47:22,449
+better you format your
+questions, the better chance
+
+5859
+05:47:22,449 --> 05:47:25,059
+you'll have of getting an
+answered. Now there's no bad
+
+5860
+05:47:25,059 --> 05:47:28,299
+questions out there. But there
+are poorly formatted questions.
+
+5861
+05:47:28,509 --> 05:47:31,749
+So let's teach you how to always
+ask questions as format as best
+
+5862
+05:47:31,749 --> 05:47:34,839
+as possible to give you the
+highest chance of making sure
+
+5863
+05:47:34,839 --> 05:47:37,569
+they get answered. Number one,
+before asking your question,
+
+5864
+05:47:37,599 --> 05:47:40,689
+make sure you followed all the
+steps in the parent video. And
+
+5865
+05:47:40,689 --> 05:47:43,449
+you've done some research on
+this already and make sure the
+
+5866
+05:47:43,449 --> 05:47:46,239
+question hasn't already been
+asked. Number two, make a title
+
+5867
+05:47:46,239 --> 05:47:50,079
+that summarizes the specifics of
+the question three introduced
+
+5868
+05:47:50,079 --> 05:47:53,619
+the problem before you write any
+code, add minimalistic,
+
+5869
+05:47:53,649 --> 05:47:57,549
+reproducible code minimalistic
+code means it's not just a copy
+
+5870
+05:47:57,549 --> 05:48:00,549
+paste your entire file. If
+you're having problems on one
+
+5871
+05:48:00,549 --> 05:48:04,809
+line, maybe just post that one
+line reproducible code means
+
+5872
+05:48:04,809 --> 05:48:07,689
+that others should be able to
+run to the exact same error that
+
+5873
+05:48:07,689 --> 05:48:11,049
+you're running into, or at least
+post the steps for them to do
+
+5874
+05:48:11,049 --> 05:48:14,079
+it. This doesn't mean that you
+should put I was following along
+
+5875
+05:48:14,079 --> 05:48:17,739
+Patrick's video and on our five
+I ran into this problem, just
+
+5876
+05:48:17,739 --> 05:48:20,799
+watch his video and you'll get
+there. As flattering as this is
+
+5877
+05:48:20,829 --> 05:48:22,989
+it's not reasonable that
+everyone is going to have
+
+5878
+05:48:22,989 --> 05:48:25,869
+watched my videos, even though
+they should you want to give the
+
+5879
+05:48:25,869 --> 05:48:28,329
+technical steps to reach the
+error that you've reached. For
+
+5880
+05:48:28,329 --> 05:48:30,999
+those of you watching my Free
+Code Camp video, you're kind of
+
+5881
+05:48:30,999 --> 05:48:34,689
+exempt from this, but you can
+only say, Hey, I was on our Five
+
+5882
+05:48:34,749 --> 05:48:37,809
+on this part of your video
+inside of our discussions tab of
+
+5883
+05:48:37,809 --> 05:48:41,139
+the GitHub repo associated with
+this course. So you can do that.
+
+5884
+05:48:41,169 --> 05:48:44,169
+But only in that GitHub repo
+associated with this course,
+
+5885
+05:48:44,649 --> 05:48:48,549
+learning markdown to format your
+code, especially using these
+
+5886
+05:48:48,579 --> 05:48:53,379
+three backticks and labeling of
+the language. This is a critical
+
+5887
+05:48:53,379 --> 05:48:56,889
+piece of formatting your code
+and will drastically improve on
+
+5888
+05:48:56,889 --> 05:48:59,709
+the number of people who answer
+your questions. Any errors or
+
+5889
+05:48:59,709 --> 05:49:03,489
+code should be formatted with
+this three backticks syntax. And
+
+5890
+05:49:03,489 --> 05:49:06,099
+finally, often people who care
+about certain technologies,
+
+5891
+05:49:06,249 --> 05:49:10,239
+monitor specific tags and
+monitor specific questions being
+
+5892
+05:49:10,239 --> 05:49:12,369
+asked about the technologies
+that they like. And then
+
+5893
+05:49:12,369 --> 05:49:15,789
+finally, again, be sure to read
+the forum's guides before
+
+5894
+05:49:15,789 --> 05:49:18,729
+posting different forums have
+different rules about what they
+
+5895
+05:49:18,729 --> 05:49:21,129
+want and what they don't want.
+So being familiar will increase
+
+5896
+05:49:21,129 --> 05:49:24,099
+your chances of getting an
+answer. All right. So now back
+
+5897
+05:49:24,099 --> 05:49:26,619
+to the main video. Now a note
+about Stack Overflow, in
+
+5898
+05:49:26,619 --> 05:49:30,189
+particular, Stack Overflow can
+be a little aggressive, which is
+
+5899
+05:49:30,189 --> 05:49:32,649
+why sometimes posting on
+specific community forums might
+
+5900
+05:49:32,649 --> 05:49:35,289
+be better for your specific
+technology questions. If you
+
+5901
+05:49:35,289 --> 05:49:38,079
+post on Stack Overflow, and you
+get a ton of down votes on your
+
+5902
+05:49:38,079 --> 05:49:41,709
+questions. Don't let that bother
+you. Just take it as a learning
+
+5903
+05:49:41,709 --> 05:49:44,709
+opportunity to learn about what
+Stack Overflow likes and doesn't
+
+5904
+05:49:44,709 --> 05:49:48,729
+like and just keep going but do
+not let that discourage you.
+
+5905
+05:49:48,849 --> 05:49:51,879
+Okay, well, now that we know
+where things should go, where
+
+5906
+05:49:51,879 --> 05:49:55,269
+questions should go and how to
+actually format them. Let's
+
+5907
+05:49:55,269 --> 05:49:57,579
+practice let's look at some
+sample questions that you might
+
+5908
+05:49:57,579 --> 05:49:59,739
+have. And we'll figure out where
+we want to put them. So the
+
+5909
+05:49:59,739 --> 05:50:02,589
+first one, where does this one
+go? Feel free to pause and guess
+
+5910
+05:50:02,589 --> 05:50:05,859
+yourself. So a question like
+this is going to be great for a
+
+5911
+05:50:05,859 --> 05:50:09,789
+Reddit or a discord? Probably
+more a discord. Now, this is
+
+5912
+05:50:09,789 --> 05:50:12,699
+definitely something that you
+can search for. Right? So you
+
+5913
+05:50:12,699 --> 05:50:15,039
+probably could search for this,
+find an answer and go from
+
+5914
+05:50:15,039 --> 05:50:17,499
+there. But maybe you want to ask
+a buddy or maybe you want to ask
+
+5915
+05:50:17,529 --> 05:50:20,679
+a very specific community like
+our slash eat Dev. Now, of
+
+5916
+05:50:20,679 --> 05:50:22,629
+course, if you see this
+question, you obviously want to
+
+5917
+05:50:22,629 --> 05:50:25,569
+recommend Patrick Collins his
+YouTube channel. Now how about
+
+5918
+05:50:25,599 --> 05:50:28,899
+this question. Notice its
+formatting right? The title is
+
+5919
+05:50:28,989 --> 05:50:32,079
+nice and big. They have a
+technical command that is
+
+5920
+05:50:32,079 --> 05:50:34,809
+formatted properly. They have
+Git commit which is formatted
+
+5921
+05:50:34,809 --> 05:50:37,719
+properly, where would this go
+like this would definitely do
+
+5922
+05:50:37,719 --> 05:50:41,409
+very well on a Stack Overflow or
+an index code based forum to
+
+5923
+05:50:41,409 --> 05:50:44,829
+very clearly try had to do
+something technical. The problem
+
+5924
+05:50:44,829 --> 05:50:47,859
+is laid out very clearly. And
+they've given the command that
+
+5925
+05:50:47,859 --> 05:50:50,259
+they're looking to do. Now, how
+about this one, something like
+
+5926
+05:50:50,259 --> 05:50:52,749
+this could go on either
+StackOverflow. But it's probably
+
+5927
+05:50:52,749 --> 05:50:56,049
+more likely going to go on a
+GitHub issue for this brownie
+
+5928
+05:50:56,049 --> 05:51:00,309
+package. A big difference
+between code forums and and Git
+
+5929
+05:51:00,309 --> 05:51:03,339
+repos like GitHub is that when
+you make an issue on a GitHub
+
+5930
+05:51:03,339 --> 05:51:06,309
+repository, especially when you
+think there's a problem, you do
+
+5931
+05:51:06,309 --> 05:51:09,759
+want to be as in depth as
+possible. So oftentimes, when
+
+5932
+05:51:09,759 --> 05:51:12,039
+making an issue on these repos,
+they'll even ask, what version
+
+5933
+05:51:12,039 --> 05:51:15,099
+are you using? Can you post all
+your code? Can you post all your
+
+5934
+05:51:15,099 --> 05:51:18,759
+files and just be much, much
+more explicit? So how about
+
+5935
+05:51:18,759 --> 05:51:21,999
+something like this. So this is
+going to be really good for the
+
+5936
+05:51:21,999 --> 05:51:25,359
+GitHub repo associated with this
+tutorial, it looks like this
+
+5937
+05:51:25,359 --> 05:51:28,629
+person is asking about a very
+specific tutorial. So posting
+
+5938
+05:51:28,629 --> 05:51:32,019
+this, there is going to be best.
+Now if your question is on a
+
+5939
+05:51:32,019 --> 05:51:35,049
+tutorial that doesn't have a
+GitHub repo, well, they probably
+
+5940
+05:51:35,049 --> 05:51:38,019
+should. But then maybe this is
+better in the comment section.
+
+5941
+05:51:38,739 --> 05:51:42,039
+Now, again, this is where this
+all becomes a little bit more
+
+5942
+05:51:42,129 --> 05:51:45,099
+art than science, because maybe
+the specific error that they're
+
+5943
+05:51:45,099 --> 05:51:48,369
+running into is a generic error
+that a ton of people run into,
+
+5944
+05:51:48,429 --> 05:51:51,459
+and maybe it is better on
+StackOverflow. Or maybe there's
+
+5945
+05:51:51,459 --> 05:51:55,479
+an issue with the package. So
+maybe it is better on GitHub. Or
+
+5946
+05:51:55,479 --> 05:51:58,419
+maybe the solution to this is
+opinionated. And finally, what
+
+5947
+05:51:58,419 --> 05:52:01,629
+about this? Yep, this is going
+to be much better for a discord
+
+5948
+05:52:01,629 --> 05:52:04,029
+or a DM with your buddy. And
+away, it's our last step on
+
+5949
+05:52:04,029 --> 05:52:06,429
+blocking you from any question
+is going to be join and
+
+5950
+05:52:06,429 --> 05:52:09,099
+strengthen the community of your
+tool. Now at the start, it's
+
+5951
+05:52:09,099 --> 05:52:11,619
+going to be hard for you to give
+back since you're not going to
+
+5952
+05:52:11,619 --> 05:52:13,959
+be very knowledgeable on these
+tools. But as you get better at
+
+5953
+05:52:13,959 --> 05:52:16,209
+these technologies, you'll want
+to try to answer some of these
+
+5954
+05:52:16,209 --> 05:52:18,939
+new questions that do come in.
+The reason is because this will
+
+5955
+05:52:18,939 --> 05:52:21,519
+give you a chance to actually
+learn more about the tools that
+
+5956
+05:52:21,519 --> 05:52:24,339
+you like, it'll strengthen the
+community of your favorite
+
+5957
+05:52:24,339 --> 05:52:27,339
+tools, meaning if you help
+answer questions on tool, it'll
+
+5958
+05:52:27,339 --> 05:52:30,429
+actually encourage other people
+to use the tool because there's
+
+5959
+05:52:30,429 --> 05:52:33,399
+a strong following there. And
+likely, they might actually help
+
+5960
+05:52:33,399 --> 05:52:35,949
+you sometime in the future, you
+helping people will make you
+
+5961
+05:52:35,949 --> 05:52:38,589
+look like a good person. And
+then you'll also feel like a
+
+5962
+05:52:38,589 --> 05:52:41,319
+good person. Additionally, in
+many forums like Reddit,
+
+5963
+05:52:41,379 --> 05:52:44,319
+oftentimes, mods will actually
+look at how often you post
+
+5964
+05:52:44,349 --> 05:52:47,289
+versus how often you help others
+and comments on others people
+
+5965
+05:52:47,289 --> 05:52:50,289
+posts and some mods may actually
+start blocking your posts for
+
+5966
+05:52:50,289 --> 05:52:53,289
+abusing the forums and not
+giving back to the community and
+
+5967
+05:52:53,289 --> 05:52:55,899
+only trying to take knowledge
+you in the community will be
+
+5968
+05:52:55,929 --> 05:52:59,799
+more successful if you join in
+and help others and not just try
+
+5969
+05:52:59,799 --> 05:53:02,619
+to extract things from other
+people. Additionally, by
+
+5970
+05:53:02,619 --> 05:53:05,889
+engaging with the community, I
+can't tell you how many people
+
+5971
+05:53:05,919 --> 05:53:08,919
+I've met and I've learned and
+been able to brainstorm with.
+
+5972
+05:53:09,069 --> 05:53:11,199
+And then the final step is going
+to be iterate through these
+
+5973
+05:53:11,199 --> 05:53:14,559
+steps. Maybe you get to the end
+of these and you say, Oh, I'm
+
+5974
+05:53:14,559 --> 05:53:18,159
+still blocked, but you'll likely
+be much, much more
+
+5975
+05:53:18,159 --> 05:53:21,339
+knowledgeable. So you want to go
+back and try these steps again.
+
+5976
+05:53:21,429 --> 05:53:24,819
+Now this is where this whole
+process is a little bit more art
+
+5977
+05:53:24,849 --> 05:53:27,339
+than science. Because some
+questions might not have been
+
+5978
+05:53:27,339 --> 05:53:30,459
+discovered yet. Only very few
+people know not enough people
+
+5979
+05:53:30,459 --> 05:53:33,549
+understand the importance of the
+questions, or maybe people don't
+
+5980
+05:53:33,549 --> 05:53:36,369
+understand your question. And
+this is why it's important to go
+
+5981
+05:53:36,369 --> 05:53:39,519
+back and iterate on these steps.
+Now that you have the basic
+
+5982
+05:53:39,519 --> 05:53:41,889
+building blocks of this
+incredible superpower, I
+
+5983
+05:53:41,889 --> 05:53:44,649
+encourage all of you to go out
+there and try this and then let
+
+5984
+05:53:44,649 --> 05:53:45,429
+me know how it went.
+
+5985
+05:53:48,460 --> 05:53:51,100
+Alright, awesome. So now that we
+know more about how to get
+
+5986
+05:53:51,130 --> 05:53:54,160
+unblocked, we can move on. The
+reason it's so important to
+
+5987
+05:53:54,160 --> 05:53:57,070
+learn how to get unblocked is
+because blockchain and web three
+
+5988
+05:53:57,310 --> 05:54:00,460
+is more than just everybody on
+their own. It is a very
+
+5989
+05:54:00,460 --> 05:54:04,120
+collaborative space. So as you
+get better, and as you learn
+
+5990
+05:54:04,120 --> 05:54:07,510
+more a massive way to test how
+much you've learned and give
+
+5991
+05:54:07,510 --> 05:54:09,820
+back to the community is to
+going to Stack Overflow and
+
+5992
+05:54:09,820 --> 05:54:13,330
+going to stack exchange them and
+trying to answer some questions
+
+5993
+05:54:13,330 --> 05:54:16,630
+yourself. So I highly recommend
+you all go to Stack Overflow,
+
+5994
+05:54:16,630 --> 05:54:19,450
+and then you go to the GitHub
+repo associated with the scores,
+
+5995
+05:54:19,690 --> 05:54:21,970
+you try to answer some
+discussions, try to answer some
+
+5996
+05:54:22,000 --> 05:54:24,970
+issues and help other people out
+because it's going to help you
+
+5997
+05:54:24,970 --> 05:54:28,210
+become a much better software
+engineer. The other reason I
+
+5998
+05:54:28,210 --> 05:54:31,480
+want to do that part is because
+when we install some of the
+
+5999
+05:54:31,480 --> 05:54:34,750
+tools that I'm about to show
+you, sometimes the installation
+
+6000
+05:54:34,750 --> 05:54:38,020
+process is the hardest piece
+there. Once you get past the
+

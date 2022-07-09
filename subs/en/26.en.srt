@@ -1,0 +1,4992 @@
+26001
+03:01:10,780 --> 03:01:18,580
+const request URL equals token
+URI dot replace IPFS, slash
+
+26002
+03:01:18,580 --> 03:01:22,240
+slash with HTTP s, HTTPS.
+
+26003
+03:01:25,210 --> 03:01:28,450
+slash slash ipfs.io/ipfs/so.
+We're saying, if you have a
+
+26004
+03:01:28,450 --> 03:01:32,530
+token URI that starts with IPFS,
+that's great. But we're going to
+
+26005
+03:01:32,530 --> 03:01:35,800
+switch it to using an IPFS
+gateway. It's really use the
+
+26006
+03:01:35,830 --> 03:01:41,350
+IPFS gateway provided by the
+team that builds IPFS. So pretty
+
+26007
+03:01:41,350 --> 03:01:44,920
+reliable gateway is is kind of a
+cop out. Yes. Are our files
+
+26008
+03:01:44,920 --> 03:01:48,970
+still on? IPFS? Yes. So it's not
+the end of the world. But this
+
+26009
+03:01:48,970 --> 03:01:52,240
+is just going to make calling
+these API's a lot easier for us.
+
+26010
+03:01:52,390 --> 03:01:59,290
+And we're going to say const
+token URI. Response equals
+
+26011
+03:01:59,590 --> 03:02:02,380
+await. And this is going to be a
+little weird. We're going to do
+
+26012
+03:02:02,380 --> 03:02:10,690
+two awaits. await a weight fetch
+request, URL dot JSON. So fetch
+
+26013
+03:02:10,720 --> 03:02:15,340
+is a keyword you can use in
+JavaScript to fetch or get a URL
+
+26014
+03:02:15,370 --> 03:02:18,370
+fetch keyword is essentially
+doing the same thing as pasting
+
+26015
+03:02:18,370 --> 03:02:22,210
+this into the browser, like so.
+And getting this JSON response.
+
+26016
+03:02:22,240 --> 03:02:25,960
+So we await to get the response.
+And then we await to convert the
+
+26017
+03:02:25,960 --> 03:02:29,230
+response to JSON. And that's how
+we get the toggle response. So
+
+26018
+03:02:29,230 --> 03:02:33,820
+we now have this object in our
+JavaScript, which is perfect
+
+26019
+03:02:33,820 --> 03:02:37,120
+because this object has this
+image attribute that we want. So
+
+26020
+03:02:37,150 --> 03:02:39,700
+we're gonna do the same thing we
+did here, we're gonna use the
+
+26021
+03:02:39,700 --> 03:02:44,470
+IPFS gateway, this one's already
+using HTTPS that ipfs.io. But if
+
+26022
+03:02:44,470 --> 03:02:46,870
+it wasn't, we would still want
+to convert it. So now we're
+
+26023
+03:02:46,870 --> 03:02:53,770
+gonna say const. Image URI
+equals token you are i response
+
+26024
+03:02:53,770 --> 03:02:58,210
+dot image. So we're gonna get
+the image tag of this response
+
+26025
+03:02:58,210 --> 03:03:04,120
+here. And then we're going to
+say const. Image URI URL, is
+
+26026
+03:03:04,120 --> 03:03:06,520
+going to equal to, and we're
+gonna do the exact same thing
+
+26027
+03:03:06,520 --> 03:03:10,150
+that we did up here, we're going
+to use the gateway image URI dot
+
+26028
+03:03:10,150 --> 03:03:19,750
+replace IPFS, colon slash slash
+with HTTPS ipfs.io/ipfs. And
+
+26029
+03:03:19,930 --> 03:03:24,670
+now, and that's how we get this
+URL right here. And so we can
+
+26030
+03:03:24,670 --> 03:03:32,110
+finally do set image URI, to
+that image URL. And now we have
+
+26031
+03:03:32,140 --> 03:03:35,230
+our image URI is going to be
+that image right here. Now, is
+
+26032
+03:03:35,230 --> 03:03:38,560
+this a little bit wonky? Yes.
+Are there better ways that we
+
+26033
+03:03:38,560 --> 03:03:40,870
+can do this? Yes, there's
+actually a number of better ways
+
+26034
+03:03:40,870 --> 03:03:43,420
+that we could do some of this,
+we could actually, since we're
+
+26035
+03:03:43,420 --> 03:03:47,830
+using Morales, we could render
+image on our server and just
+
+26036
+03:03:47,830 --> 03:03:51,220
+call our server, what else could
+we do well, or test nets and
+
+26037
+03:03:51,220 --> 03:03:53,650
+maintenance routes actually
+comes with a bunch of hooks like
+
+26038
+03:03:53,650 --> 03:03:58,060
+us NFT balance that will show us
+an F TS show us how many NF T's
+
+26039
+03:03:58,060 --> 03:04:02,170
+shows all this information about
+NF T's but it only works on test
+
+26040
+03:04:02,170 --> 03:04:05,290
+nets and main net, we'd have the
+world adopt IPFS. So we don't
+
+26041
+03:04:05,290 --> 03:04:08,230
+have to do this wrapping.
+Unfortunately, it doesn't yet so
+
+26042
+03:04:08,260 --> 03:04:11,050
+such as life. But now that we're
+setting the image, alright, we
+
+26043
+03:04:11,050 --> 03:04:14,290
+have this image URI, we have
+what this actually looks like,
+
+26044
+03:04:14,290 --> 03:04:17,530
+we're going to have this and if
+we click on this, we use this in
+
+26045
+03:04:17,530 --> 03:04:21,520
+our browser, it returns this
+dog. So now we have the image
+
+26046
+03:04:21,520 --> 03:04:25,810
+URI in our website, we can
+finally use it to show what this
+
+26047
+03:04:25,810 --> 03:04:29,320
+is going to look like. So
+finally, we can create a return
+
+26048
+03:04:29,320 --> 03:04:33,190
+in here. So down below, we'll do
+return to a little div. And then
+
+26049
+03:04:33,190 --> 03:04:36,130
+we'll do another div just
+because I want to. And we can do
+
+26050
+03:04:36,130 --> 03:04:39,760
+some JavaScript, we can say if
+if that image array exists,
+
+26051
+03:04:39,940 --> 03:04:43,330
+we'll do some stuff. Otherwise,
+we'll do some other stuff. So if
+
+26052
+03:04:43,330 --> 03:04:47,860
+it doesn't exist, maybe we'll do
+a div for now. div that just
+
+26053
+03:04:47,860 --> 03:04:52,660
+says loading dot the dot. And if
+it does exist, for now, we'll
+
+26054
+03:04:52,660 --> 03:04:57,400
+just say, just do a little div,
+close the div. And we'll just
+
+26055
+03:04:57,400 --> 03:05:01,090
+say found it. Now if we go back
+to our front end, let's see if
+
+26056
+03:05:01,090 --> 03:05:02,200
+we're good here.
+
+26057
+03:05:03,310 --> 03:05:07,090
+Uh huh. If I do a refresh, we
+see found it for both of these
+
+26058
+03:05:07,090 --> 03:05:12,040
+NF T's. Okay, cool. So how do we
+actually show these NF T's, we
+
+26059
+03:05:12,040 --> 03:05:15,460
+finally have the URL that we can
+use to show the NF T's. But we
+
+26060
+03:05:15,460 --> 03:05:18,820
+want to actually use them next.
+Jas actually comes with a
+
+26061
+03:05:18,820 --> 03:05:21,910
+component called the image
+component that we can use to
+
+26062
+03:05:21,940 --> 03:05:26,260
+render images really easily just
+by using a URI. Now, because
+
+26063
+03:05:26,260 --> 03:05:28,570
+we're going to use this image
+tag, and because it does some
+
+26064
+03:05:28,570 --> 03:05:31,540
+optimizations on the back end,
+that means that this website
+
+26065
+03:05:31,570 --> 03:05:36,100
+won't be able to be deployed to
+a static to a static site, like
+
+26066
+03:05:36,100 --> 03:05:40,030
+IPFS. Because now our website
+requires a server technically,
+
+26067
+03:05:40,240 --> 03:05:43,150
+requires a server just because
+we have Morales. So that might
+
+26068
+03:05:43,150 --> 03:05:46,000
+be another reason, we might not
+want to, since we're using this
+
+26069
+03:05:46,000 --> 03:05:49,510
+image tag, we can't deploy this
+statically to something like
+
+26070
+03:05:49,510 --> 03:05:54,010
+IPFS is we're going to up at the
+top, we're going to import image
+
+26071
+03:05:54,640 --> 03:05:59,440
+from next slash image. And we're
+gonna down here we're going to
+
+26072
+03:05:59,440 --> 03:06:04,570
+say, instead of founded, we're
+gonna go Image, we're gonna
+
+26073
+03:06:04,570 --> 03:06:08,950
+close it off here, too, we're
+gonna give a loader of just a
+
+26074
+03:06:08,950 --> 03:06:12,520
+blank function that just gives
+us the image URI. Don't worry
+
+26075
+03:06:12,520 --> 03:06:15,850
+too much about loader. For now,
+we're gonna say the source of
+
+26076
+03:06:15,850 --> 03:06:18,880
+the image is going to be the
+image URI. And then we'll give
+
+26077
+03:06:18,880 --> 03:06:23,530
+it a height of maybe 200. And
+then we'll give it a width of
+
+26078
+03:06:23,530 --> 03:06:27,100
+also maybe 200. And if we did
+this right, after we save, we
+
+26079
+03:06:27,100 --> 03:06:30,940
+should see the image on our UI.
+So we'll go back to our website,
+
+26080
+03:06:30,940 --> 03:06:35,080
+and oh, my goodness, we can see
+the dogs holy cow. This is
+
+26081
+03:06:35,080 --> 03:06:37,840
+getting really exciting. We can
+see the puppies, we can see the
+
+26082
+03:06:37,840 --> 03:06:40,660
+images, we're definitely doing
+something right here, which is
+
+26083
+03:06:40,660 --> 03:06:43,870
+really exciting. Now I know I
+said this before that this isn't
+
+26084
+03:06:43,900 --> 03:06:47,290
+a CSS. This isn't a formatting
+tutorial, because that's
+
+26085
+03:06:47,290 --> 03:06:50,440
+definitely not my expertise.
+However, let's make this look a
+
+26086
+03:06:50,440 --> 03:06:53,740
+little bit nicer. And we're
+going to use once again, the web
+
+26087
+03:06:53,740 --> 03:06:56,650
+three UI kit, because the web
+three UI kit has a whole bunch
+
+26088
+03:06:56,650 --> 03:06:59,650
+of tools that are really, really
+helpful for us to use. So if we
+
+26089
+03:06:59,650 --> 03:07:02,890
+go to the web three UI kit, we
+can go to that live storybook
+
+26090
+03:07:03,040 --> 03:07:07,660
+Another interactive bit, and we
+can scroll down to the section
+
+26091
+03:07:07,660 --> 03:07:10,450
+that has called card. Or we can
+make these little clickable
+
+26092
+03:07:10,450 --> 03:07:14,080
+cards and we can display some
+information about our nfts. So
+
+26093
+03:07:14,110 --> 03:07:20,320
+let's go ahead and at the top,
+we'll do import import card from
+
+26094
+03:07:20,740 --> 03:07:24,370
+web three UI kit. And now
+instead of just showing the
+
+26095
+03:07:24,370 --> 03:07:29,560
+image, we'll wrap the image in a
+card like this. We'll save that.
+
+26096
+03:07:29,860 --> 03:07:34,540
+Now back on our front end, give
+it a little refresh. Now we've
+
+26097
+03:07:34,540 --> 03:07:37,420
+got this kind of clickable
+section that looks a little bit
+
+26098
+03:07:37,420 --> 03:07:40,630
+nicer. We'll even label it. And
+we can even label it with a
+
+26099
+03:07:40,630 --> 03:07:43,420
+title and description. Now we
+can grab the title and the
+
+26100
+03:07:43,420 --> 03:07:48,100
+description from the token URI
+response. So up at the top,
+
+26101
+03:07:48,130 --> 03:07:51,250
+let's go ahead, let's grab the
+title and the description of the
+
+26102
+03:07:51,250 --> 03:07:56,170
+token UI as a state variable. So
+we'll say const, token name, set
+
+26103
+03:07:56,200 --> 03:08:02,110
+token name, equals use state,
+start off as blank, the const
+
+26104
+03:08:02,290 --> 03:08:09,070
+token description, that token
+description, equals use state.
+
+26105
+03:08:10,060 --> 03:08:14,410
+Start off as blank to download,
+we do this update UI bit, we'll
+
+26106
+03:08:14,410 --> 03:08:21,430
+call set token name. So we'll
+say name is token, your response
+
+26107
+03:08:21,460 --> 03:08:26,470
+dot name, we'll say set token
+description, which will be
+
+26108
+03:08:26,740 --> 03:08:30,880
+token, your response dot
+description. And then we'll use
+
+26109
+03:08:30,880 --> 03:08:33,970
+those descriptions and title in
+the cart. So we'll say title
+
+26110
+03:08:34,480 --> 03:08:43,360
+equals token name, description
+equals token description. Save
+
+26111
+03:08:43,360 --> 03:08:46,840
+that. We'll look at our front
+end here. Give it a little
+
+26112
+03:08:46,840 --> 03:08:50,200
+refresh. Oh, and now we have the
+name of the NFT. And its
+
+26113
+03:08:50,200 --> 03:08:52,870
+description on our front end.
+Okay, cool. Let's keep going.
+
+26114
+03:08:52,900 --> 03:08:55,840
+What else do we want on this?
+Well, we probably want who it's
+
+26115
+03:08:55,840 --> 03:08:59,860
+owned by. So we'll put a little
+div inside the card, say div,
+
+26116
+03:08:59,890 --> 03:09:02,500
+maybe we'll even put the token
+ID we'll do a little number.
+
+26117
+03:09:02,950 --> 03:09:03,970
+With the token ID.
+
+26118
+03:09:05,260 --> 03:09:08,050
+We'll do another little div, and
+then we'll make this italic.
+
+26119
+03:09:08,080 --> 03:09:13,000
+We'll say class name equals
+italic. And then text is going
+
+26120
+03:09:13,000 --> 03:09:17,590
+to be small. And we'll say owned
+by, and this is where we can get
+
+26121
+03:09:17,590 --> 03:09:20,650
+the seller that we're passing in
+as an input parameter. And then
+
+26122
+03:09:20,650 --> 03:09:23,710
+maybe underneath the image, we
+want to put the price. We'll do
+
+26123
+03:09:23,710 --> 03:09:27,610
+a little div here. And then
+we'll say price like this.
+
+26124
+03:09:27,640 --> 03:09:30,310
+However, we're probably don't
+want it in way we want it in
+
+26125
+03:09:30,310 --> 03:09:34,510
+human readable units. So we'll
+import ethers, we'll say import
+
+26126
+03:09:35,440 --> 03:09:40,390
+ethers from ethers. And then
+instead of just showing the
+
+26127
+03:09:40,390 --> 03:09:44,020
+price, we'll do a little, little
+JavaScript and here we'll do
+
+26128
+03:09:44,020 --> 03:09:50,770
+ethers dot utils dot format,
+units, price, price and ether.
+
+26129
+03:09:50,950 --> 03:09:53,740
+And then we'll do space eath.
+And then we'll make this be
+
+26130
+03:09:53,740 --> 03:09:59,530
+class name equals font bold, so
+we can read how much it's listed
+
+26131
+03:09:59,530 --> 03:10:03,490
+for on our marketplace. Let's go
+back a high we can now see, this
+
+26132
+03:10:03,490 --> 03:10:07,060
+is token ID number four. We can
+see who it's owned by we'd see
+
+26133
+03:10:07,060 --> 03:10:10,420
+the price of it and then more
+information about the dog. Yay.
+
+26134
+03:10:10,560 --> 03:10:13,350
+Now let's format all this stuff
+in here a little bit nicer. So
+
+26135
+03:10:13,350 --> 03:10:17,760
+let's wrap everything in a div
+in one more div. And that will
+
+26136
+03:10:17,760 --> 03:10:20,850
+say class name is going to be
+flex. And this is going to help
+
+26137
+03:10:20,850 --> 03:10:25,110
+format everything, we'll put
+everything in a column items and
+
+26138
+03:10:25,140 --> 03:10:28,980
+get to. And now if we look back
+there, kind of like in a column
+
+26139
+03:10:28,980 --> 03:10:33,930
+now, wrapping one more div, give
+them some padding, last name
+
+26140
+03:10:33,930 --> 03:10:36,930
+equals P to say a little bit
+padding has been added. Okay,
+
+26141
+03:10:36,930 --> 03:10:40,380
+nice. And then we'll go back to
+our index, and we'll add some
+
+26142
+03:10:40,380 --> 03:10:44,160
+formatting to our index here. So
+our main one, we're going to
+
+26143
+03:10:44,160 --> 03:10:48,060
+remove styles dot container,
+we're just gonna say container.
+
+26144
+03:10:48,840 --> 03:10:55,230
+MX auto, we're going to make an
+h1 in here, class name, equals,
+
+26145
+03:10:55,860 --> 03:11:07,170
+I form E X for font bold text to
+XML. This is we're just gonna
+
+26146
+03:11:07,170 --> 03:11:12,960
+say recently listed, then we're
+going to do another div. Class,
+
+26147
+03:11:13,260 --> 03:11:18,690
+name equals flex, flex wrap.
+We're going to end this div
+
+26148
+03:11:20,070 --> 03:11:23,280
+around our JavaScript here. And
+let's look at our UI. And let's
+
+26149
+03:11:23,280 --> 03:11:26,250
+see what that does. Okay, cool.
+Let's go back to our index.
+
+26150
+03:11:26,250 --> 03:11:28,500
+Let's remove all this stuff.
+Since now we're adding that to
+
+26151
+03:11:28,500 --> 03:11:34,200
+the card. Let's save. Now it's
+looking a lot better, we finally
+
+26152
+03:11:34,200 --> 03:11:37,710
+able to start listening our NF
+Ts and then have them show up on
+
+26153
+03:11:37,710 --> 03:11:41,040
+our marketplace like we see
+here. Fantastic. Okay, if we go
+
+26154
+03:11:41,040 --> 03:11:44,580
+to the readme homepage show
+recently listen to empties. Oh,
+
+26155
+03:11:44,580 --> 03:11:48,180
+my goodness, this is a check
+we're done here. Now, and I know
+
+26156
+03:11:48,180 --> 03:11:50,340
+what seemed like a lot of work,
+but a lot of it was setting up
+
+26157
+03:11:50,340 --> 03:11:53,700
+that morale server correctly.
+And because we have our own back
+
+26158
+03:11:53,700 --> 03:11:56,310
+end, now, we have some back end
+services that we needed to
+
+26159
+03:11:56,340 --> 03:11:58,800
+configure. But now that
+everything's set up, the rest of
+
+26160
+03:11:58,800 --> 03:12:02,280
+this is going to be easy St. Now
+we are only going to want this
+
+26161
+03:12:02,280 --> 03:12:05,610
+to show if we're connected to
+web three. Right? Now, if we
+
+26162
+03:12:05,610 --> 03:12:09,720
+click this, this still shows up.
+So we're going to have to update
+
+26163
+03:12:09,720 --> 03:12:14,130
+this a little bit. And in our
+index.js, we're now we're
+
+26164
+03:12:14,130 --> 03:12:18,570
+checking to see fetching.
+Listen, NF T's right before
+
+26165
+03:12:18,570 --> 03:12:22,290
+that, right? Before we do that
+we actually want to see is web
+
+26166
+03:12:22,290 --> 03:12:25,230
+three enabled. And this is going
+to be a little bit of nested
+
+26167
+03:12:25,230 --> 03:12:28,980
+tertiary operations. If web
+three is enabled, then we're
+
+26168
+03:12:28,980 --> 03:12:31,830
+going to do all this fetching,
+listed NF T's stuff here. We're
+
+26169
+03:12:31,830 --> 03:12:35,790
+gonna do everything in here. So
+if it's not enabled, let's do
+
+26170
+03:12:35,790 --> 03:12:41,880
+like a little div that says web
+three, currently not enabled.
+
+26171
+03:12:42,390 --> 03:12:45,120
+And of course, we're going to
+need to grab is web three
+
+26172
+03:12:45,120 --> 03:12:49,380
+enabled. So we're going to say,
+for the top we'll do const is
+
+26173
+03:12:49,380 --> 03:12:53,370
+what three enabled equals use
+oralis as we've been doing, and
+
+26174
+03:12:53,370 --> 03:12:56,550
+we're going to grab use Morales
+from react Morales, we'll save
+
+26175
+03:12:56,550 --> 03:12:59,880
+that go back to our front end,
+give it a little refresh. If
+
+26176
+03:12:59,880 --> 03:13:02,940
+we're connected, we'll see the
+marketplace. If we disconnect,
+
+26177
+03:13:02,970 --> 03:13:05,760
+we see web three currently not
+enabled, which is what we want.
+
+26178
+03:13:06,150 --> 03:13:10,740
+Perfect. So what is next in our
+readme. If you only NFT, you can
+
+26179
+03:13:10,770 --> 03:13:13,890
+update the listing. Let's first
+let's figure out if somebody
+
+26180
+03:13:13,890 --> 03:13:16,230
+actually is the owner of these
+entities. Let's make it really
+
+26181
+03:13:16,230 --> 03:13:19,740
+easy for the people on this
+website. Well, first we can get
+
+26182
+03:13:19,740 --> 03:13:23,040
+the person's Metamask by
+grabbing the account from us
+
+26183
+03:13:23,040 --> 03:13:27,180
+mouse, so we'll do a comma
+account. So then we can easily
+
+26184
+03:13:27,180 --> 03:13:34,320
+just do const is owned by user
+equals seller equals equals
+
+26185
+03:13:34,320 --> 03:13:38,130
+equals account. So the seller
+we're getting from the contract,
+
+26186
+03:13:38,340 --> 03:13:41,460
+the account we're getting from
+whoever's connected here, if the
+
+26187
+03:13:41,460 --> 03:13:45,210
+seller equals the account, there
+is no seller equals equals
+
+26188
+03:13:45,240 --> 03:13:50,160
+equals undefined. We'll just say
+they're owned by you. And now
+
+26189
+03:13:50,160 --> 03:13:53,700
+instead of saying owned by
+seller, we can say const,
+
+26190
+03:13:54,390 --> 03:13:59,850
+formatted seller address equals,
+and we'll do the ternary
+
+26191
+03:13:59,850 --> 03:14:04,050
+operator will say if it's on by
+you, then we'll just say you
+
+26192
+03:14:04,110 --> 03:14:08,070
+instead of seller. Otherwise,
+we'll say seller. Now we'll say
+
+26193
+03:14:08,070 --> 03:14:11,970
+owned by formatted seller
+address like this. So if we go
+
+26194
+03:14:11,970 --> 03:14:16,080
+back to our front end, we do a
+little refresh. depending on
+
+26195
+03:14:16,140 --> 03:14:19,230
+who's connected, you might see
+owned by blah, blah, blah. Now
+
+26196
+03:14:19,230 --> 03:14:22,980
+if I go to my Metamask, let me
+go ahead and switch account to
+
+26197
+03:14:22,980 --> 03:14:27,060
+account three, let's go ahead
+and connect our account three,
+
+26198
+03:14:27,240 --> 03:14:31,740
+we now see owned by you instead.
+Right, and we can even switch
+
+26199
+03:14:31,740 --> 03:14:35,160
+again, we'll switch accounts
+again, we'll switch to account
+
+26200
+03:14:35,160 --> 03:14:38,970
+one, we now see owned by blah,
+blah, blah, like so since when
+
+26201
+03:14:38,970 --> 03:14:41,400
+we switch back and forth, the
+diameters of this actually
+
+26202
+03:14:41,400 --> 03:14:44,760
+change which is really annoying.
+So maybe we want to go one step
+
+26203
+03:14:44,760 --> 03:14:47,790
+further. And we want to truncate
+this seller address make it a
+
+26204
+03:14:47,790 --> 03:14:51,180
+little bit smaller. So we want
+to make a seller a little bit
+
+26205
+03:14:51,180 --> 03:14:54,570
+smaller. So let's create a new
+function. And we can create this
+
+26206
+03:14:54,600 --> 03:14:57,840
+outside of the export default
+function because this is going
+
+26207
+03:14:57,840 --> 03:15:02,010
+to be a function that doesn't
+depend on anything inside our
+
+26208
+03:15:02,010 --> 03:15:04,260
+app. It's just going to be kind
+of a raw function. So we're
+
+26209
+03:15:04,260 --> 03:15:08,460
+going to create we'll call it
+const truncate string, and this
+
+26210
+03:15:08,460 --> 03:15:13,440
+is going to be a function that
+takes a full string, and a
+
+26211
+03:15:13,440 --> 03:15:17,160
+string length as parameters. And
+we're just going to pass the
+
+26212
+03:15:17,160 --> 03:15:20,220
+seller address and how long we
+want to make this string. So
+
+26213
+03:15:20,220 --> 03:15:22,050
+this is going to be an arrow
+function we're going to do here,
+
+26214
+03:15:22,590 --> 03:15:27,240
+and we're gonna say, if all
+string dot length is less than
+
+26215
+03:15:27,240 --> 03:15:32,880
+or equal to str Lang, return
+full str. Otherwise, we'll say
+
+26216
+03:15:32,880 --> 03:15:37,920
+concept ra torx equals three
+little dots. And we'll say,
+
+26217
+03:15:38,070 --> 03:15:46,290
+Let's separate Tor length equals
+Sep. Ra Tor dot length. To make
+
+26218
+03:15:46,290 --> 03:15:52,410
+con separator length, we'll say
+const chars to show is going to
+
+26219
+03:15:52,410 --> 03:15:58,560
+be the the string length minus
+the separator length, we'll say
+
+26220
+03:15:58,560 --> 03:16:03,390
+const. Front chars or front
+characters is going to equal
+
+26221
+03:16:03,840 --> 03:16:10,410
+math dot ceiling chars to show
+divided by two const back chars
+
+26222
+03:16:10,500 --> 03:16:15,420
+is going to equal math dot
+floor, chars to show divided by
+
+26223
+03:16:15,420 --> 03:16:18,450
+two. And if you don't understand
+this math here, don't worry
+
+26224
+03:16:18,450 --> 03:16:21,210
+about it. And then we're gonna
+say return full string
+
+26225
+03:16:22,680 --> 03:16:31,500
+substring of zero to front chars
+plus the SEP IRA tour plus full
+
+26226
+03:16:31,500 --> 03:16:38,280
+STR dot substring. of full STR
+dot length, minus back chars.
+
+26227
+03:16:38,400 --> 03:16:41,880
+And now what we can do is we can
+grab this truncate STR this
+
+26228
+03:16:41,910 --> 03:16:45,630
+truncate string and for is
+formatted seller will say if
+
+26229
+03:16:45,630 --> 03:16:49,680
+it's you will still do you but
+otherwise we'll do truncate
+
+26230
+03:16:49,680 --> 03:16:54,150
+string of seller or blank if
+there's no seller, and we'll
+
+26231
+03:16:54,150 --> 03:16:57,570
+have it be size 15. And now if
+we save that, go back to our
+
+26232
+03:16:57,570 --> 03:17:00,750
+front end, if it's owned by you,
+it's still gonna say on by you.
+
+26233
+03:17:01,170 --> 03:17:05,310
+But if we switch accounts, and
+now says owned by, you know,
+
+26234
+03:17:05,310 --> 03:17:07,950
+blah, blah, blah, dot the dot
+blah, blah, blah with a
+
+26235
+03:17:07,950 --> 03:17:10,860
+truncated address. And then
+these sizes don't actually
+
+26236
+03:17:10,860 --> 03:17:13,500
+change, which is a lot nicer
+than them getting bigger and
+
+26237
+03:17:13,500 --> 03:17:16,980
+smaller. So awesome. So now we
+have this formatted even better.
+
+26238
+03:17:17,400 --> 03:17:23,400
+Okay, now what do we want to do?
+Well, now that we know who owns
+
+26239
+03:17:23,400 --> 03:17:27,270
+the NFT, NF T, and it's
+formatted pretty nicely, we need
+
+26240
+03:17:27,270 --> 03:17:30,420
+to figure out a way to update
+the listing. So what we want to
+
+26241
+03:17:30,420 --> 03:17:34,440
+do is, once again, if it's owned
+by us, and we can switch back to
+
+26242
+03:17:34,440 --> 03:17:37,230
+the account, it's owned by if
+it's owned by us, when we click
+
+26243
+03:17:37,230 --> 03:17:40,140
+on it, we want to be able to
+update the listing on the
+
+26244
+03:17:40,140 --> 03:17:43,770
+marketplace. So to do this,
+we're going to create a new
+
+26245
+03:17:43,770 --> 03:17:48,330
+component called Update listing
+ngModel. So we're gonna create a
+
+26246
+03:17:48,330 --> 03:17:56,010
+new component, new file, update,
+listing ngmodel.js. A ngModel is
+
+26247
+03:17:56,010 --> 03:17:58,260
+something that like pops up. So
+for example,
+
+26248
+03:18:00,000 --> 03:18:03,030
+this little pop up here is known
+as a modal. And this is what we
+
+26249
+03:18:03,030 --> 03:18:06,090
+want to build. If it's owned by
+us, when we click this, we want
+
+26250
+03:18:06,090 --> 03:18:09,840
+it to pop up this modal thing.
+So to get started, we'll do the
+
+26251
+03:18:09,840 --> 03:18:11,970
+same thing we've been doing for
+all of our components here,
+
+26252
+03:18:12,180 --> 03:18:18,060
+we'll do export default,
+function, update, listing
+
+26253
+03:18:18,060 --> 03:18:22,140
+ngModel, like so. And we're
+probably going to want to pass
+
+26254
+03:18:22,140 --> 03:18:25,530
+it these parameters from the
+entity box, probably gonna want
+
+26255
+03:18:25,530 --> 03:18:29,820
+to pass these parameters. So the
+ngModel knows what function it
+
+26256
+03:18:29,820 --> 03:18:32,970
+needs to call in our NFT
+marketplace. The way we're going
+
+26257
+03:18:32,970 --> 03:18:35,700
+to update listing is we're going
+to call this update listing
+
+26258
+03:18:35,700 --> 03:18:38,670
+function where we need the
+address token ID and then some
+
+26259
+03:18:38,670 --> 03:18:41,880
+new price. So we're going to at
+least need those. So we're going
+
+26260
+03:18:41,880 --> 03:18:46,110
+to need the NFT address, and at
+least the token ID to make this
+
+26261
+03:18:46,110 --> 03:18:48,450
+little pop up, we're not going
+to code it ourselves, we're
+
+26262
+03:18:48,450 --> 03:18:51,840
+going to once again, use the web
+three UI kit, web three UI Kit
+
+26263
+03:18:51,840 --> 03:18:55,980
+has this nice pop up section,
+where it has some code to work
+
+26264
+03:18:55,980 --> 03:18:59,400
+with a modal. So we're going to
+import that will do import
+
+26265
+03:18:59,730 --> 03:19:04,290
+ngModel from web three UI kit,
+like so here's what it looks
+
+26266
+03:19:04,290 --> 03:19:08,490
+like we have modal and then we
+have all this stuff on working
+
+26267
+03:19:08,490 --> 03:19:12,420
+with the modal. So we'll do our
+return, do a little modal, like
+
+26268
+03:19:12,420 --> 03:19:15,960
+this. One of the key things in a
+ngModel is whether or not it
+
+26269
+03:19:15,960 --> 03:19:19,950
+should be visible. So it has an
+is visible tag, which we're
+
+26270
+03:19:19,950 --> 03:19:22,020
+actually gonna have to grab,
+we're actually gonna have to
+
+26271
+03:19:22,020 --> 03:19:25,650
+grab from the empty box. So
+we're going to pass a little is
+
+26272
+03:19:25,650 --> 03:19:30,360
+visible here as well, in our NFT
+box, we need to tell our ngModel
+
+26273
+03:19:30,360 --> 03:19:33,000
+when it's visible. So we'll
+we'll make that code in a little
+
+26274
+03:19:33,000 --> 03:19:35,670
+bit. Right now, it'll just be
+blank. And inside of our
+
+26275
+03:19:35,670 --> 03:19:38,820
+ngModel, we're going to want to
+give an input field for how to
+
+26276
+03:19:38,820 --> 03:19:41,730
+update it. So I know we've done
+some regular inputs before,
+
+26277
+03:19:41,910 --> 03:19:44,130
+since we've been working with
+web through UI kit, let's just
+
+26278
+03:19:44,130 --> 03:19:47,520
+use the input that it has as
+well. So we'll do a little comma
+
+26279
+03:19:47,910 --> 03:19:51,180
+input here. And inside of the
+ngModel we'll create a new
+
+26280
+03:19:51,180 --> 03:19:55,170
+input. So on our input field,
+we'll give this a label which is
+
+26281
+03:19:55,170 --> 03:19:59,610
+going to be update listing price
+in L one currency. And we'll
+
+26282
+03:19:59,610 --> 03:20:03,180
+just do eath. For now we'll just
+hard coded as eath name will be
+
+26283
+03:20:03,480 --> 03:20:10,560
+new listing price, and type is
+going to equal a number we'll do
+
+26284
+03:20:10,560 --> 03:20:13,230
+Little backslash here, oops,
+we'll do a little backslash
+
+26285
+03:20:13,230 --> 03:20:16,770
+instead of like that. So cool.
+So when this modal pops up, it's
+
+26286
+03:20:16,770 --> 03:20:19,650
+gonna have this input in here.
+And we can actually test to see
+
+26287
+03:20:19,680 --> 03:20:24,330
+if this is working. We can
+import this into our NFT box,
+
+26288
+03:20:24,360 --> 03:20:30,060
+we'll do import, update, listing
+ngModel. From that slash,
+
+26289
+03:20:30,090 --> 03:20:32,730
+update, listing ngModel oops,
+and sorry, this doesn't need
+
+26290
+03:20:32,730 --> 03:20:36,720
+parentheses, and at the top of
+our return here, right before
+
+26291
+03:20:36,720 --> 03:20:39,390
+our card will add it in. So
+we'll just add another div
+
+26292
+03:20:39,390 --> 03:20:43,350
+though. So that these two can be
+in the same react. But we'll add
+
+26293
+03:20:43,350 --> 03:20:47,700
+another div, we'll say Update
+listing ngModel, like so with a
+
+26294
+03:20:47,700 --> 03:20:51,240
+little backslash here. And right
+now we just have to pass is
+
+26295
+03:20:51,240 --> 03:20:55,170
+visible. And then for now, we're
+just going to say true. So now
+
+26296
+03:20:55,170 --> 03:20:58,620
+with this listing ngModel on our
+front end, we do a little
+
+26297
+03:20:58,620 --> 03:21:01,500
+refresh. And we get this little
+box like this update listing
+
+26298
+03:21:01,500 --> 03:21:04,560
+price and one currency. And we
+have to close two of them.
+
+26299
+03:21:04,560 --> 03:21:08,280
+Because technically we right now
+both modalities are true, right.
+
+26300
+03:21:08,280 --> 03:21:11,370
+So if we do a refresh, we get
+this little input pop up this
+
+26301
+03:21:11,370 --> 03:21:14,730
+little modal and we close it
+twice, because we have two NF
+
+26302
+03:21:14,730 --> 03:21:17,280
+T's if you have a ton of NF T's
+here, you will have to close a
+
+26303
+03:21:17,280 --> 03:21:20,940
+ton of those. So we change it to
+false, we go back to the front
+
+26304
+03:21:20,940 --> 03:21:25,170
+end, we do a little refresh, and
+boom, now it's false. So true,
+
+26305
+03:21:25,530 --> 03:21:30,840
+save, run, and it's there.
+Gross, delete, delete, false,
+
+26306
+03:21:31,140 --> 03:21:34,770
+save front end, it's not there
+anymore. Okay, cool. So we're
+
+26307
+03:21:34,770 --> 03:21:38,040
+gonna have to tell this ngModel
+only to pop up when somebody
+
+26308
+03:21:38,040 --> 03:21:41,730
+clicks this and have tea that
+they own. So to actually toggle
+
+26309
+03:21:41,730 --> 03:21:44,580
+this and actually make this
+work, we're going to update our
+
+26310
+03:21:44,580 --> 03:21:48,540
+card. So whenever we click our
+card, we're going to create a
+
+26311
+03:21:48,540 --> 03:21:51,900
+function called handle card
+click that handle card click is
+
+26312
+03:21:51,900 --> 03:21:54,870
+going to update a variable for
+whether or not we should show
+
+26313
+03:21:54,870 --> 03:21:59,040
+this ngModel. So we're going to
+do is we're gonna say on click
+
+26314
+03:21:59,400 --> 03:22:03,270
+of the card, aka, once we click
+our dog, we're going to call
+
+26315
+03:22:03,270 --> 03:22:07,590
+some function. So we're gonna
+say on click, equals handle
+
+26316
+03:22:07,590 --> 03:22:11,340
+card, click, animal card, click,
+and we're going to make this a
+
+26317
+03:22:11,340 --> 03:22:15,870
+function, we're gonna say const,
+handle card click equals a
+
+26318
+03:22:15,870 --> 03:22:19,260
+function, we'll use some Arrow
+stuff here. And then we'll just
+
+26319
+03:22:19,260 --> 03:22:25,440
+say, if it's is owned by user,
+if it's on by user, we'll show
+
+26320
+03:22:25,440 --> 03:22:30,510
+the ngModel. Else, we will call
+the by item function, since we
+
+26321
+03:22:30,510 --> 03:22:35,220
+want our whole UI to rerender.
+Once we change, once we change
+
+26322
+03:22:35,220 --> 03:22:37,680
+the variable to show the
+ngModel, we're going to do this
+
+26323
+03:22:37,680 --> 03:22:42,750
+as a US state. So we'll say
+const, show ngModel. Come a set,
+
+26324
+03:22:43,020 --> 03:22:47,790
+show ngModel equals use state.
+And then we're going to start it
+
+26325
+03:22:47,790 --> 03:22:51,150
+off being defaulted to false. So
+by default, we are not going to
+
+26326
+03:22:51,150 --> 03:22:53,850
+show them on down which is what
+we want. But if it's owned by
+
+26327
+03:22:53,850 --> 03:22:59,460
+the user, we're gonna say Set
+Show ngModel to be true. And
+
+26328
+03:22:59,460 --> 03:23:03,990
+then else right now we'll just
+put console dot log, let's buy
+
+26329
+03:23:04,200 --> 03:23:06,690
+will actually update this to
+bind the item a little bit
+
+26330
+03:23:06,690 --> 03:23:10,260
+later. So now instead of having
+is visible be false, we'll have
+
+26331
+03:23:10,290 --> 03:23:13,380
+is visible equal to show
+ngModel. Or show ngModel.
+
+26332
+03:23:13,380 --> 03:23:16,950
+Variable. Okay, great. So now if
+we save that, we go back to our
+
+26333
+03:23:16,950 --> 03:23:21,090
+UI, we right click, we hit
+Inspect, if we own it, and we
+
+26334
+03:23:21,090 --> 03:23:24,090
+click it, the ngModel will pop
+up, and we can click it out,
+
+26335
+03:23:24,120 --> 03:23:28,170
+click another one, but that will
+pop up if we don't own it. So if
+
+26336
+03:23:28,170 --> 03:23:32,370
+we switch accounts, Connect will
+switch. We click it, nothing
+
+26337
+03:23:32,370 --> 03:23:36,240
+happens. And if we go to
+inspect, we go to the console,
+
+26338
+03:23:36,630 --> 03:23:40,140
+we click it, we should see let's
+buy pop up, which is what we do
+
+26339
+03:23:40,140 --> 03:23:44,040
+see, we'll do a little refresh
+here. Click we see let's buy pop
+
+26340
+03:23:44,040 --> 03:23:48,000
+up, click again, let's buy click
+let's pilots pilots, why? Great,
+
+26341
+03:23:48,090 --> 03:23:51,270
+cool. So now we have a word for
+that ngModel. To actually show
+
+26342
+03:23:51,270 --> 03:23:54,630
+up correctly, let's switch back
+to the person who actually owns
+
+26343
+03:23:54,630 --> 03:23:58,740
+this NFT we click it, we want to
+be able to when we hit OK, or
+
+26344
+03:23:58,740 --> 03:24:02,220
+submit, we want to send a
+transaction to update the price
+
+26345
+03:24:02,280 --> 03:24:05,580
+of our NFT here, so what we can
+do is in our input will have a
+
+26346
+03:24:05,580 --> 03:24:09,120
+label called on change equals
+and this is the function that
+
+26347
+03:24:09,120 --> 03:24:12,300
+will call whenever this updates.
+So we're gonna say on change
+
+26348
+03:24:12,540 --> 03:24:17,100
+event is going to be a function.
+And we're going to create a
+
+26349
+03:24:17,100 --> 03:24:22,530
+function called set price to
+update listing listing with
+
+26350
+03:24:22,590 --> 03:24:27,840
+event dot target dot value. So
+we want to keep track of
+
+26351
+03:24:27,840 --> 03:24:30,180
+whatever we've put in here. So
+when we call the function to
+
+26352
+03:24:30,180 --> 03:24:32,850
+update the price, it'll just
+already automatically have it.
+
+26353
+03:24:32,970 --> 03:24:36,120
+So we'll create this function
+and event dot target dot value
+
+26354
+03:24:36,150 --> 03:24:39,600
+is going to be whatever's in
+this input box here. So we'll
+
+26355
+03:24:39,600 --> 03:24:43,950
+create this set price to update
+listing with will have this be a
+
+26356
+03:24:43,950 --> 03:24:46,650
+use date because we are going to
+want to change the UI based off
+
+26357
+03:24:46,650 --> 03:24:52,920
+this so we'll say const price to
+up date listing with comma set
+
+26358
+03:24:52,920 --> 03:24:58,470
+price to update listing with
+equals use state and then we'll
+
+26359
+03:24:58,470 --> 03:25:03,270
+have this be zero to start or
+blank. And so now, whatever is
+
+26360
+03:25:03,270 --> 03:25:06,810
+in here is going to get updated
+with this. So now I can do like
+
+26361
+03:25:06,810 --> 03:25:11,400
+our console dot log price update
+listing with Get back to the
+
+26362
+03:25:11,400 --> 03:25:16,410
+front end, oops, we need to
+import use state import, use
+
+26363
+03:25:16,410 --> 03:25:21,060
+state from react. Go back to the
+front end, we click this, we
+
+26364
+03:25:21,060 --> 03:25:22,440
+right click Inspect.
+
+26365
+03:25:23,760 --> 03:25:27,990
+By type one, we can see 114, we
+see 14. So let's remove the
+
+26366
+03:25:27,990 --> 03:25:31,410
+console dot log now. Now what we
+can do in here is we can create
+
+26367
+03:25:31,410 --> 03:25:34,290
+field called on okay, this is
+going to be the function that we
+
+26368
+03:25:34,290 --> 03:25:37,590
+call when we hit this, okay
+here, so on. Okay, it's going to
+
+26369
+03:25:37,590 --> 03:25:40,260
+be equal to a function, we're
+going to use a little arrow
+
+26370
+03:25:40,260 --> 03:25:43,830
+notation, and we're going to
+call that update listing
+
+26371
+03:25:44,250 --> 03:25:47,460
+function on the blockchain,
+we're going to need to grab that
+
+26372
+03:25:47,460 --> 03:25:50,640
+function so we can use it. So
+once again, to use that
+
+26373
+03:25:50,640 --> 03:25:54,990
+function, we're going to import
+use web three contract from
+
+26374
+03:25:55,050 --> 03:26:00,060
+react mirallas. And as a new
+hook, we'll say const run
+
+26375
+03:26:00,060 --> 03:26:06,510
+contract function called Update
+listing, equals use web three
+
+26376
+03:26:06,570 --> 03:26:09,780
+contract. And this is going to
+be a function that we're going
+
+26377
+03:26:09,780 --> 03:26:14,880
+to call on our NFT marketplace.
+So ABI is going to be the NFT
+
+26378
+03:26:15,270 --> 03:26:20,730
+marketplace API, which we can
+get by doing an import, similar
+
+26379
+03:26:20,730 --> 03:26:24,600
+to what we did over here. And we
+actually just copy paste from
+
+26380
+03:26:24,600 --> 03:26:30,840
+our NFT box. So we'll do import
+NFT marketplace API from dot dot
+
+26381
+03:26:30,840 --> 03:26:33,990
+constant send it to marketplace
+that JSON, we're gonna need the
+
+26382
+03:26:33,990 --> 03:26:38,430
+contract address, which is going
+to be an input parameter to our
+
+26383
+03:26:38,520 --> 03:26:43,050
+update listing ngModel. So we
+can even do a comma market place
+
+26384
+03:26:43,290 --> 03:26:48,270
+address, copy this place that
+here, that means in our NFT box,
+
+26385
+03:26:48,570 --> 03:26:51,330
+pretty soon, we're going to have
+to pass all these variables to
+
+26386
+03:26:51,330 --> 03:26:54,090
+it, but we'll save that in just
+a second. So NFT marketplace
+
+26387
+03:26:54,090 --> 03:26:57,540
+address marketplace address
+function name, is going to be
+
+26388
+03:26:57,540 --> 03:27:02,370
+what it's called Update, listing
+in our smart contract, and then
+
+26389
+03:27:02,370 --> 03:27:06,930
+the params. So if we go to this,
+we have update listing takes the
+
+26390
+03:27:06,930 --> 03:27:11,460
+NFT address token ID and new
+price do NFT address, which will
+
+26391
+03:27:11,460 --> 03:27:16,290
+be NFT address, we'll say token
+ID is going to be token ID and
+
+26392
+03:27:16,290 --> 03:27:20,040
+the new price your price will
+get from price to update listing
+
+26393
+03:27:20,040 --> 03:27:25,230
+with but will convert it from
+human readable to ethers. So
+
+26394
+03:27:25,230 --> 03:27:33,180
+we'll import ethers from ethers.
+And the new price will be ethers
+
+26395
+03:27:33,240 --> 03:27:39,870
+dot utils dot parse ethers or
+ether price to update listing
+
+26396
+03:27:39,870 --> 03:27:44,340
+with or just in case it's blank,
+we'll just say or zero. So we
+
+26397
+03:27:44,340 --> 03:27:48,330
+have the NFT address the token
+ID marketplace address in our
+
+26398
+03:27:48,330 --> 03:27:51,030
+NFT box, we're gonna have to
+pass those parameters in here.
+
+26399
+03:27:51,210 --> 03:27:54,870
+So we have is visible, we're
+also going to have token ID,
+
+26400
+03:27:54,900 --> 03:27:59,730
+which is going to equal token
+ID, marketplace address is going
+
+26401
+03:27:59,730 --> 03:28:05,550
+to equal the marketplace
+address. And the NFT address is
+
+26402
+03:28:05,550 --> 03:28:10,260
+going to equal the NFT address.
+And as we code and test this
+
+26403
+03:28:10,260 --> 03:28:12,330
+something that's going to be
+really annoying, because it's
+
+26404
+03:28:12,330 --> 03:28:15,480
+really annoying for me right now
+let's refresh our website. And
+
+26405
+03:28:15,480 --> 03:28:18,450
+if we click it, this thing pops
+up. But when I hit X, and I
+
+26406
+03:28:18,450 --> 03:28:22,170
+click this, again, nothing shows
+up. That's because technically
+
+26407
+03:28:22,200 --> 03:28:25,110
+show ngModel is still true right
+now, even though we've exited
+
+26408
+03:28:25,110 --> 03:28:30,030
+out. So what we want to do in
+the NFT box is in our update
+
+26409
+03:28:30,030 --> 03:28:33,810
+listing ngModel we're also going
+to pass it in on close, and
+
+26410
+03:28:33,810 --> 03:28:37,320
+we're going to pass it a hide
+ngModel variable that we're
+
+26411
+03:28:37,320 --> 03:28:41,670
+going to create, and right under
+Show ngModel Set Show ngModel
+
+26412
+03:28:41,850 --> 03:28:46,290
+we're going to create const Eid
+ngModel. And this is just going
+
+26413
+03:28:46,290 --> 03:28:51,360
+to be a function, that's just
+going to say set, show modal. to
+
+26414
+03:28:51,360 --> 03:28:56,550
+false, we're going to pass this
+function to our update modal
+
+26415
+03:28:56,550 --> 03:29:01,230
+listing. So we're going to do
+comma on Close. And in our modal
+
+26416
+03:29:01,230 --> 03:29:07,800
+here, we're going to say, on
+Close. On, cancel, we're going
+
+26417
+03:29:07,800 --> 03:29:12,840
+to do, we're going to call that
+on close function, or on Close
+
+26418
+03:29:13,350 --> 03:29:17,190
+button pressed, we're also going
+to call that on close function.
+
+26419
+03:29:17,430 --> 03:29:22,470
+Now if we refresh our website,
+click this modal pops up, we
+
+26420
+03:29:22,470 --> 03:29:25,890
+click X, click it again, it'll
+pop back up, because now we're
+
+26421
+03:29:25,890 --> 03:29:29,070
+properly setting it to false and
+then resetting it to true. Now
+
+26422
+03:29:29,100 --> 03:29:32,640
+to actually send this update
+listing function, we're going to
+
+26423
+03:29:32,640 --> 03:29:36,510
+pass this another thing, another
+variable, we're going to pass it
+
+26424
+03:29:37,140 --> 03:29:40,710
+on Okay, which is going to be a
+function as well. It's just
+
+26425
+03:29:40,710 --> 03:29:44,370
+going to call update listing
+that we just created. Now, it's
+
+26426
+03:29:44,370 --> 03:29:48,840
+always a good idea to add an On
+error. We'd say on error, take
+
+26427
+03:29:48,840 --> 03:29:52,650
+that error as a function and
+console dot log.
+
+26428
+03:29:54,090 --> 03:29:58,620
+The error and this needs to be
+in squiggly brackets like that,
+
+26429
+03:29:58,920 --> 03:30:04,080
+but contract address is wrong.
+So we'll make this contract, con
+
+26430
+03:30:04,860 --> 03:30:11,490
+tract address and spell that
+correctly. Spelled correctly.
+
+26431
+03:30:11,550 --> 03:30:14,310
+Now let's go back to the UI,
+we'll give it a little refresh.
+
+26432
+03:30:14,400 --> 03:30:19,530
+Click, this will add one. And we
+see Metamask pop up. So this is
+
+26433
+03:30:19,530 --> 03:30:22,170
+working out perfectly. Now I'm
+going to cancel it, and our apps
+
+26434
+03:30:22,170 --> 03:30:24,600
+gonna freak out and stuff. But
+that's okay, we are doing
+
+26435
+03:30:24,630 --> 03:30:28,080
+fantastically okay app popped up
+like that, which is good. We
+
+26436
+03:30:28,080 --> 03:30:30,900
+have this little error handling,
+which I like to add for all of
+
+26437
+03:30:30,900 --> 03:30:35,040
+these run contract functions.
+Let's also do an on success. So
+
+26438
+03:30:35,070 --> 03:30:37,950
+let's say when this does go
+through successfully, we'll call
+
+26439
+03:30:37,950 --> 03:30:43,020
+a function called handle update,
+listing success. And this will
+
+26440
+03:30:43,020 --> 03:30:45,450
+be a function that we'd call
+when this goes through
+
+26441
+03:30:45,450 --> 03:30:47,970
+correctly. So at the top, let's
+make this new function, we'll
+
+26442
+03:30:47,970 --> 03:30:51,450
+say const. Handle update,
+listening success is going to be
+
+26443
+03:30:51,450 --> 03:30:55,680
+a new function using the arrow
+syntax here. And we'll have this
+
+26444
+03:30:55,710 --> 03:31:00,570
+setup a new notification for a
+web application. So for us to do
+
+26445
+03:31:00,600 --> 03:31:03,780
+notifications, we're going to
+use web three UI Kits use
+
+26446
+03:31:03,780 --> 03:31:06,600
+notification, this is going to
+be that same notification
+
+26447
+03:31:06,600 --> 03:31:10,050
+service that we used in our last
+one. So up at the top here,
+
+26448
+03:31:10,320 --> 03:31:14,340
+we'll import it, use
+notification. And then we'll
+
+26449
+03:31:14,340 --> 03:31:18,660
+say, right in our component,
+we'll say const, dispatch equals
+
+26450
+03:31:18,660 --> 03:31:23,010
+use notification. And since
+we're using notifications back
+
+26451
+03:31:23,010 --> 03:31:27,210
+on our app.js, we have to import
+it in here. So we'll do import
+
+26452
+03:31:27,780 --> 03:31:33,330
+notification provider from web
+three UI kit. And inside of our
+
+26453
+03:31:33,330 --> 03:31:37,080
+Morales provider, we'll add the
+notification provider around our
+
+26454
+03:31:37,080 --> 03:31:40,290
+header and our component, so
+that we have context for this.
+
+26455
+03:31:44,670 --> 03:31:49,200
+Now in our handle update listing
+success, inside this function
+
+26456
+03:31:49,350 --> 03:31:54,420
+will say dispatch, say type is
+going to be success. message
+
+26457
+03:31:54,420 --> 03:32:01,950
+will be listing updated, title
+will be listing updated, please
+
+26458
+03:32:01,950 --> 03:32:10,500
+refresh, please refresh and move
+blocks. And then position. Top
+
+26459
+03:32:10,530 --> 03:32:17,400
+right. And then we'll do on
+clothes, and on clothes. And
+
+26460
+03:32:17,400 --> 03:32:23,430
+we'll say set price to update
+listing with back to zero. I
+
+26461
+03:32:23,430 --> 03:32:25,800
+also I'm editing this a little
+bit in the future. And I
+
+26462
+03:32:25,800 --> 03:32:29,790
+realized that I actually forgot
+to add the TX to a lot of these
+
+26463
+03:32:29,970 --> 03:32:33,810
+handle functions. So on these,
+whenever we call one of these
+
+26464
+03:32:33,810 --> 03:32:36,450
+run contract functions, like
+we've been saying they have this
+
+26465
+03:32:36,450 --> 03:32:40,980
+on error in this onsuccess. Now
+this onsuccess automatically
+
+26466
+03:32:40,980 --> 03:32:45,840
+passes the result of the call to
+whatever callback function is
+
+26467
+03:32:45,840 --> 03:32:50,490
+there. So for example, up the
+listing returns a transaction,
+
+26468
+03:32:50,550 --> 03:32:54,210
+and we'll pass that transaction
+to whatever you add to the
+
+26469
+03:32:54,210 --> 03:32:58,560
+onsuccess. So now in here, you
+can actually have it have a
+
+26470
+03:32:58,560 --> 03:33:00,780
+transaction as an input
+parameter. And this would be the
+
+26471
+03:33:00,780 --> 03:33:03,330
+transaction that's going to go
+on the blockchain to you know,
+
+26472
+03:33:03,330 --> 03:33:07,530
+update the price. So we actually
+want to change it from a regular
+
+26473
+03:33:07,650 --> 03:33:11,490
+function to an async function.
+So we can actually do await TX
+
+26474
+03:33:11,490 --> 03:33:14,910
+dot Wait, one, because we don't
+want to say, hey, success, you
+
+26475
+03:33:14,910 --> 03:33:17,520
+know, listing has been updated
+before the transaction actually
+
+26476
+03:33:17,520 --> 03:33:19,950
+goes through. So we want the
+transaction to go through first.
+
+26477
+03:33:20,250 --> 03:33:23,580
+And then we want to pop the
+dispatch up saying, hey, it's
+
+26478
+03:33:23,580 --> 03:33:26,910
+gone through so and then
+additionally, when we actually
+
+26479
+03:33:26,910 --> 03:33:31,380
+call these modells on the on,
+okay, on the onsuccess, we pass
+
+26480
+03:33:31,380 --> 03:33:34,620
+them in just by referencing the
+name of the function. So we
+
+26481
+03:33:34,620 --> 03:33:40,380
+don't do this arrow syntax,
+anymore like this, we just say,
+
+26482
+03:33:40,380 --> 03:33:44,070
+hey, the onsuccess is going to
+be this, go ahead and pass your
+
+26483
+03:33:44,070 --> 03:33:48,210
+results to it. So that's how we
+actually call it down here. If
+
+26484
+03:33:48,210 --> 03:33:50,820
+you look at the GitHub repo
+associated with this, you go to
+
+26485
+03:33:50,820 --> 03:33:54,720
+components, and we go into
+these. So in this video, I
+
+26486
+03:33:54,720 --> 03:33:58,440
+forgot to add the await TX dot
+wait one. But in the GitHub
+
+26487
+03:33:58,440 --> 03:34:01,950
+repo, we have these. And when
+I'm demoing things in the video
+
+26488
+03:34:01,950 --> 03:34:05,010
+here, the dispatch, it's gonna
+pop up before the transaction
+
+26489
+03:34:05,010 --> 03:34:07,560
+actually finishes going through.
+So just want to let you know,
+
+26490
+03:34:07,590 --> 03:34:11,250
+and back to the video. So now we
+have a little success thing
+
+26491
+03:34:11,250 --> 03:34:14,370
+that'll pop up when we're
+successful. And the other thing
+
+26492
+03:34:14,370 --> 03:34:18,660
+is, when we call this, we are
+going to omit an item listed
+
+26493
+03:34:18,870 --> 03:34:23,340
+inside of our Morales dashboard,
+the price should actually update
+
+26494
+03:34:23,370 --> 03:34:27,300
+in our active item because of
+our Cloud Functions. So we're
+
+26495
+03:34:27,300 --> 03:34:30,690
+going to put this all together
+now. So we're on the front end.
+
+26496
+03:34:31,050 --> 03:34:35,490
+And if the marketplace owned by
+you will click it. Update
+
+26497
+03:34:35,490 --> 03:34:40,860
+listing to 25. We're gonna hit
+OK, meta masks is gonna pop up.
+
+26498
+03:34:41,430 --> 03:34:46,260
+We're gonna go ahead and confirm
+and ran through an error because
+
+26499
+03:34:46,290 --> 03:34:49,260
+we need to click Metamask I need
+to reset my account. So I'm
+
+26500
+03:34:49,260 --> 03:34:52,770
+going to do settings, advanced
+reset account.
+
+26501
+03:34:54,090 --> 03:34:57,990
+Okay, now let's go ahead
+Metamask has popped up again,
+
+26502
+03:34:58,020 --> 03:35:03,960
+we're gonna go ahead and confirm
+it closed, the pop up modal, and
+
+26503
+03:35:03,960 --> 03:35:06,420
+we got our little notification
+there. And we can see an
+
+26504
+03:35:06,420 --> 03:35:10,020
+activity we have that
+transaction has indeed completed
+
+26505
+03:35:11,160 --> 03:35:14,610
+So now if we go to active item,
+we give it a little refresh.
+
+26506
+03:35:14,970 --> 03:35:19,470
+Right now we see our item listed
+event. But the issue is that
+
+26507
+03:35:19,860 --> 03:35:23,730
+it's not confirmed yet. So what
+we're going to need to do is
+
+26508
+03:35:23,730 --> 03:35:26,940
+we're going to need to move our
+blocks by one. So in our NFT
+
+26509
+03:35:26,940 --> 03:35:31,170
+marketplace, we're just going to
+create a new script, a new file
+
+26510
+03:35:31,200 --> 03:35:34,410
+called Mind dot Jas, just to
+move our blocks once, and we're
+
+26511
+03:35:34,410 --> 03:35:42,630
+going to say const, move blocks,
+equals require dot slash utils,
+
+26512
+03:35:42,630 --> 03:35:49,260
+slash move blocks, we'll say
+const blocks equals to const
+
+26513
+03:35:49,290 --> 03:35:58,560
+sleep amount equals 1000 async
+function mine, do await move
+
+26514
+03:35:58,560 --> 03:36:05,670
+blocks will do blocks as the
+parameter and then sleep sleep
+
+26515
+03:36:06,150 --> 03:36:12,120
+amount will equal sleep amount.
+And this will be a script. So
+
+26516
+03:36:12,120 --> 03:36:16,860
+we'll add our copy paste our
+that same syntax we're doing
+
+26517
+03:36:16,860 --> 03:36:20,190
+here just with mine. And now we
+want to just mine these two
+
+26518
+03:36:20,190 --> 03:36:27,180
+blocks. So we'll run yarn, art
+hat run scripts. Mind that Jas
+
+26519
+03:36:27,450 --> 03:36:33,270
+dash dash network, local host.
+So we're going to mine those two
+
+26520
+03:36:33,270 --> 03:36:38,220
+blocks. Now if we go back to our
+database, we go back to active
+
+26521
+03:36:38,220 --> 03:36:43,590
+items, we can see it's been
+updated because now in our item
+
+26522
+03:36:43,590 --> 03:36:50,490
+listed, that 2500 event is now a
+confirmed transaction, and we
+
+26523
+03:36:50,490 --> 03:36:54,060
+get to confirm their excellent.
+So that means since it's
+
+26524
+03:36:54,060 --> 03:36:57,870
+confirmed back in our front end,
+we'll give this a little
+
+26525
+03:36:57,870 --> 03:37:04,230
+refresh. We can see the pup is
+now worth 25 eath. Awesome. So
+
+26526
+03:37:04,230 --> 03:37:07,470
+we're updating ngModel is
+working perfectly. Excellent
+
+26527
+03:37:07,470 --> 03:37:10,590
+job. So now let's go to the
+readme. If you own the NFT, you
+
+26528
+03:37:10,590 --> 03:37:17,160
+can update the listing. That's a
+checkmark. Excellent. Next, what
+
+26529
+03:37:17,160 --> 03:37:20,160
+do we want it to do? If you
+don't own it, you can buy the
+
+26530
+03:37:20,160 --> 03:37:24,090
+listing. Okay, so let's go back
+to our website, let's switch
+
+26531
+03:37:24,090 --> 03:37:28,080
+users to a different account,
+we're probably going to want an
+
+26532
+03:37:28,080 --> 03:37:31,080
+account that own some money. So
+let's go ahead and send this
+
+26533
+03:37:31,080 --> 03:37:33,570
+other account some money
+transfer between my accounts,
+
+26534
+03:37:33,600 --> 03:37:38,070
+we'll send 100 eath to account
+one, confirm on our hard hat
+
+26535
+03:37:38,070 --> 03:37:41,400
+chain here. Alright, great. Now
+we can go ahead and switch to
+
+26536
+03:37:41,400 --> 03:37:44,550
+account one, and we have 100
+eath. Okay, great. As these
+
+26537
+03:37:44,550 --> 03:37:47,820
+pops, each cost less than 100
+eath. So that's gonna be more
+
+26538
+03:37:47,820 --> 03:37:50,730
+than plenty for us to test this
+out. Let's go back to this box.
+
+26539
+03:37:50,730 --> 03:37:53,400
+Because I think somewhere we
+said, we did a little handle
+
+26540
+03:37:53,400 --> 03:37:58,440
+card click, if it's owned by the
+user, have the modal pop up. If
+
+26541
+03:37:58,440 --> 03:38:02,310
+not, let's do the by
+functionality. So to do the by
+
+26542
+03:38:02,310 --> 03:38:04,800
+functionality, we're gonna go
+ahead and do another run
+
+26543
+03:38:04,800 --> 03:38:11,310
+contract function. So we'll do
+const run contract function,
+
+26544
+03:38:11,850 --> 03:38:17,250
+we'll call this one by item. And
+this will equal use web three
+
+26545
+03:38:17,280 --> 03:38:21,240
+contract. And this is going to
+be the ABI for the NFT
+
+26546
+03:38:21,240 --> 03:38:27,330
+marketplace. API, the contract
+address is going to be the
+
+26547
+03:38:27,330 --> 03:38:34,830
+market place address. The
+function name is going to be by
+
+26548
+03:38:34,830 --> 03:38:41,040
+item, the message value is going
+to be the price of the NFT.
+
+26549
+03:38:41,580 --> 03:38:44,490
+Because we need to send that
+amount to buy the item. And then
+
+26550
+03:38:44,490 --> 03:38:49,470
+params are going to be NFT
+address, which is going to be
+
+26551
+03:38:49,470 --> 03:38:54,120
+the NFT address. And the token
+ID, which is going to be the
+
+26552
+03:38:54,120 --> 03:38:58,500
+token ID now that we have this
+by item on handle card click, we
+
+26553
+03:38:58,500 --> 03:39:03,570
+can say okay, said show ngModel
+is true. Otherwise, we're gonna
+
+26554
+03:39:03,570 --> 03:39:09,510
+call by item. And we're going to
+do on air. Air is going to be a
+
+26555
+03:39:09,510 --> 03:39:12,510
+function where we're just going
+to console dot log the air and
+
+26556
+03:39:12,510 --> 03:39:19,320
+onsuccess. It'll be a function
+where we call handle by item
+
+26557
+03:39:19,320 --> 03:39:23,130
+success. So we'll create a new
+handler for this right
+
+26558
+03:39:23,130 --> 03:39:27,360
+underneath handled cart click
+the const handled by item
+
+26559
+03:39:27,360 --> 03:39:31,800
+success equals a function. And
+for this, we'll also have this
+
+26560
+03:39:31,800 --> 03:39:35,580
+do a little notification. So
+once again, we're going to
+
+26561
+03:39:35,580 --> 03:39:40,320
+import we're going to import use
+notification from web through UI
+
+26562
+03:39:40,320 --> 03:39:46,470
+kit. We're going to say const.
+Dispatch equals use
+
+26563
+03:39:46,470 --> 03:39:50,760
+notification. And then in
+handled by item success. We're
+
+26564
+03:39:50,760 --> 03:39:51,960
+gonna say dispatch
+
+26565
+03:39:53,400 --> 03:40:04,890
+type, success. Message. Item
+bought. Title will also be item
+
+26566
+03:40:04,890 --> 03:40:12,690
+bought. Then pole position will
+be top right That's it. So
+
+26567
+03:40:12,750 --> 03:40:15,990
+handle card click, if they own
+it, we're going to show that
+
+26568
+03:40:16,020 --> 03:40:19,140
+update listing ngModel. If they
+don't already own it, someone's
+
+26569
+03:40:19,140 --> 03:40:22,170
+gonna buy it. So let's go back
+here. And I'm currently on an
+
+26570
+03:40:22,170 --> 03:40:25,200
+account that does not own these
+NF T's. Let's go ahead and click
+
+26571
+03:40:25,200 --> 03:40:30,000
+it. Our Metamask does indeed
+show up for 25 eath. That's
+
+26572
+03:40:30,000 --> 03:40:34,080
+crazy expensive. Let's go ahead
+and confirm item has been
+
+26573
+03:40:34,080 --> 03:40:37,590
+bought, we'll go ahead and click
+that little x, we go to our meta
+
+26574
+03:40:37,590 --> 03:40:41,040
+mask, the transaction is
+pending. And it's gone through.
+
+26575
+03:40:41,310 --> 03:40:45,840
+This is fantastic. Okay, our
+homepage is done, we can show
+
+26576
+03:40:45,840 --> 03:40:49,200
+recently listed NF T's if not,
+you can update the listing. If
+
+26577
+03:40:49,200 --> 03:40:52,590
+not, you can buy the listing.
+And now it's time for our cell
+
+26578
+03:40:52,590 --> 03:40:59,190
+page. So the last thing that we
+need to do is our cell page,
+
+26579
+03:40:59,400 --> 03:41:03,660
+let's get this cell page, let's
+get this done pages, we have our
+
+26580
+03:41:03,660 --> 03:41:07,320
+cell NFT page, which right now
+does a whole lot of nothing. And
+
+26581
+03:41:07,320 --> 03:41:10,830
+on our front end, we go here,
+there's not a whole lot here.
+
+26582
+03:41:11,100 --> 03:41:14,460
+And actually, you can list your
+NFT in the marketplace, we also
+
+26583
+03:41:14,460 --> 03:41:18,810
+needed to add withdraw proceeds.
+So I didn't add that. But that's
+
+26584
+03:41:18,810 --> 03:41:20,550
+probably going to be something
+we're going to want to allow
+
+26585
+03:41:20,550 --> 03:41:23,700
+people to do as well. So let's
+get started here. So we can
+
+26586
+03:41:23,700 --> 03:41:26,790
+remove this head stuff now that
+we're adding that in our main
+
+26587
+03:41:26,820 --> 03:41:31,560
+page. And for us to submit a new
+NFT, we're probably gonna need a
+
+26588
+03:41:31,560 --> 03:41:34,590
+space to add the address of the
+entity that token ID of the NFT
+
+26589
+03:41:35,130 --> 03:41:37,500
+and all this other stuff. So
+we're gonna need a form to do
+
+26590
+03:41:37,500 --> 03:41:41,970
+this, which guess what, we can
+also grab a form from the web
+
+26591
+03:41:41,970 --> 03:41:45,450
+through UI kit as well. So we're
+gonna go ahead in our cell NMC
+
+26592
+03:41:45,450 --> 03:41:53,820
+page, we're going to import form
+from web three UI kit. And we're
+
+26593
+03:41:53,820 --> 03:41:57,660
+going to create a new form in
+our cell page. Now, the
+
+26594
+03:41:57,660 --> 03:42:00,120
+parameters we can add to our
+form, again, you can find them
+
+26595
+03:42:00,120 --> 03:42:03,120
+in documentation here, or we're
+going to add with one of the
+
+26596
+03:42:03,120 --> 03:42:06,600
+main pieces is going to be this
+data piece, which is going to be
+
+26597
+03:42:06,600 --> 03:42:11,370
+an object that has a list in it,
+of all the different fields, we
+
+26598
+03:42:11,370 --> 03:42:14,700
+can put in our form. So maybe
+we'll do our first one have a
+
+26599
+03:42:14,700 --> 03:42:21,870
+name of NFT address. That's
+gonna be of type text, excuse
+
+26600
+03:42:21,870 --> 03:42:25,950
+me, and these are all going to
+be this is a list of list of
+
+26601
+03:42:26,070 --> 03:42:30,090
+objects like that. Now, if we
+save that, we go back to our
+
+26602
+03:42:30,090 --> 03:42:34,230
+cell page, we can now see an
+empty address and a little
+
+26603
+03:42:34,230 --> 03:42:37,410
+Submit button. That right now
+does a whole lot of nothing. So
+
+26604
+03:42:37,410 --> 03:42:40,920
+we have an NFT address, it'll
+take a text, maybe we'll also do
+
+26605
+03:42:41,040 --> 03:42:48,780
+in foot width of 50 percent will have
+the starting value be blank. And
+
+26606
+03:42:48,780 --> 03:42:52,440
+the key of this will be NFT
+address, what else do we need,
+
+26607
+03:42:52,500 --> 03:42:57,030
+we're going to need to give it
+the token ID so we'll say name,
+
+26608
+03:42:58,170 --> 03:43:04,200
+token ID, type is going to be a
+number value, we'll start off
+
+26609
+03:43:04,200 --> 03:43:12,240
+it's blank. And then the key for
+this will be token ID. Next,
+
+26610
+03:43:12,270 --> 03:43:17,790
+we're going to need the price.
+So we'll say name will be price.
+
+26611
+03:43:18,510 --> 03:43:25,830
+In eath. type will be a number
+value will be blank. And the key
+
+26612
+03:43:25,830 --> 03:43:29,310
+will be price. And we don't need
+to have to form tags, we'll just
+
+26613
+03:43:29,310 --> 03:43:33,180
+delete that second one and have
+it auto close with one tag. And
+
+26614
+03:43:33,180 --> 03:43:39,450
+then in here, we'll do title
+equals sell your NF T ID equals
+
+26615
+03:43:40,290 --> 03:43:44,580
+main form. So cool. So now we
+can take an empty address, a
+
+26616
+03:43:44,580 --> 03:43:48,690
+token ID and a new price with
+the title of cellular NFT.
+
+26617
+03:43:48,780 --> 03:43:51,450
+Great, that looks really nice.
+Right now our form doesn't do
+
+26618
+03:43:51,450 --> 03:43:54,000
+anything, we probably want to
+give it the functionality to
+
+26619
+03:43:54,000 --> 03:43:58,290
+actually do stuff. So we'll say
+on Submit, and we'll have to
+
+26620
+03:43:58,290 --> 03:44:01,380
+create a new function to
+actually list our NF T's. So
+
+26621
+03:44:01,380 --> 03:44:05,370
+we're going to create a function
+called approve and list we have
+
+26622
+03:44:05,370 --> 03:44:10,530
+to approve our marketplace to
+pull the NFT from our wallets.
+
+26623
+03:44:10,800 --> 03:44:14,670
+So we're going to create a new
+function, a sync function
+
+26624
+03:44:14,730 --> 03:44:19,110
+approven list, which is going to
+take a data input parameter on
+
+26625
+03:44:19,110 --> 03:44:22,560
+our form, when we hit on submit,
+it's automatically going to pass
+
+26626
+03:44:22,590 --> 03:44:26,190
+this data object to our approved
+list function. So that's how
+
+26627
+03:44:26,190 --> 03:44:29,700
+we're going to get the value of
+the address the value of the
+
+26628
+03:44:29,700 --> 03:44:33,360
+token ID and the value of the
+price. So in our async function
+
+26629
+03:44:33,360 --> 03:44:39,720
+approven list, do console dot
+log, approving the contract, the
+
+26630
+03:44:39,720 --> 03:44:44,130
+NFT address is going to come
+from this data object. So it's
+
+26631
+03:44:44,130 --> 03:44:50,040
+going to be data dot data at
+index zero, or zero with object
+
+26632
+03:44:50,040 --> 03:44:54,120
+here is going to be our address
+that input result.
+
+26633
+03:44:56,130 --> 03:45:01,650
+Our token ID is going to equal
+data dot data. One because
+
+26634
+03:45:01,650 --> 03:45:06,450
+again, this one is going to be
+our token ID that input result.
+
+26635
+03:45:07,380 --> 03:45:12,960
+And then the price is going to
+equal that ethers dot utils dot
+
+26636
+03:45:12,990 --> 03:45:22,170
+parse units of data dot data
+have to the input result, comma
+
+26637
+03:45:22,800 --> 03:45:28,920
+ether.to string. So we're going
+to get the price in eath. In
+
+26638
+03:45:28,920 --> 03:45:32,580
+human readable form, we're going
+to convert it to Aetherium
+
+26639
+03:45:32,580 --> 03:45:35,550
+readable form. And then we're
+going to pass it as a string
+
+26640
+03:45:35,550 --> 03:45:39,030
+because this returns a big
+number, which we don't want. So
+
+26641
+03:45:39,030 --> 03:45:42,180
+we have the NFT address, the
+token ID and the price of the
+
+26642
+03:45:42,180 --> 03:45:46,470
+new listing, what we can do now
+is we can say const approve
+
+26643
+03:45:46,530 --> 03:45:51,360
+options equals a little function
+here, the ABI which is going to
+
+26644
+03:45:51,360 --> 03:45:55,920
+be our NFT abi, which we need to
+import, we need to import both
+
+26645
+03:45:55,950 --> 03:46:03,090
+ethers from ethers. And we also
+need to import the NFT abi, for
+
+26646
+03:46:03,090 --> 03:46:07,110
+its NFT ABI from dot dot
+constants slash basic at A T dot
+
+26647
+03:46:07,110 --> 03:46:11,970
+JSON, I just copied and pasted
+from the NFT box, the contract
+
+26648
+03:46:12,360 --> 03:46:19,110
+address is going to be the NFT
+address, the function name is
+
+26649
+03:46:19,110 --> 03:46:27,000
+going to be approve params are
+going to be two, the marketplace
+
+26650
+03:46:27,000 --> 03:46:29,820
+address, which we're going to
+define in just a second, and
+
+26651
+03:46:29,820 --> 03:46:34,710
+then the token ID will be token
+ID. Now the marketplace address
+
+26652
+03:46:34,830 --> 03:46:38,790
+in our NFT box, we're getting
+this directly from index, an
+
+26653
+03:46:38,790 --> 03:46:42,600
+index is getting it from our
+database. Now we want our app to
+
+26654
+03:46:42,600 --> 03:46:46,530
+be smart enough to be able to
+grab the NFT marketplace itself,
+
+26655
+03:46:46,650 --> 03:46:50,070
+the marketplace address. And if
+we go to our constants, right
+
+26656
+03:46:50,070 --> 03:46:53,370
+now, we actually have it in this
+network mapping. So we're going
+
+26657
+03:46:53,370 --> 03:46:56,640
+to want to grab it right up at
+the top by saying const
+
+26658
+03:46:56,910 --> 03:47:02,550
+marketplace address equals
+network mapping, network mapping
+
+26659
+03:47:02,670 --> 03:47:07,140
+of what of the chain ID of the
+entity marketplace address at
+
+26660
+03:47:07,140 --> 03:47:11,160
+the zero with index. So network
+mapping of the chain ID, which
+
+26661
+03:47:11,160 --> 03:47:17,670
+we're going to get honest chain
+ID equals us Morales. Now chain
+
+26662
+03:47:17,670 --> 03:47:22,440
+Id actually comes like we said
+it's a wax hex form for Morales.
+
+26663
+03:47:22,470 --> 03:47:25,500
+So we're gonna have to convert
+the chain ID to its string
+
+26664
+03:47:25,530 --> 03:47:31,410
+readable version. So we'll say
+const, chain string equals chain
+
+26665
+03:47:31,410 --> 03:47:35,040
+ID. And we'll do a tertiary
+operator, if the chain ID
+
+26666
+03:47:35,040 --> 03:47:42,180
+exists, will parse int of the
+chain id.to string. So we'll
+
+26667
+03:47:42,180 --> 03:47:46,620
+parse it from its hex to a more
+readable version, and then do.to
+
+26668
+03:47:46,620 --> 03:47:51,000
+string. And then otherwise,
+we'll just say we're on 31337.
+
+26669
+03:47:51,450 --> 03:47:55,860
+So chain ID string. So in the
+network mapping at the chain ID
+
+26670
+03:47:55,860 --> 03:48:02,670
+string, dot NFT marketplace at
+index zero, that's going to be
+
+26671
+03:48:02,670 --> 03:48:05,820
+our marketplace address. So we
+got the marketplace address,
+
+26672
+03:48:06,060 --> 03:48:10,260
+this is all we need to call the
+approved function on our NFT we
+
+26673
+03:48:10,260 --> 03:48:13,680
+can now call running contract
+function for a proof. So we're
+
+26674
+03:48:13,680 --> 03:48:15,540
+actually going to do this a
+little bit differently. We're
+
+26675
+03:48:15,540 --> 03:48:23,400
+just going to say const. Run
+contract function equals use web
+
+26676
+03:48:23,400 --> 03:48:27,240
+three contract, you could import
+just run contract function, and
+
+26677
+03:48:27,240 --> 03:48:30,090
+then pass all those options to
+it like what we're gonna do
+
+26678
+03:48:30,090 --> 03:48:33,690
+here. Now we're just gonna say
+await on contract function.
+
+26679
+03:48:34,170 --> 03:48:37,350
+Because this is an async
+function await run contract
+
+26680
+03:48:37,350 --> 03:48:42,780
+function, we're gonna say params
+are going to be approve options.
+
+26681
+03:48:43,410 --> 03:48:47,700
+And we're gonna say onsuccess,
+we're going to do something, I'm
+
+26682
+03:48:47,700 --> 03:48:51,360
+going to say on error, we're
+also going to just do error,
+
+26683
+03:48:52,920 --> 03:48:59,400
+little arrow function, console
+dot log error. Now on success,
+
+26684
+03:48:59,430 --> 03:49:03,420
+once we send this transaction,
+after the Approve goes through,
+
+26685
+03:49:03,540 --> 03:49:06,390
+we're going to want to call the
+list function right underneath
+
+26686
+03:49:06,390 --> 03:49:13,290
+this will call async async.
+Function, handle approve
+
+26687
+03:49:13,320 --> 03:49:18,120
+success. And this is going to
+take the NFT address, the token
+
+26688
+03:49:18,120 --> 03:49:22,800
+ID, and the price is it put in
+parameters. So once this run
+
+26689
+03:49:22,800 --> 03:49:25,530
+contract function goes through,
+we're going to call
+
+26690
+03:49:26,850 --> 03:49:29,160
+of handle proof success. And
+we'll pass it the end of the
+
+26691
+03:49:29,160 --> 03:49:35,490
+address, token ID and the price,
+which will say console dot log.
+
+26692
+03:49:36,120 --> 03:49:40,830
+Okay, now time to list and we'll
+do the same thing. We'll do
+
+26693
+03:49:40,830 --> 03:49:45,240
+const list options, equals and
+this is going to be all the
+
+26694
+03:49:45,240 --> 03:49:48,030
+options for calling the list
+function API is going to be on
+
+26695
+03:49:48,030 --> 03:49:54,150
+the marketplace this time. So
+NFT market place abi, which
+
+26696
+03:49:54,150 --> 03:49:56,160
+again, we're going to have to
+import so I'm going to go back
+
+26697
+03:49:56,160 --> 03:50:00,270
+to NFT box. We're gonna copy
+that line here, paste it in the
+
+26698
+03:50:00,270 --> 03:50:04,260
+top. That's going to be the API
+for that contract address. It's
+
+26699
+03:50:04,260 --> 03:50:08,430
+going to be the marketplace
+address, which we already have.
+
+26700
+03:50:09,120 --> 03:50:14,490
+function name is going to be
+list item. And the params are
+
+26701
+03:50:14,490 --> 03:50:22,500
+going to be NF T address of the
+NFT address, token ID of token
+
+26702
+03:50:22,500 --> 03:50:28,320
+ID, price of price. And now we
+have those options, we can do
+
+26703
+03:50:28,320 --> 03:50:35,400
+await, run contract function
+with params. Of list options,
+
+26704
+03:50:35,880 --> 03:50:42,270
+will say onsuccess arrow
+function, handle list success,
+
+26705
+03:50:42,660 --> 03:50:45,870
+which is a function we haven't
+made yet. It will say on air
+
+26706
+03:50:47,130 --> 03:50:54,180
+error. And we'll just say
+console dot log error. Okay, so
+
+26707
+03:50:54,180 --> 03:50:58,080
+let's make this handle list
+success handle one spell handle
+
+26708
+03:50:58,200 --> 03:51:02,700
+correctly handle the success,
+this will be an async function.
+
+26709
+03:51:03,270 --> 03:51:05,670
+And this is also going to call
+dispatch and make a little
+
+26710
+03:51:05,670 --> 03:51:10,110
+notification. So we're going to
+grab that from web three UI kit,
+
+26711
+03:51:10,560 --> 03:51:16,980
+use notification. We'll say
+const dispatch equals use
+
+26712
+03:51:16,980 --> 03:51:21,930
+notification. And now down in
+handle the success say dispatch,
+
+26713
+03:51:22,650 --> 03:51:32,730
+type success. Message NFT
+listing, title NFT listed
+
+26714
+03:51:33,120 --> 03:51:39,090
+position. top bar, and cool. And
+we're also gonna have to grab us
+
+26715
+03:51:39,090 --> 03:51:46,710
+Morales from react Morales. So
+do import us Morales from react
+
+26716
+03:51:46,830 --> 03:51:51,480
+or else. So let's import this
+network mapping. Import network
+
+26717
+03:51:51,480 --> 03:51:57,000
+mapping from dot dot slash
+constants slash network mapping
+
+26718
+03:51:57,000 --> 03:52:00,420
+dot JSON. Because I spelled
+contract address wrong again,
+
+26719
+03:52:00,750 --> 03:52:03,780
+good our front end we'll give it
+a refresh us web three contract
+
+26720
+03:52:03,780 --> 03:52:07,710
+isn't defined. Let's get that
+from react moralss. Well save
+
+26721
+03:52:07,710 --> 03:52:10,980
+that refresh our front end. And
+tada, we're good to go here.
+
+26722
+03:52:11,460 --> 03:52:14,040
+Alright, now to test this out,
+we're going to want to do is
+
+26723
+03:52:14,040 --> 03:52:16,500
+we're going to want to create
+another script here. So we're
+
+26724
+03:52:16,500 --> 03:52:19,380
+back in our heart at NFT
+marketplace, we're looking at
+
+26725
+03:52:19,380 --> 03:52:22,830
+our scripts. And we're going to
+create a new file just called
+
+26726
+03:52:22,830 --> 03:52:27,570
+mint.js. So we're not going to
+list this time, we're just going
+
+26727
+03:52:27,570 --> 03:52:31,590
+to mint it just going to mint an
+NF t so we can list it ourselves
+
+26728
+03:52:31,620 --> 03:52:34,800
+on the UI. And actually, we can
+just copy our mminton list code,
+
+26729
+03:52:34,950 --> 03:52:39,840
+paste it into here, and just
+remove the approval and the
+
+26730
+03:52:39,840 --> 03:52:44,670
+listing code. Boom, remove that,
+remove this, remove this. And
+
+26731
+03:52:44,670 --> 03:52:47,040
+that's all we need. And now
+we'll just change the name to
+
+26732
+03:52:47,040 --> 03:52:50,850
+mint. Well, we can remove price
+as well. And we'll change this
+
+26733
+03:52:50,850 --> 03:52:55,590
+to mint. And that's it. Now we
+have a script that we can call,
+
+26734
+03:52:55,590 --> 03:52:58,470
+well, we'll just mint an NFT, we
+can also get rid of the NFT
+
+26735
+03:52:58,470 --> 03:53:01,950
+marketplace. Actually, we will
+probably want the token ID so we
+
+26736
+03:53:01,950 --> 03:53:07,860
+can know what it is. So let's do
+const token ID equals. So let's
+
+26737
+03:53:07,860 --> 03:53:11,790
+actually get the receipt we'll
+do const mint TX receipt, but
+
+26738
+03:53:11,790 --> 03:53:15,150
+the receipt, I can there equals
+that. And then I'm just going to
+
+26739
+03:53:15,150 --> 03:53:19,110
+copy this from the mminton
+receipt. Cons token ID equals
+
+26740
+03:53:19,140 --> 03:53:26,820
+this, paste it into our mint.js
+and then a console dot log. Got
+
+26741
+03:53:26,850 --> 03:53:32,910
+token ID, string interpolates
+token ID, hard hat, run scripts,
+
+26742
+03:53:33,480 --> 03:53:38,790
+mins dot j s dash dash network,
+local host. And we're going to
+
+26743
+03:53:38,790 --> 03:53:46,350
+mint an NF T. Got token ID six
+means we know m token ID six, we
+
+26744
+03:53:46,350 --> 03:53:49,080
+can list this entity. Let's also
+add the address. Let's do
+
+26745
+03:53:49,080 --> 03:53:56,550
+console dot log NFTL. And if the
+address is going to be we'll do
+
+26746
+03:53:56,550 --> 03:53:57,780
+string interpolation.
+
+26747
+03:53:59,280 --> 03:54:03,570
+And you know what? Let's make
+this again. Mint dot j s okay
+
+26748
+03:54:03,570 --> 03:54:07,770
+cool. Got token ID seven and if
+the address this so what we can
+
+26749
+03:54:07,770 --> 03:54:11,670
+do now we'll grab this NFT
+address. So from account one,
+
+26750
+03:54:11,670 --> 03:54:13,620
+let's go to Account three
+because that's the account that
+
+26751
+03:54:13,620 --> 03:54:16,740
+I've done my imports on now when
+you switch accounts, we're going
+
+26752
+03:54:16,740 --> 03:54:22,320
+to want to refresh the page as
+the address seven 0.6. Submit
+
+26753
+03:54:22,650 --> 03:54:26,550
+Metamask pops up. Give
+permission Yes. Okay, now it's
+
+26754
+03:54:26,550 --> 03:54:31,290
+time to list you now have one
+pen, okay. Local host list item.
+
+26755
+03:54:31,770 --> 03:54:33,780
+We can see all the data and
+everything. Okay, let's go ahead
+
+26756
+03:54:33,780 --> 03:54:38,340
+and confirm NFT listed Okay,
+okay. Okay. Okay. So this is
+
+26757
+03:54:38,340 --> 03:54:41,850
+good. Now to get Morales to
+catch up to speed back in our
+
+26758
+03:54:41,850 --> 03:54:46,170
+node. Let's just go ahead and
+run yarn, RT hat run scripts,
+
+26759
+03:54:46,440 --> 03:54:51,690
+mine dot j s dash dash network,
+local host. We're going to mine
+
+26760
+03:54:51,690 --> 03:54:55,620
+those two blocks. And now if we
+go to our item listed, we'll
+
+26761
+03:54:55,620 --> 03:55:01,170
+give this a little refresh. Go
+to active item. We can see
+
+26762
+03:55:01,350 --> 03:55:05,460
+there's a new item listed for
+0.6 eath. In our database. This
+
+26763
+03:55:05,460 --> 03:55:09,720
+is fantastic. Now that we've
+listed this, if we go back to
+
+26764
+03:55:09,930 --> 03:55:13,260
+now let's make And let's move on
+to one more. Let's list the
+
+26765
+03:55:13,260 --> 03:55:15,930
+second one, just to see that
+it's actually working. Okay,
+
+26766
+03:55:15,930 --> 03:55:20,100
+token ID eight. Let's grab this
+address. Let's give this a
+
+26767
+03:55:20,100 --> 03:55:26,550
+refresh. paste this in token ID
+eight. We'll do 0.999. Let's
+
+26768
+03:55:26,550 --> 03:55:33,900
+submit. we'll approve this. Yes.
+Then we'll send it. Yes. Okay,
+
+26769
+03:55:34,050 --> 03:55:36,720
+now let's go ahead and mine two
+blocks. So I'm just going to hit
+
+26770
+03:55:36,750 --> 03:55:41,730
+up and go back to mine will run
+the mining, moving blocks. Okay,
+
+26771
+03:55:41,730 --> 03:55:47,970
+great. Now, if we go back home,
+we'll see there are three NF T's
+
+26772
+03:55:47,970 --> 03:55:51,150
+now listed, we have the original
+one, that we have those two that
+
+26773
+03:55:51,150 --> 03:55:56,940
+we just listed eight, and seven
+for 0.6 and 0.999. Listed on our
+
+26774
+03:55:56,970 --> 03:56:00,570
+NFT marketplace. This is so
+exciting. Our listing is working
+
+26775
+03:56:00,570 --> 03:56:03,990
+correctly, okay. Now, due to the
+fact that this lesson is already
+
+26776
+03:56:03,990 --> 03:56:07,200
+incredibly long, actually
+decided to cut the part of that
+
+26777
+03:56:07,200 --> 03:56:09,600
+and then withdraw a bit, because
+we don't really learn anything
+
+26778
+03:56:09,600 --> 03:56:13,440
+new there. However, feel free to
+jump back in to get every bit
+
+26779
+03:56:13,440 --> 03:56:16,710
+associated with scores, where we
+will have that withdrawal
+
+26780
+03:56:16,710 --> 03:56:20,070
+functionality for you if you
+want to implement it. Otherwise,
+
+26781
+03:56:20,100 --> 03:56:22,980
+feel free to skip and move on
+ahead. This is incredibly
+
+26782
+03:56:22,980 --> 03:56:25,920
+powerful. And you should be
+incredibly excited about
+
+26783
+03:56:25,920 --> 03:56:30,300
+yourself. If you've made it this
+far. This is awesome. You just
+
+26784
+03:56:30,300 --> 03:56:33,120
+made a decentralized marketplace
+and then built a front end on
+
+26785
+03:56:33,120 --> 03:56:37,350
+top of it to allow anybody to
+interact with your marketplace.
+
+26786
+03:56:37,860 --> 03:56:42,540
+Easily. Huge, huge.
+Congratulations here. Oh, this
+
+26787
+03:56:42,540 --> 03:56:45,780
+is a perfect time to go take a
+break and celebrate. And this is
+
+26788
+03:56:45,780 --> 03:56:48,720
+a great time to ping me on
+Twitter to ping me on Twitter
+
+26789
+03:56:48,720 --> 03:56:51,660
+saying hey, Patrick, I just
+completed the NFT marketplace.
+
+26790
+03:56:51,720 --> 03:56:55,650
+Full Stack front end part of
+your Free Code Camp course, I
+
+26791
+03:56:55,650 --> 03:56:59,400
+now know how to build full stack
+front end on top of my smart
+
+26792
+03:56:59,400 --> 03:57:02,820
+contract applications. And be so
+so pumped with yourself because
+
+26793
+03:57:02,820 --> 03:57:06,180
+this is so awesome. I can't
+understate how excited I am that
+
+26794
+03:57:06,180 --> 03:57:09,330
+you've made it this far, you are
+learning and working with a ton
+
+26795
+03:57:09,330 --> 03:57:12,660
+of technologies, solidity smart
+contracts, and front end you are
+
+26796
+03:57:12,660 --> 03:57:15,990
+doing full stack you were doing
+a lot of stuff here. So you
+
+26797
+03:57:15,990 --> 03:57:18,870
+should be really proud of
+yourself. huge congratulations,
+
+26798
+03:57:18,870 --> 03:57:22,380
+be sure to absolutely give
+yourself a pat on the back. And
+
+26799
+03:57:22,380 --> 03:57:24,390
+then get ready to continue to
+our next section.
+
+26800
+03:57:27,300 --> 03:57:31,410
+Now that we've done all of this
+using our Morales back end, I'm
+
+26801
+03:57:31,410 --> 03:57:34,980
+about to switch it up on you,
+instead of indexing all of our
+
+26802
+03:57:34,980 --> 03:57:37,980
+events with a centralized
+server. Now we're going to learn
+
+26803
+03:57:37,980 --> 03:57:42,240
+how to build this using the
+graph, which is a decentralized
+
+26804
+03:57:42,270 --> 03:57:46,110
+event indexer that we can use, a
+lot of the code is going to be
+
+26805
+03:57:46,110 --> 03:57:52,110
+exactly the same. So instead of
+us starting from a new, what
+
+26806
+03:57:52,110 --> 03:57:55,500
+we're going to do, first of all
+we can we can close all our
+
+26807
+03:57:55,500 --> 03:57:59,640
+local stuff, we can close all of
+these things, we can close all
+
+26808
+03:57:59,640 --> 03:58:03,240
+of our terminals finally, which
+is really exciting. And in this
+
+26809
+03:58:03,240 --> 03:58:06,000
+folder, what we're going to do
+is we're actually just going to
+
+26810
+03:58:06,000 --> 03:58:11,130
+copy everything into a new
+folder. So I'm going to CD down
+
+26811
+03:58:11,130 --> 03:58:15,990
+a directory, we're going to make
+a new one called next Jas. And
+
+26812
+03:58:15,990 --> 03:58:23,430
+if T marketplace, the graph,
+dash FCC, and all the code for
+
+26813
+03:58:23,430 --> 03:58:28,020
+this section is going to be here
+for front end the graph indexer
+
+26814
+03:58:28,260 --> 03:58:30,690
+we're gonna have to make another
+repo and we'll get to that in a
+
+26815
+03:58:30,690 --> 03:58:33,420
+little bit. For all the changes,
+it's going to be in this section
+
+26816
+03:58:33,420 --> 03:58:36,150
+here. So what we're going to do
+is we're going to make this new
+
+26817
+03:58:36,150 --> 03:58:42,720
+folder, and we're going to do
+copy dash R. Next, Jas and ft
+
+26818
+03:58:42,750 --> 03:58:50,580
+marketplace FCC into next Jas
+NFT. Marketplace, the graph FCC.
+
+26819
+03:58:51,180 --> 03:58:54,840
+So we're going to copy
+recursively, everything that's
+
+26820
+03:58:54,840 --> 03:58:57,930
+inside that folder we just
+created into this new one that
+
+26821
+03:58:57,930 --> 03:59:00,690
+we're going to make a lot of
+adjustments to. And this might
+
+26822
+03:59:00,690 --> 03:59:04,080
+take a little bit of time to run
+because we've got a lot of stuff
+
+26823
+03:59:04,080 --> 03:59:07,770
+in this folder. And Alright,
+once we've done that, we can cd
+
+26824
+03:59:07,770 --> 03:59:13,410
+into this next Jas and ft
+marketplace, the graph FCC and
+
+26825
+03:59:13,410 --> 03:59:17,910
+do code period and open this up
+in a new code editor. Or as
+
+26826
+03:59:17,910 --> 03:59:21,630
+always, you can do File Open
+folder to open it like that. Now
+
+26827
+03:59:21,630 --> 03:59:24,030
+that we're in here, we're going
+to learn how to do this exact
+
+26828
+03:59:24,030 --> 03:59:28,440
+same project, instead of using
+mirallas. But using the graph,
+
+26829
+03:59:28,470 --> 03:59:29,970
+one of the things that we're
+first going to do is we're
+
+26830
+03:59:29,970 --> 03:59:33,780
+actually going to deploy our
+contracts to rink B. So we're
+
+26831
+03:59:33,780 --> 03:59:37,620
+going to grab our marketplace,
+that soul, pull this over, we're
+
+26832
+03:59:37,620 --> 03:59:40,380
+going to grab our hard hat
+marketplace dot soul project,
+
+26833
+03:59:40,560 --> 03:59:43,350
+pull it over. And first, we're
+going to run our deploy script
+
+26834
+03:59:43,380 --> 03:59:46,470
+on rink v. So hopefully, you've
+got all your deploy stuff set up
+
+26835
+03:59:46,470 --> 03:59:49,590
+correctly, so that all the
+arguments can go through
+
+26836
+03:59:49,590 --> 03:59:52,170
+correctly for rink v as well. So
+we're gonna go ahead and run
+
+26837
+03:59:52,170 --> 03:59:58,800
+this yarn, hard hat deploy dash
+dash network Rinkeby. And to
+
+26838
+03:59:58,800 --> 04:00:01,050
+make sure that it's going to
+work for Rinkeby. Let's check
+
+26839
+04:00:01,050 --> 04:00:05,070
+our hard hat config. Okay for
+networks, looks like I have my
+
+26840
+04:00:05,070 --> 04:00:08,520
+Rigby stuff in here for
+networks. Okay, I've got my RPC
+
+26841
+04:00:08,520 --> 04:00:11,340
+URL, which I'm getting from my
+environment variables. If I have
+
+26842
+04:00:11,340 --> 04:00:13,950
+a private key, I have a private
+key, which I'm also getting from
+
+26843
+04:00:13,950 --> 04:00:17,640
+environment variables, I have a
+chain ID block confirmations and
+
+26844
+04:00:17,640 --> 04:00:20,640
+save deployments. So let's go
+ahead and run this. Now we're
+
+26845
+04:00:20,640 --> 04:00:23,670
+going to go ahead and be
+deploying the NFT marketplace to
+
+26846
+04:00:23,670 --> 04:00:27,150
+the Rigby network. And our
+deploy script also has an ID
+
+26847
+04:00:27,150 --> 04:00:30,300
+some verification. So we can
+verify this as well, you can't
+
+26848
+04:00:30,300 --> 04:00:33,210
+really follow along with this
+section without deploying a
+
+26849
+04:00:33,210 --> 04:00:36,390
+marketplace to rink be here. So
+deploy to rank B, or whatever
+
+26850
+04:00:36,390 --> 04:00:40,140
+test net is recommended in this
+lesson 15 section, and go from
+
+26851
+04:00:40,140 --> 04:00:42,780
+there. Alright, great, we've
+deployed our NFC marketplace.
+
+26852
+04:00:43,140 --> 04:00:46,260
+Now we're gonna go ahead and
+deploy our basic NFT. And once
+
+26853
+04:00:46,260 --> 04:00:48,720
+these are done deploying, we can
+start updating our front end
+
+26854
+04:00:48,720 --> 04:00:51,720
+code to work with the graph
+instead of mirallas. Okay, we've
+
+26855
+04:00:51,720 --> 04:00:54,540
+verified everything to which
+looks great. Now we're going to
+
+26856
+04:00:54,540 --> 04:00:58,860
+verify our basic NFT. And we've
+have it verified. Awesome. So
+
+26857
+04:00:58,860 --> 04:01:02,580
+now we have an NFT marketplace
+deployed to ring P, and a basic
+
+26858
+04:01:02,580 --> 04:01:06,450
+NFT deployed to rink B. And both
+of them are verified. So be sure
+
+26859
+04:01:06,450 --> 04:01:09,120
+to take note of those, because
+we're going to need them when
+
+26860
+04:01:09,120 --> 04:01:13,200
+we're moving over to our the
+graph section. So now let's grab
+
+26861
+04:01:13,200 --> 04:01:17,580
+our code editor titled next Jas
+and ft marketplace, the graph.
+
+26862
+04:01:17,850 --> 04:01:21,060
+And let's get going. Now, we
+just deployed that to rink B.
+
+26863
+04:01:21,060 --> 04:01:24,990
+But we forgot to add some code
+in here to update our network
+
+26864
+04:01:24,990 --> 04:01:29,190
+mapping. However, if we go back
+and we open back up code dot
+
+26865
+04:01:29,190 --> 04:01:36,390
+dot, next Jas NFT marketplace,
+FCC, in the network mapping in
+
+26866
+04:01:36,390 --> 04:01:39,930
+here will now have a new entry
+for rink B, if we did it
+
+26867
+04:01:39,930 --> 04:01:43,470
+correctly, let's copy this
+network mapping and paste it
+
+26868
+04:01:43,470 --> 04:01:47,250
+over in our network, our next GS
+and ft marketplace, the graph
+
+26869
+04:01:47,250 --> 04:01:50,040
+section, or you can just
+manually add your new entry.
+
+26870
+04:01:50,250 --> 04:01:53,370
+Right. So you want to add
+network ID for network
+
+26871
+04:01:53,370 --> 04:01:56,820
+marketplace. And the address of
+that network marketplace that
+
+26872
+04:01:56,820 --> 04:01:59,400
+you just deployed, is we're
+going to delete this Cloud
+
+26873
+04:01:59,400 --> 04:02:02,940
+Functions bit. Goodbye, because
+since we're not working with the
+
+26874
+04:02:02,940 --> 04:02:05,700
+server anymore, there's not
+gonna be any cloud functions or
+
+26875
+04:02:05,700 --> 04:02:08,250
+any back end to run. So we're
+gonna move that to trash
+
+26876
+04:02:08,250 --> 04:02:11,790
+goodbye. Next, we don't need FRP
+anymore, because we're not going
+
+26877
+04:02:11,790 --> 04:02:14,430
+to be connecting our local
+blockchain to the graph, we're
+
+26878
+04:02:14,430 --> 04:02:16,950
+only going to be working with
+the test net here. So let's go
+
+26879
+04:02:16,950 --> 04:02:21,570
+ahead and delete that. Goodbye,
+what's next in our pages, and
+
+26880
+04:02:21,570 --> 04:02:26,100
+our app dot j s. Right now we're
+connecting to a Morales provider
+
+26881
+04:02:26,130 --> 04:02:31,050
+like this, we're going to switch
+this back to initiate allies on
+
+26882
+04:02:31,050 --> 04:02:35,100
+Mount, this is going to go back
+to being false, we're no longer
+
+26883
+04:02:35,100 --> 04:02:38,220
+going to connect to our Morales
+database like this, we're just
+
+26884
+04:02:38,220 --> 04:02:41,040
+going to use the hooks again.
+Now with that the only thing
+
+26885
+04:02:41,040 --> 04:02:44,790
+that's going to change is our
+index.js. Right now, in our
+
+26886
+04:02:44,790 --> 04:02:51,270
+index.js, we're getting our list
+of NF TS from our Morales query.
+
+26887
+04:02:51,360 --> 04:02:54,330
+So we're going to change this,
+let's update our readme. So
+
+26888
+04:02:54,360 --> 04:02:58,560
+we're gonna say instead of
+reading the events from ralis,
+
+26889
+04:02:58,590 --> 04:03:02,610
+we will first off we're going to
+index them with the graph. And
+
+26890
+04:03:02,610 --> 04:03:05,790
+then we're going to read from
+the graph. So the question is,
+
+26891
+04:03:05,970 --> 04:03:06,960
+what is the graph.
+
+26892
+04:03:09,690 --> 04:03:13,170
+So the graph is going to be a
+decentralized layer for storing
+
+26893
+04:03:13,440 --> 04:03:16,890
+event data. So there are all
+these blockchains and all these
+
+26894
+04:03:16,890 --> 04:03:19,440
+different storage networks. And
+the graph is and the graph is a
+
+26895
+04:03:19,440 --> 04:03:23,130
+network of different nodes that
+read from blockchains and index
+
+26896
+04:03:23,130 --> 04:03:27,360
+this data, and it exposes an API
+for us to call we can read that
+
+26897
+04:03:27,360 --> 04:03:29,850
+data. Rather than just myself.
+We actually have nattered
+
+26898
+04:03:29,850 --> 04:03:32,700
+Abbott, who can explain it a lot
+better than I can take it away.
+
+26899
+04:03:32,700 --> 04:03:33,090
+And at.
+
+26900
+04:03:33,600 --> 04:03:36,390
+First, I'd like to thank Patrick
+for creating such a wonderful
+
+26901
+04:03:36,390 --> 04:03:38,910
+educational resource and
+inviting me to be a part of it.
+
+26902
+04:03:39,390 --> 04:03:42,060
+My name is Nadia dabit. I'm a
+developer relations engineer
+
+26903
+04:03:42,060 --> 04:03:44,400
+working with the graph. The
+graph is an indexing and
+
+26904
+04:03:44,400 --> 04:03:46,470
+querying protocol for
+decentralized networks like
+
+26905
+04:03:46,470 --> 04:03:50,250
+Aetherium IPFS, dozens of other
+EVM compatible networks, as well
+
+26906
+04:03:50,250 --> 04:03:53,580
+as near and then the future
+cosmos and Solana. Using the
+
+26907
+04:03:53,580 --> 04:03:56,430
+graph developers can build and
+publish open API's called
+
+26908
+04:03:56,430 --> 04:03:59,550
+subgraphs that they can then use
+in their applications to enable
+
+26909
+04:03:59,550 --> 04:04:02,610
+better querying capabilities of
+data stored on these networks,
+
+26910
+04:04:02,790 --> 04:04:05,880
+including features like
+filtering, sorting, relational
+
+26911
+04:04:05,880 --> 04:04:09,390
+data, and full stack search.
+subgraphs live in between the
+
+26912
+04:04:09,390 --> 04:04:12,180
+blockchain and the UI providing
+an important piece of software
+
+26913
+04:04:12,180 --> 04:04:15,330
+infrastructure, a flexible
+performant and decentralized API
+
+26914
+04:04:15,330 --> 04:04:19,530
+layer, and the traditional tech
+stack databases, servers and
+
+26915
+04:04:19,530 --> 04:04:24,270
+API's query filter, sort
+paginate group and join data
+
+26916
+04:04:24,270 --> 04:04:27,600
+before it's returned to an
+application, usually via some
+
+26917
+04:04:27,630 --> 04:04:31,350
+type of HTTP request. These
+types of data transformations
+
+26918
+04:04:31,350 --> 04:04:34,140
+are not possible when reading
+data directly from Aetherium or
+
+26919
+04:04:34,140 --> 04:04:37,380
+other blockchains. Before the
+graph teams had to develop and
+
+26920
+04:04:37,380 --> 04:04:40,560
+operate proprietary indexing
+servers. This required
+
+26921
+04:04:40,560 --> 04:04:43,260
+significant engineering and
+hardware resources and broke the
+
+26922
+04:04:43,260 --> 04:04:46,140
+important security principles
+required for decentralization,
+
+26923
+04:04:46,680 --> 04:04:49,380
+how we interact with and build
+on top of blockchains it's much
+
+26924
+04:04:49,380 --> 04:04:51,510
+different than what we are used
+to in the traditional tech
+
+26925
+04:04:51,510 --> 04:04:54,660
+stack. In a blockchain data
+isn't stored in a format that
+
+26926
+04:04:54,660 --> 04:04:58,410
+can be easily or efficiently
+consumed, or retrieved directly
+
+26927
+04:04:58,410 --> 04:05:01,440
+from other applications or front
+ends. The problem is that you
+
+26928
+04:05:01,440 --> 04:05:03,930
+need to have the data indexed
+and organized for efficient
+
+26929
+04:05:03,930 --> 04:05:07,770
+retrieval. Traditionally, that's
+the work that databases and web
+
+26930
+04:05:07,770 --> 04:05:10,890
+servers do in this centralized
+tech stack. But that in indexing
+
+26931
+04:05:10,890 --> 04:05:13,740
+layer was missing in the web
+three stack. Let's take a look
+
+26932
+04:05:13,740 --> 04:05:16,320
+at a couple of other examples of
+indexing in the real world.
+
+26933
+04:05:16,590 --> 04:05:19,500
+Search engines like Google crawl
+the internet indexing relevant
+
+26934
+04:05:19,500 --> 04:05:22,530
+data making it available for
+users to search via their web
+
+26935
+04:05:22,530 --> 04:05:25,620
+interface and other API's.
+Without this indexing layer,
+
+26936
+04:05:25,620 --> 04:05:28,320
+it'd be hard for us to know
+where and how to find relevant
+
+26937
+04:05:28,320 --> 04:05:31,890
+information across the web.
+Another similar analogy is a
+
+26938
+04:05:31,890 --> 04:05:35,040
+library. Using an indexing
+system like the Dewey Decimal
+
+26939
+04:05:35,040 --> 04:05:38,340
+System, we know where to find
+the book that we're looking for
+
+26940
+04:05:38,370 --> 04:05:41,040
+without having to go through
+book by book looking throughout
+
+26941
+04:05:41,040 --> 04:05:44,190
+the entire library. The graph
+serves over 2 billion queries
+
+26942
+04:05:44,190 --> 04:05:46,830
+per day to many different types
+of web three applications,
+
+26943
+04:05:47,010 --> 04:05:50,970
+including apps in the defy
+gaming and FC space. Before we
+
+26944
+04:05:50,970 --> 04:05:53,250
+dig into any code, let's take a
+look at how to build a sub
+
+26945
+04:05:53,250 --> 04:05:56,940
+graph. To get started, you would
+go to the graph.com and create a
+
+26946
+04:05:56,940 --> 04:06:00,210
+new sub graph and the graph user
+interface. You would then use
+
+26947
+04:06:00,210 --> 04:06:03,330
+the graph CLI to scaffold out an
+empty sub graph boilerplate that
+
+26948
+04:06:03,330 --> 04:06:07,290
+you can then update with your
+own contract information. In
+
+26949
+04:06:07,290 --> 04:06:09,870
+your subgraph configuration, you
+would define things like your
+
+26950
+04:06:09,870 --> 04:06:12,900
+data model, the network, the
+contract addresses and other
+
+26951
+04:06:12,900 --> 04:06:15,720
+configurations that are specific
+to the data that you would like
+
+26952
+04:06:15,720 --> 04:06:20,280
+to index. For our data model, we
+use Graph QL, schema definition
+
+26953
+04:06:20,280 --> 04:06:23,280
+language defining top level
+types as well as fields within
+
+26954
+04:06:23,280 --> 04:06:26,760
+those types. When we're ready to
+deploy our subgraph, so we can
+
+26955
+04:06:26,760 --> 04:06:29,760
+begin testing it out and using
+it in our application, we can
+
+26956
+04:06:29,760 --> 04:06:33,480
+use the graph CLI running the
+deploy command. Once the
+
+26957
+04:06:33,480 --> 04:06:36,150
+subgraph is deployed and the
+data begins to be indexed, we
+
+26958
+04:06:36,150 --> 04:06:39,090
+can start testing it out using
+the graphical interface directly
+
+26959
+04:06:39,090 --> 04:06:43,350
+in the graph dashboard. When
+we're ready to start queering,
+
+26960
+04:06:43,350 --> 04:06:45,960
+our sub graph from our
+application, we can use the API
+
+26961
+04:06:45,960 --> 04:06:48,990
+URL that's been given to us by
+the graph along with any Graph
+
+26962
+04:06:48,990 --> 04:06:53,460
+QL query. If you'd like to learn
+more about the graph, check out
+
+26963
+04:06:53,460 --> 04:06:57,180
+the graph.com as well as Graph
+Protocol, Twitter, the docs at
+
+26964
+04:06:57,180 --> 04:07:01,710
+the graph.com/docs, or our
+Discord at the graph.com/discord
+
+26965
+04:07:02,070 --> 04:07:04,530
+Thanks matter. And now that we
+have a better idea of what the
+
+26966
+04:07:04,530 --> 04:07:09,780
+graph is, we can actually start
+building with it. Now if we were
+
+26967
+04:07:09,780 --> 04:07:13,290
+to try to run this app as it is,
+it obviously would fail, right,
+
+26968
+04:07:13,290 --> 04:07:18,300
+because index.js, right now is
+reading from mirallas instead of
+
+26969
+04:07:18,510 --> 04:07:21,900
+from the graph. So like it says
+in our readme, first thing we're
+
+26970
+04:07:21,900 --> 04:07:24,090
+going to need to do is we're
+gonna need to index from the
+
+26971
+04:07:24,090 --> 04:07:28,140
+graph, and then we can just this
+project to read from the graph.
+
+26972
+04:07:28,260 --> 04:07:31,560
+So let's go ahead and learn how
+to build our sub graph. In order
+
+26973
+04:07:31,560 --> 04:07:35,160
+for us to tell the graph network
+to start indexing the events
+
+26974
+04:07:35,190 --> 04:07:39,510
+from our contract, we're gonna
+go to graph.com, we're gonna go
+
+26975
+04:07:39,510 --> 04:07:43,920
+to products. And we're going to
+go to sub graph studio, if you
+
+26976
+04:07:43,920 --> 04:07:46,380
+go to products, the first thing
+you see is the Graph Explorer,
+
+26977
+04:07:46,410 --> 04:07:49,440
+these are already existing sub
+graphs. And if you go through
+
+26978
+04:07:49,440 --> 04:07:52,320
+here, you'll see a lot of
+incredibly popular decentralized
+
+26979
+04:07:52,320 --> 04:07:55,560
+protocols all have different sub
+graphs, hosted service is going
+
+26980
+04:07:55,560 --> 04:07:57,720
+to get discontinued at some
+point. So we're going to skip
+
+26981
+04:07:57,720 --> 04:08:00,720
+there. So let's go to sub graph
+studio, this is going to help
+
+26982
+04:08:00,750 --> 04:08:03,960
+enable us to create a sub graph
+for other nodes to start
+
+26983
+04:08:03,960 --> 04:08:06,930
+indexing our events. So we're
+gonna go ahead and connect our
+
+26984
+04:08:06,930 --> 04:08:10,710
+wallet with meta mask. And I'm
+going to choose account one
+
+26985
+04:08:10,710 --> 04:08:15,210
+here, next connect, and we're
+going to want to switch off of
+
+26986
+04:08:15,210 --> 04:08:21,270
+Hardhead. Local, over to the
+Rinkeby test network. And I'll
+
+26987
+04:08:21,270 --> 04:08:23,970
+go to Account one here. And
+we're going to get a signature
+
+26988
+04:08:23,970 --> 04:08:27,540
+request from the graph summary
+to the website that we just
+
+26989
+04:08:27,540 --> 04:08:31,050
+built. The subgraph website has
+some signings functionality with
+
+26990
+04:08:31,050 --> 04:08:34,620
+a database on the back end. So
+we're seeing in real life,
+
+26991
+04:08:34,650 --> 04:08:38,250
+exactly the methods that we just
+used. So instead of signing with
+
+26992
+04:08:38,250 --> 04:08:41,010
+Morales, they're just have their
+own custom sign in here. So
+
+26993
+04:08:41,010 --> 04:08:44,220
+we're gonna go ahead and sign in
+so that the graph website knows
+
+26994
+04:08:44,250 --> 04:08:46,800
+that it can interact with us.
+And we can go ahead and enter
+
+26995
+04:08:46,800 --> 04:08:50,070
+our email if we want. I'm gonna
+go ahead and skip. And you'll
+
+26996
+04:08:50,070 --> 04:08:53,070
+even get a little notification
+here saying only subgraphs
+
+26997
+04:08:53,070 --> 04:08:56,160
+indexing Aetherium or main net
+or Rigby can be created in
+
+26998
+04:08:56,160 --> 04:09:00,600
+subgraph studio. So let's go
+ahead and create a subgraph. So
+
+26999
+04:09:00,630 --> 04:09:04,050
+we're going to pick a cerium
+Rigby and the subgraph name is
+
+27000
+04:09:04,050 --> 04:09:08,040
+going to be NFT marketplace.
+We'll go ahead and hit Continue.
+

@@ -1,0 +1,4994 @@
+28001
+05:10:05,610 --> 05:10:08,760
+and run the set bars function
+over here. Now the difference is
+
+28002
+05:10:08,760 --> 05:10:11,820
+instead of num equals num The
+variables could be named
+
+28003
+05:10:11,820 --> 05:10:15,510
+different than the variables on
+contract a. So instead of num
+
+28004
+05:10:15,510 --> 05:10:19,290
+equals num, our contract is
+going to say, hey, whatever that
+
+28005
+05:10:19,290 --> 05:10:23,280
+storage of zero have that equal
+to whatever we pass as an input
+
+28006
+05:10:23,280 --> 05:10:25,920
+parameter. And if that's a
+little bit confusing, just stay
+
+28007
+05:10:25,920 --> 05:10:28,650
+with me. Let's go ahead and
+let's see this in remix. So I'm
+
+28008
+05:10:28,650 --> 05:10:31,950
+going to copy paste this code
+into remix here. So we can kind
+
+28009
+05:10:31,950 --> 05:10:34,710
+of test and see what this looks
+like. Again, there's a link to
+
+28010
+05:10:34,710 --> 05:10:36,960
+this in the GitHub repo
+associated with this course,
+
+28011
+05:10:37,080 --> 05:10:40,290
+feel free to pause the video to
+grab this link. It's solidity,
+
+28012
+05:10:40,320 --> 05:10:44,220
+hyphen, by hyphen,
+example.org/delegate call, or
+
+28013
+05:10:44,220 --> 05:10:47,220
+you can just grab the code
+directly from lesson 16 Hardhead
+
+28014
+05:10:47,220 --> 05:10:49,920
+upgrades. So let's compile this
+code. And let me show you what I
+
+28015
+05:10:49,920 --> 05:10:52,800
+mean. So I'm going to compile
+it, and we'll go to the Run tab.
+
+28016
+05:10:53,220 --> 05:10:56,370
+And first let's deploy this
+contract beam, we'll hit Deploy,
+
+28017
+05:10:56,880 --> 05:11:00,150
+we now have a contract, num,
+center and value are all blank,
+
+28018
+05:11:00,270 --> 05:11:03,090
+we'll update the number to
+something like 777, we'll hit
+
+28019
+05:11:03,090 --> 05:11:08,850
+Set VARS. Set VARs will change
+the storage variable num to 777.
+
+28020
+05:11:09,180 --> 05:11:11,850
+And then we're changing the
+sender and the value, sender,
+
+28021
+05:11:12,000 --> 05:11:16,170
+and value is zero. Now let's
+deploy contract a. So we'll
+
+28022
+05:11:16,170 --> 05:11:19,590
+scroll back up contract a
+deploy, of course, we're on the
+
+28023
+05:11:19,590 --> 05:11:23,520
+JavaScript VM. Now we have this
+contract a with num value in
+
+28024
+05:11:23,520 --> 05:11:27,630
+Cinder are also all blank. But
+when we call set VARs, it's
+
+28025
+05:11:27,630 --> 05:11:32,220
+going to borrow this set VARs
+function from contract B and run
+
+28026
+05:11:32,220 --> 05:11:37,380
+it in contract a, you can almost
+think of it as if we're copying,
+
+28027
+05:11:37,410 --> 05:11:42,990
+set VARs and pasting it into our
+contract a just for one run, and
+
+28028
+05:11:42,990 --> 05:11:45,660
+then immediately deleting ADM,
+that's what this delegate call
+
+28029
+05:11:45,660 --> 05:11:48,420
+function does. So when I call
+set VARs, we're going to pass it
+
+28030
+05:11:48,420 --> 05:11:51,990
+this contract address as an
+input parameter. So it knows to
+
+28031
+05:11:51,990 --> 05:11:55,860
+call this contract said virus
+function. When I pass it the
+
+28032
+05:11:55,860 --> 05:12:00,120
+address, and I pass 987. Since
+we're borrowing the function,
+
+28033
+05:12:00,150 --> 05:12:03,930
+we're not going to update this
+num. On contract B, we're going
+
+28034
+05:12:03,930 --> 05:12:08,940
+to update the num on contract a.
+So when I hit Set VARs, we see
+
+28035
+05:12:08,940 --> 05:12:12,150
+num now has 19. Seven, we see
+Senator and we see value still
+
+28036
+05:12:12,150 --> 05:12:14,790
+being zero here, because again,
+we're borrowing this function
+
+28037
+05:12:14,790 --> 05:12:18,180
+and running it here. Now the way
+that this works, is it actually
+
+28038
+05:12:18,180 --> 05:12:22,740
+doesn't look at the names of our
+stored variables, it looks at
+
+28039
+05:12:22,740 --> 05:12:26,970
+the storage slots. So when we
+borrow this function using
+
+28040
+05:12:26,970 --> 05:12:29,940
+delegate call, so we could have
+this these variables we named
+
+28041
+05:12:29,940 --> 05:12:33,840
+anything instead of num, we
+could call this first value.
+
+28042
+05:12:34,260 --> 05:12:38,790
+Senator, we could call something
+else. And then value we could
+
+28043
+05:12:38,790 --> 05:12:43,560
+call foo, or whatever you want
+here. And when we borrow this
+
+28044
+05:12:43,560 --> 05:12:47,100
+function using delegate call,
+instead of grabbing the actual
+
+28045
+05:12:47,100 --> 05:12:49,830
+names of the variables, our
+contract will swap out these
+
+28046
+05:12:49,830 --> 05:12:53,640
+variable names with the storage
+slot. So it says oh, okay, well,
+
+28047
+05:12:53,910 --> 05:12:57,360
+in contract B, you're accessing
+the num variable, which is,
+
+28048
+05:12:57,390 --> 05:13:01,410
+which is at storage slot zero.
+So when we borrow set bars and
+
+28049
+05:13:01,410 --> 05:13:07,470
+contract a with Delegate call,
+we'll say storage slot
+
+28050
+05:13:08,820 --> 05:13:14,190
+zero is going to equal that
+underscore num. Which are this
+
+28051
+05:13:14,190 --> 05:13:18,840
+contract storage slot zero is
+first value. So we'll say first
+
+28052
+05:13:18,840 --> 05:13:23,430
+value equals underscore Now,
+something else is going to be
+
+28053
+05:13:23,460 --> 05:13:26,460
+stored slot two, so it's gonna
+say okay, storage slot two,
+
+28054
+05:13:27,060 --> 05:13:29,850
+we're gonna update storage slot
+two to message that sender.
+
+28055
+05:13:30,270 --> 05:13:35,550
+Okay? value here is storage slot
+three. So whatever's in storage,
+
+28056
+05:13:35,580 --> 05:13:39,330
+slot three, will update with
+message dot value like this. So
+
+28057
+05:13:39,330 --> 05:13:42,420
+that's essentially what's going
+on behind the scenes. So let's
+
+28058
+05:13:42,420 --> 05:13:46,200
+go ahead and let's delete those
+and redeploy. redeploy them. So
+
+28059
+05:13:46,200 --> 05:13:50,040
+we'll deploy contract be
+deployed contract a, right now
+
+28060
+05:13:50,040 --> 05:13:55,200
+in B, once again, if we do 1234,
+set VARs, we have 123. And then
+
+28061
+05:13:55,200 --> 05:13:59,700
+contract a. Now even though
+these variables have different
+
+28062
+05:13:59,700 --> 05:14:04,530
+names, we could grab contract
+B's address, paste it in, do
+
+28063
+05:14:04,860 --> 05:14:10,050
+654, hit Set VARS. And first
+value is now six by four. So
+
+28064
+05:14:10,050 --> 05:14:13,260
+delegate call allows us to
+borrow functions, and then just
+
+28065
+05:14:13,260 --> 05:14:17,730
+transposes whatever is in here
+to the storage location
+
+28066
+05:14:17,760 --> 05:14:20,670
+equivalents. And the other thing
+that's interesting is even if
+
+28067
+05:14:20,670 --> 05:14:24,780
+you don't have variables, it'll
+still save to storage slots. So
+
+28068
+05:14:24,780 --> 05:14:27,450
+in contract a, if we didn't have
+any of those variable names,
+
+28069
+05:14:27,480 --> 05:14:30,990
+storage slot, 01, and two would
+still get updated. Now here's
+
+28070
+05:14:30,990 --> 05:14:33,750
+where things can get really
+interesting. Let's delete our
+
+28071
+05:14:33,750 --> 05:14:38,760
+contract again. And let's change
+the type of our contract A's
+
+28072
+05:14:38,790 --> 05:14:43,830
+first value to from a UNT to a
+Boolean. Let's save that. And
+
+28073
+05:14:43,830 --> 05:14:48,750
+now let's deploy contract a. Now
+when we call set VARs, on our
+
+28074
+05:14:48,750 --> 05:14:53,760
+contract a, it's still going to
+use the Set VARs function of
+
+28075
+05:14:53,760 --> 05:14:57,540
+contract B, which takes a
+Yewande and assigns the first
+
+28076
+05:14:57,540 --> 05:15:01,470
+storage slot that number we pass
+it, but our first storage slot
+
+28077
+05:15:01,500 --> 05:15:04,440
+is now a Boolean was so what do
+you think's going to happen now?
+
+28078
+05:15:04,590 --> 05:15:08,220
+Well, let's try it out. Let's
+copy contract B's address, paste
+
+28079
+05:15:08,220 --> 05:15:12,990
+it in here. We'll pass we'll do
+tu tu, tu as our input
+
+28080
+05:15:12,990 --> 05:15:17,070
+parameter, we'll hit Set VARS.
+Our transaction actually does go
+
+28081
+05:15:17,070 --> 05:15:21,780
+through. And now when we look at
+first value, it says true. Hmm,
+
+28082
+05:15:22,260 --> 05:15:26,040
+that's really weird. What if we
+change set VARs to zero, and hit
+
+28083
+05:15:26,040 --> 05:15:31,500
+Set VARS. And now, first value
+is false. In storage here, when
+
+28084
+05:15:31,500 --> 05:15:34,950
+we add a number with set VARs,
+it's going through because it's
+
+28085
+05:15:34,950 --> 05:15:39,780
+just setting the storage slot of
+the boolean to a number. And
+
+28086
+05:15:39,780 --> 05:15:43,620
+when solidity reads it, it goes,
+Oh, well, first value is a
+
+28087
+05:15:43,620 --> 05:15:46,620
+Boolean. So if it's anything
+other than zero, it's going to
+
+28088
+05:15:46,620 --> 05:15:49,140
+be true. So this is how you can
+actually get some really weird
+
+28089
+05:15:49,140 --> 05:15:52,110
+results. If your typings are
+different, or if your stored
+
+28090
+05:15:52,110 --> 05:15:55,290
+variants are different. What if
+we made this an address. So this
+
+28091
+05:15:55,290 --> 05:15:58,200
+is where working with Delegate
+call can get really weird and
+
+28092
+05:15:58,200 --> 05:16:00,060
+really tricky, really fast.
+
+28093
+05:16:05,520 --> 05:16:09,120
+All right. Now, with all this
+being said, let's turn up the
+
+28094
+05:16:09,120 --> 05:16:12,360
+heat. And let me show you a
+small proxy, a minimal proxy
+
+28095
+05:16:12,360 --> 05:16:16,740
+example, that shows how a
+contract can be used as a
+
+28096
+05:16:16,740 --> 05:16:20,490
+singular address, but the
+underlying code can actually
+
+28097
+05:16:20,490 --> 05:16:23,580
+change. And all the code we're
+gonna be working with, once
+
+28098
+05:16:23,580 --> 05:16:28,650
+again, in the hardhat upgrades,
+FCC sub lesson, small proxy dot
+
+28099
+05:16:28,650 --> 05:16:31,680
+Sol, and you can go ahead and
+copy paste this code if you want
+
+28100
+05:16:31,680 --> 05:16:34,650
+to follow along. So you don't
+have to code along with me here.
+
+28101
+05:16:34,680 --> 05:16:37,830
+But you absolutely can if we
+want. Now, I will say this is
+
+28102
+05:16:37,830 --> 05:16:41,250
+going to be one of the most, if
+not the most advanced section of
+
+28103
+05:16:41,250 --> 05:16:44,760
+the entire course. So feel free
+to go ahead and skip over this
+
+28104
+05:16:44,790 --> 05:16:47,580
+sub lesson. If you want to just
+move on to learning how to
+
+28105
+05:16:47,580 --> 05:16:50,130
+actually build these proxies,
+without really understanding
+
+28106
+05:16:50,130 --> 05:16:52,470
+what's going on behind the
+scenes. However, it is still
+
+28107
+05:16:52,470 --> 05:16:54,660
+really powerful if you do
+understand what's going on
+
+28108
+05:16:54,660 --> 05:16:57,420
+behind the scenes. So I have
+this minimalistic starting
+
+28109
+05:16:57,420 --> 05:17:01,740
+position right here. I have
+small proxy is proxy. And I'm
+
+28110
+05:17:01,740 --> 05:17:04,980
+importing this proxy dot sole
+thing from up in Zeplin.
+
+28111
+05:17:05,160 --> 05:17:08,400
+openzeppelin has this
+minimalistic proxy contract that
+
+28112
+05:17:08,400 --> 05:17:11,490
+we can use to actually start
+working with this delegate call.
+
+28113
+05:17:11,700 --> 05:17:14,220
+Now this contract uses a lot of
+assembly or what's something
+
+28114
+05:17:14,220 --> 05:17:17,100
+called you'll. And it's an
+intermediate language that can
+
+28115
+05:17:17,100 --> 05:17:20,580
+be compiled to bytecode for
+different backends. It's a sort
+
+28116
+05:17:20,580 --> 05:17:24,480
+of inline assembly inside
+solidity and allows you to write
+
+28117
+05:17:24,480 --> 05:17:28,020
+really, really low level code
+close to the opcodes. Now we're
+
+28118
+05:17:28,020 --> 05:17:30,630
+not going to go over you'll but
+I'll leave some links to the
+
+28119
+05:17:30,630 --> 05:17:33,870
+you'll documentation if you want
+to learn more. Even if you're a
+
+28120
+05:17:33,870 --> 05:17:37,980
+really advanced user, you really
+want to try to use as little
+
+28121
+05:17:37,980 --> 05:17:41,970
+EULA as possible. Because since
+it is so much lower level, it is
+
+28122
+05:17:42,000 --> 05:17:45,510
+much easier to screw things up.
+However, like I said, for this
+
+28123
+05:17:45,510 --> 05:17:48,840
+example, we are going to be
+using a little bit of you'll now
+
+28124
+05:17:48,840 --> 05:17:51,420
+in this proxy that we're going
+to be doing, we have this
+
+28125
+05:17:51,450 --> 05:17:55,680
+delegate function, which inside
+this inline assembly, which is
+
+28126
+05:17:55,680 --> 05:17:59,280
+you'll, it does a whole lot of
+really low level stuff. But the
+
+28127
+05:17:59,280 --> 05:18:01,680
+main thing that it does is it
+goes ahead and it does this
+
+28128
+05:18:01,680 --> 05:18:05,730
+delegate call functionality. If
+we look here, we can see it's
+
+28129
+05:18:05,730 --> 05:18:09,750
+using a fallback function and a
+receive function. So whenever it
+
+28130
+05:18:09,750 --> 05:18:13,740
+receives a function that doesn't
+recognize it'll call fallback,
+
+28131
+05:18:14,070 --> 05:18:19,380
+and fallback calls our delegate
+function. So anytime a proxy
+
+28132
+05:18:19,380 --> 05:18:23,250
+contract receives data for a
+function it doesn't recognize it
+
+28133
+05:18:23,250 --> 05:18:26,700
+sends it over to some
+implementation to some
+
+28134
+05:18:26,730 --> 05:18:30,090
+implementation contract where it
+will call it with Delegate call.
+
+28135
+05:18:30,240 --> 05:18:34,140
+In our minimalistic example
+here, we have a function called
+
+28136
+05:18:34,170 --> 05:18:37,710
+Set implementation, which will
+change where those delegate
+
+28137
+05:18:37,710 --> 05:18:40,620
+calls are going to be sending.
+This can be equivalent to like
+
+28138
+05:18:40,650 --> 05:18:43,980
+upgrading your smart contract.
+And then we have implementation
+
+28139
+05:18:44,010 --> 05:18:48,450
+here to read where that
+implementation contract is. Now
+
+28140
+05:18:48,480 --> 05:18:51,420
+to work with proxies, we really
+don't want to have anything in
+
+28141
+05:18:51,420 --> 05:18:54,270
+storage, because if we do
+delegate call, and that delegate
+
+28142
+05:18:54,270 --> 05:18:56,970
+call changes, some storage,
+we're going to screw up our
+
+28143
+05:18:56,970 --> 05:19:00,450
+contract storage. The one caveat
+though to this, we do still need
+
+28144
+05:19:00,450 --> 05:19:03,780
+to store that implementations
+address somewhere, so we can
+
+28145
+05:19:03,780 --> 05:19:08,520
+call it so ERP 1976. It's called
+the standard proxy storage slot,
+
+28146
+05:19:08,820 --> 05:19:11,670
+which is an Aetherium
+improvement proposal for having
+
+28147
+05:19:11,670 --> 05:19:15,630
+certain storage slots
+specifically used for proxies.
+
+28148
+05:19:15,750 --> 05:19:19,560
+And in our minimalistic example
+here, we set bytes 32, private
+
+28149
+05:19:19,560 --> 05:19:24,660
+constant implementation slot to
+that location in storage. And
+
+28150
+05:19:24,660 --> 05:19:28,590
+we'll say, okay, whatever is
+that this storage slot is going
+
+28151
+05:19:28,590 --> 05:19:32,820
+to be the location of the
+implementation address. So the
+
+28152
+05:19:32,820 --> 05:19:36,060
+way our proxy is going to work
+is any contract that calls this
+
+28153
+05:19:36,060 --> 05:19:39,300
+proxy contract. If it's not this
+set implementation function,
+
+28154
+05:19:39,330 --> 05:19:42,210
+it's going to pass it over to
+whatever is inside the
+
+28155
+05:19:42,270 --> 05:19:44,910
+implementation slot address.
+That's what we're going to build
+
+28156
+05:19:44,910 --> 05:19:49,350
+here. So we have the small proxy
+is proxy. And we'll create a
+
+28157
+05:19:49,350 --> 05:19:53,340
+real minimalistic contract. So
+we'll say contract employee,
+
+28158
+05:19:54,150 --> 05:20:00,210
+mentation A, and we'll just give
+it a U and 256. public value and
+
+28159
+05:20:00,210 --> 05:20:07,170
+then function set value, you add
+256 new value, public will say
+
+28160
+05:20:07,170 --> 05:20:12,030
+value equals new value So this
+is going to be our
+
+28161
+05:20:12,030 --> 05:20:16,740
+implementation. So now anytime
+somebody calls small proxy, or
+
+28162
+05:20:16,740 --> 05:20:20,940
+small proxy contract, it's going
+to delegate, call it over to our
+
+28163
+05:20:21,090 --> 05:20:26,340
+implementation, a, and then save
+the storage in our small proxy
+
+28164
+05:20:26,340 --> 05:20:30,990
+address. So we're going to call
+our small proxy with the data to
+
+28165
+05:20:30,990 --> 05:20:34,290
+use this set value function
+selector. So let's make it a
+
+28166
+05:20:34,290 --> 05:20:37,200
+little easier just to figure out
+how to get that data by creating
+
+28167
+05:20:37,200 --> 05:20:42,600
+a new helper function, do
+function, get data to transact.
+
+28168
+05:20:45,330 --> 05:20:48,630
+And we can get the data using
+the API dot encode with
+
+28169
+05:20:48,630 --> 05:20:52,380
+signature that we learned in an
+earlier lesson. So function get
+
+28170
+05:20:52,380 --> 05:20:58,080
+data to transact, we'll pass it
+a un 256 number to update. So
+
+28171
+05:20:58,080 --> 05:21:02,220
+we'll give this the number we
+want to call a new value. We'll
+
+28172
+05:21:02,220 --> 05:21:07,110
+have this be public pure, that's
+going to return a bytes.
+
+28173
+05:21:08,430 --> 05:21:14,250
+Memory. And we'll just say
+return ABI dot ENCODE. With
+
+28174
+05:21:14,760 --> 05:21:23,580
+signature set value, you went to
+56, comma, number to update.
+
+28175
+05:21:24,930 --> 05:21:28,260
+So you'll remember this from our
+call anything section. And if
+
+28176
+05:21:28,260 --> 05:21:30,420
+you don't remember how to do
+that, remember to refer back to
+
+28177
+05:21:30,420 --> 05:21:34,170
+our NFT section to learn how to
+call anything and use ABI dot
+
+28178
+05:21:34,170 --> 05:21:38,130
+encode ABI dot encode with a
+signature and call anything with
+
+28179
+05:21:38,130 --> 05:21:42,270
+its raw bytes bring and get the
+data to transact. And we know
+
+28180
+05:21:42,300 --> 05:21:46,770
+that when we call implementation
+a, from our small proxy, we're
+
+28181
+05:21:46,770 --> 05:21:49,950
+going to update our small
+proxies storage. So we'll create
+
+28182
+05:21:49,950 --> 05:21:52,860
+a little function in solidity
+just to read our storage in
+
+28183
+05:21:52,860 --> 05:21:57,690
+small proxy. We're gonna say
+function, read storage. And this
+
+28184
+05:21:57,690 --> 05:22:04,080
+will just be a public view, will
+do returns, returns you into
+
+28185
+05:22:04,080 --> 05:22:11,460
+256, value at storage slot,
+zero. And we are going to use a
+
+28186
+05:22:11,460 --> 05:22:13,950
+little bit of assembly here
+since we are doing all this low
+
+28187
+05:22:13,950 --> 05:22:18,510
+level stuff. And we're going to
+call the s load up code to read
+
+28188
+05:22:18,540 --> 05:22:21,900
+the value at storage slot zero,
+we'll say value at storage slot
+
+28189
+05:22:21,900 --> 05:22:25,440
+zero, and we're going to set it
+and then in assembly, this is
+
+28190
+05:22:25,440 --> 05:22:29,280
+how we set things, we're going
+to set it equal to s load of
+
+28191
+05:22:29,280 --> 05:22:33,060
+storage slot zero, and then it
+will return this value here. So
+
+28192
+05:22:33,060 --> 05:22:36,300
+we're reading directly from
+storage. Oops, and then we need
+
+28193
+05:22:36,300 --> 05:22:40,200
+a little parenthese here. Sorry.
+So now, let's go ahead and
+
+28194
+05:22:40,200 --> 05:22:43,680
+deploy our small proxy. And
+let's deploy our implementation
+
+28195
+05:22:43,680 --> 05:22:47,490
+A. Now our small proxy has a
+function called Set
+
+28196
+05:22:47,490 --> 05:22:51,300
+implementation. So we're saying,
+okay, anytime we call this proxy
+
+28197
+05:22:51,300 --> 05:22:55,170
+contract, we're going to
+delegate call the functions over
+
+28198
+05:22:55,170 --> 05:22:58,380
+to here. So we're going to grab
+current implementations A's
+
+28199
+05:22:58,380 --> 05:23:04,290
+address, paste it into set
+implementation 77. So this is
+
+28200
+05:23:04,290 --> 05:23:08,670
+the data of set value you in
+256, with that number to update
+
+28201
+05:23:08,880 --> 05:23:13,590
+encoded in it. So if we call our
+small proxy, with this data, our
+
+28202
+05:23:13,590 --> 05:23:18,030
+proxy contract is gonna go, oh,
+okay, this is a function. I
+
+28203
+05:23:18,030 --> 05:23:21,030
+don't I don't see that function
+here. We're going to call our
+
+28204
+05:23:21,030 --> 05:23:25,380
+fallback, right, which again, is
+coming from open Zeplin. And our
+
+28205
+05:23:25,380 --> 05:23:28,200
+Fallback is going to do this
+delegate, which is this low
+
+28206
+05:23:28,200 --> 05:23:30,630
+level stuff, but it's basically
+just doing a delegate call,
+
+28207
+05:23:30,750 --> 05:23:33,330
+we're gonna call our fallback
+function, and then we're gonna
+
+28208
+05:23:33,330 --> 05:23:36,930
+get the function in the
+implementation A, we're gonna
+
+28209
+05:23:36,930 --> 05:23:40,590
+borrow this function, and we're
+gonna use it on our on
+
+28210
+05:23:40,590 --> 05:23:44,520
+ourselves. So if I copy this,
+the implementation has been set
+
+28211
+05:23:44,550 --> 05:23:47,040
+to being this address down here.
+So all the logic is going to be
+
+28212
+05:23:47,040 --> 05:23:50,790
+done here. So when I go ahead,
+and I grabbed this, and paste it
+
+28213
+05:23:50,790 --> 05:23:53,340
+into call data, and I hit
+transact looks like it went
+
+28214
+05:23:53,340 --> 05:23:57,120
+successfully went through. If I
+read storage, now, we see that
+
+28215
+05:23:57,120 --> 05:24:01,740
+it is indeed 777, which is
+incredibly exciting. Now, this
+
+28216
+05:24:01,740 --> 05:24:04,380
+is incredibly beneficial,
+because now let's say we want to
+
+28217
+05:24:04,380 --> 05:24:07,230
+go and update our code, right?
+We don't like contract
+
+28218
+05:24:07,230 --> 05:24:10,320
+implementation anymore. So let's
+go ahead copy contract
+
+28219
+05:24:10,320 --> 05:24:14,430
+implementation A. And we'll make
+a new one called implementation
+
+28220
+05:24:14,700 --> 05:24:19,050
+B. Now, let's say whenever
+somebody calls set value, we do
+
+28221
+05:24:19,080 --> 05:24:24,360
+value equals new value, plus
+one, or plus two. Let's go
+
+28222
+05:24:24,360 --> 05:24:29,010
+ahead, let's save this. Let's
+compile this. And let's deploy
+
+28223
+05:24:29,040 --> 05:24:33,180
+implementation B, we'll grab
+implementation B's contract
+
+28224
+05:24:33,180 --> 05:24:37,800
+address, we'll call it onset
+implementation in our proxy. And
+
+28225
+05:24:37,830 --> 05:24:41,370
+essentially, we have now
+upgraded from implementation a
+
+28226
+05:24:41,730 --> 05:24:46,440
+to implementation B. Now, if we
+use this same data here, we're
+
+28227
+05:24:46,440 --> 05:24:51,360
+still going to call set value
+was 777. But instead, we're now
+
+28228
+05:24:51,390 --> 05:24:54,600
+delegate calling to
+implementation B, instead of
+
+28229
+05:24:54,600 --> 05:24:59,250
+implementation A. So if I call
+if I put this data into the low
+
+28230
+05:24:59,250 --> 05:25:02,100
+level call data, and I hit
+transact, it looks like it went
+
+28231
+05:25:02,100 --> 05:25:07,620
+through. Now I read storage and
+now is 779 since doing value
+
+28232
+05:25:07,650 --> 05:25:12,300
+equals new value plus two so
+this is a minimalistic example
+
+28233
+05:25:12,360 --> 05:25:15,720
+of how upgrading actually works.
+Now, this is incredibly
+
+28234
+05:25:15,720 --> 05:25:18,780
+beneficial, because we can
+always just tell people, Hey,
+
+28235
+05:25:18,810 --> 05:25:22,140
+make all your function calls to
+small proxy, and you'll be good
+
+28236
+05:25:22,140 --> 05:25:25,830
+to go. But like I said before,
+this also means that the
+
+28237
+05:25:25,830 --> 05:25:29,190
+developers of this protocol can
+essentially change the
+
+28238
+05:25:29,190 --> 05:25:32,550
+underlying logic at any time.
+This is why it is so important
+
+28239
+05:25:32,760 --> 05:25:36,180
+to be sure to read contracts and
+check to see who has the
+
+28240
+05:25:36,180 --> 05:25:39,180
+developer keys. And if a
+contract can be updated, if a
+
+28241
+05:25:39,180 --> 05:25:41,820
+contract can be updated, and a
+single person can update it,
+
+28242
+05:25:41,910 --> 05:25:44,370
+well guess what, you have a
+single centralized point of
+
+28243
+05:25:44,370 --> 05:25:46,650
+failure. And technically the
+contract isn't even
+
+28244
+05:25:46,650 --> 05:25:49,740
+decentralized. Now, something
+else I was talking about in the
+
+28245
+05:25:49,740 --> 05:25:54,240
+video is function clashes
+function selector clashes. Right
+
+28246
+05:25:54,240 --> 05:25:57,570
+now, whenever we call set
+implementation, the proxy
+
+28247
+05:25:57,600 --> 05:26:00,180
+function sedimentation gets
+called because we don't trigger
+
+28248
+05:26:00,180 --> 05:26:02,880
+the fallback because we can see
+the function is here. However,
+
+28249
+05:26:02,910 --> 05:26:05,610
+if I have a function called Set
+implementation, in our
+
+28250
+05:26:05,610 --> 05:26:08,970
+implementation, this one can
+never be called, whenever we
+
+28251
+05:26:08,970 --> 05:26:12,570
+send a function signature of set
+implementation, it's always
+
+28252
+05:26:12,570 --> 05:26:15,060
+going to call the one on the
+proxy. This is where the
+
+28253
+05:26:15,060 --> 05:26:17,190
+transparent proxy that we're
+going to be working with can
+
+28254
+05:26:17,190 --> 05:26:20,100
+help us out here and the
+universal upgradable proxy can
+
+28255
+05:26:20,100 --> 05:26:22,800
+help us to, and I'm not going to
+go too much deeper into these
+
+28256
+05:26:22,800 --> 05:26:26,190
+now. But we've left some links
+in the GitHub repository to
+
+28257
+05:26:26,190 --> 05:26:29,370
+teach you more about these
+selector clashes. And how those
+
+28258
+05:26:29,370 --> 05:26:32,130
+two proxy patterns that I just
+mentioned, the transparent and
+
+28259
+05:26:32,130 --> 05:26:35,370
+universal upgradable can get
+around these, if you're confused
+
+28260
+05:26:35,370 --> 05:26:37,770
+by anything in here, go into
+this discussion thread and make
+
+28261
+05:26:37,770 --> 05:26:41,100
+a new discussion about proxies
+make a new discussion about the
+
+28262
+05:26:41,100 --> 05:26:44,100
+Assembly about the you'll set
+implementation, this is a great
+
+28263
+05:26:44,100 --> 05:26:47,190
+time to connect with other
+people taking the course and ask
+
+28264
+05:26:47,220 --> 05:26:49,860
+questions here, because I know
+that this is a really advanced
+
+28265
+05:26:49,860 --> 05:26:53,460
+section, and requires you
+haven't gone through a lot of
+
+28266
+05:26:53,460 --> 05:26:55,980
+those sub lessons that we've
+gone before. And if it takes you
+
+28267
+05:26:55,980 --> 05:26:58,890
+a couple times of playing around
+with solidity and playing around
+
+28268
+05:26:58,890 --> 05:27:02,160
+with remix, I definitely
+recommend you do so this is the
+
+28269
+05:27:02,160 --> 05:27:04,950
+section we're seeing really is
+believing. And I want you to
+
+28270
+05:27:04,950 --> 05:27:07,500
+jump into remix. And I want you
+to test this. And I want you to
+
+28271
+05:27:07,500 --> 05:27:10,320
+play around with this and see
+what you can break and fiddle
+
+28272
+05:27:10,320 --> 05:27:13,140
+with. But with all that being
+said, we finally have all the
+
+28273
+05:27:13,140 --> 05:27:16,500
+knowledge that we need to build
+our hardhat project that deals
+
+28274
+05:27:16,500 --> 05:27:19,680
+with upgrades. So let's go ahead
+and jump into it.
+
+28275
+05:27:22,740 --> 05:27:26,370
+Your new terminal, we're going
+to do MK dir, hard hat,
+
+28276
+05:27:26,940 --> 05:27:32,370
+upgrades, FCC, CD, hard hat,
+upgrades, FCC, and then code
+
+28277
+05:27:32,370 --> 05:27:37,740
+period, or file, open folder,
+this folder here, now I'm going
+
+28278
+05:27:37,740 --> 05:27:40,350
+to grab that same yarn add we've
+been grabbing from less than
+
+28279
+05:27:40,350 --> 05:27:43,260
+nine, we're gonna paste it in,
+we're going to add all of these
+
+28280
+05:27:43,260 --> 05:27:46,320
+different parameters. And once
+again, we're going to copy over
+
+28281
+05:27:46,350 --> 05:27:48,630
+our hard hat config from
+previous sections, we're going
+
+28282
+05:27:48,630 --> 05:27:51,480
+to copy over prettier. And we're
+just going to get our basic
+
+28283
+05:27:51,480 --> 05:27:54,750
+default setup. At this point,
+you might have a setup that
+
+28284
+05:27:54,780 --> 05:27:57,660
+works best for you and that you
+like better. And feel free to
+
+28285
+05:27:57,660 --> 05:28:00,180
+grab that as well. So I'm going
+to paste the prettier is in
+
+28286
+05:28:00,180 --> 05:28:03,450
+here. And I'm going to paste the
+hard hat.config.js that we've
+
+28287
+05:28:03,450 --> 05:28:06,330
+been using, instead of running
+yarn hard hat. And now we should
+
+28288
+05:28:06,330 --> 05:28:11,130
+be good to go. So let's create a
+new folder called contracts. And
+
+28289
+05:28:11,130 --> 05:28:14,970
+in here, we're going to create a
+new file called Box dot soul.
+
+28290
+05:28:15,330 --> 05:28:17,220
+And then it's this contract,
+that's going to be our
+
+28291
+05:28:17,250 --> 05:28:21,510
+implementation or our logic
+contract. So it will say pragma,
+
+28292
+05:28:21,900 --> 05:28:28,380
+solidity carrot zero point 8.7
+contract box will say you into
+
+28293
+05:28:28,380 --> 05:28:36,090
+256 internal value will do event
+value changed you into 256 new
+
+28294
+05:28:36,090 --> 05:28:43,290
+value, do function store, you
+went to 36 value, this will be a
+
+28295
+05:28:43,290 --> 05:28:48,660
+public function will say value
+equals new value. So this store
+
+28296
+05:28:48,660 --> 05:28:52,590
+function is going to update our
+variable at storage slot zero,
+
+28297
+05:28:52,800 --> 05:29:00,150
+internal, and then we'll just
+omit value changed that new
+
+28298
+05:29:00,150 --> 05:29:06,150
+value. And then we'll just
+create function retrieve, which
+
+28299
+05:29:06,150 --> 05:29:11,760
+will be a public view returns a
+UNT 256 We'll just do return
+
+28300
+05:29:11,880 --> 05:29:16,080
+value. And then we're going to
+create a new function called
+
+28301
+05:29:16,710 --> 05:29:21,630
+version. And this will be a
+public door. And that returns a
+
+28302
+05:29:21,630 --> 05:29:26,610
+un 256. And we're just going to
+have this return one. So our box
+
+28303
+05:29:26,610 --> 05:29:29,550
+contract here is going to be
+version one. Now we're going to
+
+28304
+05:29:29,550 --> 05:29:33,930
+copy all this code, paste it
+into a box v two dot soul and
+
+28305
+05:29:34,200 --> 05:29:37,290
+rename it to contract box v two,
+we're going to update the
+
+28306
+05:29:37,290 --> 05:29:40,710
+version to version two here. And
+we're going to create a new
+
+28307
+05:29:40,710 --> 05:29:46,080
+function called increment. And
+this will be a public function.
+
+28308
+05:29:46,800 --> 05:29:51,810
+And we'll say value equals value
+plus one. And then we will emit
+
+28309
+05:29:52,140 --> 05:29:57,750
+a value changed event with
+value. We're going to have one
+
+28310
+05:29:57,750 --> 05:30:01,920
+contract address originally use
+the logic in box and then we're
+
+28311
+05:30:01,920 --> 05:30:05,550
+going to upgrade it to the logic
+in box V two. And we're going to
+
+28312
+05:30:05,550 --> 05:30:07,920
+learn how to use all the tools
+that we've been working with
+
+28313
+05:30:07,920 --> 05:30:11,160
+here to add this logic and
+create this logic And let's just
+
+28314
+05:30:11,160 --> 05:30:16,110
+make sure this works, we'll do
+yarn, or that compile.
+
+28315
+05:30:17,430 --> 05:30:22,170
+So let's make a readme.md, we'll
+say, one, we're going to upgrade
+
+28316
+05:30:22,530 --> 05:30:28,890
+box to box V two. So we're going
+to make a proxy contract, that's
+
+28317
+05:30:28,890 --> 05:30:32,550
+gonna point to box. And then
+later on, we're going to update
+
+28318
+05:30:32,550 --> 05:30:37,650
+it to point to box V two. Right,
+so we're going to start it up
+
+28319
+05:30:37,650 --> 05:30:40,380
+pointing to box, then we're
+going to have it point to box V
+
+28320
+05:30:40,380 --> 05:30:42,960
+two. And that's how we're going
+to upgrade it, one of the first
+
+28321
+05:30:42,960 --> 05:30:46,200
+things we're going to need to do
+is deploy a proxy, we can deploy
+
+28322
+05:30:46,200 --> 05:30:49,980
+a proxy manually ourselves, and
+we can build the proxy contracts
+
+28323
+05:30:49,980 --> 05:30:52,650
+and do all that stuff. That's
+our first option. Hardhead
+
+28324
+05:30:52,650 --> 05:30:57,000
+deploy also comes built in with
+deploying and upgrading proxies
+
+28325
+05:30:57,030 --> 05:31:00,270
+itself, where we can just
+specify that we want to use a
+
+28326
+05:31:00,270 --> 05:31:03,180
+proxy. And we could specify the
+type of proxy that we want to
+
+28327
+05:31:03,180 --> 05:31:06,870
+use. So number two is just
+saying using hard hat deploys,
+
+28328
+05:31:07,110 --> 05:31:11,340
+built in proxies. And then
+number three is open Zeppelin
+
+28329
+05:31:11,370 --> 05:31:14,370
+actually has an upgrades plugin,
+which allows you to write some
+
+28330
+05:31:14,370 --> 05:31:16,890
+really simple scripts that
+allows you to have a really
+
+28331
+05:31:16,890 --> 05:31:20,700
+simple API like upgrades dot
+deploy proxy, and then upgrades
+
+28332
+05:31:20,700 --> 05:31:24,510
+that upgrade proxy. Now for this
+section, we're going to be doing
+
+28333
+05:31:24,540 --> 05:31:28,110
+the hard hat deploys built in
+proxies. However, in the GitHub
+
+28334
+05:31:28,110 --> 05:31:31,920
+repo associated with this, if
+you go to scripts, there's other
+
+28335
+05:31:31,920 --> 05:31:34,860
+upgrade examples that will show
+you how to use the opens up and
+
+28336
+05:31:34,890 --> 05:31:37,740
+upgrades plugin. And we're not
+going to do deploy a proxy
+
+28337
+05:31:37,740 --> 05:31:40,620
+manually manually, because we
+essentially just showed you how
+
+28338
+05:31:40,620 --> 05:31:44,280
+to do that in our sub lesson. So
+we're going to show you this,
+
+28339
+05:31:44,310 --> 05:31:46,110
+we're going to show you the
+Hardhead deploys built in
+
+28340
+05:31:46,110 --> 05:31:48,870
+proxies, and if you want to use
+the openzeppelin upgrades
+
+28341
+05:31:48,870 --> 05:31:52,620
+plugin, that is available in the
+GitHub repo as well. So let's go
+
+28342
+05:31:52,620 --> 05:31:55,230
+ahead and do this. So we're
+going to go ahead and we're
+
+28343
+05:31:55,230 --> 05:31:58,680
+going to make a new folder, or
+deploy folder. And first, we're
+
+28344
+05:31:58,680 --> 05:32:03,660
+going to make a new file called
+a one, deploy box dot j s. And
+
+28345
+05:32:03,660 --> 05:32:05,760
+this is going to look really
+similar to everything we've been
+
+28346
+05:32:05,760 --> 05:32:10,710
+doing so far. So module dot
+exports, equals async function,
+
+28347
+05:32:11,460 --> 05:32:15,630
+we're going to get named
+accounts and deployments. The
+
+28348
+05:32:15,630 --> 05:32:20,730
+arrow function will say const
+deploy COMM A log equals
+
+28349
+05:32:20,730 --> 05:32:27,450
+deployments const deployer
+equals await, get named.
+
+28350
+05:32:29,490 --> 05:32:34,920
+Accounts, do a little logging,
+like this, and then we'll say
+
+28351
+05:32:34,920 --> 05:32:41,760
+const, box equals await, loi,
+box, comma, we'll say from
+
+28352
+05:32:42,150 --> 05:32:49,920
+Deployer, comma, args like this,
+we'll say weight con formations
+
+28353
+05:32:49,950 --> 05:32:56,010
+is going to be network dot
+config dot block confirmations
+
+28354
+05:32:56,010 --> 05:33:02,430
+for Masons. And yep, we got to
+grab const from hard hat. And
+
+28355
+05:33:02,430 --> 05:33:06,120
+then we can add the parameter in
+here for proxies. And this is
+
+28356
+05:33:06,120 --> 05:33:10,140
+where we can add a ton of
+information. So like I said,
+
+28357
+05:33:10,140 --> 05:33:12,450
+we're going to use the
+transparent upgradable proxy
+
+28358
+05:33:12,480 --> 05:33:15,330
+from open Zeppelin, which if we
+want to use it, we're going to
+
+28359
+05:33:15,330 --> 05:33:20,940
+have to add open Zeppelin. So
+we'll do yarn, add dash dash dev
+
+28360
+05:33:21,060 --> 05:33:26,220
+at open Zeppelin slash
+contracts. And we can tell our
+
+28361
+05:33:26,220 --> 05:33:31,200
+hard hat to deploy this box
+contract behind a proxy will say
+
+28362
+05:33:31,200 --> 05:33:39,510
+the proxy contract is going to
+be the open Zeppelin transparent
+
+28363
+05:33:39,780 --> 05:33:45,060
+proxy. And we're also going to
+do a via admin contract. So
+
+28364
+05:33:45,090 --> 05:33:49,020
+instead of having an admin
+address, for the proxy contract,
+
+28365
+05:33:49,140 --> 05:33:52,170
+we're going to have the proxy
+contract owned by an admin
+
+28366
+05:33:52,170 --> 05:33:55,020
+contract. And doing it this way
+is considered a best practice
+
+28367
+05:33:55,020 --> 05:33:58,740
+for a number of reasons. But
+we'll name this admin contract,
+
+28368
+05:33:59,310 --> 05:34:08,370
+box proxy admin and the artifact
+for this box proxy admin. So
+
+28369
+05:34:08,370 --> 05:34:12,450
+we'll need to create a box proxy
+admin contract to be the admin
+
+28370
+05:34:12,480 --> 05:34:17,310
+of our box. So in our contracts
+folder, create a new folder
+
+28371
+05:34:17,760 --> 05:34:23,880
+called proxy. And in here, a new
+file called Box proxy admin that
+
+28372
+05:34:23,880 --> 05:34:26,580
+saw and this is going to be the
+admin contract we're going to
+
+28373
+05:34:26,580 --> 05:34:30,990
+have for controlling the proxy
+of our box so inbox proxy admin
+
+28374
+05:34:30,990 --> 05:34:40,710
+dot Saul will do SP DX license.
+I then to fire MIT pragma
+
+28375
+05:34:41,040 --> 05:34:44,400
+solidity, carrot zero, point
+8.7,
+
+28376
+05:34:45,840 --> 05:34:51,330
+say contract, box proxy admin,
+like this, right? And once
+
+28377
+05:34:51,330 --> 05:34:55,230
+again, we're going to use one of
+the open Zetland tools in the
+
+28378
+05:34:55,230 --> 05:34:59,190
+transparent folder. They have a
+proxy admin dot Saul, which is
+
+28379
+05:34:59,190 --> 05:35:01,920
+going to be essentially what our
+box proxy admin is going to be.
+
+28380
+05:35:02,280 --> 05:35:05,130
+It has some functionality, it
+has some functions in here like
+
+28381
+05:35:05,130 --> 05:35:09,840
+change, proxy admin, upgrade,
+upgrade and call for dealing
+
+28382
+05:35:09,840 --> 05:35:12,960
+with upgrades. All contracts. So
+we're going to import it will do
+
+28383
+05:35:12,960 --> 05:35:18,780
+import at open Zeppelin slash
+contracts slash proxy slash
+
+28384
+05:35:18,780 --> 05:35:24,210
+transparent, slash proxy admin,
+dot soul. And we'll say our
+
+28385
+05:35:24,210 --> 05:35:30,720
+Brock's box proxy admin is proxy
+admin, like this. And to have
+
+28386
+05:35:30,720 --> 05:35:34,140
+this box proxy admin work with
+the heart at deploy plugin, our
+
+28387
+05:35:34,140 --> 05:35:37,170
+constructor needs to take an
+address owner as an input
+
+28388
+05:35:37,170 --> 05:35:39,990
+parameter, but we're just going
+to leave that blank. And then,
+
+28389
+05:35:40,140 --> 05:35:42,450
+and then we need to do the proxy
+admin, which is just going to be
+
+28390
+05:35:42,450 --> 05:35:45,870
+blank as well. And that's it.
+That's all we're going to do box
+
+28391
+05:35:45,870 --> 05:35:49,500
+proxy admin contract, which just
+has all of the functionalities
+
+28392
+05:35:49,500 --> 05:35:52,680
+to do upgrades and change proxy
+admin and all this stuff. We're
+
+28393
+05:35:52,680 --> 05:35:56,940
+going to deploy our box contract
+behind a proxy and opens up and
+
+28394
+05:35:56,940 --> 05:36:00,540
+transparent proxy that is owned
+by our Brock's proxy admin
+
+28395
+05:36:00,540 --> 05:36:04,350
+contract in the template
+Aetherium contracts. GitHub repo
+
+28396
+05:36:04,800 --> 05:36:08,610
+is actually an examples slash
+opens up on proxies branch that
+
+28397
+05:36:08,610 --> 05:36:12,120
+will show you how to work with
+different types of proxies. And
+
+28398
+05:36:12,120 --> 05:36:14,700
+there will be a link to this in
+the GitHub repo associated with
+
+28399
+05:36:14,700 --> 05:36:20,040
+this course. And then we'll do
+our verification, say, chains
+
+28400
+05:36:20,070 --> 05:36:24,060
+dot includes. And we'll go
+ahead, I'm going to copy paste
+
+28401
+05:36:24,120 --> 05:36:27,540
+our hard hat helper config from
+our last project, which has
+
+28402
+05:36:27,630 --> 05:36:31,110
+development chains, hard hat and
+local host that we export, will
+
+28403
+05:36:31,110 --> 05:36:36,240
+import this as well. const
+development chains equals
+
+28404
+05:36:36,240 --> 05:36:42,120
+require dot slash helper hard
+hat config. If development
+
+28405
+05:36:42,120 --> 05:36:48,330
+chains dot includes network dot
+name, and process dot env dot
+
+28406
+05:36:48,750 --> 05:36:54,960
+ether scan API key log,
+verifying that the same as we've
+
+28407
+05:36:54,960 --> 05:36:59,430
+done a way to verify last, we're
+going to copy over our utils
+
+28408
+05:36:59,430 --> 05:37:03,900
+folder. So just copy, paste, we
+now have verify, which will
+
+28409
+05:37:03,900 --> 05:37:11,040
+import it in here. So we'll do
+const verify equals require dot
+
+28410
+05:37:11,040 --> 05:37:17,370
+dot slash utils, slash verify,
+await verify box dot address.
+
+28411
+05:37:17,580 --> 05:37:20,640
+And then args is going to be
+blank. So we'll just do blank
+
+28412
+05:37:20,640 --> 05:37:25,350
+here, and boom. And that's going
+to be it for our box deployment.
+
+28413
+05:37:25,620 --> 05:37:28,770
+So we can test this out by
+running yarn Hardhead deploy,
+
+28414
+05:37:29,850 --> 05:37:33,180
+see if everything works here.
+And that's it done. And then we
+
+28415
+05:37:33,180 --> 05:37:37,350
+should do actually, we should
+add log beach true as well.
+
+28416
+05:37:38,130 --> 05:37:41,370
+Let's run this again, much
+better. So you can see we
+
+28417
+05:37:41,400 --> 05:37:44,700
+actually deploy a couple of
+contracts. So we deploy our box
+
+28418
+05:37:44,700 --> 05:37:48,600
+proxy admin, which is going to
+be our admin contract, then we
+
+28419
+05:37:48,600 --> 05:37:53,400
+deploy box implementation. So
+hard hat deploy, went ahead and
+
+28420
+05:37:53,400 --> 05:37:56,820
+took our box contract and
+renamed it to box implementation
+
+28421
+05:37:57,150 --> 05:38:02,610
+and then deployed it, then it
+deployed our box proxy here. So
+
+28422
+05:38:02,610 --> 05:38:05,940
+anytime we call this address, it
+actually will point to the logic
+
+28423
+05:38:05,970 --> 05:38:10,500
+of our box. Now what we can do
+is we can write a deploy script
+
+28424
+05:38:10,530 --> 05:38:14,220
+to deploy box, the box v2
+implementation, and then upgrade
+
+28425
+05:38:14,220 --> 05:38:18,900
+our box to box V to create a new
+deploy script called Zero to
+
+28426
+05:38:19,710 --> 05:38:25,050
+deploy box v2 dot j s or deploy
+box two dot j s. And we'll do
+
+28427
+05:38:25,050 --> 05:38:28,140
+something really similar here.
+Right, so I'm just going to copy
+
+28428
+05:38:28,440 --> 05:38:33,570
+pretty much of this, paste it in
+here. Now we're going to do
+
+28429
+05:38:34,320 --> 05:38:44,610
+const box v two equals await,
+deploy. Box v two, comma, from
+
+28430
+05:38:44,880 --> 05:38:53,430
+Deployer. Log True RMS blank,
+weights confirmations, it's
+
+28431
+05:38:53,430 --> 05:38:57,390
+going to be network dot config
+dot lock.
+
+28432
+05:38:59,550 --> 05:39:04,350
+Or masons, then I'm going to
+copy the verification code, copy
+
+28433
+05:39:04,350 --> 05:39:08,910
+this, paste it here, server,
+this is going to be box v2 dot
+
+28434
+05:39:08,910 --> 05:39:13,320
+address. Okay, great. So we now
+have some code where we can
+
+28435
+05:39:13,320 --> 05:39:17,730
+deploy box and box v2. Now let's
+go ahead and write a script to
+
+28436
+05:39:17,730 --> 05:39:23,310
+actually upgrade these. So we'll
+do a new folder, scripts. New
+
+28437
+05:39:23,310 --> 05:39:28,500
+File, and we'll call it upgrade
+box dot j s. Now we're going to
+
+28438
+05:39:28,500 --> 05:39:30,960
+do it the manual way here. And
+the reason we're going to do it
+
+28439
+05:39:30,960 --> 05:39:33,450
+the manual way is because I want
+to show you exactly the
+
+28440
+05:39:33,450 --> 05:39:36,480
+functions that we're calling to
+do this upgrade process.
+
+28441
+05:39:36,870 --> 05:39:40,590
+However, hard hat deploy also
+comes with an API to make it
+
+28442
+05:39:40,590 --> 05:39:43,980
+really easy to actually just
+upgrade your box contracts. This
+
+28443
+05:39:43,980 --> 05:39:47,160
+is gonna be script. So we'll
+start off with async function
+
+28444
+05:39:47,160 --> 05:39:52,080
+main. And then we'll copy paste
+our traditional script, main dot
+
+28445
+05:39:52,080 --> 05:39:54,840
+then process exit blah, blah,
+blah, that whole thing. We're
+
+28446
+05:39:54,840 --> 05:39:59,370
+first gonna get the box proxy
+admin contract. We'll say box
+
+28447
+05:39:59,370 --> 05:40:06,480
+const. Box, proxy admin equals
+await ethers dot get contract,
+
+28448
+05:40:07,260 --> 05:40:11,520
+box proxy admin and we got to
+import you Here's from Hardhead,
+
+28449
+05:40:11,880 --> 05:40:14,640
+then we're going to get the
+actual proxy, which is our
+
+28450
+05:40:14,640 --> 05:40:20,370
+transparent proxy. So we'll say
+const transparent proxy equals
+
+28451
+05:40:20,370 --> 05:40:26,340
+await ethers dot get contract,
+box underscore proxy. Since hard
+
+28452
+05:40:26,340 --> 05:40:28,350
+hat deploy, we'll just name the
+proxy the name of the
+
+28453
+05:40:28,350 --> 05:40:32,250
+implementation underscore proxy.
+And then of course, we're going
+
+28454
+05:40:32,250 --> 05:40:37,950
+to need our box V to contract.
+So say const. Box v two equals
+
+28455
+05:40:37,950 --> 05:40:44,310
+await ethers dot get contract,
+box V two. Now we can say const,
+
+28456
+05:40:44,340 --> 05:40:50,670
+upgrade TX equals a weight box
+proxy admin, that upgrade. And
+
+28457
+05:40:50,670 --> 05:40:54,090
+we're going to call the upgrade
+function on our box proxy admin,
+
+28458
+05:40:54,120 --> 05:40:56,640
+which calls it on our
+transparent proxy, which will
+
+28459
+05:40:56,640 --> 05:41:01,260
+change the implementation from
+box one to box two. So box proxy
+
+28460
+05:41:01,260 --> 05:41:05,280
+admin, that upgrade, we're going
+to upgrade the transparent proxy
+
+28461
+05:41:05,820 --> 05:41:14,250
+dot address to our box B to that
+address, it will look in our box
+
+28462
+05:41:14,250 --> 05:41:18,210
+proxy, a box proxy has an
+upgrade function which calls
+
+28463
+05:41:18,240 --> 05:41:21,870
+upgrade to on our transparent
+upgradeable proxy will do a
+
+28464
+05:41:21,870 --> 05:41:26,130
+weight upgrade TX dot wait one.
+And now to work with the
+
+28465
+05:41:26,130 --> 05:41:31,020
+functions on our box v two,
+we're gonna say const proxy box
+
+28466
+05:41:31,080 --> 05:41:38,340
+equals await ethers dot get
+contract. At box v two, we're
+
+28467
+05:41:38,340 --> 05:41:42,540
+going to get the box v two ABI
+however, we're going to load it
+
+28468
+05:41:42,900 --> 05:41:48,480
+at the transparent proxy
+address. This way ethers knows
+
+28469
+05:41:48,510 --> 05:41:51,570
+okay, we're going to call all of
+our functions on the transparent
+
+28470
+05:41:51,570 --> 05:41:55,830
+proxy address. But this proxy
+box is going to have the ABI of
+
+28471
+05:41:55,830 --> 05:42:00,090
+box v2, which is what we want.
+Now we can say const version
+
+28472
+05:42:00,150 --> 05:42:05,820
+equals await proxy box dot
+version. And we'll say console
+
+28473
+05:42:05,820 --> 05:42:10,830
+dot log version. And if we want
+to compare this to its original
+
+28474
+05:42:10,830 --> 05:42:14,100
+implementation, before we
+upgrade, we can do the same
+
+28475
+05:42:14,100 --> 05:42:18,900
+thing. We can say const proxy
+box v1, let's actually call this
+
+28476
+05:42:18,930 --> 05:42:23,970
+proxy box V to say cost proxy
+box v one is going to be this
+
+28477
+05:42:23,970 --> 05:42:25,020
+exact same thing
+
+28478
+05:42:26,280 --> 05:42:34,320
+equals this call box here. And
+we'll do const version equals
+
+28479
+05:42:34,710 --> 05:42:41,370
+weight, right proxy box v1 dot
+version, console dot log
+
+28480
+05:42:41,910 --> 05:42:47,850
+version, or version v1, version
+v1. We'll call this version v
+
+28481
+05:42:47,850 --> 05:42:53,400
+two, version v two, and proxy
+box V two. So we'll get our
+
+28482
+05:42:53,400 --> 05:42:57,660
+version v one will upgrade. And
+then we'll see at that same
+
+28483
+05:42:57,660 --> 05:43:01,530
+address what the version
+function now returns. So let's
+
+28484
+05:43:01,530 --> 05:43:07,020
+open our terminal. If I run
+yarn, our head node will spin up
+
+28485
+05:43:07,020 --> 05:43:12,030
+a node will have deployed our
+admin our implementation, our
+
+28486
+05:43:12,030 --> 05:43:17,100
+proxy, and then our box V to
+implementation. I'll make a new
+
+28487
+05:43:17,100 --> 05:43:23,010
+terminal. And I'll run yarn,
+hard hat run scripts upgrade box
+
+28488
+05:43:23,010 --> 05:43:28,260
+that J S dash dash network,
+local host. And we should see
+
+28489
+05:43:28,290 --> 05:43:31,350
+that box actually update. And
+that's exactly what we see. And
+
+28490
+05:43:31,350 --> 05:43:34,770
+then let's do well, it's I
+forgot to do.to string in here.
+
+28491
+05:43:34,890 --> 05:43:38,130
+But it goes from version one to
+version two on that exact same
+
+28492
+05:43:38,130 --> 05:43:41,970
+address. And with that little
+code, we have successfully
+
+28493
+05:43:42,000 --> 05:43:45,360
+learned how to upgrade our smart
+contracts programmatically. Now,
+
+28494
+05:43:45,360 --> 05:43:49,230
+like I said, in the GitHub repo
+associated with this lesson, you
+
+28495
+05:43:49,230 --> 05:43:53,040
+can also check out the upgrades
+plugin from open Zeppelin. So to
+
+28496
+05:43:53,040 --> 05:43:56,610
+work with that, you would just
+do upgrades dot deploy proxy
+
+28497
+05:43:56,790 --> 05:44:01,350
+proxy to call the Prepare
+upgrade function, and then
+
+28498
+05:44:01,350 --> 05:44:05,340
+upgrade upgrade proxy just like
+that. They also have an upgrade
+
+28499
+05:44:05,370 --> 05:44:07,890
+tutorial, step by step for
+hardhat that you can follow
+
+28500
+05:44:07,890 --> 05:44:10,830
+along with as well. Now I know
+this was an advanced section.
+
+28501
+05:44:10,950 --> 05:44:14,100
+And I know we went a little bit
+quick here. But honestly, if you
+
+28502
+05:44:14,100 --> 05:44:16,800
+just finish this section, not
+only have you completed all
+
+28503
+05:44:16,800 --> 05:44:19,260
+these other sections that make
+you a really powerful smart
+
+28504
+05:44:19,260 --> 05:44:22,860
+contract developer. But you've
+learned some really advanced
+
+28505
+05:44:22,860 --> 05:44:26,190
+stuff here. We've gone into low
+level code like delegate call,
+
+28506
+05:44:26,190 --> 05:44:29,070
+we've gotten to assembly we've
+gotten to you'll we've gotten to
+
+28507
+05:44:29,070 --> 05:44:33,360
+these proxy patterns, which can
+really make you a an incredible
+
+28508
+05:44:33,360 --> 05:44:37,980
+stand out developer in the smart
+contract space. So if you just
+
+28509
+05:44:37,980 --> 05:44:40,230
+finished this section, you
+should be so so proud of
+
+28510
+05:44:40,230 --> 05:44:42,540
+yourself because we went really
+fast and because there's a lot
+
+28511
+05:44:42,540 --> 05:44:46,920
+of advanced information here.
+Now, like I said, 100 percent, be sure
+
+28512
+05:44:46,920 --> 05:44:50,520
+to go into the discussions tab
+and ask questions and connect
+
+28513
+05:44:50,520 --> 05:44:53,610
+and talk to other people in the
+area. Maybe look at the already
+
+28514
+05:44:53,610 --> 05:44:57,090
+running discussions and jump in
+and start asking other students
+
+28515
+05:44:57,270 --> 05:45:00,570
+and start asking other people
+about what they've learned and
+
+28516
+05:45:00,570 --> 05:45:02,940
+how their proxies are going. And
+if they made anything really
+
+28517
+05:45:02,940 --> 05:45:05,460
+cool. If you're just excited and
+you want to go to the show and
+
+28518
+05:45:05,460 --> 05:45:07,830
+tell section, make a show and
+tell me like hey, here's my
+
+28519
+05:45:07,830 --> 05:45:11,370
+GitHub repo for doing this
+upgrade section. going here and
+
+28520
+05:45:11,370 --> 05:45:14,610
+be excited with that being said
+go and take that coffee break go
+
+28521
+05:45:14,610 --> 05:45:18,750
+take that walk go to the gym go
+get excited Go tell your friends
+
+28522
+05:45:18,990 --> 05:45:22,800
+we are almost done we have two
+lessons left and then you're
+
+28523
+05:45:22,800 --> 05:45:23,640
+home free
+
+28524
+05:45:26,900 --> 05:45:30,980
+All right, welcome back to
+lesson 17 For hardhat. Douse,
+
+28525
+05:45:30,980 --> 05:45:34,580
+you're almost done. Now for this
+section, I've actually already
+
+28526
+05:45:34,580 --> 05:45:37,910
+made a video on how to code a
+dowel with TypeScript and
+
+28527
+05:45:37,910 --> 05:45:41,330
+solidity in JavaScript. So we're
+actually just going to play this
+
+28528
+05:45:41,330 --> 05:45:43,430
+video for this section. The
+reason we're going to display
+
+28529
+05:45:43,430 --> 05:45:45,980
+this one is because I did a lot
+of work to make this one look
+
+28530
+05:45:45,980 --> 05:45:49,700
+really good. And it's still
+incredibly up to date. So this
+
+28531
+05:45:49,700 --> 05:45:52,700
+is going to be in TypeScript and
+solidity. However, we're going
+
+28532
+05:45:52,700 --> 05:45:56,150
+to have the JavaScript edition
+of the code base in this code
+
+28533
+05:45:56,150 --> 05:45:58,790
+from the video section. If you
+want the most up to date version
+
+28534
+05:45:58,820 --> 05:46:02,090
+of this delta template code, you
+can use, you can select this up
+
+28535
+05:46:02,090 --> 05:46:05,300
+to date code, which goes to this
+doubt template repo. I'll be
+
+28536
+05:46:05,300 --> 05:46:09,500
+updating this repo periodically
+with new Dao examples and new
+
+28537
+05:46:09,530 --> 05:46:11,930
+ways to create doubts or
+decentralized autonomous
+
+28538
+05:46:11,930 --> 05:46:14,840
+organizations. Now, before we
+learn how to code a doubt, we
+
+28539
+05:46:14,840 --> 05:46:17,720
+should learn what the DAO is.
+And again, I've already made a
+
+28540
+05:46:17,720 --> 05:46:19,340
+video that I've put a lot of
+work into. So we're going to
+
+28541
+05:46:19,340 --> 05:46:22,280
+watch what a Dow is from a high
+level first, then we're going to
+
+28542
+05:46:22,280 --> 05:46:25,460
+learn how to code a Dow. And
+then our last section is going
+
+28543
+05:46:25,460 --> 05:46:27,710
+to be security and auditing. And
+we're going to finish this out.
+
+28544
+05:46:27,710 --> 05:46:32,450
+So Bucklin, let's learn what a
+Dow is. And then let's go ahead
+
+28545
+05:46:32,480 --> 05:46:39,860
+and build a Dow, let's do it.
+Now, daos for decentralized
+
+28546
+05:46:39,890 --> 05:46:43,400
+autonomous organizations is a
+bit of an overloaded term. But
+
+28547
+05:46:43,400 --> 05:46:46,490
+it typically describes any group
+that is governed by a
+
+28548
+05:46:46,490 --> 05:46:49,520
+transparent set of rules found
+on a blockchain or smart
+
+28549
+05:46:49,520 --> 05:46:53,210
+contract. And I say overloaded
+because some people say bitcoin
+
+28550
+05:46:53,210 --> 05:46:55,880
+is down because the miners can
+choose whether or not to upgrade
+
+28551
+05:46:55,880 --> 05:46:58,550
+their software. Other people
+think that Dows must use
+
+28552
+05:46:58,550 --> 05:47:01,160
+transparent smart contracts,
+which have the rules ingrained
+
+28553
+05:47:01,160 --> 05:47:03,710
+right into them. And then other
+people think Tao is just a
+
+28554
+05:47:03,710 --> 05:47:06,530
+buzzword, so they just slap the
+name relay on to any
+
+28555
+05:47:06,530 --> 05:47:08,900
+organization so that they can
+get some clout. And this makes
+
+28556
+05:47:08,900 --> 05:47:14,030
+for sad, Patrick. And it's not
+to be confused with the Dow,
+
+28557
+05:47:14,060 --> 05:47:17,900
+which was an implementation of a
+Dow back in 2016, which set the
+
+28558
+05:47:17,900 --> 05:47:20,750
+record for the largest hack at
+that time. So there's a lot of
+
+28559
+05:47:20,750 --> 05:47:23,090
+different ways to think about
+and the Dow term is used in a
+
+28560
+05:47:23,090 --> 05:47:25,880
+lot of different ways. But in
+essence, imagine if all of the
+
+28561
+05:47:25,880 --> 05:47:29,720
+users of Google were given
+voting power into what Google
+
+28562
+05:47:29,720 --> 05:47:32,960
+should do next. And the rules of
+the voting was immutable,
+
+28563
+05:47:32,990 --> 05:47:37,010
+transparent, and decentralized.
+This solves an age old problem
+
+28564
+05:47:37,040 --> 05:47:40,010
+of trust, centrality and
+transparency, and giving the
+
+28565
+05:47:40,010 --> 05:47:43,610
+power to the users of different
+protocols and applications
+
+28566
+05:47:43,700 --> 05:47:46,610
+instead of everything happening
+behind closed doors. And this
+
+28567
+05:47:46,610 --> 05:47:49,460
+voting piece is a cornerstone of
+how these operate this
+
+28568
+05:47:49,490 --> 05:47:52,250
+Decentralized Governance, if you
+will, and it can be summarized
+
+28569
+05:47:52,250 --> 05:47:56,030
+by company or organization
+operated exclusively through
+
+28570
+05:47:56,030 --> 05:47:58,940
+code. And to really understand
+all this, we're going to look
+
+28571
+05:47:58,970 --> 05:48:02,060
+under the hood of the protocol
+that's setting the precedent for
+
+28572
+05:48:02,060 --> 05:48:05,300
+all other doubts and compound,
+then once we look at compound,
+
+28573
+05:48:05,330 --> 05:48:08,300
+we'll understand what goes into
+building one of these and all
+
+28574
+05:48:08,300 --> 05:48:10,850
+the trade offs, all the
+different architectural choices
+
+28575
+05:48:10,940 --> 05:48:14,360
+mean for your group. And then in
+my next video, I'm gonna have a
+
+28576
+05:48:14,360 --> 05:48:17,270
+full coat along tutorial for
+developers looking to build one
+
+28577
+05:48:17,270 --> 05:48:19,820
+of these themselves. But be
+absolutely sure to watch the
+
+28578
+05:48:19,820 --> 05:48:21,830
+rest of this video because it's
+going to give you all the
+
+28579
+05:48:21,830 --> 05:48:24,530
+architectural fundamentals. So
+you can make intelligent
+
+28580
+05:48:24,530 --> 05:48:27,200
+decisions when you get to that
+section. And be sure that you
+
+28581
+05:48:27,200 --> 05:48:29,840
+and your Dow friends smash the
+like and subscribe button. So we
+
+28582
+05:48:29,840 --> 05:48:33,950
+can keep giving you the best
+engineer first content on the
+
+28583
+05:48:33,950 --> 05:48:34,280
+planet when
+
+28584
+05:48:34,280 --> 05:48:37,280
+it comes to smart contracts.
+Let's get into it. So here we
+
+28585
+05:48:37,280 --> 05:48:40,280
+have the compound protocol. It's
+a borrowing and lending
+
+28586
+05:48:40,280 --> 05:48:43,940
+application that allows users to
+borrow and lend their assets.
+
+28587
+05:48:44,090 --> 05:48:46,970
+And everything about this
+application is built in smart
+
+28588
+05:48:46,970 --> 05:48:49,850
+contracts. Now, oftentimes,
+they're gonna want to do a lot
+
+28589
+05:48:49,850 --> 05:48:52,490
+of new things, maybe they want
+to add a new token to allow
+
+28590
+05:48:52,490 --> 05:48:54,830
+borrowing and lending, maybe
+they're gonna want to change
+
+28591
+05:48:55,010 --> 05:48:57,200
+some of the API parameters,
+maybe they're gonna want to
+
+28592
+05:48:57,200 --> 05:48:59,840
+block certain coins, there's a
+lot of different things that
+
+28593
+05:48:59,840 --> 05:49:02,300
+they might want to do. So that's
+where we're gonna go ahead to
+
+28594
+05:49:02,570 --> 05:49:07,040
+governance, this is where you
+can find a user interface for
+
+28595
+05:49:07,040 --> 05:49:10,190
+list of all the proposals and
+all the different ballots that
+
+28596
+05:49:10,190 --> 05:49:13,520
+came to be. So here's a list of
+some of the governance proposals
+
+28597
+05:49:13,550 --> 05:49:16,460
+that this protocol has actually
+been making to improve. And
+
+28598
+05:49:16,460 --> 05:49:18,740
+let's look at one of these
+proposals that's currently
+
+28599
+05:49:18,800 --> 05:49:21,770
+actually in process. So if we
+click on the proposal, we
+
+28600
+05:49:21,770 --> 05:49:25,220
+actually see everything about
+this proposal, who voted for who
+
+28601
+05:49:25,220 --> 05:49:28,760
+voted against and the proposal
+history here. Now, the first
+
+28602
+05:49:28,760 --> 05:49:30,980
+thing to one of these proposals
+is somebody has to actually
+
+28603
+05:49:30,980 --> 05:49:33,980
+create the proposal in a
+proposed transaction. And we
+
+28604
+05:49:33,980 --> 05:49:37,010
+actually see that proposed
+transaction right here. If we
+
+28605
+05:49:37,010 --> 05:49:40,370
+click on this, and we scroll
+down, we can actually see the
+
+28606
+05:49:40,370 --> 05:49:44,000
+exact parameters they used to
+make this proposal. Let's go
+
+28607
+05:49:44,000 --> 05:49:47,030
+ahead and decode the input data.
+And we can see this is exactly
+
+28608
+05:49:47,030 --> 05:49:49,790
+what this proposal looks like.
+The way that they're typically
+
+28609
+05:49:49,820 --> 05:49:53,120
+divided is they have a list of
+addresses and the list of
+
+28610
+05:49:53,120 --> 05:49:55,940
+functions to call on those
+addresses. And then obviously,
+
+28611
+05:49:55,940 --> 05:49:59,840
+the parameters to pass those
+addresses. So this proposal is
+
+28612
+05:49:59,840 --> 05:50:03,470
+saying, Hey, I would like to
+call Support Market on this
+
+28613
+05:50:03,470 --> 05:50:07,640
+address, set reserve factor on
+this address. Here are the
+
+28614
+05:50:07,640 --> 05:50:10,130
+parameters we're going to pass.
+They're obviously encoded with
+
+28615
+05:50:10,130 --> 05:50:13,580
+bytes. And then here's the
+description string of what this
+
+28616
+05:50:13,580 --> 05:50:16,280
+is doing and why we're actually
+doing this. The reason we have
+
+28617
+05:50:16,280 --> 05:50:19,400
+to do this proposal governance
+process is that these contracts
+
+28618
+05:50:19,430 --> 05:50:22,370
+likely have access controls
+where only the owner of these
+
+28619
+05:50:22,370 --> 05:50:25,250
+contracts can actually call
+these Do functions, and the
+
+28620
+05:50:25,250 --> 05:50:28,460
+owner of these two contracts is
+likely going to be this
+
+28621
+05:50:28,460 --> 05:50:31,730
+governance style. And values.
+Zero just means that we're not
+
+28622
+05:50:31,730 --> 05:50:34,520
+going to send any eath along
+with these transactions, once a
+
+28623
+05:50:34,520 --> 05:50:38,240
+proposal has been created, after
+a short delay to becomes active,
+
+28624
+05:50:38,330 --> 05:50:40,850
+and this is when people can
+actually start voting on them,
+
+28625
+05:50:41,000 --> 05:50:44,180
+this delay between a proposal
+and an act of vote can be
+
+28626
+05:50:44,180 --> 05:50:47,510
+changed or modified, depending
+on your doubt, then people have
+
+28627
+05:50:47,510 --> 05:50:50,780
+some time to start voting on
+them. And if it passes, which
+
+28628
+05:50:50,780 --> 05:50:54,800
+this one overwhelmingly did, it
+reaches succeeded, we click on
+
+28629
+05:50:54,800 --> 05:50:57,770
+this transaction again, and we
+go to the compound governance
+
+28630
+05:50:57,770 --> 05:51:02,900
+contract. And we scroll down to
+contract, right as proxy, we can
+
+28631
+05:51:02,900 --> 05:51:07,820
+actually see the exact function
+that the people call to vote,
+
+28632
+05:51:08,180 --> 05:51:12,770
+namely cast by vote, cast, vote
+by signature and cast vote with
+
+28633
+05:51:12,770 --> 05:51:15,530
+reason. We'll talk a little bit
+about the exact differences
+
+28634
+05:51:15,530 --> 05:51:18,380
+between these in our next video.
+But these are the functions that
+
+28635
+05:51:18,380 --> 05:51:22,730
+they're actually calling. And if
+you go to the compound app, and
+
+28636
+05:51:22,730 --> 05:51:25,820
+we go over to vote, this is a
+user interface you can actually
+
+28637
+05:51:25,820 --> 05:51:29,390
+vote through to make it easier
+if you're not as tech savvy. So
+
+28638
+05:51:29,390 --> 05:51:32,810
+you can vote right through this
+app dot compound at finance. Or
+
+28639
+05:51:32,810 --> 05:51:35,180
+you can just send the
+transaction yourself. Once all
+
+28640
+05:51:35,180 --> 05:51:39,620
+those votes happen. It reaches
+this queued stage. Now what is
+
+28641
+05:51:39,620 --> 05:51:43,250
+queued mean? Well, before a
+proposal actually becomes
+
+28642
+05:51:43,280 --> 05:51:47,450
+active, there's a minimum delay
+between a proposal passing and a
+
+28643
+05:51:47,450 --> 05:51:51,230
+proposal being executed. So
+somebody has to call this cute
+
+28644
+05:51:51,230 --> 05:51:55,160
+function. And it only can be
+called if a vote passes. And it
+
+28645
+05:51:55,160 --> 05:51:58,760
+says, OK, that postal ID has
+been cued, and we're going to
+
+28646
+05:51:58,760 --> 05:52:03,140
+execute it soon. Now, if we go
+to a different proposal, like
+
+28647
+05:52:03,140 --> 05:52:05,810
+this one, for example, we can
+see it has been executed, we can
+
+28648
+05:52:05,810 --> 05:52:10,790
+see somebody called this
+executed function. And they
+
+28649
+05:52:10,790 --> 05:52:13,820
+executed Proposal A detail. So
+this is going to be a full
+
+28650
+05:52:13,820 --> 05:52:17,810
+example of the lifecycle of a
+proposal going through this
+
+28651
+05:52:17,810 --> 05:52:21,140
+process. Now there are a couple
+that even failed, a whole bunch
+
+28652
+05:52:21,140 --> 05:52:23,810
+of people voted against this.
+And if you scroll down, you can
+
+28653
+05:52:23,810 --> 05:52:26,360
+see it was created, it was
+active, and the majority of
+
+28654
+05:52:26,360 --> 05:52:30,260
+people voted against. So that's
+where it stops. Now oftentimes,
+
+28655
+05:52:30,290 --> 05:52:32,750
+just putting one of these
+proposals through isn't enough
+
+28656
+05:52:32,750 --> 05:52:36,830
+to really garner some votes for
+it, you generally want a forum
+
+28657
+05:52:36,830 --> 05:52:40,130
+or some type of discussion place
+to talk about these proposals
+
+28658
+05:52:40,130 --> 05:52:42,860
+and why you liked them or don't
+like them. Oftentimes, a
+
+28659
+05:52:42,860 --> 05:52:45,860
+discourse is one of the main
+places that people are going to
+
+28660
+05:52:45,890 --> 05:52:48,980
+argue for why something is good,
+or why something is bad. So
+
+28661
+05:52:48,980 --> 05:52:52,040
+people can vote on these
+changes. And again, snapshot
+
+28662
+05:52:52,040 --> 05:52:54,830
+might be one of these tools that
+you use to figure out if your
+
+28663
+05:52:54,830 --> 05:52:57,920
+community even wants something
+before it even goes to vote, you
+
+28664
+05:52:57,920 --> 05:53:01,070
+can join one of these, and with
+your tokens actually vote on
+
+28665
+05:53:01,070 --> 05:53:03,080
+things without them being
+executed just to get the
+
+28666
+05:53:03,080 --> 05:53:06,080
+sentiment or like I said before,
+you could build your protocol in
+
+28667
+05:53:06,080 --> 05:53:08,180
+a way that snapshot actually
+helps you with the voting
+
+28668
+05:53:08,180 --> 05:53:11,510
+process. All right, now you've
+seen the protocol that has been
+
+28669
+05:53:11,510 --> 05:53:14,300
+influencing all the other
+details on how to vote. Now, you
+
+28670
+05:53:14,300 --> 05:53:17,210
+know, now that we know what a
+doubt looks like,
+
+28671
+05:53:17,240 --> 05:53:19,400
+let's talk about the
+architecture and tools that go
+
+28672
+05:53:19,400 --> 05:53:21,890
+into building one of these and
+additionally the trade offs that
+
+28673
+05:53:21,890 --> 05:53:24,590
+they have. And the first thing
+to talk about here is going to
+
+28674
+05:53:24,590 --> 05:53:27,650
+be the voting mechanism. Now
+voting in Decentralized
+
+28675
+05:53:27,650 --> 05:53:31,340
+Governance is critical to these
+days, because sometimes they do
+
+28676
+05:53:31,340 --> 05:53:34,370
+need to update and change to
+keep up with the times. Not all
+
+28677
+05:53:34,370 --> 05:53:37,220
+protocols need to have a Dow,
+but those that do need to have a
+
+28678
+05:53:37,220 --> 05:53:40,430
+doubt need a way for the
+participants to engage. This is
+
+28679
+05:53:40,430 --> 05:53:43,580
+one of the most important
+questions to ask him to tell
+
+28680
+05:53:43,580 --> 05:53:47,420
+your communities. How do I
+participate? How do I engage in
+
+28681
+05:53:47,420 --> 05:53:51,320
+this doubt? How do I help make
+decisions and you'll find this
+
+28682
+05:53:51,320 --> 05:53:55,430
+is a bit of a tricky problem to
+solve. Now, an easy approach to
+
+28683
+05:53:55,430 --> 05:53:58,880
+this problem is going to be
+using an ERC 20 or an NFT token
+
+28684
+05:53:59,090 --> 05:54:02,480
+as voting power. Similar to what
+we saw with compound use the
+
+28685
+05:54:02,480 --> 05:54:06,230
+comp token to vote for different
+proposals seems simple enough,
+
+28686
+05:54:06,230 --> 05:54:09,770
+right? Boom, problem solved
+gray. Now, this actually might
+
+28687
+05:54:09,770 --> 05:54:12,440
+be the right approach for
+certain doubts. But it also runs
+
+28688
+05:54:12,440 --> 05:54:15,830
+the risk of actually being less
+fair. Because when you tokenize
+
+28689
+05:54:15,830 --> 05:54:18,530
+the voting power, you're
+essentially auctioning off this
+
+28690
+05:54:18,530 --> 05:54:21,860
+voting power to whoever's got
+the deepest pockets, whoever has
+
+28691
+05:54:21,860 --> 05:54:25,040
+the most money gets to pick the
+changes. So if it's only the
+
+28692
+05:54:25,040 --> 05:54:28,160
+rich people who get to vote,
+then it's highly likely that all
+
+28693
+05:54:28,160 --> 05:54:31,880
+the changes in the protocol are
+going to benefit the rich, which
+
+28694
+05:54:31,880 --> 05:54:34,610
+doesn't really seem like that
+great of an improvement over our
+
+28695
+05:54:34,640 --> 05:54:37,190
+current world. And if T's are
+interesting, because they have
+
+28696
+05:54:37,190 --> 05:54:41,060
+this non fungible component, but
+yet, even they still run into
+
+28697
+05:54:41,060 --> 05:54:43,730
+this issue. Additionally, if you
+buy a whole bunch of votes, you
+
+28698
+05:54:43,730 --> 05:54:47,000
+make a bad decision and then
+sell all your votes. You as an
+
+28699
+05:54:47,000 --> 05:54:49,730
+individual don't really get
+punished, you just punish the
+
+28700
+05:54:49,730 --> 05:54:52,760
+group as a whole. But you being
+malicious, you can get away with
+
+28701
+05:54:52,760 --> 05:54:55,400
+pretty scot free now again, this
+voting mechanism is going to be
+
+28702
+05:54:55,400 --> 05:55:00,260
+correct for some groups, but for
+other groups, maybe not. It
+
+28703
+05:55:00,260 --> 05:55:02,930
+really just depends on what your
+down community setup is going to
+
+28704
+05:55:02,930 --> 05:55:04,760
+look like. Now the next one
+we're going to talk about is
+
+28705
+05:55:04,790 --> 05:55:07,910
+skin in the game. Now metallic
+has actually written a lot about
+
+28706
+05:55:07,910 --> 05:55:10,640
+this and I highly recommend you
+read his article, link in the
+
+28707
+05:55:10,640 --> 05:55:13,640
+description to see that the skin
+in the game method means that
+
+28708
+05:55:13,640 --> 05:55:16,970
+whenever you make a decision,
+your vote is recorded. And if
+
+28709
+05:55:16,970 --> 05:55:21,470
+that decision leads to a bad
+outcome, your tokens are axed.
+
+28710
+05:55:21,500 --> 05:55:25,220
+You get punished for making evil
+or bad decisions for your Dao
+
+28711
+05:55:25,220 --> 05:55:27,560
+and your protocol. I like this
+mentality because even if you
+
+28712
+05:55:27,560 --> 05:55:30,380
+buy a ton of tokens and decide
+to be ill with it, you can be
+
+28713
+05:55:30,380 --> 05:55:33,530
+held accountable for your bad
+decisions. Now, the hardest part
+
+28714
+05:55:33,530 --> 05:55:37,190
+about this, though, is gonna be
+how do we decide as a community?
+
+28715
+05:55:37,220 --> 05:55:40,100
+What is bad outcome? How do we
+actually punish these people?
+
+28716
+05:55:40,160 --> 05:55:45,740
+And that's easy, because the
+answer is, I'm not sure. Now,
+
+28717
+05:55:45,740 --> 05:55:48,620
+the third method of this voting
+mechanism is probably one of the
+
+28718
+05:55:48,620 --> 05:55:51,710
+most interesting ones, but also
+the hardest ones to implement.
+
+28719
+05:55:51,980 --> 05:55:55,940
+And this is proof of personhood,
+or participation. Imagine that
+
+28720
+05:55:55,970 --> 05:55:58,880
+all users of the compound
+protocol were given a single
+
+28721
+05:55:58,880 --> 05:56:02,540
+vote simply because they use the
+protocol. And even if they had
+
+28722
+05:56:02,540 --> 05:56:06,410
+1000 wallets, they use the
+protocol. One human being means
+
+28723
+05:56:06,440 --> 05:56:09,350
+one vote, this would be amazing,
+and a far more fair
+
+28724
+05:56:09,350 --> 05:56:11,810
+implementation where votes
+couldn't actually just be
+
+28725
+05:56:11,810 --> 05:56:14,810
+bought. The issue, however,
+comes in something known as
+
+28726
+05:56:14,840 --> 05:56:19,100
+civil resistance, how can we be
+sure that it's one vote equals
+
+28727
+05:56:19,130 --> 05:56:22,070
+one participant and not one
+participant pretending to be
+
+28728
+05:56:22,070 --> 05:56:25,100
+1000s of different people, so
+they get more votes. This method
+
+28729
+05:56:25,130 --> 05:56:27,710
+hasn't really been solved yet.
+But I'm willing to bet some very
+
+28730
+05:56:27,710 --> 05:56:30,530
+clever engineer will do some
+amazing chainlink integration,
+
+28731
+05:56:30,530 --> 05:56:33,860
+because proof of personhood is
+basically just off chain data
+
+28732
+05:56:33,920 --> 05:56:36,050
+that can be delivered on chain.
+And that's exactly where
+
+28733
+05:56:36,050 --> 05:56:39,380
+channeling shines. Now, as you
+can see all of these methods and
+
+28734
+05:56:39,380 --> 05:56:42,050
+even more that you probably
+think of aren't that far
+
+28735
+05:56:42,050 --> 05:56:45,020
+fetched. And we actually see
+these exact same methods
+
+28736
+05:56:45,020 --> 05:56:48,110
+happening in the real world.
+Proof of personhood or proof of
+
+28737
+05:56:48,110 --> 05:56:51,200
+participation might just be the
+exact same as kind of the
+
+28738
+05:56:51,200 --> 05:56:54,080
+regular government voting that
+we see every day. In the United
+
+28739
+05:56:54,080 --> 05:56:57,590
+States, at least one person gets
+to vote for one president, you
+
+28740
+05:56:57,590 --> 05:57:00,470
+can't go around making a whole
+bunch of fake people and voting
+
+28741
+05:57:00,470 --> 05:57:03,710
+for president. But in companies
+the ERC 20 voting standard kind
+
+28742
+05:57:03,710 --> 05:57:06,950
+of applies, the more shares of a
+company you have maybe the more
+
+28743
+05:57:07,010 --> 05:57:09,170
+voting power you have in that
+company. So we can draw
+
+28744
+05:57:09,170 --> 05:57:11,990
+parallels between the real world
+and how voting and governance is
+
+28745
+05:57:11,990 --> 05:57:14,330
+going to work in our smart
+contracts. And in fact, you
+
+28746
+05:57:14,330 --> 05:57:17,090
+should draw parallels and look
+for inspiration from the web to
+
+28747
+05:57:17,090 --> 05:57:19,760
+space. Now when it comes to
+implementation of the voting, I
+
+28748
+05:57:19,760 --> 05:57:22,970
+put them into two categories on
+chain voting and off chain
+
+28749
+05:57:22,970 --> 05:57:25,550
+voting on chain voting is
+exactly what we saw with
+
+28750
+05:57:25,550 --> 05:57:29,600
+compound, the smart contract on
+chain, your voter, you call some
+
+28751
+05:57:29,600 --> 05:57:32,030
+function called vote with your
+meta mask your ledger or
+
+28752
+05:57:32,030 --> 05:57:36,110
+whatever, send a transaction and
+vote, you voted Congrats, you
+
+28753
+05:57:36,110 --> 05:57:38,660
+can wear your little sticker now
+call that function and you send
+
+28754
+05:57:38,660 --> 05:57:43,100
+a transaction, you send a
+transaction, what are the
+
+28755
+05:57:43,100 --> 05:57:45,950
+transactions use that are kind
+of annoying and kind of costly?
+
+28756
+05:57:47,300 --> 05:57:49,880
+Oh, that's right gas, I imagine
+you have 10,000 people in your
+
+28757
+05:57:49,880 --> 05:57:53,540
+community and it costs $100 To
+vote per person, you're now
+
+28758
+05:57:53,540 --> 05:57:57,560
+costing your community $1
+million. Anytime you want to
+
+28759
+05:57:57,560 --> 05:57:59,840
+change anything. This is
+obviously insane, and not very
+
+28760
+05:57:59,840 --> 05:58:02,000
+sustainable for your community
+pro here is that the
+
+28761
+05:58:02,000 --> 05:58:04,310
+architecture is really easy.
+Everything's going to be
+
+28762
+05:58:04,310 --> 05:58:06,560
+transparent, everything's going
+to be on chain. And that's
+
+28763
+05:58:06,560 --> 05:58:09,110
+really good. But yes, the con is
+that you're going to break the
+
+28764
+05:58:09,110 --> 05:58:11,930
+bank account for a lot of people
+potentially. Now there are a lot
+
+28765
+05:58:11,930 --> 05:58:14,540
+of variations of this to help
+solve some of these problems,
+
+28766
+05:58:14,540 --> 05:58:17,480
+especially the gas problem. One
+of the ones that I'm incredibly
+
+28767
+05:58:17,480 --> 05:58:20,480
+excited for is this one called
+governor's seat, where they use
+
+28768
+05:58:20,480 --> 05:58:23,840
+some random sampling to do some
+quadratic voting to help reduce
+
+28769
+05:58:23,840 --> 05:58:26,450
+costs while increasing civil
+resistance. You want to learn
+
+28770
+05:58:26,450 --> 05:58:28,850
+more about that one to be sure
+to read about it in the
+
+28771
+05:58:28,850 --> 05:58:31,970
+description. So on chain voting
+is the simplest one here. But
+
+28772
+05:58:31,970 --> 05:58:36,530
+let's talk about off chain
+voting. To cast the vote off to
+
+28773
+05:58:36,620 --> 05:58:39,980
+decentralized context, relax,
+relax, you can vote off chain
+
+28774
+05:58:39,980 --> 05:58:42,590
+and still have the 100%
+decentralized, you can actually
+
+28775
+05:58:42,590 --> 05:58:46,910
+sign a transaction and sign a
+vote without actually sending to
+
+28776
+05:58:46,910 --> 05:58:49,340
+a blockchain and therefore
+without actually spending any
+
+28777
+05:58:49,340 --> 05:58:53,180
+gas. Instead, what you can do is
+send that signed transaction to
+
+28778
+05:58:53,180 --> 05:58:57,140
+a decentralized database like
+IPFS, count up all the votes in
+
+28779
+05:58:57,140 --> 05:59:01,130
+IPFS. And then when time comes,
+deliver the result of that data
+
+28780
+05:59:01,220 --> 05:59:03,560
+through something like an Oracle
+like chain link to the
+
+28781
+05:59:03,560 --> 05:59:06,830
+blockchain all in a single
+transaction. Alternatively, what
+
+28782
+05:59:06,830 --> 05:59:10,190
+you could do is you could replay
+all the same transactions in a
+
+28783
+05:59:10,190 --> 05:59:13,400
+single transaction to save gas,
+this can reduce the voting cost
+
+28784
+05:59:13,400 --> 05:59:16,910
+by up to 99%. Right now, this is
+an implementation and one of the
+
+28785
+05:59:16,910 --> 05:59:20,360
+most popular ways to do this is
+through snapshot. And I'm just
+
+28786
+05:59:20,450 --> 05:59:23,000
+dying for someone to make a
+chain link integration because
+
+28787
+05:59:23,000 --> 05:59:26,030
+it's going to be so much safer,
+more secure and better and blah,
+
+28788
+05:59:26,030 --> 05:59:28,940
+blah, blah, die for it. This is
+your call to action go build
+
+28789
+05:59:28,940 --> 05:59:31,700
+this thing. This option. voting
+mechanism obviously saves a ton
+
+28790
+05:59:31,700 --> 05:59:35,030
+of gas to the community and can
+be a more efficient way to store
+
+28791
+05:59:35,030 --> 05:59:37,280
+these transactions anyways,
+however, it needs to be
+
+28792
+05:59:37,280 --> 05:59:40,010
+implemented very carefully. If
+you run your entire Dow through
+
+28793
+05:59:40,010 --> 05:59:43,340
+a centralized Oracle, you are
+essentially reintroducing a
+
+28794
+05:59:43,370 --> 05:59:45,950
+centralized intermediary and
+ruining the decent quality of
+
+28795
+05:59:45,950 --> 05:59:48,230
+your application. So don't do
+that. And if you made it to this
+
+28796
+05:59:48,230 --> 05:59:50,390
+point of the video, give
+yourself a little pat on the
+
+28797
+05:59:50,390 --> 05:59:53,720
+back. You're doing fantastic.
+Fantastic. Like I said, I have a
+
+28798
+05:59:53,720 --> 05:59:56,570
+video coming out after this one
+it's going to show you end to
+
+28799
+05:59:56,570 --> 05:59:59,090
+end how to build one of these
+from scratch let's learn about
+
+28800
+05:59:59,090 --> 06:00:02,180
+some of the tools that you can
+use to help get you up to speed
+
+28801
+06:00:02,180 --> 06:00:04,940
+quicker. Now there are a number
+of no code solutions that can go
+
+28802
+06:00:04,940 --> 06:00:10,760
+into building one of these
+dowels Tao stack Aragon. Just
+
+28803
+06:00:10,760 --> 06:00:13,730
+kidding, this is Aragon, colony
+and Tao house are all
+
+28804
+06:00:13,730 --> 06:00:16,910
+alternatives that can actually
+help you with the upside of
+
+28805
+06:00:16,910 --> 06:00:19,610
+running a Dao and building a
+doubt. However, if you want more
+
+28806
+06:00:19,610 --> 06:00:21,920
+granular control and you don't
+want to have to pay any the fees
+
+28807
+06:00:21,920 --> 06:00:24,320
+associated with these protocols,
+you might want to Do it from
+
+28808
+06:00:24,320 --> 06:00:26,840
+scratch. Now let's talk about
+some of the more Cody solutions
+
+28809
+06:00:26,870 --> 06:00:29,390
+that you can use snapshot is one
+of the most popular tools out
+
+28810
+06:00:29,390 --> 06:00:32,900
+there for both getting the
+sentiment of a Dao. And actually
+
+28811
+06:00:32,900 --> 06:00:35,930
+performing that execution, users
+can vote through this protocol
+
+28812
+06:00:35,960 --> 06:00:39,200
+with their actual tokens, those
+transaction gets stored in IPFS.
+
+28813
+06:00:39,200 --> 06:00:42,110
+But none of it actually gets
+executed. Unless the doubt
+
+28814
+06:00:42,110 --> 06:00:46,250
+chooses to, this can be a great
+way to get a feel for what your
+
+28815
+06:00:46,280 --> 06:00:50,060
+Dow wants to do. And Optionally,
+you can send the transactions
+
+28816
+06:00:50,060 --> 06:00:53,330
+and execute the votes as well
+highly recommend checking out
+
+28817
+06:00:53,360 --> 06:00:56,630
+Zodiac which is a suite of
+database tools for you to
+
+28818
+06:00:56,630 --> 06:00:59,210
+implement into your Dallas as
+well tally is another one of
+
+28819
+06:00:59,210 --> 06:01:02,240
+these UIs that allows people to
+see and actually vote and
+
+28820
+06:01:02,270 --> 06:01:04,430
+interact with these smart
+contracts through user
+
+28821
+06:01:04,430 --> 06:01:06,680
+interface. So those of you who
+don't know about Gnosis safe,
+
+28822
+06:01:06,710 --> 06:01:10,100
+you absolutely should know Safe
+is a multi SIG wallet. And the
+
+28823
+06:01:10,100 --> 06:01:12,620
+reason I put this on the list,
+even though it's adds kind of
+
+28824
+06:01:12,620 --> 06:01:15,260
+this centrality component is
+that most dowels in the
+
+28825
+06:01:15,260 --> 06:01:18,470
+beginning, are probably going to
+start with some type of
+
+28826
+06:01:18,470 --> 06:01:20,900
+centrality, it's much easier to
+be fast when you don't have
+
+28827
+06:01:20,930 --> 06:01:23,870
+1000s of people to wait for a
+vote. And in the beginning, any
+
+28828
+06:01:23,870 --> 06:01:26,060
+protocol is going to be
+centralized to some degree
+
+28829
+06:01:26,060 --> 06:01:29,060
+anyways, using a multisig, we're
+voting happens through only a
+
+28830
+06:01:29,150 --> 06:01:32,660
+few key members can be good in
+the beginning for your dials,
+
+28831
+06:01:32,720 --> 06:01:36,230
+and often emergencies as well.
+But just keep in mind, when you
+
+28832
+06:01:36,230 --> 06:01:39,170
+add one of these, you are adding
+this level of centrality, and
+
+28833
+06:01:39,170 --> 06:01:41,840
+then of course opens up and
+contracts we love opens up and
+
+28834
+06:01:41,840 --> 06:01:43,640
+contracts. These are the
+contracts that we're going to be
+
+28835
+06:01:43,640 --> 06:01:46,610
+basing our Dao code along.
+Alright, so that's all the
+
+28836
+06:01:46,610 --> 06:01:49,610
+tools. That's the architecture.
+One more thing before I let you
+
+28837
+06:01:49,610 --> 06:01:53,000
+go legality, the future of Dows
+is interesting for all these
+
+28838
+06:01:53,000 --> 06:01:55,820
+reasons we just talked about,
+but especially on a legal front,
+
+28839
+06:01:55,880 --> 06:01:58,640
+does it make sense for a doubt
+to live by the same regulation
+
+28840
+06:01:58,640 --> 06:02:01,070
+as another company? Why would
+you even force it down to do
+
+28841
+06:02:01,070 --> 06:02:03,530
+something, you'd have to enforce
+them to all vote a certain way
+
+28842
+06:02:03,530 --> 06:02:07,100
+if the government tells you to,
+it's a little gray, it's hard to
+
+28843
+06:02:07,100 --> 06:02:09,950
+nail down who to even keep
+accountable for these days and
+
+28844
+06:02:09,950 --> 06:02:12,710
+the United States at least you
+can actually form your own Dow
+
+28845
+06:02:12,710 --> 06:02:15,860
+and have it legally recognized
+in the state of Wyoming. This is
+
+28846
+06:02:15,860 --> 06:02:18,110
+something I want to do. So we'll
+just have to see what happens
+
+28847
+06:02:18,110 --> 06:02:22,190
+there. Oh, at this point, you
+have been injected with all the
+
+28848
+06:02:22,190 --> 06:02:25,970
+Dow knowledge you need to
+succeed and thrive with this new
+
+28849
+06:02:26,000 --> 06:02:29,360
+amazing technology and these new
+amazing concepts. And I found
+
+28850
+06:02:29,360 --> 06:02:32,570
+them kill baby. All right, well,
+you heard him it's time to
+
+28851
+06:02:32,570 --> 06:02:36,260
+build. Like we said, All the
+code is going to be located in
+
+28852
+06:02:36,260 --> 06:02:38,270
+less than 17 Here, let's jump
+in.
+
+28853
+06:02:44,120 --> 06:02:46,700
+In this video, we're going to
+show you how to build your own
+
+28854
+06:02:46,700 --> 06:02:51,320
+doubt inspired by compound now
+this is going to be 100% on
+
+28855
+06:02:51,320 --> 06:02:53,750
+chain voting and on chain
+governance. We're going to show
+
+28856
+06:02:53,750 --> 06:02:57,710
+you the easiest way to spin up
+an NFT or ERC 20 voting type
+
+28857
+06:02:57,710 --> 06:03:00,830
+down all using solidity and
+hardhat. Now if you haven't
+
+28858
+06:03:00,830 --> 06:03:03,710
+watched my last video going over
+the architecture of Dows, what
+
+28859
+06:03:03,710 --> 06:03:05,660
+goes into one of these be
+absolutely sure to watch that
+
+28860
+06:03:05,660 --> 06:03:08,300
+video first and then come to
+this video. Because that video
+
+28861
+06:03:08,300 --> 06:03:10,940
+explains all the philosophy
+behind what we're doing here
+
+28862
+06:03:10,970 --> 06:03:13,520
+we're going to be using opens up
+and contracts and a hard hat
+
+28863
+06:03:13,520 --> 06:03:16,040
+framework to build this all in
+solidity. If you want to see a
+
+28864
+06:03:16,040 --> 06:03:18,410
+brand new or Pythonic version of
+doing this, check the link in
+
+28865
+06:03:18,410 --> 06:03:20,810
+the description because we did a
+video over at the chainlink
+
+28866
+06:03:20,810 --> 06:03:23,630
+hackathon recently. And
+additionally, additionally, we
+
+28867
+06:03:23,630 --> 06:03:27,410
+know that because we're doing
+this 100% on chain gas fees are
+
+28868
+06:03:27,410 --> 06:03:30,110
+going to be expensive. So I'm
+really looking forward to
+
+28869
+06:03:30,110 --> 06:03:33,890
+somebody doing a chain link plus
+IPFS plus snapshot integration
+
+28870
+06:03:33,920 --> 06:03:36,830
+so that we can do all this off
+chain. And once that exists, you
+
+28871
+06:03:36,830 --> 06:03:38,900
+already know I'm gonna make a
+tutorial on that. And if you
+
+28872
+06:03:38,900 --> 06:03:41,180
+like this style of content, be
+sure to smash that like button,
+
+28873
+06:03:41,180 --> 06:03:43,640
+subscribe and leave a comment in
+the comment section to let me
+
+28874
+06:03:43,640 --> 06:03:45,650
+know what you want to see. Next,
+let me know how you want to
+
+28875
+06:03:45,650 --> 06:03:48,740
+supercharge your smart contract
+developer experience. So let's
+
+28876
+06:03:48,740 --> 06:03:52,070
+jump in. Right, so here's what
+we're going to be building,
+
+28877
+06:03:52,130 --> 06:03:55,700
+we're gonna have a very basic
+smart contract here, right, it's
+
+28878
+06:03:55,700 --> 06:03:59,990
+called box and all it can do is
+store a value and then retrieve
+
+28879
+06:04:00,020 --> 06:04:04,370
+a value. But the thing is, its
+ownable. And only the owner of
+
+28880
+06:04:04,370 --> 06:04:07,370
+this contract can call the store
+function and guess who the owner
+
+28881
+06:04:07,370 --> 06:04:10,310
+is going to be the owner is
+going to be the doubt. So only
+
+28882
+06:04:10,340 --> 06:04:14,030
+through a process of governance,
+can anyone store a different
+
+28883
+06:04:14,030 --> 06:04:16,640
+function here. And once we're
+done, we're going to go through
+
+28884
+06:04:16,640 --> 06:04:20,960
+the entire process of proposing
+voting queueing and then
+
+28885
+06:04:20,990 --> 06:04:25,310
+executing a transaction in a Dao
+to update our Bach contract. And
+
+28886
+06:04:25,310 --> 06:04:27,350
+that's one of the beautiful
+things about these these Dao
+
+28887
+06:04:27,350 --> 06:04:30,320
+setups is that they're
+completely modular, right. And
+
+28888
+06:04:30,320 --> 06:04:33,830
+so when I go through the whole
+process, I'll do Hardhead tests
+
+28889
+06:04:33,830 --> 06:04:36,020
+here, which my tests right now
+are set up to just do
+
+28890
+06:04:36,020 --> 06:04:40,340
+everything, we're going to see
+every single step that this Dow
+
+28891
+06:04:40,340 --> 06:04:44,060
+is going to take. So we see box
+starting value is going to be
+
+28892
+06:04:44,060 --> 06:04:47,450
+zero. And then all of this stuff
+is going to the governance
+
+28893
+06:04:47,450 --> 06:04:49,880
+process. These are just some
+some notes. Basically people are
+
+28894
+06:04:49,880 --> 06:04:53,840
+voting, queueing and executing.
+And then at the end, we chained
+
+28895
+06:04:53,840 --> 06:04:58,190
+the value of the box contract
+through a voting process. And
+
+28896
+06:04:58,190 --> 06:05:00,620
+that's exactly what we're gonna
+show you how to do today. Now
+
+28897
+06:05:00,620 --> 06:05:03,290
+remember all the code for what
+we're going to be doing here is
+
+28898
+06:05:03,320 --> 06:05:06,830
+in my doubt template GitHub repo
+so if you ever get lost, feel
+
+28899
+06:05:06,830 --> 06:05:10,220
+free to refer back to this to
+get started. And additionally,
+
+28900
+06:05:10,220 --> 06:05:13,160
+if you want to see the Pythonic
+version of this, feel free to go
+
+28901
+06:05:13,160 --> 06:05:16,310
+back to the downmix The main
+thing is though that all the
+
+28902
+06:05:16,310 --> 06:05:19,460
+contracts are going to be the
+same no matter what brownie hard
+
+28903
+06:05:19,460 --> 06:05:22,490
+hat, dab tools, foundry, it
+doesn't matter. So the first
+
+28904
+06:05:22,490 --> 06:05:25,970
+part of this section is gonna be
+exactly the same. And here's our
+
+28905
+06:05:26,000 --> 06:05:29,090
+agenda here. First, we're gonna
+write the smart contract. So if
+
+28906
+06:05:29,090 --> 06:05:31,010
+you're not familiar with
+Hardhead, who cares, we're gonna
+
+28907
+06:05:31,010 --> 06:05:33,350
+be doing the smart contracts
+first, then we are going to
+
+28908
+06:05:33,350 --> 06:05:35,750
+write deployment scripts. And
+this is where your hard hat
+
+28909
+06:05:35,750 --> 06:05:38,030
+knowledge is going to come into
+play. We're going to be writing
+
+28910
+06:05:38,030 --> 06:05:40,460
+our deployment scripts in
+TypeScript here, because
+
+28911
+06:05:40,460 --> 06:05:42,590
+TypeScript is phenomenal. If
+you're unfamiliar with
+
+28912
+06:05:42,590 --> 06:05:45,890
+TypeScript, I challenge you to
+rewrite this in JavaScript and
+
+28913
+06:05:45,890 --> 06:05:47,750
+make a JavaScript version. And
+then finally, we're going to
+
+28914
+06:05:47,750 --> 06:05:51,110
+write some scripts to interact
+with our governance with our
+
+28915
+06:05:51,110 --> 06:05:54,740
+deployed contracts. Now, a quick
+note, this isn't how I
+
+28916
+06:05:54,740 --> 06:05:57,320
+originally built this, I didn't
+just read smart contracts, write
+
+28917
+06:05:57,320 --> 06:05:59,480
+deployment scripts, write the
+scripts, and then the tests and
+
+28918
+06:05:59,480 --> 06:06:02,570
+boom, I was done, I had a back
+and forth between tests, smart
+
+28919
+06:06:02,570 --> 06:06:05,420
+contracts, deploy scripts, etc.
+If you're thinking, Oh, my
+
+28920
+06:06:05,420 --> 06:06:07,400
+goodness, that's so easy for him
+to go through this. So
+
+28921
+06:06:07,400 --> 06:06:10,190
+seamlessly. When I originally
+wrote this code, it was a lot of
+
+28922
+06:06:10,190 --> 06:06:12,170
+back and forth. And that's how
+you should be developing, you're
+
+28923
+06:06:12,170 --> 06:06:14,450
+going to be moving between tests
+and smart contracts and stuff.
+
+28924
+06:06:14,630 --> 06:06:17,450
+Additionally, in this tutorial,
+we are going to show you some
+
+28925
+06:06:17,450 --> 06:06:20,660
+sick Hardhead skills. So you are
+not only gonna learn how to
+
+28926
+06:06:20,660 --> 06:06:23,660
+build a Dow, but you're gonna
+learn some really advanced
+
+28927
+06:06:23,690 --> 06:06:28,070
+Hardhead skills. So let's jump
+in. Let's do this. So the code
+
+28928
+06:06:28,070 --> 06:06:30,530
+editor I'm using is Visual
+Studio code. So make sure you
+
+28929
+06:06:30,530 --> 06:06:34,250
+have a code editor up and ready
+to go. And you'll need a couple
+
+28930
+06:06:34,250 --> 06:06:38,030
+of prerequisites here. Again,
+the prerequisites are in the
+
+28931
+06:06:38,120 --> 06:06:41,870
+GitHub repository, we're going
+to need Git, no J, s. And yarn,
+
+28932
+06:06:41,900 --> 06:06:44,450
+if you want to just clone this
+repo and follow the instructions
+
+28933
+06:06:44,450 --> 06:06:47,180
+here to get started, you
+absolutely 100% can and then you
+
+28934
+06:06:47,180 --> 06:06:49,010
+don't even need to build this
+from scratch. But we're going to
+
+28935
+06:06:49,010 --> 06:06:51,980
+want to learn to build this from
+scratch. So let's just start git
+
+28936
+06:06:51,980 --> 06:06:55,850
+dash dash version. Great, we
+have Git no dash dash version.
+
+28937
+06:06:56,120 --> 06:06:59,480
+Great, we have node, and then
+yarn dash dash version. Great,
+
+28938
+06:06:59,480 --> 06:07:01,640
+we have yarn, we can get
+started. So everything that
+
+28939
+06:07:01,640 --> 06:07:04,280
+we're going to be installing
+here for packages is going to be
+
+28940
+06:07:04,310 --> 06:07:07,340
+a dev dependency. So the first
+thing we need to do is do yarn,
+
+28941
+06:07:07,520 --> 06:07:10,040
+add dash dash Dev, hard hat,
+
+28942
+06:07:10,220 --> 06:07:13,790
+if you'd haven't already. And
+now in our folder, we're gonna
+
+28943
+06:07:13,790 --> 06:07:17,360
+have node modules package dot
+JSON readme and a lock. Of
+
+28944
+06:07:17,360 --> 06:07:20,840
+course, now that we have that we
+can run yarn RDAP, we're gonna
+
+28945
+06:07:20,840 --> 06:07:23,330
+get the hard hat CLI up. And
+we're going to have all this
+
+28946
+06:07:23,330 --> 06:07:25,850
+stuff in here, we're just going
+to create an empty hardhat dot
+
+28947
+06:07:25,850 --> 06:07:28,190
+config dot j s, and we're going
+to turn it to TypeScript. The
+
+28948
+06:07:28,190 --> 06:07:30,350
+advanced sample TypeScript
+project has a bunch of stuff
+
+28949
+06:07:30,350 --> 06:07:32,270
+that I don't like. So we're just
+going to create an empty
+
+28950
+06:07:32,270 --> 06:07:35,690
+hardhead.config.js. And perfect,
+we've got a little hard
+
+28951
+06:07:35,690 --> 06:07:39,560
+hat.config.js. Now let's go
+ahead and create a folder, or
+
+28952
+06:07:39,560 --> 06:07:42,920
+contracts folder. And this is
+where we're going to add all of
+
+28953
+06:07:42,920 --> 06:07:44,870
+our contracts. So the first
+thing contract that we're going
+
+28954
+06:07:44,870 --> 06:07:48,560
+to need is the contracts we want
+to have govern, which in our
+
+28955
+06:07:48,560 --> 06:07:52,490
+case is going to be box dot
+soul. Now, I am actually just
+
+28956
+06:07:52,490 --> 06:07:55,430
+going to copy paste my box, that
+soul here, because it's not
+
+28957
+06:07:55,430 --> 06:07:58,790
+particularly interesting. But
+you could really code whatever
+
+28958
+06:07:58,790 --> 06:08:01,280
+you want here. So feel free to
+pause the video, copy paste from
+
+28959
+06:08:01,280 --> 06:08:04,070
+my GitHub repo, create your own
+governance contract that you
+
+28960
+06:08:04,070 --> 06:08:06,380
+want to play with, or do
+whatever you want here. But for
+
+28961
+06:08:06,380 --> 06:08:09,320
+us, we just have a store
+function, and retrieve function,
+
+28962
+06:08:09,530 --> 06:08:12,740
+and an event, and then a private
+value that we're going to be
+
+28963
+06:08:12,740 --> 06:08:16,280
+storing and retrieving. And
+that's it. So of course, we want
+
+28964
+06:08:16,280 --> 06:08:19,190
+to fix this. We're importing
+from openzeppelin contracts
+
+28965
+06:08:19,190 --> 06:08:23,360
+opens up is amazing. We're gonna
+want to add this we'll do yarn,
+
+28966
+06:08:23,390 --> 06:08:27,800
+add dash dash Dev, at opens up
+on contracts. And that should
+
+28967
+06:08:27,800 --> 06:08:32,000
+get rid of the box. That's all.
+let's reopen box. And boom,
+
+28968
+06:08:32,060 --> 06:08:34,820
+looks like we did a detour to
+that perfect. And for
+
+28969
+06:08:34,820 --> 06:08:38,660
+extensions, I'm using the
+solidity, the one Blonko, slit
+
+28970
+06:08:38,660 --> 06:08:40,580
+extension. And that's what we
+get this wonderful linting
+
+28971
+06:08:40,580 --> 06:08:43,460
+things here. Great. So now we
+want to check to see if this
+
+28972
+06:08:43,460 --> 06:08:46,430
+compiles if using remix, you can
+compile with remix hard hat,
+
+28973
+06:08:46,460 --> 06:08:49,010
+you're gonna see how we compile
+here. Or if you're using you
+
+28974
+06:08:49,010 --> 06:08:52,070
+know, Browning, we just want to
+see if this compiles correctly.
+
+28975
+06:08:52,130 --> 06:08:55,820
+So run yarn had a hard hit
+Compile. Looks like we ran into
+
+28976
+06:08:56,150 --> 06:08:59,210
+some compilation errors, because
+we need to update this, let's
+
+28977
+06:08:59,210 --> 06:09:02,720
+use these 8.8 of solidity we'll
+try to compile again. And
+
+28978
+06:09:02,720 --> 06:09:05,330
+perfect looks like we're
+compiling successfully. Look
+
+28979
+06:09:05,330 --> 06:09:08,720
+here, we do indeed have our
+contract in here. Okay, perfect,
+
+28980
+06:09:09,050 --> 06:09:12,020
+easy part out of the way.
+Already. That was so quick. Now
+
+28981
+06:09:12,050 --> 06:09:14,870
+let's start creating the next
+part. Let's create the
+
+28982
+06:09:14,870 --> 06:09:17,510
+governance part. So what we're
+going to be working with to
+
+28983
+06:09:17,510 --> 06:09:21,080
+build this governance platform
+is we're gonna be building it
+
+28984
+06:09:21,080 --> 06:09:24,500
+off of the ERC. 20 standard, so
+you're gonna get an ERC 20
+
+28985
+06:09:24,500 --> 06:09:27,650
+token. And that's going to be
+the token that you get to vote.
+
+28986
+06:09:27,710 --> 06:09:32,420
+So let's create a new file
+called governance token. That's
+
+28987
+06:09:32,420 --> 06:09:36,620
+all governance token dot Sol.
+And this is gonna be the code
+
+28988
+06:09:36,650 --> 06:09:38,780
+for the token that we use to
+actually vote. Now we're going
+
+28989
+06:09:38,780 --> 06:09:42,230
+to create a normal ERC 20 token.
+And then we're going to extend
+
+28990
+06:09:42,230 --> 06:09:44,900
+it to make it governance a bowl
+and you'll understand what I
+
+28991
+06:09:44,900 --> 06:09:48,980
+mean in a second. So let's go
+ahead and make this spdx license
+
+28992
+06:09:49,640 --> 06:09:55,940
+identifier. It's going to be MIT
+pragma solidity we'll do zero
+
+28993
+06:09:56,720 --> 06:10:01,130
+point 8.8. And then we'll do
+contract governance token, and
+
+28994
+06:10:01,130 --> 06:10:04,280
+then we'll say is ERC 20 I'm
+just gonna go ahead and import
+
+28995
+06:10:04,310 --> 06:10:07,130
+openzeppelin Because open
+Zeppelin has a package where
+
+28996
+06:10:07,160 --> 06:10:10,070
+basically has everything we need
+for an ERC 20 token. So we're
+
+28997
+06:10:10,070 --> 06:10:13,670
+gonna say import at open
+Zeppelin slash contracts slash
+
+28998
+06:10:13,670 --> 06:10:19,430
+token slash ERC 20x We can go to
+their github openzeppelin
+
+28999
+06:10:20,060 --> 06:10:25,760
+contracts token, your C 20 And
+we'll do ERC 20 Dotto, we'll do
+
+29000
+06:10:25,760 --> 06:10:26,450
+this for now.
+

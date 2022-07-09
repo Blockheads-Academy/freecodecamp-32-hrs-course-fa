@@ -1,0 +1,4971 @@
+3001
+02:51:10,680 --> 02:51:14,520
+exact same way we create all of
+our other variables. This is
+
+3002
+02:51:14,520 --> 02:51:17,910
+going to be a type mapping of
+string
+
+3003
+02:51:19,170 --> 02:51:22,650
+to you and tivity sex,
+
+3004
+02:51:22,920 --> 02:51:25,830
+this is going to be our type of
+visibility keyword is going to
+
+3005
+02:51:25,830 --> 02:51:32,250
+be public. And we'll call it
+name to favorite number. Now we
+
+3006
+02:51:32,250 --> 02:51:36,360
+have a dictionary where every
+single name is going to map to a
+
+3007
+02:51:36,360 --> 02:51:39,750
+specific number. So let's add
+some capability to our Add
+
+3008
+02:51:39,750 --> 02:51:43,980
+Person function. So we are going
+to add our people to our array.
+
+3009
+02:51:44,100 --> 02:51:48,120
+But let's also add them to our
+mapping here, what we'll do is
+
+3010
+02:51:48,120 --> 02:51:53,340
+we'll say name to favorite
+number. App key name is going to
+
+3011
+02:51:53,340 --> 02:51:54,510
+equal to
+
+3012
+02:51:57,180 --> 02:52:00,900
+favorite number. So let's go
+ahead, compile this.
+
+3013
+02:52:03,600 --> 02:52:08,970
+We'll go to our deploy screen,
+we'll deploy this click, we have
+
+3014
+02:52:08,970 --> 02:52:12,540
+a new button named a favorite
+number. If I type in Patrick,
+
+3015
+02:52:13,050 --> 02:52:17,160
+nothing shows up. By typing
+Patrick, you'll see I get zero
+
+3016
+02:52:17,160 --> 02:52:21,270
+response. By typing John, I also
+get a zero response. If I type
+
+3017
+02:52:21,270 --> 02:52:25,380
+in Becca, I also get a with zero
+response. When you create a
+
+3018
+02:52:25,380 --> 02:52:29,070
+mapping, you initialize
+everything to its null value,
+
+3019
+02:52:29,190 --> 02:52:32,430
+every single possible string on
+the planet right now is
+
+3020
+02:52:32,430 --> 02:52:35,700
+initialized to having a favorite
+number of zero. So if we want to
+
+3021
+02:52:35,700 --> 02:52:38,910
+change that, we'll have to go in
+and manually add that. So let's
+
+3022
+02:52:38,910 --> 02:52:43,590
+go ahead and add a person to our
+mapping here. So we'll add
+
+3023
+02:52:43,590 --> 02:52:47,520
+Patrick. And we'll say my
+favorite number is seven. And
+
+3024
+02:52:47,580 --> 02:52:51,720
+looks like that transaction did
+go through also add, Becca, and
+
+3025
+02:52:51,720 --> 02:52:56,280
+we'll say her favorite number is
+13. Let John and we'll say his
+
+3026
+02:52:56,280 --> 02:53:01,920
+favorite number is 16. Now, if I
+look up, Patrick, I'll
+
+3027
+02:53:01,950 --> 02:53:04,710
+immediately get back what
+Patrick's favorite number is, I
+
+3028
+02:53:04,710 --> 02:53:08,550
+get seven back. If we look up,
+John, we immediately get back
+
+3029
+02:53:08,580 --> 02:53:12,510
+16. Back up, we may only get
+back 13. And we also can see
+
+3030
+02:53:12,510 --> 02:53:16,650
+them in our array. Because we
+kept in this people that push
+
+3031
+02:53:16,650 --> 02:53:22,080
+bit zero, we see Patrick's
+there. At one, we see Becca. And
+
+3032
+02:53:22,080 --> 02:53:26,100
+at two, we see John, in our
+mapping, we're saying the string
+
+3033
+02:53:26,130 --> 02:53:31,350
+name is being mapped to the UN
+256 favorite number. And a lot
+
+3034
+02:53:31,350 --> 02:53:33,960
+of my variables, I like to make
+them explicitly named like that.
+
+3035
+02:53:34,110 --> 02:53:35,760
+So this is name to
+
+3036
+02:53:35,790 --> 02:53:39,810
+favorite number. So
+
+3037
+02:53:39,840 --> 02:53:43,410
+now we're in a space where let's
+say that we really like our
+
+3038
+02:53:43,410 --> 02:53:46,920
+simple storage contract. Right
+now we have a favorite number, a
+
+3039
+02:53:46,950 --> 02:53:51,330
+global variable that we can save
+a favorite number to with our
+
+3040
+02:53:51,360 --> 02:53:56,190
+store function, we have a
+mapping of name to favorite
+
+3041
+02:53:56,190 --> 02:54:00,210
+numbers, and we have an array of
+a new type that we created
+
+3042
+02:54:00,240 --> 02:54:04,440
+called people, we can add to
+both the array and to the
+
+3043
+02:54:04,440 --> 02:54:08,370
+mapping. Using this Add Person
+function that we've created,
+
+3044
+02:54:08,850 --> 02:54:11,730
+we're able to save multiple
+people's favorite numbers as
+
+3045
+02:54:11,730 --> 02:54:14,880
+well as kind of a global
+favorite number as well. Let's
+
+3046
+02:54:14,880 --> 02:54:17,610
+say we really love this
+contract, and we're ready to
+
+3047
+02:54:17,610 --> 02:54:20,850
+send it to a test net to have
+other people interact with it.
+
+3048
+02:54:20,970 --> 02:54:23,400
+Now in future sections, you'll
+hear me say that you shouldn't
+
+3049
+02:54:23,400 --> 02:54:26,670
+do this until you write tests
+until you do some really simple
+
+3050
+02:54:26,670 --> 02:54:29,730
+auditing. But for now, let's go
+ahead and learn how to actually
+
+3051
+02:54:29,730 --> 02:54:34,230
+deploy this to a test net or to
+a real network. Now remember,
+
+3052
+02:54:34,260 --> 02:54:36,990
+test nets are run out of the
+goodness of people's hearts. So
+
+3053
+02:54:36,990 --> 02:54:39,810
+if it's a little bit funky, or
+maybe doesn't work exactly as we
+
+3054
+02:54:39,810 --> 02:54:43,020
+show here, that's okay. As long
+as it works with the JavaScript
+
+3055
+02:54:43,020 --> 02:54:46,680
+VM, you'll be all set but it is
+good practice to learn how to
+
+3056
+02:54:46,680 --> 02:54:50,460
+deploy these to a real test net.
+Let's go ahead and do that. Our
+
+3057
+02:54:50,460 --> 02:54:53,970
+contract is here. Simple Storage
+dot soul. It's compiled,
+
+3058
+02:54:54,180 --> 02:54:57,630
+compiling is passing we get this
+little green checkmark here we
+
+3059
+02:54:57,630 --> 02:55:00,600
+go to the deploy section. Let's
+go ahead and do Get this. And
+
+3060
+02:55:00,600 --> 02:55:03,480
+now we're going to change the
+environment. So we were working
+
+3061
+02:55:03,480 --> 02:55:07,020
+with a JavaScript VM or kind of
+this fake simulated environment,
+
+3062
+02:55:07,320 --> 02:55:11,850
+we want to now move to either
+injected web three, or web three
+
+3063
+02:55:11,850 --> 02:55:14,670
+provider. If you hover over
+injected web three, there's this
+
+3064
+02:55:14,670 --> 02:55:18,360
+really, really small text here.
+But this basically means we're
+
+3065
+02:55:18,360 --> 02:55:22,800
+going to inject our meta mask or
+our web three wallet into our
+
+3066
+02:55:22,800 --> 02:55:25,890
+browser to use similar to what
+we did with the faucet, we'll
+
+3067
+02:55:25,890 --> 02:55:29,010
+pick our account we want to use.
+So I'm gonna go ahead and pick
+
+3068
+02:55:29,040 --> 02:55:34,170
+account one. And now we actually
+see our account in the Account
+
+3069
+02:55:34,170 --> 02:55:38,700
+section of remix, injected web
+three means we're using our meta
+
+3070
+02:55:38,700 --> 02:55:42,360
+mask or whatever web three
+wallet, web three provider is,
+
+3071
+02:55:42,360 --> 02:55:45,690
+when we a little bit more
+manually choose an endpoint. And
+
+3072
+02:55:45,810 --> 02:55:48,420
+we're not going to go over this
+right now. But as we get later
+
+3073
+02:55:48,420 --> 02:55:50,940
+into the course, you'll
+understand what this means. So
+
+3074
+02:55:50,940 --> 02:55:53,730
+we're picking injected web
+three, whatever network are
+
+3075
+02:55:53,730 --> 02:55:57,150
+injected web three, or in this
+case, our wallet is connected to
+
+3076
+02:55:57,390 --> 02:56:00,240
+is going to be the network that
+we deploy to. So for this
+
+3077
+02:56:00,240 --> 02:56:03,120
+section, we're going to be
+deploying to Rinkeby. But again,
+
+3078
+02:56:03,120 --> 02:56:05,670
+depending on whatever the
+recommended test net and the
+
+3079
+02:56:05,670 --> 02:56:09,300
+recommended faucet is, that will
+dictate which test net you
+
+3080
+02:56:09,300 --> 02:56:12,990
+should actually deploy to. For
+us, it's going to be Rigby. To
+
+3081
+02:56:12,990 --> 02:56:15,720
+deploy to a test that remember,
+we're going to need gas, so
+
+3082
+02:56:15,720 --> 02:56:18,330
+we're going to need some tested
+Etherium. Or if you're deploying
+
+3083
+02:56:18,330 --> 02:56:21,300
+to a main net main Aetherium,
+which you shouldn't be come to
+
+3084
+02:56:21,300 --> 02:56:23,160
+the top of the GitHub repo to
+make sure you have the most
+
+3085
+02:56:23,190 --> 02:56:26,820
+updated faucet, the other place
+you can go is link token
+
+3086
+02:56:27,240 --> 02:56:31,380
+contracts page in the chain link
+documentation and scroll down
+
+3087
+02:56:31,950 --> 02:56:34,740
+the ranking. And you can see
+test that link available here,
+
+3088
+02:56:35,040 --> 02:56:38,400
+test that eath available here.
+So this is the other location,
+
+3089
+02:56:38,400 --> 02:56:41,670
+you can always look to find the
+most up to date faucets, and
+
+3090
+02:56:41,670 --> 02:56:45,120
+both of them point right back
+here. So now that we're working
+
+3091
+02:56:45,120 --> 02:56:47,670
+with injected web three, we can
+just go through the exact same
+
+3092
+02:56:47,670 --> 02:56:53,160
+steps to deploy to a test net as
+to deploy to a virtual machine.
+
+3093
+02:56:53,280 --> 02:56:56,220
+And remember, if you run out of
+gas to deploy this, be sure to
+
+3094
+02:56:56,220 --> 02:56:58,800
+check back to the faucets to
+actually deploy this. So we're
+
+3095
+02:56:58,800 --> 02:57:00,720
+going to do the same thing,
+we're gonna go ahead and hit
+
+3096
+02:57:00,720 --> 02:57:05,820
+Deploy. But this time Metamask
+is going to pop up and ask us if
+
+3097
+02:57:05,820 --> 02:57:09,840
+we want to actually deploy this,
+this is the exact same as what
+
+3098
+02:57:09,840 --> 02:57:13,020
+we saw with the blockchain
+example, where we sign
+
+3099
+02:57:13,050 --> 02:57:17,010
+transactions, we are signing and
+sending this transaction, the
+
+3100
+02:57:17,010 --> 02:57:21,420
+data of this transaction is this
+massive, massive data thing
+
+3101
+02:57:21,420 --> 02:57:24,630
+here, which represents the
+contract that we just created,
+
+3102
+02:57:24,930 --> 02:57:28,650
+we can see all the payment
+information for this transaction
+
+3103
+02:57:28,680 --> 02:57:32,610
+for deploying this contract, we
+see it's going to cost around
+
+3104
+02:57:32,670 --> 02:57:36,030
+this much Aetherium to deploy.
+But again, we're on the Rinkeby
+
+3105
+02:57:36,030 --> 02:57:38,640
+test network. So this is going
+to be fake Aetherium. We're
+
+3106
+02:57:38,640 --> 02:57:43,110
+gonna go ahead, hit Confirm. And
+if you pop up a little console,
+
+3107
+02:57:43,590 --> 02:57:48,750
+and remix, you'll see that after
+a slight delay, it'll actually
+
+3108
+02:57:48,750 --> 02:57:51,960
+say have this green checkmark
+that it's confirmed that it went
+
+3109
+02:57:51,960 --> 02:57:55,650
+actually went through, we can go
+ahead right click, open a new
+
+3110
+02:57:55,650 --> 02:58:00,270
+tab, and view this on ether
+scan. And after a slight delay,
+
+3111
+02:58:00,300 --> 02:58:03,450
+we'll actually be able to see
+the transaction details here,
+
+3112
+02:58:03,630 --> 02:58:06,570
+exactly the same as our
+transaction details for sending
+
+3113
+02:58:06,570 --> 02:58:10,350
+Aetherium we have a hash, we
+have a status, we have blocked
+
+3114
+02:58:10,350 --> 02:58:13,560
+block confirmations, we have
+timestamp from which is going to
+
+3115
+02:58:13,560 --> 02:58:16,920
+be us two, which is going to be
+the average of the contract that
+
+3116
+02:58:16,920 --> 02:58:20,070
+we just created. We didn't send
+any value with this. So this is
+
+3117
+02:58:20,070 --> 02:58:22,500
+going to be zero ether. And then
+of course, we see the
+
+3118
+02:58:22,500 --> 02:58:26,880
+transaction fee, and as well as
+the gas price. Because again,
+
+3119
+02:58:26,970 --> 02:58:29,430
+deploying a contract to the
+blockchain is modifying the
+
+3120
+02:58:29,430 --> 02:58:32,220
+state of the blockchain. So we
+have to pay gas, and we can see
+
+3121
+02:58:32,520 --> 02:58:36,330
+all the different pieces here.
+As we can see, gas limit and gas
+
+3122
+02:58:36,330 --> 02:58:39,690
+usage is much higher than just
+sending Aetherium, since we are
+
+3123
+02:58:39,690 --> 02:58:43,860
+putting a lot of data on chain
+and adding a lot of computation.
+
+3124
+02:58:44,070 --> 02:58:48,210
+So this number is much higher
+than the 21,000 number of just
+
+3125
+02:58:48,240 --> 02:58:51,450
+sending Aetherium. Now, if we
+come back to our remix and
+
+3126
+02:58:51,450 --> 02:58:55,200
+scroll down, we're able to see
+our simple storage contract at
+
+3127
+02:58:55,200 --> 02:58:59,040
+this address. If we hit this
+copy button, and we go to the
+
+3128
+02:58:59,040 --> 02:59:03,300
+rink be ether scan, we paste it
+in the search bar, we will get
+
+3129
+02:59:03,330 --> 02:59:06,510
+the contract that we just
+deployed. And we see this first
+
+3130
+02:59:06,510 --> 02:59:10,050
+transaction is going to be the
+contract creation transaction.
+
+3131
+02:59:10,170 --> 02:59:14,220
+So this contract that we just
+created one transaction, which
+
+3132
+02:59:14,220 --> 02:59:17,310
+is contract created. So now that
+we have this contract created,
+
+3133
+02:59:17,310 --> 02:59:19,950
+we have all the exact same
+functions that we saw when
+
+3134
+02:59:19,950 --> 02:59:22,740
+working with the JavaScript
+virtual machine, or the our fake
+
+3135
+02:59:22,770 --> 02:59:25,920
+environment, or our super fake
+environment. Now we can do all
+
+3136
+02:59:25,920 --> 02:59:28,890
+the exact same things that we
+did with the JavaScript VM, but
+
+3137
+02:59:28,890 --> 02:59:32,160
+on a real test network. So
+you'll see if I hit retrieve
+
+3138
+02:59:32,460 --> 02:59:36,240
+Metamask doesn't pop up. Because
+again, this is a blue view
+
+3139
+02:59:36,240 --> 02:59:39,240
+function. If we look people at
+zero, this is also a view
+
+3140
+02:59:39,240 --> 02:59:42,480
+function and nothing pops up,
+named a favorite number should
+
+3141
+02:59:42,480 --> 02:59:45,540
+be blank. So if I type in
+Patrick now, absolutely nothing
+
+3142
+02:59:45,540 --> 02:59:49,470
+happens, right? I get I get zero
+returned because mappings
+
+3143
+02:59:49,500 --> 02:59:53,910
+initialize every single key with
+a blank or a null value, which
+
+3144
+02:59:53,910 --> 02:59:58,920
+for you 256 is zero. Now, we can
+go ahead and store a favorite
+
+3145
+02:59:58,920 --> 03:00:01,890
+number store When your favorite
+number is going to modify the
+
+3146
+03:00:01,890 --> 03:00:06,270
+blockchain, so our meta mask
+should pop up for us to confirm
+
+3147
+03:00:06,330 --> 03:00:10,020
+the transaction and sign that
+transaction to modify the
+
+3148
+03:00:10,020 --> 03:00:13,500
+blockchain state. So I'm going
+to store my favorite number of
+
+3149
+03:00:13,500 --> 03:00:18,750
+16, we'll hit store, meta mask
+will pop up, and we're going to
+
+3150
+03:00:18,750 --> 03:00:21,960
+go ahead and actually confirm
+this didn't confirm is
+
+3151
+03:00:21,960 --> 03:00:24,780
+equivalent to US signing this
+transaction and sending it to
+
+3152
+03:00:24,780 --> 03:00:27,780
+the blockchain to modify the
+state. So we're gonna go ahead
+
+3153
+03:00:27,780 --> 03:00:31,560
+and confirm this, we should be
+able to view this on ether scan.
+
+3154
+03:00:31,920 --> 03:00:34,440
+And again, it might take a
+little bit for it to actually
+
+3155
+03:00:34,440 --> 03:00:37,770
+index or actually start working.
+So please be patient with these
+
+3156
+03:00:37,770 --> 03:00:40,110
+test nets. And again, this is
+why when building your
+
+3157
+03:00:40,110 --> 03:00:43,890
+applications, you want the test
+net piece to absolutely try to
+
+3158
+03:00:43,890 --> 03:00:47,520
+be your last step, because you
+have to wait a really long time.
+
+3159
+03:00:47,700 --> 03:00:50,490
+And it puts a burden on these
+people running these tests into
+
+3160
+03:00:50,490 --> 03:00:52,920
+running it out of the goodness
+of their heart. So please try to
+
+3161
+03:00:52,920 --> 03:00:56,460
+make this the last step of your
+actual building process. For us
+
+3162
+03:00:56,460 --> 03:01:00,150
+learning right here, it's okay.
+And after a slight delay, once
+
+3163
+03:01:00,150 --> 03:01:03,510
+we hit refresh, it looks like
+it's indexing on ether scan, the
+
+3164
+03:01:03,510 --> 03:01:05,580
+ether scan website is still
+figuring out where the
+
+3165
+03:01:05,580 --> 03:01:08,760
+transaction is going to remix,
+it looks like on the blockchain,
+
+3166
+03:01:08,790 --> 03:01:10,860
+this has actually already gone
+through. So now if we hit
+
+3167
+03:01:10,860 --> 03:01:14,880
+retrieve, we do indeed see, our
+favorite number is 16. Of
+
+3168
+03:01:14,880 --> 03:01:17,880
+course, these two are still
+going to be blank. And it looks
+
+3169
+03:01:17,880 --> 03:01:20,310
+like that transaction has gone
+through and ether scan has
+
+3170
+03:01:20,310 --> 03:01:23,580
+indexed. So now let's go ahead
+and add a person will add
+
+3171
+03:01:23,580 --> 03:01:27,570
+Patrick, and my favorite number
+is going to be 16. We'll go
+
+3172
+03:01:27,570 --> 03:01:30,780
+ahead and add person. Again,
+since these are orange
+
+3173
+03:01:30,960 --> 03:01:33,000
+transactions gonna pop up
+because we're modifying the
+
+3174
+03:01:33,000 --> 03:01:36,810
+blockchain state, we'll go ahead
+and hit Confirm. And we're going
+
+3175
+03:01:36,810 --> 03:01:39,270
+to be a little bit patient here
+and wait for this transaction to
+
+3176
+03:01:39,270 --> 03:01:43,200
+go through. And we should see
+this update. And this update.
+
+3177
+03:01:43,350 --> 03:01:47,190
+Now if I hit named a favorite
+number of Patrick, I get 16. And
+
+3178
+03:01:47,190 --> 03:01:50,700
+if I hit people of zero, I get
+favorite number 16. And the name
+
+3179
+03:01:50,730 --> 03:01:54,030
+is Patrick. Awesome. So you've
+actually successfully deployed a
+
+3180
+03:01:54,030 --> 03:01:58,170
+contract to an actual test net,
+and actually seen on ether scan
+
+3181
+03:01:58,170 --> 03:02:00,750
+what these transactions look
+like, you should be incredibly
+
+3182
+03:02:00,750 --> 03:02:03,450
+proud of yourself, be sure to
+give yourself a high five pat on
+
+3183
+03:02:03,450 --> 03:02:07,050
+the back, send a tweet saying
+exactly how excited you are. But
+
+3184
+03:02:07,050 --> 03:02:09,990
+make sure to celebrate these
+little wins, celebrating these
+
+3185
+03:02:09,990 --> 03:02:12,930
+little wins will give you the
+motivation to keep going and
+
+3186
+03:02:12,930 --> 03:02:16,560
+really excite you for learning
+each new thing. So huge.
+
+3187
+03:02:16,560 --> 03:02:19,290
+Congratulations. If you got this
+far, you've deployed your first
+
+3188
+03:02:19,290 --> 03:02:22,500
+contract to a test net,
+congratulations. Now if you want
+
+3189
+03:02:22,500 --> 03:02:24,780
+to see what it looks like to
+deploy to a different network,
+
+3190
+03:02:24,990 --> 03:02:28,650
+all you need to do in your
+Metamask is switch to a
+
+3191
+03:02:28,650 --> 03:02:32,160
+different test net. See, if we
+switch to COVID remix
+
+3192
+03:02:32,190 --> 03:02:35,460
+automatically updates and says,
+ah, injected web three is now
+
+3193
+03:02:35,490 --> 03:02:39,600
+the COVID test network. We could
+switch again maybe to Grilley,
+
+3194
+03:02:39,810 --> 03:02:42,540
+we say Ah, the injected web
+three is now at the Grilley.
+
+3195
+03:02:42,570 --> 03:02:45,720
+This is the test net that we'd
+be deploying to of course, we
+
+3196
+03:02:45,720 --> 03:02:48,840
+need actual test net Aetherium
+to do any deploying, so we
+
+3197
+03:02:48,840 --> 03:02:51,690
+wouldn't be able to here. And if
+we go ahead and hit Deploy right
+
+3198
+03:02:51,690 --> 03:02:55,740
+now Metamask pops up. But we get
+this little red thing saying
+
+3199
+03:02:55,800 --> 03:02:59,550
+insufficient funds. Of course,
+later on, we'll learn how to add
+
+3200
+03:02:59,580 --> 03:03:03,180
+new networks like polygon like
+avalanche like phantom into our
+
+3201
+03:03:03,180 --> 03:03:05,640
+Metamask. So we can deploy from
+any one of them
+
+3202
+03:03:05,640 --> 03:03:06,120
+as well.
+
+3203
+03:03:08,790 --> 03:03:11,190
+Now, I mentioned this term
+before, but all this code that
+
+3204
+03:03:11,190 --> 03:03:14,520
+we wrote, when we hit this
+compile button, it compiles it
+
+3205
+03:03:14,520 --> 03:03:20,910
+down to the EVM or the Ethereum
+virtual machine. Don't worry too
+
+3206
+03:03:20,910 --> 03:03:24,930
+much about what this means. EVM
+is a standard of how to deploy
+
+3207
+03:03:24,930 --> 03:03:28,950
+smart contracts to Aetherium
+like blockchains. And any
+
+3208
+03:03:28,950 --> 03:03:32,550
+blockchain that implements a
+type of EVM. You can deploy
+
+3209
+03:03:32,580 --> 03:03:36,780
+solidity code to some examples
+of EVM compatible blockchains
+
+3210
+03:03:36,810 --> 03:03:41,400
+are going to be avalanche,
+Phantom, and polygon. Since
+
+3211
+03:03:41,400 --> 03:03:44,730
+these are EVM compatible, this
+means we can write our solidity
+
+3212
+03:03:44,730 --> 03:03:48,000
+code, and deploy to these
+blockchains, which again, I'll
+
+3213
+03:03:48,000 --> 03:03:50,490
+show you later on how to add
+these new networks into your
+
+3214
+03:03:50,490 --> 03:03:53,700
+Metamask. And then how to deploy
+them. Let's do a quick recap of
+
+3215
+03:03:53,700 --> 03:03:56,370
+our first smart contract. And
+then you should actually take a
+
+3216
+03:03:56,370 --> 03:04:00,060
+break, maybe get some ice cream
+or coffee because you absolutely
+
+3217
+03:04:00,060 --> 03:04:02,760
+deserve it. Congratulations. The
+first thing you always need to
+
+3218
+03:04:02,760 --> 03:04:06,960
+do in your smart contracts is
+tell solidity, what version of
+
+3219
+03:04:06,960 --> 03:04:09,990
+solidity that you're going to be
+using. And additionally, you
+
+3220
+03:04:09,990 --> 03:04:13,260
+want to add an spdx license
+identifier, then you have to
+
+3221
+03:04:13,260 --> 03:04:16,680
+create your contract object and
+name your contract. The contract
+
+3222
+03:04:16,710 --> 03:04:19,410
+in solidity is similar to a
+class in other programming
+
+3223
+03:04:19,410 --> 03:04:23,010
+languages, and everything inside
+the squiggly brackets is a part
+
+3224
+03:04:23,040 --> 03:04:26,730
+of that contract. There are many
+different types in solidity like
+
+3225
+03:04:26,760 --> 03:04:32,970
+unsigned integer, 256, Boolean
+string, bytes, 32, etc. If we
+
+3226
+03:04:32,970 --> 03:04:35,130
+want to create a new type, we
+can create what's called a
+
+3227
+03:04:35,130 --> 03:04:38,760
+struct in solidity. You can
+create arrays or lists in
+
+3228
+03:04:38,760 --> 03:04:41,970
+solidity, you can create
+dictionaries, or what's called
+
+3229
+03:04:42,000 --> 03:04:45,750
+mappings in solidity or hash
+tables, which when you give it a
+
+3230
+03:04:45,750 --> 03:04:49,410
+key, it'll spit out the value
+that that key represents. We can
+
+3231
+03:04:49,410 --> 03:04:52,530
+create functions in solidity
+that modify the state of the
+
+3232
+03:04:52,530 --> 03:04:55,860
+blockchain. We can also create
+functions in solidity that don't
+
+3233
+03:04:55,860 --> 03:04:58,620
+modify the state of the
+blockchain view in pure
+
+3234
+03:04:58,620 --> 03:05:01,830
+functions, don't modify by the
+state of a blockchain, we also
+
+3235
+03:05:01,830 --> 03:05:05,280
+can specify different data
+locations in our functions,
+
+3236
+03:05:05,580 --> 03:05:09,450
+called data and memory mean that
+that data is only temporary and
+
+3237
+03:05:09,450 --> 03:05:12,390
+will only exist for the duration
+of the function. Storage
+
+3238
+03:05:12,390 --> 03:05:15,150
+variables are permanent and stay
+there forever. function
+
+3239
+03:05:15,150 --> 03:05:17,940
+parameters can't be stored
+variables because they're only
+
+3240
+03:05:17,940 --> 03:05:20,550
+going to exist for the duration
+of the function. All the
+
+3241
+03:05:20,550 --> 03:05:23,610
+solidity code that we work with,
+when we hit Compile, it actually
+
+3242
+03:05:23,610 --> 03:05:28,080
+compiles down to this Aetherium
+virtual machine specifications.
+
+3243
+03:05:28,170 --> 03:05:30,690
+We'll learn more about those
+specifications later. And last,
+
+3244
+03:05:30,690 --> 03:05:33,600
+but not least, another huge
+congratulations on your first
+
+3245
+03:05:33,600 --> 03:05:34,260
+contract here.
+
+3246
+03:05:37,290 --> 03:05:37,740
+Awesome.
+
+3247
+03:05:37,800 --> 03:05:41,340
+All right, let's get started on
+our lesson three, remember,
+
+3248
+03:05:41,370 --> 03:05:43,920
+everything is in the GitHub
+repository. And we can scroll
+
+3249
+03:05:43,920 --> 03:05:47,550
+down, hit Lesson three and see
+all the code here. I'm building
+
+3250
+03:05:47,550 --> 03:05:50,400
+up this repo as I film. So
+underneath this lesson three is
+
+3251
+03:05:50,400 --> 03:05:52,530
+going to be a lot more
+information than just the code
+
+3252
+03:05:52,530 --> 03:05:57,420
+here, all of our code samples
+end with dash f f, c, which
+
+3253
+03:05:57,420 --> 03:06:00,960
+means dash Free Code Camp. So if
+you see a GitHub repo that ends
+
+3254
+03:06:00,960 --> 03:06:05,370
+with dash F, F, C, know that
+that repository is associated
+
+3255
+03:06:05,370 --> 03:06:07,950
+with this course, I'm going to
+do a quick high level
+
+3256
+03:06:07,950 --> 03:06:10,890
+walkthrough of what we're going
+to be building in this lesson.
+
+3257
+03:06:10,890 --> 03:06:14,430
+So you don't need to code right
+now just sit back watch and
+
+3258
+03:06:14,430 --> 03:06:16,860
+enjoy. In this lesson, we're
+actually going to expand to
+
+3259
+03:06:16,860 --> 03:06:19,890
+having three different
+contracts. Let's say we want to
+
+3260
+03:06:19,890 --> 03:06:23,760
+be able to deploy simple storage
+contracts from a contract
+
+3261
+03:06:23,760 --> 03:06:28,230
+itself. Yes, contracts can
+indeed deploy contracts, we are
+
+3262
+03:06:28,230 --> 03:06:31,200
+going to create a contract
+called storage factory dot sole,
+
+3263
+03:06:31,410 --> 03:06:34,380
+that's going to be able to
+deploy and interact with other
+
+3264
+03:06:34,380 --> 03:06:38,400
+contracts itself. So what we
+could do is we could go deploy
+
+3265
+03:06:38,400 --> 03:06:41,670
+this to a JavaScript VM, we're
+going to choose storage factory,
+
+3266
+03:06:42,000 --> 03:06:45,120
+and we're gonna go ahead and hit
+Deploy. In our contract down
+
+3267
+03:06:45,120 --> 03:06:48,510
+below, we have a number of
+different functions. Our top
+
+3268
+03:06:48,510 --> 03:06:52,020
+function is this function called
+crate simple storage contract,
+
+3269
+03:06:52,230 --> 03:06:56,100
+which we can click and it'll
+actually create a simple storage
+
+3270
+03:06:56,100 --> 03:06:59,760
+contract for us, then we can go
+ahead and interact with it at an
+
+3271
+03:06:59,760 --> 03:07:04,260
+IG zero will save a favorite
+number of one. Now, if we hit SF
+
+3272
+03:07:04,260 --> 03:07:05,340
+get zero,
+
+3273
+03:07:06,390 --> 03:07:09,390
+we get one back. And
+
+3274
+03:07:09,510 --> 03:07:12,360
+we can see the address of the
+simple storage contract that we
+
+3275
+03:07:12,360 --> 03:07:14,460
+just deployed. Additionally,
+we're going to learn about a
+
+3276
+03:07:14,460 --> 03:07:18,600
+number of solidity features,
+such as importing inheritance,
+
+3277
+03:07:18,660 --> 03:07:22,080
+and so much more. So let's go
+ahead and jump in. And remember
+
+3278
+03:07:22,080 --> 03:07:25,590
+all the code is available here
+from the GitHub repository. So
+
+3279
+03:07:25,620 --> 03:07:28,350
+be sure to refer back to these
+contracts if you get lost.
+
+3280
+03:07:31,110 --> 03:07:32,040
+So here we are
+
+3281
+03:07:32,070 --> 03:07:35,160
+back in remix, and we have our
+simple storage dot soul. If you
+
+3282
+03:07:35,160 --> 03:07:38,190
+skipped over the last section,
+be sure to go to the full
+
+3283
+03:07:38,190 --> 03:07:42,780
+blockchain solidity course, Jas.
+And scroll down to lesson two,
+
+3284
+03:07:42,810 --> 03:07:46,650
+welcome to remix and grab this
+code. Go to simple storage
+
+3285
+03:07:46,650 --> 03:07:50,730
+outsole. And copy paste this
+code into remix. Because this is
+
+3286
+03:07:50,730 --> 03:07:53,370
+where we're going to be starting
+from, we have this simple
+
+3287
+03:07:53,370 --> 03:07:56,160
+storage contract, which is
+great. It allows us to store a
+
+3288
+03:07:56,160 --> 03:07:59,010
+favorite number. And it allows
+us to store favorite numbers
+
+3289
+03:07:59,040 --> 03:08:02,970
+across different people in both
+mappings and arrays. But let's
+
+3290
+03:08:02,970 --> 03:08:05,940
+say we want to get even more
+advanced with this, we actually
+
+3291
+03:08:05,940 --> 03:08:10,140
+can have a contract actually
+deploy other contracts for us.
+
+3292
+03:08:10,500 --> 03:08:13,650
+And then go ahead and interact
+with those contracts from other
+
+3293
+03:08:13,650 --> 03:08:17,280
+contracts, contracts interacting
+with each other is an essential
+
+3294
+03:08:17,280 --> 03:08:19,980
+part of working with solidity
+and working with smart
+
+3295
+03:08:19,980 --> 03:08:23,310
+contracts. The ability for
+contracts to seamlessly interact
+
+3296
+03:08:23,310 --> 03:08:26,220
+with each other is what's known
+as composability. smart
+
+3297
+03:08:26,220 --> 03:08:28,920
+contracts are composable,
+because they can easily interact
+
+3298
+03:08:28,920 --> 03:08:31,410
+with each other. This is
+especially awesome when it comes
+
+3299
+03:08:31,410 --> 03:08:34,230
+to things like defy where you
+can have really complex
+
+3300
+03:08:34,230 --> 03:08:38,130
+financial products interact with
+each other incredibly easily,
+
+3301
+03:08:38,490 --> 03:08:41,100
+since all their code is
+available on chain. So we're
+
+3302
+03:08:41,100 --> 03:08:43,920
+going to learn how to do that.
+So let's keep our simple storage
+
+3303
+03:08:43,920 --> 03:08:46,830
+contract exactly the way it is,
+we're going to create a new
+
+3304
+03:08:46,830 --> 03:08:49,740
+contract called storage factory.
+So we're going to hit the New
+
+3305
+03:08:49,740 --> 03:08:56,310
+File button and type in storage,
+factory dot salt. And let's
+
+3306
+03:08:56,310 --> 03:08:59,040
+close this off for now. So let's
+go ahead and get this contract
+
+3307
+03:08:59,040 --> 03:09:01,770
+setup from what we learned
+before. First thing we're going
+
+3308
+03:09:01,770 --> 03:09:08,010
+to want to do is the spdx
+license identifier, which we're
+
+3309
+03:09:08,010 --> 03:09:11,400
+going to do MIT. And then the
+next thing we're always going to
+
+3310
+03:09:11,400 --> 03:09:13,590
+need is our solidity version.
+
+3311
+03:09:13,680 --> 03:09:16,680
+So we'll do pragma solidity
+
+3312
+03:09:17,700 --> 03:09:21,300
+and we could do zero point 8.7.
+But for this one, let's do zero
+
+3313
+03:09:21,750 --> 03:09:25,320
+point 8.0 And then just add the
+carrot, meaning any version of
+
+3314
+03:09:25,320 --> 03:09:28,950
+0.8 point something will work.
+And then let's add our contract
+
+3315
+03:09:28,950 --> 03:09:33,480
+name, which is going to be
+storage factory. Now hit command
+
+3316
+03:09:33,480 --> 03:09:37,500
+S or ctrl S or go to the compile
+tab and hit compile, and boom,
+
+3317
+03:09:37,530 --> 03:09:41,010
+we have our regular setup here.
+Now we want to create a function
+
+3318
+03:09:41,070 --> 03:09:44,310
+that can actually deploy our
+simple storage contract. So
+
+3319
+03:09:44,340 --> 03:09:49,860
+we'll create a function called
+function. create simple storage
+
+3320
+03:09:49,860 --> 03:09:53,760
+contract, we'll have it be
+public, so anybody can call it
+
+3321
+03:09:53,880 --> 03:09:57,810
+will have to deploy a simple
+storage contract and save it to
+
+3322
+03:09:57,810 --> 03:10:00,780
+a global variable. But before we
+can do it How can our storage
+
+3323
+03:10:00,780 --> 03:10:04,740
+factory contract know what our
+simple storage contract looks
+
+3324
+03:10:04,740 --> 03:10:08,400
+like? In order to deploy it, if
+our storage factory contract is
+
+3325
+03:10:08,400 --> 03:10:11,610
+going to deploy simple storage,
+it's going to need to know code
+
+3326
+03:10:11,640 --> 03:10:14,130
+of simple storage. One way we
+can do this is we can actually
+
+3327
+03:10:14,130 --> 03:10:18,120
+go to our simple storage dot
+soul and copy everything
+
+3328
+03:10:18,330 --> 03:10:23,070
+underneath pragma, solidity and
+down and paste it into our
+
+3329
+03:10:23,070 --> 03:10:26,640
+storage factory dot soul
+underneath our pragma, solidity.
+
+3330
+03:10:27,510 --> 03:10:30,690
+If we go ahead and compile and
+save this, it actually works our
+
+3331
+03:10:30,690 --> 03:10:33,450
+storage factory, that soul
+contract actually now has two
+
+3332
+03:10:33,450 --> 03:10:36,750
+contracts in it. It has the
+simple storage contract, and it
+
+3333
+03:10:36,750 --> 03:10:39,750
+has the storage factory contract
+in it, you actually go to the
+
+3334
+03:10:39,750 --> 03:10:43,200
+deploy tab and scroll down to
+deploy while you're on the
+
+3335
+03:10:43,200 --> 03:10:46,350
+storage factory dot soul, not
+the simple storage that's all on
+
+3336
+03:10:46,350 --> 03:10:49,860
+storage factory, you can see
+that you can actually choose
+
+3337
+03:10:49,890 --> 03:10:52,620
+which one of these contracts to
+deploy, a single file of
+
+3338
+03:10:52,620 --> 03:10:56,040
+solidity can hold multiple
+different contracts. Now that we
+
+3339
+03:10:56,040 --> 03:10:59,130
+have our simple storage, that's
+all in our storage factory, we
+
+3340
+03:10:59,130 --> 03:11:02,640
+can actually go ahead and create
+this function to deploy a simple
+
+3341
+03:11:02,640 --> 03:11:05,310
+storage console, we're going to
+create a global variable the
+
+3342
+03:11:05,310 --> 03:11:07,980
+same way that we would create
+any other global variable, we'll
+
+3343
+03:11:07,980 --> 03:11:11,940
+do the type, which is going to
+be type simple storage contract,
+
+3344
+03:11:12,330 --> 03:11:16,260
+we'll give it a visibility of
+public. And we'll give it a
+
+3345
+03:11:17,220 --> 03:11:20,640
+variable name. Type simple
+storage contract going to be
+
+3346
+03:11:20,640 --> 03:11:23,370
+public, the name of the variable
+is going to be simple storage.
+
+3347
+03:11:24,030 --> 03:11:26,700
+Now in our function, create
+simple storage contract, we're
+
+3348
+03:11:26,700 --> 03:11:29,070
+gonna say simple storage equals
+
+3349
+03:11:29,250 --> 03:11:32,640
+new, simple storage.
+
+3350
+03:11:34,380 --> 03:11:37,830
+This new keyword is how solidity
+knows Ah, okay, we're going to
+
+3351
+03:11:37,830 --> 03:11:41,700
+deploy a new simple storage
+contract. So we go ahead and
+
+3352
+03:11:41,700 --> 03:11:44,640
+compile this, we'll go to the
+deploy tab, make sure we're on
+
+3353
+03:11:44,640 --> 03:11:48,600
+the JavaScript VM, we'll scroll
+down to the contract. And we'll
+
+3354
+03:11:48,600 --> 03:11:51,780
+choose storage factory. And
+remember, you need to have
+
+3355
+03:11:51,780 --> 03:11:54,570
+storage factory dot soul
+selected. In order for that to
+
+3356
+03:11:54,570 --> 03:11:59,460
+show up storage factory, we'll
+go ahead and hit Deploy. And now
+
+3357
+03:12:00,030 --> 03:12:04,380
+we see our storage factory
+contract has two buttons. One is
+
+3358
+03:12:04,380 --> 03:12:07,560
+create simple storage, and the
+other one is going to be a view
+
+3359
+03:12:07,710 --> 03:12:11,070
+of our simple storage contract.
+If we click it right now, it's
+
+3360
+03:12:11,070 --> 03:12:13,650
+going to show us that it's
+currently at address zero,
+
+3361
+03:12:13,740 --> 03:12:16,440
+because it gets initialized to
+being blank. It's saying there
+
+3362
+03:12:16,440 --> 03:12:19,530
+is no simple storage contract
+currently deployed. Now if we
+
+3363
+03:12:19,530 --> 03:12:23,730
+pull up our console and click
+create simple storage, we see we
+
+3364
+03:12:23,730 --> 03:12:27,060
+created a new function call
+storage factory dot create
+
+3365
+03:12:27,060 --> 03:12:30,660
+simple storage contract. And in
+doing so we called this function
+
+3366
+03:12:30,690 --> 03:12:34,200
+which created and deployed a new
+simple storage contract, we can
+
+3367
+03:12:34,200 --> 03:12:36,960
+now see what address the simple
+storage contract is out by
+
+3368
+03:12:36,960 --> 03:12:39,870
+clicking the simple storage
+button and we see the address
+
+3369
+03:12:39,900 --> 03:12:42,870
+associated with it. So now we
+know how a contract can actually
+
+3370
+03:12:42,870 --> 03:12:46,590
+deploy another contract. But the
+thing is, having this massive
+
+3371
+03:12:46,590 --> 03:12:49,890
+chunk of code above our storage
+factory is a little bit
+
+3372
+03:12:49,890 --> 03:12:52,800
+redundant, especially since we
+have our other file called
+
+3373
+03:12:52,800 --> 03:12:56,220
+Simple Storage dot soul. And
+let's say we have a contract
+
+3374
+03:12:56,220 --> 03:12:59,430
+that has got a ton of other
+contracts in it. Always copy
+
+3375
+03:12:59,430 --> 03:13:02,640
+pasting all these contracts is
+going to be a lot of work. So
+
+3376
+03:13:02,640 --> 03:13:06,240
+instead, what we can do is use
+what's called an import. So
+
+3377
+03:13:06,240 --> 03:13:09,450
+let's go ahead and delete our
+contracts simple storage. And
+
+3378
+03:13:09,450 --> 03:13:14,610
+now we're just going to type
+import dot slash simple storage
+
+3379
+03:13:15,270 --> 03:13:19,410
+dot soul. This import dot slash
+simple storage dot Seoul is the
+
+3380
+03:13:19,410 --> 03:13:22,560
+exact same as our copy pasted
+version of simple storage.
+
+3381
+03:13:22,560 --> 03:13:27,030
+That's all. It takes the path of
+another file, it takes the path
+
+3382
+03:13:27,030 --> 03:13:29,970
+package or GitHub, which we'll
+get to in a minute of another
+
+3383
+03:13:29,970 --> 03:13:34,650
+file and says, Okay, we're going
+to paste that contract into the
+
+3384
+03:13:34,650 --> 03:13:37,800
+top of this contract here, we
+actually see we go back to
+
+3385
+03:13:37,800 --> 03:13:42,240
+compile, we go to deploy, let's
+delete our old contract, we can
+
+3386
+03:13:42,240 --> 03:13:45,900
+actually see storage factory dot
+soul again, we can deploy it,
+
+3387
+03:13:46,440 --> 03:13:49,860
+click the drop down. And once
+again, we can run those
+
+3388
+03:13:49,860 --> 03:13:52,500
+functions exactly the same.
+importing our contracts like
+
+3389
+03:13:52,500 --> 03:13:56,070
+this is much nicer than always
+copy pasting the code. This way,
+
+3390
+03:13:56,100 --> 03:13:58,380
+if we want to change something
+in simple storage, we have one
+
+3391
+03:13:58,380 --> 03:14:01,110
+canonical place to go ahead and
+change it instead of having to
+
+3392
+03:14:01,110 --> 03:14:03,780
+change it in multiple different
+places. Now additionally, you'll
+
+3393
+03:14:03,780 --> 03:14:06,750
+notice the pragma, solidity if
+we have our contracts in two
+
+3394
+03:14:06,750 --> 03:14:09,780
+separate files, we actually can
+have different versions of
+
+3395
+03:14:09,780 --> 03:14:13,620
+solidity right now our storage
+factory has carrot zero point
+
+3396
+03:14:13,620 --> 03:14:18,420
+8.0 Which means that anything
+within the 0.8 range of this
+
+3397
+03:14:18,420 --> 03:14:22,500
+contract is okay. But for simple
+storage that sole, it says
+
+3398
+03:14:22,500 --> 03:14:27,000
+anything in the zero point 8.8
+And above range is okay. So if
+
+3399
+03:14:27,000 --> 03:14:31,710
+we were to try to change the
+compiler version 8.5 And then go
+
+3400
+03:14:31,710 --> 03:14:34,680
+ahead and compile, a remix is
+going to automatically bump it
+
+3401
+03:14:34,680 --> 03:14:37,500
+up to a better version that is
+compatible with both of them, in
+
+3402
+03:14:37,500 --> 03:14:41,460
+this case eight point 13. But if
+we, for example, changed our
+
+3403
+03:14:41,460 --> 03:14:46,710
+solidity version of storage
+factory to zero point 7.0 And
+
+3404
+03:14:46,710 --> 03:14:51,180
+then tried to compile them. We
+actually end up getting an issue
+
+3405
+03:14:51,450 --> 03:14:54,600
+parser error source file
+requires a different compiler
+
+3406
+03:14:54,600 --> 03:14:58,470
+version. This is because our
+storage factory is saying hey,
+
+3407
+03:14:58,500 --> 03:15:03,300
+anything in 0.7 means is okay.
+However, our simple storage is
+
+3408
+03:15:03,300 --> 03:15:07,350
+saying anything in the zero
+point 8.8 And above is okay. So
+
+3409
+03:15:07,350 --> 03:15:10,170
+those two versions are not
+compatible. So what we need to
+
+3410
+03:15:10,170 --> 03:15:13,230
+do is we need to make sure our
+versions of solidity are indeed
+
+3411
+03:15:13,230 --> 03:15:17,880
+compatible. So let's change the
+version back recompile. And now
+
+3412
+03:15:17,910 --> 03:15:20,490
+we're looking good again. Now
+since we have this create simple
+
+3413
+03:15:20,490 --> 03:15:23,520
+storage contract, every single
+time we call it right now, it'll
+
+3414
+03:15:23,520 --> 03:15:26,520
+just replace whatever is
+currently in our public simple
+
+3415
+03:15:26,520 --> 03:15:29,520
+storage variable. Let's go ahead
+and update this so that we can
+
+3416
+03:15:29,520 --> 03:15:32,430
+actually keep a running list of
+all of our deployed simple
+
+3417
+03:15:32,430 --> 03:15:35,130
+storage contracts. So instead of
+having this be a single
+
+3418
+03:15:35,130 --> 03:15:39,180
+variable, we'll make this a
+simple storage array or list
+
+3419
+03:15:39,420 --> 03:15:44,460
+public simple storage array.
+Now, whenever we create a new
+
+3420
+03:15:44,460 --> 03:15:48,150
+simple storage contract, instead
+of saving it like this, what
+
+3421
+03:15:48,150 --> 03:15:51,540
+we're going to do is we're going
+to save it as a memory variable
+
+3422
+03:15:51,570 --> 03:15:56,820
+by saying simple storage, simple
+storage equals new simple
+
+3423
+03:15:56,820 --> 03:16:00,840
+storage. And we're going to add
+this variable to our simple
+
+3424
+03:16:00,840 --> 03:16:04,500
+storage array. So the same way
+we did it before, we're gonna do
+
+3425
+03:16:04,500 --> 03:16:11,040
+simple storage array dot push,
+simple storage. So I should
+
+3426
+03:16:11,040 --> 03:16:14,490
+spell storage, right? Let's go
+ahead and compile this looks
+
+3427
+03:16:14,490 --> 03:16:19,890
+good. We'll deploy the storage
+factory deploy. Like here, we
+
+3428
+03:16:19,890 --> 03:16:24,480
+now have simple storage array
+View button, we'll do create
+
+3429
+03:16:24,480 --> 03:16:27,570
+simple storage. Now we can view
+the simple storage contract
+
+3430
+03:16:27,600 --> 03:16:31,260
+zero. Right now there's nothing
+at one. But if we create another
+
+3431
+03:16:31,260 --> 03:16:33,810
+simple storage contract, we can
+see the new simple storage
+
+3432
+03:16:33,810 --> 03:16:35,640
+contract address at index one.
+
+3433
+03:16:38,400 --> 03:16:39,540
+All right, so this is great,
+
+3434
+03:16:39,720 --> 03:16:43,080
+we can now keep track of all of
+our simple storage deployments.
+
+3435
+03:16:43,140 --> 03:16:45,870
+But how do we actually interact
+with them, let's say we wanted
+
+3436
+03:16:45,870 --> 03:16:48,870
+to be able to call the store
+function on all of our simple
+
+3437
+03:16:48,870 --> 03:16:52,500
+storage dot souls from our
+storage factory, you can think
+
+3438
+03:16:52,500 --> 03:16:55,230
+of the storage factory as almost
+like a manager of all of our
+
+3439
+03:16:55,230 --> 03:16:58,140
+simple storages. That's all
+let's create a new function that
+
+3440
+03:16:58,140 --> 03:17:01,500
+can do exactly that. So we'll
+create function, and we'll call
+
+3441
+03:17:01,500 --> 03:17:06,720
+it S F store, which is going to
+stand for storage factory store.
+
+3442
+03:17:07,380 --> 03:17:13,890
+And it's going to take you in
+256, simple storage index, and a
+
+3443
+03:17:13,890 --> 03:17:19,470
+UNT 256, underscore simple
+storage
+
+3444
+03:17:20,100 --> 03:17:22,740
+number. There'll be a public
+
+3445
+03:17:23,850 --> 03:17:26,640
+auction as well. Now in order
+for you to interact with any
+
+3446
+03:17:26,640 --> 03:17:30,120
+contract, you're always going to
+need two things. And we're going
+
+3447
+03:17:30,120 --> 03:17:34,740
+to refer to this a lot. You're
+always going to need the address
+
+3448
+03:17:34,860 --> 03:17:39,960
+of the contract, and the ABI of
+the contract. The API stands for
+
+3449
+03:17:40,560 --> 03:17:44,850
+Application binary interface,
+the API will tell our code
+
+3450
+03:17:44,880 --> 03:17:48,300
+exactly how it can interact with
+the contract, we'll go deeper
+
+3451
+03:17:48,300 --> 03:17:52,080
+into API as we move on. But if
+you go to your compile tab, you
+
+3452
+03:17:52,080 --> 03:17:54,810
+hit compile, and things are
+actually compiling. You can
+
+3453
+03:17:54,810 --> 03:17:58,800
+scroll down, and you can see
+compilation details. And you can
+
+3454
+03:17:58,800 --> 03:18:02,790
+see a whole bunch of information
+on your different contracts. You
+
+3455
+03:18:02,790 --> 03:18:05,970
+can see the name of your
+contract, which for our simple
+
+3456
+03:18:05,970 --> 03:18:08,670
+storage contract is simple
+storage, you can see a whole
+
+3457
+03:18:08,670 --> 03:18:12,000
+bunch of metadata, like the
+compiler, the language output
+
+3458
+03:18:12,000 --> 03:18:15,600
+settings, all this other stuff.
+You can see the exact bytecode
+
+3459
+03:18:15,870 --> 03:18:18,660
+and the opcodes, which we'll
+talk about much later. But you
+
+3460
+03:18:18,660 --> 03:18:22,470
+can also see this API, this API
+tells you all the different
+
+3461
+03:18:22,650 --> 03:18:24,870
+inputs and outputs and
+everything you could do with
+
+3462
+03:18:24,870 --> 03:18:28,200
+this contract. For example, in
+our simple storage, if we look
+
+3463
+03:18:28,200 --> 03:18:32,280
+at the zero with index of our
+API, we have a function add
+
+3464
+03:18:32,280 --> 03:18:36,090
+person. If we look at one, we
+see our name to favorite number,
+
+3465
+03:18:36,570 --> 03:18:42,240
+we looked at two we can see our
+people three retrieve for store,
+
+3466
+03:18:42,240 --> 03:18:44,880
+it tells us all these different
+ways we can actually interact
+
+3467
+03:18:44,880 --> 03:18:47,370
+with our contract. And the
+different functions that we can
+
+3468
+03:18:47,370 --> 03:18:51,030
+call, we know where addresses
+are, because we're storing them
+
+3469
+03:18:51,090 --> 03:18:55,020
+in this array here, our simple
+storage array, we can also get
+
+3470
+03:18:55,020 --> 03:18:58,800
+the API because we're importing
+simple storage dot soul when you
+
+3471
+03:18:58,800 --> 03:19:02,370
+compile simple storage on soul.
+As you saw on the compilation
+
+3472
+03:19:02,370 --> 03:19:05,940
+details, whenever you compile
+it, it comes prepackaged with
+
+3473
+03:19:05,940 --> 03:19:09,900
+the ABI, we automatically get
+the ABI just by importing it
+
+3474
+03:19:09,900 --> 03:19:12,840
+like this. In the future, we'll
+see other ways that we can
+
+3475
+03:19:12,840 --> 03:19:15,930
+actually get API's really
+easily. So to call the store
+
+3476
+03:19:15,930 --> 03:19:18,180
+function on one of our
+contracts, we're first going to
+
+3477
+03:19:18,180 --> 03:19:21,360
+need to get that contract
+object. So what we can do is we
+
+3478
+03:19:21,360 --> 03:19:27,540
+can say simple storage variable
+named simple storage. Variable
+
+3479
+03:19:27,570 --> 03:19:30,930
+Name simple storage of type
+simple storage is going to be
+
+3480
+03:19:30,960 --> 03:19:38,670
+equal to a simple storage
+object. And instead of doing new
+
+3481
+03:19:38,700 --> 03:19:41,640
+simple storage, like we did last
+time, we're just going to put
+
+3482
+03:19:41,670 --> 03:19:45,390
+the address of this simple
+storage object in here, which
+
+3483
+03:19:45,420 --> 03:19:48,570
+again, we can get from our
+array. And in this function,
+
+3484
+03:19:48,570 --> 03:19:52,500
+we're passing the array index.
+So we can say simple storage
+
+3485
+03:19:52,500 --> 03:19:59,610
+contract at address simple
+storage array. At index simple
+
+3486
+03:20:00,000 --> 03:20:05,010
+Storage index. This bracket
+notation here is how you access
+
+3487
+03:20:05,010 --> 03:20:08,790
+different elements of arrays. So
+if we want the zeroeth element
+
+3488
+03:20:08,820 --> 03:20:12,780
+of our list here, simple storage
+index would be zero, and we pass
+
+3489
+03:20:12,780 --> 03:20:16,440
+it into this bit here, then
+that'll give us the address of
+
+3490
+03:20:16,440 --> 03:20:18,960
+our simple storage contract,
+which we pass into simple
+
+3491
+03:20:18,960 --> 03:20:22,170
+storage here. Since this is an
+array of simple storage
+
+3492
+03:20:22,170 --> 03:20:25,890
+contracts, we can just access
+that simple storage contract
+
+3493
+03:20:25,920 --> 03:20:32,760
+using the index. So we would
+say, simple store, Edge array at
+
+3494
+03:20:32,760 --> 03:20:40,290
+index underscore simple storage
+index. Now we're saving the
+
+3495
+03:20:40,290 --> 03:20:44,310
+contract object at index simple
+storage index to our simple
+
+3496
+03:20:44,310 --> 03:20:47,610
+storage variable. Our array here
+is keeping track of the
+
+3497
+03:20:47,610 --> 03:20:52,050
+addresses for us. And it
+automatically comes with the ABI
+
+3498
+03:20:52,050 --> 03:20:56,100
+is here. If this was just an
+array of addresses of the
+
+3499
+03:20:56,100 --> 03:21:00,060
+contract objects, instead, we
+would have to wrap the address
+
+3500
+03:21:00,090 --> 03:21:04,230
+in a simple storage object like
+this. But we'll get to that much
+
+3501
+03:21:04,230 --> 03:21:07,710
+later. So for now, all we have
+to do is this and we now have a
+
+3502
+03:21:07,710 --> 03:21:10,890
+simple storage contract object.
+Now that we have it, we can call
+
+3503
+03:21:11,220 --> 03:21:15,480
+our store function on the simple
+storage contract. So we'll call
+
+3504
+03:21:15,480 --> 03:21:21,780
+simple storage dot store. And
+we'll store the simple storage
+
+3505
+03:21:23,100 --> 03:21:24,300
+number to it. So this
+
+3506
+03:21:24,300 --> 03:21:26,790
+is perfect. And if we were to
+deploy this right now, though,
+
+3507
+03:21:26,820 --> 03:21:29,430
+we wouldn't be able to read the
+store function. So let's create
+
+3508
+03:21:29,430 --> 03:21:32,250
+another function that can read
+from the simple storage contract
+
+3509
+03:21:32,280 --> 03:21:36,840
+from the storage factory. So
+we'll create a function called S
+
+3510
+03:21:36,870 --> 03:21:42,180
+F get, which stands for storage
+factory get, it'll take a un 256
+
+3511
+03:21:42,210 --> 03:21:47,610
+underscore simple storage index.
+This will be a public view
+
+3512
+03:21:47,610 --> 03:21:50,370
+function, since we're just going
+to be reading from our simple
+
+3513
+03:21:50,370 --> 03:21:54,690
+storage contract. And it's going
+to return a UNT 256. And we'll
+
+3514
+03:21:54,690 --> 03:21:56,610
+say simple storage.
+
+3515
+03:21:57,690 --> 03:22:01,290
+Simple Storage. Equals
+
+3516
+03:22:01,560 --> 03:22:04,560
+when you use this same syntax
+from up here to get the contract
+
+3517
+03:22:04,590 --> 03:22:07,710
+simple storage array at the
+simple storage index. And then
+
+3518
+03:22:07,710 --> 03:22:09,000
+we're going to do return,
+
+3519
+03:22:10,290 --> 03:22:15,330
+simple storage.re retrieve
+
+3520
+03:22:16,050 --> 03:22:20,160
+to get that number that we just
+stored up here. And I should
+
+3521
+03:22:20,160 --> 03:22:24,810
+spell retrieved correctly, so we
+get no issues. Perfect. So now
+
+3522
+03:22:24,810 --> 03:22:29,790
+we'll compile, we'll deploy JAVA
+script, we're working on a fake
+
+3523
+03:22:29,790 --> 03:22:33,210
+account, we're going to use our
+storage factory, go ahead and
+
+3524
+03:22:33,210 --> 03:22:35,730
+delete all the contracts we have
+so far. Let's go ahead and
+
+3525
+03:22:35,730 --> 03:22:41,370
+deploy the drop down rate. Right
+now if we do SF get at zero,
+
+3526
+03:22:41,910 --> 03:22:44,880
+we're going to get nothing.
+Simple Storage address zero is
+
+3527
+03:22:44,880 --> 03:22:47,370
+going to be nothing. Let's
+create a simple storage
+
+3528
+03:22:47,370 --> 03:22:52,200
+contract. Now it's simple
+storage list, we get an address
+
+3529
+03:22:52,230 --> 03:22:56,760
+at zero. If we hit SF get right
+now it didn't zero, we get zero.
+
+3530
+03:22:57,240 --> 03:23:02,040
+So let's store a value on this
+contract here. So the index of
+
+3531
+03:23:02,040 --> 03:23:05,460
+that contract is zero. So we're
+going to pass zero as a symbol
+
+3532
+03:23:05,460 --> 03:23:09,570
+storage index. And we're going
+to save the number seven. So
+
+3533
+03:23:09,570 --> 03:23:13,620
+we'll go ahead and do SF store.
+And if we did this, right, this
+
+3534
+03:23:13,620 --> 03:23:18,930
+is going to store the value
+seven into this contract. So if
+
+3535
+03:23:18,930 --> 03:23:23,010
+we do SF get of zero now, it
+does indeed return seven. If we
+
+3536
+03:23:23,010 --> 03:23:27,750
+do SF get one we're going to get
+nothing's going to happen. And
+
+3537
+03:23:27,750 --> 03:23:30,660
+we're actually going to get this
+revert error here. So let's
+
+3538
+03:23:30,660 --> 03:23:33,870
+create another simple storage
+contract. Now if we do SF get
+
+3539
+03:23:33,900 --> 03:23:37,230
+one, we get zero, because we're
+gonna get that default value.
+
+3540
+03:23:37,350 --> 03:23:40,440
+Let's go ahead on the simple
+storage contract and index one
+
+3541
+03:23:40,500 --> 03:23:45,360
+will store the number 16 will
+hit SF store. Now we'll do SF
+
+3542
+03:23:45,360 --> 03:23:49,410
+get one and we get 16. Feel free
+to pause right now and play
+
+3543
+03:23:49,410 --> 03:23:51,840
+around with this so that you
+really understand it. The quick
+
+3544
+03:23:51,840 --> 03:23:54,930
+recap is our storage factory
+contract allows us to create
+
+3545
+03:23:54,930 --> 03:23:58,140
+simple storage contracts, it
+then saves it to our simple
+
+3546
+03:23:58,140 --> 03:24:02,460
+storage array, which we can then
+call different functions on, we
+
+3547
+03:24:02,460 --> 03:24:06,540
+can store values from our
+storage factory contract. And
+
+3548
+03:24:06,540 --> 03:24:09,870
+then we can read values from our
+storage factory contract for any
+
+3549
+03:24:09,870 --> 03:24:13,170
+of the simple storage contracts
+that we've created. This is
+
+3550
+03:24:13,170 --> 03:24:16,170
+incredibly powerful, we can
+additionally make these two
+
+3551
+03:24:16,170 --> 03:24:20,220
+functions even easier. We can
+call the Retrieve function
+
+3552
+03:24:20,280 --> 03:24:24,030
+directly on this when we call
+simple storage array. And then
+
+3553
+03:24:24,030 --> 03:24:27,840
+we have these brackets and add
+the simple storage index. This
+
+3554
+03:24:28,260 --> 03:24:31,440
+returns a simple storage object.
+So what we could do is we could
+
+3555
+03:24:31,440 --> 03:24:32,850
+actually delete this whole part
+
+3556
+03:24:34,290 --> 03:24:36,480
+and just do dot retrieve
+
+3557
+03:24:38,010 --> 03:24:41,880
+right here, and then delete this
+line and say return and just
+
+3558
+03:24:41,880 --> 03:24:44,670
+have it be just like this. If
+you go ahead and save or hit
+
+3559
+03:24:44,670 --> 03:24:47,340
+Compile, you'll get the green
+checkmark there. We're calling
+
+3560
+03:24:47,340 --> 03:24:51,600
+the Retrieve function on
+whatever this is. And whatever
+
+3561
+03:24:51,600 --> 03:24:55,740
+this is, is a simple storage
+object. So perfect. We can do
+
+3562
+03:24:55,740 --> 03:24:59,490
+the same thing up here by
+deleting this part and just
+
+3563
+03:24:59,490 --> 03:25:08,010
+doing dot store, underscore
+simple store edge number, we
+
+3564
+03:25:08,010 --> 03:25:11,220
+save it. And this will work
+exactly the same. Awesome, we
+
+3565
+03:25:11,220 --> 03:25:13,350
+now have a simple storage
+contract that can store
+
+3566
+03:25:13,350 --> 03:25:16,650
+variables in a storage factory
+contract that can be almost like
+
+3567
+03:25:16,680 --> 03:25:19,530
+a manager of these simple
+storage contracts and deploy and
+
+3568
+03:25:19,530 --> 03:25:21,570
+interact with them themselves.
+This is
+
+3569
+03:25:21,570 --> 03:25:26,220
+fantastic. Now, let's say that
+
+3570
+03:25:26,250 --> 03:25:28,950
+we really liked the simple
+storage contract, but it doesn't
+
+3571
+03:25:28,950 --> 03:25:32,160
+do everything that we want it to
+do. Maybe we want it so that
+
+3572
+03:25:32,160 --> 03:25:35,310
+whenever we actually store value
+doesn't store the favorite
+
+3573
+03:25:35,310 --> 03:25:39,030
+number, it stores the favorite
+number plus five, for some
+
+3574
+03:25:39,030 --> 03:25:41,580
+reason you want a contract that
+that everyone's favorite number
+
+3575
+03:25:41,580 --> 03:25:44,670
+is five numbers bigger than what
+they think it is. But you really
+
+3576
+03:25:44,670 --> 03:25:47,610
+like everything else that this
+contract has to offer. Let's
+
+3577
+03:25:47,610 --> 03:25:50,430
+create this new contract. And
+we'll call it extra storage.
+
+3578
+03:25:51,480 --> 03:25:55,650
+So we'll say extra storage dot
+soul.
+
+3579
+03:25:56,340 --> 03:25:58,440
+And we'll create this new
+contract, we're going to set it
+
+3580
+03:25:58,440 --> 03:26:02,580
+up the exact same way we
+normally would spdx license
+
+3581
+03:26:02,970 --> 03:26:09,390
+identifier, gonna be MIT, we'll
+give it pragma solidity. And
+
+3582
+03:26:09,390 --> 03:26:10,680
+we'll just do zero
+
+3583
+03:26:12,300 --> 03:26:16,740
+point 8.0 with the carrot. And
+we'll say contract, extra
+
+3584
+03:26:17,370 --> 03:26:19,920
+storage, like so
+
+3585
+03:26:20,009 --> 03:26:23,309
+if you save or compile, you'll
+get the green checkmark. So what
+
+3586
+03:26:23,309 --> 03:26:26,339
+can we do? Well, the first thing
+we could do is we could copy
+
+3587
+03:26:26,339 --> 03:26:30,209
+paste all this code back into
+here, and then modify our extra
+
+3588
+03:26:30,209 --> 03:26:33,119
+storage contract as we see fit.
+This seems a little bit
+
+3589
+03:26:33,119 --> 03:26:36,389
+redundant. And a lot of work
+though. So what's another way we
+
+3590
+03:26:36,389 --> 03:26:39,929
+can actually get our extra
+storage contract to be like our
+
+3591
+03:26:39,929 --> 03:26:42,179
+simple storage contract? Well,
+this is where we can do
+
+3592
+03:26:42,179 --> 03:26:46,259
+something called inheritance, we
+can have our extra storage
+
+3593
+03:26:46,259 --> 03:26:50,129
+contract, do what's called a
+child contract of our simple
+
+3594
+03:26:50,129 --> 03:26:54,809
+storage contract. And we can
+have extra storage, inherit all
+
+3595
+03:26:54,809 --> 03:26:59,189
+the functionality of simple
+storage with two lines of code.
+
+3596
+03:26:59,789 --> 03:27:03,059
+So first, in order for our extra
+storage contract to know about
+
+3597
+03:27:03,059 --> 03:27:06,419
+simple storage, we once again
+need to import it. So we'll say
+
+3598
+03:27:06,419 --> 03:27:12,779
+import dot slash, simple storage
+dot soul. And we'll say our
+
+3599
+03:27:12,779 --> 03:27:20,639
+contract extra storage is simple
+storage. And we save or compile.
+
+3600
+03:27:20,819 --> 03:27:25,109
+Now our extra storage contract
+is going to be the exact same as
+
+3601
+03:27:25,109 --> 03:27:28,439
+simple storage. And it's going
+to do what's called inherit all
+
+3602
+03:27:28,439 --> 03:27:30,779
+the functionality of simple
+storage. And we can actually
+
+3603
+03:27:30,779 --> 03:27:34,469
+even see that, let's go ahead
+and make sure this is compiled.
+
+3604
+03:27:34,889 --> 03:27:37,589
+And we'll go and deploy this.
+And now in our deployed
+
+3605
+03:27:37,589 --> 03:27:42,479
+contract, we can see we have
+extra storage deployed with all
+
+3606
+03:27:42,479 --> 03:27:45,359
+the functions that simple
+storage has, if you want a
+
+3607
+03:27:45,359 --> 03:27:48,149
+contract to inherit all the
+functionality of another
+
+3608
+03:27:48,149 --> 03:27:52,829
+contract, you can just import it
+and say your contract is that
+
+3609
+03:27:52,829 --> 03:27:56,579
+other contract. Now, we can add
+additional functions to our
+
+3610
+03:27:56,579 --> 03:27:59,519
+extra storage contract. That
+will include all the
+
+3611
+03:27:59,519 --> 03:28:02,969
+functionality of simple storage.
+Now, let's say that we inherit
+
+3612
+03:28:02,969 --> 03:28:06,449
+simple storage to extra storage.
+However, one of the functions in
+
+3613
+03:28:06,449 --> 03:28:09,389
+simple storage we don't really
+actually like. So if we go back
+
+3614
+03:28:09,389 --> 03:28:12,539
+to our simple storage contract,
+our store function, all it does
+
+3615
+03:28:12,539 --> 03:28:15,779
+is take a favorite number, and
+then assigns the global favorite
+
+3616
+03:28:15,779 --> 03:28:19,079
+number to whatever new number
+that we give it in our extra
+
+3617
+03:28:19,079 --> 03:28:21,719
+storage. We want the store
+function to do something
+
+3618
+03:28:21,719 --> 03:28:26,249
+different. We want it to add
+five, to any number that we give
+
+3619
+03:28:26,249 --> 03:28:29,189
+it. How can we achieve this?
+Well, we can do something called
+
+3620
+03:28:29,459 --> 03:28:32,519
+overriding the functions. And
+there are two keywords that
+
+3621
+03:28:32,519 --> 03:28:36,749
+we're going to use. Those are
+virtual, and override. Right
+
+3622
+03:28:36,749 --> 03:28:39,659
+now, if I were to try to
+implement a store function for
+
+3623
+03:28:39,659 --> 03:28:42,509
+extra storage, let's see what
+happens. We'll say function
+
+3624
+03:28:42,989 --> 03:28:48,569
+store, you went to the six
+favorite number. There'll be a
+
+3625
+03:28:48,569 --> 03:28:53,189
+public function. And let's say
+instead of just storing favorite
+
+3626
+03:28:53,189 --> 03:28:59,339
+number, we'll say favorite
+number equals favorite number,
+
+3627
+03:28:59,639 --> 03:29:03,779
+plus five. If we try to compile
+this right now, we'll actually
+
+3628
+03:29:03,779 --> 03:29:06,839
+run into two different errors.
+First one is going to say
+
+3629
+03:29:07,229 --> 03:29:10,649
+overriding function is missing,
+override specifier. If the
+
+3630
+03:29:10,649 --> 03:29:13,949
+parent contract, which in our
+case is simple storage has that
+
+3631
+03:29:13,949 --> 03:29:17,189
+same function, we need to tell
+solidity that we're going to
+
+3632
+03:29:17,219 --> 03:29:22,529
+override this store function and
+instead we're going to use this
+
+3633
+03:29:22,559 --> 03:29:25,139
+store function. But
+additionally, we get this other
+
+3634
+03:29:25,139 --> 03:29:28,919
+error saying trying to override
+non virtual function. Did you
+
+3635
+03:29:28,919 --> 03:29:33,149
+forget to add virtual in order
+for a function to be overridable
+
+3636
+03:29:33,479 --> 03:29:37,589
+you need to add the virtual
+keyword to the store function.
+
+3637
+03:29:37,709 --> 03:29:40,949
+Now it can be overridable.
+However, if we save and compile,
+
+3638
+03:29:41,309 --> 03:29:44,309
+we still have this issue
+overriding function is missing
+
+3639
+03:29:44,309 --> 03:29:48,839
+override specifier. And then all
+we need to do is add override to
+
+3640
+03:29:48,839 --> 03:29:52,589
+restore function. Now if we save
+everything compiles correctly,
+
+3641
+03:29:52,769 --> 03:29:55,529
+let's go ahead and deploy this.
+Let's delete our old contracts.
+
+3642
+03:29:56,219 --> 03:29:59,369
+JavaScript VM right account.
+Great we're going to choose
+
+3643
+03:29:59,369 --> 03:30:02,849
+extra store Reg, let's go ahead
+and deploy. And here's our extra
+
+3644
+03:30:02,849 --> 03:30:06,029
+storage contract. Right now if
+we retrieve, we get zero.
+
+3645
+03:30:06,419 --> 03:30:09,689
+Previously, our store function
+would store the exact number.
+
+3646
+03:30:09,929 --> 03:30:13,949
+However, if I were to store
+five, it'll store five, plus
+
+3647
+03:30:13,949 --> 03:30:17,819
+five. So we should have 10
+stored here. Let's go ahead call
+
+3648
+03:30:17,819 --> 03:30:21,479
+store looks like that one
+through, and we'll hit retrieved
+
+3649
+03:30:21,479 --> 03:30:25,649
+now. And we do indeed see 10 is
+in here. So this is how we do
+
+3650
+03:30:25,679 --> 03:30:27,659
+inheritance, and we override
+
+3651
+03:30:27,840 --> 03:30:32,220
+functions. And that's it. For
+this
+
+3652
+03:30:32,220 --> 03:30:35,670
+section, you've just learned a
+ton of incredibly powerful
+
+3653
+03:30:35,760 --> 03:30:39,450
+solidity for having multiple
+files. Let's do a quick overview
+
+3654
+03:30:39,480 --> 03:30:42,390
+of what we learned, we learned
+that we can actually deploy
+
+3655
+03:30:42,510 --> 03:30:46,500
+contracts from other contracts
+using the new keyword, we
+
+3656
+03:30:46,500 --> 03:30:50,010
+learned that we can actually
+import other contracts into our
+
+3657
+03:30:50,010 --> 03:30:53,310
+contracts and into our code
+using the Import keyword. And
+
+3658
+03:30:53,310 --> 03:30:56,490
+the import keyword is the same
+as copying pasting that file to
+
+3659
+03:30:56,490 --> 03:30:59,850
+the location of the import line,
+we learned that we can interact
+
+3660
+03:30:59,850 --> 03:31:03,540
+with other contracts. As long as
+we have the ABI and address. We
+
+3661
+03:31:03,540 --> 03:31:06,360
+didn't learn too much about the
+ABI. But we'll learn more later,
+
+3662
+03:31:06,480 --> 03:31:09,690
+we learned that if we want to
+create a child contract and
+
+3663
+03:31:09,690 --> 03:31:12,900
+inherit the functionality of
+some other contract, we can do
+
+3664
+03:31:12,900 --> 03:31:15,900
+something called inheritance.
+And the way to inherit
+
+3665
+03:31:15,930 --> 03:31:19,440
+functionality is using the is
+keyword and saying our contract
+
+3666
+03:31:19,470 --> 03:31:22,290
+is some other contract. However,
+if we want to change from the
+
+3667
+03:31:22,290 --> 03:31:26,340
+functionality of the parent
+contract, we have to override
+
+3668
+03:31:26,370 --> 03:31:29,460
+that function. And additionally,
+we have to set the function we
+
+3669
+03:31:29,460 --> 03:31:32,760
+want to override to virtual now
+we can have our own store
+
+3670
+03:31:32,760 --> 03:31:36,060
+function, do whatever we want it
+to do. That is the end of this
+
+3671
+03:31:36,060 --> 03:31:38,610
+lesson. Once again, give
+yourself a huge round of
+
+3672
+03:31:38,610 --> 03:31:41,370
+applause a pat on the back for
+making it this far. And for
+
+3673
+03:31:41,370 --> 03:31:44,310
+finishing this section. You're
+getting more and more advanced
+
+3674
+03:31:44,310 --> 03:31:48,180
+facility so quickly, so be sure
+to celebrate the little wins by
+
+3675
+03:31:48,180 --> 03:31:50,850
+getting some ice cream, maybe
+going for a walk or tweeting
+
+3676
+03:31:50,850 --> 03:31:53,580
+about or posting on Reddit.
+Congratulations, you have
+
+3677
+03:31:53,580 --> 03:31:54,870
+completed this section.
+
+3678
+03:31:57,780 --> 03:32:00,960
+All right, everybody. Welcome
+back. We are now headed into
+
+3679
+03:32:00,990 --> 03:32:06,000
+Lesson four remix Funmi. And of
+course, all the code can be
+
+3680
+03:32:06,000 --> 03:32:09,120
+found on the GitHub repository
+associated with this course.
+
+3681
+03:32:09,360 --> 03:32:12,540
+We're going to be working with
+two contracts here, one of them
+
+3682
+03:32:12,570 --> 03:32:15,840
+is fundament outsole. And then
+one of them is price converted
+
+3683
+03:32:15,840 --> 03:32:19,380
+outsole Funmi dot Sol is going
+to be a contract that allows
+
+3684
+03:32:19,380 --> 03:32:22,350
+people to actually fund a
+collective good. So people can
+
+3685
+03:32:22,350 --> 03:32:26,130
+send Aetherium send Aetherium,
+or polygon or Avalanche or
+
+3686
+03:32:26,130 --> 03:32:30,210
+Phantom, or whatever blockchain
+native token into this contract,
+
+3687
+03:32:30,420 --> 03:32:33,180
+and some owner of the contract
+can then withdraw those funds
+
+3688
+03:32:33,210 --> 03:32:36,690
+and do whatever they want. After
+deploying this to a test net, we
+
+3689
+03:32:36,690 --> 03:32:39,420
+can see the list of functions
+this contract has, this will
+
+3690
+03:32:39,420 --> 03:32:44,730
+have two red buttons, which are
+used to notate to payable
+
+3691
+03:32:44,760 --> 03:32:49,350
+functions in fund in our fund
+function. And in our withdrawal
+
+3692
+03:32:49,350 --> 03:32:54,240
+function, withdraw allows users
+to withdraw the funding and fund
+
+3693
+03:32:54,270 --> 03:32:58,110
+allows users to send money to
+the contract, what we can do is
+
+3694
+03:32:58,200 --> 03:33:02,010
+we can send some value along
+with our transaction. When we
+
+3695
+03:33:02,010 --> 03:33:05,130
+call this fund function, then
+what we can do is we can
+
+3696
+03:33:05,130 --> 03:33:08,730
+actually fund this contract with
+a certain amount of eath, or way
+
+3697
+03:33:08,910 --> 03:33:12,900
+by pasting some value into the
+way value section. And then
+
+3698
+03:33:12,900 --> 03:33:16,260
+hitting fund, we will now have
+sent money into our deployed
+
+3699
+03:33:16,260 --> 03:33:20,310
+contract. And we can see a list
+of the funders and a mapping of
+
+3700
+03:33:20,310 --> 03:33:23,580
+those addresses and how much
+they've actually sent into the
+
+3701
+03:33:23,580 --> 03:33:27,270
+contract, we can then withdraw
+the funds out of the contract.
+
+3702
+03:33:27,690 --> 03:33:30,600
+With a special exception with
+only the person who deployed
+
+3703
+03:33:30,600 --> 03:33:32,970
+this contract can actually
+withdraw the funds back out.
+
+3704
+03:33:33,090 --> 03:33:35,760
+Once the funds are withdrawn,
+the amount of all the funds is
+
+3705
+03:33:35,760 --> 03:33:38,340
+reset back to zero. Are you
+excited? Well, you should be.
+
+3706
+03:33:38,400 --> 03:33:41,070
+And if you've finished the
+section, you've completed most
+
+3707
+03:33:41,070 --> 03:33:44,040
+of the basics of solidity, and
+you'll be ready to start making
+
+3708
+03:33:44,220 --> 03:33:46,770
+even more powerful smart
+contracts, we'll be using
+
+3709
+03:33:46,800 --> 03:33:49,830
+channeling price feeds to
+actually set the value of how
+
+3710
+03:33:49,830 --> 03:33:53,040
+much these people should be able
+to fund in USD as opposed to
+
+3711
+03:33:53,040 --> 03:33:56,340
+just in terms of ether, we're
+gonna go over a lot of advanced
+
+3712
+03:33:56,370 --> 03:33:58,590
+sections here. And I'll let you
+know what parts might be a
+
+3713
+03:33:58,620 --> 03:34:01,080
+little bit harder to digest. So
+you don't have to spend your
+
+3714
+03:34:01,080 --> 03:34:03,900
+entire time trying to figure out
+exactly what's going on. Be sure
+
+3715
+03:34:03,900 --> 03:34:05,970
+to use the GitHub repo to your
+advantage here and the
+
+3716
+03:34:05,970 --> 03:34:08,940
+discussions tab to stay
+connected with other people
+
+3717
+03:34:08,970 --> 03:34:14,850
+taking this lesson. Alright,
+let's jump in. So at this point,
+
+3718
+03:34:14,880 --> 03:34:17,520
+in remix, you'll have a couple
+of contracts here, simple
+
+3719
+03:34:17,520 --> 03:34:20,550
+storage, storage, factory extra
+storage, maybe you refreshed
+
+3720
+03:34:20,550 --> 03:34:23,340
+remix, and these have gone away.
+And in the case, make sure that
+
+3721
+03:34:23,340 --> 03:34:26,130
+you just don't have any of those
+tabs open, we're going to create
+
+3722
+03:34:26,160 --> 03:34:31,350
+a new contract called funding.
+So let's go ahead and start
+
+3723
+03:34:31,350 --> 03:34:34,980
+creating our funding contract.
+Again, we want it to be able to
+
+3724
+03:34:35,460 --> 03:34:41,040
+get funds from users and
+withdraw funds and set a minimum
+
+3725
+03:34:41,760 --> 03:34:45,270
+funding value in USD. This is
+what we're going to get our
+
+3726
+03:34:45,270 --> 03:34:50,670
+contract to do. So first, let's
+set it up spdx license I tend to
+
+3727
+03:34:51,810 --> 03:35:00,810
+fire MIT do pragma solidity do
+caret zero point 8.8. And we'll
+
+3728
+03:35:00,810 --> 03:35:05,640
+do contract bunbee. Awesome. And
+we'll compile, see if things
+
+3729
+03:35:05,640 --> 03:35:09,510
+look good. And they do. Great.
+Let's keep going. So before we
+
+3730
+03:35:09,510 --> 03:35:11,910
+actually embark on creating all
+of our functions here, let's
+
+3731
+03:35:11,910 --> 03:35:14,190
+just add the different functions
+that we're going to implement.
+
+3732
+03:35:14,310 --> 03:35:18,240
+So we want a function fund for
+people to actually send money
+
+3733
+03:35:18,240 --> 03:35:23,340
+to, we want a function withdraw,
+or the owner of this contract to
+
+3734
+03:35:23,340 --> 03:35:25,710
+actually withdraw the funds that
+different funders actually give
+
+3735
+03:35:25,710 --> 03:35:29,370
+us. And that's pretty much it.
+These are the two main functions
+
+3736
+03:35:29,370 --> 03:35:32,790
+that we want this contract to
+do, we will be implementing more
+
+3737
+03:35:32,790 --> 03:35:36,180
+functions to help facilitate
+these two functions. But let's
+
+3738
+03:35:36,180 --> 03:35:39,090
+get started by looking at fund.
+let's comment out withdrawal for
+
+3739
+03:35:39,090 --> 03:35:42,090
+now. And let's just start with
+fun. So we want anybody to be
+
+3740
+03:35:42,090 --> 03:35:46,320
+able to call this fun function.
+So we'll make this public. So as
+
+3741
+03:35:46,320 --> 03:35:52,170
+we mentioned, we want to be able
+to set a minimum font amount in
+
+3742
+03:35:52,170 --> 03:35:55,170
+USD. So there's a lot of things
+to think about here. First thing
+
+3743
+03:35:55,170 --> 03:35:58,890
+we probably want to think about
+is how do we send eath to this
+
+3744
+03:35:58,890 --> 03:36:02,550
+contract, whenever we create a
+transaction on the on any of
+
+3745
+03:36:02,550 --> 03:36:06,390
+these EVM blockchains, there's
+this value field that we can set
+
+3746
+03:36:06,480 --> 03:36:08,880
+value represents how much
+Aetherium we're going to be
+
+3747
+03:36:08,880 --> 03:36:12,270
+sending with our transactions.
+For example, when we transferred
+
+3748
+03:36:12,270 --> 03:36:15,690
+Aetherium. between our different
+accounts, we were actually
+
+3749
+03:36:15,720 --> 03:36:19,080
+populating this value parameter
+with different amounts of
+
+3750
+03:36:19,080 --> 03:36:22,530
+Aetherium. In fact, every single
+transaction that we send, will
+
+3751
+03:36:22,530 --> 03:36:26,430
+have these fields, it'll have a
+nonce or the transaction count
+
+3752
+03:36:26,550 --> 03:36:30,600
+the account the gas price, the
+gas limit that we've seen on
+
+3753
+03:36:30,600 --> 03:36:35,040
+ether scan a to aka the address
+that the transaction is sent to
+
+3754
+03:36:35,160 --> 03:36:37,920
+a value which is going to be
+this amount that we're talking
+
+3755
+03:36:37,920 --> 03:36:40,380
+about. They'll also have data
+which is going to be what we
+
+3756
+03:36:40,380 --> 03:36:44,250
+send if we make a function call
+or deploy contract, and then
+
+3757
+03:36:44,250 --> 03:36:47,490
+we'll have this v r s
+components. We're not really
+
+3758
+03:36:47,490 --> 03:36:50,130
+going to go over these v r and s
+because this is that
+
+3759
+03:36:50,130 --> 03:36:53,490
+cryptographic magic that's
+happening when a transaction is
+
+3760
+03:36:53,490 --> 03:36:56,430
+signed, but just know that
+that's it Now, for sending
+
+3761
+03:36:56,430 --> 03:37:00,060
+value, we can populate some of
+these fields, the gas limit, for
+
+3762
+03:37:00,060 --> 03:37:04,800
+example, was populated to 21,000
+data is going to be empty. And
+
+3763
+03:37:04,800 --> 03:37:07,740
+then that two is going to be the
+address of the transaction we
+
+3764
+03:37:07,740 --> 03:37:11,790
+want to send to, for a function
+call, we can also still populate
+
+3765
+03:37:12,000 --> 03:37:16,290
+the way that we want to send. So
+we can call a function and send
+
+3766
+03:37:16,290 --> 03:37:19,260
+a value at the same time in
+remix has a little drop down
+
+3767
+03:37:19,260 --> 03:37:23,190
+here for way way Feeny and
+ether, we're gonna ignore Feeny
+
+3768
+03:37:23,190 --> 03:37:26,400
+for now. But of course, we have
+our way, great and ether. Again,
+
+3769
+03:37:26,760 --> 03:37:30,960
+we're one ether is worth this
+much way. And this much way, the
+
+3770
+03:37:30,960 --> 03:37:33,330
+first thing we need to do in
+order to make a function payable
+
+3771
+03:37:33,360 --> 03:37:36,540
+with Aetherium, or any other
+native blockchain currency is we
+
+3772
+03:37:36,540 --> 03:37:39,330
+need to mark the function as
+payable. It's this payable
+
+3773
+03:37:39,330 --> 03:37:43,170
+keyword that makes our font
+function red, as opposed to
+
+3774
+03:37:43,200 --> 03:37:46,530
+having it normal orange, just
+like how our wallet can hold
+
+3775
+03:37:46,530 --> 03:37:51,000
+funds, contract addresses can
+hold funds as well, since every
+
+3776
+03:37:51,000 --> 03:37:54,420
+time you deploy a contract, they
+get a contract address, it's
+
+3777
+03:37:54,420 --> 03:37:59,280
+nearly the exact same as a
+wallet address. So both wallets
+
+3778
+03:37:59,340 --> 03:38:04,470
+and contracts can hold native
+blockchain token like Aetherium.
+
+3779
+03:38:04,710 --> 03:38:07,530
+And you'll see that when we
+deploy this later on in the
+
+3780
+03:38:07,530 --> 03:38:11,910
+lesson, that actually will gain
+a balance of Aetherium. Now that
+
+3781
+03:38:11,910 --> 03:38:15,480
+we have it payable, we can
+access this value attribute by
+
+3782
+03:38:15,480 --> 03:38:18,930
+using one of the global keywords
+in solidity with message dot
+
+3783
+03:38:18,930 --> 03:38:22,380
+value to get how much value
+somebody is sending. You use
+
+3784
+03:38:22,410 --> 03:38:25,710
+message dot value in your
+function. Now let's say we want
+
+3785
+03:38:25,710 --> 03:38:29,310
+to set our message add value to
+a certain value of Aetherium.
+
+3786
+03:38:29,370 --> 03:38:32,430
+Let's say we wanted it to be
+let's say we wanted people to
+
+3787
+03:38:32,550 --> 03:38:37,320
+send at least one whole ether
+with all the transactions. Or
+
+3788
+03:38:37,320 --> 03:38:40,350
+put another way, if they sent
+Aetherium, they would need to
+
+3789
+03:38:40,350 --> 03:38:43,410
+send at least one Aetherium. How
+would we implement that? Well,
+
+3790
+03:38:43,440 --> 03:38:46,860
+we could do something called
+require, we would say we want to
+
+3791
+03:38:46,860 --> 03:38:53,580
+require the message dot value is
+greater than one e 18. There's a
+
+3792
+03:38:53,580 --> 03:38:59,610
+couple of things to unpack here.
+One, e 18 is equal to one times
+
+3793
+03:38:59,640 --> 03:39:04,050
+10 raised to the 18th, which is
+also equal to
+
+3794
+03:39:04,890 --> 03:39:12,960
+112345 678-910-1234 5678. This
+is the value in way of one
+
+3795
+03:39:12,990 --> 03:39:16,710
+Aetherium this much way is one
+eath. So if we wanted the
+
+3796
+03:39:16,710 --> 03:39:20,130
+message dot value to be at least
+one eath, or one polygon or
+
+3797
+03:39:20,130 --> 03:39:23,940
+whatever ranch etc, we would set
+it like this require message on
+
+3798
+03:39:23,940 --> 03:39:28,710
+value is greater than one. This
+require keyword is a checker it
+
+3799
+03:39:28,710 --> 03:39:33,090
+says hey, is message dot value
+greater than one. If not, it's
+
+3800
+03:39:33,090 --> 03:39:35,880
+going to revert, it's going to
+do what's called revert with an
+
+3801
+03:39:35,880 --> 03:39:40,110
+error message. And we can say
+didn't send enough, we're gonna
+
+3802
+03:39:40,110 --> 03:39:43,770
+try deploying this on a
+JavaScript VM, deploy Funmi,
+
+3803
+03:39:44,100 --> 03:39:47,610
+we'll hit Deploy, look at Funmi
+we see this fun button is now
+
+3804
+03:39:47,610 --> 03:39:52,260
+red. If we call Funmi right now,
+and we look at the console, you
+
+3805
+03:39:52,260 --> 03:39:55,530
+can see we actually get an error
+here, call it again, we get an
+
+3806
+03:39:55,530 --> 03:39:59,520
+error, we get an error here, we
+know that the air is going to be
+
+3807
+03:39:59,610 --> 03:40:04,020
+this didn't send enough. So what
+we need to do is we need to send
+
+3808
+03:40:04,230 --> 03:40:07,860
+at least one ether with this fun
+transaction, in order for this
+
+3809
+03:40:07,860 --> 03:40:11,370
+require statement to be
+fulfilled. So back up in the
+
+3810
+03:40:11,370 --> 03:40:15,240
+value section, we can change
+this value to one. So that's
+
+3811
+03:40:15,240 --> 03:40:20,100
+gonna be one ether, or this much
+way or this much way. Now we can
+
+3812
+03:40:20,100 --> 03:40:23,340
+hit fund oh actually needs to be
+greater than one.
+
+3813
+03:40:23,490 --> 03:40:28,530
+So let's send to for example.
+Now we'll scroll down. And now
+
+3814
+03:40:28,530 --> 03:40:32,280
+we'll hit fund. And we see that
+that actually passes the require
+
+3815
+03:40:32,280 --> 03:40:36,630
+statement says if our first
+section is false, then go ahead
+
+3816
+03:40:36,630 --> 03:40:39,960
+and revert with this error. What
+is reverting? Revert can be a
+
+3817
+03:40:39,960 --> 03:40:42,570
+little bit confusing, so I
+wouldn't let this section hold
+
+3818
+03:40:42,570 --> 03:40:46,530
+you back. If it's a little bit
+confusing. Revert is when it
+
+3819
+03:40:46,530 --> 03:40:49,800
+undos any actions that happened
+before and send the remaining
+
+3820
+03:40:49,800 --> 03:40:53,490
+gas back. So what does that
+actually look like? Well, let's
+
+3821
+03:40:53,490 --> 03:40:59,190
+say for example, we had a un
+256. Public number. And in our
+
+3822
+03:40:59,190 --> 03:41:04,350
+fund function, we said number
+equals five. If we were to go
+
+3823
+03:41:04,350 --> 03:41:06,870
+ahead and deploy this, let's
+delete our old contract.
+
+3824
+03:41:07,920 --> 03:41:11,670
+deployed this new contract or
+number right now is zero. But if
+
+3825
+03:41:11,670 --> 03:41:14,610
+we were to call our fund
+function number gets set to
+
+3826
+03:41:14,610 --> 03:41:19,230
+five. However, if we call a fund
+and this require isn't met, this
+
+3827
+03:41:19,230 --> 03:41:23,670
+transaction would revert an
+undue setting number to five. So
+
+3828
+03:41:23,670 --> 03:41:27,840
+let's go ahead and look at our
+logs here. We'll keep value zero
+
+3829
+03:41:27,870 --> 03:41:31,590
+so that our fun function
+reverts. We'll call fund will
+
+3830
+03:41:31,590 --> 03:41:35,010
+see that this transaction failed
+because this require end up
+
+3831
+03:41:35,010 --> 03:41:38,730
+reverting and number is still
+zero. So then the question
+
+3832
+03:41:38,730 --> 03:41:43,650
+becomes, did we actually spend
+gas Yes, we spent gas to change
+
+3833
+03:41:43,650 --> 03:41:48,030
+number to five and then any
+remaining gas we would get
+
+3834
+03:41:48,030 --> 03:41:52,800
+returned by this require for
+example, if we had a ton of
+
+3835
+03:41:52,890 --> 03:41:56,970
+computation here, it On a
+computation here, we would have
+
+3836
+03:41:56,970 --> 03:42:00,990
+need to send a ton of gas with
+our fun function. But all the
+
+3837
+03:42:00,990 --> 03:42:05,010
+extra gas that we send, after
+this require gets returned the
+
+3838
+03:42:05,010 --> 03:42:07,980
+original user after it gets
+reverted right here, if reverts
+
+3839
+03:42:08,010 --> 03:42:10,710
+are a little bit confusing for
+you here, don't worry too much
+
+3840
+03:42:10,710 --> 03:42:13,650
+about it, we'll go over it in
+future modules. All you need to
+
+3841
+03:42:13,650 --> 03:42:16,830
+know right now is that when you
+do a require statement, if this
+
+3842
+03:42:16,860 --> 03:42:20,130
+first section isn't met, the
+transaction will be canceled,
+
+3843
+03:42:20,190 --> 03:42:23,310
+and any prior work will be
+undone, and it'll send an error
+
+3844
+03:42:23,310 --> 03:42:27,720
+message. Cool. Let's delete this
+number for now. And we'll delete
+
+3845
+03:42:27,720 --> 03:42:30,690
+it from the global scope.
+There's actually another way to
+
+3846
+03:42:30,690 --> 03:42:32,370
+do these reverts, which we'll go
+over
+
+3847
+03:42:32,400 --> 03:42:38,430
+later in this contract. So what
+we've done so far is great.
+
+3848
+03:42:38,760 --> 03:42:43,380
+However, we're checking message
+dot value in terms of Aetherium,
+
+3849
+03:42:43,440 --> 03:42:48,330
+we're looking for one whole
+Aetherium instead of $50, we
+
+3850
+03:42:48,330 --> 03:42:52,020
+want to check that message add
+value is greater than some
+
+3851
+03:42:52,020 --> 03:42:56,550
+number like $50. Let's go ahead
+and first set the minimum USD
+
+3852
+03:42:56,550 --> 03:43:00,600
+value we want people to send
+along with the fund function, we
+
+3853
+03:43:00,600 --> 03:43:04,410
+can do that at the top of our
+contract, we can say you went to
+
+3854
+03:43:04,410 --> 03:43:14,040
+56 public minimum USD equals 50.
+Now we have some place to check
+
+3855
+03:43:14,100 --> 03:43:18,090
+for minimum USD, we're going to
+update this minimum USD to make
+
+3856
+03:43:18,090 --> 03:43:21,300
+it more gas efficient and a
+little bit. Now that we've set
+
+3857
+03:43:21,300 --> 03:43:24,630
+our minimum USD, we want to be
+able to require the message that
+
+3858
+03:43:24,630 --> 03:43:28,620
+value is greater than or let's
+say greater than or equal to the
+
+3859
+03:43:28,620 --> 03:43:34,470
+minimum USD. But minimum USD is
+in terms of USD and value is in
+
+3860
+03:43:34,470 --> 03:43:41,100
+terms of Aetherium. So how do we
+convert Aetherium to USD, this
+
+3861
+03:43:41,130 --> 03:43:44,400
+is where Oracle's and chainlink
+are going to come into play. The
+
+3862
+03:43:44,400 --> 03:43:47,610
+USD value of Aetherium is
+something that we've assigned
+
+3863
+03:43:47,640 --> 03:43:51,690
+outside of the blockchain to
+Aetherium, or any other layer
+
+3864
+03:43:51,690 --> 03:43:54,300
+one currency or any other native
+smart contract platform
+
+3865
+03:43:54,300 --> 03:43:57,750
+currency. So in order to get
+this value that is outside the
+
+3866
+03:43:57,750 --> 03:44:00,990
+blockchain, we have to use a
+decentralized Oracle network to
+
+3867
+03:44:00,990 --> 03:44:05,700
+get the price of one ether in
+terms of USD. So before we can
+
+3868
+03:44:05,700 --> 03:44:08,550
+continue on here, let's learn a
+little bit more about the
+
+3869
+03:44:08,550 --> 03:44:11,040
+architecture of these
+decentralized Oracle networks
+
+3870
+03:44:11,070 --> 03:44:13,800
+and the different solutions that
+they have. So that we can create
+
+3871
+03:44:13,800 --> 03:44:17,220
+this Funmi contract in the most
+advanced way possible, as we've
+
+3872
+03:44:17,220 --> 03:44:20,280
+talked about blockchains are
+deterministic systems, which
+
+3873
+03:44:20,280 --> 03:44:23,310
+means that they themselves can't
+actually interact with real
+
+3874
+03:44:23,310 --> 03:44:26,820
+world data and events. They
+don't know what the value of an
+
+3875
+03:44:26,820 --> 03:44:29,280
+Aetherium is, they don't know
+what random numbers are. They
+
+3876
+03:44:29,280 --> 03:44:31,080
+don't know if it's sunny
+outside, they don't know the
+
+3877
+03:44:31,080 --> 03:44:33,690
+temperature, they don't know
+who's president, they don't know
+
+3878
+03:44:33,720 --> 03:44:37,410
+any of this information. These
+blockchains also can't do any
+
+3879
+03:44:37,440 --> 03:44:40,890
+external computation. Maybe you
+have some amazing artificial
+
+3880
+03:44:40,890 --> 03:44:43,050
+intelligence model that you want
+to integrate with a smart
+
+3881
+03:44:43,050 --> 03:44:46,170
+contract. smart contracts by
+themselves can't do anything
+
+3882
+03:44:46,170 --> 03:44:49,260
+with that. As we've mentioned,
+this is because blockchains are
+
+3883
+03:44:49,260 --> 03:44:52,800
+deterministic by design. This is
+so that all the nodes can reach
+
+3884
+03:44:52,800 --> 03:44:57,090
+consensus. If you start adding
+variable data or random data, or
+
+3885
+03:44:57,090 --> 03:45:00,900
+values that returned from an API
+call, different nodes could get
+
+3886
+03:45:00,900 --> 03:45:03,240
+different results, and they
+would never be able to reach a
+
+3887
+03:45:03,240 --> 03:45:06,360
+consensus. This is known as the
+smart contract connectivity
+
+3888
+03:45:06,360 --> 03:45:10,290
+problem, or the Oracle problem.
+And this is bad news, because we
+
+3889
+03:45:10,290 --> 03:45:13,620
+want our smart contracts to be
+able to replace traditional
+
+3890
+03:45:13,620 --> 03:45:16,980
+agreements. And traditional
+agreements need data and they
+
+3891
+03:45:16,980 --> 03:45:19,260
+need to interact with the real
+world. So this is where
+
+3892
+03:45:19,260 --> 03:45:22,560
+chainlink and blockchain,
+Oracle's come into place. A
+
+3893
+03:45:22,560 --> 03:45:25,620
+blockchain Oracle is going to be
+any device that interacts with
+
+3894
+03:45:25,620 --> 03:45:28,620
+the often world to provide
+external data or computation to
+
+3895
+03:45:28,620 --> 03:45:31,530
+smart contracts. However, the
+whole story doesn't even in
+
+3896
+03:45:31,530 --> 03:45:36,090
+there. If we use a centralized
+Oracle, we are reintroducing a
+
+3897
+03:45:36,090 --> 03:45:39,660
+point of failure. We've done all
+this work to make our logic
+
+3898
+03:45:39,660 --> 03:45:42,570
+layer decentralized. But if we
+get our data through a
+
+3899
+03:45:42,570 --> 03:45:46,290
+centralized node or through a
+centralized API, we decide we
+
+3900
+03:45:46,290 --> 03:45:49,590
+want to make the API call
+ourselves. We are reintroducing
+
+3901
+03:45:49,620 --> 03:45:52,350
+these trust assumptions that
+we've worked so hard to get rid
+
+3902
+03:45:52,350 --> 03:45:55,650
+of, we're essentially ruining
+the entire purpose of building a
+
+3903
+03:45:55,650 --> 03:45:59,010
+smart contract. So we don't want
+to get our data or do external
+
+3904
+03:45:59,010 --> 03:46:03,150
+computation through centralized
+nodes. Those are bad news. chain
+
+3905
+03:46:03,150 --> 03:46:06,840
+link is the solution here. chain
+link is a decentralized Oracle
+
+3906
+03:46:06,840 --> 03:46:10,650
+network for bringing data and
+external computation into our
+
+3907
+03:46:10,650 --> 03:46:13,920
+smart contracts. As we mentioned
+before, this gives rise to these
+
+3908
+03:46:13,950 --> 03:46:17,040
+hybrid smart contracts, which
+combined on chain and off chain
+
+3909
+03:46:17,040 --> 03:46:21,000
+to make incredibly feature rich,
+powerful applications. chain
+
+3910
+03:46:21,000 --> 03:46:23,970
+link is a modular, decentralized
+Oracle network that can be
+
+3911
+03:46:23,970 --> 03:46:27,600
+customized to deliver any data
+or do any external computation
+
+3912
+03:46:27,630 --> 03:46:31,500
+that you like. So for example, a
+lot of people say, Oh, I can
+
+3913
+03:46:31,500 --> 03:46:36,480
+just make an HTTPS call to some
+API, and we'll be good to go.
+
+3914
+03:46:36,870 --> 03:46:40,170
+The blockchain nodes can't make
+these HTTPS calls, because they
+
+3915
+03:46:40,170 --> 03:46:42,390
+wouldn't be able to reach
+consensus. If they called the
+
+3916
+03:46:42,390 --> 03:46:45,780
+node at different times, or they
+did something else. All the
+
+3917
+03:46:45,780 --> 03:46:49,620
+consensus would be broken. So
+instead, we need a decentralized
+
+3918
+03:46:49,620 --> 03:46:52,500
+network of chain link Oracle's
+to do this, and then in the
+
+3919
+03:46:52,500 --> 03:46:56,430
+transaction, this network of
+nodes will work Turn the data to
+
+3920
+03:46:56,430 --> 03:46:59,790
+our smart contracts for us. Now
+chainlink networks can be
+
+3921
+03:46:59,790 --> 03:47:02,730
+completely customized to bring
+any data or any external
+
+3922
+03:47:02,730 --> 03:47:06,540
+computation that you want.
+However, doing the customization
+
+3923
+03:47:06,540 --> 03:47:09,210
+can be a little bit extra work,
+there are a ton of chainlink
+
+3924
+03:47:09,210 --> 03:47:12,060
+features that come out of the
+box completely decentralized,
+
+3925
+03:47:12,090 --> 03:47:14,700
+ready to plug and play into your
+smart contract applications.
+
+3926
+03:47:15,030 --> 03:47:17,040
+What are those features, the
+first one is going to be
+
+3927
+03:47:17,040 --> 03:47:19,260
+channeling data feeds, and
+that's the one we're actually
+
+3928
+03:47:19,260 --> 03:47:21,510
+going to be using for
+application here. Channeling
+
+3929
+03:47:21,510 --> 03:47:24,750
+data feeds currently at the time
+of recording are powering over
+
+3930
+03:47:24,750 --> 03:47:29,040
+$50 billion. In the defy world,
+the way they work is a network
+
+3931
+03:47:29,040 --> 03:47:32,550
+of chain link nodes gets data
+from different exchanges and
+
+3932
+03:47:32,550 --> 03:47:36,300
+data providers and brings that
+data through a network of
+
+3933
+03:47:36,300 --> 03:47:39,030
+decentralized chain like notes,
+the chain link nodes use a
+
+3934
+03:47:39,030 --> 03:47:42,030
+median to figure out what the
+actual price of the asset is,
+
+3935
+03:47:42,120 --> 03:47:45,630
+and then deliver that in a
+single transaction to what's
+
+3936
+03:47:45,630 --> 03:47:48,360
+called a reference contract, a
+price feed contract or a data
+
+3937
+03:47:48,360 --> 03:47:52,020
+contract on chain that other
+smart contracts can use. And
+
+3938
+03:47:52,020 --> 03:47:55,320
+then those smart contracts use
+that pricing information to
+
+3939
+03:47:55,320 --> 03:47:58,560
+power their defy application, we
+can see an example. We can see
+
+3940
+03:47:58,560 --> 03:48:02,340
+an example at data dot chain dot
+link. And you can change
+
+3941
+03:48:02,370 --> 03:48:05,190
+networks, you can change price
+feeds, you can change a whole
+
+3942
+03:48:05,190 --> 03:48:07,560
+bunch of different information
+to see some of those popular
+
+3943
+03:48:07,560 --> 03:48:11,760
+price feeds. Let's look at eath
+USD for example. On eath USD, we
+
+3944
+03:48:11,760 --> 03:48:14,310
+can see this whole network of
+independent chain link node
+
+3945
+03:48:14,310 --> 03:48:17,610
+operators that are each getting
+different answers for the price
+
+3946
+03:48:17,640 --> 03:48:20,790
+of eth USD, they're getting
+aggregated by the network and
+
+3947
+03:48:20,790 --> 03:48:24,240
+then delivered on chain, we can
+see how often they're updated.
+
+3948
+03:48:24,360 --> 03:48:28,410
+These ones are updated 4.5
+deviation threshold or a few
+
+3949
+03:48:28,410 --> 03:48:31,560
+hour heartbeat, whichever one
+hits. First, we can see when the
+
+3950
+03:48:31,560 --> 03:48:35,430
+last update was we can see the
+number of Oracle responses etc,
+
+3951
+03:48:35,940 --> 03:48:39,750
+we can see the contract address
+directly on chain, we can even
+
+3952
+03:48:39,750 --> 03:48:43,650
+look at the contract on ether
+scan, we can see some of the
+
+3953
+03:48:43,650 --> 03:48:46,590
+history, we can see all the
+responses of the different
+
+3954
+03:48:46,590 --> 03:48:49,440
+Oracle's. And then at the
+bottom, we can see the different
+
+3955
+03:48:49,440 --> 03:48:54,390
+users and sponsors, keeping this
+network up. Similar to
+
+3956
+03:48:54,390 --> 03:48:58,620
+transaction gas, whenever a node
+operator delivers data to a
+
+3957
+03:48:58,620 --> 03:49:01,530
+smart contract, the chain link
+node operators are paid a little
+
+3958
+03:49:01,530 --> 03:49:04,470
+bit of Oracle gas in the chain
+link token. Right now these
+
+3959
+03:49:04,470 --> 03:49:07,080
+users of the protocol are
+sponsoring keeping these feeds
+
+3960
+03:49:07,080 --> 03:49:10,200
+up and are paying the Oracle gas
+associated with delivering this
+
+3961
+03:49:10,200 --> 03:49:13,260
+data on chain. Here's an
+illustration of what the current
+
+3962
+03:49:13,260 --> 03:49:15,990
+model of these data feeds look
+like a network of these chain
+
+3963
+03:49:15,990 --> 03:49:19,410
+link nodes, each reaches out and
+gets the information about an
+
+3964
+03:49:19,410 --> 03:49:23,280
+asset and then signs the data
+with their own private key in a
+
+3965
+03:49:23,280 --> 03:49:27,060
+single transaction, then, one
+node will deliver all the data
+
+3966
+03:49:27,090 --> 03:49:29,310
+with all the different
+signatures to a reference
+
+3967
+03:49:29,310 --> 03:49:32,430
+contract. If that node doesn't
+deliver the data, another node
+
+3968
+03:49:32,430 --> 03:49:35,370
+will send it instead. Reputation
+is incredibly important when
+
+3969
+03:49:35,370 --> 03:49:37,920
+your chain link node operator if
+you miss data updates, if you
+
+3970
+03:49:37,920 --> 03:49:40,290
+forget to send transactions,
+you'll probably be quickly
+
+3971
+03:49:40,290 --> 03:49:42,780
+kicked off these networks and
+have no chance of making any
+
+3972
+03:49:42,780 --> 03:49:45,330
+more money in the future. These
+data feeds are used by some of
+
+3973
+03:49:45,330 --> 03:49:49,200
+the largest protocols in the
+space, such as synthetics, sushi
+
+3974
+03:49:49,200 --> 03:49:53,490
+swap compound, and Avi, with
+several billion dollars each, we
+
+3975
+03:49:53,490 --> 03:49:57,150
+can take a look at an example
+over at Doc's dot chain dot link
+
+3976
+03:49:57,180 --> 03:50:00,870
+work with EVM contracts, we're
+going to hit EVM chains, scroll
+
+3977
+03:50:00,870 --> 03:50:04,470
+down to data feeds. We'll scroll
+down to the solidity section.
+
+3978
+03:50:04,500 --> 03:50:08,340
+And we can see an example of an
+entire contract that uses and
+
+3979
+03:50:08,340 --> 03:50:12,090
+reads from one of these trending
+price feeds. We can even open
+
+3980
+03:50:12,120 --> 03:50:17,040
+this up and remix and work with
+it and remix. It looks like this
+
+3981
+03:50:17,040 --> 03:50:20,790
+example is reading from a price
+feed on COVID. The reason we're
+
+3982
+03:50:20,790 --> 03:50:23,280
+actually going to use a test net
+to see this work is that there's
+
+3983
+03:50:23,280 --> 03:50:25,710
+a set of chain link nodes
+monitoring the test network.
+
+3984
+03:50:25,740 --> 03:50:28,740
+Just to show you exactly how
+this works out. Once we get
+
+3985
+03:50:28,740 --> 03:50:30,960
+deeper into the course, we'll
+show you how to actually run
+
+3986
+03:50:30,960 --> 03:50:34,290
+tests and work with chain link
+nodes without actually being on
+
+3987
+03:50:34,290 --> 03:50:36,930
+a test net, which will make your
+development much faster. But I
+
+3988
+03:50:36,930 --> 03:50:40,620
+highly recommend walking through
+this section along with me so
+
+3989
+03:50:40,620 --> 03:50:44,100
+that you can see firsthand how
+this actually works. So let's go
+
+3990
+03:50:44,100 --> 03:50:47,940
+ahead and faucets dot chain dot
+link slash COVID. We're going to
+
+3991
+03:50:47,940 --> 03:50:51,990
+switch to the COVID network,
+we're going to get some COVID
+
+3992
+03:50:51,990 --> 03:50:55,320
+eath. But remember, look at the
+network flag and use whatever
+
+3993
+03:50:55,320 --> 03:50:59,100
+network is in the documentation.
+So to get some COVID, we're
+
+3994
+03:50:59,100 --> 03:51:01,560
+going to come to the faucet,
+we're going to turn off test
+
+3995
+03:51:01,560 --> 03:51:04,860
+link, we'll just stay with eath
+I'm not a robot,
+
+3996
+03:51:06,659 --> 03:51:10,109
+and then send request. Once our
+COVID Aetherium has reached our
+
+3997
+03:51:10,109 --> 03:51:14,039
+wallet, we can go ahead and
+close we can take a look in our
+
+3998
+03:51:14,039 --> 03:51:18,179
+wallet and see that we do indeed
+have 0.1 eath on Kelvin. Now
+
+3999
+03:51:18,209 --> 03:51:22,289
+let's go back to our remix,
+we'll compile this contract, go
+
+4000
+03:51:22,319 --> 03:51:25,679
+and deploy this on injected web
+three. And again, the reason
+

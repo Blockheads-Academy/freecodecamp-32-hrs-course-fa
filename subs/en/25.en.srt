@@ -1,0 +1,4994 @@
+25001
+01:54:08,020 --> 01:54:11,140
+we're getting from the API. So
+just to make sure everything
+
+25002
+01:54:11,140 --> 01:54:17,050
+goes well, I'll do an if listed.
+response dot success, we're
+
+25003
+01:54:17,050 --> 01:54:20,800
+getting that success object from
+the rails server, we'll just do
+
+25004
+01:54:20,800 --> 01:54:28,000
+a console dot log success
+database updated with watching
+
+25005
+01:54:29,020 --> 01:54:35,260
+events. And then else we'll say
+console dot log, something went
+
+25006
+01:54:35,530 --> 01:54:39,160
+wrong with a duck. And of
+course, we're not just looking
+
+25007
+01:54:39,160 --> 01:54:43,180
+for let's say response dot
+success to be true. We also want
+
+25008
+01:54:44,200 --> 01:54:49,690
+canceled response that success
+and bots response
+
+25009
+01:54:50,770 --> 01:54:55,030
+is successful. Then say hey, you
+did it. Otherwise say hey,
+
+25010
+01:54:55,030 --> 01:54:57,070
+something went wrong. So this is
+how we're going to
+
+25011
+01:54:57,070 --> 01:55:01,660
+programmatically tell our server
+our database to listen for
+
+25012
+01:55:01,690 --> 01:55:04,510
+events. So we just do await
+Murata Clodagh, run, watch
+
+25013
+01:55:04,510 --> 01:55:07,870
+contract events, we pass it this
+object with all these parameters
+
+25014
+01:55:07,870 --> 01:55:10,390
+and flags in there. And then
+that's it. And then we can send
+
+25015
+01:55:10,390 --> 01:55:14,380
+them is because I put next
+public Morales server URL. And
+
+25016
+01:55:14,380 --> 01:55:17,350
+in my DMV, I just have next
+public server URL. So let's
+
+25017
+01:55:17,350 --> 01:55:20,860
+change the name here. Looks like
+our server URL was wrong. And
+
+25018
+01:55:20,860 --> 01:55:24,070
+our app ID name is also wrong.
+So let's fix that next public
+
+25019
+01:55:24,070 --> 01:55:28,060
+app ID master key looks correct.
+Okay, cool. So let's know things
+
+25020
+01:55:28,060 --> 01:55:32,590
+right? More Alice, like cada
+run, Rasta cloud run, when we
+
+25021
+01:55:32,590 --> 01:55:36,640
+run this in our database, if we
+hit refresh, right now, we don't
+
+25022
+01:55:36,640 --> 01:55:41,140
+see those tables in here. But
+once we run this, add events.js,
+
+25023
+01:55:41,170 --> 01:55:44,140
+we should call our server and we
+should tell it hey, you need to
+
+25024
+01:55:44,140 --> 01:55:46,150
+add these tables. And you need
+to start listening for those
+
+25025
+01:55:46,150 --> 01:55:49,630
+events. So in a new terminal,
+we're going to run this add
+
+25026
+01:55:49,630 --> 01:55:53,110
+events such as, so I'm going to
+make the terminal nice big. And
+
+25027
+01:55:53,110 --> 01:55:55,540
+this is where if something goes
+wrong, it can be a little
+
+25028
+01:55:55,540 --> 01:55:58,660
+frustrating to figure it out how
+to fix this. So if you run into
+
+25029
+01:55:58,660 --> 01:56:01,480
+an issue here, if something's
+not working as expected, please
+
+25030
+01:56:01,480 --> 01:56:04,480
+use the GitHub repo associated
+with this course. And also the
+
+25031
+01:56:04,480 --> 01:56:08,260
+Morales forum is here for you,
+and Stack Exchange Etherium. So
+
+25032
+01:56:08,260 --> 01:56:13,660
+we're going to run Node, add
+events, dot j s, and we'll hit
+
+25033
+01:56:13,660 --> 01:56:17,410
+enter. Okay, boom, now we see
+success database updated with
+
+25034
+01:56:17,410 --> 01:56:20,830
+watching events. Now, if you ran
+into an issue, and you rerun it,
+
+25035
+01:56:20,860 --> 01:56:24,010
+and it gets something went
+wrong, there's a chance that it
+
+25036
+01:56:24,010 --> 01:56:27,370
+could still be correct, right,
+because it returns false. It
+
+25037
+01:56:27,370 --> 01:56:30,940
+returns that there's an issue if
+any of these already have the
+
+25038
+01:56:30,940 --> 01:56:34,870
+table in there. So if we go back
+to our database here, and we hit
+
+25039
+01:56:34,870 --> 01:56:38,770
+refresh, I can now see item
+bought, item canceled and item
+
+25040
+01:56:38,770 --> 01:56:40,990
+listed in my database. And
+again, you can see them by
+
+25041
+01:56:40,990 --> 01:56:44,560
+hitting the drop down on your
+server and hitting dashboard. We
+
+25042
+01:56:44,560 --> 01:56:48,670
+also see event Sync Status. And
+this is how our database knows
+
+25043
+01:56:48,670 --> 01:56:51,910
+that it needs to be listening
+for some events, and it's got
+
+25044
+01:56:51,910 --> 01:56:55,420
+all the information about how to
+listen for our events in here.
+
+25045
+01:56:55,510 --> 01:56:58,660
+So cool. So now we are listening
+for events. This is fantastic.
+
+25046
+01:56:58,690 --> 01:57:03,280
+So now what this means is our
+database is now listening To our
+
+25047
+01:57:03,280 --> 01:57:06,790
+blockchain node, and it's
+listening for events in here
+
+25048
+01:57:06,790 --> 01:57:09,460
+it's listening for these item
+listed item bought item,
+
+25049
+01:57:09,460 --> 01:57:12,820
+cancelled events. So let's go
+ahead and test this back in our
+
+25050
+01:57:12,820 --> 01:57:16,480
+hardhat NFT marketplace Free
+Code Camp window. We have some
+
+25051
+01:57:16,480 --> 01:57:20,380
+scripts in here. One of them is
+mint and list. So we went to New
+
+25052
+01:57:20,380 --> 01:57:24,160
+NFT. And we listed on the
+marketplace when we list an NF
+
+25053
+01:57:24,160 --> 01:57:28,390
+T, well, our mirallas database
+should hear that item listed
+
+25054
+01:57:28,390 --> 01:57:32,380
+event and go ahead and stick it
+into this item listed table that
+
+25055
+01:57:32,380 --> 01:57:35,710
+it made. So for us to test this
+out, let's open up our terminal
+
+25056
+01:57:35,740 --> 01:57:39,730
+in our Hardhead NFT marketplace
+repo. And we'll run Minton list
+
+25057
+01:57:39,760 --> 01:57:44,230
+for our localhost before we
+actually run it, just be sure
+
+25058
+01:57:44,260 --> 01:57:48,460
+that our hard hat node is synced
+up with our Morales server in
+
+25059
+01:57:48,460 --> 01:57:51,790
+order for your database to
+actually grab that event. Your
+
+25060
+01:57:51,820 --> 01:57:55,210
+local hard hat node needs to be
+connected. So we'll do yarn,
+
+25061
+01:57:55,510 --> 01:58:01,030
+hard hat run scripts, mint and
+list.js dash dash, network
+
+25062
+01:58:01,090 --> 01:58:05,500
+localhost. Let's enter. Okay,
+minting, approving listing
+
+25063
+01:58:05,500 --> 01:58:11,350
+listed now if we flip back to
+our database, after a quick
+
+25064
+01:58:11,350 --> 01:58:15,610
+refresh, what do you know, we
+see that there's an indeed an
+
+25065
+01:58:15,610 --> 01:58:18,700
+item listed events in our
+database, we can see information
+
+25066
+01:58:18,700 --> 01:58:21,880
+about a tool we can see there's
+a block hash, a timestamp, we
+
+25067
+01:58:21,880 --> 01:58:24,790
+see the token ID that was
+listed, we see the price of the
+
+25068
+01:58:24,790 --> 01:58:29,350
+listing the transaction hash, we
+see all this information about
+
+25069
+01:58:29,380 --> 01:58:32,740
+our event. And now it's in this
+database for us to query. So if
+
+25070
+01:58:32,740 --> 01:58:35,770
+you have reached this point, you
+have successfully set up an
+
+25071
+01:58:35,800 --> 01:58:38,140
+indexer with the Morales
+database. And you should be
+
+25072
+01:58:38,140 --> 01:58:40,720
+super pumped because this is
+really powerful. And now we're
+
+25073
+01:58:40,720 --> 01:58:43,270
+getting advanced, we're starting
+to do some advanced stuff. So if
+
+25074
+01:58:43,270 --> 01:58:46,030
+you've made it this far, huge
+congrats. This is already really
+
+25075
+01:58:46,030 --> 01:58:51,700
+cool. Now, some other
+troubleshooting help here that
+
+25076
+01:58:51,700 --> 01:58:54,730
+I've run into many times myself,
+let's say I've left this
+
+25077
+01:58:54,730 --> 01:58:57,460
+project, and I've killed my
+heart hit note, I'm going to
+
+25078
+01:58:57,460 --> 01:59:00,580
+kill it right now. If I stopped,
+my heart had node and I come
+
+25079
+01:59:00,580 --> 01:59:04,270
+back to my Morales admin, I'm
+going to view details dev chain
+
+25080
+01:59:04,270 --> 01:59:06,940
+proxy server, I'm now
+disconnected. And if I hit this
+
+25081
+01:59:06,940 --> 01:59:09,850
+little refresh, I'm disconnected
+of course, because I'm not
+
+25082
+01:59:09,850 --> 01:59:13,090
+running my heart headnote
+anymore. If I restart my node,
+
+25083
+01:59:13,750 --> 01:59:16,990
+my note is now restarted. My
+connects local dev chain command
+
+25084
+01:59:16,990 --> 01:59:20,380
+is still running. If I re fresh
+it, it'll now say connected,
+
+25085
+01:59:20,560 --> 01:59:24,880
+which is great. However, if I go
+back to my blockchain, or if I
+
+25086
+01:59:24,880 --> 01:59:28,210
+go back to my hard hat, NFC
+marketplace script, I run yarn,
+
+25087
+01:59:28,210 --> 01:59:31,540
+hard hat script, mint and list
+again, network localhost, I go
+
+25088
+01:59:31,540 --> 01:59:35,800
+back to my database now, and I
+do a refresh, we don't see that
+
+25089
+01:59:35,800 --> 01:59:39,940
+item listed in here. So our
+mirallas server is looking to
+
+25090
+01:59:39,940 --> 01:59:42,760
+make sure that that the
+blockchain we're working with is
+
+25091
+01:59:42,760 --> 01:59:46,630
+the same one. So if we reset our
+blockchain, like we did, right,
+
+25092
+01:59:46,630 --> 01:59:50,020
+we canceled it and we reset it,
+our database is gonna get really
+
+25093
+01:59:50,020 --> 01:59:53,830
+confused. So what we have to do
+is we have to hit reset local
+
+25094
+01:59:53,830 --> 01:59:57,970
+chain, reset local chain, we
+want to make sure that our new
+
+25095
+01:59:58,030 --> 02:00:01,030
+local chain is running, and that
+we're connected here. So we'll
+
+25096
+02:00:01,030 --> 02:00:04,090
+hit reset local chain, and this
+will tell them Ross, hey, we
+
+25097
+02:00:04,090 --> 02:00:07,510
+reset the chain, it's okay,
+please continue doing so. And
+
+25098
+02:00:07,510 --> 02:00:10,090
+once we hit reset local chain,
+we're not going to see that item
+
+25099
+02:00:10,090 --> 02:00:16,030
+listed in here. However, if we
+go back, and we rerun mint and
+
+25100
+02:00:16,030 --> 02:00:21,220
+list network, local host with
+this reset local chain. Now, if
+
+25101
+02:00:21,220 --> 02:00:24,880
+we go back to our Morales
+database, we hit refresh, we now
+
+25102
+02:00:24,880 --> 02:00:27,850
+see that new one has gotten in
+anytime you stopped your hard
+
+25103
+02:00:27,850 --> 02:00:31,120
+hat note, anytime you reset your
+hard hat node, the takeaway is
+
+25104
+02:00:31,120 --> 02:00:33,940
+you're going to need to go to
+View Details dev chain proxy
+
+25105
+02:00:33,940 --> 02:00:36,490
+server and reset local chain.
+Now you can do that
+
+25106
+02:00:36,490 --> 02:00:38,860
+programmatically as well, we're
+not going to go over how to
+
+25107
+02:00:38,890 --> 02:00:40,900
+programmatically do that. But
+that might be something you want
+
+25108
+02:00:40,900 --> 02:00:44,050
+to add to your hard hat deploy.
+The other thing to note is that
+
+25109
+02:00:44,050 --> 02:00:47,530
+it didn't clear out our last
+event, right, the last event.
+
+25110
+02:00:47,740 --> 02:00:52,330
+And if I go one minute and list
+again, after completes, we'll
+
+25111
+02:00:52,330 --> 02:00:53,740
+have another event in here.
+
+25112
+02:00:56,590 --> 02:01:00,490
+Okay, this is great. So all of
+this is being said, the reason
+
+25113
+02:01:00,490 --> 02:01:03,280
+we're doing all this in the
+first place is so that in our
+
+25114
+02:01:03,280 --> 02:01:06,940
+index.js we can start listening
+for events. How do we show the
+
+25115
+02:01:06,940 --> 02:01:10,150
+recent listen entity. So now we
+have a database of listed
+
+25116
+02:01:10,150 --> 02:01:13,330
+entities. So what we could do,
+we could just query this item
+
+25117
+02:01:13,330 --> 02:01:16,990
+listed table right and grab
+everything in here. However, we
+
+25118
+02:01:16,990 --> 02:01:19,660
+have an issue here, what happens
+if someone buys an NFT, if
+
+25119
+02:01:19,660 --> 02:01:22,600
+someone buys an NF T, the item
+listed event will still be in
+
+25120
+02:01:22,600 --> 02:01:25,780
+our database. But technically it
+won't be on the marketplace
+
+25121
+02:01:25,780 --> 02:01:29,020
+anymore. It'll be gone, it won't
+be listed. So what can we do,
+
+25122
+02:01:29,080 --> 02:01:30,910
+there's a number of
+architectural choices we can
+
+25123
+02:01:30,910 --> 02:01:33,490
+make to get around this problem
+to solve this problem. But one
+
+25124
+02:01:33,490 --> 02:01:36,490
+of the things we can do is
+actually we can use mirallas
+
+25125
+02:01:36,490 --> 02:01:40,390
+Cloud Functions. So Morales
+cloud functions allow us to just
+
+25126
+02:01:40,390 --> 02:01:44,170
+really add anything we want our
+front end to do from the morale
+
+25127
+02:01:44,170 --> 02:01:46,660
+server. And these are functions.
+These are scripts that are going
+
+25128
+02:01:46,660 --> 02:01:49,570
+to run on a morale server
+whenever we want them to. So we
+
+25129
+02:01:49,570 --> 02:01:52,570
+go to our server hit the little
+drop down and we hit Cloud
+
+25130
+02:01:52,570 --> 02:01:56,320
+Functions. Now this is where we
+can write somewhere else stuff
+
+25131
+02:01:56,350 --> 02:02:00,430
+to run on our server whenever we
+want. And we are going to set up
+
+25132
+02:02:00,460 --> 02:02:03,400
+our Cloud Functions in our IDE
+by hitting this little drop done
+
+25133
+02:02:03,520 --> 02:02:07,510
+to actually sync up our Visual
+Studio code with our Cloud
+
+25134
+02:02:07,510 --> 02:02:10,690
+Functions, we can just run this
+command here, and it will add
+
+25135
+02:02:10,690 --> 02:02:14,920
+whatever cloud functions we have
+in some cloud folder to here. So
+
+25136
+02:02:14,920 --> 02:02:18,610
+what we can do back in our VS
+code, let's make a new folder,
+
+25137
+02:02:18,700 --> 02:02:22,960
+new folder called Cloud
+Functions. And in here, we'll
+
+25138
+02:02:22,960 --> 02:02:29,170
+create a new file called Update,
+active items.js. So in here, if
+
+25139
+02:02:29,170 --> 02:02:32,920
+we were to write something like
+console dot log, hi, we can
+
+25140
+02:02:32,920 --> 02:02:36,460
+actually have this automatically
+saved on a morale server. And
+
+25141
+02:02:36,460 --> 02:02:39,490
+the way that we do this is by
+running this command. Now, we
+
+25142
+02:02:39,490 --> 02:02:42,100
+want to make it so that it's a
+lot easier for us to run this
+
+25143
+02:02:42,100 --> 02:02:45,550
+command than just always having
+to run this massive thing. So
+
+25144
+02:02:45,550 --> 02:02:47,650
+what we're going to do is we're
+going to open up our package
+
+25145
+02:02:47,680 --> 02:02:50,680
+json, and we're going to make
+another Morales script here,
+
+25146
+02:02:50,860 --> 02:02:53,350
+right below here, we're going to
+make another Morales script,
+
+25147
+02:02:53,410 --> 02:02:57,670
+we're gonna say Morales Morales
+cloud, and we're going to have
+
+25148
+02:02:57,670 --> 02:03:02,470
+it, run this command. So we're
+going to copy this command here,
+
+25149
+02:03:03,010 --> 02:03:06,820
+paste it into our package json.
+So it's going to be Morales
+
+25150
+02:03:06,820 --> 02:03:11,290
+admin CLI, watch cloud folder,
+we don't need the Morales API
+
+25151
+02:03:11,290 --> 02:03:13,750
+key, because it'll grab that
+from our environment variables.
+
+25152
+02:03:13,930 --> 02:03:16,840
+We don't need them rouse secret,
+because it'll grab that from our
+
+25153
+02:03:16,840 --> 02:03:20,050
+environment variables, we do
+need the morale subdomain
+
+25154
+02:03:20,380 --> 02:03:24,340
+autosave one. And then the
+Morales cloud folder is going to
+
+25155
+02:03:24,340 --> 02:03:29,980
+be that new Cloud Functions bid
+that we made that slash cloud
+
+25156
+02:03:30,010 --> 02:03:35,920
+functions, functions. Now, in a
+new terminal, if I run yarn,
+
+25157
+02:03:36,610 --> 02:03:40,390
+more Alice cloud, which is going
+to be same as running this huge
+
+25158
+02:03:40,390 --> 02:03:44,320
+function here, I hit enter,
+it'll say compile, you know,
+
+25159
+02:03:44,320 --> 02:03:47,560
+version, blah, blah, compiling,
+blah, blah, changes uploaded
+
+25160
+02:03:47,560 --> 02:03:51,250
+correctly. And if we go back to
+our front end, we can see this
+
+25161
+02:03:51,250 --> 02:03:54,100
+console dot log ky and our front
+end being updated. And if we
+
+25162
+02:03:54,100 --> 02:03:57,250
+continue to run this in our
+update active items at Jas, we
+
+25163
+02:03:57,250 --> 02:04:02,350
+could also write console dot
+log, you'll save it. And if this
+
+25164
+02:04:02,350 --> 02:04:05,050
+is still running, it'll
+automatically upload it. And now
+
+25165
+02:04:05,050 --> 02:04:08,530
+we can see if we do a little
+refresh on our front end Cloud
+
+25166
+02:04:08,530 --> 02:04:11,410
+Functions, we can see it's been
+uploaded here. Now at this
+
+25167
+02:04:11,410 --> 02:04:14,740
+point, if you have a ton of this
+stuff running, you might see CPU
+
+25168
+02:04:14,740 --> 02:04:18,190
+100 percent, you might see this little
+thing pop up and the server
+
+25169
+02:04:18,190 --> 02:04:20,920
+might start going a little bit
+slower, we're starting to use a
+
+25170
+02:04:20,920 --> 02:04:26,830
+lot of network activity here. So
+I'm going to close my yarn
+
+25171
+02:04:26,830 --> 02:04:29,920
+Morales cloud for now. And I'm
+just going to upload it once
+
+25172
+02:04:29,920 --> 02:04:32,530
+when I need to. Because we're
+connected, we have it listening
+
+25173
+02:04:32,530 --> 02:04:35,560
+to events, we're having it doing
+more and more stuff here. And it
+
+25174
+02:04:35,560 --> 02:04:38,590
+can start to put a lot of load
+onto the server. So we're just
+
+25175
+02:04:38,590 --> 02:04:41,290
+gonna go ahead and we're going
+to cancel that out. And now the
+
+25176
+02:04:41,290 --> 02:04:44,590
+CPU is a lot lower. But if we go
+back to Cloud Functions, we can
+
+25177
+02:04:44,590 --> 02:04:48,160
+see it's still in here. And
+anytime we update our Cloud
+
+25178
+02:04:48,160 --> 02:04:50,680
+Functions, it'll update our
+server with those cloud
+
+25179
+02:04:50,680 --> 02:04:53,350
+functions. And we'll just run
+that darn morass cloud once
+
+25180
+02:04:53,350 --> 02:04:56,020
+we're all done here. Anyways, so
+right now we're trying to figure
+
+25181
+02:04:56,020 --> 02:04:59,050
+out, Okay, we have item listed,
+but if someone buys an item,
+
+25182
+02:04:59,110 --> 02:05:04,030
+technically, it won't be listed
+anymore. But our item listed
+
+25183
+02:05:04,030 --> 02:05:06,850
+table will still have it listed.
+So what we can do is we can
+
+25184
+02:05:06,850 --> 02:05:09,760
+create a Cloud Function that
+runs whenever we want. And like
+
+25185
+02:05:09,760 --> 02:05:12,070
+I said, we can have these run
+whenever we want. We can call
+
+25186
+02:05:12,070 --> 02:05:14,230
+these whenever we want. But
+we're going to create a Cloud
+
+25187
+02:05:14,230 --> 02:05:17,680
+Function that only runs.
+Whenever one of these events are
+
+25188
+02:05:17,680 --> 02:05:20,530
+synced item listed item
+cancelled or item bought, we're
+
+25189
+02:05:20,530 --> 02:05:24,040
+going to create a new table
+called active item, an active
+
+25190
+02:05:24,040 --> 02:05:27,520
+item is going to say, okay,
+anytime it's listed, it will be
+
+25191
+02:05:27,520 --> 02:05:30,280
+active, but when it's bought or
+cancelled will remove it from
+
+25192
+02:05:30,280 --> 02:05:33,880
+the active item list. So we're
+going to create a new table. So
+
+25193
+02:05:33,880 --> 02:05:36,490
+let's go ahead and do that. We
+started off with more Alice
+
+25194
+02:05:36,490 --> 02:05:40,120
+thought. And then if you're IT
+auditors that you don't need
+
+25195
+02:05:40,120 --> 02:05:43,660
+this, we don't need to import
+Morales here, because we're
+
+25196
+02:05:43,660 --> 02:05:46,540
+going to upload it as a Cloud
+Function. And our server already
+
+25197
+02:05:46,540 --> 02:05:49,570
+just automatically injects
+mirallas into our scripts. So
+
+25198
+02:05:49,570 --> 02:05:53,920
+we're gonna say Morales dot
+cloud, that after save, and
+
+25199
+02:05:53,920 --> 02:05:57,040
+there's a whole bunch of stuff
+you can do with your Morales
+
+25200
+02:05:57,070 --> 02:06:00,010
+cloud. And again, you can find
+these all in the documentation.
+
+25201
+02:06:00,130 --> 02:06:03,670
+The after save keyword means
+that anytime something gets
+
+25202
+02:06:03,670 --> 02:06:06,880
+saved on a table that we
+specify, we'll do something. And
+
+25203
+02:06:06,880 --> 02:06:10,780
+it takes two parameters. So it
+takes what table that we want to
+
+25204
+02:06:10,780 --> 02:06:13,450
+do something after it's saved.
+And we're gonna say item listed.
+
+25205
+02:06:13,540 --> 02:06:15,760
+So we're saying anytime
+something is saved to the item
+
+25206
+02:06:15,760 --> 02:06:18,520
+listed table, we'll run some
+async function.
+
+25207
+02:06:20,110 --> 02:06:23,830
+And we'll put request in here.
+Because anytime something gets
+
+25208
+02:06:23,830 --> 02:06:27,400
+saved, it comes with a request.
+So anytime an item listed
+
+25209
+02:06:27,400 --> 02:06:31,810
+happens, we want to add it to
+our active items list. And our
+
+25210
+02:06:31,810 --> 02:06:35,200
+requests come with this is
+flagged called confirmed. So
+
+25211
+02:06:35,200 --> 02:06:38,020
+we'll say const confirmed
+because every request, every
+
+25212
+02:06:38,020 --> 02:06:41,290
+event actually gets triggered
+twice. So once a transaction
+
+25213
+02:06:41,290 --> 02:06:45,550
+goes through, it triggers a save
+and then once again, once that
+
+25214
+02:06:45,550 --> 02:06:48,430
+transaction is actually
+confirmed, we actually only want
+
+25215
+02:06:48,430 --> 02:06:51,280
+to update our active item when
+the transaction is actually
+
+25216
+02:06:51,280 --> 02:06:54,670
+confirmed. So we'll say const
+confirmed equals request dot
+
+25217
+02:06:54,700 --> 02:07:00,220
+object dot get confirmed.
+Screening, get the confirmed
+
+25218
+02:07:00,220 --> 02:07:03,220
+attribute from that request. And
+then we're also going to make A
+
+25219
+02:07:03,220 --> 02:07:09,130
+logger will say const logger
+equals oralis dot Cloud dot get
+
+25220
+02:07:09,130 --> 02:07:12,460
+logger. And you'll see why in a
+second, we can actually write
+
+25221
+02:07:12,460 --> 02:07:17,530
+logs to our Morales database
+with this logs thing. So any
+
+25222
+02:07:17,530 --> 02:07:20,410
+logs we can add into here, and
+I'll show you that in a minute.
+
+25223
+02:07:20,440 --> 02:07:23,710
+So console logger Morales dot
+cloud, get logger. And then
+
+25224
+02:07:23,710 --> 02:07:25,330
+we'll just do logger dot info.
+
+25225
+02:07:26,950 --> 02:07:31,600
+Looking for confirmed x, and we
+can actually test this right
+
+25226
+02:07:31,600 --> 02:07:35,680
+now. Right, we can actually test
+this right now. In our logs. We
+
+25227
+02:07:35,680 --> 02:07:40,120
+should see looking for confirmed
+TX Once an item listed and saved
+
+25228
+02:07:40,150 --> 02:07:42,880
+now to test this out just to
+test that our logger is actually
+
+25229
+02:07:42,880 --> 02:07:47,980
+working. Let's run yarn, yarn
+Ross cloud just update active
+
+25230
+02:07:47,980 --> 02:07:50,980
+items to our to our morale
+server changes uploaded
+
+25231
+02:07:50,980 --> 02:07:54,730
+correctly. Okay, we'll kill it
+now. And now in our where we
+
+25232
+02:07:54,730 --> 02:07:59,020
+have our Minton, lists script.
+Let's run Minton list. And we
+
+25233
+02:07:59,020 --> 02:08:02,470
+should see on our server we
+should get those logs. Now if we
+
+25234
+02:08:02,470 --> 02:08:05,740
+go to our server, we do a little
+refresh here. And if we look at
+
+25235
+02:08:05,740 --> 02:08:10,030
+our logs now we can now see
+looking for confirmed TX in our
+
+25236
+02:08:10,030 --> 02:08:13,990
+server logs. Now in our logs.
+Here we see we only see that
+
+25237
+02:08:13,990 --> 02:08:18,010
+looking for confirmed TX once
+and I just told you, it actually
+
+25238
+02:08:18,010 --> 02:08:21,730
+triggers twice once when the
+transaction is first sent. And
+
+25239
+02:08:21,730 --> 02:08:25,150
+then once when the transaction
+is confirmed, aka has block
+
+25240
+02:08:25,150 --> 02:08:28,960
+confirmations. And additionally,
+if we look in our database at
+
+25241
+02:08:28,960 --> 02:08:32,020
+the item listed, and we scroll
+all the way to the right, we can
+
+25242
+02:08:32,020 --> 02:08:36,610
+see confirmed equals false. So
+we only want to count this item
+
+25243
+02:08:36,610 --> 02:08:41,260
+listed event interactive items
+when confirmed is true. So what
+
+25244
+02:08:41,260 --> 02:08:44,170
+we want to do actually is we
+want to update our scripts to
+
+25245
+02:08:44,200 --> 02:08:47,650
+add one block confirmation on
+top of our local Hardhead
+
+25246
+02:08:47,650 --> 02:08:51,550
+blockchain so that these can be
+changed to confirmed now to get
+
+25247
+02:08:51,550 --> 02:08:55,510
+around this. What I usually will
+do in my mentalist script is
+
+25248
+02:08:55,510 --> 02:08:58,870
+I'll add a new utility. So I'll
+go to my utils, I'll do new
+
+25249
+02:08:58,870 --> 02:09:04,480
+file, and I'll create a move
+blocks.js. And this will be a
+
+25250
+02:09:04,480 --> 02:09:09,220
+utility that I use to actually
+move the blocks. So when we run
+
+25251
+02:09:09,220 --> 02:09:11,830
+our own heart hat node, we
+actually have complete control
+
+25252
+02:09:11,830 --> 02:09:14,650
+over what we want our heart hat
+node to do. So what we can do is
+
+25253
+02:09:14,650 --> 02:09:17,950
+we can actually manually mine
+nodes and actually move blocks
+
+25254
+02:09:17,950 --> 02:09:21,040
+ahead so that Morales knows Oh,
+okay, this transaction is
+
+25255
+02:09:21,040 --> 02:09:22,990
+confirmed, right, because we're
+mining the block with the
+
+25256
+02:09:22,990 --> 02:09:26,950
+transaction. And that's it, and
+Ross is just going to forever be
+
+25257
+02:09:26,950 --> 02:09:29,260
+waiting for the next block. So
+we want to add some
+
+25258
+02:09:29,260 --> 02:09:32,650
+functionality to our scripts,
+where we just mine a block after
+
+25259
+02:09:32,650 --> 02:09:35,920
+it's done. Now, keep in mind
+that if we mined like 1000
+
+25260
+02:09:35,920 --> 02:09:38,680
+blocks or a ton of blocks really
+quickly, Moorehouse might have a
+
+25261
+02:09:38,680 --> 02:09:41,410
+hard time indexing that. So we
+really want to just mined one at
+
+25262
+02:09:41,410 --> 02:09:44,350
+a time and give me enough time
+to index each block that we
+
+25263
+02:09:44,350 --> 02:09:47,080
+mined. So we're actually going
+to build a little script, we're
+
+25264
+02:09:47,080 --> 02:09:52,180
+going to manually mine using
+this EVM mine RPC method that
+
+25265
+02:09:52,180 --> 02:09:54,460
+comes with our heart hat
+blockchain. So we have this new
+
+25266
+02:09:54,460 --> 02:09:57,340
+move blocks script. And let's go
+ahead and make this. So instead
+
+25267
+02:09:57,340 --> 02:10:00,520
+of this being our script, we're
+going to have like a main
+
+25268
+02:10:00,520 --> 02:10:02,080
+function at the bottom, we're
+just gonna have this be a
+
+25269
+02:10:02,080 --> 02:10:05,020
+utility that we're going to
+import into other scripts. So
+
+25270
+02:10:05,020 --> 02:10:07,810
+we're not going to need a main
+function here, we're just going
+
+25271
+02:10:07,810 --> 02:10:11,140
+to need to make this an async
+function. And we'll call it move
+
+25272
+02:10:11,140 --> 02:10:14,080
+blocks. And then we'll say
+amount, which is going to be the
+
+25273
+02:10:14,080 --> 02:10:18,190
+number of blocks, we want to
+move, we'll also put a sleep
+
+25274
+02:10:18,190 --> 02:10:22,330
+amount and default it to zero,
+this sleep amount is going to be
+
+25275
+02:10:22,330 --> 02:10:26,260
+an optional parameter. If we
+want to move blocks and sleep
+
+25276
+02:10:26,290 --> 02:10:30,880
+maybe a second between blocks to
+resemble a real blockchain, we
+
+25277
+02:10:30,880 --> 02:10:34,120
+can have that in here too. So we
+can have it resemble a real
+
+25278
+02:10:34,120 --> 02:10:37,600
+blockchain by sleeping every
+time a block is moved or just
+
+25279
+02:10:37,600 --> 02:10:40,360
+kind of waiting every time a
+block has moved. So in our move
+
+25280
+02:10:40,360 --> 02:10:44,620
+block scripts, we'll do console
+dot log, moving blocks, dot that
+
+25281
+02:10:44,620 --> 02:10:49,300
+dot, and we'll say for let index
+equals zero, and we'll do a for
+
+25282
+02:10:49,300 --> 02:10:53,980
+loop around the amount and call
+that EVM. Mine in this for loop
+
+25283
+02:10:54,040 --> 02:10:59,410
+index is less than amount index
+plus plus a weight network. And
+
+25284
+02:10:59,410 --> 02:11:02,740
+then we got to import network
+oops, we got to import network
+
+25285
+02:11:02,770 --> 02:11:06,730
+from hard hat here, await
+network dot provider dot
+
+25286
+02:11:06,760 --> 02:11:13,630
+request. And then we're going to
+request the method e v, mime,
+
+25287
+02:11:13,720 --> 02:11:17,980
+comma params are going to be
+empty. And this is actually the
+
+25288
+02:11:17,980 --> 02:11:20,770
+same way we can make raw calls
+to our blockchain nodes. We
+
+25289
+02:11:20,770 --> 02:11:23,620
+don't do a lot of this because
+ethers abstract this under the
+
+25290
+02:11:23,620 --> 02:11:27,160
+hood, but we're making a raw
+call to EVM mine. Obviously, you
+
+25291
+02:11:27,160 --> 02:11:30,370
+can't call EVM mine on a real
+blockchain because you can't
+
+25292
+02:11:30,370 --> 02:11:34,120
+just tell a blockchain node to
+mine the next block. Since this
+
+25293
+02:11:34,120 --> 02:11:37,480
+is our local hard hat node, we
+can call the VM now we're gonna
+
+25294
+02:11:37,480 --> 02:11:42,940
+say if sleep amount is greater
+than zero, or just if sleep
+
+25295
+02:11:42,940 --> 02:11:47,050
+mount, then we're also going to
+have this script sleep or wait a
+
+25296
+02:11:47,050 --> 02:11:49,300
+short duration. So up at the
+top, we're actually going to
+
+25297
+02:11:49,300 --> 02:11:53,680
+create a new function called
+sleep, which is going to input a
+
+25298
+02:11:53,680 --> 02:11:58,030
+time in milliseconds. And this
+is going to return a new
+
+25299
+02:11:58,030 --> 02:12:01,030
+promise, right? Because
+remember, in order for us to
+
+25300
+02:12:01,090 --> 02:12:04,030
+wait for some time we got to use
+promises, which we've learned
+
+25301
+02:12:04,030 --> 02:12:07,780
+before. And this promise is
+going to take a function with
+
+25302
+02:12:07,780 --> 02:12:12,250
+resolve as an input parameter.
+And we're just going to say, set
+
+25303
+02:12:12,550 --> 02:12:18,220
+timeout is going to be resolve,
+comma, time in Ms. So the way we
+
+25304
+02:12:18,220 --> 02:12:21,580
+can sleep in JavaScript is we
+return a new promise. And we
+
+25305
+02:12:21,580 --> 02:12:24,040
+just call this set timeout
+function, which basically just
+
+25306
+02:12:24,040 --> 02:12:25,990
+weights the time in
+milliseconds. Now to actually
+
+25307
+02:12:25,990 --> 02:12:31,960
+sleep. We'll say console dot
+log, sleeping for sleep amount.
+
+25308
+02:12:32,950 --> 02:12:37,240
+And then we'll do await, sleep,
+sleep amount, and this is going
+
+25309
+02:12:37,240 --> 02:12:41,080
+to be in milliseconds. So since
+sleep returns a promise, we can
+
+25310
+02:12:41,080 --> 02:12:44,770
+call it with await to say, okay,
+wait for this sleep function to
+
+25311
+02:12:44,770 --> 02:12:48,340
+finish. And the sleep function
+is only going to finish when the
+
+25312
+02:12:48,340 --> 02:12:52,150
+time in MS in time in
+milliseconds finishes. So now we
+
+25313
+02:12:52,150 --> 02:12:55,060
+have a function called move
+blocks, which will actually
+
+25314
+02:12:55,060 --> 02:12:58,180
+mined blocks on our local
+blockchain, so that Morales can
+
+25315
+02:12:58,180 --> 02:13:00,850
+get that block confirmation that
+it's looking for now at the
+
+25316
+02:13:00,850 --> 02:13:05,500
+bottom, we'll just do module dot
+exports, move blocks, move
+
+25317
+02:13:05,500 --> 02:13:08,650
+blocks, and then we'll also
+export sleep as well, because
+
+25318
+02:13:08,650 --> 02:13:12,580
+why not? Equals like that. Now,
+what we can do back in our
+
+25319
+02:13:12,580 --> 02:13:17,710
+Minton list, up at the top,
+we'll say const, move blocks
+
+25320
+02:13:17,830 --> 02:13:24,520
+equals require dot dot slash
+utils slash move blocks. And
+
+25321
+02:13:24,520 --> 02:13:28,360
+then we'll also import network
+from ethers network. And the
+
+25322
+02:13:28,360 --> 02:13:32,440
+down in our script. Just right
+at the bottom, we'll just say if
+
+25323
+02:13:32,920 --> 02:13:38,950
+network dot config, that chain
+ID equals equals 31337 await,
+
+25324
+02:13:39,460 --> 02:13:43,030
+move blocks, we'll say we'll
+move to blocks and then we'll
+
+25325
+02:13:43,030 --> 02:13:47,680
+also do sleep amount equals
+1000. We'll wait one millisecond
+
+25326
+02:13:47,680 --> 02:13:50,380
+between each block that we
+mined. So sleep mount equals
+
+25327
+02:13:50,380 --> 02:13:53,860
+1000, which is going to be one
+millisecond. Now let's even just
+
+25328
+02:13:53,860 --> 02:13:57,310
+comment all this out for a
+second. We'll just run this
+
+25329
+02:13:57,340 --> 02:14:01,150
+script with only this live.
+Right we'll pull this up the
+
+25330
+02:14:01,150 --> 02:14:06,580
+yarn hard hat, run scripts,
+mentalist dash dash network,
+
+25331
+02:14:07,900 --> 02:14:12,610
+local host, we'll just move the
+blocks move back to our front
+
+25332
+02:14:12,610 --> 02:14:15,970
+end, we'll refresh, we'll go
+look at item listed. We'll
+
+25333
+02:14:15,970 --> 02:14:18,550
+scroll all the way to the right,
+and now we see confirmed is
+
+25334
+02:14:18,550 --> 02:14:21,850
+true. And now if we were to look
+in our logs, we would see that
+
+25335
+02:14:21,880 --> 02:14:25,150
+logging item happened twice.
+Alright, so Let's uncomment this
+
+25336
+02:14:25,270 --> 02:14:29,440
+and continue. Now that we have
+this now that we're learning
+
+25337
+02:14:29,440 --> 02:14:32,200
+about logging, now that we're
+doing all this stuff, we can say
+
+25338
+02:14:32,200 --> 02:14:35,230
+If confirmed, we're going to do
+some stuff. If confirmed, we're
+
+25339
+02:14:35,230 --> 02:14:37,660
+going to create a table called
+active item and add this to the
+
+25340
+02:14:37,660 --> 02:14:40,030
+active item table. So we're
+going to do a little logger dot
+
+25341
+02:14:40,030 --> 02:14:45,640
+info bound item. And we'll
+create a new table and a new
+
+25342
+02:14:45,670 --> 02:14:50,320
+entry in this table. So we'll
+say const active item equals
+
+25343
+02:14:50,740 --> 02:14:58,120
+more Alice dot object dot extend
+ACC active item. This we're
+
+25344
+02:14:58,120 --> 02:15:02,620
+saying if active item exists,
+great grab it if not create it.
+
+25345
+02:15:02,650 --> 02:15:05,560
+So we're going to create this
+active item table if it doesn't
+
+25346
+02:15:05,560 --> 02:15:08,230
+exist, if it does exist, great,
+grab it. And we're going to say
+
+25347
+02:15:08,740 --> 02:15:13,690
+const active item equals new,
+active item. So we're going to
+
+25348
+02:15:13,690 --> 02:15:16,150
+create a new entry in this
+active item table that we're
+
+25349
+02:15:16,150 --> 02:15:22,390
+creating. And we'll say active
+item dot set. And we can set any
+
+25350
+02:15:22,390 --> 02:15:25,780
+of the columns we want for this
+new table that we're creating.
+
+25351
+02:15:25,960 --> 02:15:28,930
+So let's give it a marketplace
+address column. So we'll say
+
+25352
+02:15:28,930 --> 02:15:35,950
+market place address. And this
+will come from the request dot
+
+25353
+02:15:35,980 --> 02:15:41,140
+object dot get address all of
+these requests from events come
+
+25354
+02:15:41,140 --> 02:15:43,630
+with the address that they're
+coming from, which for us is
+
+25355
+02:15:43,630 --> 02:15:46,330
+going to be the marketplace
+address, we'll do active item
+
+25356
+02:15:46,330 --> 02:15:52,660
+that set and if T address which
+these events saved come with all
+
+25357
+02:15:52,660 --> 02:15:56,440
+the parameters of our event. So
+we'll say request that object
+
+25358
+02:15:57,400 --> 02:16:02,440
+dot get NFT address will get the
+price will say active item dot
+
+25359
+02:16:02,440 --> 02:16:09,280
+set price is going to be request
+dot object dot get price will
+
+25360
+02:16:09,280 --> 02:16:14,890
+get the token IDs will say
+active item dot set token ID
+
+25361
+02:16:15,550 --> 02:16:21,850
+request dot object dot get token
+ID and then we'll get the seller
+
+25362
+02:16:22,000 --> 02:16:27,160
+will say active item dot set
+seller is going to be request
+
+25363
+02:16:27,250 --> 02:16:34,570
+that object dot get seller. So
+we're getting all of this
+
+25364
+02:16:34,570 --> 02:16:39,040
+information from our event. And
+this event update from Ross
+
+25365
+02:16:39,040 --> 02:16:41,410
+automatically always comes with
+the address that the event was
+
+25366
+02:16:41,410 --> 02:16:43,600
+omitted from. So we're gonna
+grab all that we're going to
+
+25367
+02:16:43,600 --> 02:16:46,660
+create this active item table.
+We're going to add all these
+
+25368
+02:16:46,660 --> 02:16:49,120
+rows. We're going to add this
+one row with all these columns
+
+25369
+02:16:49,120 --> 02:16:53,140
+in it. Awesome. Now we'll just
+do logger dot info just to do a
+
+25370
+02:16:53,140 --> 02:16:56,890
+little print out. We'll say
+adding address. We'll do a
+
+25371
+02:16:56,890 --> 02:17:01,180
+little string interpolation
+we'll say request dot object dot
+
+25372
+02:17:01,180 --> 02:17:05,800
+get address period token ID with
+
+25373
+02:17:07,180 --> 02:17:14,380
+request dot object dot get token
+ID. And I need to close this off
+
+25374
+02:17:14,380 --> 02:17:18,940
+here, better. And then outside
+of the logger dot info, we'll
+
+25375
+02:17:18,940 --> 02:17:24,370
+just say logger dot info,
+saving. And then we just run
+
+25376
+02:17:24,400 --> 02:17:30,820
+await active item dot save. And
+now we have cloud function
+
+25377
+02:17:30,820 --> 02:17:34,240
+that's going to create a new
+entry in a new table called
+
+25378
+02:17:34,240 --> 02:17:39,250
+active item anytime item listed
+happens. So after item is called
+
+25379
+02:17:39,280 --> 02:17:41,500
+the trigger for our cloud
+function, and there are a whole
+
+25380
+02:17:41,500 --> 02:17:44,140
+bunch of different triggers for
+different Ross Cloud Functions.
+
+25381
+02:17:44,590 --> 02:17:48,880
+If you go to the Morales docs,
+we look for trigger, we can find
+
+25382
+02:17:48,880 --> 02:17:51,520
+a list of all these different
+triggers in here, like after
+
+25383
+02:17:51,520 --> 02:17:58,420
+save for Save. After save,
+before delete, after delete,
+
+25384
+02:17:58,480 --> 02:18:01,150
+before save file, there's all
+these different triggers to
+
+25385
+02:18:01,150 --> 02:18:04,180
+trigger this cloud code. Now, if
+we upload this new script to our
+
+25386
+02:18:04,180 --> 02:18:07,180
+morale server with yarn morass,
+cloud changes uploaded
+
+25387
+02:18:07,180 --> 02:18:09,820
+correctly, okay, great, we'll
+kill it. Let's go to our cloud
+
+25388
+02:18:09,820 --> 02:18:13,390
+server, do a little refresh just
+to make sure that it's not still
+
+25389
+02:18:13,390 --> 02:18:16,480
+processing that update. Okay,
+CPUs low enough. Okay, great.
+
+25390
+02:18:16,570 --> 02:18:19,570
+Now in our database, we don't
+see an active item table in
+
+25391
+02:18:19,570 --> 02:18:24,460
+here. But if we go back to our
+Hardhead script, and we call
+
+25392
+02:18:24,700 --> 02:18:29,140
+mint and list, since now we have
+a Cloud Function that says okay,
+
+25393
+02:18:29,170 --> 02:18:33,700
+anytime an item listed event
+happens, update that active item
+
+25394
+02:18:33,700 --> 02:18:37,450
+table, we should see active item
+update. So let's run this. And
+
+25395
+02:18:37,450 --> 02:18:40,330
+remember for all of this, we
+need to have our heart head node
+
+25396
+02:18:40,330 --> 02:18:43,870
+running connected to Hardhat.
+And if we reset our local chain,
+
+25397
+02:18:43,870 --> 02:18:46,570
+we need to click that reset
+local chain button. So we went
+
+25398
+02:18:46,570 --> 02:18:50,530
+ahead, we ran this. Now if we go
+back to our database, we give it
+
+25399
+02:18:50,530 --> 02:18:53,890
+a little refresh. And right now
+I actually don't see anything.
+
+25400
+02:18:53,980 --> 02:18:58,570
+So if I go to my logs go to
+info, I can see any errors or
+
+25401
+02:18:58,600 --> 02:19:01,810
+issues in here. So it looks like
+after save failed for item
+
+25402
+02:19:01,810 --> 02:19:04,840
+listed for user bla bla bla,
+looks like there is an issue
+
+25403
+02:19:04,870 --> 02:19:07,870
+cannot read properties of
+undefined reading extend. And
+
+25404
+02:19:07,870 --> 02:19:11,140
+that's also in the info, I made
+an issue. I didn't quite write
+
+25405
+02:19:11,140 --> 02:19:15,220
+all my code, right. And if we go
+back to our update active item,
+
+25406
+02:19:15,340 --> 02:19:18,970
+I can see where I messed up. It
+should be Morales dot object
+
+25407
+02:19:19,000 --> 02:19:22,780
+with a capital O dot extent. So
+what I'm going to do, then run
+
+25408
+02:19:22,780 --> 02:19:26,200
+yarn morass cloud again, now
+that I have this correct, we're
+
+25409
+02:19:26,200 --> 02:19:28,660
+going to cancel that, we're
+gonna run our mminton list
+
+25410
+02:19:28,660 --> 02:19:33,490
+again, now that we've fixed our
+script. And now that we've fixed
+
+25411
+02:19:33,490 --> 02:19:36,640
+our script, go back to our
+database, we'll give it a little
+
+25412
+02:19:36,640 --> 02:19:40,150
+refresh, I can now see we have
+an active item entry in
+
+25413
+02:19:40,150 --> 02:19:44,650
+here. Now at this point, there
+are going to be times when you
+
+25414
+02:19:44,650 --> 02:19:46,960
+don't want to leave and go get a
+coffee, right, or go to the
+
+25415
+02:19:46,960 --> 02:19:49,600
+bathroom or go get some food.
+And you're going to want to stop
+
+25416
+02:19:49,630 --> 02:19:52,510
+your terminals from running. So
+let's actually practice
+
+25417
+02:19:52,540 --> 02:19:55,210
+restarting everything and re
+getting into this local
+
+25418
+02:19:55,240 --> 02:19:57,460
+development environment. Because
+it can be a little weird and a
+
+25419
+02:19:57,460 --> 02:20:01,210
+little tricky. So let's practice
+this. So once again, let's come
+
+25420
+02:20:01,210 --> 02:20:04,480
+over here. And what do we need
+to do? Well, we're going to Ctrl
+
+25421
+02:20:04,480 --> 02:20:08,290
+C, we're going to kill our
+blockchain Ctrl C, we're going
+
+25422
+02:20:08,290 --> 02:20:11,320
+to kill our connection to our
+Morales server. And if we're
+
+25423
+02:20:11,320 --> 02:20:14,590
+running a front end Ctrl C, that
+too, now if we go to our server,
+
+25424
+02:20:14,710 --> 02:20:19,480
+we go to view details. Dev chain
+proxy server, if we hit status,
+
+25425
+02:20:19,510 --> 02:20:22,480
+this reset button here will
+still we will be disconnected
+
+25426
+02:20:22,480 --> 02:20:25,420
+now. And now everything has been
+disconnected. Now if we want to
+
+25427
+02:20:25,420 --> 02:20:28,420
+restart everything, if we're on
+our heart hat NFT marketplace
+
+25428
+02:20:28,450 --> 02:20:31,600
+will run yarn Hardhead node, and
+that will spin everything up
+
+25429
+02:20:31,600 --> 02:20:36,970
+again, we'll run yarn Morales
+sync to sync back with our
+
+25430
+02:20:37,000 --> 02:20:40,060
+routes connection, we can go
+back to our server will do view
+
+25431
+02:20:40,060 --> 02:20:43,300
+details and we should be
+connected now. Connected. Since
+
+25432
+02:20:43,300 --> 02:20:46,450
+we restarted our local
+blockchain, we now need to
+
+25433
+02:20:46,450 --> 02:20:49,240
+remember to do reset local
+chain, we'll go ahead and run
+
+25434
+02:20:49,240 --> 02:20:53,350
+that. Great. If we want to
+restart our front end, we can
+
+25435
+02:20:53,350 --> 02:20:57,100
+restart our front end like so
+now the thing is, our database
+
+25436
+02:20:57,100 --> 02:21:00,160
+will still have even when we
+refresh it even though we reset
+
+25437
+02:21:00,160 --> 02:21:02,620
+the local blockchain, it'll
+still have all this stuff in it.
+
+25438
+02:21:02,650 --> 02:21:06,730
+Now these entries in here are
+entries from a blockchain that
+
+25439
+02:21:06,730 --> 02:21:10,240
+no longer exists. So what I
+often will do is I'll click this
+
+25440
+02:21:10,240 --> 02:21:13,690
+button up here, and we'll just
+delete all rows in this class.
+
+25441
+02:21:14,050 --> 02:21:18,250
+To confirm we do active item,
+read the name of the table. And
+
+25442
+02:21:18,250 --> 02:21:21,640
+let's do it for item listed too.
+We'll select that edit, delete
+
+25443
+02:21:21,640 --> 02:21:26,050
+all rows, item listed. Yes,
+delete. We'll do a little
+
+25444
+02:21:26,050 --> 02:21:29,650
+refresh. Now everything is
+zeroed out here. Now we have an
+
+25445
+02:21:29,650 --> 02:21:32,890
+empty database for these events
+in our after save here. And now
+
+25446
+02:21:32,890 --> 02:21:35,590
+that we've added that little
+weight in our script, let's go
+
+25447
+02:21:35,590 --> 02:21:40,180
+back to our hard hat NFT
+marketplace, we'll run yarn, RT
+
+25448
+02:21:40,180 --> 02:21:48,640
+hat, run scripts, mint and list
+dot j s dash dash network, local
+
+25449
+02:21:48,640 --> 02:21:54,070
+host. This will mint it approve
+it listed and then we mined two
+
+25450
+02:21:54,070 --> 02:21:57,880
+blocks to give Morales time to
+index our event and then on a
+
+25451
+02:21:57,880 --> 02:22:01,330
+morale server. We go ahead and
+refresh we now see item listed
+
+25452
+02:22:01,330 --> 02:22:05,740
+as one and active item is One
+all at the same time. So that is
+
+25453
+02:22:05,740 --> 02:22:09,280
+how we're going to make sure
+that Morales always indexes
+
+25454
+02:22:09,280 --> 02:22:11,410
+whenever we call a function,
+we're just going to mind one
+
+25455
+02:22:11,410 --> 02:22:15,370
+additional block to tell Morales
+Hey, that transaction has indeed
+
+25456
+02:22:15,400 --> 02:22:18,400
+been confirmed. So really
+exciting. And we got to practice
+
+25457
+02:22:18,400 --> 02:22:21,910
+closing and restarting and doing
+all that good stuff, too. So now
+
+25458
+02:22:21,910 --> 02:22:26,740
+this is fantastic. Now that we
+have this additional
+
+25459
+02:22:26,740 --> 02:22:29,080
+functionality to make it a lot
+easier for someone else over
+
+25460
+02:22:29,110 --> 02:22:31,780
+okay, awesome, we can check
+active item. Well, we're not
+
+25461
+02:22:31,780 --> 02:22:35,530
+quite done yet, right? Because
+what if somebody buys an NFT, or
+
+25462
+02:22:35,530 --> 02:22:38,980
+sells an entity we should have
+active item be removed? Right,
+
+25463
+02:22:38,980 --> 02:22:41,650
+right now there's one item
+listed in one active item. But
+
+25464
+02:22:41,650 --> 02:22:45,520
+if we buy an item, active item
+will still show that that item
+
+25465
+02:22:45,520 --> 02:22:49,270
+is active. So let's go ahead and
+let's update our cloud function
+
+25466
+02:22:49,420 --> 02:22:53,950
+to also say, okay, anytime an
+item is bought, we remove that
+
+25467
+02:22:53,980 --> 02:22:57,730
+item from being active. So let's
+create another after save. Let's
+
+25468
+02:22:57,730 --> 02:22:59,980
+first built this for canceling
+the item. And then we'll build
+
+25469
+02:22:59,980 --> 02:23:03,340
+one for buying the item. So to
+make another after save to make
+
+25470
+02:23:03,340 --> 02:23:07,300
+another trigger, we'll say
+mirallas dot Cloud dot after
+
+25471
+02:23:07,750 --> 02:23:11,500
+save, we'll say item cancelled.
+And this will be an async
+
+25472
+02:23:11,500 --> 02:23:15,160
+function that takes the request
+as an input parameter again, and
+
+25473
+02:23:15,160 --> 02:23:16,960
+we're going to do the same
+thing. We're gonna say const
+
+25474
+02:23:16,960 --> 02:23:24,580
+confirmed equals request that
+object dot get confirmed, we'll
+
+25475
+02:23:24,580 --> 02:23:29,800
+say const. Logger equals routes
+dot Cloud dot get logger, like
+
+25476
+02:23:29,800 --> 02:23:34,750
+so. And then we'll do logger.
+Oops, lowercase L. And then
+
+25477
+02:23:34,750 --> 02:23:39,730
+we'll do logger dot info,
+marketplace, the little pipe
+
+25478
+02:23:40,390 --> 02:23:46,000
+object and then just request dot
+object. And then we'll do the
+
+25479
+02:23:46,000 --> 02:23:49,390
+same thing. If confirmed. If
+this transaction is confirmed
+
+25480
+02:23:49,390 --> 02:23:53,020
+after one block, we're going to
+remove it from active item. And
+
+25481
+02:23:53,020 --> 02:23:56,200
+we're going to be using a query
+to first find that active item
+
+25482
+02:23:56,200 --> 02:23:58,330
+that's getting cancelled. And
+you can learn more about basic
+
+25483
+02:23:58,330 --> 02:24:00,730
+queries in the Morales
+documentation here. So we're
+
+25484
+02:24:00,730 --> 02:24:05,230
+going to get that table by
+saying const active item equals
+
+25485
+02:24:05,320 --> 02:24:09,910
+more outlets that object for the
+capital O object dot extend
+
+25486
+02:24:10,750 --> 02:24:13,690
+active item. And we're going to
+create a new query. So we're
+
+25487
+02:24:13,690 --> 02:24:16,930
+going to query our table before
+we actually set or save
+
+25488
+02:24:16,930 --> 02:24:21,700
+anything. So we're gonna say
+const, query, query equals new
+
+25489
+02:24:21,970 --> 02:24:26,440
+Morales dot query of active
+item. So we're going to query
+
+25490
+02:24:26,440 --> 02:24:30,280
+our Morales database to find an
+active item that's in there,
+
+25491
+02:24:30,280 --> 02:24:33,040
+that's going to match the
+request here, so we can cancel
+
+25492
+02:24:33,040 --> 02:24:35,980
+it. So we'll say query dot equal
+to
+
+25493
+02:24:37,000 --> 02:24:43,300
+marketplace address, comma
+request that object dot get
+
+25494
+02:24:44,380 --> 02:24:47,290
+address, we're looking for an
+active item where the
+
+25495
+02:24:47,290 --> 02:24:50,950
+marketplace address is going to
+be the same as the address of
+
+25496
+02:24:50,980 --> 02:24:56,800
+the item cancelled. We'll say
+query dot equal to NF T address,
+
+25497
+02:24:57,970 --> 02:25:05,740
+comma request dot object dot get
+an F T address will say query
+
+25498
+02:25:05,740 --> 02:25:14,710
+dot equal to token ID, comma
+request dot object dot get token
+
+25499
+02:25:14,710 --> 02:25:18,640
+ID. And that should be it right?
+So let's look again at our
+
+25500
+02:25:18,670 --> 02:25:22,120
+contract here. And what is the
+item canceled give us it gives
+
+25501
+02:25:22,120 --> 02:25:25,870
+us a seller NFC address and a
+token ID seller and ft address
+
+25502
+02:25:25,870 --> 02:25:28,570
+and a token ID. And we're
+looking for NFT address and the
+
+25503
+02:25:28,570 --> 02:25:31,150
+token ID, we don't need to look
+for the seller, we just need to
+
+25504
+02:25:31,150 --> 02:25:33,610
+look for these two. And then of
+course, the marketplace address.
+
+25505
+02:25:33,820 --> 02:25:36,940
+So great. So now that we have
+those two, we can say logger dot
+
+25506
+02:25:36,970 --> 02:25:42,130
+info, and then we'll just print
+out marketplace type query. And
+
+25507
+02:25:42,130 --> 02:25:45,880
+then we'll just print out this
+query that we're running. And
+
+25508
+02:25:45,880 --> 02:25:51,400
+then we can say const, cancelled
+item equals await query dot
+
+25509
+02:25:51,400 --> 02:25:54,310
+first, we're going to find the
+first active item in the
+
+25510
+02:25:54,310 --> 02:25:57,040
+database that has the same
+marketplace address and a T
+
+25511
+02:25:57,040 --> 02:26:00,280
+address and token ID that just
+got cancelled. So we're going to
+
+25512
+02:26:00,280 --> 02:26:02,710
+find that first cancelled item.
+We'll do a little bit more
+
+25513
+02:26:02,710 --> 02:26:06,970
+logger information, we'll say
+logger dot info, marketplace,
+
+25514
+02:26:08,020 --> 02:26:11,140
+pipe, cancelled item. And then
+we'll just do some string
+
+25515
+02:26:11,140 --> 02:26:13,540
+interpolation. And we'll print
+out that canceled item.
+
+25516
+02:26:14,650 --> 02:26:20,110
+Cancelled item and we'll say if
+cancelled item. So if the query
+
+25517
+02:26:20,110 --> 02:26:23,230
+doesn't find anything, it'll
+return undefined. So we're
+
+25518
+02:26:23,230 --> 02:26:26,860
+saying if cancelled item which
+will return true if it found
+
+25519
+02:26:26,860 --> 02:26:31,060
+something. So if cancelled item,
+then we're gonna say logger dot
+
+25520
+02:26:31,060 --> 02:26:38,770
+info. Deleting and then we'll do
+request dot object dot get token
+
+25521
+02:26:38,770 --> 02:26:46,810
+ID at address, request dot
+object dot get address address
+
+25522
+02:26:47,230 --> 02:26:51,550
+space since it was canceled, so
+we're going to do a little print
+
+25523
+02:26:51,760 --> 02:26:55,330
+little logging here. Take the
+leading that thing since it was
+
+25524
+02:26:55,330 --> 02:27:00,430
+canceled and then we're going to
+run a wait canceled item dot
+
+25525
+02:27:00,460 --> 02:27:03,040
+destroy and that's when we
+remove it from the active item.
+
+25526
+02:27:03,040 --> 02:27:09,490
+And then we'll just say else.
+Logger dot info, no item found
+
+25527
+02:27:09,880 --> 02:27:18,970
+with address, request dot object
+dot get address, and token, Id
+
+25528
+02:27:19,270 --> 02:27:24,820
+request dot object, dot get
+token ID. So cool. So now we
+
+25529
+02:27:24,820 --> 02:27:27,910
+have this after save here, it
+looks like my terminal
+
+25530
+02:27:27,910 --> 02:27:31,990
+automatically added this require
+in here, which we don't want. So
+
+25531
+02:27:31,990 --> 02:27:34,360
+I'm just gonna go ahead delete
+that. We can upload this to our
+
+25532
+02:27:34,360 --> 02:27:38,470
+Morales server by running yarn,
+Morales cloud and great changes
+
+25533
+02:27:38,470 --> 02:27:41,530
+uploaded correctly. And now to
+test this test that this is
+
+25534
+02:27:41,530 --> 02:27:45,700
+working, let's create a new
+script in our hard hat NFT
+
+25535
+02:27:45,700 --> 02:27:49,270
+marketplace called cancel item.
+So we'll go to scripts right now
+
+25536
+02:27:49,270 --> 02:27:52,720
+we have mentioned list, we'll do
+new file, we'll call it cancel
+
+25537
+02:27:53,350 --> 02:27:59,950
+dot Jas. We'll do cancel item,
+Jas. And this will be a script.
+
+25538
+02:27:59,980 --> 02:28:02,620
+So we're going to use that that
+main thing here, but we're going
+
+25539
+02:28:02,620 --> 02:28:08,200
+to call our function cancel. So
+we'll do async function cancel,
+
+25540
+02:28:08,320 --> 02:28:12,820
+and then at the top, we'll say
+const token ID equals Now let's
+
+25541
+02:28:12,820 --> 02:28:17,350
+go to our active item list. And
+let's find a token ID that's in
+
+25542
+02:28:17,350 --> 02:28:21,340
+here. Okay, token ID zero. And
+so we'll use this as the token
+
+25543
+02:28:21,340 --> 02:28:26,830
+ID that we want to delete. So
+we'll use token ID zero. So in
+
+25544
+02:28:26,830 --> 02:28:30,700
+our cancel item.js script, we'll
+say const token ID equals zero
+
+25545
+02:28:30,730 --> 02:28:34,660
+and let's cancel it. So we'll
+say const NFT. Marketplace
+
+25546
+02:28:34,780 --> 02:28:39,880
+equals await ethers dot get
+contract. And yes, const ethers
+
+25547
+02:28:39,880 --> 02:28:45,340
+equals require hardhat. And ft
+marketplace will say const basic
+
+25548
+02:28:45,400 --> 02:28:54,130
+NF t equals await ethers dot get
+gets contract. Basic NF team do
+
+25549
+02:28:54,130 --> 02:29:01,360
+const TX equals await NF T
+marketplace dot cancel listing
+
+25550
+02:29:02,800 --> 02:29:10,600
+basic NF T dot address token ID.
+And we're going to call cancel
+
+25551
+02:29:10,600 --> 02:29:14,650
+item should be cancelled listing
+we call the cancel listing. So
+
+25552
+02:29:14,830 --> 02:29:19,150
+cancelled listing Yep, like
+that. And it takes the address
+
+25553
+02:29:19,150 --> 02:29:23,020
+of the NFT and the token ID. So
+the basic NF T dot address and
+
+25554
+02:29:23,020 --> 02:29:26,710
+the token D Okay, great. And
+then we'll do a weight TX dot
+
+25555
+02:29:26,710 --> 02:29:31,480
+weight one. And then we'll do
+console dot log NFT cancelled.
+
+25556
+02:29:32,950 --> 02:29:39,940
+And then we'll say if network
+dot config dot chain ID equals
+
+25557
+02:29:39,940 --> 02:29:46,990
+equals 31337. We'll go ahead and
+we'll do a wait move blocks to
+
+25558
+02:29:47,020 --> 02:29:52,000
+two and then we'll say sleep.
+Mount equals 1000. And then
+
+25559
+02:29:52,000 --> 02:29:57,370
+we'll just say const. Move
+blocks equals require dot dot
+
+25560
+02:29:57,370 --> 02:30:00,940
+slash utils slash move blocks.
+Okay, cool. That looks really
+
+25561
+02:30:00,940 --> 02:30:04,750
+good. So let's go ahead and run
+this yarn hardhat run scripts
+
+25562
+02:30:04,780 --> 02:30:10,240
+cancel item.js dash dash
+network, local host and ft
+
+25563
+02:30:10,240 --> 02:30:14,200
+cancelled moving blocks
+sleeping. Okay, great. Our node
+
+25564
+02:30:14,200 --> 02:30:17,740
+is running. Awesome. We're
+connected to our mirallas we've
+
+25565
+02:30:17,770 --> 02:30:21,520
+uploaded our cloud function with
+yarn Morales cloud. Now if we go
+
+25566
+02:30:21,520 --> 02:30:27,850
+back to our database, do a
+little refresh. Looks like I
+
+25567
+02:30:27,850 --> 02:30:31,480
+have an issue here. I go to my
+info it says after save failed
+
+25568
+02:30:31,480 --> 02:30:34,780
+for item Cancel for user blah
+blah, blah. Here's the login
+
+25569
+02:30:34,780 --> 02:30:38,740
+information. Morales dot cloud
+apt get latar is not a function.
+
+25570
+02:30:38,860 --> 02:30:43,780
+Uh huh. Well, that makes a lot
+of sense. Get water. Let's do
+
+25571
+02:30:44,320 --> 02:30:48,640
+let's make this get logger.
+Shall we get logger to let's re
+
+25572
+02:30:48,640 --> 02:30:52,510
+upload them. Changes uploaded
+correctly. And now I'm going to
+
+25573
+02:30:52,510 --> 02:30:55,330
+have to manually go to active
+item I'm gonna have to manually
+
+25574
+02:30:55,330 --> 02:30:58,930
+delete this one will have a
+delete this row. Yes, delete, do
+
+25575
+02:30:58,930 --> 02:31:01,570
+a refresh. And the reason I have
+to do that is because it's
+
+25576
+02:31:01,570 --> 02:31:05,380
+already been saved. And we're
+doing an after save. So because
+
+25577
+02:31:05,380 --> 02:31:08,140
+I messed up. If you spelt that
+right, you probably did, right.
+
+25578
+02:31:08,140 --> 02:31:10,570
+But because I messed up, we're
+gonna have to rebuild a new one.
+
+25579
+02:31:10,810 --> 02:31:14,410
+And then delete that new one.
+I'm going to run yarn, hard hat
+
+25580
+02:31:14,410 --> 02:31:17,890
+run scripts, mint and list
+network localhost. And we just
+
+25581
+02:31:17,890 --> 02:31:20,440
+meant to add a new one. Let me
+check the Morales database,
+
+25582
+02:31:20,470 --> 02:31:24,190
+we'll do a refresh. I can see it
+in here, I can see it an item
+
+25583
+02:31:24,190 --> 02:31:26,980
+listed. It has a token ID of
+one. So let's go ahead and
+
+25584
+02:31:26,980 --> 02:31:30,160
+cancel that now. So I'm going to
+change my token ID and cancel
+
+25585
+02:31:30,160 --> 02:31:34,390
+item to one. And now we'll run
+that script Barnhardt at run
+
+25586
+02:31:34,390 --> 02:31:38,680
+scripts cancel item, network,
+local host run this NFT
+
+25587
+02:31:38,680 --> 02:31:41,710
+cancelled moving blocks. Now
+we'll go to the front end, we'll
+
+25588
+02:31:41,710 --> 02:31:44,290
+do a refresh. And we can see
+it's been removed from active
+
+25589
+02:31:44,290 --> 02:31:47,170
+item programmatically, which is
+great. So this is where these
+
+25590
+02:31:47,170 --> 02:31:50,860
+logs can be really helpful. Now
+it can be a little scary to do
+
+25591
+02:31:50,860 --> 02:31:54,250
+things wrong on purpose, but
+learning how to use information
+
+25592
+02:31:54,250 --> 02:31:56,950
+like the logging and learning
+how to debug effectively is
+
+25593
+02:31:56,950 --> 02:31:59,410
+going to make you a lot faster
+of a coder because guess what,
+
+25594
+02:31:59,440 --> 02:32:01,720
+you're not going to be perfect.
+You're going to run into issues
+
+25595
+02:32:01,810 --> 02:32:04,390
+understanding how to use The Log
+Understanding how to read the
+
+25596
+02:32:04,390 --> 02:32:07,330
+errors is going to make you much
+faster developer. So now we have
+
+25597
+02:32:07,330 --> 02:32:09,730
+something for cancelled item,
+we're also going to need
+
+25598
+02:32:09,730 --> 02:32:12,550
+something for what? Well, you
+guessed it for buying the item.
+
+25599
+02:32:12,730 --> 02:32:15,250
+So let's make another one of
+these murales to cloud that
+
+25600
+02:32:15,250 --> 02:32:19,240
+after save. And we're going to
+be using most of this same exact
+
+25601
+02:32:19,240 --> 02:32:23,110
+code for item bought that we use
+for item cancelled, we probably
+
+25602
+02:32:23,110 --> 02:32:25,810
+should turn it all into a
+function. But for practice,
+
+25603
+02:32:25,840 --> 02:32:28,090
+we're just going to go ahead and
+do it one more time, we'll do
+
+25604
+02:32:28,360 --> 02:32:32,740
+Morales dot cloud. And then my
+VS code keeps sticking this in
+
+25605
+02:32:32,740 --> 02:32:37,960
+for some reason. I'm going to
+undo that Morales dot Cloud dot
+
+25606
+02:32:37,960 --> 02:32:42,910
+after save. Item bot is the
+event. There'll be an async
+
+25607
+02:32:42,940 --> 02:32:49,810
+request little arrow function
+here, say const confirmed equals
+
+25608
+02:32:50,410 --> 02:32:55,330
+request that object dot get
+confirmed will get whether this
+
+25609
+02:32:55,330 --> 02:32:58,960
+transaction is confirmed. We'll
+get the logger I'm just going to
+
+25610
+02:32:58,960 --> 02:33:01,990
+copy paste so I get it right
+this time. So I'm going to copy
+
+25611
+02:33:01,990 --> 02:33:05,500
+and paste those two lines const
+logger equals Morales dot Cloud
+
+25612
+02:33:05,560 --> 02:33:12,130
+dot get logger logger dot info.
+And we'll say If confirmed const
+
+25613
+02:33:12,550 --> 02:33:19,450
+active item equals Morales dot
+object dot extend active item
+
+25614
+02:33:20,020 --> 02:33:24,280
+const query and for this query,
+I'm actually just going to copy
+
+25615
+02:33:24,280 --> 02:33:26,770
+these lines because this is
+going to be exactly the same.
+
+25616
+02:33:26,860 --> 02:33:29,590
+We're going to look for the NFT
+address and the token ID and the
+
+25617
+02:33:29,590 --> 02:33:33,280
+marketplace address. And if we
+look in our NFT dot soul and up
+
+25618
+02:33:33,280 --> 02:33:36,820
+to marketplace dot som alright
+and bot event as the NFT
+
+25619
+02:33:36,820 --> 02:33:40,600
+address. And the token ID which
+is what we want to find are
+
+25620
+02:33:40,600 --> 02:33:44,950
+listed and of team. So we'll run
+that query. We'll do const bots
+
+25621
+02:33:44,980 --> 02:33:50,380
+item equals await query dot
+first, and we'll do exactly what
+
+25622
+02:33:50,380 --> 02:33:57,610
+we did before. If bots item then
+logger dot info, deleting
+
+25623
+02:33:57,850 --> 02:34:06,220
+request dot object dot get
+object ID await bought item dot
+
+25624
+02:34:06,220 --> 02:34:16,150
+destroy logger dot info deleted
+item with Open ID request dot
+
+25625
+02:34:16,150 --> 02:34:24,370
+object dot get open ID at
+address request dot object dot
+
+25626
+02:34:24,370 --> 02:34:24,880
+get
+
+25627
+02:34:26,140 --> 02:34:30,910
+address. And then if we don't
+find it will say else. Logger
+
+25628
+02:34:30,940 --> 02:34:38,680
+dot info, no item found with
+address request that object dot
+
+25629
+02:34:38,680 --> 02:34:45,910
+get address and token, Id
+request that object dot get
+
+25630
+02:34:46,600 --> 02:34:50,470
+token ID. Cool. So that looks
+good. Let's go ahead and upload
+
+25631
+02:34:50,470 --> 02:34:56,200
+this to the cloud. So do yarn
+oralis Cloud changes uploaded
+
+25632
+02:34:56,200 --> 02:34:59,200
+correctly. Let's go make sure it
+looks good on our server. So
+
+25633
+02:34:59,200 --> 02:35:03,400
+we'll give a morale server a
+little refresh. Go to Cloud
+
+25634
+02:35:03,400 --> 02:35:06,970
+Functions here. I can see the
+item cancelled in here still.
+
+25635
+02:35:07,180 --> 02:35:11,020
+And now I can see the item
+bought after save perfect. Looks
+
+25636
+02:35:11,020 --> 02:35:14,020
+like I'm at 100 percent capacity. So
+we're gonna give it a second
+
+25637
+02:35:14,020 --> 02:35:17,470
+just to cool down thinking give
+it a little refresh and looks
+
+25638
+02:35:17,470 --> 02:35:19,960
+like we're back down after our
+cloud function has been
+
+25639
+02:35:19,960 --> 02:35:22,990
+uploaded. Okay, cool. To test
+out that this part is working.
+
+25640
+02:35:23,020 --> 02:35:26,230
+Let's go ahead we'll write
+another script here. Do new file
+
+25641
+02:35:26,740 --> 02:35:31,990
+by item dot j s. And we'll do
+the same thing right now. On our
+
+25642
+02:35:31,990 --> 02:35:35,350
+database. We don't have any
+active items. So we'll just run
+
+25643
+02:35:35,350 --> 02:35:40,060
+real quick. We're on mint and
+list. Mint a new one. We'll go
+
+25644
+02:35:40,060 --> 02:35:43,420
+check our database we'll do a
+little refresh. Looks like
+
+25645
+02:35:43,420 --> 02:35:47,110
+active vitamins in here with a
+token ID of two now. So we'll do
+
+25646
+02:35:47,140 --> 02:35:52,450
+is we'll buy that token ID so
+we'll say const ethers network
+
+25647
+02:35:53,260 --> 02:36:01,840
+equals require arhats const move
+blocks equals require dot slash
+
+25648
+02:36:01,870 --> 02:36:09,460
+utils slash move blocks const
+token ID equals to async
+
+25649
+02:36:09,520 --> 02:36:19,600
+function by item const NFT
+marketplace equals await ethers
+
+25650
+02:36:19,600 --> 02:36:26,650
+dot get contract NF T
+marketplace const basic NF t
+
+25651
+02:36:26,680 --> 02:36:36,280
+equals await ethers dot get
+contract basic NFT coms listing
+
+25652
+02:36:36,370 --> 02:36:43,000
+equals await and ft market place
+dot get listing basic NF T dot
+
+25653
+02:36:43,000 --> 02:36:51,580
+address and the token ID will
+say const price equals listing
+
+25654
+02:36:51,610 --> 02:36:56,230
+that price that to string and
+we'll say const Tx and this is
+
+25655
+02:36:56,230 --> 02:36:59,950
+us going to actually buy it
+equals await and ft marketplace
+
+25656
+02:37:00,280 --> 02:37:10,150
+dot buy item basic n f t dot
+address, token ID, comma. And
+
+25657
+02:37:10,150 --> 02:37:13,600
+then the value of course is
+going to be the price. Do await
+
+25658
+02:37:13,630 --> 02:37:21,400
+TX dot wait one, console dot log
+bots NF t. And then if network
+
+25659
+02:37:21,400 --> 02:37:31,000
+dot config dot chain ID equals
+31337, then await move blocks to
+
+25660
+02:37:31,030 --> 02:37:37,060
+comma, sleep amount equals 1000.
+And then this is a script of
+
+25661
+02:37:37,060 --> 02:37:39,550
+course, so we're going to use
+the same stuff we're using for
+
+25662
+02:37:39,550 --> 02:37:42,550
+cancel. But instead of
+cancelled, it's going to be
+
+25663
+02:37:42,550 --> 02:37:47,680
+called by item. So we have the
+item inactive item here, we run
+
+25664
+02:37:47,680 --> 02:37:54,730
+yarn, art hat run scripts by
+item.js Dash network, localhost.
+
+25665
+02:37:55,090 --> 02:37:59,080
+Now we can test buying this
+item. Okay, Bob, the NFT looping
+
+25666
+02:37:59,080 --> 02:38:02,260
+blocks, we'll do a little
+refresh on our database, and
+
+25667
+02:38:02,260 --> 02:38:06,340
+boom, we can see the active item
+is gone. And we can see, the
+
+25668
+02:38:06,340 --> 02:38:10,300
+item has now been bought.
+Awesome. We're almost done
+
+25669
+02:38:10,300 --> 02:38:14,050
+keeping our active item, just a
+table of active items. But
+
+25670
+02:38:14,050 --> 02:38:16,750
+there's one more thing we should
+do. We're not going to test this
+
+25671
+02:38:16,750 --> 02:38:19,960
+here. But if you want to test
+it, we can we actually in our
+
+25672
+02:38:19,960 --> 02:38:23,500
+NFT marketplace, go to
+marketplace dot Sol, we actually
+
+25673
+02:38:23,500 --> 02:38:27,850
+have an update listing function
+as well, that also admits an
+
+25674
+02:38:27,850 --> 02:38:32,410
+item listed. So we also want to
+check to see if item listed is
+
+25675
+02:38:32,410 --> 02:38:37,120
+coming from update listening. So
+back in our item listed Cloud
+
+25676
+02:38:37,120 --> 02:38:41,320
+Function, before we actually
+start saving stuff, we want to
+
+25677
+02:38:41,320 --> 02:38:45,580
+check to see if it already
+exists. So we're gonna say so
+
+25678
+02:38:45,670 --> 02:38:52,600
+we'll say const query equals new
+mirallas dot query. And sorry, I
+
+25679
+02:38:52,600 --> 02:38:56,740
+keep sticking the sin of active
+item. And we're going to do
+
+25680
+02:38:56,740 --> 02:38:59,650
+exactly what we've been doing.
+We're gonna say query dot equal
+
+25681
+02:38:59,650 --> 02:39:03,970
+to NFT. Address, we're gonna
+look for the NFT address request
+
+25682
+02:39:04,000 --> 02:39:10,090
+dot object dot get and ft
+address, query dot equal to
+
+25683
+02:39:11,260 --> 02:39:18,850
+token ID, request that object
+dot get token ID, query dot
+
+25684
+02:39:18,880 --> 02:39:26,410
+equal to marketplace, address,
+comma request dot object dot get
+
+25685
+02:39:26,830 --> 02:39:35,620
+address query dot equal to
+seller requests dot object dot
+
+25686
+02:39:35,620 --> 02:39:42,310
+get seller will say const
+already listed item equals await
+
+25687
+02:39:42,700 --> 02:39:46,840
+query dot first. And then we'll
+say if this item has already
+
+25688
+02:39:47,230 --> 02:39:51,700
+been listed. Then we'll go ahead
+and say logger dot info.
+
+25689
+02:39:52,060 --> 02:39:59,890
+Deleting already listed request
+dot object dot get object ID.
+
+25690
+02:40:00,220 --> 02:40:06,520
+And we'll do a weight already
+listed item dot destroy. And
+
+25691
+02:40:06,520 --> 02:40:16,120
+then do logger dot info, deleted
+item with token ID request dot
+
+25692
+02:40:16,120 --> 02:40:24,820
+object dot get token ID at
+address request dot object dot
+
+25693
+02:40:24,820 --> 02:40:31,510
+get address since it's already
+been listed, if the object has
+
+25694
+02:40:31,540 --> 02:40:33,940
+already been listed, we know
+that it's coming from this
+
+25695
+02:40:33,970 --> 02:40:37,240
+update listing function. So
+we're going to delete it first,
+
+25696
+02:40:37,270 --> 02:40:40,960
+and then we'll resave it with
+its new price. So and let's just
+
+25697
+02:40:40,960 --> 02:40:45,640
+go ahead, and let's upload this
+to the cloud yarn Morales cloud.
+
+25698
+02:40:46,630 --> 02:40:49,660
+upload this to our server
+changes uploaded correctly.
+
+25699
+02:40:50,560 --> 02:40:54,490
+Let's go check our server, give
+it a little refresh. We'll go
+
+25700
+02:40:54,490 --> 02:41:00,130
+check Cloud Functions. And it
+looks like our item listed query
+
+25701
+02:41:00,280 --> 02:41:04,630
+for deleting is now in here. But
+with all that, we now have a way
+
+25702
+02:41:04,810 --> 02:41:09,430
+to constantly have this active
+item table only be the items
+
+25703
+02:41:09,430 --> 02:41:12,040
+that are actively on our
+marketplace without having to
+
+25704
+02:41:12,040 --> 02:41:15,400
+spend any additional gas in our
+application. And this is going
+
+25705
+02:41:15,400 --> 02:41:18,040
+to be way better for user
+experience because they're not
+
+25706
+02:41:18,040 --> 02:41:21,850
+going to have to pay extra gas
+to keep all these entities and
+
+25707
+02:41:21,850 --> 02:41:24,760
+maybe an array or some more data
+structures. If you've made it
+
+25708
+02:41:24,760 --> 02:41:28,120
+this far. This is easily one of
+the hardest parts of this
+
+25709
+02:41:28,120 --> 02:41:30,760
+course, because we're working
+with a ton of technologies.
+
+25710
+02:41:31,210 --> 02:41:33,700
+We're working with a smart
+contract, we're working with
+
+25711
+02:41:33,790 --> 02:41:37,540
+Cloud Functions, we're working
+with a back end database. Now if
+
+25712
+02:41:37,540 --> 02:41:40,540
+you've made it this far, you
+should be incredibly incredibly
+
+25713
+02:41:40,540 --> 02:41:45,970
+proud. So now let's just go
+ahead, let's mint and list one
+
+25714
+02:41:45,970 --> 02:41:50,170
+more NFT. So we'll do we'll run
+yarn heart at run scripts, mint
+
+25715
+02:41:50,170 --> 02:41:53,440
+and list network local hosts
+will meant it will list it or
+
+25716
+02:41:53,440 --> 02:41:56,950
+sleeping. Let's go check our
+database. We'll do a refresh. We
+
+25717
+02:41:56,950 --> 02:42:01,660
+see the active item in here. And
+now let's learn how to call all
+
+25718
+02:42:01,660 --> 02:42:06,430
+of the objects in In our active
+item database here, let's do it.
+
+25719
+02:42:06,520 --> 02:42:09,550
+And remember, if you ever reset
+your local blockchain, you're
+
+25720
+02:42:09,550 --> 02:42:12,520
+gonna have to come in here and
+delete all the rows in the
+
+25721
+02:42:12,520 --> 02:42:13,660
+support tables.
+
+25722
+02:42:16,330 --> 02:42:20,770
+With all that being said, it's
+time to finally come back to our
+
+25723
+02:42:20,770 --> 02:42:25,720
+front end, and come back to our
+index dot J. S and answer this
+
+25724
+02:42:25,720 --> 02:42:30,040
+question. How do we show the
+recently listed NF Ts, we only
+
+25725
+02:42:30,040 --> 02:42:33,490
+want to show the active NF t's
+on the marketplace. And now we
+
+25726
+02:42:33,490 --> 02:42:38,140
+have a system for getting only
+the active ones, only the ones
+
+25727
+02:42:38,200 --> 02:42:41,170
+that are currently on the
+market, because we're indexing
+
+25728
+02:42:41,170 --> 02:42:43,810
+these events. Now, I'm going to
+delete all these comments here.
+
+25729
+02:42:44,080 --> 02:42:47,410
+And let's do this. So what we're
+going to do is we're going to do
+
+25730
+02:42:47,410 --> 02:42:50,770
+this thing called use Morales
+query. So if we go to the React
+
+25731
+02:42:50,770 --> 02:42:55,090
+Morales docks, there is a hook
+called use Morales query. And
+
+25732
+02:42:55,090 --> 02:42:59,290
+this allows us to fetch and make
+queries to our database in a
+
+25733
+02:42:59,290 --> 02:43:03,790
+React context. Back in here,
+we're going to say, import, use
+
+25734
+02:43:03,820 --> 02:43:09,490
+Morales query from react
+mirallas. Now, if you look in
+
+25735
+02:43:09,490 --> 02:43:14,680
+the docs here, use mouse query
+returns data error is loading.
+
+25736
+02:43:14,890 --> 02:43:18,520
+And this will automatically run
+this query the instant our index
+
+25737
+02:43:18,520 --> 02:43:22,600
+pops up. So to get the data from
+the query to get all of our
+
+25738
+02:43:22,600 --> 02:43:26,170
+active items from our database,
+we'll say const data, and we'll
+
+25739
+02:43:26,170 --> 02:43:31,150
+rename data to listed and fts.
+And then we'll also check to see
+
+25740
+02:43:31,210 --> 02:43:35,890
+if this query is still fetching.
+So we'll say is fetching and
+
+25741
+02:43:35,890 --> 02:43:41,830
+then we'll rename that to
+fetching listed NF t is equals
+
+25742
+02:43:42,190 --> 02:43:46,420
+use Morales query. And inside
+here, this takes two input
+
+25743
+02:43:46,420 --> 02:43:49,930
+parameters, it takes the table
+name to do the search on and
+
+25744
+02:43:49,930 --> 02:43:54,070
+then it also takes a function or
+the query. So the table name
+
+25745
+02:43:54,070 --> 02:43:56,110
+that we're going to be looking
+for is going to be active item.
+
+25746
+02:43:57,040 --> 02:44:01,150
+And then the function for the
+query is going to be we're going
+
+25747
+02:44:01,150 --> 02:44:06,790
+to say query dot, we'll limit it
+just to 10. So we'll say only
+
+25748
+02:44:06,790 --> 02:44:12,280
+the first 10, we'll do it in dot
+descending order, based off the
+
+25749
+02:44:12,280 --> 02:44:16,150
+token ID. And then if we wanted
+to do different pages, we could
+
+25750
+02:44:16,150 --> 02:44:20,200
+do this thing called dot skip
+with page numbers, we're not
+
+25751
+02:44:20,200 --> 02:44:22,480
+going to do page numbers here.
+So we're just going to leave it
+
+25752
+02:44:22,480 --> 02:44:25,000
+like this for now. And that's
+it. So we're saying, okay,
+
+25753
+02:44:25,000 --> 02:44:29,530
+great, grab from our database on
+the active item table, grab just
+
+25754
+02:44:29,530 --> 02:44:33,250
+the first 10 in descending order
+of the token ID. Now it's going
+
+25755
+02:44:33,250 --> 02:44:38,170
+to save the result of this to
+this listed NF TS section. Now
+
+25756
+02:44:38,170 --> 02:44:42,640
+to see if this is working. Let's
+just do a little console dot log
+
+25757
+02:44:43,150 --> 02:44:47,710
+listed NF t's just to see what
+this using Ross query actually
+
+25758
+02:44:47,710 --> 02:44:50,500
+returns for us. And now we have
+our local blockchain Node
+
+25759
+02:44:50,500 --> 02:44:54,250
+running, we have our connection
+to our Morales server, and we
+
+25760
+02:44:54,250 --> 02:44:57,310
+have our front end running. So
+let's go to our front end, we'll
+
+25761
+02:44:57,310 --> 02:45:00,280
+do a little refresh here, we'll
+right click and hit Inspect,
+
+25762
+02:45:00,370 --> 02:45:04,480
+we'll go to the console. And we
+see we have this array being
+
+25763
+02:45:04,480 --> 02:45:08,530
+spit out here. Now the first
+time it console dot logs, it's
+
+25764
+02:45:08,530 --> 02:45:13,060
+empty. This is because when it
+initially loads listed out of
+
+25765
+02:45:13,060 --> 02:45:15,520
+T's hasn't returned yet. And
+it's so it's actually just going
+
+25766
+02:45:15,520 --> 02:45:18,250
+to be an empty array. But when
+it finishes loading, we're going
+
+25767
+02:45:18,250 --> 02:45:21,100
+to get an array of size one, we
+get an array of size one,
+
+25768
+02:45:21,100 --> 02:45:24,550
+because active item only has one
+enter right now. So we get this
+
+25769
+02:45:24,550 --> 02:45:28,840
+array of size one, and we can
+see it index zero, we have class
+
+25770
+02:45:28,840 --> 02:45:32,260
+name active item, we have the
+item ID, we have all these
+
+25771
+02:45:32,260 --> 02:45:35,410
+attributes, which are going to
+be created at the marketplace
+
+25772
+02:45:35,410 --> 02:45:38,410
+address. And if the address the
+price, the seller and the token
+
+25773
+02:45:38,410 --> 02:45:43,150
+ID this is exactly what we see
+in our database here. So
+
+25774
+02:45:43,150 --> 02:45:46,240
+Perfect. That's exactly what we
+want to be able to show these NF
+
+25775
+02:45:46,240 --> 02:45:50,170
+t's on the front end. So how do
+we actually show this NFT and
+
+25776
+02:45:50,170 --> 02:45:53,560
+list this NF T. For people who
+aren't developers and aren't
+
+25777
+02:45:53,560 --> 02:45:55,810
+going to go into the console dot
+log? Well, what we're going to
+
+25778
+02:45:55,810 --> 02:46:00,280
+be doing is in this return here,
+we'll put some parentheses
+
+25779
+02:46:00,310 --> 02:46:03,820
+around this. First, we should
+check to see if we are fetching
+
+25780
+02:46:03,820 --> 02:46:07,330
+those listed NF T's. So we'll do
+some JavaScript stuff. And we'll
+
+25781
+02:46:07,330 --> 02:46:11,830
+say fetching listed NF T's and
+we'll do a ternary operator. So
+
+25782
+02:46:11,830 --> 02:46:15,130
+we're gonna say if we are
+fetching those NF T's, let's add
+
+25783
+02:46:15,130 --> 02:46:19,000
+like a little div div that just
+says loading that that done,
+
+25784
+02:46:19,210 --> 02:46:22,840
+we'll put a little colon here.
+And if we're not fetching, we'll
+
+25785
+02:46:22,840 --> 02:46:29,890
+do we'll say listed NF TS dot
+map. So dot map basically loops
+
+25786
+02:46:29,890 --> 02:46:35,080
+through and does some function
+on all of the listed entities in
+
+25787
+02:46:35,080 --> 02:46:37,600
+the function we're going to want
+ours to do. And it's going to
+
+25788
+02:46:37,600 --> 02:46:41,080
+take each NF t as input
+parameters. So we say we're
+
+25789
+02:46:41,080 --> 02:46:44,380
+going to basically loop through
+each NF T. And we're going to
+
+25790
+02:46:44,380 --> 02:46:50,200
+say, console dot log and F T dot
+attribute attributes with an S.
+
+25791
+02:46:50,410 --> 02:46:54,730
+And then inside of these inside
+of this attributes are the
+
+25792
+02:46:54,730 --> 02:46:56,980
+different pieces that we want.
+So we're going to get those
+
+25793
+02:46:56,980 --> 02:47:01,120
+pieces we'll say const we want
+to show the price. The NFT
+
+25794
+02:47:01,120 --> 02:47:05,560
+address, the token ID in the
+marketplace address, which of
+
+25795
+02:47:05,560 --> 02:47:07,990
+course is just gonna be this
+one, and then the seller, that's
+
+25796
+02:47:08,020 --> 02:47:10,150
+all this information that we're
+going to want to show on the
+
+25797
+02:47:10,150 --> 02:47:15,130
+front end will say that equals
+NF T dot attributes. So we're
+
+25798
+02:47:15,130 --> 02:47:19,360
+going to pull these out, and we
+can see price seller token ID,
+
+25799
+02:47:19,360 --> 02:47:22,570
+etc. We're going to pull those
+out of NF T dot attributes. And
+
+25800
+02:47:22,570 --> 02:47:26,440
+we can show those by in this
+function here, we'll say return.
+
+25801
+02:47:26,560 --> 02:47:30,970
+And then we'll return some HTML,
+we'll do like div div. And then
+
+25802
+02:47:30,970 --> 02:47:33,610
+we can say like price, price,
+price,
+
+25803
+02:47:34,660 --> 02:47:44,050
+period, and f t address and ft
+address, token ID, token ID
+
+25804
+02:47:44,230 --> 02:47:48,610
+seller, then added this for some
+reason. So I'm going to delete
+
+25805
+02:47:48,610 --> 02:47:52,270
+that add $1 signs before all
+these for some reason, delete
+
+25806
+02:47:52,270 --> 02:47:56,650
+those, save. Now if I go to the
+front end, I can now see
+
+25807
+02:47:56,680 --> 02:48:01,060
+information about our NFT from
+our database is listed here.
+
+25808
+02:48:01,090 --> 02:48:04,510
+That's fantastic. We see the
+price we see the address, we see
+
+25809
+02:48:04,510 --> 02:48:08,110
+the token ID we see the seller.
+Now if we go back to our NFT
+
+25810
+02:48:08,110 --> 02:48:11,290
+marketplace, our little our
+little hard hat MC marketplace,
+
+25811
+02:48:11,320 --> 02:48:15,760
+let's mint another one. Yarn
+hard hat run scripts mentalist
+
+25812
+02:48:15,790 --> 02:48:19,480
+Dash network localhost, we're
+going to run that it's going to
+
+25813
+02:48:19,480 --> 02:48:23,890
+mint one more. If we go back to
+our Morales database, we do a
+
+25814
+02:48:23,890 --> 02:48:27,580
+little refresh on that active
+item table, we now have a new
+
+25815
+02:48:27,580 --> 02:48:31,210
+item in here. So if we go back
+to our front end, we give this a
+
+25816
+02:48:31,210 --> 02:48:35,770
+little refresh. And boom, now we
+have two items in here. So this
+
+25817
+02:48:35,770 --> 02:48:38,680
+is awesome, we now have a way to
+actually show the most recently
+
+25818
+02:48:38,680 --> 02:48:41,590
+listed NF t's on our
+marketplace, plus ah.
+
+25819
+02:48:44,380 --> 02:48:46,630
+Now, of course, you might be
+saying to yourself, hey,
+
+25820
+02:48:46,630 --> 02:48:51,370
+Patrick, that's cool and all.
+But that looks really ugly. And
+
+25821
+02:48:51,400 --> 02:48:55,300
+I would agree with you. But 100 percent
+agree with you. So we should
+
+25822
+02:48:55,300 --> 02:48:59,980
+come up with a component to show
+our listed entities that looks a
+
+25823
+02:48:59,980 --> 02:49:02,920
+lot nicer. So when instead of
+returning and just printing out
+
+25824
+02:49:02,920 --> 02:49:05,680
+the raw information, we probably
+want to show the image, right,
+
+25825
+02:49:05,680 --> 02:49:08,020
+we want to show the image, we
+want to make everything look a
+
+25826
+02:49:08,020 --> 02:49:10,720
+lot nicer. So we're going to
+create a new component that
+
+25827
+02:49:10,720 --> 02:49:13,780
+we're going to return in here to
+format all of our NF T's
+
+25828
+02:49:13,780 --> 02:49:17,380
+appropriately. So we're gonna go
+to components, we'll do new
+
+25829
+02:49:17,380 --> 02:49:21,640
+file, and we're going to call NF
+T box dot j s. And this is where
+
+25830
+02:49:21,640 --> 02:49:24,880
+we're going to grab all the
+information on how to show what
+
+25831
+02:49:24,880 --> 02:49:27,520
+our NFT actually looks like. So
+let's get started working on our
+
+25832
+02:49:27,520 --> 02:49:30,100
+entity box, we're gonna set this
+up, the way we've been setting
+
+25833
+02:49:30,100 --> 02:49:35,170
+all these up would do export
+default function, and ft box.
+
+25834
+02:49:35,770 --> 02:49:38,710
+Now something that's a little
+bit different for this one,
+
+25835
+02:49:38,710 --> 02:49:42,850
+though, is that in our index, we
+have all this information. So
+
+25836
+02:49:42,850 --> 02:49:47,110
+we're gonna need to pass all
+these variables to our NFT Box
+
+25837
+02:49:47,110 --> 02:49:50,650
+component. So to do that, we'll
+add them as input parameters for
+
+25838
+02:49:50,650 --> 02:49:54,580
+our component here. So we'll say
+price, and if the address, token
+
+25839
+02:49:54,580 --> 02:50:00,160
+ID, marketplace, address, and
+seller. So right now on our
+
+25840
+02:50:00,160 --> 02:50:02,530
+front end, we just have a whole
+bunch of text, and we even have
+
+25841
+02:50:02,530 --> 02:50:04,630
+this gross warning, we're gonna
+get rid of that tip. And as we
+
+25842
+02:50:04,630 --> 02:50:08,950
+know, tokens have their token
+URI, which points to an image
+
+25843
+02:50:08,950 --> 02:50:13,090
+URI or an image URL of what the
+actual token looks like. So what
+
+25844
+02:50:13,090 --> 02:50:16,360
+we're going to want to do is
+we're going to want to call that
+
+25845
+02:50:16,360 --> 02:50:20,920
+token URI, and then call the
+image URI to show the image. So
+
+25846
+02:50:20,920 --> 02:50:24,310
+we're going to actually have to
+wait those two API requests to
+
+25847
+02:50:24,310 --> 02:50:28,210
+get the actual image. And we're
+going to save that image as a
+
+25848
+02:50:28,210 --> 02:50:32,350
+state variable on this component
+here. So as you already know,
+
+25849
+02:50:32,380 --> 02:50:34,990
+we're going to work with use
+state to keep track of that
+
+25850
+02:50:34,990 --> 02:50:40,870
+image URI. So we'll do import,
+use state from react like this.
+
+25851
+02:50:41,260 --> 02:50:48,370
+And in here, we'll say const,
+image, Uri, comma set image, URI
+
+25852
+02:50:48,610 --> 02:50:53,710
+equals use state. And we'll
+start it off as a blank string.
+
+25853
+02:50:53,830 --> 02:50:57,310
+Now let's create a function,
+we're going to call it update UI
+
+25854
+02:50:57,340 --> 02:51:01,720
+to update our UI and grab this
+token URI and the image URI. So
+
+25855
+02:51:01,720 --> 02:51:06,250
+we'll create an async function
+called Update UI. And in order
+
+25856
+02:51:06,250 --> 02:51:10,780
+to get the image first, we're
+gonna need to get the token URI,
+
+25857
+02:51:10,810 --> 02:51:17,260
+and then using the image ag from
+the token URI gets the image. So
+
+25858
+02:51:17,260 --> 02:51:20,770
+first thing we're gonna have to
+do is get the token URI. So we
+
+25859
+02:51:20,770 --> 02:51:24,160
+know how to do this with use web
+three contract. So we'll do
+
+25860
+02:51:24,160 --> 02:51:29,320
+import, use web three contract
+from react Morales. And as we
+
+25861
+02:51:29,320 --> 02:51:31,540
+know, use web through contracts
+is going to need some
+
+25862
+02:51:31,540 --> 02:51:38,200
+parameters. So we'll say const
+run contract function, get token
+
+25863
+02:51:38,200 --> 02:51:44,050
+URI, equals, use web through
+contract. First, we need the ABI
+
+25864
+02:51:44,200 --> 02:51:48,520
+of the NFT because we're gonna
+need to call token URI. So to
+
+25865
+02:51:48,520 --> 02:51:51,790
+get the ABI we're gonna need to
+once again update our front end.
+
+25866
+02:51:51,820 --> 02:51:54,700
+So let's comment this part out.
+We'll go back to our hard hat
+
+25867
+02:51:54,700 --> 02:51:58,420
+piece. And let's look in our
+deploy scripts. We have this
+
+25868
+02:51:58,420 --> 02:52:03,010
+update front end right now. All
+this is doing is updating calm
+
+25869
+02:52:03,040 --> 02:52:05,710
+object addresses. Well, that's
+good. We're also going to want
+
+25870
+02:52:05,710 --> 02:52:09,400
+to add API's to our front end as
+well. So let's create another
+
+25871
+02:52:09,400 --> 02:52:12,970
+function in here called Update
+API. And we'll pass the API's as
+
+25872
+02:52:12,970 --> 02:52:17,890
+well. So we'll do async function
+update API. And we'll give it
+
+25873
+02:52:17,890 --> 02:52:22,540
+both the basic NFT API and the
+NFT marketplace API, because
+
+25874
+02:52:22,540 --> 02:52:25,510
+we're going to need both of
+them. So we'll say const NF T,
+
+25875
+02:52:25,960 --> 02:52:31,990
+marketplace equals await ethers
+dot get contract. And f t
+
+25876
+02:52:32,470 --> 02:52:35,860
+marketplace, we're going to
+write the ABI to the front end
+
+25877
+02:52:35,860 --> 02:52:39,610
+API location, we have the front
+end contracts file. So let's
+
+25878
+02:52:39,610 --> 02:52:46,960
+also do a const. Front and ABI
+location equals, and we'll do
+
+25879
+02:52:46,960 --> 02:52:54,070
+dot dot slash next, Jas, and if
+T marketplace dash FCC slash
+
+25880
+02:52:54,070 --> 02:52:56,890
+constants, and instead of
+actually just giving the file
+
+25881
+02:52:56,890 --> 02:53:00,580
+name, we can just give it the
+front end API location. And then
+
+25882
+02:53:00,580 --> 02:53:03,100
+we'll actually have it generate
+that file for us because we're
+
+25883
+02:53:03,100 --> 02:53:06,940
+just going to overwrite the ABI
+file anytime we work with it. So
+
+25884
+02:53:06,940 --> 02:53:09,130
+now that we have the
+marketplace, we'll just do Fs
+
+25885
+02:53:09,130 --> 02:53:16,900
+dot right file sync, and we'll
+do front and ABI location, and
+
+25886
+02:53:16,900 --> 02:53:26,140
+ft marketplace, dot JSON. And ft
+marketplace, dot interface that
+
+25887
+02:53:26,140 --> 02:53:33,400
+format ethers dot utils dot
+format types dot JSON. So we're
+
+25888
+02:53:33,400 --> 02:53:35,830
+also going to want to do that
+for the basic NF t. So we'll say
+
+25889
+02:53:35,830 --> 02:53:41,680
+const basic NF t equals await
+ethers dot get contract basic NF
+
+25890
+02:53:41,680 --> 02:53:47,560
+T Fs dot right? file sync, it's
+going to be that exact same
+
+25891
+02:53:47,560 --> 02:53:50,980
+place right here. Except for
+it's going to be a different
+
+25892
+02:53:50,980 --> 02:53:55,480
+location, it's going to be basic
+NFT dot JSON. And of course,
+
+25893
+02:53:55,480 --> 02:54:00,580
+we're gonna do a comma basic NF
+T, that interface dot format
+
+25894
+02:54:00,820 --> 02:54:05,920
+ethers dot utils, dot format,
+types dot JSON, you can find
+
+25895
+02:54:05,920 --> 02:54:08,590
+this NFT marketplace that
+interface in the Hardhead
+
+25896
+02:54:08,590 --> 02:54:11,530
+documentation. And you can find
+this in the ethers
+
+25897
+02:54:11,530 --> 02:54:15,250
+documentation. So now we have
+this update ABI function. Let's
+
+25898
+02:54:15,280 --> 02:54:19,690
+also add this to our module that
+exports so we'll do a weight up
+
+25899
+02:54:19,690 --> 02:54:21,850
+the ABI like that.
+
+25900
+02:54:23,140 --> 02:54:25,450
+There's a hyphen here that
+shouldn't be here. And we'll run
+
+25901
+02:54:25,480 --> 02:54:30,970
+just this part of our hardhat
+front end, run yarn, hard hat,
+
+25902
+02:54:31,030 --> 02:54:36,100
+deploy dash, dash dash tags, the
+tag here is front end, front
+
+25903
+02:54:36,100 --> 02:54:39,430
+end. And now it's had nothing to
+compile updating front end, it's
+
+25904
+02:54:39,430 --> 02:54:42,970
+done. So if we go back to our
+front end, now, we go to our
+
+25905
+02:54:42,970 --> 02:54:46,450
+constants, we now see two
+objects in here, which are going
+
+25906
+02:54:46,450 --> 02:54:50,350
+to be API's, the basic NFT, and
+the NFT. Marketplace. Awesome.
+
+25907
+02:54:50,380 --> 02:54:54,040
+So now that we have that, we can
+import those into our front end.
+
+25908
+02:54:54,130 --> 02:55:00,490
+So we can say import, and if T
+marketplace, abi from dot dot
+
+25909
+02:55:00,490 --> 02:55:07,150
+slash constants slash NF T,
+marketplace dot JSON. And we can
+
+25910
+02:55:07,150 --> 02:55:12,790
+also get the NF T API. So we'll
+do import NF T, abi from that
+
+25911
+02:55:12,790 --> 02:55:18,370
+the slash constants slash basic
+NF T dot JSON. Now in our run
+
+25912
+02:55:18,370 --> 02:55:23,350
+contract function, our token URI
+function is part of the NFT API.
+
+25913
+02:55:23,380 --> 02:55:27,340
+So the API will be the NFT, abi,
+the contract address
+
+25914
+02:55:29,110 --> 02:55:32,080
+is going to be the address of
+the NFT, which we're passing in
+
+25915
+02:55:32,230 --> 02:55:36,430
+as a parameter. So we'll pass an
+NF T address, the function name
+
+25916
+02:55:36,550 --> 02:55:41,290
+is going to be token URI, and
+the params are going to be the
+
+25917
+02:55:41,290 --> 02:55:45,940
+token ID, which is getting
+passed as an input parameter to
+
+25918
+02:55:45,940 --> 02:55:49,570
+this function to this component.
+Right. And we can double check.
+
+25919
+02:55:49,780 --> 02:55:53,230
+We're good to our basic NF T dot
+soul, right? We scroll down, we
+
+25920
+02:55:53,230 --> 02:55:55,690
+have this token URI that we're
+overriding. And this is the
+
+25921
+02:55:55,690 --> 02:55:59,110
+function we want to call takes
+the token ID. So this the
+
+25922
+02:55:59,110 --> 02:56:02,530
+function we want to call takes
+the token ID. Okay, great. So in
+
+25923
+02:56:02,530 --> 02:56:07,960
+our update UI, first, we'll say
+const, token URI equals await
+
+25924
+02:56:08,680 --> 02:56:13,390
+token URI. Now let's do a little
+console dot log token your eye,
+
+25925
+02:56:13,690 --> 02:56:16,510
+just to see what this returns to
+make sure that update UI is
+
+25926
+02:56:16,510 --> 02:56:20,170
+called, we'll add it to a use
+effect, we'll say use effect.
+
+25927
+02:56:20,320 --> 02:56:23,770
+And this takes an input
+parameter of a function to do,
+
+25928
+02:56:23,920 --> 02:56:28,450
+we'll just say Update UI. And
+then we'll only have this run
+
+25929
+02:56:28,540 --> 02:56:33,160
+anytime is web three enabled
+changes. So we want to run
+
+25930
+02:56:33,190 --> 02:56:36,790
+update UI, but we want it to be
+dependent on is web three
+
+25931
+02:56:36,790 --> 02:56:40,750
+enabled. And then we'll say if
+it's web three enabled, then
+
+25932
+02:56:41,380 --> 02:56:44,980
+update UI. So we need to add use
+effect as well. So we're using
+
+25933
+02:56:44,980 --> 02:56:49,210
+use state, we'll do comma, use
+effect. And now we should at
+
+25934
+02:56:49,210 --> 02:56:52,360
+least be reading our token URI
+off the blockchain. We're not
+
+25935
+02:56:52,360 --> 02:56:54,010
+going to set the image yet,
+right, because we're going to
+
+25936
+02:56:54,010 --> 02:56:58,840
+get the image URI from the token
+neuron. Let's add this NFT box
+
+25937
+02:56:58,870 --> 02:57:02,800
+to our index to see if it's
+working well so far back in our
+
+25938
+02:57:02,800 --> 02:57:09,070
+index Next, up at the top, we
+will import NF T box from dot
+
+25939
+02:57:09,070 --> 02:57:14,920
+dot slash components slash NF T
+box. And down here, while we're
+
+25940
+02:57:14,920 --> 02:57:18,370
+returning this will add our NF T
+box component will make sure to
+
+25941
+02:57:18,370 --> 02:57:21,970
+pass in all the parameters it
+takes. So the price is going to
+
+25942
+02:57:21,970 --> 02:57:27,100
+equal that JavaScript price. And
+ft address is going to equal the
+
+25943
+02:57:27,100 --> 02:57:31,510
+JavaScript entity address. The
+token ID is going to equal the
+
+25944
+02:57:31,510 --> 02:57:39,040
+token ID, marketplace address is
+going to be marketplace address
+
+25945
+02:57:39,580 --> 02:57:43,510
+seller is going to be the
+seller. And you saw that warning
+
+25946
+02:57:43,510 --> 02:57:45,490
+where it's saying, hey, all the
+components need to all the
+
+25947
+02:57:45,490 --> 02:57:49,120
+things in the mapping need to
+have their unique key. So we'll
+
+25948
+02:57:49,120 --> 02:57:52,330
+say key, we'll give these all a
+key as well. We'll say key
+
+25949
+02:57:52,330 --> 02:57:55,060
+equals this, we'll do some
+string interpolation, we'll just
+
+25950
+02:57:55,060 --> 02:57:59,410
+say the NFT address, combined
+with the token ID can be the
+
+25951
+02:57:59,410 --> 02:58:03,280
+key. So if we save that, go back
+to our front end here, do a
+
+25952
+02:58:03,280 --> 02:58:08,650
+little refresh marketplace
+address is not defined market
+
+25953
+02:58:08,860 --> 02:58:11,650
+place address. So let's make
+sure we spell things right,
+
+25954
+02:58:11,680 --> 02:58:14,470
+let's go back to the front end,
+we'll give it a refresh is what
+
+25955
+02:58:14,470 --> 02:58:17,740
+three enabled is not defined.
+Oops, excuse me in the NFT box,
+
+25956
+02:58:17,980 --> 02:58:20,860
+we need to grab that from us
+Morales, so we'll import use
+
+25957
+02:58:20,890 --> 02:58:26,890
+Morales. And in our ponents here
+we'll say const is web three
+
+25958
+02:58:27,040 --> 02:58:33,040
+enabled equals use Morales.
+We'll save that. And one thing I
+
+25959
+02:58:33,040 --> 02:58:36,250
+noticed actually is this needs
+to be wrapped in squigglies.
+
+25960
+02:58:36,280 --> 02:58:39,220
+Sorry, I forgot to do that. Our
+component actually just takes a
+
+25961
+02:58:39,220 --> 02:58:42,310
+props, props input parameter.
+And we would need to do like
+
+25962
+02:58:42,340 --> 02:58:46,990
+props that token ID to get token
+ID. But instead, we just extract
+
+25963
+02:58:46,990 --> 02:58:50,170
+it out by doing putting the
+little squiggly brackets here.
+
+25964
+02:58:50,230 --> 02:58:52,990
+So put the squiggly brackets
+there. Great, we'll do a little
+
+25965
+02:58:52,990 --> 02:58:56,170
+console dot log token, your eye,
+or index.js has everything
+
+25966
+02:58:56,170 --> 02:59:00,430
+updated. Here. Let's do a little
+save. And we can even say if is
+
+25967
+02:59:00,430 --> 02:59:05,620
+web three enabled up the UI.
+Like that we'll save we'll go to
+
+25968
+02:59:05,620 --> 02:59:07,840
+the front end, we'll do a little
+refresh. We'll see if
+
+25969
+02:59:07,840 --> 02:59:10,360
+everything's working as
+expected. And as long as we're
+
+25970
+02:59:10,360 --> 02:59:13,450
+on that hard had localhost and
+our meta mask. And again, you
+
+25971
+02:59:13,450 --> 02:59:16,360
+can ignore this error, this
+warning that's up here for now.
+
+25972
+02:59:16,480 --> 02:59:20,410
+And if you click this, and you
+have your IPFS and brave or your
+
+25973
+02:59:20,410 --> 02:59:24,640
+IPFS companion, we can now see
+we're getting our token URI,
+
+25974
+02:59:24,670 --> 02:59:27,640
+which is perfect. The piece that
+we want now is this image bid.
+
+25975
+02:59:27,700 --> 02:59:30,760
+And for this one that I'm using
+it is an HTTPS, which
+
+25976
+02:59:30,760 --> 02:59:33,130
+technically isn't decentralized,
+right, we would need it to come
+
+25977
+02:59:33,130 --> 02:59:37,600
+from instead of HTTPS, we would
+need to come from IPFS colon
+
+25978
+02:59:37,600 --> 02:59:42,640
+slash slash but but actually
+having it as HTTPS ipfs.io. For
+
+25979
+02:59:42,640 --> 02:59:45,940
+now was good, we'll explain why
+in just a second. Now that we
+
+25980
+02:59:45,940 --> 02:59:50,860
+are getting the token URI, we
+can call this URL, and we can
+
+25981
+02:59:50,860 --> 02:59:54,730
+get back the image that we want
+to actually show on the front
+
+25982
+02:59:54,730 --> 02:59:58,060
+end. So in here, we'll do a
+little console dot log, the
+
+25983
+02:59:58,150 --> 03:00:04,270
+token, URI is string
+interpolation, like this, and
+
+25984
+03:00:04,270 --> 03:00:08,050
+then we'll say if token URI,
+we're going to need to now grab
+
+25985
+03:00:08,050 --> 03:00:12,010
+this token URI, and get the
+image from it. And this is where
+
+25986
+03:00:12,010 --> 03:00:14,110
+we're going to get a little bit
+funky. And we're going to cheat
+
+25987
+03:00:14,110 --> 03:00:17,800
+a little bit. Now for our
+application, not everybody is
+
+25988
+03:00:17,800 --> 03:00:22,630
+going to have IPFS companion,
+not every browser is IPFS
+
+25989
+03:00:22,660 --> 03:00:26,110
+compatible. So we're gonna have
+to actually cheat a little bit
+
+25990
+03:00:26,110 --> 03:00:29,740
+here, we're actually going to
+change the token Uriah from its
+
+25991
+03:00:29,770 --> 03:00:34,990
+IPFS edition to an H HTTPS
+edition. And this is known as
+
+25992
+03:00:34,990 --> 03:00:42,430
+using an IPFS gateway, which is
+a server that will return IPFS
+
+25993
+03:00:42,460 --> 03:00:47,140
+files from a normal URL. So
+we're going to use an IPFS
+
+25994
+03:00:47,140 --> 03:00:52,150
+gateway, which we can just make
+regular HTTPS calls to, and it
+
+25995
+03:00:52,150 --> 03:00:55,720
+will return those IPFS files. So
+technically, are we making the
+
+25996
+03:00:55,720 --> 03:00:59,740
+centralized doing this? Yes. And
+is that ideal? No. However,
+
+25997
+03:00:59,830 --> 03:01:02,980
+until the world adopt IPFS, and
+until the world adopts the
+
+25998
+03:01:02,980 --> 03:01:05,350
+standards, it's kind of what we
+have to do right now. Because
+
+25999
+03:01:05,350 --> 03:01:07,810
+otherwise, the front end will
+just show up as blank to them.
+
+26000
+03:01:07,870 --> 03:01:10,780
+And we can't have that we don't
+want that. So we're gonna say
+

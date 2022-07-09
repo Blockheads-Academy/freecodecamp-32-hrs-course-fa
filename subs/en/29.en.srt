@@ -1,0 +1,4994 @@
+29001
+06:10:27,080 --> 06:10:31,280
+token, use your C 20 ditzel.
+We're gonna change this, but
+
+29002
+06:10:31,280 --> 06:10:34,970
+don't worry about that yet. Now
+we're going to do a un 256
+
+29003
+06:10:35,030 --> 06:10:39,590
+Public Storage Max supply, it's
+the best practice, but it's
+
+29004
+06:10:39,590 --> 06:10:42,500
+fine, we'll give this a max
+supply this much was going to be
+
+29005
+06:10:42,500 --> 06:10:48,290
+1-234-567-8910 12345678. So it's
+gonna be 1 million, we're gonna
+
+29006
+06:10:48,290 --> 06:10:50,870
+do 1 million of these tokens.
+And then we're gonna create the
+
+29007
+06:10:50,870 --> 06:10:57,020
+constructor construct or your C
+20. Give it governance token as
+
+29008
+06:10:57,020 --> 06:11:00,290
+a name, and then our symbol is
+going to be GT. And for those
+
+29009
+06:11:00,290 --> 06:11:04,010
+who who don't know, when you
+inherit another contract in your
+
+29010
+06:11:04,010 --> 06:11:07,820
+constructor, you can use that
+inherited contracts constructor
+
+29011
+06:11:07,820 --> 06:11:10,910
+as well. In fact, I think you
+have to So governance token G
+
+29012
+06:11:10,910 --> 06:11:14,960
+team, and then we'll even call
+one of these ERC 20 functions
+
+29013
+06:11:14,960 --> 06:11:18,170
+called mint. And we'll mint to
+message dot sender, so whoever
+
+29014
+06:11:18,170 --> 06:11:21,170
+deploys this ERC 20 contract
+will just meant them everything,
+
+29015
+06:11:21,590 --> 06:11:24,560
+the whole Max supply. Now
+normally, if this was a normal
+
+29016
+06:11:24,560 --> 06:11:28,730
+ERC 20 token, you'd be all done.
+But this isn't a normal ERC 20
+
+29017
+06:11:28,730 --> 06:11:31,850
+token. See, when we do votes, we
+need to make sure that it's
+
+29018
+06:11:31,850 --> 06:11:36,770
+fair, imagine this for a second,
+someone knows a hot proposal is
+
+29019
+06:11:36,770 --> 06:11:42,110
+coming up, they want to vote on.
+So they just buy a ton of
+
+29020
+06:11:42,110 --> 06:11:47,360
+tokens. And then they dump it
+after the votes over. We want to
+
+29021
+06:11:47,360 --> 06:11:50,360
+avoid this. We want to avoid
+people just buying and selling
+
+29022
+06:11:50,360 --> 06:11:53,810
+tokens to get in on governance.
+So what we do is we actually
+
+29023
+06:11:53,810 --> 06:11:57,440
+create a snapshot of how many
+tokens people have at a certain
+
+29024
+06:11:57,440 --> 06:12:04,190
+block snapshot of tokens people
+have at a certain block. And we
+
+29025
+06:12:04,190 --> 06:12:06,260
+want to make sure once a
+proposal goes through, we
+
+29026
+06:12:06,260 --> 06:12:09,650
+actually pick a snapshot from
+the past that we want to use
+
+29027
+06:12:09,710 --> 06:12:12,620
+this kind of incentivizes people
+to not just jump in when it's a
+
+29028
+06:12:12,620 --> 06:12:16,580
+proposal and jump out because
+once a proposal hits, it uses a
+
+29029
+06:12:16,580 --> 06:12:19,520
+block snapshot from the past. So
+we're actually going to need to
+
+29030
+06:12:19,520 --> 06:12:23,000
+change this a little bit. We're
+gonna change this from ERC 20 to
+
+29031
+06:12:23,000 --> 06:12:27,380
+an ERC 20 votes, and we can
+actually see this in open
+
+29032
+06:12:27,380 --> 06:12:32,270
+Zeppelin and the extensions
+slash ERC 20 votes that soul
+
+29033
+06:12:32,300 --> 06:12:37,580
+contract. If we go back to IRS
+to their GitHub, we can see ERC
+
+29034
+06:12:37,580 --> 06:12:39,770
+20 votes, they also have a
+snapshot, which is pretty
+
+29035
+06:12:39,770 --> 06:12:42,920
+similar. And some of the main
+functions are it has these
+
+29036
+06:12:42,950 --> 06:12:46,040
+checkpoints. So these
+checkpoints are basically Hey,
+
+29037
+06:12:46,070 --> 06:12:49,670
+what is the snapshot? There's a
+number of checkpoints, you can
+
+29038
+06:12:49,670 --> 06:12:52,850
+also delegate your tokens to
+different people. So maybe
+
+29039
+06:12:52,850 --> 06:12:54,860
+you're not going to be available
+to actually vote. So you say,
+
+29040
+06:12:54,860 --> 06:12:57,980
+Hey, I'm gonna give my tokens to
+somebody else. You can get how
+
+29041
+06:12:57,980 --> 06:13:02,300
+many votes somebody has passed,
+votes get passed, or was apply
+
+29042
+06:13:02,300 --> 06:13:06,500
+it has all these functions that
+make this token, much better as
+
+29043
+06:13:06,500 --> 06:13:09,650
+a voting tool. Right makes it
+much much better. So we're gonna
+
+29044
+06:13:09,650 --> 06:13:12,560
+say our contracts governance
+token is ERC 20 votes and we
+
+29045
+06:13:12,560 --> 06:13:17,240
+just have to add additional
+constructor, this ERC 20 permit,
+
+29046
+06:13:17,510 --> 06:13:20,150
+I'm sorry, I kind of copied
+pasted that. So ERC 20 permit
+
+29047
+06:13:20,480 --> 06:13:24,470
+governance token. And right now
+we have a governance token that
+
+29048
+06:13:24,470 --> 06:13:27,560
+is a little bit more capable of
+doing actual voting, right,
+
+29049
+06:13:27,560 --> 06:13:31,280
+because as the snapshot has this
+delegating functionality, it has
+
+29050
+06:13:31,280 --> 06:13:34,700
+these checkpoints, it's going to
+be much better for doing votes
+
+29051
+06:13:34,700 --> 06:13:37,880
+in a fair way. The only thing
+that we need to do though, is we
+
+29052
+06:13:37,880 --> 06:13:40,700
+need to add some overrides,
+right. And we're just gonna say
+
+29053
+06:13:40,700 --> 06:13:46,730
+the functions below our
+overrides required by solidity.
+
+29054
+06:13:47,480 --> 06:13:50,450
+And this part is a little bit
+boring. So I'm just going to
+
+29055
+06:13:50,450 --> 06:13:54,200
+copy paste it, feel free to copy
+paste it from my GitHub. But
+
+29056
+06:13:54,200 --> 06:13:58,280
+what we're doing is anytime we
+do this after token transfer,
+
+29057
+06:13:58,490 --> 06:14:02,180
+and the time we transfer a
+token, we want to make sure that
+
+29058
+06:14:02,180 --> 06:14:05,450
+we call the after token transfer
+of the ERC 20 votes. And the
+
+29059
+06:14:05,450 --> 06:14:08,300
+reason that we do this is
+because we want to make sure
+
+29060
+06:14:08,390 --> 06:14:11,630
+that the snapshots are updated,
+right, we want to make sure that
+
+29061
+06:14:11,630 --> 06:14:15,350
+we know how many people have how
+many tokens at each block. Same
+
+29062
+06:14:15,350 --> 06:14:18,230
+thing with the mint. Same thing
+with burning, we want to make
+
+29063
+06:14:18,230 --> 06:14:21,230
+sure we always know how many
+tokens people have at different
+
+29064
+06:14:21,230 --> 06:14:24,170
+blocks or can be at different
+checkpoints I should say. And
+
+29065
+06:14:24,170 --> 06:14:26,930
+that's the most important bit at
+which checkpoint Are you going
+
+29066
+06:14:26,930 --> 06:14:29,390
+to use for your token voting. So
+cool. Feel free to copy that,
+
+29067
+06:14:29,390 --> 06:14:32,180
+again, from a GitHub or if you
+want you can even just try the
+
+29068
+06:14:32,180 --> 06:14:35,510
+rest of the tutorial without
+this and see how you fare. But
+
+29069
+06:14:35,510 --> 06:14:38,840
+cool. So now we have a
+governance token and ERC 20
+
+29070
+06:14:38,840 --> 06:14:41,480
+token that we can use for
+governance. So let's try to
+
+29071
+06:14:41,480 --> 06:14:45,170
+compile it. Yarn Hardhead
+compile. Great, looks like
+
+29072
+06:14:45,170 --> 06:14:48,020
+things are compiling
+successfully. Perfect. So our
+
+29073
+06:14:48,020 --> 06:14:52,160
+governance token looks good. Our
+box looks good. Let's actually
+
+29074
+06:14:52,160 --> 06:14:56,900
+now start creating our
+governance contracts. Now we're
+
+29075
+06:14:56,900 --> 06:15:00,230
+actually going to make a folder
+called governance standard
+
+29076
+06:15:00,260 --> 06:15:03,080
+because this is going to be the
+standard governance model. This
+
+29077
+06:15:03,080 --> 06:15:06,380
+is going to be this on chain ERC
+20 and I plan on updating this
+
+29078
+06:15:06,380 --> 06:15:09,050
+in the future with no a
+governance off chain or
+
+29079
+06:15:09,050 --> 06:15:11,120
+something right. So for now,
+we're calling a governance
+
+29080
+06:15:11,120 --> 06:15:13,640
+standard because this is the
+quote unquote standard way to do
+
+29081
+06:15:13,640 --> 06:15:16,160
+governance, but in the air,
+we're going to need two
+
+29082
+06:15:16,160 --> 06:15:19,400
+contracts actually, we're gonna
+need a government work, contract
+
+29083
+06:15:19,430 --> 06:15:23,570
+that soul and then we're also
+going to need a time lock that
+
+29084
+06:15:23,570 --> 06:15:28,280
+soul and this will make sense in
+a second. So our gov contract
+
+29085
+06:15:28,280 --> 06:15:30,920
+dot soul, this is going to be
+the contract that has all the
+
+29086
+06:15:30,920 --> 06:15:34,700
+voting code, all the voting
+logic that our governance token
+
+29087
+06:15:34,700 --> 06:15:37,760
+is going to use, the Time Lock
+is actually going to be an
+
+29088
+06:15:37,760 --> 06:15:41,450
+additional contract that is
+actually the owner. So the Time
+
+29089
+06:15:41,450 --> 06:15:44,780
+Lock and the governor contract
+are sort of one in the same, but
+
+29090
+06:15:44,780 --> 06:15:47,120
+the difference is the Time Lock
+is actually going to be the
+
+29091
+06:15:47,120 --> 06:15:50,060
+owner of the box contract. And
+this is important because
+
+29092
+06:15:50,060 --> 06:15:54,890
+whenever we propose or cue
+something to a proposal to go
+
+29093
+06:15:54,890 --> 06:16:00,500
+through, we want to wait, right?
+We want to wait for a new vote
+
+29094
+06:16:00,800 --> 06:16:05,780
+to be executed. Now, why do we
+want to do that, let's say some
+
+29095
+06:16:05,810 --> 06:16:08,060
+proposal goes through, that's
+bad. So like, let's say we have
+
+29096
+06:16:08,060 --> 06:16:10,250
+a box contract. And then a
+proposal goes through that says,
+
+29097
+06:16:10,280 --> 06:16:16,700
+Everyone who holds the
+governance token has to pay five
+
+29098
+06:16:16,700 --> 06:16:19,670
+tokens, or something like that,
+right, or whatever, or who
+
+29099
+06:16:19,670 --> 06:16:21,830
+knows, right? Maybe that's
+something that you don't really
+
+29100
+06:16:21,830 --> 06:16:25,700
+want to be a part of. So all of
+these governance contracts give
+
+29101
+06:16:25,700 --> 06:16:32,870
+time to give time to users to
+get out, if they don't like a
+
+29102
+06:16:32,870 --> 06:16:36,230
+governance update. So we always
+want to have some type of
+
+29103
+06:16:36,230 --> 06:16:40,100
+timeline. So once a proposal
+passes, it won't go in effect
+
+29104
+06:16:40,130 --> 06:16:43,220
+right away, it'll have to wait
+some duration, and then go in
+
+29105
+06:16:43,220 --> 06:16:45,170
+effect. So that's what the
+timeline is gonna be for.
+
+29106
+06:16:45,500 --> 06:16:48,350
+Governor contract is going to
+have all of our actual code. Now
+
+29107
+06:16:48,350 --> 06:16:49,250
+we can cheat a little bit.
+
+29108
+06:16:50,840 --> 06:16:53,510
+Actually, we can cheat a lot of
+a little bit. So opens up one
+
+29109
+06:16:53,510 --> 06:16:56,270
+has a thing called the contracts
+wizard, and there'll be a link
+
+29110
+06:16:56,270 --> 06:16:59,240
+to this in the description as
+well. And this opens up when
+
+29111
+06:16:59,240 --> 06:17:04,400
+wizard is a way for us to write
+really basic boilerplate code
+
+29112
+06:17:04,460 --> 06:17:06,650
+right in there wizard. So right,
+so if we go to the wizard
+
+29113
+06:17:06,650 --> 06:17:12,890
+contract here, we can see we can
+make an ERC 20 and NFT 1155. And
+
+29114
+06:17:12,890 --> 06:17:16,190
+then finally, this gov thing
+here. So we can call it give it
+
+29115
+06:17:16,190 --> 06:17:20,930
+a name, we're going to call Rs.
+Gov contract, during explain
+
+29116
+06:17:20,930 --> 06:17:24,170
+what all this means, and give it
+a voting delay, which is the
+
+29117
+06:17:24,170 --> 06:17:26,780
+delay since a proposal is
+created until voting starts. So
+
+29118
+06:17:26,780 --> 06:17:28,880
+once you create a proposal, you
+gotta wait a little bit, the
+
+29119
+06:17:28,880 --> 06:17:32,690
+voting period, how long votes
+should go for. And the reason
+
+29120
+06:17:32,690 --> 06:17:36,230
+that this audio is important is
+because they actually do votes,
+
+29121
+06:17:36,770 --> 06:17:39,890
+voting period in terms of
+blocks. So it's an anti pattern
+
+29122
+06:17:39,890 --> 06:17:42,800
+to actually do timed based
+things in smart contracts, it's
+
+29123
+06:17:42,800 --> 06:17:45,230
+much better to do block based
+things. So we're saying one
+
+29124
+06:17:45,230 --> 06:17:48,710
+week, but it's that's going to
+be you know, if if the average
+
+29125
+06:17:48,710 --> 06:17:51,290
+block time is 13.2 seconds,
+we're gonna figure out the weak
+
+29126
+06:17:51,380 --> 06:17:53,960
+proposal threshold is going to
+be the minimum number of votes
+
+29127
+06:17:53,960 --> 06:17:57,590
+and account must have to create
+a proposal. So maybe you only
+
+29128
+06:17:57,590 --> 06:18:01,130
+want people who have a lot of
+your governance token to make
+
+29129
+06:18:01,130 --> 06:18:04,910
+votes quorum percentage, it's
+what percentage of people need
+
+29130
+06:18:04,910 --> 06:18:08,210
+to vote it all. So we're saying
+4% of all token holders need to
+
+29131
+06:18:08,210 --> 06:18:11,060
+vote or we could say you know,
+exactly 100 tokens need to vote
+
+29132
+06:18:11,060 --> 06:18:13,580
+whatever we want to do here. We
+also have some updatable
+
+29133
+06:18:13,580 --> 06:18:17,480
+settings we have Bravo
+compatible Bravo is the compound
+
+29134
+06:18:17,510 --> 06:18:20,150
+type contract. So if you want to
+make it integratable, with
+
+29135
+06:18:20,150 --> 06:18:23,720
+compound you can do that. Votes
+comp like or ERC 20 votes, we're
+
+29136
+06:18:23,720 --> 06:18:26,450
+working with this ERC 20 votes,
+we always want to do a time
+
+29137
+06:18:26,450 --> 06:18:29,060
+lock, we're gonna do the open
+Zeplin implementation of a time
+
+29138
+06:18:29,060 --> 06:18:31,970
+lock, you could also do a
+compound implementation, we
+
+29139
+06:18:31,970 --> 06:18:35,030
+aren't going to do upgradability
+here, however, I have a number
+
+29140
+06:18:35,030 --> 06:18:37,940
+of fantastic resources on how to
+actually do upgradability. And
+
+29141
+06:18:37,940 --> 06:18:40,430
+if we did want to do
+upgradability, it adds all this
+
+29142
+06:18:40,430 --> 06:18:43,280
+other stuff. We're not going to
+do that for now because it makes
+
+29143
+06:18:43,280 --> 06:18:45,650
+it so much longer video, and
+then you can add some stuff like
+
+29144
+06:18:45,650 --> 06:18:49,160
+this, but Oh, so that's pretty
+much it. And I know this feels
+
+29145
+06:18:49,160 --> 06:18:51,230
+like you're cheating, or we're
+just going to copy this whole
+
+29146
+06:18:51,230 --> 06:18:54,230
+thing, right? Copy all that
+stuff that we put in copy to
+
+29147
+06:18:54,230 --> 06:18:57,230
+clipboard, and we're going to
+paste it in. Don't worry, I'm
+
+29148
+06:18:57,230 --> 06:19:00,200
+gonna explain what's going on
+now. So we have our government
+
+29149
+06:19:00,200 --> 06:19:03,230
+contract. And this is governor
+Governor setting Governor
+
+29150
+06:19:03,230 --> 06:19:06,200
+counting simple Governor votes,
+Governor votes, quorum Franco,
+
+29151
+06:19:06,260 --> 06:19:09,440
+all this stuff. All these are
+just implementations to make it
+
+29152
+06:19:09,440 --> 06:19:12,020
+easier to be governor, Governor
+counting simple is a way of
+
+29153
+06:19:12,020 --> 06:19:14,780
+counting votes, Governor votes
+is a way of integrating with
+
+29154
+06:19:14,780 --> 06:19:18,470
+that year's 20 contract. Quorum
+fraction is is a way to
+
+29155
+06:19:18,500 --> 06:19:21,080
+understand quorum time lock.
+Obviously, it's time lock. This
+
+29156
+06:19:21,080 --> 06:19:22,970
+is going to be the base
+contract. That's gonna be some
+
+29157
+06:19:22,970 --> 06:19:25,010
+settings. And we're gonna talk
+about this in a minute. But
+
+29158
+06:19:25,010 --> 06:19:27,170
+let's go over what are the
+functions here so we have voting
+
+29159
+06:19:27,170 --> 06:19:30,020
+delay. This is exactly the
+voting delay, which we're gonna
+
+29160
+06:19:30,020 --> 06:19:33,350
+do superdad voting gelei, we're
+gonna get from this governor
+
+29161
+06:19:33,350 --> 06:19:35,360
+settings contract that we're
+going to set in a minute your
+
+29162
+06:19:35,360 --> 06:19:38,090
+voting period that we're going
+to set in our gov settings,
+
+29163
+06:19:38,090 --> 06:19:40,160
+which is this one right here.
+And again, if you want to like
+
+29164
+06:19:40,190 --> 06:19:42,770
+look at all these contracts, you
+absolutely can, right, if we go
+
+29165
+06:19:42,770 --> 06:19:47,900
+to contracts, governance,
+extensions, we have all these in
+
+29166
+06:19:47,900 --> 06:19:50,630
+here, right? So if we look at
+governance settings, we can see
+
+29167
+06:19:50,630 --> 06:19:53,720
+it has voting delay voting
+period, proposal threshold, and
+
+29168
+06:19:53,720 --> 06:19:56,300
+those are right in its
+constructor. And that's exactly
+
+29169
+06:19:56,300 --> 06:19:59,000
+what we're setting, right. We're
+setting voting delay voting
+
+29170
+06:19:59,000 --> 06:20:01,370
+period, and then the proposal
+threshold, and then we're also
+
+29171
+06:20:01,370 --> 06:20:04,130
+going to make this customizable
+as well. And the rest of these
+
+29172
+06:20:04,130 --> 06:20:06,800
+that's exactly what doing
+calling the quorum from the
+
+29173
+06:20:06,800 --> 06:20:10,580
+super get votes. And then again,
+the super is those inherited
+
+29174
+06:20:10,580 --> 06:20:13,790
+contracts, get the state and
+then we have some interesting
+
+29175
+06:20:13,910 --> 06:20:16,640
+functions we have proposed. This
+is what we're actually going to
+
+29176
+06:20:16,640 --> 06:20:20,720
+do to propose new governance we
+have proposal threshold, and
+
+29177
+06:20:20,720 --> 06:20:24,140
+then we have execute which
+executes a cued proposal. To
+
+29178
+06:20:24,470 --> 06:20:27,890
+cancel, we have executor which
+we're is going to be who can
+
+29179
+06:20:27,890 --> 06:20:30,110
+actually execute stuff, we're
+actually going to make it
+
+29180
+06:20:30,110 --> 06:20:33,470
+anybody and then supports
+interface, you can basically
+
+29181
+06:20:33,470 --> 06:20:36,830
+ignore. But let's make this a
+little bit more customizable. So
+
+29182
+06:20:36,830 --> 06:20:39,320
+we have Iboats token, this is
+going to be our governance
+
+29183
+06:20:39,320 --> 06:20:41,780
+token, the timeline controller
+timeline, this is going to be
+
+29184
+06:20:41,780 --> 06:20:44,660
+the timeline controller that we
+make an amended. And again, we
+
+29185
+06:20:44,660 --> 06:20:47,990
+need this because we don't want
+to let any proposal just go
+
+29186
+06:20:47,990 --> 06:20:50,570
+through once it passes, we want
+to give people time to get out.
+
+29187
+06:20:50,630 --> 06:20:56,930
+But let's add the UN 256 voting
+delay as a parameter here. And
+
+29188
+06:20:57,290 --> 06:21:00,620
+for voting delay, we're going to
+do this, we're going to set it
+
+29189
+06:21:00,620 --> 06:21:05,630
+as our governor settings, we're
+going to do a UNT 256 voting
+
+29190
+06:21:05,630 --> 06:21:09,260
+period. And we're going to add
+that right here. And this means
+
+29191
+06:21:09,260 --> 06:21:14,330
+45,000 blocks is approximately
+one week. And that's what that
+
+29192
+06:21:14,330 --> 06:21:17,030
+means we're going to leave
+proposal threshold to zero
+
+29193
+06:21:17,030 --> 06:21:18,950
+because we don't really want to
+change that we want to let
+
+29194
+06:21:18,950 --> 06:21:22,340
+anyone make a proposal. And then
+we're just going to add you in
+
+29195
+06:21:22,340 --> 06:21:24,980
+256 underscore core
+
+29196
+06:21:26,060 --> 06:21:30,590
+percentage to this. So Governor
+votes quorum percentage
+
+29197
+06:21:30,590 --> 06:21:33,770
+corporate senators. So now this
+is completely customizable, for
+
+29198
+06:21:33,770 --> 06:21:36,860
+voting, delay voting period,
+core percentage for whatever you
+
+29199
+06:21:36,860 --> 06:21:39,680
+want it to be. And believe it or
+not, that's it. Now you have a
+
+29200
+06:21:39,680 --> 06:21:42,350
+simple governance contract.
+Thank you, openzeppelin, for
+
+29201
+06:21:42,350 --> 06:21:46,280
+doing 99% of the work for us. So
+that's it. So this contract,
+
+29202
+06:21:46,310 --> 06:21:48,410
+it's going to have all these
+functions that we're going to go
+
+29203
+06:21:48,410 --> 06:21:52,910
+over for proposing for executing
+and for queuing, different
+
+29204
+06:21:52,910 --> 06:21:57,800
+proposals. Right. Now we got to
+make a time lock contract here.
+
+29205
+06:21:57,830 --> 06:22:00,140
+And this contract is actually
+going to be a lot easier. So
+
+29206
+06:22:00,140 --> 06:22:02,780
+we're just going to do it from
+scratch. So we're going to spdx
+
+29207
+06:22:02,960 --> 06:22:09,260
+license I then to fire, my team,
+do pragma solidity and let's
+
+29208
+06:22:09,260 --> 06:22:12,110
+just do this your point a point
+zero, and then we're going to
+
+29209
+06:22:12,110 --> 06:22:15,110
+import from open Zeppelin, a
+contract called the Time Lock
+
+29210
+06:22:15,140 --> 06:22:18,470
+controller. So if we look at the
+governance here, if this time
+
+29211
+06:22:18,470 --> 06:22:21,470
+lock controller dot soul
+contract, and this has all this
+
+29212
+06:22:21,470 --> 06:22:24,440
+functionality in here for
+creating roles, who can actually
+
+29213
+06:22:24,440 --> 06:22:28,340
+propose who can execute, who's
+the Time Lock admin, but it also
+
+29214
+06:22:28,340 --> 06:22:31,400
+has these execute stuff in here
+as well. It's gonna work in
+
+29215
+06:22:31,400 --> 06:22:34,250
+tandem with our governance
+contract, right? This is the
+
+29216
+06:22:34,250 --> 06:22:38,060
+contract that says that makes
+sure our governance contract
+
+29217
+06:22:38,060 --> 06:22:41,060
+doesn't just push stuff through
+willy nilly. So we're gonna say
+
+29218
+06:22:41,180 --> 06:22:45,020
+we're gonna first import that
+import at open Zeppelin slash
+
+29219
+06:22:45,020 --> 06:22:52,490
+contracts slash governance slash
+Time Lock controller. That's all
+
+29220
+06:22:52,940 --> 06:22:57,320
+and then we're gonna say
+contract, I'm lock is Time Lock
+
+29221
+06:22:57,440 --> 06:23:00,560
+controller like that. And we'll
+create our little constructor
+
+29222
+06:23:00,560 --> 06:23:05,360
+here, and truck door. And this
+because this takes a couple
+
+29223
+06:23:05,360 --> 06:23:09,260
+different parameters, we're
+gonna take a un 256 Min delay,
+
+29224
+06:23:09,560 --> 06:23:14,180
+which are min delay, Min delay
+is going to be along you have to
+
+29225
+06:23:14,180 --> 06:23:18,980
+wait before executing. So this
+is Hey, once proposal passes,
+
+29226
+06:23:19,010 --> 06:23:21,890
+great, we gotta wait this
+minimum delay, then we're going
+
+29227
+06:23:21,890 --> 06:23:27,170
+to do a list of proposers, an
+address array memory of
+
+29228
+06:23:27,170 --> 06:23:31,490
+proposers. And then the
+proposers is the list of
+
+29229
+06:23:31,490 --> 06:23:34,910
+addresses that can propose for
+us, we're just gonna say
+
+29230
+06:23:34,910 --> 06:23:38,000
+everyone's gonna be able to
+propose. And then last, an
+
+29231
+06:23:38,000 --> 06:23:42,830
+address array, memory of
+executors who can execute
+
+29232
+06:23:42,890 --> 06:23:46,970
+everything, and we're just gonna
+say executors who can execute
+
+29233
+06:23:47,330 --> 06:23:51,560
+when a probe posle passes. And
+again, we're just gonna say
+
+29234
+06:23:51,560 --> 06:23:53,780
+everybody, and the reason we
+need these is because we need to
+
+29235
+06:23:53,780 --> 06:23:56,930
+pass these to our time lock
+controller, this constructor is
+
+29236
+06:23:56,930 --> 06:24:00,800
+expecting three parameters. So
+we'll just do Tama controller,
+
+29237
+06:24:01,610 --> 06:24:09,260
+delay, pro posers, X EQ, tours.
+And that's it. So this is going
+
+29238
+06:24:09,260 --> 06:24:13,310
+to be what owns everything, it's
+the timelog, that's going to be
+
+29239
+06:24:13,310 --> 06:24:15,950
+owning our box. It's not the
+government contract, the
+
+29240
+06:24:15,950 --> 06:24:18,020
+government contracts is where
+we're going to send our votes
+
+29241
+06:24:18,020 --> 06:24:20,780
+and stuff. But at the time lock
+that actually everything needs
+
+29242
+06:24:20,780 --> 06:24:23,240
+to flow through in order for
+governance to actually happen,
+
+29243
+06:24:23,240 --> 06:24:26,090
+because we want to make sure we
+have this min delay, we go
+
+29244
+06:24:26,090 --> 06:24:28,670
+through the right process and
+everything. And believe it or
+
+29245
+06:24:28,670 --> 06:24:31,670
+not, that's everything. That is
+all the code you're going to
+
+29246
+06:24:31,670 --> 06:24:35,180
+need as far as the solidity
+goes, to create a governance to
+
+29247
+06:24:35,180 --> 06:24:39,470
+create a Dao. So even do your
+own hard hat compile, make sure
+
+29248
+06:24:39,470 --> 06:24:43,250
+everything's compiled. And tada,
+we've done it, you've done most
+
+29249
+06:24:43,250 --> 06:24:45,530
+of the hard work. Now we're
+going to flip over to actually
+
+29250
+06:24:45,530 --> 06:24:48,410
+writing the scripts to deploy
+and to interact with everything
+
+29251
+06:24:48,620 --> 06:24:51,980
+using TypeScript here. At this
+point, if you're like, Oh, I
+
+29252
+06:24:51,980 --> 06:24:54,380
+already learned everything that
+I wanted, I don't use hard hat,
+
+29253
+06:24:54,410 --> 06:24:57,560
+I use some other tools. This is
+where I challenge you to go out
+
+29254
+06:24:57,560 --> 06:24:59,750
+and I challenge you to try
+something else. Now if you've
+
+29255
+06:24:59,750 --> 06:25:01,820
+reached this point, I just want
+to give you a huge congrats,
+
+29256
+06:25:01,970 --> 06:25:05,000
+because you have taken the steps
+to build your own doubt build
+
+29257
+06:25:05,000 --> 06:25:07,940
+your own governance model.
+That's all the solidity that you
+
+29258
+06:25:07,940 --> 06:25:10,970
+really need. You can take that
+deploy that and you're good to
+
+29259
+06:25:10,970 --> 06:25:13,910
+go. But of course, we know that
+there's more to being a smart
+
+29260
+06:25:13,910 --> 06:25:16,550
+contract developer than just the
+solidity you got to do the
+
+29261
+06:25:16,550 --> 06:25:19,220
+tooling right to let's go ahead
+and we'll jump into writing
+
+29262
+06:25:19,220 --> 06:25:21,590
+those TypeScript scripts to
+actually do this. And again, if
+
+29263
+06:25:21,590 --> 06:25:24,020
+you want to see a Python version
+of this, go check out a link up
+
+29264
+06:25:24,050 --> 06:25:26,690
+description to see the Pythonic
+version of this. And of course,
+
+29265
+06:25:26,750 --> 06:25:29,600
+don't forget to smash that like
+button, subscribe, leave a
+
+29266
+06:25:29,600 --> 06:25:32,570
+comment on how you're doing so
+far. And, of course, give
+
+29267
+06:25:32,570 --> 06:25:34,910
+yourself a pat in the back.
+Great job. You're doing amazing
+
+29268
+06:25:34,910 --> 06:25:37,010
+getting this far. Congrats,
+let's jump in.
+
+29269
+06:25:38,180 --> 06:25:41,150
+Alright, so we're back here,
+we've written our smart
+
+29270
+06:25:41,150 --> 06:25:44,300
+contracts already, check wasn't
+that easy, right, this was way
+
+29271
+06:25:44,300 --> 06:25:46,490
+easier than I thought it would
+be. Now we're just gonna write
+
+29272
+06:25:46,490 --> 06:25:48,590
+our deployment scripts, and then
+we're gonna write our scripts to
+
+29273
+06:25:48,590 --> 06:25:52,550
+interact with them. Again, my
+full repo also has tests, but
+
+29274
+06:25:52,550 --> 06:25:54,860
+we're just gonna write some
+scripts. And then feel free to
+
+29275
+06:25:54,860 --> 06:25:57,620
+check out the tests yourself. So
+let's write those deployment
+
+29276
+06:25:57,620 --> 06:26:00,140
+scripts to we're actually going
+to be using a package for
+
+29277
+06:26:00,140 --> 06:26:03,620
+deployment called Hard Hat
+deploy. It is absolutely
+
+29278
+06:26:03,620 --> 06:26:06,110
+phenomenal for hard hat for
+making your deployments much,
+
+29279
+06:26:06,140 --> 06:26:08,780
+much easier. We're gonna scroll
+down to installation, and we're
+
+29280
+06:26:08,780 --> 06:26:11,030
+actually gonna go ahead and
+install this. So typically, you
+
+29281
+06:26:11,030 --> 06:26:13,970
+could install it like this.
+Well, we're gonna use yarn, but
+
+29282
+06:26:13,970 --> 06:26:16,970
+we're gonna do kind of the more
+safe way which looks a little
+
+29283
+06:26:16,970 --> 06:26:19,160
+wonky, but I'm explaining it
+right. So instead of NPM
+
+29284
+06:26:19,160 --> 06:26:22,490
+install, we're gonna do yarn,
+add dash dash Dev, and then this
+
+29285
+06:26:22,490 --> 06:26:26,090
+whole thing right here. So we're
+gonna do yarn, add dash dash
+
+29286
+06:26:26,090 --> 06:26:28,790
+Dev, and then just paste that in
+here. So this is gonna be at
+
+29287
+06:26:28,910 --> 06:26:33,380
+nomic, labs slash hard hat,
+hyphen ethers at NPM, colon,
+
+29288
+06:26:33,380 --> 06:26:35,960
+hard hat, deploy ethers. And
+what this is doing is we're
+
+29289
+06:26:35,960 --> 06:26:40,160
+basically saying hard hat deploy
+ethers is going to be overriding
+
+29290
+06:26:40,160 --> 06:26:42,590
+this hardened ether thing. And
+we're also going to add ethers
+
+29291
+06:26:42,590 --> 06:26:46,580
+as well. And then once we add
+this in, check our package json,
+
+29292
+06:26:46,730 --> 06:26:50,150
+we can see we have hard hats. We
+have hard hat ethers, which is
+
+29293
+06:26:50,150 --> 06:26:53,750
+being overwritten by this hard
+hat, deploy ethers. And then
+
+29294
+06:26:53,750 --> 06:26:58,250
+additionally, we're going to
+want to add on a deploy. So do
+
+29295
+06:26:58,250 --> 06:27:03,230
+yarn, add dash dash Dev, hard
+hat hyphen, deploy. And what
+
+29296
+06:27:03,230 --> 06:27:05,660
+this is going to allow us to do
+is instead of having to write
+
+29297
+06:27:05,660 --> 06:27:08,840
+scripts, and do all this stuff,
+that kind of makes it hard to
+
+29298
+06:27:08,840 --> 06:27:11,990
+save your deployments and
+everything, we're going to just
+
+29299
+06:27:11,990 --> 06:27:14,870
+create a deploy folder, where
+we're going to add all of our
+
+29300
+06:27:14,870 --> 06:27:17,360
+deploy scripts in here. So I
+absolutely love this package.
+
+29301
+06:27:17,390 --> 06:27:20,660
+It's makes deployment really,
+really easy. So in here, we're
+
+29302
+06:27:20,660 --> 06:27:22,850
+gonna create new file, it's
+going to do oh one, we're gonna
+
+29303
+06:27:22,850 --> 06:27:24,680
+go step by step deploying
+everything, we're gonna call
+
+29304
+06:27:24,680 --> 06:27:29,990
+this deploy, govern or token dot
+TypeScript, that's gonna be the
+
+29305
+06:27:29,990 --> 06:27:33,050
+first thing we're going to do.
+Also, we're gonna change this to
+
+29306
+06:27:33,050 --> 06:27:37,010
+TypeScript. Tada, we now have
+TypeScript. Yay. Now the one
+
+29307
+06:27:37,010 --> 06:27:40,070
+thing that is kind of nice about
+doing kind of that advanced
+
+29308
+06:27:40,100 --> 06:27:42,230
+TypeScript thing at the heart
+had kind of gives it the
+
+29309
+06:27:42,230 --> 06:27:45,230
+beginning, is you don't have to
+install all the TypeScript stuff
+
+29310
+06:27:45,230 --> 06:27:48,830
+yourself. But we do. So we're
+going to do yarn, add TypeScript
+
+29311
+06:27:49,310 --> 06:27:57,170
+type chain, vs node at type
+chain slash ethers, V five, this
+
+29312
+06:27:57,170 --> 06:28:00,890
+is a lot of stuff, don't worry
+type chain slash hard hat, at
+
+29313
+06:28:00,890 --> 06:28:05,570
+type slash Chai, at type slash
+node. And then we'll make sure
+
+29314
+06:28:05,570 --> 06:28:09,590
+this is all Dev, dash dash Dev,
+I know there's a lot of stuff.
+
+29315
+06:28:10,070 --> 06:28:12,080
+There's all this stuff to make
+it TypeScript D.
+
+29316
+06:28:12,260 --> 06:28:15,260
+You can absolutely do this in
+JavaScript if you want. You just
+
+29317
+06:28:15,260 --> 06:28:18,620
+have to do JS files and ignore
+the typing. So But feel free to
+
+29318
+06:28:18,620 --> 06:28:20,990
+do whatever you want to do.
+Alright, cool. And we should be
+
+29319
+06:28:20,990 --> 06:28:24,620
+okay here. Let's go into our
+governor token here. And we'll
+
+29320
+06:28:24,620 --> 06:28:28,550
+create a deploy script. So the
+Hardhead deploy GitHub repo has
+
+29321
+06:28:28,550 --> 06:28:31,880
+a little demo boilerplate code
+for you actually do your deploy
+
+29322
+06:28:31,880 --> 06:28:34,490
+script. So feel free to
+reference here if you lost or
+
+29323
+06:28:34,490 --> 06:28:37,190
+confused. So what we're going to
+do is we're going to import the
+
+29324
+06:28:37,400 --> 06:28:44,180
+hard hat runtime environments,
+from our enhanced slash types.
+
+29325
+06:28:44,240 --> 06:28:46,310
+And you'll see why we need this
+in just a second. And then we're
+
+29326
+06:28:46,310 --> 06:28:50,540
+also going to import deploy
+function from Hardhead. Deploy
+
+29327
+06:28:50,600 --> 06:28:53,270
+slash types. And these are the
+two main things you need to
+
+29328
+06:28:53,270 --> 06:28:56,000
+create a deploy function with
+pothead deploy, we're going to
+
+29329
+06:28:56,000 --> 06:29:00,530
+create our function, we're going
+to call it const ploy governance
+
+29330
+06:29:00,560 --> 06:29:04,460
+token, it's going to be of type
+deploy function. So in order for
+
+29331
+06:29:04,460 --> 06:29:06,710
+these to actually work, we just
+create a whole bunch of deploy
+
+29332
+06:29:06,710 --> 06:29:08,930
+functions that we run with heart
+hub. And this is going to be an
+
+29333
+06:29:08,960 --> 06:29:12,680
+async function. That's going to
+take the hard hat runtime
+
+29334
+06:29:12,680 --> 06:29:15,380
+environment as an input
+parameter that we're going to
+
+29335
+06:29:15,380 --> 06:29:19,250
+call HRV. So when we run hard
+hat deploy, which you'll see in
+
+29336
+06:29:19,250 --> 06:29:22,820
+a second, we're actually passing
+our fake hard hat chain that
+
+29337
+06:29:22,820 --> 06:29:25,100
+gets spun up in the background
+for us, right, we can even do
+
+29338
+06:29:25,100 --> 06:29:30,170
+like console dot log Hello. And
+if we do yarn, hard hat deploy.
+
+29339
+06:29:30,230 --> 06:29:32,270
+Actually, before we even do
+that, if we do yarn, hard hat
+
+29340
+06:29:32,270 --> 06:29:35,630
+dash dash help, you'll see,
+since we imported hard hat
+
+29341
+06:29:35,630 --> 06:29:39,950
+deploy up excuse me, we need to
+add this to our config. First in
+
+29342
+06:29:39,950 --> 06:29:44,840
+our config, we're gonna need to
+do top imports, hard hat deploy
+
+29343
+06:29:45,140 --> 06:29:49,610
+top Roscoe need to import at
+nomic labs slash hard hat
+
+29344
+06:29:49,640 --> 06:29:53,840
+ethers, we're also going to need
+to import at type chain slash
+
+29345
+06:29:53,840 --> 06:29:56,660
+hard hat. And then we'll leave
+it there for now. We'll have to
+
+29346
+06:29:56,660 --> 06:29:59,570
+import more stuff in a second
+but literally like that. Now, if
+
+29347
+06:29:59,570 --> 06:30:03,230
+we do yarn hard hat that should
+help we should see a new task in
+
+29348
+06:30:03,230 --> 06:30:06,380
+here. And we do we actually see
+a ton of new tasks right? Filled
+
+29349
+06:30:06,380 --> 06:30:10,370
+with tasks, check clean compile,
+console deployed. And this is
+
+29350
+06:30:10,370 --> 06:30:13,010
+the new task that we have that
+actually deploys all of our
+
+29351
+06:30:13,010 --> 06:30:16,010
+contracts, anything that's in
+this deploy folder, our head
+
+29352
+06:30:16,010 --> 06:30:19,250
+will go ahead and run right now
+in our deploy folder. All we
+
+29353
+06:30:19,250 --> 06:30:23,150
+have is this console dot log
+Hello. So if we run yarn, or hit
+
+29354
+06:30:23,150 --> 06:30:26,720
+Deploy, we should See, it just
+prints out hello. It'll spin up
+
+29355
+06:30:26,720 --> 06:30:29,420
+a new blockchain background,
+while all of our projects and
+
+29356
+06:30:29,420 --> 06:30:33,020
+everything, do some type type
+chain stuff, and it says you'll
+
+29357
+06:30:33,020 --> 06:30:36,170
+see this a lot deploy script dot
+func is not a function. And
+
+29358
+06:30:36,170 --> 06:30:38,930
+that's because we actually need
+to export this now. So we'll do
+
+29359
+06:30:38,930 --> 06:30:44,060
+export default, deploy
+governance token. That's why
+
+29360
+06:30:44,060 --> 06:30:46,850
+it's getting mad at us. Now
+we'll run yarn had her hard hat
+
+29361
+06:30:46,850 --> 06:30:50,690
+deploy. And boom, we say hello.
+So this is how we can actually
+
+29362
+06:30:50,690 --> 06:30:53,990
+deploy all of our scripts. And
+we can run everything that's in
+
+29363
+06:30:53,990 --> 06:30:57,350
+this deploy folder in one go,
+which is really helpful. So
+
+29364
+06:30:57,350 --> 06:31:00,230
+let's go ahead and deploy our
+governance token first. And this
+
+29365
+06:31:00,230 --> 06:31:02,870
+will get a lot faster as we go
+along. Don't worry, so delete
+
+29366
+06:31:02,870 --> 06:31:05,570
+this. And first we're gonna do
+it, we're gonna say const. We
+
+29367
+06:31:05,570 --> 06:31:08,840
+need an account to deploy this
+first. So we'll say const, get
+
+29368
+06:31:08,840 --> 06:31:13,790
+named accounts, deployments, and
+network equals HRA. And this is
+
+29369
+06:31:13,790 --> 06:31:15,680
+going to be a little bit more
+advanced. This is hard stuff.
+
+29370
+06:31:15,680 --> 06:31:18,410
+This is this is the slick stuff
+we're doing here, we're getting
+
+29371
+06:31:18,410 --> 06:31:21,680
+these from our hard hat runtime
+environment, which is being
+
+29372
+06:31:21,680 --> 06:31:25,070
+updated from hard hat deploy. So
+get named accounts is way for us
+
+29373
+06:31:25,070 --> 06:31:29,120
+to actually import accounts from
+our hard hat config, right into
+
+29374
+06:31:29,120 --> 06:31:31,640
+our deploy script. So we're
+gonna go to our hard hat config.
+
+29375
+06:31:31,820 --> 06:31:34,190
+And we're gonna create a new
+config that's a little bit nicer
+
+29376
+06:31:34,190 --> 06:31:37,190
+than this. So first, we need to
+import the hard hat config type.
+
+29377
+06:31:37,220 --> 06:31:39,680
+Since we're using type scripts,
+we're going to import hard hat
+
+29378
+06:31:39,710 --> 06:31:43,670
+user config from hard hat slash
+config. And we're going to
+
+29379
+06:31:43,670 --> 06:31:46,970
+create a config. So I'm just
+gonna comment this out. For now
+
+29380
+06:31:47,000 --> 06:31:50,570
+we're gonna say const. Config,
+it's gonna be type hard hat user
+
+29381
+06:31:50,570 --> 06:31:53,660
+config. Equals, and this is
+where we can add a whole bunch
+
+29382
+06:31:53,660 --> 06:31:56,930
+of stuff. So let's say our
+default network is going to be
+
+29383
+06:31:56,930 --> 06:32:00,500
+hard hat, which is kind of our
+local fake blockchain. And then
+
+29384
+06:32:00,500 --> 06:32:05,810
+we're gonna say solidity is
+zero, point 8.8, then we're
+
+29385
+06:32:05,810 --> 06:32:08,480
+going to do this thing called
+named accounts, which is what we
+
+29386
+06:32:08,480 --> 06:32:11,120
+came here in the first place
+for. So this is just a list of
+
+29387
+06:32:11,120 --> 06:32:14,240
+accounts that we can use. So for
+accounts, we'll say Deployer,
+
+29388
+06:32:14,450 --> 06:32:17,120
+this will be the name of our
+account that does all the
+
+29389
+06:32:17,120 --> 06:32:21,860
+deploying, and we'll just say,
+default, is going to be zero. So
+
+29390
+06:32:21,860 --> 06:32:26,420
+whenever we run an any chain,
+our zero with account is going
+
+29391
+06:32:26,420 --> 06:32:29,810
+to be named Deployer. What other
+thing that we need to do is we
+
+29392
+06:32:29,810 --> 06:32:32,270
+need to add our networks here.
+And there's actually two
+
+29393
+06:32:32,270 --> 06:32:33,770
+networks that we're going to
+have, we're gonna have a hard
+
+29394
+06:32:33,770 --> 06:32:39,440
+hat with a chain ID of 313337.
+And we're also going to have
+
+29395
+06:32:39,470 --> 06:32:44,600
+local hosts of chain ID 31337.
+Now, these look like they're
+
+29396
+06:32:44,600 --> 06:32:48,860
+pretty much the same. And I
+understand that, but they're
+
+29397
+06:32:48,860 --> 06:32:51,410
+not. And you'll understand why
+in a second, but we need them
+
+29398
+06:32:51,410 --> 06:32:55,550
+for now. Just to tell Hardhead
+hey, here are the development
+
+29399
+06:32:55,670 --> 06:32:59,060
+fake blockchains that we're
+working with? Okay. So this is
+
+29400
+06:32:59,060 --> 06:33:02,120
+kind of our basic setup here.
+Okay. I know that was kind of a
+
+29401
+06:33:02,120 --> 06:33:04,880
+lot. But now that we have get
+named accounts, we have network,
+
+29402
+06:33:04,880 --> 06:33:06,950
+right? Because anytime you
+deploy something, it's going to
+
+29403
+06:33:06,950 --> 06:33:10,520
+be on a network. And when we
+deploy something, if you run
+
+29404
+06:33:11,090 --> 06:33:14,450
+yarn, hard hat node, what hard
+hat is going to do, it's going
+
+29405
+06:33:14,450 --> 06:33:17,150
+to spin up a fake blockchain in
+the background. Oh, it's gonna
+
+29406
+06:33:17,150 --> 06:33:18,470
+be mad at me for a second. Oh,
+
+29407
+06:33:18,500 --> 06:33:22,580
+I forgot to add export, default
+config, right, we need to export
+
+29408
+06:33:22,580 --> 06:33:26,090
+the config. Hell hard hat that
+we're using this version of
+
+29409
+06:33:26,090 --> 06:33:29,090
+sling. Now if you're on a hard
+hat node, you'll see why we
+
+29410
+06:33:29,090 --> 06:33:31,970
+added these two networks up here
+hard hat on localhost, we
+
+29411
+06:33:31,970 --> 06:33:34,250
+actually get spun up our own
+fake blockchain, we get
+
+29412
+06:33:34,280 --> 06:33:37,340
+accounts, we get private keys,
+we get everything right. This is
+
+29413
+06:33:37,340 --> 06:33:41,510
+a hard hat Node running in this
+terminal, right? When you run
+
+29414
+06:33:41,510 --> 06:33:44,870
+hard hat node, oddly enough,
+it's actually the local host
+
+29415
+06:33:44,900 --> 06:33:47,210
+network. It's not the Hard Hat
+Network. When using hard hat
+
+29416
+06:33:47,210 --> 06:33:50,300
+deploy, it's gonna be the local
+host network. Or excuse me, when
+
+29417
+06:33:50,300 --> 06:33:52,520
+you use hard hat node, it's
+actually going to be the local
+
+29418
+06:33:52,520 --> 06:33:55,130
+host network, not the Hard Hat
+Network. The Hard Hat Network is
+
+29419
+06:33:55,130 --> 06:33:58,490
+what it uses when it runs tests.
+localhost is when you run this
+
+29420
+06:33:58,490 --> 06:34:02,150
+hard hat node and have this kind
+of fake blockchain running in
+
+29421
+06:34:02,150 --> 06:34:05,180
+your terminal. So that's what
+the localhost is. Cool. Well,
+
+29422
+06:34:05,180 --> 06:34:08,690
+Ctrl C will kill that. Alright,
+great. So now stuff is actually
+
+29423
+06:34:08,690 --> 06:34:11,120
+working. So get them to count
+deployments is going to be a
+
+29424
+06:34:11,120 --> 06:34:12,860
+whole bunch of stuff from
+deployments, you'll see in a
+
+29425
+06:34:12,860 --> 06:34:14,870
+second and network is the
+network that we're on. Okay,
+
+29426
+06:34:14,870 --> 06:34:19,730
+great. So now we're gonna grab
+const deploy log equals
+
+29427
+06:34:19,730 --> 06:34:22,640
+deployments, this deployments
+object comes with this deploy
+
+29428
+06:34:22,640 --> 06:34:25,250
+function. And this log function,
+this log function is kind of
+
+29429
+06:34:25,250 --> 06:34:30,110
+nice for doing logging. And then
+we're gonna grab const, employer
+
+29430
+06:34:30,560 --> 06:34:35,630
+equals await, get named
+accounts. So we're grabbing from
+
+29431
+06:34:35,630 --> 06:34:40,760
+our config, this deployer
+account, right? And it's always
+
+29432
+06:34:40,760 --> 06:34:44,090
+going to be the zero with index.
+So it's defaulted to the zero
+
+29433
+06:34:44,180 --> 06:34:47,270
+index for whatever accounts that
+were with. Great. So we now have
+
+29434
+06:34:47,420 --> 06:34:49,760
+an account to deploy stuff from
+we have a deploy function, we
+
+29435
+06:34:49,760 --> 06:34:52,430
+have all this stuff, we're
+looking pretty good. Cool. So
+
+29436
+06:34:52,430 --> 06:34:58,130
+sometimes they'll do like a log,
+flying governance token, dot,
+
+29437
+06:34:58,250 --> 06:35:03,320
+and we'll say const governance
+token equals await, deploy, and
+
+29438
+06:35:03,320 --> 06:35:06,170
+then the name of the contract
+which is governance token,
+
+29439
+06:35:06,410 --> 06:35:08,810
+comma, and these are all the
+parameters that we're going to
+
+29440
+06:35:08,810 --> 06:35:13,190
+pass to it. So we're gonna say
+from deployer doesn't take any
+
+29441
+06:35:13,190 --> 06:35:16,790
+arguments. So args is just going
+to be blank. We're going to do
+
+29442
+06:35:17,030 --> 06:35:20,600
+log to be true so we'll get some
+logs printed out for us. And
+
+29443
+06:35:20,600 --> 06:35:24,050
+then I have this wait
+confirmations attribute set in
+
+29444
+06:35:24,050 --> 06:35:27,050
+GitHub repo. For now we're going
+to ignore this. But if you
+
+29445
+06:35:27,050 --> 06:35:29,930
+follow along with my repo and
+you want to auto verify stuff,
+
+29446
+06:35:29,960 --> 06:35:31,880
+this is something that you're
+going to want to use. So you
+
+29447
+06:35:31,880 --> 06:35:35,300
+need to wait some amount of
+blocks for this contract to be
+
+29448
+06:35:35,300 --> 06:35:38,120
+deployed before you can actually
+go ahead and verify it, right.
+
+29449
+06:35:38,120 --> 06:35:40,850
+Because if you're using ether
+scan or something, you're gonna
+
+29450
+06:35:40,850 --> 06:35:43,010
+need to wait like, yeah, you're
+gonna need to wait a few
+
+29451
+06:35:43,010 --> 06:35:45,290
+minutes. So check out my GitHub
+repo for this wait confirmation
+
+29452
+06:35:45,290 --> 06:35:48,290
+stuff, I'm just going to ignore
+it for now. Additionally, in my
+
+29453
+06:35:48,290 --> 06:35:51,560
+GitHub repo, I have this verify
+function, where we check to see
+
+29454
+06:35:51,560 --> 06:35:54,680
+if it's on a development chain.
+And if it is, we don't verify
+
+29455
+06:35:54,680 --> 06:35:56,840
+it. But if it's on like ether
+scan or something, we go ahead
+
+29456
+06:35:56,840 --> 06:35:59,240
+and verify it. So be sure to
+check the GitHub repo to learn
+
+29457
+06:35:59,240 --> 06:36:02,330
+how to just auto verify without
+having to do anything. Now if we
+
+29458
+06:36:02,330 --> 06:36:07,340
+just do this part. And then we
+can even do Floyd, governance
+
+29459
+06:36:07,370 --> 06:36:15,410
+token to address governance
+token dot address. And we'll do
+
+29460
+06:36:16,040 --> 06:36:24,470
+yarn hardhat. Deploy. Boom. So
+we spin up on a fake Hard Hat
+
+29461
+06:36:24,470 --> 06:36:27,620
+Network, we do deploy governance
+token to address boom. And this
+
+29462
+06:36:27,620 --> 06:36:30,950
+is how we deploy a fake has
+deployed this to our own little
+
+29463
+06:36:30,950 --> 06:36:34,310
+network here. Great. So this
+tokens been deployed, we have
+
+29464
+06:36:34,310 --> 06:36:37,040
+our deploy script. Yeah, zoom
+out a little bit. Let's zoom out
+
+29465
+06:36:37,040 --> 06:36:39,200
+a little bit. Great. That's the
+whole thing. Now we're going to
+
+29466
+06:36:39,200 --> 06:36:41,300
+add one more thing here, we're
+going to add something called
+
+29467
+06:36:41,480 --> 06:36:44,660
+delegate function. Now, when you
+actually deploy this contract,
+
+29468
+06:36:44,690 --> 06:36:47,960
+nobody has voting power yet. The
+reason is, because nobody has
+
+29469
+06:36:47,990 --> 06:36:51,830
+the token delegated to them, we
+want to delegate this token to
+
+29470
+06:36:51,830 --> 06:36:53,930
+our Deployer. Right, so we're
+going to call this delegate
+
+29471
+06:36:53,930 --> 06:36:56,510
+function. So we're going to
+create a new function called
+
+29472
+06:36:56,510 --> 06:37:01,100
+const. delegate. And it's going
+to be an async function. It's
+
+29473
+06:37:01,100 --> 06:37:05,450
+going to take a governance token
+address as a string, it's going
+
+29474
+06:37:05,450 --> 06:37:08,630
+to take a delegated account,
+also as a string, so we're
+
+29475
+06:37:08,630 --> 06:37:14,180
+racing and say, who do we want?
+Delegate? Who do we want to be
+
+29476
+06:37:14,180 --> 06:37:17,960
+able to vote with our token?
+Okay, so we have created this
+
+29477
+06:37:17,960 --> 06:37:20,720
+async function called delegate.
+And how do we do this? Well, we
+
+29478
+06:37:20,720 --> 06:37:29,240
+say Kant's over its token equals
+token equals await ethers dot
+
+29479
+06:37:29,450 --> 06:37:32,000
+get contract at.
+
+29480
+06:37:33,260 --> 06:37:36,530
+And probably for two ethers for
+us from hardheaded Otto did
+
+29481
+06:37:36,530 --> 06:37:38,780
+that, which is great. That's
+what we want. Once it's like
+
+29482
+06:37:38,810 --> 06:37:43,370
+ethers. Thank you vs. Code away.
+Ether is like a contract at. And
+
+29483
+06:37:43,370 --> 06:37:47,990
+we're going to say we want our
+governance token, which is at
+
+29484
+06:37:47,990 --> 06:37:53,000
+contract, governance token
+address. And I have auto format
+
+29485
+06:37:53,000 --> 06:37:55,610
+unsaved, which is why it keeps
+formatting like that. This
+
+29486
+06:37:55,610 --> 06:37:58,820
+should be delegated account.
+Okay, cool. We have our
+
+29487
+06:37:58,820 --> 06:38:02,720
+governance token contract. Now
+we can do const TX or
+
+29488
+06:38:02,720 --> 06:38:06,950
+transaction equals await,
+governance token dot delegate
+
+29489
+06:38:07,070 --> 06:38:11,420
+delegate this delegated account
+here. And then we can do a wait,
+
+29490
+06:38:11,570 --> 06:38:16,160
+we'll wait for this transaction
+to be confirmed by one block.
+
+29491
+06:38:16,580 --> 06:38:21,560
+And then we'll just do console
+dot log checkpoints, wait,
+
+29492
+06:38:21,830 --> 06:38:28,280
+governance token dot num
+checkpoints delegated account?
+
+29493
+06:38:28,610 --> 06:38:31,520
+So what is this doing? So we
+have this num checkpoints
+
+29494
+06:38:31,520 --> 06:38:35,630
+function which we can go check
+to see on that ERC 20 token what
+
+29495
+06:38:35,630 --> 06:38:37,640
+this is actually doing. But
+basically what this whole thing
+
+29496
+06:38:37,640 --> 06:38:40,130
+is doing, we have this delegate
+function that we haven't used
+
+29497
+06:38:40,130 --> 06:38:43,220
+it. But when somebody calls us,
+we're saying, Hey, you can use
+
+29498
+06:38:43,220 --> 06:38:45,800
+my vote, take my votes and vote
+however you want. And that's
+
+29499
+06:38:45,800 --> 06:38:48,710
+what these this delegate does.
+Now, if we look at this token,
+
+29500
+06:38:48,890 --> 06:38:53,480
+here, see 20 extensions, your
+see 20 votes, we look at number
+
+29501
+06:38:53,510 --> 06:38:57,470
+checkpoints, we can see how many
+checkpoints that account
+
+29502
+06:38:57,470 --> 06:39:00,830
+actually has reason this is so
+important is because once again,
+
+29503
+06:39:00,830 --> 06:39:03,230
+like I was saying when people do
+a vote, they do it based off
+
+29504
+06:39:03,230 --> 06:39:06,410
+some checkpoints. And anytime
+you transfer a token, or
+
+29505
+06:39:06,410 --> 06:39:09,770
+delegate a token, basically call
+this function move voting power,
+
+29506
+06:39:09,860 --> 06:39:12,200
+which happens with the back end,
+which writes the checkpoint and
+
+29507
+06:39:12,200 --> 06:39:16,610
+says, Hey, at checkpoint x,
+here's what everybody has for
+
+29508
+06:39:16,610 --> 06:39:19,370
+voting powers. And that's what
+these are so important. And I
+
+29509
+06:39:19,370 --> 06:39:21,890
+know I said before, it's every
+block, but it's actually just
+
+29510
+06:39:21,890 --> 06:39:24,410
+every checkpoint, whenever these
+checkpoints are updated, that's
+
+29511
+06:39:24,410 --> 06:39:26,690
+gonna be a lot cheaper on gas
+than if we just did every single
+
+29512
+06:39:26,690 --> 06:39:30,830
+block, right? That'd be kind of
+insane. So the checkpoint for
+
+29513
+06:39:30,830 --> 06:39:33,560
+this governance checkpoint, and
+we'll see what that actually is
+
+29514
+06:39:33,560 --> 06:39:37,790
+in just a second. So we'll even
+do a wait, delegate, governance
+
+29515
+06:39:37,790 --> 06:39:44,570
+token dot address, and Deployer.
+And we'll say log delegated.
+
+29516
+06:39:44,990 --> 06:39:47,180
+Now, when we're on this
+function, John Howard hit
+
+29517
+06:39:47,180 --> 06:39:51,800
+Deploy. We have one checkpoint,
+which makes sense, right?
+
+29518
+06:39:51,830 --> 06:39:55,280
+Because this was just deployed,
+it was just delegated. This
+
+29519
+06:39:55,280 --> 06:39:58,130
+address has one checkpoint.
+That's it. And the reason I
+
+29520
+06:39:58,130 --> 06:40:00,860
+checked for this is because if
+you see zero checkpoints here,
+
+29521
+06:40:00,860 --> 06:40:03,410
+it means you haven't delegated
+correctly. So be sure to check
+
+29522
+06:40:03,410 --> 06:40:06,440
+for checkpoints. But that's it.
+We have our deployed governance
+
+29523
+06:40:06,440 --> 06:40:09,890
+token contract done. Bravo.
+Let's move on to the next one.
+
+29524
+06:40:10,010 --> 06:40:12,890
+So what do we want to do after
+we deploy our governance token?
+
+29525
+06:40:13,220 --> 06:40:17,570
+Well, let's deploy that timelock
+or timelock.ts. And we're going
+
+29526
+06:40:17,570 --> 06:40:20,030
+to copy a lot of this stuff over
+from here, so I'm actually going
+
+29527
+06:40:20,030 --> 06:40:23,150
+to Oh, and then sometimes you'll
+get some weird linting errors
+
+29528
+06:40:23,150 --> 06:40:26,900
+here. I just do det TS ignore
+there. And sometimes you'll get
+
+29529
+06:40:26,900 --> 06:40:29,810
+it here too. Oh, actually, we
+don't even need network. Okay,
+
+29530
+06:40:29,810 --> 06:40:32,240
+cool. Yeah, you don't even need
+network loops. Sometimes we get
+
+29531
+06:40:32,240 --> 06:40:35,060
+some weird linting errors.
+Sometimes Vyas code has a hard
+
+29532
+06:40:35,060 --> 06:40:38,930
+time telling understanding like
+this, this overwrite thing that
+
+29533
+06:40:38,930 --> 06:40:41,870
+we did. So just run that TS
+ignore if if it gives you some,
+
+29534
+06:40:42,170 --> 06:40:45,500
+some engineers, anyways, yes, we
+have this Oh, to deploy time
+
+29535
+06:40:45,500 --> 06:40:47,960
+lock here, we're going to deploy
+our time lock contract. And
+
+29536
+06:40:47,960 --> 06:40:49,790
+we're going to borrow a lot of
+the things that we did from
+
+29537
+06:40:49,790 --> 06:40:52,310
+here, so I'm just going to come
+back here are actually going to
+
+29538
+06:40:52,700 --> 06:40:56,090
+copy paste these two top bits.
+Again, we're gonna do const
+
+29539
+06:40:56,120 --> 06:40:59,810
+deploy timelock is going to be a
+deploy function, it's going to
+
+29540
+06:40:59,810 --> 06:41:04,160
+be an async function that takes
+the heart at runtime environment
+
+29541
+06:41:04,340 --> 06:41:08,180
+as a parameter, and cool, nearly
+exactly the same sorry. And then
+
+29542
+06:41:08,180 --> 06:41:10,910
+we're going to grab these first
+three lines, or first four
+
+29543
+06:41:10,910 --> 06:41:14,120
+lines, I guess, pesos, then
+we're going to be getting those
+
+29544
+06:41:14,150 --> 06:41:16,460
+exact same things here. And
+we're going to be doing nearly
+
+29545
+06:41:16,460 --> 06:41:20,840
+the exact same thing. So we'll
+do log deploying. Time Lock,
+
+29546
+06:41:21,140 --> 06:41:27,320
+point time lock, will do const.
+Mark equals await, deploy,
+
+29547
+06:41:28,280 --> 06:41:31,430
+unlock. We'll add some
+parameters in here, we'll say
+
+29548
+06:41:31,430 --> 06:41:36,230
+from Deployer. Now does this
+take some arguments? It
+
+29549
+06:41:36,230 --> 06:41:39,470
+absolutely does. Right, we can
+take a look at the Time Lock,
+
+29550
+06:41:39,770 --> 06:41:43,040
+Min delay proposers and
+executors. So what do we want
+
+29551
+06:41:43,040 --> 06:41:46,190
+our min delay to be? Well, this
+is a value that we're actually
+
+29552
+06:41:46,190 --> 06:41:49,760
+going to use a lot. So what I
+usually like to do is I create a
+
+29553
+06:41:49,760 --> 06:41:56,510
+new file called helper. hardhats
+config.ts. And right at the top,
+
+29554
+06:41:56,510 --> 06:42:01,310
+I'll say Export const min.
+Delay, and I'll have this delay
+
+29555
+06:42:01,310 --> 06:42:04,040
+be whatever I want it to be. So
+let's just go ahead and do 3600,
+
+29556
+06:42:04,040 --> 06:42:06,050
+which is going to be
+approximately an hour, right,
+
+29557
+06:42:06,050 --> 06:42:08,900
+you gotta wait this many
+seconds, I think that's an hour.
+
+29558
+06:42:09,200 --> 06:42:12,920
+Without the old calculator.
+There's 60 seconds, in 60
+
+29559
+06:42:12,920 --> 06:42:16,730
+minutes. Great. That's gonna be
+one hour. So wait 30 minutes.
+
+29560
+06:42:16,970 --> 06:42:18,890
+And we're gonna go ahead and
+import that here. We'll say
+
+29561
+06:42:18,920 --> 06:42:23,120
+import, Min delay. Wow,
+autocomplete for being great.
+
+29562
+06:42:23,330 --> 06:42:27,200
+From helper from, you know, it's
+down directory, helper Hardhead
+
+29563
+06:42:27,200 --> 06:42:30,470
+config. And that's gonna be our
+first argument here. Our second
+
+29564
+06:42:30,470 --> 06:42:32,510
+argument is going to be a list
+of proposals. Now we're going to
+
+29565
+06:42:32,510 --> 06:42:35,870
+leave it blank for now. And also
+the list of executors we're also
+
+29566
+06:42:35,870 --> 06:42:38,300
+going to leave it blank for now,
+we're going to update this in a
+
+29567
+06:42:38,300 --> 06:42:41,840
+minute. And you'll see why once
+we get there, we'll do log true.
+
+29568
+06:42:42,350 --> 06:42:44,600
+This also has a wait
+confirmations thing in my
+
+29569
+06:42:44,600 --> 06:42:47,420
+GitHub, but we're going to skip
+that for now. It also has an
+
+29570
+06:42:47,420 --> 06:42:50,540
+auto verify, we're also gonna
+skip that for now. Then we just
+
+29571
+06:42:50,540 --> 06:42:55,340
+need to export default, deploy
+timelock. And boom, we should be
+
+29572
+06:42:55,340 --> 06:42:59,360
+good. So let's try to run this
+on hard hat deploying. So now
+
+29573
+06:42:59,360 --> 06:43:03,650
+this should run both of these
+great deployed governance token
+
+29574
+06:43:03,680 --> 06:43:04,820
+deployed timelock.
+
+29575
+06:43:04,880 --> 06:43:08,330
+Perfect, we are cruising now
+what we want to deploy that
+
+29576
+06:43:08,360 --> 06:43:10,640
+governance contract now. So
+let's go ahead and do that.
+
+29577
+06:43:10,850 --> 06:43:18,260
+We're gonna do Oh, three LOI.
+Gov, nor contract.ts. And you
+
+29578
+06:43:18,260 --> 06:43:21,260
+guessed it, this is going to
+look pretty similar to what we
+
+29579
+06:43:21,260 --> 06:43:24,560
+just did. Right. So in our
+deployed time lock, let's go
+
+29580
+06:43:24,560 --> 06:43:27,260
+ahead and just grab those top
+two things. We'll paste it in
+
+29581
+06:43:27,260 --> 06:43:33,020
+here. We'll do const deploy,
+govern or contract, there's
+
+29582
+06:43:33,020 --> 06:43:35,750
+going to be an apply function,
+it's going to be an async
+
+29583
+06:43:35,750 --> 06:43:40,430
+function, taking a part at
+runtime environment, save and
+
+29584
+06:43:40,430 --> 06:43:43,820
+close this for now. And we can
+even go back and grab these
+
+29585
+06:43:43,850 --> 06:43:46,850
+three lines from our Oh, to
+deploy time lock, paste that
+
+29586
+06:43:46,850 --> 06:43:48,590
+right in here, because we're
+going to need to get the exact
+
+29587
+06:43:48,590 --> 06:43:51,590
+same things. And additionally,
+for this, we're going to need to
+
+29588
+06:43:51,590 --> 06:43:55,100
+get the governance token and the
+Time Lock contract. So we'll do
+
+29589
+06:43:55,100 --> 06:44:01,010
+const governance, token equals
+await. Get which actually, we
+
+29590
+06:44:01,010 --> 06:44:03,710
+have this, this get function
+that comes from these
+
+29591
+06:44:03,710 --> 06:44:06,920
+deployments, which literally
+just goes out and gets these
+
+29592
+06:44:06,920 --> 06:44:10,850
+deployments. So we'll say get
+Gover Nance token. And then we
+
+29593
+06:44:10,850 --> 06:44:17,900
+also need to get the Time Lock.
+So await, get m lock. And we
+
+29594
+06:44:17,900 --> 06:44:22,640
+need these to pass as parameters
+for our governor contract.
+
+29595
+06:44:22,850 --> 06:44:27,080
+Right? Because if we open up the
+governor contract that soul, we
+
+29596
+06:44:27,080 --> 06:44:29,690
+look at the constructor, it
+takes the token, the Time Lock
+
+29597
+06:44:29,720 --> 06:44:33,050
+voting, delay voting period and
+quorum percentage as input
+
+29598
+06:44:33,050 --> 06:44:39,290
+parameters. So we'll do a quick
+log deploying go burn nor ello.
+
+29599
+06:44:39,440 --> 06:44:44,030
+And they will do const govern
+nor contract equals await,
+
+29600
+06:44:44,300 --> 06:44:48,620
+deploy, and will deploy the
+govern nor contract I'm not sure
+
+29601
+06:44:48,620 --> 06:44:51,440
+if I'm spelling this right
+always, but that's fine. And
+
+29602
+06:44:51,440 --> 06:44:54,080
+we'll do the parameters once
+again. So it's gonna be from
+
+29603
+06:44:54,650 --> 06:44:58,610
+Deployer. args are going to be
+this list of args. What's the
+
+29604
+06:44:58,610 --> 06:45:02,540
+first thing that it needs? It
+needs the token first and the
+
+29605
+06:45:02,540 --> 06:45:06,500
+Time Lock. So we'll do
+governance token dot address,
+
+29606
+06:45:06,740 --> 06:45:09,650
+then it's going to need the Time
+Lock that address. And it's
+
+29607
+06:45:09,650 --> 06:45:13,700
+going to need a vote on voting
+delay voting period and quorum
+
+29608
+06:45:13,700 --> 06:45:17,240
+percentage. So these are also
+values that we're going to make
+
+29609
+06:45:17,240 --> 06:45:20,750
+a lot. So let's open back up
+that helper Hardhead config, and
+
+29610
+06:45:20,750 --> 06:45:24,380
+let's create those as well. So
+we'll say Export const just
+
+29611
+06:45:24,620 --> 06:45:28,580
+voting period. And we'll say
+this is going to be five blocks,
+
+29612
+06:45:28,850 --> 06:45:32,870
+we'll do export const voting
+delay, this is going to be just
+
+29613
+06:45:32,870 --> 06:45:36,110
+one block, which I know is
+really quick. And then we're
+
+29614
+06:45:36,110 --> 06:45:42,050
+gonna need export const Orem
+percentage, which we're gonna
+
+29615
+06:45:42,050 --> 06:45:47,330
+say is four 4% of voters always
+need to be voting. Excuse me, 4%
+
+29616
+06:45:47,330 --> 06:45:51,140
+of voters need to have voted for
+a vote to pass. Great. So we're
+
+29617
+06:45:51,140 --> 06:45:55,370
+going to do voting delay voting
+percentage quorum percentage. So
+
+29618
+06:45:55,370 --> 06:46:03,860
+we'll import those so to import
+voting delay voting period, or
+
+29619
+06:46:05,030 --> 06:46:08,210
+quorum percentage from helper
+Hardhead config. And now that we
+
+29620
+06:46:08,210 --> 06:46:12,440
+have those delay period
+percentage, we can just do kind
+
+29621
+06:46:12,440 --> 06:46:16,670
+of a voting delay, voting
+period, farm percentage, and
+
+29622
+06:46:16,670 --> 06:46:20,810
+then we'll say log is true.
+Again, this one as well. It has
+
+29623
+06:46:20,810 --> 06:46:23,330
+a wait confirmations and auto
+verification that we're going to
+
+29624
+06:46:23,330 --> 06:46:27,050
+totally ignore. And then we'll
+export default, blood Governor
+
+29625
+06:46:27,050 --> 06:46:30,230
+contract. Oh, Carrie, we're
+getting spicy. Let's just make
+
+29626
+06:46:30,230 --> 06:46:33,950
+sure this works. Yarn hardhat
+deploy. We should see three
+
+29627
+06:46:33,950 --> 06:46:37,700
+contracts deployed here. I think
+to compile governance, token
+
+29628
+06:46:37,700 --> 06:46:40,640
+deployed timelock deployed
+governance contract deployed.
+
+29629
+06:46:40,640 --> 06:46:45,320
+Let's go. Alright. Now, we're
+not done yet. We have two more
+
+29630
+06:46:45,320 --> 06:46:47,870
+deploy scripts to do. The first
+one, we're going to call setup
+
+29631
+06:46:47,870 --> 06:46:51,530
+governance contracts. Okay. And
+this one's really important. The
+
+29632
+06:46:51,530 --> 06:46:55,730
+right now our time lock contract
+has no proposers and no
+
+29633
+06:46:55,730 --> 06:46:59,120
+executors. Right. So we want to
+change that we want to only
+
+29634
+06:46:59,120 --> 06:47:02,810
+allow for the proposer to be the
+governor, the governor contract
+
+29635
+06:47:02,810 --> 06:47:05,390
+should be the only one that
+proposes things the Time Lock,
+
+29636
+06:47:05,420 --> 06:47:07,820
+and then anybody should be able
+to execute the way that this
+
+29637
+06:47:07,820 --> 06:47:10,460
+works. We say the governance
+contract proposes something to
+
+29638
+06:47:10,460 --> 06:47:13,760
+the Time Lock once it's in the
+Time Lock, and it waits that
+
+29639
+06:47:13,760 --> 06:47:17,780
+period. Anybody can go ahead and
+execute it. So Governor contract
+
+29640
+06:47:17,810 --> 06:47:20,660
+everybody votes and everything.
+Once a vote passes, Governor
+
+29641
+06:47:20,660 --> 06:47:23,900
+says hey, Time Lock, can you
+please propose this? Tom like
+
+29642
+06:47:23,900 --> 06:47:26,510
+goes yeah, sure. But we got to
+wait, this minimum delay, once
+
+29643
+06:47:26,510 --> 06:47:29,120
+it's been in delay happens,
+anybody can execute it. Now this
+
+29644
+06:47:29,120 --> 06:47:30,980
+would be really cool to do an
+integration with chain link
+
+29645
+06:47:30,980 --> 06:47:33,140
+keepers, by the way, for the
+chain link keepers to
+
+29646
+06:47:33,140 --> 06:47:36,410
+automatically execute. And I
+should build the next anyways.
+
+29647
+06:47:36,440 --> 06:47:39,230
+So we have to set this up so
+that these work as such, so
+
+29648
+06:47:39,230 --> 06:47:42,320
+we're gonna create a new deploy
+thing called Oh, four, setup,
+
+29649
+06:47:42,350 --> 06:47:46,310
+governance contracts dot
+TypeScript. And this is going to
+
+29650
+06:47:46,310 --> 06:47:49,100
+be the code that does all the
+setting up. And this is gonna
+
+29651
+06:47:49,100 --> 06:47:51,560
+look really similar once again,
+to all of our other deploy
+
+29652
+06:47:51,560 --> 06:47:55,820
+functions. So we'll go head back
+from oh three, we'll paste these
+
+29653
+06:47:55,820 --> 06:47:59,840
+two top ones in here, of course,
+we're gonna do const setup
+
+29654
+06:47:59,840 --> 06:48:03,860
+contracts, is it going to be a
+deploy function, going to be an
+
+29655
+06:48:03,890 --> 06:48:08,150
+async function, it's going to
+take HRV art at runtime
+
+29656
+06:48:08,150 --> 06:48:11,570
+environment as parameters, and
+then that's the winner right
+
+29657
+06:48:11,570 --> 06:48:15,020
+there. Cool. And we're gonna be
+grabbing those same three from
+
+29658
+06:48:15,020 --> 06:48:17,990
+the top, as you can see, that
+gets a little bit easier,
+
+29659
+06:48:17,990 --> 06:48:20,360
+because it's kind of repetitive,
+right, we're gonna grab that bit
+
+29660
+06:48:20,360 --> 06:48:22,940
+right here. And now we're gonna
+get those contracts so that we
+
+29661
+06:48:22,940 --> 06:48:25,760
+can interact with them. And this
+is another reason why a hard hat
+
+29662
+06:48:25,760 --> 06:48:29,420
+deploy is so nice, because we
+can just do const timelock
+
+29663
+06:48:29,630 --> 06:48:33,410
+equals await ethers that get in
+the next let's go ahead and
+
+29664
+06:48:33,440 --> 06:48:37,640
+import ethers from hard hat
+imports. Ethers
+
+29665
+06:48:38,120 --> 06:48:44,060
+from Red Hat will even drop a
+little TS ignore here. Ethers
+
+29666
+06:48:44,060 --> 06:48:47,480
+dot get contract, we want that
+time lock contract. And we say
+
+29667
+06:48:47,480 --> 06:48:50,180
+we want to attach it to the
+Deployer. So whenever we call a
+
+29668
+06:48:50,180 --> 06:48:52,850
+function on it, it'll be the
+deployer calling that function
+
+29669
+06:48:52,970 --> 06:48:57,140
+and we want to do const Governor
+equals await ethers dot get
+
+29670
+06:48:57,140 --> 06:49:01,370
+contract, Governor contract,
+this is all going to be attached
+
+29671
+06:49:01,370 --> 06:49:05,600
+to the Deployer. Right. Now,
+we're gonna do log setting up
+
+29672
+06:49:05,600 --> 06:49:09,740
+roles. And we're going to set up
+the roles right, again, we're
+
+29673
+06:49:09,740 --> 06:49:12,980
+setting it up so that only the
+governor can send things to this
+
+29674
+06:49:12,980 --> 06:49:15,530
+time lock, because the Time Lock
+is going to be you can almost
+
+29675
+06:49:15,530 --> 06:49:17,960
+think of the Time Lock as like
+the president. Right. So
+
+29676
+06:49:17,960 --> 06:49:20,180
+everything goes to the Senate,
+the House representative, which
+
+29677
+06:49:20,180 --> 06:49:23,120
+is the governor and then the
+President just says yeah, sure.
+
+29678
+06:49:23,120 --> 06:49:26,150
+We just got to wait this minimum
+delay, but the President will be
+
+29679
+06:49:26,150 --> 06:49:27,890
+the one to actually execute
+everything which I'm not
+
+29680
+06:49:27,890 --> 06:49:30,620
+actually sure that's how it
+really works in in politics, but
+
+29681
+06:49:30,650 --> 06:49:33,590
+for for now, that's that's where
+we're protecting the president
+
+29682
+06:49:33,590 --> 06:49:36,770
+or the time like is the only one
+that can actually do anything
+
+29683
+06:49:36,770 --> 06:49:40,040
+here. So the way that this works
+is we're actually going to get
+
+29684
+06:49:40,070 --> 06:49:43,490
+the byte codes of different
+roles, right? So if you look at
+
+29685
+06:49:43,520 --> 06:49:49,190
+these time locks here, so we'll
+do ones up on contracts. And we
+
+29686
+06:49:49,190 --> 06:49:53,210
+go to the governance here. We go
+to Tama controller has these
+
+29687
+06:49:53,210 --> 06:49:57,680
+things called proposal roll,
+executor roll time, like admin,
+
+29688
+06:49:57,680 --> 06:50:01,700
+etc. And these are just hashes
+of these strings here. But these
+
+29689
+06:50:01,700 --> 06:50:05,240
+are these are bytes 32 saying,
+Hey, anybody who has this this
+
+29690
+06:50:05,240 --> 06:50:08,690
+byte 32 is a proposer, anybody
+who has this byte 32 is an
+
+29691
+06:50:08,690 --> 06:50:10,850
+executor. Anybody has this byte
+there and soon as time like
+
+29692
+06:50:10,850 --> 06:50:14,810
+admin, etc. Right now, our
+Deployer account is the time
+
+29693
+06:50:14,810 --> 06:50:17,480
+like admin, and that's bad. We
+don't want that we don't want
+
+29694
+06:50:17,630 --> 06:50:20,060
+anyone to be a time like admin,
+right? We don't want anyone to
+
+29695
+06:50:20,060 --> 06:50:23,870
+have power over this time lock.
+We don't want any centralized
+
+29696
+06:50:24,050 --> 06:50:26,570
+force here. So what we're going
+to do is we're going to const
+
+29697
+06:50:26,570 --> 06:50:30,890
+we're going to get those roles.
+proposer, proposer role, it's
+
+29698
+06:50:30,890 --> 06:50:35,780
+going to be a weight, unlock
+that row pole sir role. And if
+
+29699
+06:50:35,780 --> 06:50:38,210
+you're familiar with multi call,
+this would be a great time to do
+
+29700
+06:50:38,210 --> 06:50:44,180
+multi call and copy paste that
+whole line x EQ tour role at x
+
+29701
+06:50:44,180 --> 06:50:50,060
+EQ tour roll, we're gonna copy
+this whole line admin role. And
+
+29702
+06:50:50,060 --> 06:50:54,500
+this is going to be on lock
+admin role. So these are these
+
+29703
+06:50:54,530 --> 06:50:58,220
+three roles that we need to fix,
+right, and let's go ahead and
+
+29704
+06:50:58,220 --> 06:51:00,560
+fix them. So the first thing
+we're gonna need to do is we're
+
+29705
+06:51:00,560 --> 06:51:06,230
+gonna need to do const row poser
+dx equals await Time Lock dot
+
+29706
+06:51:06,230 --> 06:51:10,730
+grant roll, propose a roll to
+our governor dot address. So
+
+29707
+06:51:10,730 --> 06:51:14,120
+saying, okay, Governor, you're
+the only one who can actually do
+
+29708
+06:51:14,120 --> 06:51:17,570
+anything once you tell the Time
+Lock to do something. We'll wait
+
+29709
+06:51:17,660 --> 06:51:20,030
+for the Time Lock period to be
+over. And then we'll be done.
+
+29710
+06:51:20,360 --> 06:51:24,800
+And then we'll just do an await
+posit TX dot wait one block just
+
+29711
+06:51:24,800 --> 06:51:29,930
+to make sure. Now we're gonna do
+the const executor, TX equals
+
+29712
+06:51:29,960 --> 06:51:36,620
+await Time Lock dot grant roll
+executor role to nobody, we're
+
+29713
+06:51:36,620 --> 06:51:39,170
+going to execute this we're
+gonna give this to nobody, we're
+
+29714
+06:51:39,170 --> 06:51:41,810
+going to say address zero which
+is going to be something that
+
+29715
+06:51:41,810 --> 06:51:45,140
+we're going to want to add if we
+go to our helper or head config
+
+29716
+06:51:45,380 --> 06:51:51,500
+will say Export const address
+zero equals zero by you can just
+
+29717
+06:51:51,500 --> 06:51:53,720
+copy paste this if you want.
+There's a couple other ways you
+
+29718
+06:51:53,720 --> 06:51:56,900
+can do this with ethers as well.
+We're just gonna do like this. I
+
+29719
+06:51:56,900 --> 06:52:00,470
+like having my conflict this and
+then we just import it say
+
+29720
+06:52:00,500 --> 06:52:05,780
+import at zero from dot dot
+slash helper Harnett config. So
+
+29721
+06:52:05,780 --> 06:52:08,810
+we're giving the executor role
+to nobody, which means
+
+29722
+06:52:08,810 --> 06:52:12,530
+everybody. So once a proposers
+thing has gone through, anybody
+
+29723
+06:52:12,530 --> 06:52:16,850
+can execute it. So we'll say
+executor, TX That wait one wait
+
+29724
+06:52:16,850 --> 06:52:21,080
+a block. And then got one more
+to do here, we need to revoke
+
+29725
+06:52:21,080 --> 06:52:25,760
+role right now our Deployer
+count owns that time lock
+
+29726
+06:52:25,760 --> 06:52:28,310
+controller, right. And that's
+how we can actually do these
+
+29727
+06:52:28,310 --> 06:52:31,370
+transactions, we can actually
+grant role because our Deployer
+
+29728
+06:52:31,370 --> 06:52:34,550
+account owns it now that we've
+given everybody access. And
+
+29729
+06:52:34,550 --> 06:52:37,010
+given all the decentralized
+access we need, we want to
+
+29730
+06:52:37,010 --> 06:52:41,210
+revoke that role. So const
+revoke TX equals await. I'm
+
+29731
+06:52:41,210 --> 06:52:48,500
+locked up revoke role, admin
+role from Deployer will do Rotex
+
+29732
+06:52:48,500 --> 06:52:51,320
+that wait, now guess what
+anything that's um, like, wants
+
+29733
+06:52:51,320 --> 06:52:54,650
+to do has to go through
+governance, and nobody owns the
+
+29734
+06:52:54,650 --> 06:52:57,410
+time I controller, it's
+currently after this runs, it's
+
+29735
+06:52:57,410 --> 06:53:00,440
+impossible for anyone to do
+anything with the Time Lock
+
+29736
+06:53:00,680 --> 06:53:03,170
+without governance happening.
+And then of course, when the
+
+29737
+06:53:03,170 --> 06:53:07,850
+export default set of contracts,
+great. And then the last step
+
+29738
+06:53:07,880 --> 06:53:11,090
+that we need to do here is we
+need to deploy the contract that
+
+29739
+06:53:11,090 --> 06:53:14,810
+we actually want to govern over
+write that box contract, that
+
+29740
+06:53:14,810 --> 06:53:17,780
+real basic contract. So we're
+gonna create a new 105, deploy
+
+29741
+06:53:17,780 --> 06:53:21,500
+box.ts. And we're gonna do some
+of the same exact stuff we've
+
+29742
+06:53:21,500 --> 06:53:24,890
+done right, so we're gonna grab
+these two, these two here, paste
+
+29743
+06:53:24,890 --> 06:53:29,120
+it in, os deploy box is going to
+be a deploy function equals
+
+29744
+06:53:29,150 --> 06:53:33,590
+async function, Ah, sorry, hard
+hat runtime environment,
+
+29745
+06:53:34,070 --> 06:53:38,240
+we're gonna grab those first
+three lines, the TS ignore, just
+
+29746
+06:53:38,240 --> 06:53:41,720
+like that. And now we're going
+to deploy this box. So log,
+
+29747
+06:53:42,320 --> 06:53:46,850
+deploying bucks, and we're going
+to do const box equals await,
+
+29748
+06:53:47,090 --> 06:53:53,360
+deploy box, give us some values
+from our Deployer. args does
+
+29749
+06:53:53,360 --> 06:53:56,540
+this have any args so open a box
+dot soul, I don't see a
+
+29750
+06:53:56,540 --> 06:53:59,750
+constructor. And while this is
+the easiest contract out of all
+
+29751
+06:53:59,750 --> 06:54:02,750
+these though, no constructor,
+and then we'll just say log,
+
+29752
+06:54:03,050 --> 06:54:06,140
+it's going to be true. And
+again, if you want to check out
+
+29753
+06:54:06,140 --> 06:54:09,080
+my GitHub repo for that
+confirmations, but feel free to
+
+29754
+06:54:09,080 --> 06:54:13,760
+do so it's coming here. And
+right now, our deployer has
+
+29755
+06:54:13,760 --> 06:54:16,970
+actually deployed this right,
+not our time lock. So we want to
+
+29756
+06:54:16,970 --> 06:54:21,380
+give the boxes ownership over to
+our governance process. So now
+
+29757
+06:54:21,380 --> 06:54:24,260
+we're going to do say const
+timelock, is going to be a
+
+29758
+06:54:24,260 --> 06:54:28,340
+weight ethers dot get contract.
+The same thing as before.
+
+29759
+06:54:28,340 --> 06:54:33,560
+timelock. We're going to grab
+ethers from hardhat import
+
+29760
+06:54:33,650 --> 06:54:38,240
+ethers from hard hat. And we're
+gonna do a little TLS ignore,
+
+29761
+06:54:38,480 --> 06:54:42,320
+it's being finicky. And then
+we're going to transfer the
+
+29762
+06:54:42,320 --> 06:54:46,430
+ownership of our box to this
+time lock, okay, and now so this
+
+29763
+06:54:46,430 --> 06:54:49,400
+is actually what's known as a
+box deployment. So before we do
+
+29764
+06:54:49,400 --> 06:54:51,710
+that, we have to get the box
+contract. So this is a box
+
+29765
+06:54:51,710 --> 06:54:54,680
+deployment object, which doesn't
+have contract functions we want
+
+29766
+06:54:54,680 --> 06:54:58,640
+to get the box contract object
+so we to box or const box
+
+29767
+06:54:58,640 --> 06:55:06,110
+contract equals await ethers dot
+get contract at box and then
+
+29768
+06:55:06,110 --> 06:55:09,380
+we'll just do you know box that
+address. You could also do get
+
+29769
+06:55:09,380 --> 06:55:12,470
+contract. Actually both of these
+pretty much if you have the
+
+29770
+06:55:12,470 --> 06:55:15,230
+address, you can just do box
+that address. You could also do
+
+29771
+06:55:15,230 --> 06:55:17,840
+get contract here. Either one
+works now that we have the box
+
+29772
+06:55:17,840 --> 06:55:24,050
+contract, we do const transfer
+owner, dx equals await by
+
+29773
+06:55:24,050 --> 06:55:30,740
+contract dot transfer TX or
+schema dot transfer ownership to
+
+29774
+06:55:30,770 --> 06:55:36,110
+our timelock dot address, time
+walk dot address, then we just
+
+29775
+06:55:36,110 --> 06:55:43,790
+do a weight transfer ownership
+TX dot weight one, do a log, you
+
+29776
+06:55:43,790 --> 06:55:51,950
+done it. Those are export
+default. Deploy box. Oh, let's
+
+29777
+06:55:51,950 --> 06:55:56,090
+see if this works. So we just
+did everything. We're deploying
+
+29778
+06:55:56,690 --> 06:55:59,960
+the GOV token, deploying the
+timelock, which owns the
+
+29779
+06:55:59,960 --> 06:56:02,570
+governance process, we're
+deployed the governance process,
+
+29780
+06:56:02,870 --> 06:56:05,600
+we're setting up the governance
+process so that it's totally
+
+29781
+06:56:05,600 --> 06:56:08,660
+decentralized. And then we
+deployed and set up our box so
+
+29782
+06:56:08,660 --> 06:56:13,040
+that it only can be updated
+through a governance process.
+
+29783
+06:56:13,070 --> 06:56:18,170
+Let's see if it works. Yarn,
+hard hat deploy. Let's see if it
+
+29784
+06:56:18,170 --> 06:56:23,360
+works. Bada boom, you've done
+it. So you've just set up a
+
+29785
+06:56:23,360 --> 06:56:27,350
+script to set this entire
+governance process up so you can
+
+29786
+06:56:27,350 --> 06:56:31,160
+build your own doubt. Are you
+still here? Well, hell yeah, you
+
+29787
+06:56:31,160 --> 06:56:35,210
+are, congratulations on getting
+this far, we have one more piece
+
+29788
+06:56:35,210 --> 06:56:37,430
+to go, we just got to write
+those scripts. So we can
+
+29789
+06:56:37,430 --> 06:56:40,370
+actually interact with this, we
+can actually do a governance, we
+
+29790
+06:56:40,370 --> 06:56:42,680
+can actually see exactly what
+the governance process looks
+
+29791
+06:56:42,680 --> 06:56:45,800
+like. Now again, if you didn't
+watch my last video on Dows, be
+
+29792
+06:56:45,800 --> 06:56:47,930
+sure to watch that, because
+that's going to give you all the
+
+29793
+06:56:47,930 --> 06:56:51,770
+context for this part here. And
+if you're still watching 100%,
+
+29794
+06:56:51,800 --> 06:56:54,650
+smash the like button, hit the
+subscribe, leave a comment in
+
+29795
+06:56:54,650 --> 06:56:57,290
+the comment section below, it
+really helps the channel out. So
+
+29796
+06:56:57,290 --> 06:56:59,690
+proud of you for getting this
+far. We're almost there, you're
+
+29797
+06:56:59,690 --> 06:57:02,690
+getting now one more to go. And
+then you are home free on
+
+29798
+06:57:02,690 --> 06:57:05,060
+building your doubt. Let's get
+back into it.
+
+29799
+06:57:06,289 --> 06:57:08,149
+Alright, so now we're going to
+make some scripts to actually
+
+29800
+06:57:08,179 --> 06:57:13,639
+interact with propose Q and vote
+on anything that happens in our
+
+29801
+06:57:13,669 --> 06:57:16,189
+Dao. And these are the scripts,
+these are kind of the things
+
+29802
+06:57:16,189 --> 06:57:18,379
+that you would do on your front
+end when you build this when you
+
+29803
+06:57:18,379 --> 06:57:20,209
+build your doubt on the front
+end. Or you could do an
+
+29804
+06:57:20,209 --> 06:57:23,089
+integration with snapshot or
+tally or something like that.
+
+29805
+06:57:23,149 --> 06:57:26,089
+And again, if you want to see
+come to full functionality on
+
+29806
+06:57:26,089 --> 06:57:29,419
+the GitHub, I have this test
+flow.ts It's not the greatest
+
+29807
+06:57:29,419 --> 06:57:31,759
+test here. But you can also
+check this out, because it also
+
+29808
+06:57:31,759 --> 06:57:35,479
+does a soup to nuts
+demonstration of going through
+
+29809
+06:57:35,509 --> 06:57:37,909
+this exact process. So let's go
+ahead and start making some
+
+29810
+06:57:37,909 --> 06:57:40,909
+scripts. So we're gonna create a
+new folder called scripts. And
+
+29811
+06:57:40,909 --> 06:57:43,729
+this is where we're going to put
+all of our scripts. Now the
+
+29812
+06:57:43,729 --> 06:57:47,419
+process for this is going to be
+we're first going to propose
+
+29813
+06:57:47,479 --> 06:57:50,569
+something right? You know, maybe
+we're going to propose that our
+
+29814
+06:57:50,569 --> 06:57:55,159
+box contract stores the value
+77, right? Because when it first
+
+29815
+06:57:55,159 --> 06:57:57,679
+gets initialized, it's going to
+start with zero. So maybe we'll
+
+29816
+06:57:57,709 --> 06:58:02,419
+we'll propose it could start at
+77. Once proposing is done, we
+
+29817
+06:58:02,449 --> 06:58:04,909
+are voting on it. Right once
+proposals it and we're going to
+
+29818
+06:58:04,909 --> 06:58:07,339
+vote on whether or not we want
+the proposal to go through right
+
+29819
+06:58:07,339 --> 06:58:11,929
+yes or no. And then if it
+passes, we go to queue and
+
+29820
+06:58:12,079 --> 06:58:15,919
+execute, we queue first. And
+then we execute, I'm just
+
+29821
+06:58:15,919 --> 06:58:18,169
+putting them both in the same
+script to make it easier. So
+
+29822
+06:58:18,559 --> 06:58:21,079
+let's start with propose here,
+because it's going to be the
+
+29823
+06:58:21,079 --> 06:58:23,809
+first thing that we're going to
+do. So let's create a new
+
+29824
+06:58:23,809 --> 06:58:27,199
+function. We'll call it async
+function, and then we'll
+
+29825
+06:58:27,199 --> 06:58:30,679
+actually export it to export
+async function propose. And
+
+29826
+06:58:30,679 --> 06:58:32,809
+we're going to be in here for a
+little bit. So let's clear
+
+29827
+06:58:32,809 --> 06:58:35,779
+everything out. And okay, cool.
+So this is where we're actually
+
+29828
+06:58:35,779 --> 06:58:38,899
+going to propose on our governor
+contract, right? So we're going
+
+29829
+06:58:38,899 --> 06:58:40,579
+to propose a new governor
+contract. So the first thing
+
+29830
+06:58:40,579 --> 06:58:42,499
+we're gonna need, of course, is
+gonna be the governor. So you
+
+29831
+06:58:42,499 --> 06:58:49,219
+can't govern nor equals await
+ethers dot get contract, govern
+
+29832
+06:58:49,219 --> 06:58:52,159
+or contract, right? Since we're
+doing ethers, we're gonna have
+
+29833
+06:58:52,159 --> 06:58:57,049
+to do import ethers from heart
+app. And then we're still
+
+29834
+06:58:57,049 --> 06:59:01,069
+getting that fundamental thing.
+We'll do a little AT Ts ignore
+
+29835
+06:59:01,069 --> 06:59:03,589
+here. Cool. So we have the
+governor contract here, we're
+
+29836
+06:59:03,589 --> 06:59:06,469
+going to need the box contract,
+we're gonna say hey, we want to
+
+29837
+06:59:06,469 --> 06:59:10,279
+propose the box contract changes
+the store value. So we'll do
+
+29838
+06:59:10,279 --> 06:59:16,069
+const box equals await ethers
+dot get this is a gift contract,
+
+29839
+06:59:16,069 --> 06:59:19,669
+we want get contract, get
+contracts at box. And those are
+
+29840
+06:59:19,699 --> 06:59:22,039
+the two main ones that we're
+going to need just to start.
+
+29841
+06:59:22,429 --> 06:59:26,089
+Now, if we look at the proposed
+function, right, if we go to
+
+29842
+06:59:26,209 --> 06:59:29,179
+governance, we go to Governor,
+and we look at that proposed.
+
+29843
+06:59:29,389 --> 06:59:31,849
+This is what it looks like. Now,
+I explained this proposed
+
+29844
+06:59:31,849 --> 06:59:34,819
+function in my last video. So if
+you haven't seen it, be sure to
+
+29845
+06:59:34,819 --> 06:59:37,009
+go back and watch it right
+because it'll give you
+
+29846
+06:59:37,039 --> 06:59:39,829
+everything that you need to know
+here are basically we pick a
+
+29847
+06:59:39,829 --> 06:59:42,979
+list of targets, which our list
+is just going to be just our box
+
+29848
+06:59:42,979 --> 06:59:45,469
+contract. These are the targets
+that we want to call functions
+
+29849
+06:59:45,469 --> 06:59:48,409
+on, we do values like how much
+needed ether we want to send,
+
+29850
+06:59:48,409 --> 06:59:51,319
+which we're not going to send
+anything, we have bytes, a array
+
+29851
+06:59:51,319 --> 06:59:55,129
+called data. So this is going to
+be our encoded parameters for
+
+29852
+06:59:55,129 --> 06:59:58,309
+the function that we want to
+call and then a description. So
+
+29853
+06:59:58,309 --> 07:00:00,979
+that's exactly what we're going
+to do here. So first, we need to
+
+29854
+07:00:01,009 --> 07:00:03,499
+figure out what we're going to
+do. So look at Box, we're going
+
+29855
+07:00:03,499 --> 07:00:06,829
+to call this store function with
+this new value here. So we need
+
+29856
+07:00:06,829 --> 07:00:10,519
+to encode we need to encode this
+socks here. And we also need to
+
+29857
+07:00:10,519 --> 07:00:13,879
+encode what we want to upgrade
+it to right so we have to code
+
+29858
+07:00:13,879 --> 07:00:17,479
+all the function parameters. So
+we'll do const encoded function
+
+29859
+07:00:17,479 --> 07:00:21,469
+call equals box and the way we
+can get this box that interface
+
+29860
+07:00:21,529 --> 07:00:25,369
+that encode function data and
+This is what actually turns it
+
+29861
+07:00:25,369 --> 07:00:29,659
+to being this bytes call data,
+right? So we're encoding
+
+29862
+07:00:29,779 --> 07:00:32,599
+everything and this encoded
+function, you can find this in
+
+29863
+07:00:32,599 --> 07:00:36,139
+the ethers documentation, we
+have to pass it the function to
+
+29864
+07:00:36,139 --> 07:00:38,869
+call, and then the arguments we
+want to pass, right, and this is
+
+29865
+07:00:38,869 --> 07:00:42,169
+how we actually get that. So
+let's get these arguments here.
+
+29866
+07:00:42,229 --> 07:00:44,899
+So we're gonna say args, we're
+going to make our proposed
+
+29867
+07:00:44,899 --> 07:00:47,359
+function a little bit modular.
+So we're gonna say args is going
+
+29868
+07:00:47,359 --> 07:00:50,479
+to be an array of anything, and
+then we're gonna say function to
+
+29869
+07:00:50,479 --> 07:00:53,599
+call is just going to be a
+string, right, and then right at
+
+29870
+07:00:53,599 --> 07:00:56,839
+the bottom, we're actually gonna
+call this, this proposed
+
+29871
+07:00:56,839 --> 07:01:00,109
+function. So we're gonna say
+propose, and let's say we want
+
+29872
+07:01:00,109 --> 07:01:02,959
+to give it 77, the function is
+going to be what it's going to
+
+29873
+07:01:02,959 --> 07:01:06,829
+be store, store. And that's a
+string. And this needs to be a
+
+29874
+07:01:06,829 --> 07:01:09,679
+list. So we're going to do like
+this. Now, we're actually going
+
+29875
+07:01:09,679 --> 07:01:12,679
+to use this all over the place.
+So since we're gonna be using
+
+29876
+07:01:12,679 --> 07:01:16,099
+this all over the place, we want
+to stick them in this part head
+
+29877
+07:01:16,099 --> 07:01:18,679
+helper config. So what we're
+going to do is we're gonna say,
+
+29878
+07:01:18,709 --> 07:01:23,899
+export const, new store value
+equals 77. And we're gonna do
+
+29879
+07:01:23,929 --> 07:01:29,449
+export const funk equals store.
+And I propose, we're just going
+
+29880
+07:01:29,449 --> 07:01:33,889
+to import those. So we'll do
+import, new store value, and
+
+29881
+07:01:33,889 --> 07:01:38,209
+also funk from helper Hardhead
+dot config, and it added it in
+
+29882
+07:01:38,209 --> 07:01:41,209
+for us, which is great. So we'll
+just put new store value in
+
+29883
+07:01:41,209 --> 07:01:44,989
+here. And then we'll put funk in
+here. And I know this might look
+
+29884
+07:01:44,989 --> 07:01:46,609
+a little confusing, but
+basically, the first thing we're
+
+29885
+07:01:46,609 --> 07:01:48,919
+gonna do is we're gonna call
+this proposed function which
+
+29886
+07:01:48,919 --> 07:01:51,559
+calls you know, post function up
+here. Now we're going to do some
+
+29887
+07:01:51,559 --> 07:01:56,479
+fun little then process that
+exit zero. And then we're going
+
+29888
+07:01:56,479 --> 07:02:00,499
+to do a dot catch error, which
+if there's an error, basically,
+
+29889
+07:02:00,499 --> 07:02:05,269
+we'll just do console dot log
+error, then process that makes
+
+29890
+07:02:05,269 --> 07:02:10,189
+it. And this is pretty typical
+setup for a really any script
+
+29891
+07:02:10,189 --> 07:02:13,429
+you work with, and hardhat. So
+great. So we have constant coded
+
+29892
+07:02:13,429 --> 07:02:16,369
+function call, which has this
+function to call an arc. So
+
+29893
+07:02:16,369 --> 07:02:19,219
+we're basically combining these
+into this bytes thing. And we
+
+29894
+07:02:19,219 --> 07:02:21,319
+can even print this out, you can
+see what this looks like. So you
+
+29895
+07:02:21,319 --> 07:02:24,559
+do console dot log, you see that
+this is like this, this crazy
+
+29896
+07:02:24,559 --> 07:02:28,069
+bytes thing here. And the way we
+can kind of test this, we'll do
+
+29897
+07:02:28,069 --> 07:02:33,079
+yarn hardhat node, which will
+spin up again, our fake
+
+29898
+07:02:33,079 --> 07:02:35,209
+blockchain. But additionally,
+with Hardhead deploy, it will
+
+29899
+07:02:35,209 --> 07:02:39,829
+deploy all of our contracts
+here, right, we can see timelog
+
+29900
+07:02:39,829 --> 07:02:43,549
+governance, you know, everything
+that we need for testing locally
+
+29901
+07:02:43,579 --> 07:02:46,789
+has already been done. So once
+we have that up, we can then do
+
+29902
+07:02:46,909 --> 07:02:52,159
+yarn hardhat, run scripts,
+propose that TS dash dash
+
+29903
+07:02:52,159 --> 07:02:55,159
+network, local host, this is
+important to do, again, because
+
+29904
+07:02:55,159 --> 07:02:57,529
+when you're working with a node
+that's running locally, you're
+
+29905
+07:02:57,529 --> 07:02:59,599
+going to be working with local
+host, we'll see what it prints
+
+29906
+07:02:59,599 --> 07:03:00,079
+out here.
+
+29907
+07:03:01,820 --> 07:03:05,450
+Contract named Governor
+contracts, Governor contract.
+
+29908
+07:03:05,480 --> 07:03:09,050
+Let's try that again. And cool,
+you can see this is what that
+
+29909
+07:03:09,050 --> 07:03:13,010
+encoded function call and
+arguments looks like is this
+
+29910
+07:03:13,010 --> 07:03:16,940
+really long byte string. But if
+you were to decode this, using
+
+29911
+07:03:16,940 --> 07:03:19,490
+the box interface, you would get
+the function call and the
+
+29912
+07:03:19,490 --> 07:03:22,040
+arguments, which is really
+exciting. So cool, we've encoded
+
+29913
+07:03:22,070 --> 07:03:25,040
+it to bytes. And now what we
+want to do, we encourage the
+
+29914
+07:03:25,040 --> 07:03:27,230
+bytes, and now we're going to
+create that proposal
+
+29915
+07:03:27,230 --> 07:03:32,120
+transaction. So we'll do console
+dot log will say pro posing, and
+
+29916
+07:03:32,120 --> 07:03:37,610
+say, function to call on box
+that address with args. And then
+
+29917
+07:03:37,610 --> 07:03:41,270
+we also need to pass a proposal
+description. So we're gonna say
+
+29918
+07:03:41,270 --> 07:03:46,220
+pro pose, all description, we
+would do it on new line, why
+
+29919
+07:03:46,220 --> 07:03:50,330
+not? Pro pulls all this option,
+which we don't have yet.
+
+29920
+07:03:50,390 --> 07:03:52,880
+Alright, we're gonna get it. So
+we also need to pass a proposal
+
+29921
+07:03:52,880 --> 07:03:56,450
+description, right, because we
+have down here, description. So
+
+29922
+07:03:56,450 --> 07:03:59,450
+let's add another parameter to
+our propose here. So we'll say
+
+29923
+07:03:59,450 --> 07:04:04,340
+proposal description, and this
+will be also a string. Down at
+
+29924
+07:04:04,340 --> 07:04:07,040
+the bottom, we're going to need
+a proposal description as well.
+
+29925
+07:04:07,280 --> 07:04:11,060
+So we'll create a proposal or
+export const proposal
+
+29926
+07:04:11,060 --> 07:04:13,520
+description, there's just going
+to be some string. So we'll say
+
+29927
+07:04:13,520 --> 07:04:19,790
+proposal number one, door 77 In
+the box, that's the description
+
+29928
+07:04:19,790 --> 07:04:22,760
+here, comma proposal
+description. And then we import
+
+29929
+07:04:22,760 --> 07:04:25,970
+this or a helper config. Okay,
+perfect. So now we have the new
+
+29930
+07:04:25,970 --> 07:04:29,060
+store value, the function the
+proposal description, and we can
+
+29931
+07:04:29,060 --> 07:04:32,990
+now call that propose that we
+were just looking at so here's
+
+29932
+07:04:32,990 --> 07:04:38,360
+what we're going to do const
+propose TX equals await. gov dot
+
+29933
+07:04:38,360 --> 07:04:42,080
+propose. And we need to pass
+those lists. So first is going
+
+29934
+07:04:42,080 --> 07:04:44,360
+to be a list of targets, which
+for us is just a box that
+
+29935
+07:04:44,360 --> 07:04:47,090
+address right only one target.
+And again, these these little
+
+29936
+07:04:47,090 --> 07:04:49,580
+brackets, make it a list of
+values, which is just going to
+
+29937
+07:04:49,580 --> 07:04:54,260
+be zero, a list of encoded
+function calls or our bytes
+
+29938
+07:04:54,290 --> 07:04:58,220
+data, basically, and then the
+proposal description, and then
+
+29939
+07:04:58,220 --> 07:05:02,660
+we're going to do propose, TX
+dot wait one. Now, if you
+
+29940
+07:05:02,660 --> 07:05:06,020
+remember, from compound, this is
+going to be the exact same if we
+
+29941
+07:05:06,020 --> 07:05:10,970
+go back to compound back to
+governance, this transaction is
+
+29942
+07:05:10,970 --> 07:05:13,970
+literally going to be the same
+as this created thing here.
+
+29943
+07:05:14,180 --> 07:05:17,750
+Right? And if we scroll down,
+like more, we can see the code
+
+29944
+07:05:17,750 --> 07:05:20,690
+input data, those exact same
+things on a compound proposal,
+
+29945
+07:05:20,690 --> 07:05:24,230
+right? We have targets values
+signatures, well okay, this CES
+
+29946
+07:05:24,230 --> 07:05:26,750
+is a little bit more, this a
+little bit more advanced here,
+
+29947
+07:05:27,020 --> 07:05:29,690
+using signatures, but it's got
+the same thing called data and
+
+29948
+07:05:29,690 --> 07:05:33,650
+then a description here, okay.
+Now since we have a voting
+
+29949
+07:05:33,650 --> 07:05:36,890
+delay, people actually can't
+vote until the voting delay
+
+29950
+07:05:36,890 --> 07:05:39,920
+passes. Now, with a local
+blockchain, nobody's actually
+
+29951
+07:05:39,920 --> 07:05:43,010
+processing blocks and time
+doesn't really pass as quick as
+
+29952
+07:05:43,010 --> 07:05:46,400
+we want. And so we're just going
+to speed things up for our own
+
+29953
+07:05:46,400 --> 07:05:49,520
+testing purposes. So the way I
+normally do this is I create
+
+29954
+07:05:49,520 --> 07:05:53,360
+this this variable, all
+development, exports, on
+
+29955
+07:05:53,630 --> 07:05:59,210
+development chains, and I'll add
+hard hat and local host. Because
+
+29956
+07:05:59,210 --> 07:06:01,760
+we can actually do things with
+our own local blockchain, we can
+
+29957
+07:06:01,760 --> 07:06:04,190
+actually speed up time, we can
+speed up blocks, we can do all
+
+29958
+07:06:04,190 --> 07:06:07,670
+this crazy stuff. So usually,
+I'll actually import this in
+
+29959
+07:06:07,670 --> 07:06:10,520
+here. And then we'll do a quick
+F. And I'll say, if we're on a
+
+29960
+07:06:10,520 --> 07:06:12,950
+development chain, let's just go
+ahead and speed things up for
+
+29961
+07:06:12,950 --> 07:06:18,320
+us. Right. So I'll say if
+development chains that includes
+
+29962
+07:06:18,350 --> 07:06:22,250
+network dot name, and then we
+can import network from from
+
+29963
+07:06:22,280 --> 07:06:24,590
+ethers, as well. And this is
+what I was talking about those
+
+29964
+07:06:24,590 --> 07:06:26,720
+super six skills that you're
+gonna learn. If it includes
+
+29965
+07:06:26,720 --> 07:06:29,270
+network dot name, then we're
+gonna go ahead and move the
+
+29966
+07:06:29,270 --> 07:06:31,370
+blocks forward, right, because
+if we're not on development
+
+29967
+07:06:31,370 --> 07:06:34,220
+chain, we can't actually move
+blocks. So what we'll do here is
+
+29968
+07:06:34,220 --> 07:06:37,340
+actually I'll create a new
+folder called utilities, you
+
+29969
+07:06:37,340 --> 07:06:41,480
+folder, you are utils. And in
+here, I'll create a script
+
+29970
+07:06:41,570 --> 07:06:46,490
+called Move blocks.ts. And we're
+just going to create this little
+
+29971
+07:06:46,490 --> 07:06:49,040
+function called move blocks,
+which moves blocks for us. And
+
+29972
+07:06:49,040 --> 07:06:51,470
+you'll see how we do this. So
+we're going to import network
+
+29973
+07:06:51,590 --> 07:06:54,380
+from heart app, because we want
+to speed up that voting delay,
+
+29974
+07:06:54,590 --> 07:06:58,280
+we'll do export async function,
+we'll call it move blocks. And
+
+29975
+07:06:58,280 --> 07:07:01,790
+it'll take an amount, which will
+be a number, so how many blocks
+
+29976
+07:07:01,820 --> 07:07:04,220
+that we actually want to move.
+And then we'll just do console
+
+29977
+07:07:04,220 --> 07:07:09,800
+dot log moving blocks. And we'll
+say for let index equals zero,
+
+29978
+07:07:10,310 --> 07:07:15,110
+index is less than amount. index
+plus plus, or we're going to do
+
+29979
+07:07:15,110 --> 07:07:19,670
+is we're going to do a weight
+network DAP provider dot request
+
+29980
+07:07:19,730 --> 07:07:25,670
+request. And we're going to
+request method EVM. Mine. So
+
+29981
+07:07:25,700 --> 07:07:30,500
+basically, we're mining for our
+local blockchain, right, so you
+
+29982
+07:07:30,500 --> 07:07:33,680
+can find these docks in the hard
+hat docks in the ethers docks,
+
+29983
+07:07:34,760 --> 07:07:36,620
+there's a couple different
+places you can find these. But
+
+29984
+07:07:36,860 --> 07:07:40,130
+this is kind of this really cool
+hack that we can use to actually
+
+29985
+07:07:40,130 --> 07:07:42,710
+move blocks forward on our local
+chain. Now, obviously, this
+
+29986
+07:07:42,710 --> 07:07:45,320
+won't work on an actual chain,
+because you'd actually have to
+
+29987
+07:07:45,320 --> 07:07:47,570
+do the mining but on our local
+chains, we can absolutely do
+
+29988
+07:07:47,570 --> 07:07:51,140
+this. So we've exported this
+move blocks function, and we're
+
+29989
+07:07:51,140 --> 07:07:54,620
+actually gonna grab that Mark
+propose, we're going to import
+
+29990
+07:07:55,010 --> 07:08:01,190
+move box from utils blocks. And
+we're going to say down here, if
+
+29991
+07:08:01,190 --> 07:08:04,700
+we're on this development chain,
+and do a weight move blocks, and
+
+29992
+07:08:04,700 --> 07:08:07,130
+then we'll move blocks by that
+voting delay that we were
+
+29993
+07:08:07,130 --> 07:08:09,320
+talking about, right? Because we
+need to wait that voting delay
+
+29994
+07:08:09,350 --> 07:08:12,200
+in order to move and it looks
+like an auto import it for us
+
+29995
+07:08:12,230 --> 07:08:14,150
+from our helper hardware config.
+I told you, we were gonna use
+
+29996
+07:08:14,150 --> 07:08:16,430
+that a couple of times, but
+we're gonna move blocks by that
+
+29997
+07:08:16,430 --> 07:08:19,760
+voting delay. Now, this proposed
+transaction does some stuff that
+
+29998
+07:08:19,760 --> 07:08:22,580
+we actually want, right? So one
+of the big things that it wants
+
+29999
+07:08:22,580 --> 07:08:25,910
+is, is it has this proposal ID.
+And if we scroll down to the
+
+30000
+07:08:25,970 --> 07:08:29,990
+event that it emits, it ends up
+emitting this proposal ID, we
+

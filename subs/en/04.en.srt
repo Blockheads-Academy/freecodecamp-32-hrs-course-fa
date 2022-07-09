@@ -1,0 +1,4992 @@
+4001
+03:51:25,679 --> 03:51:28,349
+we're going to use injected web
+three instead of JavaScript VM
+
+4002
+03:51:28,649 --> 03:51:32,639
+is that there's no network of
+chain link nodes watching our
+
+4003
+03:51:32,639 --> 03:51:35,249
+little fake JavaScript VM. There
+are a network of chain link
+
+4004
+03:51:35,249 --> 03:51:39,869
+nodes watching the test net. So
+we'll scroll down. We'll switch
+
+4005
+03:51:39,869 --> 03:51:43,619
+contract to the price consumer V
+three, and we'll hit Deploy and
+
+4006
+03:51:43,619 --> 03:51:47,039
+a mass will pop up and after a
+brief delay, we can see our
+
+4007
+03:51:47,039 --> 03:51:50,099
+price feed consumer down here
+and we can hit Get the latest
+
+4008
+03:51:50,099 --> 03:51:54,179
+price which shows us the latest
+price of Aetherium in terms of
+
+4009
+03:51:54,179 --> 03:51:57,809
+USD you may be wondering why the
+number looks so weird. That
+
+4010
+03:51:57,809 --> 03:52:00,149
+seems like a really large number
+for the price of Aetherium in
+
+4011
+03:52:00,149 --> 03:52:03,329
+terms of USD, and this is
+because decimals don't actually
+
+4012
+03:52:03,329 --> 03:52:06,329
+work so well in solidity, and
+we'll get to that in a little
+
+4013
+03:52:06,329 --> 03:52:09,779
+bit. There's a decimals flag
+associated with this price feed
+
+4014
+03:52:09,779 --> 03:52:13,589
+address, that tells us how many
+decimals to include with this
+
+4015
+03:52:13,589 --> 03:52:16,829
+price. It's also in the
+documentation. However, I know
+
+4016
+03:52:16,829 --> 03:52:19,499
+that this one has eight
+decimals. So this is saying the
+
+4017
+03:52:19,499 --> 03:52:24,719
+value of Aetherium right now is
+$3,262. It may of course be
+
+4018
+03:52:24,719 --> 03:52:27,599
+different when you go ahead and
+try this. Now there's a number
+
+4019
+03:52:27,599 --> 03:52:30,059
+of things that happened in this
+contract that I'll explain in
+
+4020
+03:52:30,059 --> 03:52:32,969
+our Funmi example. But if you
+want to take a look now and see
+
+4021
+03:52:32,969 --> 03:52:35,339
+if you can figure out what's
+going on, I recommend you do so.
+
+4022
+03:52:35,489 --> 03:52:37,769
+Price feeds are one of the most
+powerful out of the box
+
+4023
+03:52:37,799 --> 03:52:41,249
+decentralized features, you can
+use your smart contract to level
+
+4024
+03:52:41,249 --> 03:52:44,039
+them up, especially for
+decentralized finance. If you're
+
+4025
+03:52:44,039 --> 03:52:46,799
+looking for different addresses
+of different price feeds, you
+
+4026
+03:52:46,799 --> 03:52:49,589
+can check the contract addresses
+section of the documentation,
+
+4027
+03:52:49,799 --> 03:52:53,039
+choose the network that you
+want, and then scroll down and
+
+4028
+03:52:53,039 --> 03:52:55,829
+look some of the different
+addresses of the different price
+
+4029
+03:52:55,829 --> 03:52:59,879
+feeds. For example, this address
+will give you the price of one
+
+4030
+03:52:59,879 --> 03:53:02,879
+inch token in terms of
+Aetherium. This address will
+
+4031
+03:53:02,879 --> 03:53:07,709
+give you the price of the Apple
+stock in terms of USD, and so on
+
+4032
+03:53:07,709 --> 03:53:10,529
+and so forth. The next
+decentralized application right
+
+4033
+03:53:10,529 --> 03:53:13,589
+out of the box is going to be
+channeling VRF or channeling
+
+4034
+03:53:13,619 --> 03:53:17,189
+verifiable random dysfunction.
+Once we do our lottery example a
+
+4035
+03:53:17,189 --> 03:53:20,189
+little bit later, we'll talk
+about how randomness can be
+
+4036
+03:53:20,189 --> 03:53:22,979
+manipulated in blockchain.
+blockchains are deterministic
+
+4037
+03:53:22,979 --> 03:53:25,919
+systems, which by definition
+means that they can't have
+
+4038
+03:53:25,919 --> 03:53:28,799
+randomness. If you can determine
+what a random number is, it's
+
+4039
+03:53:28,799 --> 03:53:31,499
+not really random anymore, is
+it? So we need to wait to get a
+
+4040
+03:53:31,499 --> 03:53:34,019
+provably random number by
+looking outside of the
+
+4041
+03:53:34,019 --> 03:53:37,019
+blockchain and Oracle's are
+perfectly positioned to do
+
+4042
+03:53:37,049 --> 03:53:40,019
+exactly that. chainlink
+verifiable randomness function
+
+4043
+03:53:40,049 --> 03:53:42,839
+is a way to get provably a
+random number into our smart
+
+4044
+03:53:42,839 --> 03:53:46,109
+contract to guarantee fairness
+and guarantee randomness of
+
+4045
+03:53:46,109 --> 03:53:50,309
+applications. Many protocols
+like pool together x infinity,
+
+4046
+03:53:50,609 --> 03:53:54,479
+ether cards, avocado cheese and
+more use channeling VRF for
+
+4047
+03:53:54,479 --> 03:53:58,559
+lotteries, randomizing NF T's
+for gaming and for more, we're
+
+4048
+03:53:58,559 --> 03:54:01,199
+going to do an example of
+channeling VRF in a later
+
+4049
+03:54:01,199 --> 03:54:03,809
+section. Once we get to the
+lottery section, if you want to
+
+4050
+03:54:03,809 --> 03:54:06,299
+see if you can play with the
+randomness yourself right now, I
+
+4051
+03:54:06,299 --> 03:54:09,659
+recommend you go into Doc's
+chain link EVM chains, and
+
+4052
+03:54:09,659 --> 03:54:12,509
+scroll down to get a random
+number. And this will teach you
+
+4053
+03:54:12,509 --> 03:54:15,449
+how to get a provably random
+number into your applications.
+
+4054
+03:54:15,539 --> 03:54:18,929
+The next decentralized out of
+the box feature of chain link is
+
+4055
+03:54:18,959 --> 03:54:22,229
+chain like keepers, which is
+decentralized event driven
+
+4056
+03:54:22,259 --> 03:54:25,589
+execution. As we've seen, in
+order to kick off some type of
+
+4057
+03:54:25,589 --> 03:54:29,279
+transaction, somebody needs to
+spend the gas and somebody needs
+
+4058
+03:54:29,279 --> 03:54:32,039
+to sit down and hit the go
+button or hit the transact
+
+4059
+03:54:32,039 --> 03:54:34,649
+button or hit the sun. But this
+is obviously a centralized
+
+4060
+03:54:34,649 --> 03:54:37,199
+vector. If you have a
+decentralized application that
+
+4061
+03:54:37,199 --> 03:54:40,439
+needs to run at specific times,
+or after specific events are
+
+4062
+03:54:40,439 --> 03:54:42,929
+triggered. Channeling keepers
+are the solution to this
+
+4063
+03:54:42,959 --> 03:54:45,959
+channeling keepers are chain
+link nodes that listen to a
+
+4064
+03:54:45,959 --> 03:54:48,749
+registration contract for
+different events that you
+
+4065
+03:54:48,749 --> 03:54:52,379
+specify to fire. Maybe you say
+every 10 minutes, you want to do
+
+4066
+03:54:52,379 --> 03:54:55,679
+something or once a week do
+something or if the price of
+
+4067
+03:54:55,679 --> 03:54:59,129
+some acid hits some number, or
+maybe a liquidity pool is at a
+
+4068
+03:54:59,129 --> 03:55:02,429
+certain level, whatever event
+that you want to code, you
+
+4069
+03:55:02,429 --> 03:55:05,789
+absolutely can the chain link
+nodes constantly listen for
+
+4070
+03:55:05,789 --> 03:55:08,849
+these triggers to happen and
+check the different contracts
+
+4071
+03:55:08,879 --> 03:55:12,539
+for these triggers. Once a
+trigger returns true, the chain
+
+4072
+03:55:12,539 --> 03:55:15,599
+link nodes will then perform
+whatever action that you tell
+
+4073
+03:55:15,659 --> 03:55:18,389
+the chain link nodes to do,
+we're also not going to go over
+
+4074
+03:55:18,419 --> 03:55:21,029
+the chain link keepers examples
+right now, because we're going
+
+4075
+03:55:21,029 --> 03:55:23,519
+to get to them in a later
+module. However, if you want to
+
+4076
+03:55:23,519 --> 03:55:26,069
+try them out, go to Doc's
+touching that link slash
+
+4077
+03:55:26,069 --> 03:55:30,089
+Aetherium. Going and go to
+making compatible contracts and
+
+4078
+03:55:30,089 --> 03:55:32,219
+feel free to read the
+documentation. Try it out
+
+4079
+03:55:32,219 --> 03:55:35,159
+yourself. The last out of the
+box feature of chain link is the
+
+4080
+03:55:35,159 --> 03:55:38,669
+most customizable, but also the
+hardest to get correct end to
+
+4081
+03:55:38,669 --> 03:55:41,759
+end reliability is the ultimate
+promise of our smart contracts.
+
+4082
+03:55:41,789 --> 03:55:45,449
+And we want and need them to be
+able to do anything, we want to
+
+4083
+03:55:45,449 --> 03:55:49,949
+be able to take any input and
+get any output making HTTP GET
+
+4084
+03:55:50,039 --> 03:55:53,639
+HTTP POST request is an easy way
+to customize our chain link
+
+4085
+03:55:53,639 --> 03:55:56,909
+nodes to be able to do anything.
+Remember how we talked about
+
+4086
+03:55:56,939 --> 03:56:00,659
+making API calls that blockchain
+nodes themselves can do that?
+
+4087
+03:56:00,809 --> 03:56:04,079
+Well, chain link nodes can do
+that chain link nodes can make
+
+4088
+03:56:04,079 --> 03:56:07,589
+direct requests to any API that
+you specify. In order to do
+
+4089
+03:56:07,589 --> 03:56:11,399
+this, you both have to choose
+the chain link node and the URL
+
+4090
+03:56:11,429 --> 03:56:14,729
+slash data to send the request
+to this is a little bit trickier
+
+4091
+03:56:14,819 --> 03:56:18,779
+than chain link VRF keepers or
+price feeds because you then
+
+4092
+03:56:18,779 --> 03:56:21,419
+have to be responsible for
+creating the chain link network
+
+4093
+03:56:21,449 --> 03:56:23,999
+that gets data from many
+different chain link nodes and
+
+4094
+03:56:23,999 --> 03:56:25,229
+many different data providers.
+
+4095
+03:56:25,259 --> 03:56:29,039
+But let's look at an example in
+remix anyways. For this section,
+
+4096
+03:56:29,039 --> 03:56:31,439
+feel free to just watch it since
+we are working with a test net
+
+4097
+03:56:31,439 --> 03:56:34,109
+here. And test nets, as we've
+seen, can take a little bit of
+
+4098
+03:56:34,109 --> 03:56:36,629
+time. As long as you're familiar
+with what this process looks
+
+4099
+03:56:36,629 --> 03:56:39,149
+like. That's good enough. You
+don't actually have to try it if
+
+4100
+03:56:39,149 --> 03:56:42,989
+you don't want to. So we'll open
+up and remix will read through.
+
+4101
+03:56:43,319 --> 03:56:46,319
+It looks like this example is on
+the COVID network. So we'll go
+
+4102
+03:56:46,319 --> 03:56:49,979
+ahead and compile API consumer.
+We're gonna go ahead and deploy
+
+4103
+03:56:50,129 --> 03:56:53,159
+on the injected web three, we're
+going to make sure that we're
+
+4104
+03:56:53,159 --> 03:56:57,059
+back on the COVID test network.
+We're going to scroll down. And
+
+4105
+03:56:57,059 --> 03:56:59,819
+we're going to change the
+contract to the API consumer.
+
+4106
+03:56:59,969 --> 03:57:02,459
+And we're going to go ahead and
+hit Deploy, we're going to
+
+4107
+03:57:02,459 --> 03:57:06,239
+deploy this contract to the
+COVID. Test net. And now we can
+
+4108
+03:57:06,329 --> 03:57:09,449
+call this function called
+Request volume data to actually
+
+4109
+03:57:09,449 --> 03:57:12,779
+make an API call. Now, like I
+mentioned before, whenever we
+
+4110
+03:57:12,779 --> 03:57:15,929
+request data from a chain link
+node, we have to pay a little
+
+4111
+03:57:15,929 --> 03:57:20,459
+bit of Oracle gas, or link
+token, in order to pay some link
+
+4112
+03:57:20,459 --> 03:57:23,609
+token, we're going to need to
+have link token in our API
+
+4113
+03:57:23,609 --> 03:57:26,159
+consumer contract. This is
+what's known as the basic
+
+4114
+03:57:26,159 --> 03:57:29,189
+request and receive model to get
+link token, we go back to our
+
+4115
+03:57:29,189 --> 03:57:32,729
+faucet, and this time, we'll
+select 10 test link for our
+
+4116
+03:57:32,729 --> 03:57:35,339
+contract. Let's go ahead and
+verify that we're human. And
+
+4117
+03:57:35,339 --> 03:57:38,819
+we'll hit Send Request. This
+time, instead of sending us
+
+4118
+03:57:38,819 --> 03:57:42,779
+Aetherium. They're sending us 10
+test link, which is what's known
+
+4119
+03:57:42,779 --> 03:57:47,489
+as an ERC 20 token. Or more
+accurately, in ERC 677 We'll get
+
+4120
+03:57:47,489 --> 03:57:50,699
+to understanding that a little
+bit later, we can see the asset
+
+4121
+03:57:50,759 --> 03:57:54,239
+in our Metamask. By importing
+the token, in order to get the
+
+4122
+03:57:54,239 --> 03:57:57,239
+token, we're going to come back
+to the documentation. And we're
+
+4123
+03:57:57,239 --> 03:58:02,549
+going to look up link token
+contracts like that, we're going
+
+4124
+03:58:02,549 --> 03:58:05,699
+to go to the network that we
+just got the tokens on, which
+
+4125
+03:58:05,699 --> 03:58:10,829
+for us was COVID. We're going to
+copy this address, we're gonna
+
+4126
+03:58:10,829 --> 03:58:14,969
+go to Metamask, hit import
+tokens, paste that address, and
+
+4127
+03:58:14,969 --> 03:58:19,289
+hit add custom token, and then
+import tokens. And now we can
+
+4128
+03:58:19,289 --> 03:58:24,029
+see in our account one, we both
+have Aetherium and 10. Link, now
+
+4129
+03:58:24,029 --> 03:58:27,869
+that we have our link or Oracle
+gas, we're going to send it to
+
+4130
+03:58:27,869 --> 03:58:31,169
+our API consumer, we're going to
+copy the address of the API
+
+4131
+03:58:31,169 --> 03:58:36,239
+consumer, open up our meta mask,
+we're gonna hit send, paste the
+
+4132
+03:58:36,239 --> 03:58:41,219
+address of our contract, switch
+the asset to link. For now we'll
+
+4133
+03:58:41,219 --> 03:58:46,589
+just send 0.2 link. We'll hit
+next, next. And we'll hit
+
+4134
+03:58:46,589 --> 03:58:49,979
+Confirm. And we'll wait for this
+transaction to go through. I
+
+4135
+03:58:49,979 --> 03:58:54,569
+chose 0.2 Link, because in this
+contract, there's a fee
+
+4136
+03:58:54,719 --> 03:58:59,159
+character, which tells us how
+much making an API call for this
+
+4137
+03:58:59,159 --> 03:59:03,059
+is going to cost. This one is
+actually 0.1 link, I send 0.2.
+
+4138
+03:59:03,059 --> 03:59:05,819
+Just in case, we want to make
+that API call twice. Everything
+
+4139
+03:59:05,819 --> 03:59:08,189
+that's going on in this function
+will explain in a little bit
+
+4140
+03:59:08,189 --> 03:59:10,559
+later section. But for now, I
+just want to show you what it
+
+4141
+03:59:10,559 --> 03:59:13,319
+looks like to do is, once we
+send the link to our contract,
+
+4142
+03:59:13,769 --> 03:59:18,089
+we can first check to see what
+the volume is volume is zero, we
+
+4143
+03:59:18,089 --> 03:59:21,329
+want to get the volume of the
+last 24 hours of Aetherium
+
+4144
+03:59:21,389 --> 03:59:25,229
+asset, we're going to be calling
+this API which has a ton of raw
+
+4145
+03:59:25,229 --> 03:59:29,159
+data, including one in specific
+called volume over the last 24
+
+4146
+03:59:29,159 --> 03:59:31,769
+hours, which can be this number
+right here. Say we wanted to get
+
+4147
+03:59:31,769 --> 03:59:35,459
+this into our contract from this
+API, we're going to make an HTTP
+
+4148
+03:59:35,459 --> 03:59:39,749
+GET call to this API. And what's
+going to happen is we're going
+
+4149
+03:59:39,749 --> 03:59:43,589
+to make the request in one
+transaction. And in a second
+
+4150
+03:59:43,589 --> 03:59:46,859
+transaction, the chain link node
+is gonna return the value and
+
+4151
+03:59:46,859 --> 03:59:51,329
+store it in this volume variable
+in the global scope. So let's go
+
+4152
+03:59:51,329 --> 03:59:55,139
+ahead and hit request volume
+data Metamask gonna pop up,
+
+4153
+03:59:55,379 --> 03:59:57,989
+we're going to go ahead and hit
+Confirm. And you'll notice right
+
+4154
+03:59:57,989 --> 04:00:01,349
+away volume doesn't update. This
+is again, because we actually
+
+4155
+04:00:01,349 --> 04:00:05,189
+need to wait two transactions,
+we're sending a transaction for
+
+4156
+04:00:05,189 --> 04:00:08,429
+the request. And then in a
+second transaction, the chain
+
+4157
+04:00:08,429 --> 04:00:11,609
+link node is actually going to
+respond. And after a slight
+
+4158
+04:00:11,609 --> 04:00:14,759
+delay, the chain link node has
+indeed responded with the result
+
+4159
+04:00:14,759 --> 04:00:18,029
+of making that API call back to
+our contract. We'll go over this
+
+4160
+04:00:18,029 --> 04:00:20,759
+process a little bit more in
+depth in later sections. The
+
+4161
+04:00:20,759 --> 04:00:24,509
+reason that I wanted to show you
+specifically the API calls, is
+
+4162
+04:00:24,509 --> 04:00:27,119
+because we're going to show you
+a real life example of how to
+
+4163
+04:00:27,119 --> 04:00:29,909
+use chain link VRF and chain the
+keepers in a later lesson.
+
+4164
+04:00:32,790 --> 04:00:35,700
+Now I know we've already gone
+over a ton. So let's do a quick
+
+4165
+04:00:35,730 --> 04:00:39,030
+review. In order to send
+Aetherium or whatever native
+
+4166
+04:00:39,030 --> 04:00:43,590
+blockchain token with a function
+need to mark it as payable. If
+
+4167
+04:00:43,590 --> 04:00:46,380
+you need something in your
+contract to happen, and you want
+
+4168
+04:00:46,410 --> 04:00:49,500
+the whole transaction to fail.
+If that doesn't happen, you can
+
+4169
+04:00:49,500 --> 04:00:52,890
+use a require statement. To get
+the Aetherium or native
+
+4170
+04:00:52,890 --> 04:00:55,920
+blockchain token value of a
+transaction, you can use the
+
+4171
+04:00:55,920 --> 04:00:59,430
+global keyword message dot
+value. chain link is a
+
+4172
+04:00:59,430 --> 04:01:02,130
+technology for getting external
+data and doing external
+
+4173
+04:01:02,130 --> 04:01:05,760
+computation in a decentralized
+context for our smart contracts.
+
+4174
+04:01:06,030 --> 04:01:09,450
+Channeling data feeds or price
+feeds are ways to read pricing
+
+4175
+04:01:09,450 --> 04:01:12,870
+information or other pieces of
+data from the real world that's
+
+4176
+04:01:12,870 --> 04:01:15,870
+already aggregated and
+decentralized for us, channeling
+
+4177
+04:01:15,870 --> 04:01:19,410
+VRF is a way to get provably
+random numbers from the real
+
+4178
+04:01:19,410 --> 04:01:22,320
+world into our smart contracts.
+Channeling keepers are a way to
+
+4179
+04:01:22,320 --> 04:01:26,310
+do decentralized event driven
+computation. We can set some
+
+4180
+04:01:26,310 --> 04:01:29,700
+trigger say if this trigger hits
+do something and we get to
+
+4181
+04:01:29,700 --> 04:01:32,310
+define what the trigger is and
+what to do something is
+
+4182
+04:01:32,400 --> 04:01:36,150
+channeling any API's is the
+ultimate customization of
+
+4183
+04:01:36,150 --> 04:01:39,510
+channeling nodes and allows us
+to connect to anything on the
+
+4184
+04:01:39,510 --> 04:01:42,390
+planet. To make this one
+production ready. We have to do
+
+4185
+04:01:42,390 --> 04:01:44,700
+the most work because it doesn't
+come already with a
+
+4186
+04:01:44,700 --> 04:01:47,730
+decentralized Oracle network,
+like chaining the keepers and
+
+4187
+04:01:47,730 --> 04:01:50,550
+price feeds. We'll learn more
+about these channeling services
+
+4188
+04:01:50,640 --> 04:01:56,640
+as we continue in this course.
+Now in order for us to figure
+
+4189
+04:01:56,640 --> 04:02:00,450
+out if our message dot value is
+actually greater than the
+
+4190
+04:02:00,450 --> 04:02:03,990
+minimum USD that we set, we
+actually have to convert our
+
+4191
+04:02:03,990 --> 04:02:09,900
+message dot value from its layer
+one slash Aetherium to the USD
+
+4192
+04:02:09,930 --> 04:02:12,780
+equivalent. So how are we
+actually going to do that? Well,
+
+4193
+04:02:12,780 --> 04:02:15,510
+first, we're gonna need to get
+the price of Aetherium, or
+
+4194
+04:02:15,510 --> 04:02:18,390
+Phantom, or Avalanche or
+whatever layer, one blockchain
+
+4195
+04:02:18,420 --> 04:02:21,420
+that we're working with. So
+let's create a function to get
+
+4196
+04:02:21,420 --> 04:02:24,270
+that price to get that
+conversion rate. So we'll do
+
+4197
+04:02:24,270 --> 04:02:29,430
+function, get price, and this is
+going to be the function that we
+
+4198
+04:02:29,430 --> 04:02:33,120
+use to get the price of the room
+in terms of USD, so we can
+
+4199
+04:02:33,120 --> 04:02:37,230
+convert our message dot value to
+USD. And then we're also going
+
+4200
+04:02:37,230 --> 04:02:45,570
+to do a function called Get
+conversion rate. These are both
+
+4201
+04:02:45,570 --> 04:02:47,880
+going to be public functions, so
+that we can go ahead and call
+
+4202
+04:02:47,880 --> 04:02:50,100
+them and test them and do
+whatever we want with them. So
+
+4203
+04:02:50,100 --> 04:02:52,530
+in order to get the price, we're
+going to have to use one of
+
+4204
+04:02:52,530 --> 04:02:56,400
+these chain link data feeds to
+get the pricing information. And
+
+4205
+04:02:56,400 --> 04:03:00,810
+we can look right here at this
+contract to see what using one
+
+4206
+04:03:00,810 --> 04:03:03,390
+of these channeling price feeds
+looks like. What we're actually
+
+4207
+04:03:03,390 --> 04:03:06,000
+doing when we're interacting
+with this channeling price feed
+
+4208
+04:03:06,030 --> 04:03:09,690
+is we're actually reading from
+one of these contracts, there's
+
+4209
+04:03:09,690 --> 04:03:12,600
+a contract out there called the
+aggregator contract that has a
+
+4210
+04:03:12,600 --> 04:03:15,870
+function called latest round
+data, which returns a whole
+
+4211
+04:03:15,870 --> 04:03:20,820
+bunch of data. But namely, this
+int price. And this in price is
+
+4212
+04:03:20,820 --> 04:03:24,180
+what we are interested in. Let's
+look at our get price function
+
+4213
+04:03:24,210 --> 04:03:27,300
+and figure out how do we
+actually call this since this is
+
+4214
+04:03:27,300 --> 04:03:30,870
+an instance of us interacting
+with a contract outside of our
+
+4215
+04:03:30,870 --> 04:03:34,680
+project, we're going to need two
+things. What are those two
+
+4216
+04:03:34,680 --> 04:03:35,220
+things,
+
+4217
+04:03:35,280 --> 04:03:39,480
+we're going to need the ABI of
+the contract, and also the
+
+4218
+04:03:39,480 --> 04:03:43,680
+address of the contract. So the
+address of the contract is going
+
+4219
+04:03:43,680 --> 04:03:46,830
+to be easy, we can get the
+address of the contract from the
+
+4220
+04:03:46,830 --> 04:03:50,010
+contract address this section of
+the chain link data feeds. Let's
+
+4221
+04:03:50,010 --> 04:03:56,580
+scroll on down to bank B. And we
+can find the eath USD address on
+
+4222
+04:03:56,580 --> 04:03:59,160
+Rigby and we'll create this
+contract so that it works on
+
+4223
+04:03:59,160 --> 04:04:01,650
+Rinkeby. So we're going to grab
+this address, we're going to
+
+4224
+04:04:01,650 --> 04:04:05,370
+copy it. And we're going to move
+back to our to our code here.
+
+4225
+04:04:05,400 --> 04:04:08,070
+And we're going to paste the
+address here. So great, we have
+
+4226
+04:04:08,070 --> 04:04:10,410
+the address. Now we have the
+address of the other contract
+
+4227
+04:04:10,410 --> 04:04:13,110
+that we don't want to interact.
+Now, how do we get the ABI?
+
+4228
+04:04:13,290 --> 04:04:16,290
+Well, what we did before was
+simple storage was we imported
+
+4229
+04:04:16,320 --> 04:04:19,260
+the entire contract into our
+code here. That's something that
+
+4230
+04:04:19,260 --> 04:04:22,590
+we could do. But that's actually
+a lot of code. So what's
+
+4231
+04:04:22,590 --> 04:04:25,110
+something that we could do
+instead, remember, if we're
+
+4232
+04:04:25,110 --> 04:04:28,530
+looking at remix, and we look at
+one of the contracts that we
+
+4233
+04:04:28,530 --> 04:04:33,150
+compiled before, the ABI is
+really just kind of this list of
+
+4234
+04:04:33,180 --> 04:04:36,270
+the different functions and
+interactions you can have with a
+
+4235
+04:04:36,270 --> 04:04:39,570
+contract. The ABI itself doesn't
+actually need to include any of
+
+4236
+04:04:39,570 --> 04:04:42,150
+the logic, it just needs to
+include, hey, here are the
+
+4237
+04:04:42,150 --> 04:04:45,240
+different functions that you can
+call, for example, in this
+
+4238
+04:04:45,240 --> 04:04:48,060
+contract, we can call fund, we
+have get conversion rate, we
+
+4239
+04:04:48,060 --> 04:04:50,910
+have get price, they're not
+implemented yet, but they will
+
+4240
+04:04:50,910 --> 04:04:53,250
+be eventually now there
+technically is another way to
+
+4241
+04:04:53,250 --> 04:04:57,360
+interact with contracts without
+the API. But for now, we're just
+
+4242
+04:04:57,360 --> 04:05:00,060
+going to ignore that. So how can
+we get the API, there's a
+
+4243
+04:05:00,060 --> 04:05:03,390
+concept in solidity called an
+interface. And let's look at an
+
+4244
+04:05:03,390 --> 04:05:07,800
+example of an interface. If we
+go to github.com/smart, contract
+
+4245
+04:05:07,800 --> 04:05:11,940
+kits, chainlink, we can see a
+number of different contracts in
+
+4246
+04:05:11,940 --> 04:05:17,280
+the chainlink repository, we can
+go to contracts, src, V 0.8,
+
+4247
+04:05:17,670 --> 04:05:22,080
+interfaces, and we'll go to
+aggregator v3 interface, dot
+
+4248
+04:05:22,080 --> 04:05:25,560
+soul. And if we look at the
+solidity in here, we can see a
+
+4249
+04:05:25,560 --> 04:05:28,470
+whole bunch of function
+declarations, but none of the
+
+4250
+04:05:28,470 --> 04:05:32,340
+logic is actually implemented in
+this. This is what's known as an
+
+4251
+04:05:32,340 --> 04:05:36,840
+interface. If we compile this,
+we'll actually get the ABI of a
+
+4252
+04:05:36,840 --> 04:05:40,080
+contract, because it defines all
+the different ways we can
+
+4253
+04:05:40,080 --> 04:05:43,350
+interact with the contract. It
+doesn't actually say, what these
+
+4254
+04:05:43,350 --> 04:05:46,440
+functions do, which is fine,
+though, because we don't need to
+
+4255
+04:05:46,440 --> 04:05:49,290
+know what the functions actually
+do, those are going to be stored
+
+4256
+04:05:49,560 --> 04:05:54,120
+in the contract. So what we can
+do is we can grab this interface
+
+4257
+04:05:54,450 --> 04:05:58,050
+from the code and paste it into
+our remix. Now hold on, if
+
+4258
+04:05:58,050 --> 04:06:00,660
+you're following along, you
+don't have to copy paste this
+
+4259
+04:06:00,660 --> 04:06:02,820
+with me, because I'm going to
+show you an easier way in just a
+
+4260
+04:06:02,820 --> 04:06:05,550
+second. So for now, feel free to
+go ahead and just watch. But
+
+4261
+04:06:05,550 --> 04:06:09,240
+once we have this interface
+aggregator v3 interface, we can
+
+4262
+04:06:09,240 --> 04:06:14,610
+now use this to make API calls.
+So now we could say, aggregator
+
+4263
+04:06:14,610 --> 04:06:19,950
+v3 interface at this address.
+And the combination of these
+
+4264
+04:06:19,950 --> 04:06:24,360
+two, give us that aggregator v3
+contract with whatever code is
+
+4265
+04:06:24,360 --> 04:06:27,480
+here. If at this contract
+address is aggregator v3
+
+4266
+04:06:27,510 --> 04:06:30,750
+interfaces valid, we can do
+something like dot version.
+
+4267
+04:06:31,950 --> 04:06:34,770
+Let's look at this interface. Is
+there a version function? There
+
+4268
+04:06:34,770 --> 04:06:39,360
+sure is. So that means we can
+call the version function on
+
+4269
+04:06:39,450 --> 04:06:42,300
+this contract. So let's actually
+go ahead and copy this into a
+
+4270
+04:06:42,300 --> 04:06:45,900
+different section. I'm going to
+create a new function called Get
+
+4271
+04:06:45,900 --> 04:06:50,130
+version just to illustrate this.
+I'm going to be public. It's
+
+4272
+04:06:50,130 --> 04:06:55,050
+going to be a view and it's
+going to return the UN 256 and
+
+4273
+04:06:55,080 --> 04:06:58,020
+We're gonna split it up into two
+steps here. We're gonna say
+
+4274
+04:06:58,020 --> 04:07:04,320
+aggregate tour, v3 interface,
+price feed. So we're creating a
+
+4275
+04:07:04,770 --> 04:07:10,410
+variable of type aggregator v3
+interface equals aggregator v3
+
+4276
+04:07:10,410 --> 04:07:18,540
+interface at this address. And
+then we're going to return price
+
+4277
+04:07:18,540 --> 04:07:22,020
+feed that version. Now I'm going
+to go ahead and deploy this
+
+4278
+04:07:22,020 --> 04:07:25,290
+contract to Rigby just to show
+you what this git version is
+
+4279
+04:07:25,290 --> 04:07:28,080
+going to return. But you don't
+have to follow along here if you
+
+4280
+04:07:28,080 --> 04:07:30,360
+don't want because again, we're
+working with the test net, you
+
+4281
+04:07:30,360 --> 04:07:33,120
+can just watch if you'd like for
+this section, we're going to
+
+4282
+04:07:33,120 --> 04:07:36,180
+test a little bit more sparse.
+Since we're going to be mainly
+
+4283
+04:07:36,180 --> 04:07:38,820
+using the test net, since we're
+going to be working with an
+
+4284
+04:07:38,820 --> 04:07:41,730
+actual chain link Oracle
+network, once you move over to
+
+4285
+04:07:41,730 --> 04:07:45,090
+hard hat, and with JavaScript,
+all this testing locally will be
+
+4286
+04:07:45,090 --> 04:07:47,910
+a lot easier and a lot faster,
+you're more than welcome to go
+
+4287
+04:07:47,910 --> 04:07:50,460
+ahead and fiddle and try and
+test a lot of this stuff as we
+
+4288
+04:07:50,460 --> 04:07:53,700
+go along. But just know that it
+might take a little bit longer
+
+4289
+04:07:53,700 --> 04:07:55,380
+to do some of the testing on the
+test net,
+
+4290
+04:07:55,530 --> 04:07:58,020
+let's delete that last funding
+contract, we're going to deploy
+
+4291
+04:07:58,020 --> 04:08:00,780
+this one, we're going to scroll
+up, we're going to switch to
+
+4292
+04:08:00,810 --> 04:08:05,460
+injected web three, we're going
+to switch from COVID to rink B.
+
+4293
+04:08:05,760 --> 04:08:08,430
+And the reason we want to make
+sure we're on rink beam is
+
+4294
+04:08:08,430 --> 04:08:12,120
+because this address is specific
+to rink B, the contract that
+
+4295
+04:08:12,120 --> 04:08:15,150
+we're looking to interact with
+might not be at this address on
+
+4296
+04:08:15,150 --> 04:08:17,970
+every single chain, we want to
+make sure we're on the rink B
+
+4297
+04:08:17,970 --> 04:08:20,550
+chain for this, because of some
+other contract is there on the
+
+4298
+04:08:20,550 --> 04:08:23,670
+different chain, this version
+function obviously won't exist,
+
+4299
+04:08:23,850 --> 04:08:26,790
+and this function could error.
+So let's go ahead, we're gonna
+
+4300
+04:08:26,790 --> 04:08:30,840
+find me, we're going to deploy
+this to the rink V chain. Again,
+
+4301
+04:08:31,170 --> 04:08:33,210
+you don't have to follow along
+with me here, you can just
+
+4302
+04:08:33,210 --> 04:08:36,750
+watch. And once that contract
+has been deployed, we now have a
+
+4303
+04:08:36,750 --> 04:08:39,090
+view function called Get
+version. And we can see it's
+
+4304
+04:08:39,090 --> 04:08:42,540
+returning the variable for
+showing us that this is the
+
+4305
+04:08:42,540 --> 04:08:47,190
+fourth version of a price feed.
+So this is a really easy way for
+
+4306
+04:08:47,190 --> 04:08:50,700
+us to interact with contracts
+that exist. Outside of our
+
+4307
+04:08:50,700 --> 04:08:53,430
+project, we use one of these
+interfaces, which can get
+
+4308
+04:08:53,430 --> 04:08:57,450
+compiled down to the API, and
+then combine that ABI with the
+
+4309
+04:08:57,450 --> 04:09:00,570
+address to call a function. As
+we work with these interfaces
+
+4310
+04:09:00,570 --> 04:09:03,600
+more and more, they'll start to
+make more and more sense. So if
+
+4311
+04:09:03,600 --> 04:09:05,760
+it's a little confusing to you
+right now, don't get
+
+4312
+04:09:05,760 --> 04:09:08,010
+discouraged, the more you work
+with it, the easier it will
+
+4313
+04:09:08,010 --> 04:09:13,890
+become. Now, though, now that we
+know how to call these functions
+
+4314
+04:09:13,890 --> 04:09:17,460
+in here, we can start working
+with this interface. However, as
+
+4315
+04:09:17,460 --> 04:09:19,560
+you know, if we have a whole
+bunch of interfaces, we're gonna
+
+4316
+04:09:19,560 --> 04:09:21,750
+have to stick a whole bunch of
+interfaces at the top of our
+
+4317
+04:09:21,750 --> 04:09:25,320
+code, which looks pretty ugly.
+What's a better way for us to do
+
+4318
+04:09:25,320 --> 04:09:29,700
+this? Well, before we used
+import, right, we imported from
+
+4319
+04:09:29,940 --> 04:09:34,110
+simple storage. That's all for
+this one, what we could do is we
+
+4320
+04:09:34,110 --> 04:09:38,820
+could import from an array gay
+Tore v3 interface. That's all,
+
+4321
+04:09:39,000 --> 04:09:42,030
+we can go ahead and create a new
+contract with this aggregator v3
+
+4322
+04:09:42,030 --> 04:09:46,890
+interface. Or what we can do is
+we can import this directly from
+
+4323
+04:09:46,890 --> 04:09:50,010
+GitHub. If we go back to the
+documentation of these chainlink
+
+4324
+04:09:50,010 --> 04:09:53,940
+data feeds go to using data
+feeds, we scroll down, we see at
+
+4325
+04:09:53,940 --> 04:09:57,600
+the top, we have this import
+statement, import at chain link
+
+4326
+04:09:57,600 --> 04:10:01,890
+slash contracts slash SFC visa
+right interfaces aggregator v3
+
+4327
+04:10:01,890 --> 04:10:07,050
+interface, this, this import is
+has the same path setup as the
+
+4328
+04:10:07,050 --> 04:10:10,920
+GitHub repository for the chain
+link code, instead of us
+
+4329
+04:10:10,950 --> 04:10:14,820
+directly adding all the code
+right into our remix, what we
+
+4330
+04:10:14,820 --> 04:10:18,900
+can do instead is we can import
+directly from GitHub, or what's
+
+4331
+04:10:18,900 --> 04:10:22,710
+called an NPM package. Remix is
+smart enough to know that at
+
+4332
+04:10:22,710 --> 04:10:26,640
+chain link slash contracts, is
+referring to the NPM package at
+
+4333
+04:10:26,640 --> 04:10:29,670
+chain link slash contracts,
+we'll talk about NPM, a little
+
+4334
+04:10:29,670 --> 04:10:32,880
+bit in the future, it's what's
+known as a package manager, and
+
+4335
+04:10:32,880 --> 04:10:35,760
+can keep versions of different
+contracts for us to directly
+
+4336
+04:10:35,760 --> 04:10:39,390
+import into our code bases at
+chain link slash contracts is
+
+4337
+04:10:39,390 --> 04:10:43,350
+created directly from the
+chainlink GitHub repository. So
+
+4338
+04:10:43,350 --> 04:10:47,220
+remix downloads this code from
+NPM, which is created from this
+
+4339
+04:10:47,220 --> 04:10:50,820
+GitHub. So now we know that if
+we import at chain link slash
+
+4340
+04:10:50,820 --> 04:10:54,960
+contracts, src, V 0.8 interfaces
+aggregator v3 interface dot
+
+4341
+04:10:54,960 --> 04:10:59,130
+soul, this is the same as if we
+had just stuck this whole
+
+4342
+04:10:59,130 --> 04:11:02,520
+contract right at the top of our
+funding contract, which makes
+
+4343
+04:11:02,520 --> 04:11:05,670
+our code look a lot nicer. And
+now we have this aggregator v3
+
+4344
+04:11:05,670 --> 04:11:11,010
+interface that we can work with.
+Okay, great. So now that we have
+
+4345
+04:11:11,010 --> 04:11:14,190
+a minimalistic interface, which
+will give us the API, how do we
+
+4346
+04:11:14,190 --> 04:11:17,070
+actually go ahead and get the
+price here? Well, documentation
+
+4347
+04:11:17,100 --> 04:11:19,380
+has a good example, if you want
+to play with it and try to
+
+4348
+04:11:19,380 --> 04:11:21,870
+reverse engineer it as well.
+Here's how we're going to do it.
+
+4349
+04:11:21,990 --> 04:11:25,740
+In our code. We're going to
+create an aggregator v3
+
+4350
+04:11:25,740 --> 04:11:32,070
+interface object called price
+feed an aggregator v3 variable
+
+4351
+04:11:32,190 --> 04:11:36,150
+called price feed, which is
+going to equal to aggregator v3
+
+4352
+04:11:36,150 --> 04:11:41,910
+interface contract at address
+this address exactly the same as
+
+4353
+04:11:41,910 --> 04:11:45,330
+what we're doing down here.
+We're assuming a contract at
+
+4354
+04:11:45,330 --> 04:11:48,300
+this address is going to have
+all the functionality of this
+
+4355
+04:11:48,300 --> 04:11:51,810
+aggregator v3 interface, which
+again, means it has this
+
+4356
+04:11:51,810 --> 04:11:54,630
+decimals function, this
+description function version,
+
+4357
+04:11:54,660 --> 04:11:57,960
+get round data. And the
+important one latest round data,
+
+4358
+04:11:57,990 --> 04:12:01,230
+which has the latest price at
+this answer piece, what we can
+
+4359
+04:12:01,230 --> 04:12:04,470
+do now is we can call that
+latest round data function on
+
+4360
+04:12:04,470 --> 04:12:08,970
+the price feed. So we'll say
+price feed dot latest round
+
+4361
+04:12:09,540 --> 04:12:12,630
+data. Now if we look at the
+interface, we see that this
+
+4362
+04:12:12,630 --> 04:12:16,380
+latest round data actually
+doesn't return one variable, it
+
+4363
+04:12:16,380 --> 04:12:20,190
+returns a whole bunch of
+different variables. And that's
+
+4364
+04:12:20,190 --> 04:12:22,980
+what we're going to return in
+our contract. So we're going to
+
+4365
+04:12:22,980 --> 04:12:27,960
+put these parentheses, and we're
+going to say, you went at round
+
+4366
+04:12:27,960 --> 04:12:30,720
+ID, we can even look right at
+the documentation to see what
+
+4367
+04:12:30,720 --> 04:12:34,410
+else it returns int price, you
+went,
+
+4368
+04:12:36,000 --> 04:12:45,450
+you went started out, you went
+timestamp. And then you went ad,
+
+4369
+04:12:45,930 --> 04:12:51,120
+answered and round. Now there's
+a lot of code here. Since this
+
+4370
+04:12:51,120 --> 04:12:54,840
+function returns so many
+different variables, we have to
+
+4371
+04:12:54,870 --> 04:12:57,960
+set something up to capture
+them. However, all we care about
+
+4372
+04:12:57,990 --> 04:13:01,140
+is price. We don't care about
+round Id started at timestamp or
+
+4373
+04:13:01,140 --> 04:13:03,930
+answered in round. So what we
+can do is just remove them and
+
+4374
+04:13:03,930 --> 04:13:04,890
+just leave the commas.
+
+4375
+04:13:10,560 --> 04:13:15,180
+Now we have int price equals
+price feed that latest round
+
+4376
+04:13:15,180 --> 04:13:19,920
+data. The reason that price is
+an int 256. And not a un 256 is
+
+4377
+04:13:19,920 --> 04:13:23,070
+because some prices or some data
+feeds could be negative here, so
+
+4378
+04:13:23,070 --> 04:13:26,250
+that it's an int 256. So it can
+stay flexible. Now that we have
+
+4379
+04:13:26,250 --> 04:13:31,650
+the price, this is going to be
+price of eath in terms of USD.
+
+4380
+04:13:32,250 --> 04:13:35,790
+And we saw an example of this
+before, it was around 3000. And
+
+4381
+04:13:35,790 --> 04:13:39,120
+it returned this number because
+solidity doesn't work with
+
+4382
+04:13:39,120 --> 04:13:41,670
+decimals for a number of
+reasons. But we just need to
+
+4383
+04:13:41,670 --> 04:13:44,820
+know that there are eight
+decimal places associated with
+
+4384
+04:13:44,820 --> 04:13:47,460
+this price feed. If you want to
+double check how many decimals
+
+4385
+04:13:47,460 --> 04:13:50,190
+there are, this contract has a
+decimal function that you can
+
+4386
+04:13:50,190 --> 04:13:53,520
+call as well, that will tell you
+exactly how many decimals are in
+
+4387
+04:13:53,520 --> 04:13:57,150
+this price feed. Now as we know,
+message dot value is going to
+
+4388
+04:13:57,150 --> 04:14:00,450
+have 18 decimal places. Why does
+it have 18 decimal places? Well,
+
+4389
+04:14:00,450 --> 04:14:07,590
+because one ether is equal to
+1-234-567-8910 12345678 Is this
+
+4390
+04:14:07,590 --> 04:14:12,540
+massive number in way which has
+18 zeros, which is equivalent to
+
+4391
+04:14:12,570 --> 04:14:20,100
+1.12345 678-910-1234 5678. So we
+want these to have the same
+
+4392
+04:14:20,130 --> 04:14:22,890
+decimal places, right? Because
+right now this has eight, this
+
+4393
+04:14:22,890 --> 04:14:26,760
+is 18. They're different units
+right now. So to get them to
+
+4394
+04:14:26,760 --> 04:14:33,990
+match up, all we need to do is
+return price times one, ie 10,
+
+4395
+04:14:34,170 --> 04:14:40,560
+or one raised to the 10th, which
+is equal to 1123456789 10.
+
+4396
+04:14:40,710 --> 04:14:45,120
+Message dot value, though, is
+going to be a UNT 256. And right
+
+4397
+04:14:45,120 --> 04:14:49,830
+now, price is an interval at
+six. So why did we convert this
+
+4398
+04:14:49,830 --> 04:14:54,300
+value from n into 56. To a human
+to 56? Well, we can do what's
+
+4399
+04:14:54,300 --> 04:14:58,560
+called typecasting, all we need
+to do is add you into 56. And
+
+4400
+04:14:58,560 --> 04:15:01,710
+wrap this whole thing up between
+these two parentheses, you can't
+
+4401
+04:15:01,710 --> 04:15:06,360
+typecast anything. But there are
+some values like into 56 and you
+
+4402
+04:15:06,360 --> 04:15:09,600
+into 56, that can be easily
+converted between the two. Now
+
+4403
+04:15:09,600 --> 04:15:12,720
+of course, since we're not
+modifying any state with this
+
+4404
+04:15:12,720 --> 04:15:16,860
+get price function, we can make
+this view and say it returns
+
+4405
+04:15:17,400 --> 04:15:21,210
+that you went to 36. And if we
+save and compile, we go ahead
+
+4406
+04:15:21,240 --> 04:15:23,820
+and we get that checkmark. Now
+math can be a little bit tricky.
+
+4407
+04:15:23,820 --> 04:15:26,370
+The first couple times you do it
+in solidity. But the more you do
+
+4408
+04:15:26,370 --> 04:15:28,920
+it, the easier it becomes. And
+in the future, we can always
+
+4409
+04:15:28,950 --> 04:15:32,250
+reference a function like this
+to figure out okay, here's the
+
+4410
+04:15:32,250 --> 04:15:35,070
+easiest way for me to get this
+number. Awesome. So now we have
+
+4411
+04:15:35,100 --> 04:15:39,030
+a get price function, which is
+going to return a un 256, which
+
+4412
+04:15:39,030 --> 04:15:42,960
+is going to be the price of
+Aetherium. In terms of USD, all
+
+4413
+04:15:42,960 --> 04:15:46,500
+we need to do is convert the
+message dot value from
+
+4414
+04:15:46,710 --> 04:15:51,540
+Aetherium. To terms of dollars,
+let's create this get conversion
+
+4415
+04:15:51,540 --> 04:15:54,120
+rate function. So this one,
+we're going to take an input
+
+4416
+04:15:54,120 --> 04:15:58,590
+parameter of un 256 of eath
+amount, it's going to be a
+
+4417
+04:15:58,590 --> 04:16:04,290
+public view function. And it's
+going to return you went to 56,
+
+4418
+04:16:04,620 --> 04:16:08,010
+we're going to pass it some eath
+amount. And on the other side,
+
+4419
+04:16:08,010 --> 04:16:11,760
+we're going to get how much that
+eath is worth in terms of USD.
+
+4420
+04:16:11,880 --> 04:16:16,200
+So we're going to do a u
+intuity. Six eath price equals
+
+4421
+04:16:16,800 --> 04:16:21,030
+get price. So first, we're going
+to call our get price function
+
+4422
+04:16:21,120 --> 04:16:24,330
+that we just created to get the
+price of Aetherium. Then we're
+
+4423
+04:16:24,330 --> 04:16:31,680
+going to do u and 256 eath
+amount in USD equals eath price
+
+4424
+04:16:32,010 --> 04:16:36,870
+times eath amount, and then
+we're going to divide it by 118.
+
+4425
+04:16:37,050 --> 04:16:40,440
+When you're doing multiplication
+and division math in solidity,
+
+4426
+04:16:40,680 --> 04:16:44,250
+you always want to multiply and
+add first and then go ahead and
+
+4427
+04:16:44,250 --> 04:16:48,780
+divide since eath price and eath
+amount both have 18 additional
+
+4428
+04:16:48,780 --> 04:16:51,900
+decimal places if we were to
+just let them rock without this,
+
+4429
+04:16:52,200 --> 04:16:55,920
+they would have an additional 36
+zeros tax tacked onto the end.
+
+4430
+04:16:56,040 --> 04:16:58,740
+So we need to divide by one EA
+team. Now when we get to the
+
+4431
+04:16:58,740 --> 04:17:01,590
+hard hat sections of this course
+testing all this math is going
+
+4432
+04:17:01,590 --> 04:17:04,380
+to be a lot easier. And if
+you're really struggling with
+
+4433
+04:17:04,380 --> 04:17:06,660
+some of the math bits right now,
+I wouldn't let that slow you
+
+4434
+04:17:06,660 --> 04:17:08,880
+down. Because once we get to
+heart, it's going to become a
+
+4435
+04:17:08,880 --> 04:17:12,300
+lot easier to actually test this
+than working on a test net. And
+
+4436
+04:17:12,300 --> 04:17:15,870
+this eath amount in terms of USD
+is the number that we're looking
+
+4437
+04:17:15,870 --> 04:17:20,430
+for. So we can just go ahead and
+return eath amount in USD, CSB
+
+4438
+04:17:20,430 --> 04:17:24,150
+returns here, and boom, now we
+have a good conversion rate
+
+4439
+04:17:24,150 --> 04:17:26,760
+function to walk you through the
+math real quick. Let's say the
+
+4440
+04:17:26,760 --> 04:17:29,910
+eath price is going to be
+$3,000. So it's going to be
+
+4441
+04:17:29,910 --> 04:17:33,600
+3000. But it's going to have an
+additional 18 zeros tacked on
+
+4442
+04:17:33,600 --> 04:17:37,680
+the end, it matches the message
+dot value way units. And let's
+
+4443
+04:17:37,680 --> 04:17:45,180
+say for example, we send one
+eath or 112345 678-910-1234 5678
+
+4444
+04:17:45,240 --> 04:17:51,090
+eath into this contract, one
+eath should equal $3,000. So to
+
+4445
+04:17:51,090 --> 04:17:54,990
+get the price, we're going to
+now do the eath price, which is
+
+4446
+04:17:54,990 --> 04:17:59,580
+3000 times the eath amount,
+which is this one, and then
+
+4447
+04:17:59,580 --> 04:18:02,490
+divide by one raised to the
+18th. So method out we'll do
+
+4448
+04:18:02,490 --> 04:18:09,060
+3123 1-234-567-8910 12345678
+times we'd
+
+4449
+04:18:09,060 --> 04:18:19,920
+1001 2345678 1-234-567-8910
+times 112345678 1-234-567-8910.
+
+4450
+04:18:20,220 --> 04:18:27,150
+And now we divide that by
+112345678 1-234-567-8910, which
+
+4451
+04:18:27,180 --> 04:18:32,490
+equals 2.9. Mmm, II 21, which
+the calculator kind of messed up
+
+4452
+04:18:32,490 --> 04:18:38,370
+them a little bit, but 2.9, not
+2.99, ie 21 means this has 21
+
+4453
+04:18:38,370 --> 04:18:46,800
+decimal places. So it'd be
+2.1 234-567-8910 1-234-567-8910
+
+4454
+04:18:46,860 --> 04:18:53,310
+one, or
+1-234-567-8910 12345678 2900 I
+
+4455
+04:18:53,310 --> 04:18:58,350
+9.99 and a nine. And this is
+actually exactly the reason why
+
+4456
+04:18:58,380 --> 04:19:01,560
+we don't do decimal math in
+solidity, our calculator saw
+
+4457
+04:19:01,560 --> 04:19:04,140
+that massive number was having a
+hard time getting it. So it
+
+4458
+04:19:04,140 --> 04:19:07,560
+ended up rounding that number to
+2.999. And nine, when we work
+
+4459
+04:19:07,560 --> 04:19:11,130
+exclusively with whole numbers
+in solidity, we don't have a
+
+4460
+04:19:11,130 --> 04:19:14,370
+chance of losing that precision.
+And in solidity, this is going
+
+4461
+04:19:14,370 --> 04:19:19,290
+to return exactly $3,000, which
+is correct one Aetherium at
+
+4462
+04:19:19,350 --> 04:19:23,940
+$3,000 per Aetherium is going to
+be $3,000. And like I said,
+
+4463
+04:19:24,060 --> 04:19:26,850
+since we're building this
+contract, assuming we're going
+
+4464
+04:19:26,850 --> 04:19:29,310
+to be working on this test net,
+we're not going to test this
+
+4465
+04:19:29,460 --> 04:19:31,590
+function on the test net,
+because we're going to have to
+
+4466
+04:19:31,590 --> 04:19:34,290
+wait for that transaction to go
+through. If you want to go ahead
+
+4467
+04:19:34,290 --> 04:19:36,600
+and deploy this and play around
+with it yourself, you're more
+
+4468
+04:19:36,600 --> 04:19:39,540
+than welcome to Okay, great, now
+we have a function called Get
+
+4469
+04:19:39,540 --> 04:19:43,140
+conversion rate that we can use
+on our fund function to make
+
+4470
+04:19:43,140 --> 04:19:46,410
+sure we've sent enough message
+dot value in our fund. So what
+
+4471
+04:19:46,410 --> 04:19:50,220
+we can do now is all we need to
+do is to get conversion rate of
+
+4472
+04:19:50,220 --> 04:19:53,760
+message dot value needs to be
+greater than the minimum USD. Of
+
+4473
+04:19:53,760 --> 04:19:57,870
+course, right now our minimum
+USD is just in terms of 50. And
+
+4474
+04:19:57,870 --> 04:20:01,950
+we know that conversion rate is
+going to return it with 18 zeros
+
+4475
+04:20:01,980 --> 04:20:05,400
+to represent the decimal places,
+our minimum USD amount needs to
+
+4476
+04:20:05,400 --> 04:20:12,360
+be upgraded to 10 to 50 times
+one e 18. Or again, one times
+
+4477
+04:20:12,360 --> 04:20:16,380
+10, raise the 18th, I'm going to
+deploy this to a test net just
+
+4478
+04:20:16,380 --> 04:20:19,110
+to demonstrate it. But again,
+you don't have to if you don't
+
+4479
+04:20:19,110 --> 04:20:21,780
+want to wait for this. So I'm
+gonna go ahead and deploy this
+
+4480
+04:20:22,230 --> 04:20:25,500
+confirm. And now we have this
+funny contract. If I don't say
+
+4481
+04:20:25,500 --> 04:20:28,950
+anything in value, and hit the
+fun button, we're gonna get this
+
+4482
+04:20:28,950 --> 04:20:32,610
+gas estimation error failed.
+This is kind of a blanket error,
+
+4483
+04:20:32,640 --> 04:20:34,650
+basically saying, Hey, you can
+go ahead and send this
+
+4484
+04:20:34,650 --> 04:20:36,930
+transaction if you want, it's
+highly likely that it's not
+
+4485
+04:20:36,930 --> 04:20:39,420
+going to work. And the reason
+that remix knows that it's
+
+4486
+04:20:39,420 --> 04:20:42,000
+probably not going to work is
+because it can see this require
+
+4487
+04:20:42,030 --> 04:20:44,760
+and simulate the transaction and
+say, Hey, you didn't send enough
+
+4488
+04:20:44,760 --> 04:20:49,170
+money with this. However, even
+if we send some money, like 5000
+
+4489
+04:20:49,170 --> 04:20:52,740
+way, it'll still give us this
+error. Because that's not
+
+4490
+04:20:52,740 --> 04:20:55,380
+enough. Let's do the calculation
+right now based on what the
+
+4491
+04:20:55,380 --> 04:20:59,010
+price of eath is. So we can
+actually go to data dot chain
+
+4492
+04:20:59,010 --> 04:21:02,370
+that link, we look and see
+approximately what the price is.
+
+4493
+04:21:02,550 --> 04:21:04,770
+So it looks like the price of
+Aetherium right now is about
+
+4494
+04:21:04,770 --> 04:21:07,770
+$3,000. And this might be
+different for you depending on
+
+4495
+04:21:07,770 --> 04:21:10,890
+when you do that. So if the
+price of Aetherium is $3,000,
+
+4496
+04:21:10,980 --> 04:21:14,760
+and our minimum is at least 50.
+We could do 50 divided by
+
+4497
+04:21:15,450 --> 04:21:21,990
+3000 0.016 eath should be
+approximately enough. So if we
+
+4498
+04:21:21,990 --> 04:21:27,390
+go to our Aetherium converter,
+and we do 0.016, we'll get how
+
+4499
+04:21:27,390 --> 04:21:33,060
+much that is in way, let's do
+0.02 Just to make sure that
+
+4500
+04:21:33,090 --> 04:21:36,510
+we're going to be over the
+amount. So we'll paste that in.
+
+4501
+04:21:36,780 --> 04:21:40,170
+We'll change this to way. And
+now if I hit the fun button,
+
+4502
+04:21:40,650 --> 04:21:43,440
+instead of us getting that error
+popping up, it's going to
+
+4503
+04:21:43,440 --> 04:21:46,500
+actually go ahead and let us do
+the fun function and we could
+
+4504
+04:21:46,500 --> 04:21:49,650
+confirm it and it wouldn't fail.
+I'm going to reject it for now
+
+4505
+04:21:49,650 --> 04:21:51,690
+just because I don't really feel
+like waiting for the transaction
+
+4506
+04:21:51,690 --> 04:21:54,030
+to go through. But great. We've
+confirmed that our get
+
+4507
+04:21:54,030 --> 04:21:57,000
+conversion rate is one working
+as intended, awesome, great
+
+4508
+04:21:57,000 --> 04:21:57,420
+work.
+
+4509
+04:22:00,149 --> 04:22:02,819
+So what's the next bit of this
+funding contract that we want to
+
+4510
+04:22:02,819 --> 04:22:06,509
+do? Well, when people actually
+send money to this contract, we
+
+4511
+04:22:06,509 --> 04:22:09,689
+want to keep track of all the
+people who send us money. So
+
+4512
+04:22:09,689 --> 04:22:12,389
+let's create some data
+structures. To keep track. Let's
+
+4513
+04:22:12,389 --> 04:22:16,709
+create an array of addresses
+called funders. And we'll keep
+
+4514
+04:22:16,739 --> 04:22:20,519
+adding all the funders who send
+money to us. So we'll say an
+
+4515
+04:22:20,519 --> 04:22:24,689
+address array, or an address
+list. We'll make it public
+
+4516
+04:22:25,199 --> 04:22:29,189
+funders. And anytime somebody
+sends us money, and this
+
+4517
+04:22:29,189 --> 04:22:32,399
+actually does indeed go through,
+we'll add that funded server
+
+4518
+04:22:32,399 --> 04:22:37,799
+list. So we'll say funders dot
+push message dot sender, like
+
+4519
+04:22:37,799 --> 04:22:41,819
+message dot value. Message dot
+sender is an always available
+
+4520
+04:22:41,819 --> 04:22:45,779
+global keyword message dot value
+stands for how much Aetherium or
+
+4521
+04:22:45,779 --> 04:22:48,989
+how much native blockchain
+currency is sent. Message dot
+
+4522
+04:22:48,989 --> 04:22:53,069
+sender is the address of whoever
+calls the font function. So if
+
+4523
+04:22:53,069 --> 04:22:56,729
+we're on Rigby message dot
+sender is going to be equal to
+
+4524
+04:22:56,759 --> 04:23:00,239
+whatever address is calling that
+function. Since our address is
+
+4525
+04:23:00,239 --> 04:23:04,469
+sending the ether, we're going
+to add our address to this
+
+4526
+04:23:04,469 --> 04:23:07,259
+funders list. This way we can
+keep track of all the wonderful
+
+4527
+04:23:07,259 --> 04:23:11,579
+donators who are donating to our
+contract, then maybe we won't
+
+4528
+04:23:11,579 --> 04:23:17,549
+even make a mapping of addresses
+to you and 250 sixes of
+
+4529
+04:23:17,579 --> 04:23:20,819
+addresses to how much money each
+one of these people have
+
+4530
+04:23:20,819 --> 04:23:25,409
+actually sent. So we'll do
+address to you and 256 public
+
+4531
+04:23:26,099 --> 04:23:31,769
+address to amount funded. And
+when somebody funds our contract
+
+4532
+04:23:31,799 --> 04:23:35,129
+will say address to amount
+funded of message dot sender
+
+4533
+04:23:36,089 --> 04:23:40,349
+equals message dot value. Now we
+have a function where people can
+
+4534
+04:23:40,349 --> 04:23:44,519
+fund our contract. And we can
+set a value in terms of USD and
+
+4535
+04:23:44,519 --> 04:23:47,699
+we keep track of the different
+funders who actually fund our
+
+4536
+04:23:47,699 --> 04:23:54,239
+contract. This is fantastic. Now
+I know we've gone over a lot of
+
+4537
+04:23:54,239 --> 04:23:57,779
+really intense math and intense
+stuff here. So so let's do a
+
+4538
+04:23:57,779 --> 04:24:00,389
+quick refresher of what we've
+learned so far. Whenever we work
+
+4539
+04:24:00,389 --> 04:24:03,869
+with a contract, we always need
+the API and the address when
+
+4540
+04:24:03,869 --> 04:24:08,279
+compiled an interface gives us
+that minimalistic API to
+
+4541
+04:24:08,279 --> 04:24:12,239
+interact with contracts outside
+of our project. When you combine
+
+4542
+04:24:12,269 --> 04:24:15,269
+these compiled interfaces with
+an address, we can call the
+
+4543
+04:24:15,269 --> 04:24:19,109
+functions on that interface on
+that contract. chain link. data
+
+4544
+04:24:19,109 --> 04:24:22,889
+feeds are a decentralized way to
+get information about the real
+
+4545
+04:24:22,889 --> 04:24:25,769
+world. In this case, we're
+getting the price of Aetherium
+
+4546
+04:24:25,799 --> 04:24:29,069
+in terms of USD from a
+decentralized collective of
+
+4547
+04:24:29,069 --> 04:24:32,039
+chain link nodes. When working
+with math and solidity. Decimals
+
+4548
+04:24:32,069 --> 04:24:35,099
+don't work. So we need to keep
+that in mind when doing any type
+
+4549
+04:24:35,099 --> 04:24:38,399
+of math in solidity. And we need
+to make sure we always have the
+
+4550
+04:24:38,399 --> 04:24:42,809
+correct units, so that our math
+makes sense. Message dot value,
+
+4551
+04:24:42,899 --> 04:24:46,199
+and message dot sender, our
+globally available variables
+
+4552
+04:24:46,229 --> 04:24:49,139
+were message dot sender
+represents the sender of the
+
+4553
+04:24:49,139 --> 04:24:52,679
+message or transaction. And
+message dot value represents the
+
+4554
+04:24:52,679 --> 04:24:55,559
+number of ways sent with the
+message. There's a whole bunch
+
+4555
+04:24:55,589 --> 04:24:58,259
+of different special variables
+and functions that we can access
+
+4556
+04:24:58,259 --> 04:25:00,929
+at any time. And these are
+available in the solidity
+
+4557
+04:25:00,929 --> 04:25:06,269
+documentation. Alright, great,
+we've got a great way that we
+
+4558
+04:25:06,269 --> 04:25:09,059
+can actually start funding our
+contract. But our code looks a
+
+4559
+04:25:09,059 --> 04:25:11,639
+little bit messy, we've got a
+couple of different functions
+
+4560
+04:25:11,819 --> 04:25:14,489
+for getting the price and
+working with these prices, is
+
+4561
+04:25:14,489 --> 04:25:17,939
+there a way to make this math a
+lot easier to use, this is where
+
+4562
+04:25:17,939 --> 04:25:21,509
+we're going to introduce the
+concept of a library. So what is
+
+4563
+04:25:21,539 --> 04:25:23,999
+a library, I definitely
+recommend checking out solidity
+
+4564
+04:25:23,999 --> 04:25:27,359
+by example.org, as you're going
+along with this course, as well,
+
+4565
+04:25:27,419 --> 04:25:30,869
+they've got some fantastic
+examples. One of such example is
+
+4566
+04:25:30,899 --> 04:25:33,089
+going to be about libraries,
+libraries are similar to
+
+4567
+04:25:33,089 --> 04:25:35,879
+contracts. But you can't declare
+any state variables and you
+
+4568
+04:25:35,879 --> 04:25:39,989
+can't send ether. We can also
+use libraries to add more
+
+4569
+04:25:39,989 --> 04:25:43,289
+functionality to different
+values. What do I mean by that?
+
+4570
+04:25:43,379 --> 04:25:47,009
+Well, what we can do actually is
+we can have get conversion rate
+
+4571
+04:25:47,039 --> 04:25:53,489
+be a function of a un 256. So we
+could do something like Messer
+
+4572
+04:25:53,489 --> 04:25:59,189
+dot value dot get convert John,
+conversion rate. And we can add
+
+4573
+04:25:59,189 --> 04:26:03,209
+functions as if you went to 36
+was an object or a struct or a
+
+4574
+04:26:03,209 --> 04:26:06,509
+contract that we actually
+created. So how do we do this?
+
+4575
+04:26:06,539 --> 04:26:09,929
+Well, let's create a new
+contract in our contracts folder
+
+4576
+04:26:10,229 --> 04:26:12,599
+and create a new file. We're
+going to call it price
+
+4577
+04:26:12,899 --> 04:26:17,819
+converter, dot salt. And our
+price converted outsole is going
+
+4578
+04:26:17,819 --> 04:26:21,869
+to be a library that we're going
+to attach to a un 256. So how do
+
+4579
+04:26:21,869 --> 04:26:24,449
+you actually create a library
+and what is a library? Well, a
+
+4580
+04:26:24,449 --> 04:26:27,389
+library is going to be really,
+really similar to a smart
+
+4581
+04:26:27,389 --> 04:26:34,169
+contract. It's gonna start with
+spdx license identifier. My
+
+4582
+04:26:34,169 --> 04:26:40,049
+team, we're gonna give it a
+pragma, solidity zero point 8.0.
+
+4583
+04:26:40,349 --> 04:26:43,349
+And instead of typing contract
+for the name of the contract,
+
+4584
+04:26:43,379 --> 04:26:46,559
+we're going to do library for
+the name of the library. We're
+
+4585
+04:26:46,559 --> 04:26:49,349
+going to call it price
+converter. Now libraries can't
+
+4586
+04:26:49,349 --> 04:26:52,649
+have any state variables and
+they also can't send ether and
+
+4587
+04:26:52,649 --> 04:26:55,049
+all the functions in a library
+are going to be in there.
+
+4588
+04:26:55,079 --> 04:26:58,769
+kernel. So what we can do is we
+can go back to fund me dot soul,
+
+4589
+04:26:59,549 --> 04:27:03,779
+we can grab get price, get
+version and get conversion rate,
+
+4590
+04:27:04,079 --> 04:27:08,549
+copy them all, delete them from
+Funmi dot soul and paste them
+
+4591
+04:27:08,579 --> 04:27:11,909
+into our library. And of course,
+since we're using aggregator v3
+
+4592
+04:27:11,909 --> 04:27:17,039
+interface in here, we can also
+copy the import from Funmi. And
+
+4593
+04:27:17,069 --> 04:27:19,979
+since we're not using the
+aggregate of three interface and
+
+4594
+04:27:19,979 --> 04:27:23,189
+our contract anymore, and we're
+using our price converter, we
+
+4595
+04:27:23,189 --> 04:27:26,219
+can paste it into our price
+converter. Now, if we compile
+
+4596
+04:27:26,369 --> 04:27:30,149
+price converted at soul, we see
+that it actually passes. Now all
+
+4597
+04:27:30,149 --> 04:27:33,749
+the functions inside of our
+library need to be internal. And
+
+4598
+04:27:33,749 --> 04:27:36,479
+we're gonna make this library
+price converter different
+
+4599
+04:27:36,479 --> 04:27:40,109
+functions, we can call on you
+activity six, for example, we're
+
+4600
+04:27:40,109 --> 04:27:42,899
+going to be able to do message
+dot value dot get conversion
+
+4601
+04:27:42,899 --> 04:27:45,989
+rate, we're going to directly be
+able to get the conversion rate
+
+4602
+04:27:46,049 --> 04:27:50,069
+of a value of a U and 256 as if
+that was a function for it the
+
+4603
+04:27:50,069 --> 04:27:54,479
+whole time. So first, let's make
+this internal. Let's make get
+
+4604
+04:27:54,479 --> 04:27:57,149
+conversion rate internal. And
+we'll make good version
+
+4605
+04:27:57,149 --> 04:28:00,749
+internal. Now that we have this
+library price converter back in
+
+4606
+04:28:00,749 --> 04:28:04,259
+our Funmi, we can now import
+this price converter and attach
+
+4607
+04:28:04,259 --> 04:28:08,849
+it to you in 256. So we'll do
+import that slash price
+
+4608
+04:28:08,849 --> 04:28:10,649
+converter, dot soul.
+
+4609
+04:28:11,670 --> 04:28:19,740
+And in Funmi, we'll do using
+price converter for UNT 256. Of
+
+4610
+04:28:19,740 --> 04:28:23,520
+course, if we compile our Funmi.
+Now, this line is getting an
+
+4611
+04:28:23,520 --> 04:28:26,520
+issue because saying hey, get
+conversion rate isn't defined.
+
+4612
+04:28:26,700 --> 04:28:31,020
+Now in our library, the first
+variable that gets passed to the
+
+4613
+04:28:31,020 --> 04:28:33,780
+function is going to be the
+object that it's called on
+
+4614
+04:28:33,780 --> 04:28:37,530
+itself. So in Funmi dot soul,
+let's go ahead and comment out
+
+4615
+04:28:37,530 --> 04:28:40,950
+this line for now. If we do
+message dot value dot get
+
+4616
+04:28:40,950 --> 04:28:44,220
+conversion rate, this is
+secretly the same as we did get
+
+4617
+04:28:44,220 --> 04:28:47,820
+conversion rate or message dot
+value in our price converter
+
+4618
+04:28:47,880 --> 04:28:50,790
+library, the message dot value
+is going to be passed as the
+
+4619
+04:28:50,790 --> 04:28:53,610
+input parameter to get
+conversion rate, forget price
+
+4620
+04:28:53,610 --> 04:28:56,970
+and get version we don't really
+care about the number. So we're
+
+4621
+04:28:56,970 --> 04:29:00,330
+just going to leave it blank for
+now. So instead of require get
+
+4622
+04:29:00,330 --> 04:29:05,160
+conversion rate of message dot
+value, we can now do message dot
+
+4623
+04:29:05,160 --> 04:29:11,160
+value dot get conversion rate.
+And compile that you'll see that
+
+4624
+04:29:11,160 --> 04:29:14,220
+here we're not passing a
+variable, even though our get
+
+4625
+04:29:14,220 --> 04:29:17,340
+conversion rate function says
+hey, I'm expecting a variable.
+
+4626
+04:29:17,550 --> 04:29:20,640
+Again, the reason for this is,
+is this message add value is
+
+4627
+04:29:20,640 --> 04:29:23,730
+considered the first parameter
+for any of these library
+
+4628
+04:29:23,730 --> 04:29:26,460
+functions. And that's how it
+works. If we wanted another
+
+4629
+04:29:26,460 --> 04:29:32,370
+variable in here, like you went
+to 56, something else. Now we
+
+4630
+04:29:32,370 --> 04:29:36,990
+would want to pass something
+else in here 123. And this 123
+
+4631
+04:29:37,020 --> 04:29:39,870
+would get assigned to this
+something else. But we're going
+
+4632
+04:29:39,870 --> 04:29:44,430
+to delete that for now. Okay,
+great. And in doing that, we've
+
+4633
+04:29:44,430 --> 04:29:48,600
+minimized our Funmi contract a
+lot by moving a lot of that math
+
+4634
+04:29:48,600 --> 04:29:52,350
+and price conversion stuff into
+our price converter library dot
+
+4635
+04:29:52,350 --> 04:29:57,720
+Sol. One of the most common
+libraries that was used for the
+
+4636
+04:29:57,720 --> 04:30:02,520
+longest time was this library
+called Safe math dot Sol. And
+
+4637
+04:30:02,520 --> 04:30:05,220
+you'll probably see it a lot of
+different places, we're gonna go
+
+4638
+04:30:05,220 --> 04:30:08,220
+off on a quick little tangent
+here and teach you about safe
+
+4639
+04:30:08,220 --> 04:30:11,580
+math. So let's close Funmi close
+price converter. And let's
+
+4640
+04:30:11,580 --> 04:30:17,580
+create a new file called Safe
+math tester. That's all. And
+
+4641
+04:30:17,580 --> 04:30:20,640
+let's start with some basic
+stuff in here. Safe math was all
+
+4642
+04:30:20,640 --> 04:30:24,750
+over the place before version
+0.8 of solidity. And now it's
+
+4643
+04:30:24,780 --> 04:30:28,290
+almost in no contracts. What
+happened, why is safe math no
+
+4644
+04:30:28,290 --> 04:30:32,370
+longer used as much? Well, let's
+create a sample contract. This
+
+4645
+04:30:32,370 --> 04:30:34,950
+is a section that you don't have
+to follow along if you don't
+
+4646
+04:30:34,950 --> 04:30:38,070
+want to code along with me. But
+if you want to you absolutely
+
+4647
+04:30:38,070 --> 04:30:40,890
+still can. This is going to be a
+contract we are going to deploy
+
+4648
+04:30:40,920 --> 04:30:44,010
+on a JavaScript virtual machine,
+we can use any version of
+
+4649
+04:30:44,010 --> 04:30:48,510
+solidity before version 0.8 of
+solidity. So for example, we use
+
+4650
+04:30:48,510 --> 04:30:54,150
+pragma, carrot, zero, point 6.0.
+And we'll create contract safe
+
+4651
+04:30:54,540 --> 04:31:00,180
+math tester, dot Sol. Now if I
+create a you int eight, I set it
+
+4652
+04:31:00,180 --> 04:31:06,960
+to public big number. And I set
+this to 255 Oops safe math
+
+4653
+04:31:06,960 --> 04:31:11,010
+tester. Let's go ahead and
+compile safe math tester with
+
+4654
+04:31:11,520 --> 04:31:17,700
+zero point 6.7 pragma, solidity,
+the maximum size of a Yewande
+
+4655
+04:31:17,730 --> 04:31:21,390
+eight is going to be 255. This
+is going to be the biggest
+
+4656
+04:31:21,390 --> 04:31:24,450
+number that we can fit in the
+new int eight. And if I were to
+
+4657
+04:31:24,450 --> 04:31:29,130
+deploy this to a JavaScript VM
+or even a test network, safe
+
+4658
+04:31:29,130 --> 04:31:33,810
+math tester, let's go ahead to
+play up. If I hit big number,
+
+4659
+04:31:34,050 --> 04:31:38,730
+we're gonna get 255. Well, what
+happens if I create a function
+
+4660
+04:31:39,270 --> 04:31:45,840
+called ADD? That sets big number
+equal to big number plus one?
+
+4661
+04:31:46,620 --> 04:31:50,850
+Let's save that. Delete that old
+contract and deploy. All right
+
+4662
+04:31:50,850 --> 04:31:55,920
+now big numbers 255 What happens
+when we add one two? big number.
+
+4663
+04:31:56,100 --> 04:32:01,170
+When 255 is the max size a, UNT
+eight can be? Well, let's hit
+
+4664
+04:32:01,170 --> 04:32:06,030
+add. Now let's check what big
+number is. Big number gets reset
+
+4665
+04:32:06,420 --> 04:32:10,740
+to zero. So what's going on?
+Well, prior to version 0.8, of
+
+4666
+04:32:10,740 --> 04:32:14,520
+solidity, unsigned integers and
+integers ran on this concept of
+
+4667
+04:32:14,520 --> 04:32:18,840
+being unchecked, which means
+that if you passed the upper
+
+4668
+04:32:18,840 --> 04:32:22,830
+limit of a number, it would just
+wrap around and start back from
+
+4669
+04:32:22,860 --> 04:32:25,470
+the lowest number it could be.
+So if I call add a whole bunch
+
+4670
+04:32:25,470 --> 04:32:28,920
+more times, and hit big number,
+now let's say if I were to hit
+
+4671
+04:32:28,920 --> 04:32:32,910
+this add button a ton more times
+and get it back to two and a 55.
+
+4672
+04:32:33,210 --> 04:32:36,540
+It would then continue to wrap
+over to zero. So one of the most
+
+4673
+04:32:36,540 --> 04:32:39,840
+popular libraries that was out
+there was this safe math
+
+4674
+04:32:39,840 --> 04:32:43,770
+library, which would basically
+check to make sure that you
+
+4675
+04:32:43,770 --> 04:32:47,910
+weren't wrapping around a un 256
+or an intuitive six, basically,
+
+4676
+04:32:47,940 --> 04:32:50,880
+it was a way to say, hey, you've
+reached the max this number can
+
+4677
+04:32:50,880 --> 04:32:54,270
+be and now your transaction is
+going to fail. If we switch this
+
+4678
+04:32:54,660 --> 04:33:00,360
+to 0.8, of solidity, delete the
+old contract, go switch this to
+
+4679
+04:33:00,360 --> 04:33:05,190
+0.8. We'll go ahead and compile
+it. And now we deploy this to
+
+4680
+04:33:05,190 --> 04:33:06,090
+JavaScript VM.
+
+4681
+04:33:07,410 --> 04:33:11,880
+If I hit big number, we get to
+under 55. But if we hit Add, it
+
+4682
+04:33:11,880 --> 04:33:16,140
+actually fails. And we still get
+to under 55. In version 0.8, in
+
+4683
+04:33:16,140 --> 04:33:19,740
+solidity, they added this bit,
+where it automatically checks to
+
+4684
+04:33:19,740 --> 04:33:22,740
+make sure if you're going to do
+what's called overflow or
+
+4685
+04:33:22,740 --> 04:33:26,040
+underflow on a variable, we can
+actually revert back to the
+
+4686
+04:33:26,070 --> 04:33:30,390
+unchecked version by using an
+unchecked keyword. So if we wrap
+
+4687
+04:33:30,390 --> 04:33:33,390
+this big number equals big
+number plus one in this
+
+4688
+04:33:33,420 --> 04:33:37,830
+unchecked bracket, let's delete
+our old contract will compile
+
+4689
+04:33:38,010 --> 04:33:42,810
+will redeploy. We had big
+numbers to 55. Now we hit add,
+
+4690
+04:33:42,840 --> 04:33:47,040
+we hit big number again, it
+reverted back to zero. So that's
+
+4691
+04:33:47,040 --> 04:33:50,460
+a little bit more about safe
+math, checked and unchecked. So
+
+4692
+04:33:50,460 --> 04:33:54,960
+in version 0.76, and below this
+code that you see in front of
+
+4693
+04:33:54,960 --> 04:34:00,090
+you, is going to be the exact
+same as this code in 0.8. And
+
+4694
+04:34:00,090 --> 04:34:02,640
+above with this unchecked
+keyword. Now you might be
+
+4695
+04:34:02,640 --> 04:34:06,900
+thinking in newer versions of
+solidity, why would I use this
+
+4696
+04:34:06,900 --> 04:34:10,710
+unchecked keyword? Well, you'll
+find out later that this
+
+4697
+04:34:10,710 --> 04:34:14,250
+unchecked keyword makes your
+code a little bit more gas
+
+4698
+04:34:14,280 --> 04:34:16,800
+efficient. So if you're
+absolutely positive that your
+
+4699
+04:34:16,800 --> 04:34:19,530
+math is never going to reach the
+top or bottom limits of a
+
+4700
+04:34:19,530 --> 04:34:22,440
+number, that it might make sense
+for you to use the unchecked
+
+4701
+04:34:22,440 --> 04:34:26,040
+keyword. Let's head back over to
+our Funmi contract, where we are
+
+4702
+04:34:26,040 --> 04:34:29,130
+now using the price converter
+library that we just created.
+
+4703
+04:34:31,920 --> 04:34:34,770
+Alright, great. So now we've got
+a pretty minimalistic contract
+
+4704
+04:34:34,770 --> 04:34:37,950
+here for actually doing the
+funding. And we have all of our
+
+4705
+04:34:37,950 --> 04:34:42,420
+math for getting conversion
+rates done in our library price
+
+4706
+04:34:42,420 --> 04:34:45,480
+converter, which we're going to
+import at the top of Funmi.
+
+4707
+04:34:45,690 --> 04:34:49,830
+Cool. So at this point, we've
+got our fun method. Awesome. And
+
+4708
+04:34:49,830 --> 04:34:53,820
+so we can allow anybody to go
+ahead and fund this contract and
+
+4709
+04:34:53,820 --> 04:34:58,050
+send this contract Aetherium, or
+any native blockchain currency
+
+4710
+04:34:58,170 --> 04:35:01,650
+to this contract. Well, now what
+do we want to do? Well, once all
+
+4711
+04:35:01,650 --> 04:35:04,380
+the funders have gone ahead and
+funded, we're going to want the
+
+4712
+04:35:04,380 --> 04:35:08,850
+project to be able to withdraw
+the funds out of this contract.
+
+4713
+04:35:08,880 --> 04:35:12,690
+So they can actually go ahead
+and use those funds to buy
+
+4714
+04:35:12,690 --> 04:35:16,020
+things for this project. So
+let's go ahead and create a
+
+4715
+04:35:16,110 --> 04:35:20,640
+withdrawal function. So we'll
+create a function withdraw. And
+
+4716
+04:35:20,640 --> 04:35:23,610
+we'll make this public. Since
+we're going to be withdrawing
+
+4717
+04:35:23,640 --> 04:35:26,760
+all the funds out of this
+contract, we probably also want
+
+4718
+04:35:26,760 --> 04:35:31,200
+to reset our funders array, and
+our address to amount funded.
+
+4719
+04:35:31,380 --> 04:35:35,190
+Since we'll be withdrawing all
+the funds, those amounts should
+
+4720
+04:35:35,220 --> 04:35:39,030
+go back down to zero. So let's
+go ahead and loop through the
+
+4721
+04:35:39,030 --> 04:35:42,660
+funders array and update our
+mapping object so that each of
+
+4722
+04:35:42,660 --> 04:35:46,680
+these funders now has zero,
+because in just a second, we're
+
+4723
+04:35:46,680 --> 04:35:51,420
+going to withdraw all the money
+from them. So to do this, we're
+
+4724
+04:35:51,420 --> 04:35:54,840
+going to use something called a
+for loop. So what is a for loop?
+
+4725
+04:35:54,960 --> 04:35:57,870
+A for loop is a way to loop
+through some type of index
+
+4726
+04:35:57,870 --> 04:36:01,260
+object or loop through some
+range of numbers or just do a
+
+4727
+04:36:01,260 --> 04:36:05,550
+task a certain amount of times
+repeating. So for example, let's
+
+4728
+04:36:05,550 --> 04:36:11,970
+say we have an array or list.
+And on that list, we have 1234.
+
+4729
+04:36:12,060 --> 04:36:16,980
+If we wanted to get all of the
+elements in this array, or in
+
+4730
+04:36:16,980 --> 04:36:22,140
+this list, okay, 1234. How do we
+get all the elements in this
+
+4731
+04:36:22,140 --> 04:36:28,170
+list? Well, we would use a for
+loop to loop through each one of
+
+4732
+04:36:28,170 --> 04:36:33,510
+these objects. So at zero with
+index would be one at the first
+
+4733
+04:36:33,510 --> 04:36:37,950
+index would be two, and at the
+second index would be three, at
+
+4734
+04:36:37,950 --> 04:36:40,980
+the last index would be four. So
+we would loop through the
+
+4735
+04:36:40,980 --> 04:36:45,060
+indexes zero through three to
+get all these elements. Or maybe
+
+4736
+04:36:45,060 --> 04:36:51,240
+another example is if this was
+A, B, C, D, A is at the zero
+
+4737
+04:36:51,240 --> 04:36:55,860
+with index B is at the first
+index sees the second Indy's at
+
+4738
+04:36:55,860 --> 04:36:59,280
+the third and we will loop zero
+through three. To get to each
+
+4739
+04:36:59,280 --> 04:37:01,950
+one of these elements, we're
+gonna do that exact same thing.
+
+4740
+04:37:02,580 --> 04:37:06,540
+But with the funders array. So
+how do we actually do that?
+
+4741
+04:37:06,720 --> 04:37:11,100
+Well, we first start with the
+for keyword, the for keyword
+
+4742
+04:37:11,100 --> 04:37:14,610
+says, Okay, we're about to start
+a loop. And inside of these
+
+4743
+04:37:14,610 --> 04:37:18,450
+parentheses, we define how we
+want to loop through it. Also
+
+4744
+04:37:18,480 --> 04:37:21,930
+backslash star, and star
+backslash is sort of like
+
+4745
+04:37:21,960 --> 04:37:26,640
+brackets for comments. Anything
+in between these two will be a
+
+4746
+04:37:26,640 --> 04:37:29,430
+comment. So in a for loop,
+first, we give it the starting
+
+4747
+04:37:29,430 --> 04:37:34,560
+index, then we give it the
+ending index, and then we give
+
+4748
+04:37:34,560 --> 04:37:39,060
+it the step amount. For example,
+maybe we want to start with
+
+4749
+04:37:39,060 --> 04:37:43,080
+zero, we want to go to 10. And
+we want to go up by one each
+
+4750
+04:37:43,080 --> 04:37:47,850
+time. So we would go
+01 234-567-8910. Or maybe we
+
+4751
+04:37:47,850 --> 04:37:51,480
+start at zero, we want to end at
+10. And we go up by two each
+
+4752
+04:37:51,480 --> 04:37:57,420
+time. So we'd go 02468 10. Or
+maybe we want to go from zero to
+
+4753
+04:37:57,420 --> 04:38:02,070
+five, we want to go from two to
+five, with a step of one, we'd
+
+4754
+04:38:02,070 --> 04:38:08,370
+go 2345, etc. So this is what's
+going to go inside of this four
+
+4755
+04:38:08,370 --> 04:38:12,180
+bit here. So for our starting
+index, and let me even just put
+
+4756
+04:38:12,180 --> 04:38:14,940
+this above so that you can
+reference it. So our starting
+
+4757
+04:38:14,940 --> 04:38:17,970
+index is going to be you in to
+VT six variable, and we're going
+
+4758
+04:38:17,970 --> 04:38:21,870
+to call it funder index. And
+we're going to start with
+
+4759
+04:38:21,870 --> 04:38:25,740
+thunder index being equal to
+zero. So we're starting with
+
+4760
+04:38:25,770 --> 04:38:30,000
+zero here. And we're going to
+end with the length of our
+
+4761
+04:38:30,000 --> 04:38:33,780
+funders array, since we want to
+loop through all of the funders.
+
+4762
+04:38:33,810 --> 04:38:40,230
+So we're going to say, funder
+index needs to be less than
+
+4763
+04:38:40,230 --> 04:38:44,790
+funders dot length. So our
+ending index is going to be
+
+4764
+04:38:44,790 --> 04:38:49,650
+whenever funders index is no
+longer less than funders dot
+
+4765
+04:38:49,650 --> 04:38:54,120
+length. And then finally, we're
+gonna say funder index equals
+
+4766
+04:38:54,150 --> 04:39:00,120
+funder index, plus one, which
+means that every time the code
+
+4767
+04:39:00,150 --> 04:39:03,360
+inside of this loop finishes,
+we're going to increase funder
+
+4768
+04:39:03,360 --> 04:39:07,710
+index by one. That's how we go
+from zero to one to two to three
+
+4769
+04:39:07,710 --> 04:39:11,820
+to four to five, etc. Another
+way you can type funder index
+
+4770
+04:39:11,850 --> 04:39:15,780
+equals funder index plus one is
+you can just do funder index
+
+4771
+04:39:15,840 --> 04:39:21,180
+plus plus, this plus plus syntax
+means funder index equals itself
+
+4772
+04:39:21,210 --> 04:39:25,410
+plus one. So let's start looping
+through our funders array to
+
+4773
+04:39:25,410 --> 04:39:28,920
+access the the zero with element
+or the first element, we're
+
+4774
+04:39:28,920 --> 04:39:34,170
+going to say, funders of funder
+index. So we're saying we want
+
+4775
+04:39:34,170 --> 04:39:38,070
+to access the zero with element
+of our funders object. And this
+
+4776
+04:39:38,070 --> 04:39:41,880
+is going to return an address
+for us to use, we're gonna go
+
+4777
+04:39:41,880 --> 04:39:48,240
+ahead and say address under
+equals funders at the funder
+
+4778
+04:39:48,240 --> 04:39:52,320
+index. So now we have this
+funder address. And we want to
+
+4779
+04:39:52,320 --> 04:39:58,560
+use this to reset our mapping.
+So we're going to say, address
+
+4780
+04:39:58,770 --> 04:40:06,780
+to amount funded at at the
+funder key is now equal to zero.
+
+4781
+04:40:07,080 --> 04:40:13,500
+Because remember, in fund we
+update the amount. Whenever we
+
+4782
+04:40:13,740 --> 04:40:17,040
+fund the contract, when we
+withdraw the money from the
+
+4783
+04:40:17,040 --> 04:40:21,510
+contract, we're going to reset
+it back to zero. Now let's walk
+
+4784
+04:40:21,510 --> 04:40:25,140
+through this funder index starts
+from zero. So we're going to get
+
+4785
+04:40:25,140 --> 04:40:29,190
+the zero with funder, we're
+going to grab that funder at the
+
+4786
+04:40:29,190 --> 04:40:32,040
+zero with index and we're going
+to reset the address to male
+
+4787
+04:40:32,040 --> 04:40:36,720
+funded of that funder to zero,
+then this for loop is going to
+
+4788
+04:40:36,840 --> 04:40:40,710
+update by one, it's going to
+move from zero to one, it's
+
+4789
+04:40:40,710 --> 04:40:44,160
+going to check then if funder
+index is less than the length,
+
+4790
+04:40:44,190 --> 04:40:47,610
+let's say funders has 10 people
+in it. If funders has 10 people
+
+4791
+04:40:47,610 --> 04:40:51,900
+in it, it'll still be less. So
+now funder links will be one
+
+4792
+04:40:51,990 --> 04:40:55,800
+address funder will equal
+funders of one now instead of
+
+4793
+04:40:55,800 --> 04:40:59,190
+zero, and we'll grab that
+address, and we'll reset that
+
+4794
+04:40:59,190 --> 04:41:03,150
+addresses about funded to zero,
+then we'll continue to two to
+
+4795
+04:41:03,150 --> 04:41:07,620
+three to four all the way up to
+the length of our funders array.
+
+4796
+04:41:07,680 --> 04:41:10,530
+And this is how we can loop
+through our objects. So saying
+
+4797
+04:41:10,530 --> 04:41:14,220
+this middle one is the ending
+index isn't exactly right, since
+
+4798
+04:41:14,220 --> 04:41:17,310
+we're really checking for a
+boolean to see if this is still
+
+4799
+04:41:17,310 --> 04:41:21,150
+true, but hopefully you get the
+idea. So we've reset the
+
+4800
+04:41:21,150 --> 04:41:24,840
+balances of the mapping.
+However, we still haven't done
+
+4801
+04:41:24,840 --> 04:41:28,530
+two things, we still need to
+reset the array to make the
+
+4802
+04:41:28,530 --> 04:41:33,570
+funders a blank array. And then
+we also need to actually
+
+4803
+04:41:33,690 --> 04:41:39,930
+withdraw the funds. Since when
+we funded this, we sent message
+
+4804
+04:41:39,930 --> 04:41:45,030
+dot value along with calling
+this fund function. However, we
+
+4805
+04:41:45,030 --> 04:41:48,930
+didn't actually withdraw the
+funds. So to reset the array, we
+
+4806
+04:41:48,930 --> 04:41:53,880
+could loop through it and delete
+objects from this address array.
+
+4807
+04:41:54,180 --> 04:41:57,690
+Or we could Just totally refresh
+
+4808
+04:41:57,720 --> 04:42:03,510
+this variable. So instead of
+looping through the array and
+
+4809
+04:42:03,510 --> 04:42:08,550
+deleting objects, we're just
+going to say funders equals a
+
+4810
+04:42:08,550 --> 04:42:13,440
+new address array, we're going
+to completely reset the array by
+
+4811
+04:42:13,440 --> 04:42:19,470
+saying this font is variable now
+equals a brand new address array
+
+4812
+04:42:19,740 --> 04:42:23,190
+with zero objects in it to
+start, if we were to put a one
+
+4813
+04:42:23,190 --> 04:42:26,670
+here, this would be there'll be
+one element to start in the
+
+4814
+04:42:26,670 --> 04:42:30,690
+array, two would be two, three
+would be three, etc, we're just
+
+4815
+04:42:30,690 --> 04:42:43,230
+going to start it as a
+completely blank new array. So
+
+4816
+04:42:43,230 --> 04:42:46,410
+great, we've gone ahead and
+reset the array. But how do we
+
+4817
+04:42:46,410 --> 04:42:50,760
+actually now with draw funds
+from this contract? How do we
+
+4818
+04:42:50,760 --> 04:42:55,530
+send the funds back to whomever
+is calling this now to actually
+
+4819
+04:42:55,530 --> 04:42:59,460
+send ether or send native
+blockchain currency, there are
+
+4820
+04:42:59,460 --> 04:43:02,820
+actually three different ways to
+do this, we're going to look at
+
+4821
+04:43:02,850 --> 04:43:06,300
+all three, and say what the
+differences between the three of
+
+4822
+04:43:06,300 --> 04:43:09,300
+them are, the three different
+ways are going to be transfer,
+
+4823
+04:43:10,200 --> 04:43:15,240
+send, and call. Let's go ahead
+and start with transfer. Since
+
+4824
+04:43:15,240 --> 04:43:19,140
+transfer is the simplest and at
+surface level makes the most
+
+4825
+04:43:19,140 --> 04:43:23,430
+sense to us. So if we want to
+transfer the funds to whomever
+
+4826
+04:43:23,430 --> 04:43:27,120
+is calling this withdrawal
+function, we would do we would
+
+4827
+04:43:27,120 --> 04:43:32,550
+say message dot sender, dot
+transfer. And then we'd get the
+
+4828
+04:43:32,550 --> 04:43:39,780
+balance of our contract here by
+saying address this, this
+
+4829
+04:43:39,780 --> 04:43:44,370
+keyword refers to this whole
+contract dot balance, and we can
+
+4830
+04:43:44,370 --> 04:43:46,650
+get the native blockchain
+currency or the Aetherium
+
+4831
+04:43:46,650 --> 04:43:49,650
+currency balance of this address
+like this. And we can just do
+
+4832
+04:43:49,650 --> 04:43:53,670
+that only thing that we need to
+do is we need to cast we need to
+
+4833
+04:43:53,670 --> 04:44:00,840
+typecast message dot sender from
+an address type to a payable
+
+4834
+04:44:00,870 --> 04:44:07,500
+address type. So message dot
+sender is of type address.
+
+4835
+04:44:08,310 --> 04:44:14,400
+Whereas payable, message that
+sender is of type, payable
+
+4836
+04:44:14,400 --> 04:44:17,580
+address, and in solidity in
+order to send the native
+
+4837
+04:44:17,580 --> 04:44:21,210
+blockchain token like Aetherium,
+you can only work with payable
+
+4838
+04:44:21,210 --> 04:44:25,110
+addresses. To do that, we just
+wrap it in this payable type
+
+4839
+04:44:25,110 --> 04:44:29,100
+caster. So this is the first way
+that we actually send Aetherium
+
+4840
+04:44:29,100 --> 04:44:33,690
+or send tokens from different
+contracts to each other, we wrap
+
+4841
+04:44:33,690 --> 04:44:37,020
+the address that we want to send
+it in, in this payable keyword,
+
+4842
+04:44:37,470 --> 04:44:41,610
+we do dot transfer, and then we
+say exactly how much we want to
+
+4843
+04:44:41,610 --> 04:44:45,240
+transfer. But there are some
+issues with transfer. Here we
+
+4844
+04:44:45,240 --> 04:44:50,130
+are on solidity by example, for
+sending ether, which, again is a
+
+4845
+04:44:50,130 --> 04:44:54,540
+fantastic resource to refer to,
+if you get lost, the method that
+
+4846
+04:44:54,540 --> 04:44:59,430
+we just looked at was this
+transfer method. Now we saw way
+
+4847
+04:44:59,430 --> 04:45:04,260
+earlier in the course, that if I
+sent Aetherium, from one address
+
+4848
+04:45:04,260 --> 04:45:10,740
+to another, it cost about 2100
+gas or 2100. Gas, our transfer
+
+4849
+04:45:10,740 --> 04:45:16,350
+function is capped at 2300 gas.
+And if more gas is used, it
+
+4850
+04:45:16,350 --> 04:45:19,740
+throws an error. The next one
+that we're using is going to be
+
+4851
+04:45:19,740 --> 04:45:24,960
+sent which is also capped at
+2300 gas. And if it fails, it'll
+
+4852
+04:45:24,960 --> 04:45:28,740
+return a Boolean. So with
+transfer, if this line fails,
+
+4853
+04:45:28,770 --> 04:45:32,850
+it'll air and revert the
+transaction with send, it won't
+
+4854
+04:45:32,850 --> 04:45:36,420
+air, it'll return a boolean of
+whether or not it was
+
+4855
+04:45:36,420 --> 04:45:41,670
+successful. So using send will
+do payable message that sender
+
+4856
+04:45:42,480 --> 04:45:50,490
+that send address this balance.
+But we don't want to finish our
+
+4857
+04:45:50,490 --> 04:45:54,360
+call here. If this were to fail,
+the contract wouldn't revert the
+
+4858
+04:45:54,360 --> 04:45:58,260
+transaction, and we just want to
+get our money sent. So we want
+
+4859
+04:45:58,260 --> 04:46:05,400
+to do Boolean send success
+equals this whole bit here. And
+
+4860
+04:46:05,400 --> 04:46:11,040
+then we want to require success.
+And if this send fails will
+
+4861
+04:46:11,040 --> 04:46:14,040
+throw an error saying sin
+failed.
+
+4862
+04:46:15,420 --> 04:46:20,310
+This way, if this fails, we will
+still revert by adding our
+
+4863
+04:46:20,340 --> 04:46:23,790
+require statement here. Transfer
+automatically reverts if the
+
+4864
+04:46:23,790 --> 04:46:28,680
+transfer fails, send will only
+revert the transaction if we add
+
+4865
+04:46:28,680 --> 04:46:32,820
+this require statement here. So
+great. What's the third way that
+
+4866
+04:46:32,820 --> 04:46:36,330
+we can actually send Etherium or
+native currency wallets with
+
+4867
+04:46:36,330 --> 04:46:40,110
+this call command. Now call is
+going to be one of the first
+
+4868
+04:46:40,140 --> 04:46:43,950
+lower level commands that we
+actually use in our solidity
+
+4869
+04:46:43,950 --> 04:46:48,330
+code, because this call function
+is actually incredibly powerful.
+
+4870
+04:46:48,540 --> 04:46:53,190
+And we can use it to call
+virtually any function in all of
+
+4871
+04:46:53,190 --> 04:46:57,090
+Aetherium without even having to
+Have the API we'll learn the
+
+4872
+04:46:57,090 --> 04:47:00,510
+advanced ways to use this call
+much later. For now, we're just
+
+4873
+04:47:00,510 --> 04:47:03,720
+going to learn how to use it to
+send Aetherium, or your native
+
+4874
+04:47:03,720 --> 04:47:07,650
+blockchain currency call is
+going to look very similar to
+
+4875
+04:47:07,740 --> 04:47:14,070
+send, we're going to do payable,
+message dot sender, dot call.
+
+4876
+04:47:14,250 --> 04:47:18,300
+And this is where we will put
+any function information or any
+
+4877
+04:47:18,300 --> 04:47:21,180
+information about the function,
+we want to call on some other
+
+4878
+04:47:21,180 --> 04:47:24,240
+contract, we actually don't want
+to call a function. So we're
+
+4879
+04:47:24,240 --> 04:47:27,000
+going to leave this blank, we
+can show that we're leaving it
+
+4880
+04:47:27,000 --> 04:47:30,240
+blank by just putting in these
+two quotes here, we instead want
+
+4881
+04:47:30,240 --> 04:47:34,920
+to use this like a transaction.
+And as we saw in our deployment,
+
+4882
+04:47:34,950 --> 04:47:38,160
+there's always this message dot
+value bid, we're going to use
+
+4883
+04:47:38,190 --> 04:47:41,940
+this call function as if it's a
+regular transaction, and we can
+
+4884
+04:47:41,970 --> 04:47:45,840
+add stuff like message dot
+value. So in here, we're going
+
+4885
+04:47:45,840 --> 04:47:51,030
+to add these squiggly brackets.
+And we're going to say, value
+
+4886
+04:47:52,320 --> 04:48:00,060
+address this dot balance, this
+call function returns actually
+
+4887
+04:48:00,060 --> 04:48:03,240
+two variables. And when a
+function returns two variables,
+
+4888
+04:48:03,570 --> 04:48:07,110
+we can show that by placing them
+into parentheses on the left
+
+4889
+04:48:07,110 --> 04:48:10,290
+hand side, the two variables, it
+returns are going to be a
+
+4890
+04:48:10,290 --> 04:48:15,840
+Boolean, that we're going to
+call call success. And also a
+
+4891
+04:48:15,840 --> 04:48:20,580
+bytes object called data
+returned, since call allows us
+
+4892
+04:48:20,580 --> 04:48:23,670
+to actually call different
+functions. If that function
+
+4893
+04:48:23,700 --> 04:48:28,020
+returns some data or returns
+value, we're going to save that
+
+4894
+04:48:28,050 --> 04:48:32,790
+in the data returned variable.
+It also returns call success,
+
+4895
+04:48:32,820 --> 04:48:36,180
+where if the function was
+successfully called this will be
+
+4896
+04:48:36,180 --> 04:48:41,310
+true. If not, this will be
+false. And since bytes objects
+
+4897
+04:48:41,400 --> 04:48:46,590
+are arrays, data returns needs
+to be in memory. Now for our
+
+4898
+04:48:46,590 --> 04:48:49,980
+code here, we're actually not
+calling a function, so we don't
+
+4899
+04:48:49,980 --> 04:48:53,640
+really care about data returned.
+So similar to what we saw with
+
+4900
+04:48:53,670 --> 04:48:57,300
+the price contract, we can just
+go ahead and delete that and
+
+4901
+04:48:57,300 --> 04:49:00,570
+leave the comma to tell solidity
+Yeah, we know this function
+
+4902
+04:49:00,570 --> 04:49:03,930
+returns two variables, but we
+only care about one. And then
+
+4903
+04:49:03,960 --> 04:49:07,590
+similar to the centerpiece
+above, we're going to do require
+
+4904
+04:49:08,070 --> 04:49:12,690
+cost access call failed, meaning
+that we're requiring cost
+
+4905
+04:49:12,690 --> 04:49:16,650
+accesses true. Otherwise, we'll
+revert with an error that says
+
+4906
+04:49:16,650 --> 04:49:19,590
+call failed. Now of learning the
+difference between these three
+
+4907
+04:49:19,620 --> 04:49:22,830
+is a little complicated for you
+right now. Don't let that slow
+
+4908
+04:49:22,830 --> 04:49:26,040
+you down. Feel free to come back
+to this after you've learned
+
+4909
+04:49:26,040 --> 04:49:28,950
+more about how some of these
+lower level functions work. And
+
+4910
+04:49:28,950 --> 04:49:32,040
+a little bit more about how
+gasworks solidity by example,
+
+4911
+04:49:32,070 --> 04:49:35,520
+does a fantastic job though of
+saying what the difference is
+
+4912
+04:49:35,520 --> 04:49:39,450
+between all three, our transfer
+has a maximum of 2300 gas and
+
+4913
+04:49:39,450 --> 04:49:43,920
+throws an error if it fails,
+send has a maximum of 2300 gas
+
+4914
+04:49:44,220 --> 04:49:48,390
+returns a Boolean, if it fails,
+call forwards all gas so doesn't
+
+4915
+04:49:48,390 --> 04:49:54,300
+have a capped gas. And similar
+to send returns a Boolean, if it
+
+4916
+04:49:54,360 --> 04:49:59,280
+is successful, or if it fails,
+As of recording right now using
+
+4917
+04:49:59,280 --> 04:50:04,020
+call is the recommended way to
+actually send and receive
+
+4918
+04:50:04,350 --> 04:50:07,650
+Aetherium or your blockchain
+native token for now, if this
+
+4919
+04:50:07,650 --> 04:50:10,440
+part's a little bit confusing
+for you, for now, just look at
+
+4920
+04:50:10,440 --> 04:50:14,880
+this and see ah, that's how we
+send and transfer Aetherium or
+
+4921
+04:50:14,880 --> 04:50:17,880
+native blockchain currency
+tokens. And I'm going to delete
+
+4922
+04:50:18,030 --> 04:50:21,780
+this part for the video, but
+I'll keep those comments in the
+
+4923
+04:50:21,780 --> 04:50:27,990
+code repository associated with
+this course. And okay, perfect.
+
+4924
+04:50:28,050 --> 04:50:32,280
+If we hit compile a fun meat
+outsole, we do indeed see that
+
+4925
+04:50:32,430 --> 04:50:36,900
+it's passing compliation.
+However, there's a bit of an
+
+4926
+04:50:36,900 --> 04:50:38,700
+issue here, right now,
+
+4927
+04:50:38,850 --> 04:50:43,530
+anybody can withdraw from this
+contract. So anybody can fund,
+
+4928
+04:50:43,620 --> 04:50:46,980
+which is what we want. But we
+don't want anyone to be able to
+
+4929
+04:50:46,980 --> 04:50:50,220
+withdraw. We only want the
+person who's collecting the
+
+4930
+04:50:50,220 --> 04:50:53,730
+funds to be able to actually
+withdraw the funds. So how do we
+
+4931
+04:50:53,730 --> 04:50:58,290
+set this up so that the withdraw
+function is only called by the
+
+4932
+04:50:58,320 --> 04:51:01,230
+owner of this contract? Well, to
+do that, we're going to set up a
+
+4933
+04:51:01,230 --> 04:51:05,640
+couple new functions. So when we
+deploy this contract, we want to
+
+4934
+04:51:05,670 --> 04:51:09,510
+automatically set it up so that
+whomever deploys this contract
+
+4935
+04:51:09,540 --> 04:51:12,480
+is going to be the owner of this
+contract. And then we can do
+
+4936
+04:51:12,480 --> 04:51:16,140
+some parameters to set it up so
+that only the owner of this
+
+4937
+04:51:16,140 --> 04:51:18,870
+contract can call the withdrawal
+function. So how would we do
+
+4938
+04:51:18,870 --> 04:51:23,490
+that? Well, maybe we can create
+a function called like, call me
+
+4939
+04:51:23,520 --> 04:51:28,740
+right away. And right after we
+deploy this contract, we call
+
+4940
+04:51:28,740 --> 04:51:31,980
+this call me right away
+function, which will set up us
+
+4941
+04:51:31,980 --> 04:51:35,070
+as the owner. Now that's going
+to take two transactions. And
+
+4942
+04:51:35,070 --> 04:51:38,340
+that would be really annoying if
+we had to do that. So instead,
+
+4943
+04:51:38,550 --> 04:51:44,340
+solidity has something called a
+constructor. And if you're
+
+4944
+04:51:44,340 --> 04:51:46,860
+familiar with other programming
+language, a constructor is
+
+4945
+04:51:46,860 --> 04:51:50,250
+exactly the same as other
+programming languages.
+
+4946
+04:51:50,400 --> 04:51:53,340
+constructor is going to be the
+function that gets called when,
+
+4947
+04:51:53,490 --> 04:51:57,450
+immediately whenever or you
+deploy a contract. So if I were
+
+4948
+04:51:57,450 --> 04:52:03,270
+to deploy Funmi, dot Sol, and I
+were to say, minimum USD equals
+
+4949
+04:52:03,360 --> 04:52:08,850
+to minimum USD would no longer
+be 50 times one e to the 18th,
+
+4950
+04:52:08,880 --> 04:52:12,900
+it would be immediately updated
+to two. Because constructor is a
+
+4951
+04:52:12,900 --> 04:52:16,440
+function that gets immediately
+called in the same transaction,
+
+4952
+04:52:16,740 --> 04:52:20,370
+that we create this contract,
+this constructor function is
+
+4953
+04:52:20,370 --> 04:52:23,100
+going to be incredibly helpful
+for us, because it allows us to
+
+4954
+04:52:23,100 --> 04:52:26,910
+set up the contract the way we
+want it to be. So for example,
+
+4955
+04:52:27,240 --> 04:52:30,960
+if we want the withdrawal
+function to only be able to be
+
+4956
+04:52:30,960 --> 04:52:34,050
+called by the owner of this
+contract, we can have the
+
+4957
+04:52:34,050 --> 04:52:38,070
+constructor set up who the owner
+of the contract is. So let's
+
+4958
+04:52:38,070 --> 04:52:43,860
+create a global variable called
+address, public owner. And then
+
+4959
+04:52:43,860 --> 04:52:47,640
+in our constructor, we'll say
+the owner is going to be equal
+
+4960
+04:52:47,640 --> 04:52:52,650
+to the message dot sender. The
+message that sender of the
+
+4961
+04:52:52,650 --> 04:52:56,670
+constructor function is going to
+be whoever is deploying the
+
+4962
+04:52:56,670 --> 04:53:00,720
+contract. So owner is now going
+to be whoever deployed this
+
+4963
+04:53:00,720 --> 04:53:04,200
+contract. And don't worry, we're
+going to demo all this very soon
+
+4964
+04:53:04,200 --> 04:53:07,410
+and show you everything that's
+going on with ether scan
+
+4965
+04:53:07,410 --> 04:53:10,590
+everything, demoing this all
+right now might take a little
+
+4966
+04:53:10,590 --> 04:53:13,260
+bit of time, because we're using
+a test net. So if you want to
+
+4967
+04:53:13,260 --> 04:53:16,500
+test it all right now,
+absolutely go for it, but just
+
+4968
+04:53:16,500 --> 04:53:21,990
+know, it'll take you a little
+bit longer to do so. Now that we
+
+4969
+04:53:21,990 --> 04:53:25,350
+have the owner setup, we can
+modify our withdrawal function
+
+4970
+04:53:25,410 --> 04:53:29,850
+to make it so that only the
+owner can actually call this
+
+4971
+04:53:29,850 --> 04:53:32,700
+withdrawal function. So at the
+top of the withdrawal function,
+
+4972
+04:53:32,850 --> 04:53:37,080
+maybe we want to add a section,
+maybe we want to say require
+
+4973
+04:53:37,980 --> 04:53:44,010
+message dot sender equals the
+owner, a note about double
+
+4974
+04:53:44,010 --> 04:53:48,000
+equals versus equals, you can
+think of this single equals as a
+
+4975
+04:53:48,000 --> 04:53:53,640
+set parameter. So when I say
+owner, is now set to message dot
+
+4976
+04:53:53,640 --> 04:53:58,590
+sender, double equals is how you
+check to see if these two
+
+4977
+04:53:58,620 --> 04:54:02,430
+variables are equivalent. So
+we're saying is message dot
+
+4978
+04:54:02,430 --> 04:54:06,780
+sender, the same as owner. So
+this is checking to see
+
+4979
+04:54:06,810 --> 04:54:10,440
+equivalence. This is setting
+checking to see equivalence
+
+4980
+04:54:10,590 --> 04:54:14,460
+setting. So we're gonna say
+require message dot sender is
+
+4981
+04:54:14,460 --> 04:54:18,180
+equal to owner, otherwise, we're
+gonna throw an error, saying,
+
+4982
+04:54:18,330 --> 04:54:23,340
+sender is not owner. Perfect.
+Now we have a quick way to make
+
+4983
+04:54:23,340 --> 04:54:28,530
+sure the withdrawal function is
+only called by the owner of this
+
+4984
+04:54:28,530 --> 04:54:31,500
+contract. Now, let's say that
+there's a lot of functions that
+
+4985
+04:54:31,500 --> 04:54:35,370
+we have in this contract that
+are going to be required to be
+
+4986
+04:54:35,370 --> 04:54:38,340
+the owner, maybe there's a lot
+of functions in this contract
+
+4987
+04:54:38,370 --> 04:54:40,740
+that need a whole lot of
+different requires, we don't
+
+4988
+04:54:40,740 --> 04:54:43,620
+want to have to copy paste this
+line to every single one of our
+
+4989
+04:54:43,620 --> 04:54:46,440
+functions. So what can we do?
+Well, this is where something
+
+4990
+04:54:46,440 --> 04:54:50,310
+called modifiers come in. So for
+now, we're gonna go ahead and
+
+4991
+04:54:50,310 --> 04:54:54,090
+delete this line. And below,
+we're going to create something
+
+4992
+04:54:54,090 --> 04:54:59,010
+called a modifier, our modifier
+is going to be a key word that
+
+4993
+04:54:59,010 --> 04:55:03,240
+we can add right in the function
+declaration. To modify the
+
+4994
+04:55:03,240 --> 04:55:05,640
+function with that
+functionality, we're going to
+
+4995
+04:55:05,640 --> 04:55:10,230
+create a modifier and call it
+only owner. And we're going to
+
+4996
+04:55:10,230 --> 04:55:15,240
+paste that line that we just
+made in withdraw. And underneath
+
+4997
+04:55:15,240 --> 04:55:18,000
+that, we're going to put a
+little underscore, what I can do
+
+4998
+04:55:18,000 --> 04:55:21,900
+now is I can take this only
+owner modifier, and stick it in
+
+4999
+04:55:21,900 --> 04:55:25,320
+the function declaration of my
+withdrawal function. So what's
+
+5000
+04:55:25,320 --> 04:55:29,160
+happening with this modifier
+with only owner in this function
+

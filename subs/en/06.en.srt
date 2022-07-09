@@ -1,0 +1,4994 @@
+6001
+05:54:38,020 --> 05:54:41,380
+install process, it generally
+becomes much, much easier. But
+
+6002
+05:54:41,380 --> 05:54:44,410
+this can often be the hardest
+part of the course is just
+
+6003
+05:54:44,440 --> 05:54:47,020
+installing some of these tools
+that we're going to give you.
+
+6004
+05:54:47,170 --> 05:54:50,080
+And that's what we're going to
+learn about right now. So we
+
+6005
+05:54:50,080 --> 05:54:54,460
+have been working so far with
+remix, remix IDE, or integrated
+
+6006
+05:54:54,460 --> 05:54:57,250
+development environment. As
+we've seen, it's this wonderful
+
+6007
+05:54:57,250 --> 05:55:00,070
+place where we can try out code
+we can try solidity out, we can
+
+6008
+05:55:00,070 --> 05:55:02,380
+compile we can deploy, we can
+pretty much do everything that
+
+6009
+05:55:02,380 --> 05:55:05,710
+we need to do. It's web based.
+It can do testing, debugging,
+
+6010
+05:55:05,710 --> 05:55:09,580
+deploying local JavaScript VM,
+it's very quick and easy to
+
+6011
+05:55:09,580 --> 05:55:12,130
+create and test our smart
+contracts. However, it does have
+
+6012
+05:55:12,130 --> 05:55:15,490
+some limitations. It can really
+only deal with smart contract,
+
+6013
+05:55:15,520 --> 05:55:18,820
+it can't really integrate with
+other parts of projects. It has
+
+6014
+05:55:18,820 --> 05:55:21,580
+limited support for tests or
+custom deployments. And you need
+
+6015
+05:55:21,580 --> 05:55:25,120
+an internet connection to even
+work with remix and it can be
+
+6016
+05:55:25,120 --> 05:55:28,240
+tricky to do a lot more advanced
+functionality. So it's a
+
+6017
+05:55:28,240 --> 05:55:30,760
+phenomenal tool and absolutely
+if you're looking to do
+
+6018
+05:55:30,760 --> 05:55:32,920
+something very quickly, I
+absolutely recommend everybody
+
+6019
+05:55:32,920 --> 05:55:35,830
+just go to remix to go ahead and
+try something out how are now
+
+6020
+05:55:35,830 --> 05:55:38,650
+we're going to move over to a
+more professional smart contract
+
+6021
+05:55:38,650 --> 05:55:42,100
+developer setup. And this is
+with hard hat. This is known as
+
+6022
+05:55:42,100 --> 05:55:45,790
+a smart contract developer
+framework similar to brownie or
+
+6023
+05:55:45,790 --> 05:55:49,180
+foundry or, and likes, there's a
+number of these frameworks. And
+
+6024
+05:55:49,180 --> 05:55:51,730
+the reason that we're going to
+do hard hat is because hard hat
+
+6025
+05:55:51,940 --> 05:55:55,540
+is JavaScript based. It's a
+JavaScript based development
+
+6026
+05:55:55,570 --> 05:55:58,630
+environment. It's got JavaScript
+based compilation, environment,
+
+6027
+05:55:58,630 --> 05:56:02,140
+deploying, testing, debugging.
+Now, for those of you who love
+
+6028
+05:56:02,170 --> 05:56:06,010
+TypeScript, we will also have
+TypeScript editions of every
+
+6029
+05:56:06,010 --> 05:56:09,280
+single one of our code examples
+for you. So if you love
+
+6030
+05:56:09,280 --> 05:56:12,880
+JavaScript, we got you, if you
+love TypeScript, we also got you
+
+6031
+05:56:12,910 --> 05:56:16,510
+we're not always going to walk
+through us doing the TypeScript.
+
+6032
+05:56:16,930 --> 05:56:20,320
+But we will sometimes, and all
+of the code for the TypeScript
+
+6033
+05:56:20,350 --> 05:56:23,590
+will be available in the GitHub
+repo. Now, before we can
+
+6034
+05:56:23,590 --> 05:56:26,860
+actually learn hard hat, we have
+to learn another package first.
+
+6035
+05:56:26,890 --> 05:56:30,100
+So we're going to learn how to
+do everything with ethers. Jas,
+
+6036
+05:56:30,130 --> 05:56:33,130
+which is a JavaScript based
+library for working with smart
+
+6037
+05:56:33,130 --> 05:56:36,310
+contracts. And it's also what
+powers the next tool that we're
+
+6038
+05:56:36,310 --> 05:56:39,250
+going to be working with, which
+is hard hat under the hood of
+
+6039
+05:56:39,250 --> 05:56:41,680
+hard hat. There's a lot of
+ethers Jas. So it's important
+
+6040
+05:56:41,680 --> 05:56:45,430
+for us to learn ethers Jas so
+that we can understand what hard
+
+6041
+05:56:45,430 --> 05:56:47,830
+hat is actually doing. Now for
+the rest of the course, I'm
+
+6042
+05:56:47,830 --> 05:56:51,970
+going to be using a code editor
+called Visual Studio code. This
+
+6043
+05:56:51,970 --> 05:56:54,940
+is one of the most powerful code
+editors on the planet. And if
+
+6044
+05:56:54,940 --> 05:56:57,400
+you've already got it set up,
+feel free to go ahead and skip
+
+6045
+05:56:57,400 --> 05:57:00,190
+this part. If you already have a
+professional coding setup with
+
+6046
+05:57:00,190 --> 05:57:03,490
+no GS and VS code, and Git and
+everything, feel free to use the
+
+6047
+05:57:03,490 --> 05:57:06,820
+timestamps in the GitHub
+repository. To skip over this
+
+6048
+05:57:06,850 --> 05:57:11,020
+setup section. You'll often hear
+people refer to this as VS code,
+
+6049
+05:57:11,050 --> 05:57:14,230
+or Visual Studio code or just
+Visual Studio. However, it's
+
+6050
+05:57:14,230 --> 05:57:18,490
+important to note that Visual
+Studio code this is different
+
+6051
+05:57:18,700 --> 05:57:22,090
+than Visual Studio, which you
+might see look like this. So
+
+6052
+05:57:22,480 --> 05:57:26,620
+Visual Studio code is what you
+want, not Visual Studio, Visual
+
+6053
+05:57:26,620 --> 05:57:29,620
+Studio is a different
+application, make sure you're on
+
+6054
+05:57:29,620 --> 05:57:33,310
+Visual Studio code. Now, if you
+choose so and you're a total
+
+6055
+05:57:33,310 --> 05:57:37,120
+Harto, you can absolutely work
+just with your terminal, or just
+
+6056
+05:57:37,120 --> 05:57:40,660
+with PowerShell, or just with
+whatever coding environment that
+
+6057
+05:57:40,660 --> 05:57:44,620
+you want, like atom or Sublime.
+However, for us, we're going to
+
+6058
+05:57:44,620 --> 05:57:47,770
+be working with Visual Studio
+code. And I'm going to be going
+
+6059
+05:57:47,770 --> 05:57:51,040
+through setting up Visual Studio
+code the way that I like to set
+
+6060
+05:57:51,040 --> 05:57:54,280
+it up, you can actually set it
+up whatever way that you feel
+
+6061
+05:57:54,280 --> 05:57:58,240
+comfortable. And of course, in
+our lesson six here, we have a
+
+6062
+05:57:58,240 --> 05:58:01,300
+link to installation and setup.
+And I'm going to be adding more
+
+6063
+05:58:01,300 --> 05:58:04,450
+links as we go about here. And
+once again, all the code that
+
+6064
+05:58:04,450 --> 05:58:07,990
+we're going to be working with
+is in this GitHub repository
+
+6065
+05:58:08,020 --> 05:58:10,900
+down here where it says code.
+Now we're gonna go through three
+
+6066
+05:58:10,900 --> 05:58:13,720
+different installation processes
+and pick the one that's most
+
+6067
+05:58:13,750 --> 05:58:17,350
+appropriate for you. The first
+one is going to be for Mac and
+
+6068
+05:58:17,350 --> 05:58:21,100
+Linux users. The second one is
+going to be for Windows users.
+
+6069
+05:58:21,250 --> 05:58:24,970
+And then our third one is going
+to be a last ditch effort. If
+
+6070
+05:58:24,970 --> 05:58:28,270
+for whatever reason, you can't
+get Windows or Linux or the Mac
+
+6071
+05:58:28,270 --> 05:58:31,390
+instructions to work, we're
+going to use a Git pod
+
+6072
+05:58:31,390 --> 05:58:34,840
+installation. Now, I highly,
+highly recommend that you try to
+
+6073
+05:58:34,840 --> 05:58:38,080
+get everything working locally
+without using Git pod. However,
+
+6074
+05:58:38,650 --> 05:58:42,010
+if for whatever reason, you
+can't get those installation
+
+6075
+05:58:42,010 --> 05:58:46,240
+pieces to work, we will have Git
+pod instructions for all of the
+
+6076
+05:58:46,240 --> 05:58:48,910
+repos that we work with here.
+But to get started, we'll start
+
+6077
+05:58:48,910 --> 05:58:51,850
+with the Mac and Linux
+installation instructions.
+
+6078
+05:58:54,430 --> 05:58:57,430
+The first thing you're going to
+want to do is download the Mac
+
+6079
+05:58:57,490 --> 05:59:01,120
+or if you're working with Linux,
+download the Linux installation
+
+6080
+05:59:01,150 --> 05:59:04,780
+of Visual Studio code. Once you
+have it installed, it'll look a
+
+6081
+05:59:04,780 --> 05:59:08,260
+little something like this. And
+if it's a fresh installation,
+
+6082
+05:59:08,470 --> 05:59:11,620
+It'll even give you some tips
+and tools to actually get
+
+6083
+05:59:11,620 --> 05:59:14,110
+started. If you've never worked
+with Visual Studio code before,
+
+6084
+05:59:14,380 --> 05:59:17,710
+I highly recommend going through
+any get started or getting
+
+6085
+05:59:17,710 --> 05:59:21,250
+instructions tips that come with
+opening Visual Studio Code.
+
+6086
+05:59:21,640 --> 05:59:25,420
+Additionally, we have a Visual
+Studio Code crash course in the
+
+6087
+05:59:25,420 --> 05:59:28,480
+GitHub repo associated with this
+course. Once you have Visual
+
+6088
+05:59:28,480 --> 05:59:31,690
+Studio code installed, the next
+thing that we're going to want
+
+6089
+05:59:31,690 --> 05:59:34,930
+to install is going to be node j
+s. And again, we have links to
+
+6090
+05:59:34,930 --> 05:59:37,720
+all of these in the GitHub repo
+associated with this course, you
+
+6091
+05:59:37,720 --> 05:59:40,660
+can just go ahead and click
+download for Mac OS or download
+
+6092
+05:59:40,660 --> 05:59:45,880
+for Linux, I recommend using the
+LTS version. lts stands for long
+
+6093
+05:59:45,880 --> 05:59:48,760
+term support, which means that
+they will be supporting this
+
+6094
+05:59:48,760 --> 05:59:53,170
+version for a long time. So go
+ahead and download Node js. I've
+
+6095
+05:59:53,170 --> 05:59:55,390
+already downloaded this, so I'm
+not gonna go ahead and
+
+6096
+05:59:55,390 --> 05:59:58,480
+redownload this now one of the
+awesome things about Visual
+
+6097
+05:59:58,480 --> 06:00:01,600
+Studio code is it has this thing
+called terminals, which are
+
+6098
+06:00:01,600 --> 06:00:05,290
+command line prompts that allow
+us to run scripts, basically,
+
+6099
+06:00:05,290 --> 06:00:07,630
+it's where we're going to be
+running all of our code where we
+
+6100
+06:00:07,630 --> 06:00:10,330
+can open up the terminal is we
+can go ahead and hit terminal
+
+6101
+06:00:10,630 --> 06:00:14,110
+and select new terminal and
+you'll get something like this.
+
+6102
+06:00:14,230 --> 06:00:18,520
+Now you might have bash or Z ca
+or some other type of shell type
+
+6103
+06:00:18,520 --> 06:00:21,370
+that you have doesn't really
+matter because on Mac and Linux
+
+6104
+06:00:21,550 --> 06:00:25,690
+it's going to be Linux based we
+can now test our no Jess
+
+6105
+06:00:25,690 --> 06:00:29,680
+installation has been done
+correctly by running Node dash
+
+6106
+06:00:29,680 --> 06:00:33,430
+dash version, and you should see
+something that looks like this.
+
+6107
+06:00:33,490 --> 06:00:37,030
+The exact version of node that
+you have doesn't really matter
+
+6108
+06:00:37,030 --> 06:00:40,720
+here. But ideally you're at
+least on Node version 14 or
+
+6109
+06:00:40,720 --> 06:00:43,540
+higher. And if something like
+this doesn't show up, remember
+
+6110
+06:00:43,540 --> 06:00:46,810
+to go ahead and start looking at
+Stack Overflow looking on the
+
+6111
+06:00:46,810 --> 06:00:49,960
+GitHub repo in the discussions
+tab, looking on the updated
+
+6112
+06:00:49,960 --> 06:00:52,990
+section, etc. And like I said,
+sometimes installing this can be
+
+6113
+06:00:52,990 --> 06:00:55,840
+the hardest part of this entire
+course so, so don't get
+
+6114
+06:00:55,840 --> 06:00:58,660
+discouraged. And please use
+Stack Overflow Stack Exchange
+
+6115
+06:00:58,660 --> 06:01:01,360
+Etherium, and the GitHub repo to
+move past any issues you run
+
+6116
+06:01:01,360 --> 06:01:05,440
+into. Now, if you're on Mac or
+Linux, you can actually hit Ctrl
+
+6117
+06:01:05,470 --> 06:01:08,860
+back tick, to actually toggle
+your terminal mode, this will
+
+6118
+06:01:08,860 --> 06:01:11,950
+pull the terminal up and down
+for you getting familiar with
+
+6119
+06:01:11,950 --> 06:01:14,650
+keyboard shortcuts will actually
+make your life a lot easier.
+
+6120
+06:01:14,650 --> 06:01:17,590
+Because you'll be able to move
+around Visual Studio code much
+
+6121
+06:01:17,590 --> 06:01:21,250
+more effectively, we have a link
+to a list of keyboard shortcuts.
+
+6122
+06:01:21,280 --> 06:01:24,190
+Additionally, in the GitHub
+repository associated with this
+
+6123
+06:01:24,190 --> 06:01:27,070
+section, as we move along, I'll
+give tip on different keyboard
+
+6124
+06:01:27,070 --> 06:01:29,950
+shortcuts that you can
+optionally use otherwise, you
+
+6125
+06:01:29,950 --> 06:01:32,530
+can just go ahead and click as
+well, you can click the trash
+
+6126
+06:01:32,530 --> 06:01:36,010
+can to delete the terminal, go
+back up Terminal new terminal to
+
+6127
+06:01:36,010 --> 06:01:38,080
+pop it back up. Now the next
+thing that we're going to need a
+
+6128
+06:01:38,080 --> 06:01:39,970
+little bit later, we're not
+going to need it for this
+
+6129
+06:01:39,970 --> 06:01:42,610
+section, but it's good to
+install it now is going to be
+
+6130
+06:01:42,610 --> 06:01:46,570
+git no jazz is known as a
+JavaScript runtime. And it's a
+
+6131
+06:01:46,570 --> 06:01:49,540
+tool that we're going to use to
+help run JavaScript code in our
+
+6132
+06:01:49,540 --> 06:01:52,690
+Visual Studio Code slot exactly
+JavaScript. And the difference
+
+6133
+06:01:52,690 --> 06:01:55,390
+between no Jas and JavaScript
+can be a little bit confusing,
+
+6134
+06:01:55,390 --> 06:01:58,030
+but don't let that stop you for
+now. Next, we're actually going
+
+6135
+06:01:58,030 --> 06:02:00,580
+to go ahead and install Git, we
+will have links to the
+
+6136
+06:02:00,580 --> 06:02:03,970
+installation instructions in the
+GitHub repository, installing
+
+6137
+06:02:03,970 --> 06:02:06,610
+git on Linux, you're going to
+use one of these two commands
+
+6138
+06:02:06,640 --> 06:02:10,000
+and on macOS, if you just type
+git on the command line, it
+
+6139
+06:02:10,000 --> 06:02:12,760
+should go ahead and prompt you
+to install it. So we're back in
+
+6140
+06:02:12,760 --> 06:02:15,130
+our command line, and we just
+type git, it should prompt you
+
+6141
+06:02:15,130 --> 06:02:18,340
+to go ahead and stall it. And if
+you do get dash dash version,
+
+6142
+06:02:18,970 --> 06:02:21,280
+you should get something that
+looks like this. You can also
+
+6143
+06:02:21,280 --> 06:02:24,280
+use a Mac OS get installer by
+clicking this link here and
+
+6144
+06:02:24,280 --> 06:02:26,860
+running through the installation
+process. Alright, now that you
+
+6145
+06:02:26,860 --> 06:02:31,270
+have no JS yet in Visual Studio
+code installed, we can continue
+
+6146
+06:02:31,270 --> 06:02:35,020
+on to the next section. Awesome.
+If you're not planning on using
+
+6147
+06:02:35,050 --> 06:02:38,800
+Windows or get pod, feel free to
+skip the next two sections.
+
+6148
+06:02:41,470 --> 06:02:44,920
+I'm running this on Windows 11.
+However, it should work on most
+
+6149
+06:02:44,920 --> 06:02:47,470
+editions of Windows. So the
+first thing that we're going to
+
+6150
+06:02:47,470 --> 06:02:53,410
+want to install is Visual Studio
+Code, which looks something like
+
+6151
+06:02:53,410 --> 06:02:56,980
+this, it should auto detect it.
+And we're gonna go ahead and
+
+6152
+06:02:56,980 --> 06:03:00,250
+download this for windows in a
+walk through all the
+
+6153
+06:03:00,610 --> 06:03:04,360
+installation process. Go ahead
+and create a desktop item, we'll
+
+6154
+06:03:04,360 --> 06:03:08,710
+add this just in case we want to
+open with code. And we'll go
+
+6155
+06:03:08,710 --> 06:03:12,220
+ahead and install. And then
+we'll go ahead and finish. Once
+
+6156
+06:03:12,220 --> 06:03:14,500
+you've installed Visual Studio
+code, you'll see something that
+
+6157
+06:03:14,500 --> 06:03:17,230
+looks a little like this, it'll
+go ahead and give you this get
+
+6158
+06:03:17,230 --> 06:03:19,960
+started with VS Code section
+where you can choose some
+
+6159
+06:03:19,960 --> 06:03:22,150
+themes, and you can choose kind
+of the way it looks feel free to
+
+6160
+06:03:22,150 --> 06:03:24,520
+customize it the way that you
+want. If you want to learn a
+
+6161
+06:03:24,520 --> 06:03:27,700
+little bit more about Visual
+Studio code, I highly recommend
+
+6162
+06:03:27,730 --> 06:03:30,670
+you walk through this section to
+learn more about the shortcuts
+
+6163
+06:03:30,670 --> 06:03:33,760
+and making your development
+experience more efficient. When
+
+6164
+06:03:33,760 --> 06:03:36,070
+you're done, you can just go
+ahead and close the tabs at the
+
+6165
+06:03:36,070 --> 06:03:38,740
+top. And it'll look a little
+something like this. Once we
+
+6166
+06:03:38,740 --> 06:03:41,530
+have Visual Studio code
+installed. The next thing that
+
+6167
+06:03:41,530 --> 06:03:44,290
+we're going to want to install
+is node j s. And of course, we
+
+6168
+06:03:44,290 --> 06:03:46,900
+have a link to installing this
+in the GitHub repository
+
+6169
+06:03:46,930 --> 06:03:48,970
+associated with this course,
+what we're going to do is we're
+
+6170
+06:03:48,970 --> 06:03:52,300
+going to go ahead and come to
+node j s.org. To download this
+
+6171
+06:03:52,300 --> 06:03:55,510
+for Windows node. JS is a
+JavaScript runtime environment,
+
+6172
+06:03:55,510 --> 06:03:58,420
+it's not exactly JavaScript. And
+the distinction can be a little
+
+6173
+06:03:58,420 --> 06:04:01,090
+bit confusing, but just know
+it's going to help us run our
+
+6174
+06:04:01,090 --> 06:04:03,610
+JavaScript code for our
+development environment. Let's
+
+6175
+06:04:03,610 --> 06:04:08,170
+go ahead and download the LTS or
+the long term support edition of
+
+6176
+06:04:08,200 --> 06:04:11,260
+no GS. We'll go ahead and we'll
+run through the setup wizard.
+
+6177
+06:04:15,610 --> 06:04:18,460
+And we'll go ahead and make sure
+that this is clicked just in
+
+6178
+06:04:18,460 --> 06:04:21,580
+case we ever want to use some
+different tools with our setup.
+
+6179
+06:04:21,610 --> 06:04:24,550
+And then we'll go ahead and
+click Install, you'll get a pop
+
+6180
+06:04:24,550 --> 06:04:27,220
+up asking if you really want to
+install this on your device. And
+
+6181
+06:04:27,220 --> 06:04:30,040
+we'll go ahead and hit yes. And
+then we'll hit finish, you might
+
+6182
+06:04:30,040 --> 06:04:33,010
+get a pop up that looks like
+this, go ahead and click any
+
+6183
+06:04:33,010 --> 06:04:35,830
+button to go ahead and install
+the tools, go ahead and press
+
+6184
+06:04:35,830 --> 06:04:39,280
+any key again. And you'll likely
+get a Windows PowerShell screen
+
+6185
+06:04:39,280 --> 06:04:42,370
+pop up asking you to go ahead
+and install a whole bunch of
+
+6186
+06:04:42,370 --> 06:04:45,250
+different projects and files. If
+you chose not to install this,
+
+6187
+06:04:45,280 --> 06:04:47,980
+that's totally okay. But in the
+future, this will be really
+
+6188
+06:04:47,980 --> 06:04:50,740
+helpful since we are going to
+use a lot of tools that this
+
+6189
+06:04:50,740 --> 06:04:54,010
+package installs anyways, this
+might take some time to install.
+
+6190
+06:04:54,010 --> 06:04:56,650
+So go ahead and be patient. And
+if it gets stuck, it might just
+
+6191
+06:04:56,650 --> 06:04:59,680
+be waiting for you to go ahead
+and hit enter. So go ahead and
+
+6192
+06:04:59,680 --> 06:05:02,440
+hit Enter for any prompts. But
+yes, please be patient with
+
+6193
+06:05:02,440 --> 06:05:04,600
+this, it can be a little bit
+slow to go ahead and install
+
+6194
+06:05:04,600 --> 06:05:06,880
+everything. Once you have all
+that installed, you can come
+
+6195
+06:05:06,880 --> 06:05:10,090
+back to Visual Studio code. And
+we're going to go ahead and open
+
+6196
+06:05:10,090 --> 06:05:13,870
+up a terminal. To do that we hit
+terminal and we hit new terminal
+
+6197
+06:05:13,960 --> 06:05:16,480
+terminal is going to be our
+command line prompt where we're
+
+6198
+06:05:16,480 --> 06:05:19,060
+going to basically run all of
+our scripts to work with our
+
+6199
+06:05:19,060 --> 06:05:23,260
+code. And if you run Node dash
+dash version, you should see
+
+6200
+06:05:23,260 --> 06:05:26,230
+something that looks like this
+to know that you've installed
+
+6201
+06:05:26,260 --> 06:05:30,070
+Node js correctly. Now this
+command line is known as Windows
+
+6202
+06:05:30,100 --> 06:05:33,010
+PowerShell. If you want to work
+with Windows PowerShell, you
+
+6203
+06:05:33,010 --> 06:05:36,010
+absolutely can. In fact, if you
+want to be a total Harto, and
+
+6204
+06:05:36,010 --> 06:05:38,440
+write all your code through
+Windows PowerShell, you can
+
+6205
+06:05:38,440 --> 06:05:40,930
+absolutely do that as well.
+However, we're actually not
+
+6206
+06:05:40,930 --> 06:05:42,790
+going to be working with
+PowerShell We're going to be
+
+6207
+06:05:42,790 --> 06:05:46,150
+using a tool that makes our
+Windows environments more like
+
+6208
+06:05:46,180 --> 06:05:48,670
+Linux. The reason that we're
+doing this is Linux is the
+
+6209
+06:05:48,670 --> 06:05:51,100
+standard for most development
+environments. And having
+
+6210
+06:05:51,100 --> 06:05:54,220
+everybody work on a very similar
+setup will make the rest of this
+
+6211
+06:05:54,220 --> 06:05:57,970
+course a lot easier for everyone
+to interact with each other, no
+
+6212
+06:05:57,970 --> 06:06:01,450
+matter what coding environment,
+they're working on. WsL stands
+
+6213
+06:06:01,450 --> 06:06:05,890
+for Windows subsystem for Linux,
+and allows Linux programs to run
+
+6214
+06:06:05,920 --> 06:06:09,310
+natively on our Windows
+environments. To get this setup,
+
+6215
+06:06:09,400 --> 06:06:14,560
+we're gonna go ahead, go to the
+WsL install. And we'll have a
+
+6216
+06:06:14,560 --> 06:06:19,090
+link for this as well in our
+GitHub repository. So what we're
+
+6217
+06:06:19,090 --> 06:06:23,290
+going to do, you must be running
+a Windows 10, version 2004 or
+
+6218
+06:06:23,290 --> 06:06:25,990
+higher, or Windows 11. If you're
+using an older version of
+
+6219
+06:06:25,990 --> 06:06:28,990
+Windows, you can absolutely
+continue with PowerShell. But
+
+6220
+06:06:28,990 --> 06:06:31,570
+you might run into some issues
+where all the commands don't
+
+6221
+06:06:31,570 --> 06:06:34,720
+work exactly the same. So I
+highly recommend working on a
+
+6222
+06:06:34,720 --> 06:06:40,510
+newer version of Windows. To
+install this back in your Visual
+
+6223
+06:06:40,510 --> 06:06:43,750
+Studio Code, PowerShell, or just
+the PowerShell app, or running
+
+6224
+06:06:43,750 --> 06:06:48,850
+WsL dash dash install. Now if
+you get this error, the
+
+6225
+06:06:48,850 --> 06:06:52,030
+requested operation requires
+elevation, it means that we have
+
+6226
+06:06:52,030 --> 06:06:55,960
+to run our Visual Studio code or
+our PowerShell application as
+
+6227
+06:06:55,960 --> 06:07:03,160
+administrator. We close out our
+Visual Studio code. And right
+
+6228
+06:07:03,160 --> 06:07:07,000
+click it and say, Run as
+Administrator, we get a little
+
+6229
+06:07:07,000 --> 06:07:09,790
+pop up saying Do you want to
+allow this app to make changes
+
+6230
+06:07:09,790 --> 06:07:13,090
+to your device, we'll go ahead
+and click Yes. And then we'll
+
+6231
+06:07:13,090 --> 06:07:18,250
+reopen the terminal. And then we
+can run WsL space dash dash
+
+6232
+06:07:18,280 --> 06:07:23,110
+install. And we'll go ahead and
+install WsL. This may take a
+
+6233
+06:07:23,110 --> 06:07:24,610
+little bit so please be patient.
+
+6234
+06:07:25,990 --> 06:07:28,300
+Once it's completed, you'll see
+something that looks like this,
+
+6235
+06:07:28,330 --> 06:07:31,060
+we're going to be working with
+Ubuntu. And we have a list of
+
+6236
+06:07:31,060 --> 06:07:34,210
+different commands to change
+your Linux distribution. If you
+
+6237
+06:07:34,210 --> 06:07:36,910
+choose to do so. And you'll see
+the request set operation is
+
+6238
+06:07:36,910 --> 06:07:40,120
+successful changes will not be
+effective until the system is
+
+6239
+06:07:40,120 --> 06:07:43,210
+rebooted. So you'll want to go
+ahead and restart your computer.
+
+6240
+06:07:43,300 --> 06:07:46,450
+There's also a troubleshooting
+guide in the GitHub repository.
+
+6241
+06:07:46,450 --> 06:07:49,420
+If you run into issues after you
+restart your computer, you'll be
+
+6242
+06:07:49,420 --> 06:07:52,810
+prompted for a name for your new
+system and a password. This can
+
+6243
+06:07:52,810 --> 06:07:55,000
+be different from your Windows
+name and password, and then just
+
+6244
+06:07:55,000 --> 06:07:57,640
+follow through with all the
+prompts. And then once you're
+
+6245
+06:07:57,640 --> 06:08:00,880
+done, you'll be dropped into a
+Ubuntu shell, and you can run
+
+6246
+06:08:00,880 --> 06:08:04,720
+Linux commands. Now you'll have
+a Ubuntu instance, on your
+
+6247
+06:08:04,720 --> 06:08:07,930
+machine. And you'll be able to
+run Linux commands in your
+
+6248
+06:08:07,930 --> 06:08:11,650
+terminal. Now that we have WsL
+set up correctly, we're going to
+
+6249
+06:08:11,650 --> 06:08:15,520
+head back over to Visual Studio
+code. Once we have WsL, we'll
+
+6250
+06:08:15,520 --> 06:08:18,610
+want to go ahead and install an
+extension. So in our Visual
+
+6251
+06:08:18,610 --> 06:08:21,490
+Studio code, we'll go to
+Extensions, and we'll look up
+
+6252
+06:08:21,970 --> 06:08:28,210
+remote development you can
+install the whole thing or just
+
+6253
+06:08:28,210 --> 06:08:33,880
+remote WsL we're gonna install
+the whole thing you can follow
+
+6254
+06:08:33,880 --> 06:08:37,630
+along to get started with remote
+WsL if you like, or you can just
+
+6255
+06:08:37,630 --> 06:08:40,690
+follow along with me right now.
+Right now if I go to the
+
+6256
+06:08:40,690 --> 06:08:44,770
+terminal and hit new terminal,
+I'm still gonna get PowerShell
+
+6257
+06:08:45,220 --> 06:08:48,640
+we actually want this to be our
+Linux shell. So there are a
+
+6258
+06:08:48,640 --> 06:08:51,880
+couple ways to open Visual
+Studio code up in our Linux
+
+6259
+06:08:51,880 --> 06:08:57,520
+environment. One way is you're
+gonna hit Ctrl, Shift P and type
+
+6260
+06:08:57,520 --> 06:09:03,550
+WsL. And then click remote WsL
+new WsL window, and you'll get a
+
+6261
+06:09:03,550 --> 06:09:06,310
+new window that looks like this,
+you can also click the bottom
+
+6262
+06:09:06,310 --> 06:09:12,190
+left and choose New WsL window.
+Now if we go to our terminal and
+
+6263
+06:09:12,190 --> 06:09:15,280
+hit new terminal, we'll be
+dropped into a bash shell and we
+
+6264
+06:09:15,280 --> 06:09:18,670
+can run Linux commands in here.
+Awesome. Another way we can open
+
+6265
+06:09:18,670 --> 06:09:22,870
+up Visual Studio code with WsL
+on is we can go into our your
+
+6266
+06:09:22,870 --> 06:09:28,660
+boon to application, we can make
+a folder by typing MK dir
+
+6267
+06:09:29,470 --> 06:09:34,510
+folder, we'll CD or change
+directory into folder and type
+
+6268
+06:09:34,510 --> 06:09:38,470
+code period. We'll go ahead and
+trust the authors in here. And
+
+6269
+06:09:38,470 --> 06:09:42,100
+this will open up Visual Studio
+code already connected to the
+
+6270
+06:09:42,100 --> 06:09:45,670
+folder that we're in. And we can
+create files in this folder like
+
+6271
+06:09:45,700 --> 06:09:50,110
+hi dot txt, and those will get
+created inside the folder in our
+
+6272
+06:09:50,110 --> 06:09:53,650
+WsL. Now that we're inside our
+WsL environment, you'll notice
+
+6273
+06:09:53,650 --> 06:09:56,890
+that node dash dash version
+doesn't work anymore. That's
+
+6274
+06:09:56,890 --> 06:10:00,700
+because we installed it on our
+regular Windows machine and not
+
+6275
+06:10:00,790 --> 06:10:04,150
+on our WsL or Linux environment.
+The reason we installed it on a
+
+6276
+06:10:04,150 --> 06:10:07,000
+Windows environment first is
+that just in case you wanted to
+
+6277
+06:10:07,000 --> 06:10:10,000
+go ahead and use PowerShell or
+user Windows environment to run
+
+6278
+06:10:10,000 --> 06:10:12,880
+everything you still can just
+remember if you use the Windows
+
+6279
+06:10:12,880 --> 06:10:15,640
+environment and PowerShell all
+the commands that we use might
+
+6280
+06:10:15,640 --> 06:10:20,320
+not work for you. So we're gonna
+go ahead and install Node js on
+
+6281
+06:10:20,320 --> 06:10:22,960
+our Linux environment. Now, all
+the commands that we're going to
+
+6282
+06:10:22,960 --> 06:10:25,510
+write are going to be in the
+GitHub repo associated with this
+
+6283
+06:10:25,510 --> 06:10:30,970
+course. We're going to do a curl
+command to the nvm repository,
+
+6284
+06:10:31,630 --> 06:10:33,640
+which stands for node version
+manager.
+
+6285
+06:10:44,229 --> 06:10:47,049
+And we're going to pipe the
+install script into bash. And
+
+6286
+06:10:47,049 --> 06:10:52,869
+this will go ahead and install
+and VM. After running that, go
+
+6287
+06:10:52,869 --> 06:10:57,879
+ahead and trash the terminal,
+and then reopen it. And then we
+
+6288
+06:10:57,879 --> 06:11:02,409
+can type MBM dash dash version
+to see if it actually installed
+
+6289
+06:11:02,409 --> 06:11:05,529
+correctly. Once we've installed
+nvm, we can go ahead and install
+
+6290
+06:11:05,559 --> 06:11:13,029
+no GS using nvm. Just type npm
+install, and we'll do 16 point
+
+6291
+06:11:13,029 --> 06:11:16,899
+14.2 Is that same long term
+support version we installed on
+
+6292
+06:11:16,899 --> 06:11:20,739
+our Windows machine. Once we
+have it installed, we can type
+
+6293
+06:11:20,739 --> 06:11:24,609
+in Node dash S version. And now
+we have no JS installed. Now I
+
+6294
+06:11:24,609 --> 06:11:27,579
+know there was a lot here, but
+if you made it this far, this is
+
+6295
+06:11:27,609 --> 06:11:31,029
+fantastic. You've done a great
+job to push through to this
+
+6296
+06:11:31,029 --> 06:11:34,269
+point and get everything set up
+so you can code in the best
+
+6297
+06:11:34,269 --> 06:11:36,999
+environment there is. So if
+you've made it this far, huge
+
+6298
+06:11:36,999 --> 06:11:39,429
+congratulations. Now the next
+thing that we're going to
+
+6299
+06:11:39,429 --> 06:11:42,789
+install is Git. And now we're
+not going to use Git for this
+
+6300
+06:11:42,789 --> 06:11:45,369
+lesson. However, we will
+definitely be using it in the
+
+6301
+06:11:45,369 --> 06:11:48,879
+future. See if gets installed
+type git dash dash version,
+
+6302
+06:11:49,029 --> 06:11:51,279
+sometimes Linux will
+automatically come with Git
+
+6303
+06:11:51,279 --> 06:11:54,279
+installed and you'll see
+something output like this. If
+
+6304
+06:11:54,279 --> 06:11:58,899
+you don't have Git, we can just
+look up the get install. Which
+
+6305
+06:11:58,899 --> 06:12:01,869
+again, link to this is in the
+description. And you'll actually
+
+6306
+06:12:01,869 --> 06:12:06,369
+run the installing on Linux. Now
+again, now if you want to use
+
+6307
+06:12:06,369 --> 06:12:09,009
+PowerShell, and you want to do
+everything with Windows, you can
+
+6308
+06:12:09,009 --> 06:12:11,769
+absolutely follow the installing
+on Windows instructions here
+
+6309
+06:12:11,769 --> 06:12:15,519
+instead, when you're working in
+WsL, you'll want to use the
+
+6310
+06:12:15,519 --> 06:12:18,669
+Linux commands instead of the
+windows commands even though
+
+6311
+06:12:18,669 --> 06:12:21,789
+you're on a Windows because WsL
+makes it so that you're
+
+6312
+06:12:21,789 --> 06:12:24,579
+basically running in a Linux
+environment. And now if you've
+
+6313
+06:12:24,579 --> 06:12:27,069
+made it this far, you should be
+able to follow along with the
+
+6314
+06:12:27,069 --> 06:12:30,099
+Mac and Linux instructions as if
+you're running on a Mac and
+
+6315
+06:12:30,129 --> 06:12:33,729
+Linux even though you're running
+on Windows. Just be sure that
+
+6316
+06:12:33,729 --> 06:12:36,159
+whenever you're in your VS code,
+you take a look at the bottom
+
+6317
+06:12:36,159 --> 06:12:40,209
+left and make sure you're on WsL
+Ubuntu. Like I said before, if
+
+6318
+06:12:40,209 --> 06:12:42,789
+you want to run in PowerShell,
+or in a Windows environment,
+
+6319
+06:12:42,819 --> 06:12:45,549
+you're more than free to do so.
+But like I said, if you've made
+
+6320
+06:12:45,549 --> 06:12:48,549
+it this far, huge
+congratulations. Awesome work.
+
+6321
+06:12:51,339 --> 06:12:54,429
+And then finally, our last setup
+is going to be using a tool
+
+6322
+06:12:54,429 --> 06:12:57,399
+called Git pod starting from
+Lesson five. The lesson that
+
+6323
+06:12:57,399 --> 06:13:00,279
+we're on right now, ethers,
+jazz, simple storage, all of our
+
+6324
+06:13:00,279 --> 06:13:04,509
+code repos are going to come
+with a button in the repo scroll
+
+6325
+06:13:04,509 --> 06:13:08,499
+down, they'll come with this
+open in get pod button. Now git
+
+6326
+06:13:08,499 --> 06:13:11,949
+pod is a cloud development
+environment where you can
+
+6327
+06:13:11,949 --> 06:13:16,449
+actually run your code on a
+remote server, it's kind of
+
+6328
+06:13:16,449 --> 06:13:20,199
+similar to remix IDE, but it
+allows you to run Visual Studio
+
+6329
+06:13:20,199 --> 06:13:25,029
+code in the browser or connected
+to another server. This is good
+
+6330
+06:13:25,029 --> 06:13:27,939
+because then you don't have to
+do any installation on anything.
+
+6331
+06:13:28,149 --> 06:13:31,089
+Since all the tools that you can
+want to use are just going to be
+
+6332
+06:13:31,089 --> 06:13:34,839
+running on this remote server.
+This has its downsides, though,
+
+6333
+06:13:34,839 --> 06:13:39,039
+obviously, since you'll only be
+able to code if git pod is up
+
+6334
+06:13:39,039 --> 06:13:41,469
+and working for you.
+Additionally, when it comes to
+
+6335
+06:13:41,469 --> 06:13:45,669
+private keys, you absolutely do
+not want to run any code with a
+
+6336
+06:13:45,669 --> 06:13:49,479
+private key that has real money
+in good pop. Why? Well, once
+
+6337
+06:13:49,479 --> 06:13:53,259
+again, since you're running your
+scripts on a remote server,
+
+6338
+06:13:53,529 --> 06:13:57,519
+those servers have access to
+your private keys. But since
+
+6339
+06:13:57,519 --> 06:14:00,849
+you've Pinky promise that for
+this course, you're not going to
+
+6340
+06:14:00,849 --> 06:14:03,789
+be using a meta mask or a
+private key with actual money in
+
+6341
+06:14:03,789 --> 06:14:07,119
+it, it should be fine. The other
+downside is that these often
+
+6342
+06:14:07,119 --> 06:14:11,289
+cost money to use and get pot
+isn't free. But it's an option
+
+6343
+06:14:11,319 --> 06:14:15,129
+if you absolutely cannot get any
+of the installation working. So
+
+6344
+06:14:15,129 --> 06:14:18,069
+if you go ahead and you hit this
+opening get pod button, you'll
+
+6345
+06:14:18,069 --> 06:14:20,919
+get a welcome to get pods
+showing up. We're gonna go ahead
+
+6346
+06:14:20,919 --> 06:14:24,009
+and continue with GitHub. Since
+you've signed up for GitHub
+
+6347
+06:14:24,009 --> 06:14:29,319
+here, you want to go ahead and
+authorize get pod. And it'll go
+
+6348
+06:14:29,319 --> 06:14:32,859
+ahead and start creating this
+workspace for you. And you'll
+
+6349
+06:14:32,859 --> 06:14:36,939
+notice it looks exactly like
+Visual Studio Code. Since I
+
+6350
+06:14:36,939 --> 06:14:41,889
+opened the repo up in Git pod,
+it came with all the code, and
+
+6351
+06:14:41,889 --> 06:14:47,049
+you can even open this workspace
+up in VS code desktop. So this
+
+6352
+06:14:47,049 --> 06:14:50,109
+is might be a little bit
+confusing. But basically, you
+
+6353
+06:14:50,109 --> 06:14:54,309
+can run off of Git pod using
+your local Visual Studio code.
+
+6354
+06:14:54,519 --> 06:14:57,159
+And if you see git pod here,
+that's how you know that you're
+
+6355
+06:14:57,159 --> 06:15:00,639
+running off of Git pod. If you
+see this pop up, do you want to
+
+6356
+06:15:00,639 --> 06:15:04,809
+open this workspace in VS code
+desktop, you can hit Open. And
+
+6357
+06:15:04,809 --> 06:15:07,299
+it'll ask you if you want to
+open up Visual Studio Code,
+
+6358
+06:15:07,569 --> 06:15:10,299
+which I'm going to go ahead and
+hit yes. And you'll get
+
+6359
+06:15:10,299 --> 06:15:13,239
+something that looks like this
+on your Visual Studio Code.
+
+6360
+06:15:13,449 --> 06:15:16,389
+It'll tell you that it wants to
+install the Git pod extension,
+
+6361
+06:15:16,809 --> 06:15:20,619
+and then open that Git pod URL.
+So you can go ahead and install
+
+6362
+06:15:20,619 --> 06:15:25,809
+it. Reload window and open and
+it's going to go ahead and start
+
+6363
+06:15:25,809 --> 06:15:29,739
+connecting to our the Git pod
+workspace. And this is going to
+
+6364
+06:15:29,739 --> 06:15:34,419
+be the same as running git pod
+in the browser here. Or you can
+
+6365
+06:15:34,419 --> 06:15:38,079
+also do it manually by hitting
+the Git pod in the bottom left,
+
+6366
+06:15:38,799 --> 06:15:42,219
+and then type in open in VS code
+
+6367
+06:15:43,660 --> 06:15:45,820
+And then you should be able to
+run it in your Visual Studio
+
+6368
+06:15:45,820 --> 06:15:48,430
+code. For now, I'm going to
+recommend that if you're using
+
+6369
+06:15:48,430 --> 06:15:51,670
+Git pod, just stay in the
+browser, just so that you know,
+
+6370
+06:15:51,700 --> 06:15:55,420
+okay, I am running this on a
+remote server. And just as a
+
+6371
+06:15:55,420 --> 06:15:59,710
+reminder for you that you're not
+actually locally developing. And
+
+6372
+06:15:59,710 --> 06:16:02,440
+hopefully, this will be a
+trigger to not actually put any
+
+6373
+06:16:02,440 --> 06:16:05,380
+special private keys or anything
+like that. But you can make
+
+6374
+06:16:05,380 --> 06:16:08,080
+workspaces, you can make new
+folders, and you should be able
+
+6375
+06:16:08,080 --> 06:16:11,740
+to run all the commands on here,
+as if you are running locally
+
+6376
+06:16:11,740 --> 06:16:14,980
+with Visual Studio code. To open
+up the terminal, you can hit
+
+6377
+06:16:14,980 --> 06:16:20,500
+this little bar at the top left,
+go to terminal, new terminal, or
+
+6378
+06:16:20,530 --> 06:16:25,780
+use CTRL tilde exact same as Mac
+OS and Linux keyboard shortcuts
+
+6379
+06:16:25,930 --> 06:16:30,580
+to create a new folder, we can
+change directory, CD, dot.mk,
+
+6380
+06:16:30,580 --> 06:16:36,070
+dir, new folder, MK dir makes
+make directory called New
+
+6381
+06:16:36,070 --> 06:16:39,490
+Folder. And then we're going to
+change our directory into a new
+
+6382
+06:16:39,490 --> 06:16:42,940
+folder, and hit enter. And now
+we're in that new folder. For
+
+6383
+06:16:42,940 --> 06:16:46,270
+each section, you can either
+open up the entire source code
+
+6384
+06:16:46,300 --> 06:16:50,200
+right into GitHub, or you can
+create a new folder for each
+
+6385
+06:16:50,230 --> 06:16:53,770
+section yourself and start from
+blank. And then you would just
+
+6386
+06:16:53,800 --> 06:17:01,480
+type code period. And you'd be
+in a brand new folder. All
+
+6387
+06:17:01,480 --> 06:17:04,780
+right, this is fantastic. At
+this point, you should be set up
+
+6388
+06:17:04,780 --> 06:17:09,520
+with Visual Studio Code no Jas
+and get. And I'm going to be
+
+6389
+06:17:09,520 --> 06:17:12,550
+working out of a folder called
+Hard Hat Free Code Camp at this
+
+6390
+06:17:12,550 --> 06:17:18,700
+point, you should have node,
+dash dash version, get dash dash
+
+6391
+06:17:18,700 --> 06:17:22,930
+version. And if you're using
+Windows, this should say WsL or
+
+6392
+06:17:22,930 --> 06:17:26,050
+your boon to or something like
+that. And if you have all that,
+
+6393
+06:17:26,080 --> 06:17:29,650
+that means we're ready to go.
+Now a quick note something that
+
+6394
+06:17:29,650 --> 06:17:33,340
+you'll see me do a lot. And you
+can do this as well. Oftentimes,
+
+6395
+06:17:33,490 --> 06:17:36,130
+when my terminal gets really,
+really big, or there's a ton of
+
+6396
+06:17:36,130 --> 06:17:39,160
+commands in here gets a little
+bit overwhelming for me. So one
+
+6397
+06:17:39,160 --> 06:17:42,580
+thing that you can do is you can
+type clear, and hit Enter to
+
+6398
+06:17:42,580 --> 06:17:47,560
+clear it. Or what you can do is
+you can hit Command K, if you're
+
+6399
+06:17:47,560 --> 06:17:52,300
+on a Mac, or Ctrl K, if you're
+on a Linux or a Windows, and
+
+6400
+06:17:52,300 --> 06:17:54,550
+it's one of my favorite keyboard
+shortcuts that I use all the
+
+6401
+06:17:54,550 --> 06:17:58,930
+time. Additionally, the trash
+can and the X here are very
+
+6402
+06:17:58,930 --> 06:18:02,590
+different. If I go to a couple
+of enters here, and we're down
+
+6403
+06:18:02,590 --> 06:18:06,280
+here, if I hit the trashcan, and
+then pull my terminal back up,
+
+6404
+06:18:06,580 --> 06:18:10,090
+by doing the toggle, or by doing
+terminal new terminal, you'll
+
+6405
+06:18:10,090 --> 06:18:13,870
+see all those lines are still
+here. But if I hit the trashcan,
+
+6406
+06:18:14,260 --> 06:18:17,320
+and then pull the terminal back
+up, you'll see it actually
+
+6407
+06:18:17,320 --> 06:18:22,090
+refreshes mine a special command
+that prints stuff out. trashing
+
+6408
+06:18:22,090 --> 06:18:24,400
+your terminal is basically
+deleting whatever's running in
+
+6409
+06:18:24,400 --> 06:18:29,380
+it, and the x is just hiding it.
+And as hitting Ctrl tilde or
+
+6410
+06:18:29,380 --> 06:18:32,170
+toggling our terminal or
+whatever command it is on your
+
+6411
+06:18:32,170 --> 06:18:35,470
+environment, that's equivalent
+to hitting the hide, not the
+
+6412
+06:18:35,470 --> 06:18:38,860
+trash. So if we want to remove
+and start a terminal over, we
+
+6413
+06:18:38,860 --> 06:18:42,670
+hit the trashcan, and then we
+pull it back up. Alright, so now
+
+6414
+06:18:42,670 --> 06:18:44,980
+we're gonna start working with
+ethers. And we're going to start
+
+6415
+06:18:44,980 --> 06:18:48,670
+learning to code, our
+transactions and our contract
+
+6416
+06:18:48,670 --> 06:18:51,730
+deployments and everything
+programmatically at a relatively
+
+6417
+06:18:51,730 --> 06:18:54,460
+low level. And we're gonna learn
+how to deploy and interact with
+
+6418
+06:18:54,460 --> 06:18:58,030
+the contracts using the ethers
+JS package. Now to get started,
+
+6419
+06:18:58,060 --> 06:19:00,670
+I'm going to recommend you
+create a folder where you're
+
+6420
+06:19:00,670 --> 06:19:02,740
+going to put all of your
+projects in it, I'm going to
+
+6421
+06:19:02,740 --> 06:19:07,960
+create a new directory called H
+H. hyphen, FCC, which stands for
+
+6422
+06:19:07,960 --> 06:19:11,110
+hard hat Free Code Camp. And
+once we run that command, we can
+
+6423
+06:19:11,110 --> 06:19:15,520
+cd into hh FCC. And this is
+where we'll create all of our
+
+6424
+06:19:15,520 --> 06:19:18,430
+projects for this course moving
+forward, so that we have them
+
+6425
+06:19:18,430 --> 06:19:21,640
+all in one place. Now to get
+started, whenever you create a
+
+6426
+06:19:21,640 --> 06:19:25,210
+new project, you always want to
+create a new folder. So to
+
+6427
+06:19:25,210 --> 06:19:28,450
+create a new folder, we're going
+to do MK dir, and we're going to
+
+6428
+06:19:28,450 --> 06:19:35,950
+call this ethers, simple
+storage, like that. And now, if
+
+6429
+06:19:35,950 --> 06:19:40,900
+you type ls, you'll see that
+there is one folder named
+
+6430
+06:19:40,930 --> 06:19:45,670
+ethers, simple storage. ls is
+how you list all the contents of
+
+6431
+06:19:45,850 --> 06:19:49,450
+your folder. You might have a
+lot of other folders in here, I
+
+6432
+06:19:49,450 --> 06:19:52,210
+only have the one since I
+created this new folder for
+
+6433
+06:19:52,210 --> 06:19:57,490
+this. Now what you can do, you
+can type code, ethers simple.
+
+6434
+06:19:57,880 --> 06:20:01,690
+And then if you hit tab, it
+should autocomplete for you. And
+
+6435
+06:20:01,690 --> 06:20:06,940
+if you enter, Visual Studio code
+should open up a new Visual
+
+6436
+06:20:06,940 --> 06:20:12,700
+Studio code for you. That is
+inside of either simple storage
+
+6437
+06:20:13,060 --> 06:20:16,060
+if you open up your terminal
+now, your home directory for
+
+6438
+06:20:16,060 --> 06:20:19,240
+this workspace is going to be
+through simple storage as this
+
+6439
+06:20:19,240 --> 06:20:23,020
+is what pops up. If that doesn't
+work for you, we can also do is
+
+6440
+06:20:23,020 --> 06:20:28,900
+you can hit File, Open folder
+and then open the folder that
+
+6441
+06:20:28,900 --> 06:20:32,530
+you just created or that you
+want to open this again we'll
+
+6442
+06:20:32,530 --> 06:20:35,680
+open up VS code. And if we open
+up our terminal we see we're
+
+6443
+06:20:35,680 --> 06:20:38,980
+inside of ether simple storage.
+This is so powerful because as
+
+6444
+06:20:38,980 --> 06:20:40,030
+we create files
+
+6445
+06:20:41,560 --> 06:20:45,760
+we'll be able to See those files
+in our Explorer here, this
+
+6446
+06:20:45,760 --> 06:20:48,850
+button here stands for the
+Explorer. If we click it, we can
+
+6447
+06:20:48,850 --> 06:20:51,220
+see the different files in here.
+And I'm going to go ahead and
+
+6448
+06:20:51,220 --> 06:20:54,700
+actually delete this file dot
+txt, because we're not actually
+
+6449
+06:20:54,700 --> 06:20:57,430
+going to use that. Now it's this
+part of the course, where we're
+
+6450
+06:20:57,430 --> 06:21:01,180
+actually going to start jumping
+into some JavaScript. Since this
+
+6451
+06:21:01,180 --> 06:21:04,270
+course is in JavaScript course,
+if you're unfamiliar with
+
+6452
+06:21:04,270 --> 06:21:07,630
+JavaScript, it might be a little
+bit tricky. If you want to come
+
+6453
+06:21:07,630 --> 06:21:10,000
+into this with a better
+understanding of JavaScript and
+
+6454
+06:21:10,000 --> 06:21:14,230
+Node js, there is a Free Code
+Camp YouTube video teaching No,
+
+6455
+06:21:14,230 --> 06:21:17,530
+Jas for beginners. And a link to
+this will be in the GitHub repo
+
+6456
+06:21:17,530 --> 06:21:20,800
+associated with this course.
+There's also a JavaScript Free
+
+6457
+06:21:20,800 --> 06:21:23,680
+Code Camp video that I'm also
+going to put in the description
+
+6458
+06:21:23,680 --> 06:21:26,770
+for this course, keep in mind
+that JavaScript and Node js are
+
+6459
+06:21:26,770 --> 06:21:29,710
+slightly different. And we are
+going to go over some of the
+
+6460
+06:21:29,710 --> 06:21:33,190
+differences as we code along
+here. But for the most part,
+
+6461
+06:21:33,190 --> 06:21:35,680
+learning one means you've
+learned the majority of the
+
+6462
+06:21:35,680 --> 06:21:38,590
+other. So if you want to pause
+and go through these videos,
+
+6463
+06:21:38,590 --> 06:21:42,280
+before continuing here, please
+feel free to do so you don't
+
+6464
+06:21:42,310 --> 06:21:45,910
+have to, you can absolutely
+continue on with the course as
+
+6465
+06:21:45,910 --> 06:21:50,470
+is. And if you get confused or
+stuck on some JavaScript piece,
+
+6466
+06:21:50,620 --> 06:21:54,100
+feel free to pause, Google it
+and come back. But just to
+
+6467
+06:21:54,100 --> 06:21:56,170
+reiterate, you can check out the
+JavaScript programming full
+
+6468
+06:21:56,170 --> 06:22:00,130
+course. And also the Node js
+full course, as those are both
+
+6469
+06:22:00,130 --> 06:22:03,400
+going to help you. Like I was
+saying before, Node js is a
+
+6470
+06:22:03,400 --> 06:22:08,230
+JavaScript runtime. So it's not
+exactly JavaScript. But we're
+
+6471
+06:22:08,230 --> 06:22:10,990
+going to write our code in
+JavaScript. And if that's
+
+6472
+06:22:10,990 --> 06:22:14,230
+confusing, just don't worry
+about it right now. And as we go
+
+6473
+06:22:14,230 --> 06:22:17,110
+through this course, I'll show
+you where the differences are.
+
+6474
+06:22:17,440 --> 06:22:20,320
+But basically, you can think of
+no Jas and JavaScript kind of
+
+6475
+06:22:20,320 --> 06:22:23,800
+being the same thing. The big
+thing about Node js is it allows
+
+6476
+06:22:23,800 --> 06:22:27,970
+us to write JavaScript code in
+the back end, as opposed to
+
+6477
+06:22:28,000 --> 06:22:31,090
+running JavaScript on the front
+end, JavaScript is made to be a
+
+6478
+06:22:31,090 --> 06:22:35,200
+browser run language, like
+running inside of, you know,
+
+6479
+06:22:35,200 --> 06:22:40,780
+Chrome, brave Firefox, etc. No,
+Jas allows it to become a a
+
+6480
+06:22:40,780 --> 06:22:43,840
+scripting language, a back end
+language, which is why the
+
+6481
+06:22:43,840 --> 06:22:46,930
+syntax between the front end
+JavaScript and the back end
+
+6482
+06:22:46,930 --> 06:22:49,330
+JavaScript or the no JS
+JavaScript are going to be a
+
+6483
+06:22:49,330 --> 06:22:52,120
+little bit different.
+Additionally, as we go along in
+
+6484
+06:22:52,120 --> 06:22:56,290
+this code, if you're familiar
+with TypeScript, all of our code
+
+6485
+06:22:56,290 --> 06:22:59,200
+is going to come with a
+TypeScript edition. TypeScript
+
+6486
+06:22:59,200 --> 06:23:03,340
+is what's known as a statically
+typed version of JavaScript. And
+
+6487
+06:23:03,340 --> 06:23:05,650
+it'll be it'll be this one.
+It'll be TypeScript, not
+
+6488
+06:23:05,650 --> 06:23:08,440
+TypeScript edition. I'll go
+ahead and fix that and remove
+
+6489
+06:23:08,440 --> 06:23:11,260
+this one to make it clear.
+TypeScript is a type safe
+
+6490
+06:23:11,290 --> 06:23:14,350
+version of JavaScript, which is
+that's confusing, don't worry
+
+6491
+06:23:14,350 --> 06:23:17,110
+too much about that. But we are
+going to do all of our
+
+6492
+06:23:17,110 --> 06:23:20,170
+programming in JavaScript. And
+then if the code is different
+
+6493
+06:23:20,170 --> 06:23:22,600
+enough, I'll show you how to do
+it in TypeScript as well.
+
+6494
+06:23:22,690 --> 06:23:24,460
+However, for most of them, we're
+not going to show you the
+
+6495
+06:23:24,460 --> 06:23:26,950
+TypeScript editions, because
+it's going to be really similar.
+
+6496
+06:23:27,040 --> 06:23:30,250
+But you can always refer back to
+the GitHub repository to see all
+
+6497
+06:23:30,250 --> 06:23:32,980
+the code for the TypeScript.
+Now, if you're new to this
+
+6498
+06:23:32,980 --> 06:23:36,850
+space, I actually do recommend
+you go ahead and start with
+
+6499
+06:23:36,850 --> 06:23:40,180
+JavaScript and learn how to do
+TypeScript later on. TypeScript
+
+6500
+06:23:40,180 --> 06:23:45,430
+actually catches bugs early on,
+making it a lot easier to code
+
+6501
+06:23:45,460 --> 06:23:48,820
+your projects in the long run.
+However, it does take a lot of
+
+6502
+06:23:48,820 --> 06:23:52,330
+extra typing. And it can be a
+little bit frustrating learning
+
+6503
+06:23:52,330 --> 06:23:55,600
+how types work for beginners,
+JavaScript is a little bit more
+
+6504
+06:23:55,600 --> 06:23:59,080
+loose as a language and lets us
+kind of do whatever we want, but
+
+6505
+06:23:59,080 --> 06:24:01,840
+it can cause a headache later
+on. So if you do run into some
+
+6506
+06:24:01,840 --> 06:24:04,870
+issues, and you do run into some
+bugs, it might be a good idea to
+
+6507
+06:24:04,870 --> 06:24:08,380
+try TypeScript on for size, and
+see how that fares. Well. Let's
+
+6508
+06:24:08,380 --> 06:24:11,290
+go ahead and begin working on
+our local development
+
+6509
+06:24:11,290 --> 06:24:14,710
+environment and getting set up
+to do everything in ethers Jas
+
+6510
+06:24:14,710 --> 06:24:17,710
+and in JavaScript. Oops. And I
+actually went and renamed this
+
+6511
+06:24:17,710 --> 06:24:22,750
+folder to ether symbol storage
+dash, FCC. Reason I added this
+
+6512
+06:24:22,750 --> 06:24:26,500
+dash FCC is all the GitHub
+repositories associated with
+
+6513
+06:24:26,500 --> 06:24:30,220
+this course, all the GitHub
+repos that have this dash FCC to
+
+6514
+06:24:30,220 --> 06:24:33,160
+know that it is part of this
+hard hat JavaScript course.
+
+6515
+06:24:33,250 --> 06:24:36,550
+Awesome. Let's jump in. Let's
+start working with solidity and
+
+6516
+06:24:36,550 --> 06:24:39,970
+our smart contracts locally in
+Visual Studio code, as you can
+
+6517
+06:24:39,970 --> 06:24:43,870
+probably tell by the name of
+this folder. And of course, if
+
+6518
+06:24:43,870 --> 06:24:46,960
+you looked at the code, this
+project is going to be our
+
+6519
+06:24:46,960 --> 06:24:51,970
+simple storage project, but
+developed locally using ethers.
+
+6520
+06:24:52,000 --> 06:24:54,820
+So the first thing that we want
+to do is want to get in that
+
+6521
+06:24:54,820 --> 06:24:57,760
+smart contract code. So what we
+can do is make sure we have the
+
+6522
+06:24:57,760 --> 06:25:01,900
+Explorer selected, we can go
+ahead and right click and select
+
+6523
+06:25:01,930 --> 06:25:09,490
+new file and do simple storage.
+So just close this for now. And
+
+6524
+06:25:10,270 --> 06:25:13,060
+we can copy paste our simple
+storage code from our last
+
+6525
+06:25:13,060 --> 06:25:14,350
+section into VS code.
+
+6526
+06:25:15,670 --> 06:25:18,640
+If you closed remix or you
+forgot where it is, you can just
+
+6527
+06:25:18,640 --> 06:25:23,230
+go to the ethers simple storage
+FCC repo, it's simple storage
+
+6528
+06:25:23,230 --> 06:25:27,760
+dot Sol, and we can just copy
+all the code in here and then
+
+6529
+06:25:27,760 --> 06:25:31,840
+come back over select Symbol
+storage that Saul and paste it
+
+6530
+06:25:31,840 --> 06:25:35,560
+in. Now an important note about
+Visual Studio code is that when
+
+6531
+06:25:35,560 --> 06:25:39,430
+you see this little white.up
+here, it means that this file
+
+6532
+06:25:39,460 --> 06:25:45,610
+isn't saved to save your Git
+file. To save, and it'll go away
+
+6533
+06:25:45,610 --> 06:25:50,680
+like that. Or what you can do is
+you can hit command S or Ctrl S,
+
+6534
+06:25:51,340 --> 06:25:55,840
+depending on if you're on a
+Windows, Mac, or Linux. Now
+
+6535
+06:25:55,840 --> 06:25:58,540
+you'll see here that this code
+is a little bit hard to read the
+
+6536
+06:25:58,540 --> 06:26:01,660
+simple storage dot salt, it
+doesn't have the syntax
+
+6537
+06:26:01,660 --> 06:26:04,420
+highlighting that we saw in
+remix. So we want to go ahead
+
+6538
+06:26:04,420 --> 06:26:08,830
+and add a Visual Studio Code
+extension to give this syntax
+
+6539
+06:26:08,830 --> 06:26:11,830
+highlighting. So what we can do
+is come over to this bar over
+
+6540
+06:26:11,830 --> 06:26:14,830
+here looks like this. And if you
+don't see it on the left hand
+
+6541
+06:26:14,830 --> 06:26:17,560
+bar, you should click these
+three dots, and it should be in
+
+6542
+06:26:17,560 --> 06:26:20,950
+here. But we'll go ahead and
+click Extensions. And what we're
+
+6543
+06:26:20,950 --> 06:26:27,010
+going to do is we're going to
+look up, solidity plus hard hat.
+
+6544
+06:26:27,790 --> 06:26:30,940
+And we're going to install this
+solidity plus hard hat
+
+6545
+06:26:30,940 --> 06:26:35,080
+extension. For VS code. Now that
+we have this installed, if we go
+
+6546
+06:26:35,080 --> 06:26:38,830
+back over to our simple storage
+dot sole, you'll see that all
+
+6547
+06:26:38,830 --> 06:26:42,670
+the highlighting is back in. And
+now it's much easier to read.
+
+6548
+06:26:42,850 --> 06:26:45,220
+Right? So this is good. We have
+our code in here we have our
+
+6549
+06:26:45,220 --> 06:26:49,570
+syntax highlighting. Now let's
+add an auto format or or default
+
+6550
+06:26:49,570 --> 06:26:52,810
+format or right now our code is
+pretty good with the way that
+
+6551
+06:26:52,810 --> 06:26:57,730
+it's formatted. But what if we,
+we accidentally do some stuff
+
+6552
+06:26:57,730 --> 06:27:05,170
+like this or like this, or maybe
+even like this, we add a ton of
+
+6553
+06:27:05,170 --> 06:27:08,830
+new lines, etc, our code can
+start to look pretty gross. And
+
+6554
+06:27:08,830 --> 06:27:12,610
+even though the code itself is
+fine, and it'll run the exact
+
+6555
+06:27:12,610 --> 06:27:15,760
+same way, with all this extra
+whitespace, it doesn't look very
+
+6556
+06:27:15,760 --> 06:27:18,520
+good, right. And due to that, it
+can be a little bit hard to
+
+6557
+06:27:18,520 --> 06:27:22,660
+read. What we want to do, then,
+we want to open up our settings
+
+6558
+06:27:22,720 --> 06:27:26,230
+and adjust our vias code so that
+it auto formats whenever we
+
+6559
+06:27:26,230 --> 06:27:30,580
+save, so whenever we save, so
+that whenever it goes from the
+
+6560
+06:27:30,580 --> 06:27:34,120
+little white dot here to no
+white dot, this whole thing gets
+
+6561
+06:27:34,150 --> 06:27:38,740
+automatically formatted to some
+looks really nice. Okay. So what
+
+6562
+06:27:38,740 --> 06:27:42,970
+we can do is we can open up our
+command palette to open up our
+
+6563
+06:27:42,970 --> 06:27:46,930
+command palette, you can hit
+View command palette, and we'll
+
+6564
+06:27:46,930 --> 06:27:50,050
+get a little pop up that looks
+like this. Another way to open
+
+6565
+06:27:50,050 --> 06:27:52,870
+up your command palette is
+you're gonna hit Command, Shift
+
+6566
+06:27:52,900 --> 06:27:57,040
+P, or Ctrl, Shift P, depending
+on your Mac, or Linux or
+
+6567
+06:27:57,040 --> 06:28:00,370
+Windows. And what we want to do
+is we want to type in settings,
+
+6568
+06:28:00,400 --> 06:28:03,490
+and we're going to open Settings
+JSON, we don't want to open the
+
+6569
+06:28:03,490 --> 06:28:07,690
+default settings JSON. We don't
+want to touch these. But we want
+
+6570
+06:28:07,690 --> 06:28:10,360
+to open our JSON settings.
+You'll also notice there are
+
+6571
+06:28:10,360 --> 06:28:13,720
+user settings and workspace
+settings. These are pieces that
+
+6572
+06:28:13,720 --> 06:28:16,960
+we can adjust as well. But we're
+going to just go right into the
+
+6573
+06:28:16,960 --> 06:28:20,470
+JSON settings. So So I already
+have some stuff in here, but
+
+6574
+06:28:20,470 --> 06:28:23,500
+yours might be blank. Or you
+might have some stuff in here as
+
+6575
+06:28:23,500 --> 06:28:25,750
+well. So what we're going to do
+is if you have stuff in here
+
+6576
+06:28:25,750 --> 06:28:29,320
+already, we're going to add a
+comma, then we're going to do
+
+6577
+06:28:29,350 --> 06:28:36,820
+quotes, solidity. Close the
+brackets, we're gonna do a
+
+6578
+06:28:36,820 --> 06:28:39,610
+little colon and something like
+this. This means that we're
+
+6579
+06:28:39,610 --> 06:28:43,000
+going to apply some settings to
+our Visual Studio Code. Whenever
+
+6580
+06:28:43,000 --> 06:28:45,790
+we're working with solidity, one
+of the things we're going to add
+
+6581
+06:28:45,790 --> 06:28:50,260
+in here is going to be an
+editor, Doc's default, for
+
+6582
+06:28:50,260 --> 06:28:55,660
+matter. And you might even get a
+pop up that tells you some
+
+6583
+06:28:55,660 --> 06:28:58,570
+different things that we can use
+for a default format or our
+
+6584
+06:28:58,570 --> 06:29:03,670
+default format, or is going to
+be Nanak, foundation, dot hard
+
+6585
+06:29:03,670 --> 06:29:09,070
+hat, hyphens solidity. This will
+mean that any time we go to
+
+6586
+06:29:09,070 --> 06:29:13,660
+format our code, it'll use the
+hard hat solidity plug in, as
+
+6587
+06:29:13,660 --> 06:29:18,160
+its default format, or the hard
+hat solidity plugin comes with
+
+6588
+06:29:18,190 --> 06:29:22,810
+some formatting, and a lot of
+other really useful tools for us
+
+6589
+06:29:22,810 --> 06:29:26,080
+writing our code. So now that we
+have this part in, the next
+
+6590
+06:29:26,080 --> 06:29:29,530
+thing we're going to do is add
+format on Save. If we haven't
+
+6591
+06:29:29,530 --> 06:29:33,370
+already, we could add it in here
+in our JSON, but I'm going to
+
+6592
+06:29:33,370 --> 06:29:36,760
+add it not in the JSON file, I'm
+going to add it in the overall
+
+6593
+06:29:36,760 --> 06:29:40,930
+file. So if we open that command
+palette back up, and we type in
+
+6594
+06:29:40,930 --> 06:29:45,280
+settings, open user settings,
+this is another really good
+
+6595
+06:29:45,280 --> 06:29:48,940
+place where we can look in add
+settings with the UI. So these
+
+6596
+06:29:48,940 --> 06:29:51,790
+two do essentially the same
+thing. It's just that this one
+
+6597
+06:29:51,790 --> 06:29:54,730
+has dials and a little bit more
+context versus settings that
+
+6598
+06:29:54,730 --> 06:29:57,850
+JSON just says Okay, give me the
+raw code for it. This tells us a
+
+6599
+06:29:57,850 --> 06:30:00,220
+little bit more. So you can use
+either one. But we're going to
+
+6600
+06:30:00,220 --> 06:30:05,350
+look for format, on save. And
+you're going to want this
+
+6601
+06:30:05,380 --> 06:30:09,040
+checked if you haven't already.
+This means that every time we
+
+6602
+06:30:09,040 --> 06:30:14,020
+save VS code is going to try to
+format our code for us. So now
+
+6603
+06:30:14,020 --> 06:30:16,960
+that we have this checked, we
+have settings dot JSON added in.
+
+6604
+06:30:16,960 --> 06:30:19,270
+And remember, we want to save
+this. Remember, if you see this
+
+6605
+06:30:19,270 --> 06:30:21,730
+white dot, that means not saved.
+So you're gonna want to save it
+
+6606
+06:30:22,600 --> 06:30:25,990
+and close it out. Let me close
+this out too. If we come back in
+
+6607
+06:30:25,990 --> 06:30:28,870
+here and we add a bunch of
+random new spaces or whatever,
+
+6608
+06:30:28,870 --> 06:30:31,390
+you want to make it look a
+little bit ugly, and then we
+
+6609
+06:30:31,390 --> 06:30:36,550
+save it. It should automatically
+reformat to look much nicer,
+
+6610
+06:30:36,580 --> 06:30:40,180
+right. So if we do something
+like this, we'd save it
+
+6611
+06:30:40,180 --> 06:30:43,030
+reformats it to look much nicer
+this one make them more readable
+
+6612
+06:30:43,030 --> 06:30:46,240
+for you, and more readable for
+anybody else who looks at your
+
+6613
+06:30:46,240 --> 06:30:50,650
+code. And it's just really nice.
+And this line of code for your
+
+6614
+06:30:50,650 --> 06:30:54,040
+settings dot JSON is located in
+the full blockchain study
+
+6615
+06:30:54,040 --> 06:30:57,340
+course.js. So you can also just
+copy paste it, we are going to
+
+6616
+06:30:57,340 --> 06:31:01,870
+end up overriding that default
+format or with another format
+
+6617
+06:31:01,870 --> 06:31:05,770
+are called prettier pretty soon.
+But it's great to have a default
+
+6618
+06:31:05,770 --> 06:31:08,830
+format or so that if you don't
+feel like adding the prettier
+
+6619
+06:31:08,830 --> 06:31:12,130
+code sometime in the future, you
+can just rely on your default
+
+6620
+06:31:12,130 --> 06:31:16,030
+formatter. Awesome. While we're
+doing formatting, let's also add
+
+6621
+06:31:16,030 --> 06:31:19,480
+a default format or for our
+JavaScript code. And just to
+
+6622
+06:31:19,480 --> 06:31:22,480
+test it out, let's go ahead and
+create our new file, we'll call
+
+6623
+06:31:22,480 --> 06:31:27,550
+it deploy dot Jas. And in here,
+we can do something like
+
+6624
+06:31:28,120 --> 06:31:29,470
+function Hi,
+
+6625
+06:31:30,910 --> 06:31:37,630
+console dot log, hi, and then
+just add and then just make it
+
+6626
+06:31:37,630 --> 06:31:40,570
+look kind of gross, maybe
+something like this. If you hit
+
+6627
+06:31:40,570 --> 06:31:43,990
+save, and it does some auto
+formatting, that's great, you
+
+6628
+06:31:43,990 --> 06:31:46,390
+can actually turn that off by
+going back to your command
+
+6629
+06:31:46,390 --> 06:31:51,490
+palette, and saying, Save
+without formatting. And that way
+
+6630
+06:31:51,490 --> 06:31:54,190
+it will be saved and not
+formatted. The way we can add
+
+6631
+06:31:54,190 --> 06:31:56,980
+some other formatting here is
+we're gonna install another
+
+6632
+06:31:56,980 --> 06:32:01,330
+extension, this one is going to
+be called prettier. So we can
+
+6633
+06:32:01,330 --> 06:32:04,780
+just look up prettier and
+extensions here. And you'll want
+
+6634
+06:32:04,780 --> 06:32:08,260
+to install this prettier code
+formatter. So we're gonna go
+
+6635
+06:32:08,260 --> 06:32:11,620
+ahead and install this. And
+great, now it's installed
+
+6636
+06:32:11,680 --> 06:32:15,370
+prettier is a form is a code
+format, or that works for many
+
+6637
+06:32:15,370 --> 06:32:18,790
+languages like Python,
+JavaScript, and even solidity.
+
+6638
+06:32:19,000 --> 06:32:22,180
+And pretty soon we're going to
+use prettier for both JavaScript
+
+6639
+06:32:22,270 --> 06:32:25,240
+and solidity. But for now, we're
+just going to use prettier for
+
+6640
+06:32:25,240 --> 06:32:28,600
+JavaScript, we can enable this
+by opening back up our command
+
+6641
+06:32:28,600 --> 06:32:32,740
+palette, we'll go to
+preferences, open Settings. And
+
+6642
+06:32:32,740 --> 06:32:36,550
+the same way we added a solidity
+section, we're going to add a
+
+6643
+06:32:36,550 --> 06:32:41,080
+JavaScript section. So we're
+going to add a comma here, some
+
+6644
+06:32:41,080 --> 06:32:45,850
+quotes, brackets, we're going to
+type in JavaScript, close that
+
+6645
+06:32:46,750 --> 06:32:50,980
+colon brackets. And we're going
+to do the same thing at the door
+
+6646
+06:32:51,010 --> 06:32:58,720
+dot default, or matter. Net
+we're going to do and then in
+
+6647
+06:32:58,720 --> 06:33:04,870
+here, we're going to do e s
+BENP, that prettier, hyphen VS
+
+6648
+06:33:04,870 --> 06:33:08,590
+code. And this will make
+prettier the default editor for
+
+6649
+06:33:08,590 --> 06:33:11,320
+JavaScript. Now, like I said,
+pretty soon, we're going to have
+
+6650
+06:33:11,350 --> 06:33:15,370
+prettier override both of these
+for solidity and JavaScript. And
+
+6651
+06:33:15,370 --> 06:33:18,040
+we're going to give prettier
+some parameters so that no
+
+6652
+06:33:18,040 --> 06:33:21,940
+matter who uses your code, they
+will always have the exact same
+
+6653
+06:33:21,970 --> 06:33:25,000
+formatting. But now that we have
+prettier in here as the default
+
+6654
+06:33:25,000 --> 06:33:28,990
+editor, if we come back to
+deploy dot j s, and we hit save,
+
+6655
+06:33:29,410 --> 06:33:32,710
+it should format to look a
+little something like this. Now,
+
+6656
+06:33:33,100 --> 06:33:36,640
+we go ahead and we do something
+like this. If we go ahead and do
+
+6657
+06:33:36,640 --> 06:33:39,370
+something like this, it'll
+reformat to look like look like
+
+6658
+06:33:39,370 --> 06:33:43,360
+that. And then additionally, if
+you want to go back to the
+
+6659
+06:33:43,360 --> 06:33:47,680
+command palette, open user
+settings, not in JSON mode, and
+
+6660
+06:33:47,680 --> 06:33:52,000
+we go to default format, or you
+can actually even select the
+
+6661
+06:33:52,000 --> 06:33:56,230
+default format or for all
+languages, if you want to use
+
+6662
+06:33:56,230 --> 06:33:59,560
+prettier for all formatters.
+Feel free to go ahead. Alright,
+
+6663
+06:33:59,560 --> 06:34:02,950
+great, got our JavaScript
+format, or in as well, let's
+
+6664
+06:34:02,950 --> 06:34:05,020
+start writing some JavaScript
+code.
+
+6665
+06:34:07,870 --> 06:34:10,750
+Awesome. So now that we have our
+code in here, it's time for us
+
+6666
+06:34:10,750 --> 06:34:14,920
+to learn how to actually deploy
+our contract using JavaScript.
+
+6667
+06:34:15,220 --> 06:34:17,800
+This is going to teach us a lot
+about transactions and what's
+
+6668
+06:34:17,800 --> 06:34:21,160
+going on under the hood, and
+even what's going on under the
+
+6669
+06:34:21,160 --> 06:34:24,820
+hood in remix, and remix, we
+usually just hit a compile
+
+6670
+06:34:24,820 --> 06:34:28,390
+button, and then hit a Deploy
+button. And that's really it. In
+
+6671
+06:34:28,390 --> 06:34:31,120
+JavaScript, we're actually going
+to create our own functions that
+
+6672
+06:34:31,120 --> 06:34:33,910
+are going to help us do both of
+those. And as I mentioned, this
+
+6673
+06:34:33,910 --> 06:34:35,830
+is the part of the course we're
+going to start working with
+
+6674
+06:34:35,830 --> 06:34:39,250
+JavaScript, and optionally,
+TypeScript if you like. Like I
+
+6675
+06:34:39,250 --> 06:34:42,490
+said, all of these sections come
+with a TypeScript edition as
+
+6676
+06:34:42,490 --> 06:34:47,170
+well. So let's set up our
+deployed out js script to
+
+6677
+06:34:47,170 --> 06:34:50,710
+actually deploy our simple
+storage dot soul. So how can we
+
+6678
+06:34:50,740 --> 06:34:53,680
+get started here? Well, let's
+first learn how to run a script
+
+6679
+06:34:53,740 --> 06:34:57,280
+using JavaScript and Node J S.
+So if you want to do a print
+
+6680
+06:34:57,280 --> 06:35:00,580
+line, or just print something
+out to your terminal, we can do
+
+6681
+06:35:00,610 --> 06:35:04,450
+something called a console dot
+log. And if I do console dot
+
+6682
+06:35:04,450 --> 06:35:10,270
+log, hi, I hit Save. And I open
+up my terminal. I can now run
+
+6683
+06:35:10,270 --> 06:35:16,750
+Node deploy.js. And it'll print
+out high node is how we say hey,
+
+6684
+06:35:16,780 --> 06:35:21,280
+we want to run this JavaScript
+code using Node js. Other
+
+6685
+06:35:21,280 --> 06:35:24,400
+languages you might be familiar
+with, sometimes we'll do Python,
+
+6686
+06:35:24,400 --> 06:35:30,280
+you know, deployed up py, or
+Java, C deploy dot Java, you
+
+6687
+06:35:30,280 --> 06:35:34,090
+know, etc. But with JavaScript,
+since the front end and back end
+
+6688
+06:35:34,120 --> 06:35:37,540
+JavaScript are different. We run
+code on the back end with node.
+
+6689
+06:35:37,750 --> 06:35:40,090
+And with JavaScript, you can do
+a lot of things that you'd see
+
+6690
+06:35:40,090 --> 06:35:43,030
+in something like solidity with
+a little bit looser have a
+
+6691
+06:35:43,030 --> 06:35:46,240
+structure. If I wanted to create
+some variable, I could say let
+
+6692
+06:35:46,420 --> 06:35:51,220
+variable equals five, this kind
+of similar into solidity like
+
+6693
+06:35:51,220 --> 06:35:57,640
+you and 256, variable equals
+five. But in JavaScript, we use
+
+6694
+06:35:57,640 --> 06:36:01,690
+let or var or const. And then I
+can print this out, I can do
+
+6695
+06:36:01,690 --> 06:36:08,890
+console dot log variable. And I
+had saved JavaScript is optional
+
+6696
+06:36:08,920 --> 06:36:11,260
+on whether or not you actually
+want to have semicolons. Here, I
+
+6697
+06:36:11,260 --> 06:36:14,380
+think prettier, defaults to
+putting semicolons. And we'll
+
+6698
+06:36:14,380 --> 06:36:17,710
+get rid of those in the near
+future in your terminal. Once
+
+6699
+06:36:17,710 --> 06:36:22,060
+you start typing the name of a
+file, if you hit tab, it could
+
+6700
+06:36:22,090 --> 06:36:26,860
+autocomplete the rest of the
+file name for you node deploy
+
+6701
+06:36:26,860 --> 06:36:31,030
+hit Tab, it'll autocomplete and
+if we hit enter, now, we get Hi,
+
+6702
+06:36:31,090 --> 06:36:34,150
+and then we get five. Since this
+prints out Hi, and then it
+
+6703
+06:36:34,150 --> 06:36:37,810
+prints out five. JavaScript
+automatically starts with
+
+6704
+06:36:37,930 --> 06:36:40,540
+whatever code you have at the
+top of the file. So it does
+
+6705
+06:36:40,540 --> 06:36:43,720
+console dot log first and
+variable. And then this one as
+
+6706
+06:36:43,720 --> 06:36:47,500
+well. However, a good practice
+is to actually wrap everything
+
+6707
+06:36:47,500 --> 06:36:51,220
+you want to do in a main
+function, and then run that main
+
+6708
+06:36:51,220 --> 06:36:55,300
+function. But what we could do
+is up at the top here, we'd say
+
+6709
+06:36:55,300 --> 06:37:01,570
+function, mean, add parentheses
+and some brackets, a closing
+
+6710
+06:37:01,570 --> 06:37:05,290
+bracket at the bottom, and hit
+save for its auto format. Right
+
+6711
+06:37:05,290 --> 06:37:07,750
+now, if we run this, nothing
+will happen, because we've
+
+6712
+06:37:07,750 --> 06:37:11,410
+wrapped all of our code in a
+main function. So if I run it
+
+6713
+06:37:11,410 --> 06:37:15,640
+now node deployed to Jess,
+nothing happens, because I need
+
+6714
+06:37:15,640 --> 06:37:19,180
+something to call the main
+function. So if I then take
+
+6715
+06:37:19,180 --> 06:37:24,220
+this, this main function down
+here, and I call main, our jobs
+
+6716
+06:37:24,220 --> 06:37:26,800
+from code is actually going to
+say, ah, the first line of the
+
+6717
+06:37:26,800 --> 06:37:30,040
+script is actually this main
+function here. So now if I do
+
+6718
+06:37:30,040 --> 06:37:33,970
+node deploy dot j, s, it'll run
+high and five, which is what we
+
+6719
+06:37:33,970 --> 06:37:36,580
+want. Now, this is going to be
+the setup for most of our
+
+6720
+06:37:36,580 --> 06:37:39,610
+scripts moving forward,
+including the scripts that we
+
+6721
+06:37:39,610 --> 06:37:41,830
+write, when we get to hard hat,
+however, there is going to be
+
+6722
+06:37:41,830 --> 06:37:45,580
+one major difference. Instead of
+regular functions, we're
+
+6723
+06:37:45,580 --> 06:37:48,370
+actually going to use something
+called async functions. And
+
+6724
+06:37:48,370 --> 06:37:50,950
+we're going to do something
+called asynchronous programming
+
+6725
+06:37:50,980 --> 06:37:54,250
+to do this. Now, if what I say
+next is really confusing for you
+
+6726
+06:37:54,280 --> 06:37:57,040
+don't let it slow you down, feel
+free to go ahead and watch that
+
+6727
+06:37:57,040 --> 06:38:00,400
+JavaScript course to learn more
+about this. But I'll also let
+
+6728
+06:38:00,400 --> 06:38:03,880
+you know, hey, this is an async
+function. Here's what we need to
+
+6729
+06:38:03,880 --> 06:38:05,290
+be aware of when working with
+it,
+
+6730
+06:38:05,410 --> 06:38:16,660
+okay. But I do want to give you
+a quick bit background on
+
+6731
+06:38:16,660 --> 06:38:19,210
+asynchronous programming. So
+far, the programming that we've
+
+6732
+06:38:19,210 --> 06:38:22,480
+done has been synchronous. And
+solidity is an example of a
+
+6733
+06:38:22,480 --> 06:38:25,210
+programming language, that
+synchronous, Synchronous means
+
+6734
+06:38:25,210 --> 06:38:28,120
+it just goes one line after
+another. If our code looks like
+
+6735
+06:38:28,120 --> 06:38:32,710
+this, this is synchronous write,
+our main function is the first
+
+6736
+06:38:32,710 --> 06:38:36,010
+thing that actually gets called.
+Then we do console dot log, that
+
+6737
+06:38:36,010 --> 06:38:38,650
+variable equals five, and then
+console dot log. Again, this is
+
+6738
+06:38:38,650 --> 06:38:41,470
+synchronous programming in
+JavaScript, all of our solidity
+
+6739
+06:38:41,500 --> 06:38:44,080
+is synchronously programmed.
+There will be some exceptions to
+
+6740
+06:38:44,080 --> 06:38:46,570
+this when working with oracles.
+But for now, everything is
+
+6741
+06:38:46,570 --> 06:38:50,680
+synchronous. JavaScript can be
+asynchronous, meaning that we
+
+6742
+06:38:50,680 --> 06:38:54,460
+can actually have code running
+at the same time. A good example
+
+6743
+06:38:54,460 --> 06:38:58,510
+I like to use to understand the
+difference is with cooking. In
+
+6744
+06:38:58,510 --> 06:39:02,530
+synchronous programming, for
+cooking, you might put popcorn
+
+6745
+06:39:02,560 --> 06:39:08,500
+in microwave, wait for popcorn
+to finish. And then, and then
+
+6746
+06:39:08,500 --> 06:39:11,410
+maybe you'll pour drinks for
+everyone. And now this is
+
+6747
+06:39:11,410 --> 06:39:14,350
+synchronous programming. Now, it
+might be a little bit weird for
+
+6748
+06:39:14,350 --> 06:39:17,110
+you just to put the popcorn in
+the microwave, and then just
+
+6749
+06:39:17,110 --> 06:39:19,900
+stare at it, waiting for it to
+finish. And then pour the
+
+6750
+06:39:19,900 --> 06:39:24,220
+drinks, you typically can pour
+the drinks while your popcorn is
+
+6751
+06:39:24,220 --> 06:39:27,160
+in the microwave. And this is
+where asynchronous programming
+
+6752
+06:39:27,160 --> 06:39:30,280
+comes in. If setting up for this
+movie night, we're asynchronous,
+
+6753
+06:39:30,340 --> 06:39:34,510
+what you would do is you'd put
+popcorn in the microwave. And
+
+6754
+06:39:34,510 --> 06:39:37,990
+while the popcorn is in the
+microwave, or drinks for
+
+6755
+06:39:37,990 --> 06:39:42,910
+everyone, and then you'd wait
+for popcorn finish, since
+
+6756
+06:39:42,910 --> 06:39:45,310
+there's nothing left for you to
+do, but it doesn't make sense
+
+6757
+06:39:45,310 --> 06:39:48,490
+for you to wait for the popcorn
+to finish to pour your drinks,
+
+6758
+06:39:48,550 --> 06:39:51,400
+you can just go ahead and pour
+the drinks right away and then
+
+6759
+06:39:51,400 --> 06:39:54,280
+wait for the popcorn to finish.
+So asynchronous programming is
+
+6760
+06:39:54,280 --> 06:39:57,430
+way for us to do stuff without
+waiting around for things to
+
+6761
+06:39:57,430 --> 06:40:00,190
+finish. And this is really
+advantageous in JavaScript by
+
+6762
+06:40:00,190 --> 06:40:02,770
+default allows us to do this
+asynchronous programming,
+
+6763
+06:40:02,800 --> 06:40:05,380
+however, sometimes we do want to
+wait for our popcorn to finish.
+
+6764
+06:40:05,410 --> 06:40:09,730
+For example, if instead of just
+pouring drinks, maybe the next
+
+6765
+06:40:09,730 --> 06:40:14,350
+thing instead of pouring drinks
+was placed salt on popcorn. Of
+
+6766
+06:40:14,350 --> 06:40:17,740
+course, if we want to play salt
+on our popcorn, we do have to
+
+6767
+06:40:17,740 --> 06:40:20,620
+wait for the popcorn to get out
+of the microwave. So even though
+
+6768
+06:40:20,620 --> 06:40:24,100
+placing popcorn in the microwave
+has this wait time we need to be
+
+6769
+06:40:24,100 --> 06:40:27,640
+able to tell our code I want you
+to actually wait for it or No,
+
+6770
+06:40:27,640 --> 06:40:31,720
+you're good. You can go on and
+do another task. So that's kind
+
+6771
+06:40:31,720 --> 06:40:34,360
+of the difference here. And I'll
+leave some links in the GitHub
+
+6772
+06:40:34,360 --> 06:40:36,760
+repo associated with this course
+to understand this a little bit
+
+6773
+06:40:36,760 --> 06:40:39,730
+better functions that have
+functions that come with this
+
+6774
+06:40:39,730 --> 06:40:43,450
+waiting period return something
+called a problem. This, if put
+
+6775
+06:40:43,450 --> 06:40:46,330
+popcorn in the microwave was a
+function in JavaScript, it would
+
+6776
+06:40:46,330 --> 06:40:50,620
+be a promise based function. A
+promise can be either pending,
+
+6777
+06:40:51,100 --> 06:40:55,390
+fulfilled, or rejected. And this
+is how we know if our popcorn is
+
+6778
+06:40:55,390 --> 06:40:58,990
+done. If our popcorn was a
+method, putting popcorn in the
+
+6779
+06:40:58,990 --> 06:41:01,930
+microwave, were a function in
+JavaScript, when we're waiting
+
+6780
+06:41:01,930 --> 06:41:04,840
+for the popcorn to finish, it's
+in a pending state. When it's
+
+6781
+06:41:04,870 --> 06:41:08,710
+when the popcorn is finished, it
+would be fulfilled. And if we
+
+6782
+06:41:08,710 --> 06:41:11,740
+aborted halfway through, and we
+stopped waiting, it would be
+
+6783
+06:41:11,770 --> 06:41:14,740
+rejected. So putting the popcorn
+in the microwave returns a
+
+6784
+06:41:14,740 --> 06:41:18,670
+promise. With this promise, we
+have to tell our code, hey, we
+
+6785
+06:41:18,670 --> 06:41:22,180
+want you to wait for the popcorn
+to finish or you can go ahead
+
+6786
+06:41:22,180 --> 06:41:24,610
+and you can just keep doing
+stuff. So let's put this all
+
+6787
+06:41:24,610 --> 06:41:27,970
+together with some JavaScript
+syntax here. Let's say again,
+
+6788
+06:41:27,970 --> 06:41:30,670
+we're going to be setting up
+this movie night. And we need to
+
+6789
+06:41:30,700 --> 06:41:34,090
+cook popcorn, pour drinks for
+everybody. And then we need to
+
+6790
+06:41:34,090 --> 06:41:37,300
+start a movie. So let's write
+some pseudocode to pretend what
+
+6791
+06:41:37,300 --> 06:41:40,240
+this code would look like if
+this was actually a function. So
+
+6792
+06:41:40,270 --> 06:41:45,580
+we create some function called
+setup, Movie Night. And in here,
+
+6793
+06:41:45,610 --> 06:41:48,070
+we would say okay, what's the
+first thing we need to do? Okay,
+
+6794
+06:41:48,070 --> 06:41:50,260
+we need to cook popcorn. So
+let's say we have some cook
+
+6795
+06:41:50,260 --> 06:41:54,100
+popcorn function. So we'll say,
+okay, cook popcorn, then the
+
+6796
+06:41:54,100 --> 06:41:55,930
+next thing we're gonna have to
+do is we're gonna have to pour
+
+6797
+06:41:55,930 --> 06:42:00,430
+drinks, or drink. So we'll call
+some pour drinks function. Now
+
+6798
+06:42:00,430 --> 06:42:03,640
+here's the thing, we only want
+to start the movie once our
+
+6799
+06:42:03,640 --> 06:42:07,690
+popcorn has been cooked. And
+once our drinks have been
+
+6800
+06:42:07,720 --> 06:42:11,560
+poured, so if either one of
+these returned a promise, so if
+
+6801
+06:42:11,590 --> 06:42:14,680
+either one of these returns a
+promise, like cook popcorn, for
+
+6802
+06:42:14,680 --> 06:42:18,550
+example, we would need to tell
+our code here to actually wait
+
+6803
+06:42:18,730 --> 06:42:21,580
+for the popcorn to finish
+because cook popcorn is going to
+
+6804
+06:42:21,580 --> 06:42:25,840
+be a function where we could say
+let status equals cook popcorn.
+
+6805
+06:42:25,900 --> 06:42:29,710
+And while the popcorn is being
+cooked, the status is going to
+
+6806
+06:42:29,710 --> 06:42:33,250
+be ending. Once the popcorn gets
+cooked, it'll be fulfilled. If
+
+6807
+06:42:33,250 --> 06:42:35,890
+the popcorn breaks, the
+microwave explodes, the status
+
+6808
+06:42:35,890 --> 06:42:39,130
+would be rejected. But we don't
+want the status to be in a
+
+6809
+06:42:39,130 --> 06:42:42,430
+pending situation. Before we
+move on, we only want to start
+
+6810
+06:42:42,430 --> 06:42:45,580
+our movie once these two
+functions have completed. And
+
+6811
+06:42:45,580 --> 06:42:48,700
+let's say both of these return
+these promises things. So we
+
+6812
+06:42:48,700 --> 06:42:52,630
+need to tell our code, hey, you
+have to wait. Or you have to
+
+6813
+06:42:52,630 --> 06:42:56,050
+wait for cook popcorn and for
+poor drinks to finish. So what
+
+6814
+06:42:56,050 --> 06:42:59,050
+we can do now without getting
+too deep into the weeds on how
+
+6815
+06:42:59,050 --> 06:43:01,840
+all this works, one of the
+easiest things that we can do
+
+6816
+06:43:01,840 --> 06:43:04,630
+and you'll see us use this
+syntax quite often is we'll turn
+
+6817
+06:43:04,630 --> 06:43:08,470
+this function into an async
+function. When our functions are
+
+6818
+06:43:08,500 --> 06:43:12,790
+async, we get access to a
+keyword called await the await
+
+6819
+06:43:12,790 --> 06:43:17,680
+keyword tells any promise based
+function to wait for that
+
+6820
+06:43:17,680 --> 06:43:20,530
+promise to be fulfilled or
+rejected. So we say okay, we
+
+6821
+06:43:20,530 --> 06:43:24,520
+want to await for our popcorn to
+cook. And then we want to await
+
+6822
+06:43:24,550 --> 06:43:27,280
+to pour drinks. And then we can
+just go ahead and start the
+
+6823
+06:43:27,280 --> 06:43:31,240
+movie. And we only start the
+movie here once these two have
+
+6824
+06:43:31,270 --> 06:43:34,450
+been completed. And this is why
+throughout all of our code,
+
+6825
+06:43:34,450 --> 06:43:37,330
+you'll see this await keyword
+used a lot. But it can only be
+
+6826
+06:43:37,330 --> 06:43:40,600
+used in async functions. So
+basically, whenever you see this
+
+6827
+06:43:40,600 --> 06:43:44,230
+await keyword just now Ah, okay,
+the function that's being called
+
+6828
+06:43:44,260 --> 06:43:47,980
+is promise based. And we don't
+want to move on to the next step
+
+6829
+06:43:48,010 --> 06:43:50,980
+until that function has
+completed. So that's a little
+
+6830
+06:43:50,980 --> 06:43:53,590
+bit more about promises and
+asynchronous programming.
+
+6831
+06:43:53,620 --> 06:43:56,410
+Hopefully, that's clear. If not,
+like I said, there's some links
+
+6832
+06:43:56,410 --> 06:43:58,840
+in the description to learn more
+about asynchronous programming.
+
+6833
+06:43:59,050 --> 06:44:01,570
+The reason I wanted to go
+through this is because most of
+
+6834
+06:44:01,570 --> 06:44:03,460
+the functions that we're going
+to be working with are going to
+
+6835
+06:44:03,460 --> 06:44:07,810
+be asynchronous. For example,
+when we deploy a contract, what
+
+6836
+06:44:07,810 --> 06:44:13,240
+do we have to do? Well, we have
+to wait for it to be deployed.
+
+6837
+06:44:14,200 --> 06:44:16,840
+If we don't use synchronous
+programming, and we just leave
+
+6838
+06:44:16,840 --> 06:44:20,530
+our function main like this,
+what would happen is we would
+
+6839
+06:44:20,530 --> 06:44:24,610
+write some code like contract
+dot deploy, and we wouldn't wait
+
+6840
+06:44:24,700 --> 06:44:29,620
+for it to finish. Obviously, if
+we don't wait for it to finish,
+
+6841
+06:44:29,710 --> 06:44:32,500
+and we try to run some code on a
+contract that hasn't finished
+
+6842
+06:44:32,500 --> 06:44:35,110
+deploying it, it's not going to
+work. So we want to do this, we
+
+6843
+06:44:35,110 --> 06:44:38,740
+want to have our main function
+be an async function, so that we
+
+6844
+06:44:38,740 --> 06:44:42,010
+can we can wait for our
+contracts to deploy, we can wait
+
+6845
+06:44:42,010 --> 06:44:45,310
+for things to happen, we can
+wait for our popcorn to finish,
+
+6846
+06:44:45,340 --> 06:44:48,550
+we can have the flexibility to
+tell our code to either wait for
+
+6847
+06:44:48,550 --> 06:44:51,400
+our popcorn to finish or
+continue on. So now that we have
+
+6848
+06:44:51,400 --> 06:44:54,970
+our main function as an async
+function, we're going to add
+
+6849
+06:44:54,970 --> 06:44:57,460
+some code to our main function
+down here. And the code that's
+
+6850
+06:44:57,460 --> 06:45:00,040
+added here is some syntax for
+working with asynchronous
+
+6851
+06:45:00,040 --> 06:45:02,590
+functions. And if this part is
+confusing, I'm just going to say
+
+6852
+06:45:02,590 --> 06:45:05,170
+for now, absolute, don't worry
+about this. If you want to try
+
+6853
+06:45:05,170 --> 06:45:07,750
+to understand that later. That's
+fine. But for those who are
+
+6854
+06:45:07,750 --> 06:45:09,580
+following along, we're just
+going to add an add
+
+6855
+06:45:09,610 --> 06:45:25,360
+then catch air air you can
+follow along typing this
+
+6856
+06:45:25,360 --> 06:45:28,300
+yourself or you can just copy
+paste it into your code.
+
+6857
+06:45:28,420 --> 06:45:31,900
+Basically what this allows us to
+do is we have our main function,
+
+6858
+06:45:31,930 --> 06:45:34,630
+that's an asynchronous function.
+So when we call the main
+
+6859
+06:45:34,630 --> 06:45:37,840
+function, this is some other
+syntax for waiting for it to
+
+6860
+06:45:38,020 --> 06:45:41,020
+basically finish and then
+printing any errors it gets. And
+
+6861
+06:45:41,020 --> 06:45:44,980
+that's why we do this but Again,
+if this big lump of code, if
+
+6862
+06:45:44,980 --> 06:45:46,690
+you're like what is going on
+with this big clump of code,
+
+6863
+06:45:46,720 --> 06:45:49,180
+honestly, for now, just copy
+paste it. So great. We have our
+
+6864
+06:45:49,180 --> 06:45:52,690
+asynchronous function main, we
+have some code. And then we have
+
+6865
+06:45:52,780 --> 06:45:55,840
+this lump of code, which
+basically just calls our main
+
+6866
+06:45:55,870 --> 06:45:58,690
+asynchronous function. Okay,
+great. I'm gonna delete all this
+
+6867
+06:45:58,690 --> 06:46:01,810
+for now. But you can still find
+that common in the GitHub repo
+
+6868
+06:46:01,840 --> 06:46:04,960
+associated with this course.
+Awesome. Okay, so now that we
+
+6869
+06:46:04,960 --> 06:46:07,990
+have our real basic setup, let's
+go ahead and start coding. And
+
+6870
+06:46:08,020 --> 06:46:11,110
+if this set apart is confusing,
+and the async await stuff is
+
+6871
+06:46:11,110 --> 06:46:14,020
+confusing, don't worry too much
+about it. It'll make more sense
+
+6872
+06:46:14,020 --> 06:46:19,840
+as we progress. All of our code
+basically is going to be inside
+
+6873
+06:46:19,840 --> 06:46:22,270
+of this async function main,
+which is going to be our main
+
+6874
+06:46:22,270 --> 06:46:25,900
+script for deploying our simple
+storage dot soul store deploy
+
+6875
+06:46:25,900 --> 06:46:29,350
+script is going to replicate
+exactly what goes on in remix,
+
+6876
+06:46:29,410 --> 06:46:32,320
+in remix, what was the first
+thing that we always did? Well,
+
+6877
+06:46:32,320 --> 06:46:35,830
+the first thing that we would do
+is actually compile all of our
+
+6878
+06:46:35,830 --> 06:46:38,860
+code. So we're going to want to
+compile our code in our
+
+6879
+06:46:38,860 --> 06:46:42,040
+JavaScript project as well. In
+order for us to compile our
+
+6880
+06:46:42,040 --> 06:46:45,520
+simple storage contract, we're
+going to use a tool called Silk
+
+6881
+06:46:45,550 --> 06:46:48,670
+Jas, and JavaScript actually has
+a way to install projects
+
+6882
+06:46:48,670 --> 06:46:52,090
+directly into our setups and
+into our folders. If we scroll
+
+6883
+06:46:52,090 --> 06:46:55,450
+down this silk Jas is exactly
+what we're looking for. Because
+
+6884
+06:46:55,450 --> 06:46:58,390
+it has a way to compile a
+contract that imports other
+
+6885
+06:46:58,390 --> 06:47:02,620
+contracts via relative paths,
+you can see a section in this
+
+6886
+06:47:02,620 --> 06:47:05,080
+readme and most documentation
+will have something like this,
+
+6887
+06:47:05,110 --> 06:47:09,220
+if it's JavaScript compatible.
+For Node js usage, it says to
+
+6888
+06:47:09,220 --> 06:47:11,980
+use the latest stable version of
+the solidity compiler via Node
+
+6889
+06:47:11,980 --> 06:47:17,860
+js, you can install it via NPM
+npm install. So NPM is what's
+
+6890
+06:47:17,860 --> 06:47:22,330
+known as a package manager. And
+we actually installed NPM just
+
+6891
+06:47:22,330 --> 06:47:26,650
+by installing no Jess, right, if
+we do no dash dash version, you
+
+6892
+06:47:26,650 --> 06:47:30,700
+should also be able to do NPM
+dash dash version. Another tool
+
+6893
+06:47:30,700 --> 06:47:33,310
+that it comes with is something
+called core pack. And you can
+
+6894
+06:47:33,310 --> 06:47:36,730
+type core pack dash dash
+version, now we can install with
+
+6895
+06:47:36,730 --> 06:47:40,990
+NPM using npm install silk,
+however, I like the yarn package
+
+6896
+06:47:40,990 --> 06:47:44,590
+manager a little bit better. So
+we're actually going to install
+
+6897
+06:47:44,620 --> 06:47:47,950
+the yarn package manager instead
+to do all of our package
+
+6898
+06:47:47,950 --> 06:47:51,190
+management. If you go to the
+installation page, the newer way
+
+6899
+06:47:51,190 --> 06:47:54,610
+to install yarn is just by
+running core pack enable. And
+
+6900
+06:47:54,640 --> 06:47:58,390
+the older way is to install with
+NPM. If you go ahead and run
+
+6901
+06:47:58,420 --> 06:48:01,600
+core pack enable after that
+finishes, you should be able to
+
+6902
+06:48:01,600 --> 06:48:07,150
+run yarn dash dash version.
+Alternatively, you can just run
+
+6903
+06:48:07,210 --> 06:48:12,850
+NPM i dash g core pack, and then
+you can run core pack enable.
+
+6904
+06:48:13,000 --> 06:48:17,440
+The last option you have is you
+can run NPM i dash g
+
+6905
+06:48:17,860 --> 06:48:21,850
+yarn. This will install yarn
+globally for your system. But
+
+6906
+06:48:21,850 --> 06:48:25,720
+this is considered the outdated
+way to install yarn. And ideally
+
+6907
+06:48:25,720 --> 06:48:29,560
+you run core pack enable. But in
+any case, after you run those,
+
+6908
+06:48:29,590 --> 06:48:31,960
+if you run yarn dash dash
+version, you should get
+
+6909
+06:48:31,960 --> 06:48:35,380
+something that looks like this.
+Now that we have yarn, we can
+
+6910
+06:48:35,380 --> 06:48:39,580
+actually use yarn to install all
+of our projects, instead of NPM.
+
+6911
+06:48:39,940 --> 06:48:44,440
+Back in silk Jas where it says
+npm install soak, we can do the
+
+6912
+06:48:44,440 --> 06:48:48,550
+yarn equivalents of NPM install
+sock, which is going to be yarn,
+
+6913
+06:48:49,240 --> 06:48:55,330
+add sock, this will actually go
+ahead and install solc to our
+
+6914
+06:48:55,330 --> 06:48:58,990
+project. If we open up our
+folders, you'll actually see
+
+6915
+06:48:59,020 --> 06:49:01,930
+that this added a couple of
+different folders, it first
+
+6916
+06:49:01,930 --> 06:49:06,010
+added a package dot JSON package
+dot JSON is a file that tells us
+
+6917
+06:49:06,040 --> 06:49:09,610
+a lot about our project and the
+dependencies that it works with.
+
+6918
+06:49:09,640 --> 06:49:14,920
+For example, we've installed the
+soap package of 0.8 point 13.
+
+6919
+06:49:15,130 --> 06:49:18,880
+Our yarn dot lock tells us the
+exact version of all the
+
+6920
+06:49:18,880 --> 06:49:22,840
+different packages of our
+project. For example, the reason
+
+6921
+06:49:22,840 --> 06:49:25,840
+this is so important too, is
+solc has a ton of dependencies
+
+6922
+06:49:25,840 --> 06:49:29,800
+as well. So yarn dot lock tells
+us exactly what version of solc
+
+6923
+06:49:30,010 --> 06:49:32,380
+and all the different
+dependencies of solchen. Any
+
+6924
+06:49:32,380 --> 06:49:36,310
+other project that we add. This
+is autogenerated file, don't
+
+6925
+06:49:36,340 --> 06:49:39,910
+edit the file directly. The
+final bit is we got this node
+
+6926
+06:49:39,910 --> 06:49:43,960
+modules folder. This node
+modules folder is going to be
+
+6927
+06:49:44,020 --> 06:49:47,950
+where all the installed code
+that we just downloaded is, for
+
+6928
+06:49:47,950 --> 06:49:51,010
+example, if we look at node
+modules, we can see there's a
+
+6929
+06:49:51,010 --> 06:49:55,570
+sock folder. And inside this
+sock folder is all the code
+
+6930
+06:49:55,600 --> 06:49:59,290
+associated with this soap
+package that we just installed.
+
+6931
+06:49:59,350 --> 06:50:03,370
+And since we're working with
+zero point 8.7 of slowly, we
+
+6932
+06:50:03,370 --> 06:50:06,670
+actually want to install that
+specific version. So we're going
+
+6933
+06:50:06,670 --> 06:50:17,230
+to do yarn add solc at zero
+point 8.7 Dash fixed and you'll
+
+6934
+06:50:17,230 --> 06:50:21,910
+see in our package dot JSON you
+can now see zero point 8.7 Dash
+
+6935
+06:50:21,910 --> 06:50:25,780
+fixed in our dependencies
+section for sulk. Normally you
+
+6936
+06:50:25,780 --> 06:50:29,530
+can just add your salt version
+like yarn add zero point 8.7 But
+
+6937
+06:50:29,530 --> 06:50:33,100
+there was an issue with zero
+point 8.7 So we had to do zero
+
+6938
+06:50:33,460 --> 06:50:35,140
+point 8.7 Dash fixed.
+
+6939
+06:50:36,430 --> 06:50:38,200
+You can find the different
+releases and the different
+
+6940
+06:50:38,200 --> 06:50:41,740
+versions if you go to sulk Jas
+releases and then to tags
+
+6941
+06:50:42,940 --> 06:50:45,730
+Alright, great. Now that we have
+sold, we have the ability to
+
+6942
+06:50:45,730 --> 06:50:50,590
+actually compile our contracts,
+we could either compile them in
+
+6943
+06:50:50,590 --> 06:50:54,190
+our code and have it
+automatically run whenever we
+
+6944
+06:50:54,190 --> 06:51:00,130
+hit Deploy, or, or we could
+compile them separately. If you
+
+6945
+06:51:00,130 --> 06:51:03,310
+want to go back after this
+section is an example in the
+
+6946
+06:51:03,310 --> 06:51:07,120
+sculpt Jas repository that shows
+you how to actually compile silk
+
+6947
+06:51:07,150 --> 06:51:09,790
+right in your code. We are
+actually going to compile them
+
+6948
+06:51:09,790 --> 06:51:14,020
+separately using a soap Jas
+command. The yarn command is
+
+6949
+06:51:14,020 --> 06:51:17,740
+both used to install
+dependencies and it can be used
+
+6950
+06:51:17,770 --> 06:51:21,910
+to run scripts. If you go to
+sulk Jas and you scroll down, it
+
+6951
+06:51:21,910 --> 06:51:24,370
+says in order to use the command
+line, you actually need to
+
+6952
+06:51:24,370 --> 06:51:27,580
+install it globally. If you want
+to install this globally using
+
+6953
+06:51:27,580 --> 06:51:33,250
+yarn Global Add solc at zero
+point 8.7 Dash fixed you can
+
+6954
+06:51:33,250 --> 06:51:36,850
+absolutely go ahead. However,
+since we're inside of this
+
+6955
+06:51:36,850 --> 06:51:40,450
+folder here, which has the yarn
+dot lock the package json and
+
+6956
+06:51:40,450 --> 06:51:44,230
+the node modules yarn will be
+smart enough to know i You're
+
+6957
+06:51:44,230 --> 06:51:48,250
+looking for the soak in this
+folder. So we can actually go
+
+6958
+06:51:48,250 --> 06:51:52,300
+ahead and compile our contract
+using yarn and solc Jess if you
+
+6959
+06:51:52,300 --> 06:51:55,540
+want to see all the different
+commands soak Jas allows we can
+
+6960
+06:51:55,540 --> 06:52:00,970
+just run yarn. So Jas dash dash
+help, and you'll see it'll spit
+
+6961
+06:52:00,970 --> 06:52:06,340
+out a list of all the different
+options that soft Jas has. You
+
+6962
+06:52:06,340 --> 06:52:11,200
+can also run yarn, so Jas dash
+dash version to just make sure
+
+6963
+06:52:11,200 --> 06:52:14,200
+that we're on the correct
+version, which is indeed zero
+
+6964
+06:52:14,740 --> 06:52:18,130
+point 8.7. Now to actually
+compile our simple storage at
+
+6965
+06:52:18,130 --> 06:52:23,710
+soul, let's run the compliation
+command we will run yarn, so J
+
+6966
+06:52:23,710 --> 06:52:29,380
+S, dash dash bin since we want
+the binary dash dash ABI since
+
+6967
+06:52:29,380 --> 06:52:37,090
+we also want the ABI dash dash
+include path node modules. Since
+
+6968
+06:52:37,150 --> 06:52:41,290
+we want to include any contracts
+or files in our node modules, we
+
+6969
+06:52:41,290 --> 06:52:43,870
+aren't using any for this
+project, but in the future, you
+
+6970
+06:52:43,870 --> 06:52:46,870
+will need to include this dash
+dash include path node modules
+
+6971
+06:52:47,530 --> 06:52:52,330
+do dash dash base path of
+period, this period means that
+
+6972
+06:52:52,330 --> 06:52:56,260
+the base path is going to be
+this folder dash O period, which
+
+6973
+06:52:56,260 --> 06:53:00,640
+means we're going to output the
+compiled binary and ABI to this
+
+6974
+06:53:00,670 --> 06:53:05,410
+folder. And then finally, simple
+storage dot soul. Since this is
+
+6975
+06:53:05,410 --> 06:53:08,680
+the contract that we want to
+compile, auto completed it from
+
+6976
+06:53:08,680 --> 06:53:11,770
+simple storage to simple
+storage. So by typing simple,
+
+6977
+06:53:12,520 --> 06:53:15,310
+and then hitting Tab, but let's
+go ahead and hit enter, you'll
+
+6978
+06:53:15,310 --> 06:53:19,870
+see it's running this command to
+compile this contract. And
+
+6979
+06:53:19,870 --> 06:53:24,370
+you'll see two files get output.
+One called Simple Storage soul
+
+6980
+06:53:24,400 --> 06:53:27,850
+underscore simple storage that
+API in simple storage Sol
+
+6981
+06:53:27,880 --> 06:53:31,660
+underscore simple storage dot
+bin, the ABI is obviously the
+
+6982
+06:53:31,660 --> 06:53:35,920
+ABI of this contract, which will
+need in the future. And then the
+
+6983
+06:53:35,920 --> 06:53:39,670
+bin is going to be the binary,
+or the really low level of this
+
+6984
+06:53:39,670 --> 06:53:42,520
+code back and remix. If you
+compile simple storage, that
+
+6985
+06:53:42,520 --> 06:53:46,570
+soul, you can actually look at
+compliation details, like the
+
+6986
+06:53:46,570 --> 06:53:51,850
+ABI which we just got, or the
+bytecode, which if you look at
+
+6987
+06:53:51,850 --> 06:53:59,080
+this object 60806 That's the
+same as the binary here 60806.
+
+6988
+06:53:59,110 --> 06:54:02,140
+Alright, great. So now we've
+compiled our contracts here.
+
+6989
+06:54:02,320 --> 06:54:05,890
+Now, obviously, now if you hit
+up on your keyboard, you can
+
+6990
+06:54:05,890 --> 06:54:09,640
+actually cycle through your most
+recent terminal commands. And if
+
+6991
+06:54:09,640 --> 06:54:12,520
+you hit up enough, we can see
+this command that we just ran
+
+6992
+06:54:12,550 --> 06:54:15,580
+typing this out or hitting up a
+whole bunch every single time,
+
+6993
+06:54:15,790 --> 06:54:18,820
+it's going to be really annoying
+to do anytime we want to
+
+6994
+06:54:18,850 --> 06:54:22,840
+recompile. So what we can do is
+we can add a script section in
+
+6995
+06:54:22,840 --> 06:54:26,680
+our package dot JSON to shorten
+some yarn scripts for us. So
+
+6996
+06:54:26,680 --> 06:54:29,530
+what we'll do is back in our
+package, dot JSON, a lot of
+
+6997
+06:54:29,530 --> 06:54:33,970
+comma, and we'll add a section
+called scripts, add the colon
+
+6998
+06:54:34,000 --> 06:54:37,000
+and the brackets. And in here,
+we'll say anytime we say
+
+6999
+06:54:37,000 --> 06:54:42,340
+compile, we will run this long
+command. So I'd compile we'll
+
+7000
+06:54:42,340 --> 06:54:46,390
+put some quotes. And we'll paste
+that in there. So now instead of
+

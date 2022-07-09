@@ -1,0 +1,4995 @@
+8001
+07:55:30,640 --> 07:55:37,210
+412344 spaces. Maybe we want to
+change that. We want tab width
+
+8002
+07:55:38,020 --> 07:55:41,830
+to be two. So we would save it
+here and come back to simple
+
+8003
+07:55:41,830 --> 07:55:45,850
+storage To save it here, and it
+would get auto formatted to r
+
+8004
+07:55:45,850 --> 07:55:51,670
+dot prettier RC. So in our
+settings here, we have the
+
+8005
+07:55:51,670 --> 07:55:55,090
+default editor for solidity, our
+hard hat, solidity plugin, and
+
+8006
+07:55:55,090 --> 07:55:57,580
+the default for meta for
+JavaScript being the prettier
+
+8007
+07:55:57,580 --> 07:56:01,300
+vs. Code one, when we add
+prettier RC in here, this file
+
+8008
+07:56:01,300 --> 07:56:05,620
+will take precedent over the
+default configuration, so long
+
+8009
+07:56:05,650 --> 07:56:09,940
+as we have downloaded the module
+in our node modules, which we
+
+8010
+07:56:09,940 --> 07:56:13,270
+can see it right here. And we
+have this dot prettier rc file.
+
+8011
+07:56:14,890 --> 07:56:17,350
+I'm going to keep the tab with
+form. So we're going to update
+
+8012
+07:56:17,350 --> 07:56:20,200
+it to that one thing that we
+currently do have that I do not
+
+8013
+07:56:20,200 --> 07:56:25,450
+like is these semicolons at the
+end, so we're going to do semi
+
+8014
+07:56:27,100 --> 07:56:31,510
+boss, and I'm going to save
+this, come back to deploy it
+
+8015
+07:56:31,510 --> 07:56:34,690
+save and you'll see the
+semicolon automatically goes
+
+8016
+07:56:34,690 --> 07:56:38,470
+away. I'm also going to add use
+tabs false, since I want to use
+
+8017
+07:56:38,470 --> 07:56:43,960
+spaces or spacing, and then
+single quote, false. This way,
+
+8018
+07:56:43,960 --> 07:56:46,750
+we'll always use a double quote,
+instead of a single quote, in
+
+8019
+07:56:46,750 --> 07:56:49,330
+JavaScript, you can actually use
+the single quote or double
+
+8020
+07:56:49,330 --> 07:56:52,210
+quote, to define strings, but
+we're going to make it so that
+
+8021
+07:56:52,240 --> 07:56:54,790
+no matter what quote you use,
+it'll always be double quote.
+
+8022
+07:56:55,120 --> 07:56:58,060
+And then for all your open
+source repos, and for all your
+
+8023
+07:56:58,060 --> 07:57:02,530
+projects that you make, you want
+to make a readme.md readme files
+
+8024
+07:57:02,560 --> 07:57:05,530
+are generally where people put
+instructions or information
+
+8025
+07:57:05,530 --> 07:57:08,680
+about your project or anything
+like that. This way, whenever
+
+8026
+07:57:08,680 --> 07:57:11,200
+anybody comes across your
+project, they'll know what it's
+
+8027
+07:57:11,200 --> 07:57:15,790
+about your readme dot MDs, our
+Markdown syntax again, remember
+
+8028
+07:57:15,790 --> 07:57:19,960
+how when we made that trial
+discussion, we use some
+
+8029
+07:57:19,960 --> 07:57:23,560
+interesting tips to format our
+solidity in our code here. Well,
+
+8030
+07:57:23,560 --> 07:57:27,880
+that formatting process is the
+exact same for.md files for
+
+8031
+07:57:27,880 --> 07:57:31,450
+markdown. They're both going to
+use markdown. In fact, if we hit
+
+8032
+07:57:31,450 --> 07:57:35,380
+Ctrl, Shift V, you'll enter
+preview mode for the markdown
+
+8033
+07:57:35,440 --> 07:57:38,950
+you'll see pound sign here in my
+preview of the hard hat. This
+
+8034
+07:57:38,950 --> 07:57:42,790
+ethers simple storage FCC is
+huge. And it looks like a
+
+8035
+07:57:42,790 --> 07:57:47,710
+heading at the top. So Command
+Shift V to view your.md files or
+
+8036
+07:57:47,770 --> 07:57:51,100
+or MIP Ctrl, Shift V for Windows
+and Linux users.
+
+8037
+07:57:53,680 --> 07:57:56,890
+The last thing that we're going
+to do is we're going to deploy
+
+8038
+07:57:56,890 --> 07:58:00,940
+this to a test net and interact
+with this on a test net, we're
+
+8039
+07:58:00,940 --> 07:58:03,850
+going to use the Rinkeby test
+net. But be sure to use whatever
+
+8040
+07:58:03,850 --> 07:58:07,000
+recommended test net the GitHub
+repository for this coerce
+
+8041
+07:58:07,030 --> 07:58:10,990
+recommends. Now looking at our
+code, you might already have a
+
+8042
+07:58:10,990 --> 07:58:15,040
+good idea of how to actually
+make this slight change. Based
+
+8043
+07:58:15,040 --> 07:58:18,790
+off of our last section, we know
+that all we need is an RPC URL
+
+8044
+07:58:18,880 --> 07:58:21,820
+and a private key and we can
+begin making transactions on a
+
+8045
+07:58:21,820 --> 07:58:25,600
+blockchain. So we're probably
+going to need a rink B RPC URL,
+
+8046
+07:58:26,020 --> 07:58:29,680
+and a rinky private key. Where
+can we find both of those, if
+
+8047
+07:58:29,680 --> 07:58:32,050
+you want to do everything on
+your own, and in full
+
+8048
+07:58:32,050 --> 07:58:37,060
+decentralized context, we could
+run a rink B version of geth, we
+
+8049
+07:58:37,060 --> 07:58:39,490
+could run it locally, and then
+just connect to our guest node,
+
+8050
+07:58:39,640 --> 07:58:42,340
+we're not going to be showing
+how to do this here. However,
+
+8051
+07:58:42,370 --> 07:58:45,400
+this is 100%, something that you
+could do. Instead, we're gonna
+
+8052
+07:58:45,400 --> 07:58:49,540
+use a third party RPC URL in the
+GitHub repo associated with this
+
+8053
+07:58:49,540 --> 07:58:55,180
+course. Go to Lesson five, we
+can scroll down to get a link
+
+8054
+07:58:55,180 --> 07:58:59,800
+for alchemy. Alchemy has a node
+as a service and allows us to
+
+8055
+07:58:59,800 --> 07:59:02,800
+connect to any blockchain that
+they have support for two
+
+8056
+07:59:02,800 --> 07:59:06,520
+alternates might be quick node,
+Morales, or infura. These all
+
+8057
+07:59:06,520 --> 07:59:09,190
+have node as a service options.
+But we're going to work with
+
+8058
+07:59:09,190 --> 07:59:11,710
+Alchemy, because it's the one
+that I liked the best, we can go
+
+8059
+07:59:11,710 --> 07:59:14,620
+ahead and get started for free
+or login or create a new
+
+8060
+07:59:14,620 --> 07:59:17,950
+account, I'm going to go ahead
+and sign up with our hard hat
+
+8061
+07:59:18,040 --> 07:59:22,060
+Free Code Camp user. And we're
+going to select the Ethereum
+
+8062
+07:59:22,150 --> 07:59:25,210
+blockchain ecosystem. Let's go
+ahead and create our first app.
+
+8063
+07:59:25,270 --> 07:59:29,710
+This is going to be we'll call
+it Free Code Camp. RT hat. Our
+
+8064
+07:59:29,710 --> 07:59:36,730
+app name will be ethers, simple
+storage, FCC, and the network is
+
+8065
+07:59:36,730 --> 07:59:40,390
+where we're going to choose rink
+B. But you can see in here, we
+
+8066
+07:59:40,390 --> 07:59:43,120
+can actually choose more than
+just rink B, we can choose
+
+8067
+07:59:43,450 --> 07:59:48,280
+really Kovan, rink B, ropsten.
+And layer twos like arbitrage
+
+8068
+07:59:48,310 --> 07:59:51,730
+and optimism, we're going to be
+using rink B. So let's go ahead
+
+8069
+07:59:51,730 --> 07:59:55,300
+and create this app. We're going
+to choose the free plan and hit
+
+8070
+07:59:55,300 --> 07:59:59,920
+Continue. We're going to skip
+adding payments. If you want to
+
+8071
+07:59:59,920 --> 08:00:02,650
+tweet your referral code, feel
+free to tweet your referral
+
+8072
+08:00:02,650 --> 08:00:05,620
+code. We're going to skip for
+now. And we're going to keep it
+
+8073
+08:00:05,620 --> 08:00:08,530
+at capped capacity. Since we
+don't have a we don't have a key
+
+8074
+08:00:08,530 --> 08:00:11,110
+in here. And then how did you
+hear about us go ahead and give
+
+8075
+08:00:11,110 --> 08:00:13,660
+me that shout out at Patrick and
+Free Code Camp and then hit
+
+8076
+08:00:13,660 --> 08:00:16,990
+Let's go. Now we get to the
+alchemy dashboard, where we can
+
+8077
+08:00:16,990 --> 08:00:20,410
+see a ton of information about
+our node and different ways to
+
+8078
+08:00:20,410 --> 08:00:23,200
+connect to the nodes and and
+stuff like that. This is going
+
+8079
+08:00:23,200 --> 08:00:29,050
+to be really similar to to this
+RPC server endpoint of ganache,
+
+8080
+08:00:29,080 --> 08:00:31,720
+except it's going to be a
+connection, except it's going to
+
+8081
+08:00:31,720 --> 08:00:34,990
+be a connection to a real test
+net or real main net. What we
+
+8082
+08:00:34,990 --> 08:00:39,130
+can do now is we can select our
+our app that we just made. And
+
+8083
+08:00:39,130 --> 08:00:42,700
+we can hit View key. And we can
+see here we get an API key Key,
+
+8084
+08:00:43,120 --> 08:00:46,840
+we add an HTTP endpoint and we
+also get a WebSocket. We're only
+
+8085
+08:00:46,840 --> 08:00:50,230
+concerned with the HTTP
+endpoint. This is going to be
+
+8086
+08:00:50,230 --> 08:00:54,760
+our RPC URL that connects to
+rink B. So what we can do now is
+
+8087
+08:00:54,760 --> 08:00:58,540
+we can copy this and come over
+to our Visual Studio code. And
+
+8088
+08:00:58,540 --> 08:01:02,380
+in our dot env, we can
+substitute these out for their
+
+8089
+08:01:02,380 --> 08:01:06,310
+actual tests and values. So for
+RPC URL, we're going to delete
+
+8090
+08:01:06,310 --> 08:01:10,660
+this and replace it with our
+Rigby RPC row. And now how do we
+
+8091
+08:01:10,660 --> 08:01:14,230
+get a private key for an actual
+test set that has actual rank be
+
+8092
+08:01:14,230 --> 08:01:18,280
+on it? Well, here is where we
+can use our meta masks. So back
+
+8093
+08:01:18,280 --> 08:01:21,790
+in your browser, go over to your
+meta mask, select the three
+
+8094
+08:01:21,790 --> 08:01:27,700
+dots, go to Account Details,
+export private key. And this is
+
+8095
+08:01:27,700 --> 08:01:31,180
+where you can export your
+private key, type in your
+
+8096
+08:01:31,180 --> 08:01:34,270
+password and boom, you now have
+your private key for your
+
+8097
+08:01:34,270 --> 08:01:38,260
+account on meta mask. Now
+remember, please, please, please
+
+8098
+08:01:38,620 --> 08:01:43,090
+don't continue with a meta mask
+that has actual money in it. A
+
+8099
+08:01:43,090 --> 08:01:46,480
+quick way to check is by going
+to your networks tab and seeing
+
+8100
+08:01:46,900 --> 08:01:50,230
+if on any of the main nets or
+the networks with actual money
+
+8101
+08:01:50,230 --> 08:01:53,140
+in it, you see any money, I
+don't have any money in this. So
+
+8102
+08:01:53,140 --> 08:01:55,630
+I know I'm good to go. If you
+have tests that money, that's
+
+8103
+08:01:55,630 --> 08:01:58,540
+fine, because that's fake money
+anyways. And again, most
+
+8104
+08:01:58,540 --> 08:02:01,180
+browsers have a profile
+mechanism where you can create a
+
+8105
+08:02:01,180 --> 08:02:05,260
+new profile for you to use. But
+here now that I've copied my
+
+8106
+08:02:05,470 --> 08:02:08,800
+private key, we can come back to
+our Visual Studio code, paste
+
+8107
+08:02:08,800 --> 08:02:12,640
+the key in here. And now I have
+a private key that has actual
+
+8108
+08:02:12,670 --> 08:02:16,450
+rink be in it. Awesome. And
+remember, if you ever get low,
+
+8109
+08:02:16,750 --> 08:02:20,950
+just come over to faucets dot
+chain dot link slash Rigby get
+
+8110
+08:02:20,950 --> 08:02:25,780
+some tests eath I'm not a robot
+will send the request. Now that
+
+8111
+08:02:25,780 --> 08:02:29,530
+we have our private key in our
+rink being here, we can now try
+
+8112
+08:02:29,530 --> 08:02:33,250
+to run this on an actual test.
+Net, we look at our code, we see
+
+8113
+08:02:33,280 --> 08:02:36,760
+we're grabbing an RPC URL, which
+is going to be from r dot end,
+
+8114
+08:02:37,000 --> 08:02:38,860
+we're grabbing a private key
+which is going to be from our
+
+8115
+08:02:38,860 --> 08:02:42,190
+daughter Yun V, which points to
+our rink D Metamask. And our
+
+8116
+08:02:42,190 --> 08:02:47,380
+rink B blockchain. So let's just
+add a console dot log under our
+
+8117
+08:02:47,380 --> 08:02:50,770
+contract deployment so that we
+know what address it's at. So
+
+8118
+08:02:50,770 --> 08:02:55,090
+we'll do console dot log, we'll
+do some string interpolation,
+
+8119
+08:02:55,540 --> 08:02:58,120
+contract, address,
+
+8120
+08:02:59,560 --> 08:03:04,600
+contract dot address. All right,
+great. Now let's go ahead and
+
+8121
+08:03:04,600 --> 08:03:09,160
+run this. So we'll do node
+deploy dot J. S deploying Please
+
+8122
+08:03:09,160 --> 08:03:12,490
+wait, you'll notice this takes a
+lot longer. Because we're
+
+8123
+08:03:12,490 --> 08:03:15,790
+deploying to a test net instead
+of our own fake local
+
+8124
+08:03:15,790 --> 08:03:19,000
+blockchain, test nets and real
+networks often will take a
+
+8125
+08:03:19,000 --> 08:03:21,670
+little bit longer because they
+need to wait for the blocks to
+
+8126
+08:03:21,670 --> 08:03:25,510
+propagate the transaction to go
+through, etc. But after a brief
+
+8127
+08:03:25,510 --> 08:03:29,350
+delay, we will indeed see that
+we get a contract address here.
+
+8128
+08:03:29,500 --> 08:03:31,900
+And we have a current favorite
+number. And it's being a little
+
+8129
+08:03:31,900 --> 08:03:34,570
+slow again, because we're
+waiting for our next transaction
+
+8130
+08:03:34,570 --> 08:03:37,690
+to go through to update the
+number and boom, looks like
+
+8131
+08:03:37,720 --> 08:03:40,690
+we've successfully updated it.
+Now something that's important
+
+8132
+08:03:40,690 --> 08:03:45,460
+to know if ever you run command,
+and you want to kill it, you can
+
+8133
+08:03:45,460 --> 08:03:49,780
+do Ctrl C, and that will stop
+it. So any command in the
+
+8134
+08:03:49,780 --> 08:03:54,250
+terminal that you want to just
+abort Ctrl. C is your Get Out of
+
+8135
+08:03:54,250 --> 08:03:56,530
+Jail Free card and that will
+kill it. That'll stop it
+
+8136
+08:03:56,530 --> 08:04:00,460
+wherever it is. So we'll use
+Ctrl C a lot in the future. So
+
+8137
+08:04:00,460 --> 08:04:04,540
+now let's grab this contract
+address and go over to Frank V
+
+8138
+08:04:04,540 --> 08:04:12,190
+ether scan and paste it in, we
+can see our two transactions
+
+8139
+08:04:12,190 --> 08:04:15,970
+here, we can see we have a
+contract creation. And we can
+
+8140
+08:04:15,970 --> 08:04:19,870
+also see we call a store
+function. This is awesome. We've
+
+8141
+08:04:19,870 --> 08:04:24,430
+successfully deployed a contract
+to the wrinkly chain using our
+
+8142
+08:04:24,430 --> 08:04:31,150
+own code. Congratulations, this
+is massive. Now on ether scan,
+
+8143
+08:04:31,180 --> 08:04:34,840
+we actually can verify and
+publish our contract code. What
+
+8144
+08:04:34,840 --> 08:04:39,010
+is verifying and publishing your
+code? Well, right now, our code
+
+8145
+08:04:39,010 --> 08:04:42,820
+looks like a huge gerbil of
+bytecode. And anybody looking at
+
+8146
+08:04:42,820 --> 08:04:45,730
+our contract directly on chain
+will just see this huge jumble
+
+8147
+08:04:45,730 --> 08:04:49,000
+of bytecode, we can use a
+decompiler to try to decompile
+
+8148
+08:04:49,000 --> 08:04:51,670
+the bytecode into what it looks
+like in solidity. But this can
+
+8149
+08:04:51,670 --> 08:04:55,540
+often take a long time and, and
+a lot of processing power. So
+
+8150
+08:04:55,540 --> 08:04:58,570
+instead, we can just make it
+much easier by verifying and
+
+8151
+08:04:58,570 --> 08:05:02,320
+publishing the code ourself, you
+go ahead and hit verify and
+
+8152
+08:05:02,320 --> 08:05:06,310
+publish. We can scroll down and
+we can add compiler information
+
+8153
+08:05:06,310 --> 08:05:09,610
+to compile this on ether scan
+and other block explorers. This
+
+8154
+08:05:09,640 --> 08:05:14,170
+is a single file compiler
+version is zero point 8.7. And
+
+8155
+08:05:14,170 --> 08:05:17,560
+it's open source is licensed is
+MIT. Let's go ahead and
+
+8156
+08:05:17,560 --> 08:05:21,550
+continue. And we're going to
+copy paste our solidity code
+
+8157
+08:05:22,450 --> 08:05:26,470
+into this large section. Paste.
+We don't have any constructor
+
+8158
+08:05:26,470 --> 08:05:30,250
+arguments so we can skip this
+section. We don't have any
+
+8159
+08:05:30,250 --> 08:05:33,910
+libraries or any other
+miscellaneous settings. So we'll
+
+8160
+08:05:33,910 --> 08:05:38,890
+select I'm not a robot and we'll
+hit verify and publish. You
+
+8161
+08:05:38,890 --> 08:05:41,530
+might have to wait a few
+minutes, but awesome. Our
+
+8162
+08:05:41,530 --> 08:05:45,790
+contract was successfully
+compiled. Now if we go back to
+
+8163
+08:05:45,820 --> 08:05:50,500
+contract source code, we can see
+all the code in here. And if we
+
+8164
+08:05:50,500 --> 08:05:54,970
+grab our contract address, place
+it into place into the search
+
+8165
+08:05:54,970 --> 08:05:58,390
+now, and we go to contract, we
+get a little green checkmark.
+
+8166
+08:05:58,420 --> 08:06:01,750
+And we can see, anybody can now
+read our source code.
+
+8167
+08:06:02,050 --> 08:06:05,080
+Additionally, those buttons that
+we saw and remix for reading
+
+8168
+08:06:05,080 --> 08:06:08,320
+from our contract, and writing
+to our contract, are in this
+
+8169
+08:06:08,320 --> 08:06:11,410
+read contract and this write
+contract. If we read the
+
+8170
+08:06:11,410 --> 08:06:15,460
+contract, and we retrieve the
+most recent number, we do indeed
+
+8171
+08:06:15,460 --> 08:06:17,740
+see that we have seven here
+because we recently stored
+
+8172
+08:06:17,740 --> 08:06:21,910
+seven. Awesome, quick note, this
+might already be verified for
+
+8173
+08:06:21,910 --> 08:06:24,790
+you, since ether scan might get
+smart enough to notice that a
+
+8174
+08:06:24,790 --> 08:06:27,280
+lot of people are deploying the
+same bytecode it's already
+
+8175
+08:06:27,280 --> 08:06:29,620
+verified for you just go ahead
+and walk through these steps
+
+8176
+08:06:29,620 --> 08:06:32,290
+anyways. Now the code
+verification we just did was
+
+8177
+08:06:32,320 --> 08:06:34,900
+pretty simple and
+straightforward, because our
+
+8178
+08:06:34,900 --> 08:06:37,630
+code was pretty simple and
+straightforward. Using larger
+
+8179
+08:06:37,630 --> 08:06:41,230
+and more complex code can make
+the verification process a
+
+8180
+08:06:41,230 --> 08:06:44,290
+little bit harder. Additionally,
+we don't always want to have to
+
+8181
+08:06:44,320 --> 08:06:47,770
+click buttons on ether scan. To
+verify our code, we want to do
+
+8182
+08:06:47,770 --> 08:06:50,770
+it programmatically. So in later
+sections, we'll learn how to
+
+8183
+08:06:50,770 --> 08:06:55,390
+verify all of our code directly
+through our code editor, you can
+
+8184
+08:06:55,390 --> 08:06:59,410
+imagine the process is this easy
+for deploying to any EVM chain
+
+8185
+08:06:59,590 --> 08:07:02,590
+in our alchemy, we could easily
+create a new app and change our
+
+8186
+08:07:02,590 --> 08:07:05,860
+network. And you could see how
+easy it would be to just switch
+
+8187
+08:07:05,860 --> 08:07:08,860
+out this RPC URL and your
+private key to work on a
+
+8188
+08:07:08,860 --> 08:07:12,460
+different chain. This process is
+also the same for harmony
+
+8189
+08:07:12,490 --> 08:07:16,480
+Phantom, avalanche, etc. And if
+we wanted to switch chains, we
+
+8190
+08:07:16,480 --> 08:07:20,620
+would just switch the RPC URL
+and switch the private key, and
+
+8191
+08:07:20,650 --> 08:07:26,950
+everything else would stay
+exactly the same. Now, Alchemy
+
+8192
+08:07:26,980 --> 08:07:30,700
+also shows us and can teach us a
+lot about transactions and about
+
+8193
+08:07:30,700 --> 08:07:33,910
+things that are going on behind
+the scenes, including a concept
+
+8194
+08:07:33,910 --> 08:07:36,850
+called the mempool. To help us
+understand a little bit more
+
+8195
+08:07:36,850 --> 08:07:39,460
+about those transactions that we
+just sent, and how to work with
+
+8196
+08:07:39,460 --> 08:07:42,280
+Alchemy. To see more about our
+transactions, we have Albert
+
+8197
+08:07:42,280 --> 08:07:44,380
+from the alchemy team to give us
+a little demonstration.
+
+8198
+08:07:45,070 --> 08:07:50,530
+Hello, Albert here from alchemy,
+I'm that guy in tech on Twitter,
+
+8199
+08:07:51,070 --> 08:07:53,320
+feel free to follow if you want
+to engage and ask any questions
+
+8200
+08:07:53,320 --> 08:07:56,080
+about this section of the video.
+But super excited to join
+
+8201
+08:07:56,080 --> 08:07:59,380
+Patrick here to explain a little
+bit of what goes on behind the
+
+8202
+08:07:59,380 --> 08:08:02,380
+scenes when you are using
+alchemy to submit a transaction.
+
+8203
+08:08:02,710 --> 08:08:05,860
+And we have a ton of tools to
+actually provide a window of
+
+8204
+08:08:05,860 --> 08:08:09,850
+visibility into what's going on
+so that you can actually debug
+
+8205
+08:08:09,940 --> 08:08:13,240
+in case there are usage errors
+on your website, or there are
+
+8206
+08:08:13,240 --> 08:08:16,510
+pending transactions that are
+stuck. Whatever it is, we
+
+8207
+08:08:16,510 --> 08:08:19,900
+provide that window into the
+data that you control. Remember
+
+8208
+08:08:20,050 --> 08:08:22,330
+that all the transactions that
+you submit are recorded on the
+
+8209
+08:08:22,330 --> 08:08:24,280
+blockchain. They're not
+controlled by alchemy, they're
+
+8210
+08:08:24,280 --> 08:08:27,490
+not controlled by any other
+service provider. We are just a
+
+8211
+08:08:27,490 --> 08:08:31,570
+window, we're just the plumbing
+the piping to be useful to you.
+
+8212
+08:08:32,020 --> 08:08:35,020
+So let me show you exactly what
+that means. Right now I have a
+
+8213
+08:08:35,020 --> 08:08:37,510
+bunch of applications in my
+dashboard. You can see here that
+
+8214
+08:08:37,540 --> 08:08:40,210
+there are different projects
+that I've used over time. This
+
+8215
+08:08:40,210 --> 08:08:43,030
+one is the most recently active,
+and it is the one that I have
+
+8216
+08:08:43,030 --> 08:08:46,570
+currently set up to connect to
+my meta mask. So actually use a
+
+8217
+08:08:46,570 --> 08:08:49,720
+custom RPC provider here. And
+let me make my face a little
+
+8218
+08:08:49,720 --> 08:08:53,020
+smaller. And you can see here,
+I've misspelled Rinkeby. But
+
+8219
+08:08:53,020 --> 08:08:56,530
+this right now, my my network is
+actually connected to the
+
+8220
+08:08:56,530 --> 08:09:00,580
+Rinkeby test network via
+alchemy. So this is actually
+
+8221
+08:09:00,580 --> 08:09:02,740
+this application. So if I click
+into here in the dashboard, you
+
+8222
+08:09:02,740 --> 08:09:05,800
+can see here, a bunch of really
+interesting statistics, this is
+
+8223
+08:09:05,800 --> 08:09:08,680
+the first thing that you'll
+probably use. If you're trying
+
+8224
+08:09:08,680 --> 08:09:11,740
+to understand more about your
+application, you'll go here and
+
+8225
+08:09:11,740 --> 08:09:15,040
+you can see how many compute
+units per second your
+
+8226
+08:09:15,040 --> 08:09:18,550
+application is currently using.
+And this is kind of great for
+
+8227
+08:09:18,580 --> 08:09:22,420
+specifically alchemy usage,
+understanding. But then this is
+
+8228
+08:09:22,420 --> 08:09:25,330
+also really useful to see like,
+what's the median response time,
+
+8229
+08:09:25,660 --> 08:09:29,350
+and so 33 milliseconds is pretty
+good. If that starts to
+
+8230
+08:09:29,350 --> 08:09:31,810
+increase, then you might want to
+figure out, you know, what's
+
+8231
+08:09:31,810 --> 08:09:35,230
+going on here, success rate, it
+has been kind of low. So that is
+
+8232
+08:09:35,230 --> 08:09:39,310
+a clue for me to click on this
+tab to view recent invalid
+
+8233
+08:09:39,310 --> 08:09:42,370
+requests. And that I can
+actually see oh, there's a bunch
+
+8234
+08:09:42,370 --> 08:09:42,640
+of
+
+8235
+08:09:44,260 --> 08:09:47,590
+failed transactions where the
+transaction has already been
+
+8236
+08:09:47,590 --> 08:09:51,010
+sent or the nonce is too low, or
+whatever it is, I can actually
+
+8237
+08:09:51,010 --> 08:09:54,700
+use this tab to debug. So that
+success rate is pretty useful.
+
+8238
+08:09:54,970 --> 08:09:58,330
+Throughput that's been limited.
+So if you are sending too many
+
+8239
+08:09:58,330 --> 08:10:00,910
+requests or your website is
+getting spammed, you might start
+
+8240
+08:10:00,910 --> 08:10:05,230
+getting some requests blocked.
+So that's what's useful to view
+
+8241
+08:10:05,230 --> 08:10:09,370
+their concurrent requests over
+here, success rate in the past
+
+8242
+08:10:09,370 --> 08:10:12,940
+24 hours versus the past one
+hour, the total number of
+
+8243
+08:10:12,940 --> 08:10:15,730
+requests in the last 24 hours.
+And this is different than
+
+8244
+08:10:15,880 --> 08:10:18,670
+compute units, because each
+request can have a different
+
+8245
+08:10:18,670 --> 08:10:22,420
+level of computing cost. And
+computing cost as measured by
+
+8246
+08:10:22,420 --> 08:10:26,410
+compute units. Total requests is
+just the actual number of
+
+8247
+08:10:26,410 --> 08:10:29,410
+absolute requests. And then of
+course, the number of invalid
+
+8248
+08:10:29,410 --> 08:10:33,550
+request. Cool. So one thing I do
+want to show you that's
+
+8249
+08:10:33,580 --> 08:10:36,460
+interesting is when I do submit
+a transaction, and I actually
+
+8250
+08:10:36,490 --> 08:10:40,120
+have one right here, I want to
+send so let's transfer between
+
+8251
+08:10:40,120 --> 08:10:43,000
+my accounts, and I'm just gonna
+send it to tiny amount of
+
+8252
+08:10:43,000 --> 08:10:47,920
+Rinkeby eath. But I'm going to
+purposefully edit my gas fees to
+
+8253
+08:10:47,920 --> 08:10:53,320
+be super, super low so that the
+node will actually not muck send
+
+8254
+08:10:53,320 --> 08:10:55,810
+the transaction to be mined, or
+there are no miners that will
+
+8255
+08:10:55,810 --> 08:10:58,810
+actually pick it up. So you can
+see here I've divided the the
+
+8256
+08:10:58,810 --> 08:11:02,500
+priority fee and the max fee by
+a ton. So it's super low. And it
+
+8257
+08:11:02,500 --> 08:11:05,800
+might confirm that in the MME
+Max UI, you'll see that the
+
+8258
+08:11:05,800 --> 08:11:08,590
+transaction has been pending for
+a bit. And we'll go over to this
+
+8259
+08:11:08,590 --> 08:11:12,970
+mempool tab. This is another
+really useful visualization. And
+
+8260
+08:11:12,970 --> 08:11:17,080
+what the mempool is, is a kind
+of a holding ground, I like to
+
+8261
+08:11:17,080 --> 08:11:20,470
+think of it as the waiting room
+of a restaurant, where if you're
+
+8262
+08:11:20,470 --> 08:11:23,470
+a transaction, and you're
+waiting to get mined, the
+
+8263
+08:11:23,470 --> 08:11:25,510
+mempool is kind of like the
+waiting room where you're
+
+8264
+08:11:25,510 --> 08:11:29,320
+waiting to get seated. So there
+are different statuses for your
+
+8265
+08:11:29,320 --> 08:11:32,500
+each of your transactions, the
+ones that you always want to see
+
+8266
+08:11:32,530 --> 08:11:35,290
+are the mines transactions,
+because that says that your
+
+8267
+08:11:35,290 --> 08:11:37,990
+transaction is successful. And
+it's now part of the blockchain.
+
+8268
+08:11:38,500 --> 08:11:42,010
+Now, the mempool, every node has
+its own, you know, holding
+
+8269
+08:11:42,010 --> 08:11:44,230
+ground. So I can actually show
+you this quick visualization.
+
+8270
+08:11:44,230 --> 08:11:48,460
+Remember, blockchains are run by
+a network of nodes. And each
+
+8271
+08:11:48,460 --> 08:11:51,280
+node or each computer that's
+running the theorem, software
+
+8272
+08:11:51,310 --> 08:11:55,570
+maintains a copy of the
+blockchain. And as a developer,
+
+8273
+08:11:55,570 --> 08:11:58,600
+you have to use these nodes to
+make requests to the blockchain.
+
+8274
+08:11:58,630 --> 08:12:01,750
+Now you can use alchemy, you can
+use another RPC provider, you
+
+8275
+08:12:01,750 --> 08:12:04,600
+can spin up your own node if you
+want to. But regardless, you
+
+8276
+08:12:04,600 --> 08:12:07,420
+need to use a node to
+communicate with the chain. Now
+
+8277
+08:12:07,450 --> 08:12:11,890
+each node beyond having a copy
+of the entire blockchain state,
+
+8278
+08:12:11,920 --> 08:12:16,420
+it also has a local memory of
+transaction. And that's called
+
+8279
+08:12:16,450 --> 08:12:19,330
+mempool. So if there are pending
+transactions that are waiting to
+
+8280
+08:12:19,330 --> 08:12:23,080
+be mined, you can consider them
+as being in the mempool. Now
+
+8281
+08:12:23,080 --> 08:12:25,750
+that's what we're looking at
+right here. If we click on the
+
+8282
+08:12:25,750 --> 08:12:29,980
+app that I am currently using
+for my Metamask RPC, then you
+
+8283
+08:12:29,980 --> 08:12:34,750
+can see here that there are,
+this is not the right one, this
+
+8284
+08:12:34,750 --> 08:12:37,660
+one is the right one for
+wrinkling. For all the
+
+8285
+08:12:37,660 --> 08:12:39,670
+transactions here, you can see
+some more drop in placed
+
+8286
+08:12:39,670 --> 08:12:42,400
+somewhere mind and there's one
+that's pending, and this
+
+8287
+08:12:42,400 --> 08:12:45,580
+pending, one actually matches up
+with the one that is pending,
+
+8288
+08:12:45,700 --> 08:12:49,510
+here, it's being sent to 0x, C,
+BB. And if we click on this
+
+8289
+08:12:49,510 --> 08:12:52,210
+transaction hash, you get all
+the information that you need to
+
+8290
+08:12:52,210 --> 08:12:56,050
+debug. So you can see here that
+it's from my current address,
+
+8291
+08:12:56,680 --> 08:13:01,390
+0x, five F, and then it's two
+0x, C, BB. And here's the value
+
+8292
+08:13:01,390 --> 08:13:05,350
+that I'm trying to send. Here's
+the gas fee that I've attached
+
+8293
+08:13:05,380 --> 08:13:08,200
+to this transaction. And you'll
+notice that that is super low,
+
+8294
+08:13:08,230 --> 08:13:11,560
+even for the Rinkeby test
+network. So knowing this, and
+
+8295
+08:13:11,560 --> 08:13:14,140
+seeing, wow, this transaction
+has been pending for one minute
+
+8296
+08:13:14,140 --> 08:13:18,070
+and 46 seconds, it was sent at
+this time, I should probably fix
+
+8297
+08:13:18,070 --> 08:13:22,630
+that. And so over here, you can
+actually use the metamath RPC,
+
+8298
+08:13:23,110 --> 08:13:27,220
+meta meta mask API. And speeded
+up. And then I'm just going to
+
+8299
+08:13:27,220 --> 08:13:31,900
+use the auto high speed up to
+update the gas fees. And then if
+
+8300
+08:13:31,900 --> 08:13:36,160
+we go back to our dashboard back
+to our application, you can see
+
+8301
+08:13:36,160 --> 08:13:39,310
+that there are some new recent
+invalid requests. And this is
+
+8302
+08:13:39,310 --> 08:13:42,820
+because we've resubmitted a
+transaction, and then in their
+
+8303
+08:13:43,000 --> 08:13:47,620
+recent requests we have, let's
+refresh that real quick. You can
+
+8304
+08:13:47,620 --> 08:13:50,770
+see that we are sending a raw
+transaction, this one's already
+
+8305
+08:13:50,770 --> 08:13:54,130
+known. And there's another one
+before, but it that's resulting
+
+8306
+08:13:54,160 --> 08:13:57,490
+in a get transaction receipt
+that is successful. And then if
+
+8307
+08:13:57,490 --> 08:14:00,340
+we go back to the mempool, you
+can see boom, no more pending
+
+8308
+08:14:00,340 --> 08:14:04,510
+transactions only dropped and
+replaced and mined. So this
+
+8309
+08:14:04,510 --> 08:14:07,450
+transaction nonce number five is
+now successful, and you're on
+
+8310
+08:14:07,450 --> 08:14:10,510
+your way to developing and
+maintaining the rest of your
+
+8311
+08:14:10,510 --> 08:14:13,750
+application. So yeah, thanks
+hope that was useful. Let me
+
+8312
+08:14:13,750 --> 08:14:14,800
+know if you have any questions.
+
+8313
+08:14:19,990 --> 08:14:22,360
+Now, other than the TypeScript
+portion, which I'll do at the
+
+8314
+08:14:22,360 --> 08:14:26,110
+end, you've successfully
+completed this section. And wow,
+
+8315
+08:14:26,110 --> 08:14:29,740
+you've learned a ton. Let's do a
+quick review of everything that
+
+8316
+08:14:29,740 --> 08:14:32,050
+we've learned. Well, first,
+we've learned how to create new
+
+8317
+08:14:32,050 --> 08:14:35,380
+projects with Node js, we've
+learned what the node keyword
+
+8318
+08:14:35,380 --> 08:14:39,760
+does and how we can use the node
+keyword. To run JavaScript in
+
+8319
+08:14:39,760 --> 08:14:42,070
+our local development
+environment, we learned that we
+
+8320
+08:14:42,070 --> 08:14:45,970
+can add different dependencies
+of external packages into our
+
+8321
+08:14:45,970 --> 08:14:49,600
+local package using yarn or NPM.
+And we can see those
+
+8322
+08:14:49,720 --> 08:14:52,930
+dependencies added in package
+dot JSON, we know that they've
+
+8323
+08:14:52,930 --> 08:14:55,570
+been installed because they get
+installed into the node modules
+
+8324
+08:14:55,570 --> 08:14:58,450
+folder, we can also create a
+script section where we can
+
+8325
+08:14:58,450 --> 08:15:01,690
+minimize long commands that we
+need to run into a single
+
+8326
+08:15:01,690 --> 08:15:04,450
+keyword, like compile for
+example, we can just run yarn
+
+8327
+08:15:04,450 --> 08:15:08,290
+compile. To compile all of our
+code, we learned the basic setup
+
+8328
+08:15:08,320 --> 08:15:11,830
+of our JavaScript scripts, we
+import our packages at the top,
+
+8329
+08:15:12,070 --> 08:15:15,550
+we have some main executor
+function at the bottom. And then
+
+8330
+08:15:15,550 --> 08:15:19,570
+we have our main function in the
+middle, we use the async keyword
+
+8331
+08:15:19,660 --> 08:15:23,290
+so that our function can use
+asynchronous programming, and we
+
+8332
+08:15:23,290 --> 08:15:27,370
+get access to the await keyword,
+which basically means Hey, wait
+
+8333
+08:15:27,370 --> 08:15:31,300
+for this promise to finish doing
+its thing. We're able to connect
+
+8334
+08:15:31,300 --> 08:15:35,800
+to any blockchain we want using
+an RPC URL, and then we're able
+
+8335
+08:15:35,800 --> 08:15:39,970
+to connect our provider to a
+wallet or a private key in
+
+8336
+08:15:39,970 --> 08:15:42,610
+ethers by doing something like
+this. Speaking of So we've
+
+8337
+08:15:42,610 --> 08:15:45,100
+learned about the ethers
+package, which is a tool that
+
+8338
+08:15:45,100 --> 08:15:48,640
+makes our life a lot easier to
+interact with the blockchain in
+
+8339
+08:15:48,640 --> 08:15:51,610
+JavaScript, if we decide to,
+we've also learned we can
+
+8340
+08:15:51,610 --> 08:15:55,330
+encrypt our private keys so that
+even if our computers get
+
+8341
+08:15:55,330 --> 08:15:58,510
+hacked, our private keys aren't
+lying around in plaintext. And
+
+8342
+08:15:58,510 --> 08:16:02,500
+we've learned how to run scripts
+from our encrypted keys. We've
+
+8343
+08:16:02,500 --> 08:16:05,260
+learned how to get the ABI or
+the application binary
+
+8344
+08:16:05,260 --> 08:16:08,860
+interface, and the binary of our
+code to deploy to a blockchain,
+
+8345
+08:16:08,950 --> 08:16:11,560
+we've learned how to deploy our
+contracts to a blockchain
+
+8346
+08:16:11,560 --> 08:16:14,170
+programmatically. And then we've
+learned how to interact with our
+
+8347
+08:16:14,170 --> 08:16:16,750
+contracts programmatically as
+well. Additionally, we've
+
+8348
+08:16:16,750 --> 08:16:20,500
+learned how to add a default
+editor in our settings dot JSON
+
+8349
+08:16:20,530 --> 08:16:24,250
+of our VS code. But we've also
+learned how to override those
+
+8350
+08:16:24,250 --> 08:16:28,570
+settings by adding prettier
+using a dot prettier rc file
+
+8351
+08:16:28,600 --> 08:16:31,990
+this way, we can auto format our
+code to make it look a lot nicer
+
+8352
+08:16:31,990 --> 08:16:34,600
+and much easier to read.
+Finally, we learned how to
+
+8353
+08:16:34,600 --> 08:16:38,410
+deploy one of these contracts to
+a real test net or a real
+
+8354
+08:16:38,410 --> 08:16:42,400
+network. And then we finally
+learned the manual way to verify
+
+8355
+08:16:42,430 --> 08:16:45,100
+our contract source code. Like I
+said, we're going to learn a lot
+
+8356
+08:16:45,100 --> 08:16:47,530
+of shortcuts. And a lot of ways
+to make this all a little bit
+
+8357
+08:16:47,530 --> 08:16:51,940
+easier in coming sections. Oh,
+you have done a phenomenally to
+
+8358
+08:16:51,940 --> 08:16:54,730
+reach this section, give
+yourself a pat on the back, take
+
+8359
+08:16:54,730 --> 08:16:57,520
+a break, go for a lap, and feel
+really proud about yourself that
+
+8360
+08:16:57,520 --> 08:17:00,520
+you made it this far, we've got
+a lot more to go. But you have
+
+8361
+08:17:00,520 --> 08:17:04,420
+come a phenomenally long way.
+Congratulations. Or take that
+
+8362
+08:17:04,420 --> 08:17:06,790
+five to 10 minute break and come
+back when you're ready.
+
+8363
+08:17:09,610 --> 08:17:12,760
+Now the one thing left I want to
+show you all is the TypeScript
+
+8364
+08:17:12,760 --> 08:17:15,190
+addition to this. However, if
+you're not interested in the
+
+8365
+08:17:15,190 --> 08:17:17,560
+TypeScript edition, which you
+don't have to be, then you're
+
+8366
+08:17:17,560 --> 08:17:20,920
+done, there's only a couple of
+changes we need to make to make
+
+8367
+08:17:20,920 --> 08:17:23,980
+this TypeScript compatible.
+First, of course, we're going to
+
+8368
+08:17:23,980 --> 08:17:28,240
+change our deploy.ts and encrypt
+key, we're going to change our
+
+8369
+08:17:28,240 --> 08:17:33,370
+deploy and our encrypt key from
+dot j s two.ts. And then we're
+
+8370
+08:17:33,370 --> 08:17:37,360
+also going to swap these
+requires out for imports. So
+
+8371
+08:17:37,360 --> 08:17:43,180
+we're going to import ethers
+from ethers, we're going to
+
+8372
+08:17:43,180 --> 08:17:51,070
+import star as Fs from Fs extra.
+And then we're going to import
+
+8373
+08:17:51,430 --> 08:17:55,060
+dot TMP slash config. And then
+we're just going to copy these,
+
+8374
+08:17:55,270 --> 08:17:59,710
+and we're gonna come over and
+paste them into here, deleting
+
+8375
+08:17:59,710 --> 08:18:03,550
+or commenting out the requires,
+okay, great. Now, if we try to
+
+8376
+08:18:03,550 --> 08:18:07,750
+run Node deploy.ts, we're going
+to get cannot use input
+
+8377
+08:18:07,750 --> 08:18:11,320
+statement outside of a module.
+In JavaScript, if we'd want to
+
+8378
+08:18:11,320 --> 08:18:14,230
+use an import statement outside
+of a module, we'd come in here
+
+8379
+08:18:14,230 --> 08:18:19,630
+and do some like type module
+like that. But in TypeScript, we
+
+8380
+08:18:19,630 --> 08:18:23,860
+actually don't even need that.
+All we need to do is run this in
+
+8381
+08:18:23,920 --> 08:18:27,100
+TypeScript note. So to add
+TypeScript, we're going to do
+
+8382
+08:18:27,100 --> 08:18:32,920
+yarn, add TypeScript. And we're
+also going to add TS node. TS
+
+8383
+08:18:32,920 --> 08:18:36,550
+node is the TypeScript edition
+of node. So now that we've added
+
+8384
+08:18:36,550 --> 08:18:40,570
+that we can try a TS node
+deploy.ts. And we're still going
+
+8385
+08:18:40,570 --> 08:18:44,110
+to run into an error. And if you
+scroll up, we're gonna get a
+
+8386
+08:18:44,110 --> 08:18:47,710
+couple errors here. We're gonna
+say, could not find a
+
+8387
+08:18:47,710 --> 08:18:51,490
+declaration file for Module Fs
+extra, we need to add the
+
+8388
+08:18:51,490 --> 08:18:56,050
+TypeScript version of them. So
+we're gonna do yarn at types
+
+8389
+08:18:56,080 --> 08:19:01,360
+slash Fs extra. That, and if we
+run it again, it still shouldn't
+
+8390
+08:19:01,360 --> 08:19:03,910
+work. But for a different
+reason. Yes, we're gonna get
+
+8391
+08:19:03,910 --> 08:19:06,550
+something like this type.
+Undefined is not assignable to
+
+8392
+08:19:06,550 --> 08:19:10,540
+type bytes. Like the reason we
+get this is because process dot
+
+8393
+08:19:10,570 --> 08:19:15,850
+EMV private key in TypeScript
+technically, is type string, or
+
+8394
+08:19:15,850 --> 08:19:20,200
+undefined. So we need to tell
+Typescript and and the Wallet
+
+8395
+08:19:20,200 --> 08:19:22,990
+Objects. And the Encrypt
+function is looking for a type
+
+8396
+08:19:22,990 --> 08:19:26,170
+string, not string or undefined.
+So we just need to tell
+
+8397
+08:19:26,170 --> 08:19:29,230
+TypeScript that this will not be
+undefined. So we can just put a
+
+8398
+08:19:29,230 --> 08:19:32,560
+bang here. And everywhere that
+we use process, study and be,
+
+8399
+08:19:33,070 --> 08:19:38,830
+oops, I got to do that on
+deploy, as well. Bang, looks
+
+8400
+08:19:38,830 --> 08:19:41,620
+good. Now that we've added
+everything in here, we run TS
+
+8401
+08:19:41,620 --> 08:19:45,760
+node deploy.ts, we're gonna see
+the exact same output as we saw
+
+8402
+08:19:45,760 --> 08:19:48,880
+with just using regular node.
+And as long as our private key
+
+8403
+08:19:48,880 --> 08:19:52,480
+password is in our dot env file.
+If we run TS node and crypt
+
+8404
+08:19:52,480 --> 08:19:56,560
+key.ts, we're gonna get the
+exact same setup as before. And
+
+8405
+08:19:56,560 --> 08:19:59,680
+we're gonna get a new encrypted
+key dot JSON. And that's all you
+
+8406
+08:19:59,680 --> 08:20:02,230
+need to do to make this
+TypeScript compatible. And you
+
+8407
+08:20:02,230 --> 08:20:04,690
+should give yourself a huge
+round of applause for getting
+
+8408
+08:20:04,690 --> 08:20:08,260
+this far and learning what's
+going on underneath hardhat. The
+
+8409
+08:20:08,260 --> 08:20:11,080
+next tool that we're going to
+learn and learning all about
+
+8410
+08:20:11,080 --> 08:20:13,870
+these transactions and how to
+interact with these blockchains
+
+8411
+08:20:14,020 --> 08:20:17,080
+this is absolutely massive, so
+huge. Congratulations.
+
+8412
+08:20:19,989 --> 08:20:22,929
+Alright, so now that we've
+learned about ethers js and how
+
+8413
+08:20:22,929 --> 08:20:26,559
+to do some more raw JavaScript
+coding, we're now going to move
+
+8414
+08:20:26,559 --> 08:20:29,709
+into hardhat. We saw with our
+ether symbol storage that
+
+8415
+08:20:29,739 --> 08:20:32,529
+deploying a contract can take a
+lot of code. And there's a
+
+8416
+08:20:32,529 --> 08:20:35,379
+number of things we didn't even
+do in here. Like we didn't save
+
+8417
+08:20:35,409 --> 08:20:38,349
+where this contract was
+deployed. So we'd have to go
+
+8418
+08:20:38,349 --> 08:20:41,259
+remember where it was deployed
+every time. Instead of having it
+
+8419
+08:20:41,259 --> 08:20:44,139
+just added programmatically. We
+didn't write any tests here, and
+
+8420
+08:20:44,139 --> 08:20:46,869
+we'd have to build our own
+testing infrastructure. Maybe we
+
+8421
+08:20:46,869 --> 08:20:49,749
+want to make this a cross chain
+application. And we want more
+
+8422
+08:20:49,749 --> 08:20:52,929
+than just one private key and
+RPC URL, you can absolutely work
+
+8423
+08:20:52,929 --> 08:20:55,629
+with your smart contracts in
+JavaScript purely through ethers
+
+8424
+08:20:55,629 --> 08:20:59,469
+and small scripts like this. But
+we want a more robust framework
+
+8425
+08:20:59,469 --> 08:21:03,039
+for doing all this. And that's
+where hard hat comes into play.
+
+8426
+08:21:03,189 --> 08:21:06,669
+Hardhead is easily one of the
+most, if not the most popular
+
+8427
+08:21:06,669 --> 08:21:09,579
+smart contract development
+framework out there. It's used
+
+8428
+08:21:09,579 --> 08:21:13,119
+by massive several billion
+dollar protocols like Ave
+
+8429
+08:21:13,119 --> 08:21:16,749
+uniswap, sushi swap, and more.
+In fact, I recently did a poll
+
+8430
+08:21:16,749 --> 08:21:19,779
+on Twitter. And even though a
+lot of my content has been more
+
+8431
+08:21:19,779 --> 08:21:23,019
+brownie and Pythonic, Hardhead
+was well and beyond the most
+
+8432
+08:21:23,019 --> 08:21:26,019
+popular framework, and Hardhead
+has quickly become one of the
+
+8433
+08:21:26,019 --> 08:21:29,049
+most advanced frameworks out
+there. Hardhead is a development
+
+8434
+08:21:29,049 --> 08:21:31,809
+environment, which allows for
+JavaScript based development,
+
+8435
+08:21:31,809 --> 08:21:34,869
+kind of like what we saw with
+ethers, it gives us even more
+
+8436
+08:21:34,869 --> 08:21:38,349
+tools to integrate our code with
+common things that we want to
+
+8437
+08:21:38,349 --> 08:21:41,319
+do. It's incredibly extensible,
+and it has really nice debugging
+
+8438
+08:21:41,319 --> 08:21:44,559
+features as well. And it's just
+an overall fantastic tool. So
+
+8439
+08:21:44,589 --> 08:21:47,379
+let's go ahead and let's jump
+in. If you want to follow along
+
+8440
+08:21:47,379 --> 08:21:50,319
+with the code, come over to the
+GitHub repo and scroll down.
+
+8441
+08:21:50,649 --> 08:21:53,799
+Lesson Six heart had simple
+storage, and all the code is
+
+8442
+08:21:53,799 --> 08:21:57,009
+located here. And a quick note
+for the future ever, you want to
+
+8443
+08:21:57,009 --> 08:21:59,979
+just download all the code from
+one of these repositories, the
+
+8444
+08:21:59,979 --> 08:22:03,369
+way you can do that is by doing
+a git clone, what you do is you
+
+8445
+08:22:03,369 --> 08:22:06,069
+come to the folder that you want
+to put this code in, and you run
+
+8446
+08:22:06,069 --> 08:22:10,539
+git clone. And then you grab the
+URL that you want to clone,
+
+8447
+08:22:10,869 --> 08:22:16,299
+paste it in. Now, you can CD
+into your new folder here that
+
+8448
+08:22:16,299 --> 08:22:20,379
+has everything downloaded
+directly from GitHub, but only
+
+8449
+08:22:20,379 --> 08:22:23,259
+do that as a backup or to just
+download the code yourself. But
+
+8450
+08:22:23,259 --> 08:22:26,259
+for now, just follow along with
+me. Right, so let's do this.
+
+8451
+08:22:26,259 --> 08:22:30,429
+Let's create our next project
+using hard hat. The project that
+
+8452
+08:22:30,429 --> 08:22:33,039
+we're going to be making is
+called Hard Hat, simple storage
+
+8453
+08:22:33,039 --> 08:22:37,449
+dash FCC or Free Code Camp. This
+is going to be us working again
+
+8454
+08:22:37,449 --> 08:22:40,299
+with that simple storage
+contract. But in hard hat, we're
+
+8455
+08:22:40,299 --> 08:22:43,779
+going to show you a ton of the
+fantastic tools that we can use
+
+8456
+08:22:44,019 --> 08:22:50,799
+to make our coding life way
+easier. So I'm in a brand new VS
+
+8457
+08:22:50,799 --> 08:22:53,499
+code, and we're going to create
+a new folder for us to run all
+
+8458
+08:22:53,499 --> 08:22:56,829
+this. Now what you can do to
+create a brand new folder is you
+
+8459
+08:22:56,859 --> 08:23:03,729
+once again you can do MK dir,
+hard hat, simple storage of CC.
+
+8460
+08:23:04,329 --> 08:23:08,499
+Now we can cd into hard hat
+simple storage of CD, and type
+
+8461
+08:23:08,499 --> 08:23:13,629
+code, period. And this will open
+up a new Visual Studio code
+
+8462
+08:23:13,929 --> 08:23:18,069
+inside of that folder. Now if we
+open up our terminal, you'll see
+
+8463
+08:23:18,519 --> 08:23:22,029
+that we are indeed inside that
+folder. Now if that doesn't work
+
+8464
+08:23:22,029 --> 08:23:26,289
+for you, you can still of course
+to File, Open folder and select
+
+8465
+08:23:26,289 --> 08:23:29,019
+the folder you'd like to open.
+And you'll be inside of that
+
+8466
+08:23:29,019 --> 08:23:31,269
+folder. Now that we have our
+folder setup for working with
+
+8467
+08:23:31,269 --> 08:23:34,419
+hard hat, we can begin setting
+up our environment to be
+
+8468
+08:23:34,419 --> 08:23:37,809
+incredibly professional using
+the hard hat framework got a
+
+8469
+08:23:37,809 --> 08:23:41,229
+link to the hard hat
+documentation inside our whole
+
+8470
+08:23:41,259 --> 08:23:44,409
+blockchain solidity course, yes,
+the hard hat documentation is
+
+8471
+08:23:44,409 --> 08:23:47,229
+phenomenal. And I highly
+recommend everybody have it up
+
+8472
+08:23:47,229 --> 08:23:49,779
+as they go through the section.
+Because it's going to give you
+
+8473
+08:23:49,809 --> 08:23:52,089
+pretty much everything that you
+need to know for working with
+
+8474
+08:23:52,089 --> 08:23:55,299
+hard hat, you can simply go
+ahead over to tutorial and get
+
+8475
+08:23:55,299 --> 08:23:58,929
+started. If you want to pause
+the video here and read through
+
+8476
+08:23:58,929 --> 08:24:01,809
+the tutorial, I recommend doing
+so it'll give you a lot of
+
+8477
+08:24:01,809 --> 08:24:04,239
+information about how to work
+with hardhat. And more about
+
+8478
+08:24:04,239 --> 08:24:06,789
+hardhat. However, we're just
+going to jump right into setting
+
+8479
+08:24:06,819 --> 08:24:09,849
+up the environment. We've
+already installed no Gs on
+
+8480
+08:24:09,849 --> 08:24:14,649
+Linux, or Mac OS. And those of
+you who are using Windows, I set
+
+8481
+08:24:14,649 --> 08:24:18,249
+you up with WsL. So you can just
+follow the Linux instructions.
+
+8482
+08:24:19,539 --> 08:24:21,669
+Now to create a new hard hat
+project, you can actually just
+
+8483
+08:24:21,669 --> 08:24:24,849
+go ahead and run these steps
+right here. Instead of NPM,
+
+8484
+08:24:24,879 --> 08:24:27,519
+we're going to be using yarn,
+but if you want to use NPM, you
+
+8485
+08:24:27,519 --> 08:24:31,209
+can absolutely do so the hard
+hat Doc's say run npm init dash
+
+8486
+08:24:31,209 --> 08:24:34,719
+dash, yes, we're just going to
+run yarn in it, which is going
+
+8487
+08:24:34,719 --> 08:24:38,139
+to create a new project for us
+in this folder. So let's give it
+
+8488
+08:24:38,139 --> 08:24:42,129
+a name, which if we want it set
+to this hard hat symbol storage
+
+8489
+08:24:42,129 --> 08:24:45,759
+FF FCC, we just hit enter, we'll
+give it a version. And when if
+
+8490
+08:24:45,759 --> 08:24:49,389
+we want it 1.0 point oh, we just
+hit enter. We're going to skip
+
+8491
+08:24:49,389 --> 08:24:52,389
+the description for now just by
+hitting enter. And we're just
+
+8492
+08:24:52,389 --> 08:24:55,869
+going to hit Enter for this as
+well. And for this as well enter
+
+8493
+08:24:55,869 --> 08:24:59,799
+for this as well and for this as
+well and over this as well. Just
+
+8494
+08:24:59,799 --> 08:25:03,369
+to keep those as blanks. And if
+we look in package json, we now
+
+8495
+08:25:03,369 --> 08:25:06,459
+see we have a name Hardhead
+symbol storage that FCC we have
+
+8496
+08:25:06,459 --> 08:25:09,159
+a version we have a main which
+we're actually going to delete
+
+8497
+08:25:09,159 --> 08:25:12,069
+the main and then we have a
+license as well. yarn in it just
+
+8498
+08:25:12,099 --> 08:25:15,099
+sets up this package json for
+us. Now we're going to do yarn,
+
+8499
+08:25:15,759 --> 08:25:17,289
+add dash dash dash
+
+8500
+08:25:17,320 --> 08:25:25,240
+of our app. So far, we've just
+been running yarn add, and then
+
+8501
+08:25:25,240 --> 08:25:27,850
+whatever our package name is.
+But for most of what we're
+
+8502
+08:25:27,850 --> 08:25:31,300
+doing, we really want to do yarn
+add dash dash Dev. The reasons
+
+8503
+08:25:31,300 --> 08:25:34,120
+for this is a little bit
+nuanced. But we can see some of
+
+8504
+08:25:34,120 --> 08:25:36,880
+the information on this
+StackOverflow question here. The
+
+8505
+08:25:36,880 --> 08:25:39,670
+main difference is that
+dependencies are required to run
+
+8506
+08:25:39,670 --> 08:25:43,000
+your project. Whereas dev
+dependencies are required only
+
+8507
+08:25:43,000 --> 08:25:45,460
+to develop. For the most part,
+we're going to be doing just
+
+8508
+08:25:45,460 --> 08:25:48,100
+dash dash Dev, when we get to
+the front end portion of this
+
+8509
+08:25:48,100 --> 08:25:51,040
+course, we'll be installing more
+packages that we don't need just
+
+8510
+08:25:51,040 --> 08:25:53,740
+for development. Now in the same
+directory where we install hard
+
+8511
+08:25:53,740 --> 08:25:58,450
+hat, you can run MPX hard hat.
+So a quick note about MPX is
+
+8512
+08:25:58,450 --> 08:26:03,130
+that the yarn equivalent of NPM
+is just yarn. So yarn goes NPM,
+
+8513
+08:26:03,280 --> 08:26:07,930
+the yarn equivalent of MPX is
+also yarn. So pretty much
+
+8514
+08:26:07,930 --> 08:26:11,140
+anytime you see MPX, do
+something, you can just replace
+
+8515
+08:26:11,140 --> 08:26:14,020
+that MPX with yarn, and it'll do
+the exact same thing. If you
+
+8516
+08:26:14,020 --> 08:26:17,020
+want to run this with NPM or
+MPX, you can absolutely do that
+
+8517
+08:26:17,020 --> 08:26:21,100
+as well. So for us, we're going
+to run yarn hardhat. And we'll
+
+8518
+08:26:21,100 --> 08:26:23,440
+see we'll get prompted to
+actually start creating a
+
+8519
+08:26:23,470 --> 08:26:27,730
+hardhat project, run yarn
+hardhat. And we'll get this
+
+8520
+08:26:27,730 --> 08:26:30,430
+wonderfully cute prompt right
+here and saying welcome to
+
+8521
+08:26:30,430 --> 08:26:32,920
+Hardhead. What do you want to
+do, create a basic sample
+
+8522
+08:26:32,920 --> 08:26:36,100
+project, create an advanced
+sample project can advance some
+
+8523
+08:26:36,100 --> 08:26:38,500
+project uses type script or
+create an empty
+
+8524
+08:26:38,500 --> 08:26:41,980
+hardhat.config.js. For us, we're
+just going to select create a
+
+8525
+08:26:41,980 --> 08:26:44,920
+basic sample project. And this
+is going to give us all the
+
+8526
+08:26:44,920 --> 08:26:48,460
+boilerplate for a really simple
+hardhat project. The hard hat
+
+8527
+08:26:48,460 --> 08:26:50,560
+project route is going to be
+this folder that we're in right
+
+8528
+08:26:50,560 --> 08:26:53,410
+now. Do you want to add a Git
+dot Git ignore? Yes, we
+
+8529
+08:26:53,410 --> 08:26:56,260
+absolutely do. Because we're
+going to be using dot env files.
+
+8530
+08:26:56,560 --> 08:26:59,230
+Do you want to install this
+sample projects dependencies
+
+8531
+08:26:59,230 --> 08:27:04,210
+with yarn at nomic labs hard hat
+at a theory and waffle at Chai?
+
+8532
+08:27:04,450 --> 08:27:06,670
+We're going to go ahead and say
+yes, and I'll explain what all
+
+8533
+08:27:06,670 --> 08:27:09,220
+these dependencies are in a bit.
+Let's go ahead and say yes for
+
+8534
+08:27:09,220 --> 08:27:15,490
+now. And we're going to install
+all these dependencies. Now, if
+
+8535
+08:27:15,490 --> 08:27:18,820
+we look in our package, JSON, we
+can see we've added a number of
+
+8536
+08:27:18,820 --> 08:27:22,390
+dependencies like nomic labs,
+Hardhead ethers, not MacLeods,
+
+8537
+08:27:22,390 --> 08:27:25,870
+Hardhead, waffle, Chai,
+Aetherium, waffle, and ethers.
+
+8538
+08:27:26,050 --> 08:27:28,150
+Obviously, we're already
+familiar with ethers, but the
+
+8539
+08:27:28,150 --> 08:27:30,370
+rest of these might be a little
+new. We'll talk about those
+
+8540
+08:27:30,370 --> 08:27:35,500
+later. And great, we now have a
+sample hardhat boilerplate
+
+8541
+08:27:35,500 --> 08:27:38,950
+project. Let's walk through what
+we just installed here. The
+
+8542
+08:27:38,950 --> 08:27:41,740
+first thing we have is a
+contracts folder, which comes
+
+8543
+08:27:41,740 --> 08:27:44,890
+pre populated with greeted
+outsole is really minimalistic
+
+8544
+08:27:44,890 --> 08:27:48,130
+contract here. Next, you'll see
+node modules, which of course is
+
+8545
+08:27:48,130 --> 08:27:50,740
+our installed JavaScript
+dependencies. Something I want
+
+8546
+08:27:50,740 --> 08:27:53,320
+to know because it was really
+confusing to me when I first
+
+8547
+08:27:53,350 --> 08:27:56,170
+started working with this is
+some of these node modules start
+
+8548
+08:27:56,170 --> 08:27:58,750
+with an add sign, and then a lot
+of them don't. What's the
+
+8549
+08:27:58,750 --> 08:28:01,600
+difference between those two,
+these outside node modules are
+
+8550
+08:28:01,600 --> 08:28:05,560
+known as scoped packages, which
+effectively allow NPM packages
+
+8551
+08:28:05,560 --> 08:28:08,680
+to be namespace or yarn
+packages. This allows
+
+8552
+08:28:08,710 --> 08:28:11,770
+organizations to make it clear
+what packages are official and
+
+8553
+08:28:11,770 --> 08:28:15,040
+which ones are not. For example,
+if a package has a scope at
+
+8554
+08:28:15,040 --> 08:28:17,200
+Angular, you know, it's
+published by the Angular core
+
+8555
+08:28:17,200 --> 08:28:20,290
+team. So it's the same thing
+with this anything with AP ens
+
+8556
+08:28:20,290 --> 08:28:23,650
+domains we know is by the ens
+domains team, anything with
+
+8557
+08:28:23,710 --> 08:28:27,400
+abnormal Labs is going to be by
+the team that created hard hat.
+
+8558
+08:28:27,460 --> 08:28:30,400
+So that's why this at nomic
+labs, hard hat ethers and at
+
+8559
+08:28:30,400 --> 08:28:33,910
+nomic labs, hard at Waffle has
+this at sign, because we know
+
+8560
+08:28:33,910 --> 08:28:37,060
+it's published by the nomic labs
+team, then we have a scripts
+
+8561
+08:28:37,090 --> 08:28:40,030
+section. This is going to be
+where we're adding any and all
+
+8562
+08:28:40,030 --> 08:28:43,270
+of our scripts that we want to
+write like deploying contracts,
+
+8563
+08:28:43,300 --> 08:28:46,630
+interacting with contracts, etc.
+And then we have a test folder.
+
+8564
+08:28:46,720 --> 08:28:49,510
+We haven't started building any
+tests yet. But tests are
+
+8565
+08:28:49,510 --> 08:28:52,600
+incredibly important for working
+with smart contracts. And this
+
+8566
+08:28:52,600 --> 08:28:56,230
+sample test folder gives us a
+minimalistic test for testing
+
+8567
+08:28:56,230 --> 08:28:59,350
+our smart contracts. We of
+course have Git ignore, which of
+
+8568
+08:28:59,350 --> 08:29:02,950
+course comes pre populated with
+some important things to ignore
+
+8569
+08:29:02,980 --> 08:29:06,400
+like Dotty and V. And also node
+modules because node modules
+
+8570
+08:29:06,400 --> 08:29:09,670
+might get too huge push up to
+GitHub. And one of the biggest
+
+8571
+08:29:09,670 --> 08:29:14,560
+changes here is it adds this
+hard hat.config.js. This file
+
+8572
+08:29:14,590 --> 08:29:17,290
+even though it's minimalistic,
+right now, you can think of as
+
+8573
+08:29:17,290 --> 08:29:20,200
+the entry point for all the
+scripts that we write, it's the
+
+8574
+08:29:20,200 --> 08:29:22,990
+configuration file that
+determines how the rest of our
+
+8575
+08:29:22,990 --> 08:29:24,970
+code is going to work and
+interact with the blockchain.
+
+8576
+08:29:25,270 --> 08:29:28,660
+Then of course, we have package
+dot JSON, we get started with a
+
+8577
+08:29:28,660 --> 08:29:31,900
+readme. Remember how the first
+time we ran yarn hard hat, we
+
+8578
+08:29:31,900 --> 08:29:35,050
+were prompted with this Getting
+Started piece. Now if we run
+
+8579
+08:29:35,050 --> 08:29:38,680
+yarn Hardhead, we're actually
+going to get output of all the
+
+8580
+08:29:38,680 --> 08:29:40,630
+different options and commands
+we can use
+
+8581
+08:29:40,660 --> 08:29:46,570
+with running hard hat. Now, if
+you run into an issue where you
+
+8582
+08:29:46,570 --> 08:29:50,200
+run yarn, hard hat, and this
+pops up, but you don't see a
+
+8583
+08:29:50,230 --> 08:29:53,950
+hard hat.config.js in your
+folder, it likely means that
+
+8584
+08:29:53,950 --> 08:29:57,010
+there's a hard hat dot config
+dot j s in a higher level
+
+8585
+08:29:57,010 --> 08:30:00,070
+folder, or there's a node
+modules with hard hat in a
+
+8586
+08:30:00,070 --> 08:30:04,030
+higher level folder. So if that
+happens, maybe CD down a
+
+8587
+08:30:04,030 --> 08:30:07,810
+directory and do a little LS and
+look to see if you've got a hard
+
+8588
+08:30:07,810 --> 08:30:12,100
+hat.config.js or node modules in
+earlier folder. And because I've
+
+8589
+08:30:12,100 --> 08:30:14,920
+actually seen a number of
+engineers have a couple of
+
+8590
+08:30:14,920 --> 08:30:17,320
+different problems here. My
+friend CAMI is going to explain
+
+8591
+08:30:17,320 --> 08:30:19,090
+A couple of different
+troubleshooting tips you can
+
+8592
+08:30:19,090 --> 08:30:21,430
+take to try to avoid these
+common errors.
+
+8593
+08:30:21,490 --> 08:30:23,860
+As a developer the most annoying
+thing to deal with our
+
+8594
+08:30:23,860 --> 08:30:26,950
+environment set of issues. My
+name is Camila Ramos. I'm a
+
+8595
+08:30:26,950 --> 08:30:30,040
+DevRel engineer at edge node
+supporting the Graph Protocol.
+
+8596
+08:30:30,040 --> 08:30:32,230
+And I'm going to show you how to
+solve two common problems that
+
+8597
+08:30:32,230 --> 08:30:35,350
+you might see when working on
+this project. After installing
+
+8598
+08:30:35,350 --> 08:30:38,020
+hardhat. And running the command
+and px hard hat in your new
+
+8599
+08:30:38,020 --> 08:30:40,450
+project folder, you're going to
+expect to get back a menu of
+
+8600
+08:30:40,450 --> 08:30:42,880
+options like this, but sometimes
+you're not going to get that
+
+8601
+08:30:42,880 --> 08:30:46,300
+back. And when you run into this
+error, there is a solution for
+
+8602
+08:30:46,300 --> 08:30:48,520
+you. And it usually just means
+that you have a config file
+
+8603
+08:30:48,520 --> 08:30:51,160
+somewhere that it shouldn't be,
+and deleting it will get rid of
+
+8604
+08:30:51,160 --> 08:30:53,590
+that error. What you're going to
+do in order to find this file
+
+8605
+08:30:53,590 --> 08:30:57,160
+that you need to delete is run
+the command MPX hardhats space,
+
+8606
+08:30:57,370 --> 08:31:00,850
+hyphen, hyphen verbose. And this
+is going to spit out where this
+
+8607
+08:31:00,850 --> 08:31:03,460
+file is if you have one, and
+it's going to tell you exactly
+
+8608
+08:31:03,460 --> 08:31:05,620
+where it is so that you can
+delete it. After you've deleted
+
+8609
+08:31:05,620 --> 08:31:08,950
+this config file, you should be
+able to run MPX hardhat in your
+
+8610
+08:31:08,950 --> 08:31:11,890
+project folder and get back that
+many that we were expecting.
+
+8611
+08:31:12,370 --> 08:31:15,250
+Another problem that is pretty
+common. And I still run into all
+
+8612
+08:31:15,250 --> 08:31:18,610
+the time is forgetting to npm
+install, whenever you're working
+
+8613
+08:31:18,610 --> 08:31:21,490
+with a repo that other people
+have been working on on GitHub.
+
+8614
+08:31:21,490 --> 08:31:24,550
+So let's say you're pulling down
+some code that you and some
+
+8615
+08:31:24,580 --> 08:31:27,070
+collaborators were working on
+together, and then suddenly,
+
+8616
+08:31:27,070 --> 08:31:29,380
+it's not working for you, you
+probably just need to npm
+
+8617
+08:31:29,380 --> 08:31:32,980
+install. So in your terminal, go
+ahead and navigate to where this
+
+8618
+08:31:32,980 --> 08:31:36,550
+project is located and then run
+the command npm install. If
+
+8619
+08:31:36,550 --> 08:31:39,070
+there are any new packages that
+were installed in the time that
+
+8620
+08:31:39,070 --> 08:31:41,530
+you weren't working on the code,
+those will get installed locally
+
+8621
+08:31:41,530 --> 08:31:43,930
+for you so that when you run the
+code, it will be able to run
+
+8622
+08:31:43,930 --> 08:31:44,710
+successfully.
+
+8623
+08:31:50,380 --> 08:31:53,200
+What are some of the main things
+we can do with hardhat in its
+
+8624
+08:31:53,200 --> 08:31:56,740
+raw state here, these are some
+of the main tasks that we can
+
+8625
+08:31:56,740 --> 08:31:59,770
+run with hardhat different tasks
+or just different commands, we
+
+8626
+08:31:59,770 --> 08:32:02,890
+can run with hardhat. For
+example, we can do yarn hardhat
+
+8627
+08:32:02,920 --> 08:32:07,450
+counts, which will print out a
+list of fake accounts we can use
+
+8628
+08:32:07,450 --> 08:32:10,420
+with Hardhead. Similar to the
+list of fake accounts that we
+
+8629
+08:32:10,420 --> 08:32:13,720
+used with ganache, we can
+compile our contracts by running
+
+8630
+08:32:13,720 --> 08:32:19,390
+yarn Hardhead compile. Very
+similar to what we did with
+
+8631
+08:32:19,420 --> 08:32:23,620
+ethers Jas and soap Jas, you'll
+see when we run compile, we get
+
+8632
+08:32:23,650 --> 08:32:27,160
+a cache, which is just going to
+be a quick way to access
+
+8633
+08:32:27,160 --> 08:32:30,820
+solidity files, and we also get
+an artifacts section. This
+
+8634
+08:32:30,850 --> 08:32:34,090
+artifacts folder contains all
+the information about our
+
+8635
+08:32:34,090 --> 08:32:38,080
+compiled code we look in here
+now we can, for example, look in
+
+8636
+08:32:38,080 --> 08:32:42,370
+the build info and see a ton of
+information about our compiled
+
+8637
+08:32:42,370 --> 08:32:45,610
+contract. If you're looking
+contracts, we can see more
+
+8638
+08:32:45,610 --> 08:32:49,390
+compiled information. And then
+if we look in the hardhat, slash
+
+8639
+08:32:49,390 --> 08:32:52,600
+console.so, we can see more
+compiled information. So all of
+
+8640
+08:32:52,600 --> 08:32:55,720
+our compliation information is
+going to be in this artifacts
+
+8641
+08:32:55,720 --> 08:32:59,830
+folder. And whenever you want to
+look to see what's going on on
+
+8642
+08:32:59,830 --> 08:33:03,100
+the lower level when you compile
+this artifacts folder is what
+
+8643
+08:33:03,100 --> 08:33:05,830
+has everything. There are a
+number of other hard hat tasks
+
+8644
+08:33:05,830 --> 08:33:11,710
+that we can run as well. But
+we'll get to them as we go. So
+
+8645
+08:33:11,710 --> 08:33:14,320
+now that we have some of the
+basics of hard head down, let's
+
+8646
+08:33:14,320 --> 08:33:16,960
+go ahead and try doing some of
+the same things we did with
+
+8647
+08:33:16,990 --> 08:33:20,170
+ethers before but with hard hat.
+So one of the first things we
+
+8648
+08:33:20,170 --> 08:33:23,170
+want to do is we want to write
+and interact with our smart
+
+8649
+08:33:23,170 --> 08:33:28,240
+contracts. So let's go ahead and
+rename greeter dot soul to
+
+8650
+08:33:28,600 --> 08:33:33,100
+simple storage dot soul, you can
+click on the file and hit enter
+
+8651
+08:33:33,160 --> 08:33:35,980
+and should be able to rename it.
+Otherwise, you can go ahead and
+
+8652
+08:33:35,980 --> 08:33:39,790
+right click, delete it, and then
+create a new file and call it
+
+8653
+08:33:39,790 --> 08:33:43,390
+simple storage dot soul. We're
+going to copy paste all of our
+
+8654
+08:33:43,390 --> 08:33:46,930
+code from our previous simple
+storage that saw into this file,
+
+8655
+08:33:47,320 --> 08:33:50,140
+we can make sure that our simple
+storage is compiling correctly
+
+8656
+08:33:50,170 --> 08:33:55,600
+by running yarn hardhat compile.
+Whoa, it looks like we ran into
+
+8657
+08:33:55,600 --> 08:33:59,230
+an issue project cannot be
+compiled. See reasons below the
+
+8658
+08:33:59,230 --> 08:34:01,750
+solidity pragma version of the
+file. It doesn't match any of
+
+8659
+08:34:01,750 --> 08:34:05,530
+the configured compilers in your
+config. Hmm, well, what's going
+
+8660
+08:34:05,530 --> 08:34:09,310
+on contracts slash symbol
+storage that's Sol zero point
+
+8661
+08:34:09,310 --> 08:34:13,480
+8.8. Ah, okay, let's go ahead
+and fix them. So we can open up
+
+8662
+08:34:13,570 --> 08:34:17,020
+our hard hat dot config dot j s.
+Now a quick note on opening
+
+8663
+08:34:17,020 --> 08:34:21,220
+files. If you're on Mac and you
+hit Command P, you can actually
+
+8664
+08:34:21,220 --> 08:34:24,550
+start typing in the names of
+files to get them to them
+
+8665
+08:34:24,550 --> 08:34:28,840
+quicker. Or if you're on Linux
+or Windows, you can type Ctrl p,
+
+8666
+08:34:29,200 --> 08:34:32,080
+this will bring up and
+interestingly if you type man P
+
+8667
+08:34:32,080 --> 08:34:36,160
+or ctrl p and then you hit the
+greater than key. This will drop
+
+8668
+08:34:36,160 --> 08:34:39,430
+you into the command palette,
+know command palette, command
+
+8669
+08:34:39,430 --> 08:34:43,360
+palette, search for files,
+search for commands in our
+
+8670
+08:34:43,360 --> 08:34:46,420
+Hardhead dot config. Jas, I'm
+gonna scroll down to module dot
+
+8671
+08:34:46,420 --> 08:34:52,090
+exports and change this to zero
+point 8.8. So that the version
+
+8672
+08:34:52,090 --> 08:34:54,670
+that we're going to compile for
+simple storage, it's gonna be
+
+8673
+08:34:54,670 --> 08:34:58,030
+the same version and that hard
+hat is looking for. Let's run
+
+8674
+08:34:58,030 --> 08:35:00,670
+that same command by just
+hitting up yarn Hardhead
+
+8675
+08:35:00,670 --> 08:35:03,910
+compile, and awesome we see
+compiled one solidity file
+
+8676
+08:35:03,910 --> 08:35:07,300
+successfully. We should now see
+this in artifacts. If we go to
+
+8677
+08:35:07,300 --> 08:35:10,660
+artifacts and contracts. We now
+see two contracts in here,
+
+8678
+08:35:10,990 --> 08:35:13,630
+greater and simple storage and
+we can see a ton of the
+
+8679
+08:35:13,630 --> 08:35:16,960
+information about simple storage
+we can also see some more lower
+
+8680
+08:35:16,960 --> 08:35:19,690
+level in Information and build
+info. Alright, so now that we
+
+8681
+08:35:19,690 --> 08:35:22,330
+have our simple storage contract
+in here, the next thing we
+
+8682
+08:35:22,330 --> 08:35:24,790
+probably want to do is learn how
+to deploy it. This is where
+
+8683
+08:35:24,790 --> 08:35:28,150
+we're going to write our deploy
+script. Now, for this section,
+
+8684
+08:35:28,150 --> 08:35:30,730
+I'm going to be showing you how
+to write a deploy script. But in
+
+8685
+08:35:30,730 --> 08:35:33,100
+the next section, we're going to
+do it a little bit differently.
+
+8686
+08:35:33,100 --> 08:35:35,650
+But this is still going to teach
+you how to write scripts and
+
+8687
+08:35:35,650 --> 08:35:38,380
+worked with scripts in heart
+app. So we're going to come to
+
+8688
+08:35:38,380 --> 08:35:41,050
+our sample script dot j s, and
+we're gonna go ahead and hit
+
+8689
+08:35:41,050 --> 08:35:46,030
+enter and renamed it to deploy
+dot j s. And if you want to read
+
+8690
+08:35:46,030 --> 08:35:48,910
+all the comments in here, you
+absolutely can, we're just gonna
+
+8691
+08:35:48,910 --> 08:35:52,300
+go ahead and delete them all. A
+quick keyboard shortcut is if
+
+8692
+08:35:52,300 --> 08:35:56,890
+you hit Command A or Ctrl, a,
+you'll highlight all the text in
+
+8693
+08:35:56,890 --> 08:36:00,070
+your file, and we're going to go
+ahead and delete it all. So now
+
+8694
+08:36:00,070 --> 08:36:02,320
+we're just going to start from
+scratch here. Now the setup for
+
+8695
+08:36:02,320 --> 08:36:04,720
+our deploy script in here is
+going to look really similar to
+
+8696
+08:36:04,720 --> 08:36:07,810
+the setup of our deploy script.
+From our previous section, we're
+
+8697
+08:36:07,810 --> 08:36:10,600
+going to do imports at the top,
+we're going to have our async
+
+8698
+08:36:10,600 --> 08:36:13,600
+main function, and then we're
+going to call the main function.
+
+8699
+08:36:13,930 --> 08:36:16,840
+So let's go ahead and define our
+main function, we'll call it
+
+8700
+08:36:16,870 --> 08:36:20,680
+async. function main, like that,
+and then we'll call our main
+
+8701
+08:36:20,680 --> 08:36:23,170
+function. And if you want to
+just copy paste this from the
+
+8702
+08:36:23,170 --> 08:36:27,430
+last section, you absolutely
+can. So we'll domain that then.
+
+8703
+08:36:42,190 --> 08:36:45,160
+Boom, just like that. And
+because of these semicolons are
+
+8704
+08:36:45,160 --> 08:36:48,040
+going to drive me absolutely
+insane. We're also going to add
+
+8705
+08:36:48,040 --> 08:36:52,090
+prettier, and our solidity
+prettier plugins. So we'll do
+
+8706
+08:36:52,150 --> 08:37:01,660
+yarn, add dash dash Dev,
+prettier and prettier, plug in
+
+8707
+08:37:02,680 --> 08:37:09,730
+solidity. Then we can go ahead
+and create our dot prettier, rc
+
+8708
+08:37:09,730 --> 08:37:18,850
+file, we're going to add tab
+with four, use tabs, false, semi
+
+8709
+08:37:19,210 --> 08:37:24,310
+false, and then single quote,
+also false. Now we're going to
+
+8710
+08:37:24,310 --> 08:37:28,360
+be using this prettier rc file
+setup a lot. So in future
+
+8711
+08:37:28,360 --> 08:37:30,310
+sections, if you want to just
+copy paste it, you can
+
+8712
+08:37:30,310 --> 08:37:33,400
+absolutely do that as well.
+We're also going to add a dot
+
+8713
+08:37:33,400 --> 08:37:37,450
+prettier, ignore, which tells
+prettier not to format some
+
+8714
+08:37:37,450 --> 08:37:40,300
+files, which we want, we don't
+want prettier to spend a ton of
+
+8715
+08:37:40,300 --> 08:37:42,940
+time formatting all of our
+files, I'm just going to copy
+
+8716
+08:37:42,940 --> 08:37:46,120
+paste from the GitHub repo. So
+feel free to copy paste from the
+
+8717
+08:37:46,120 --> 08:37:48,970
+GitHub repo as well, you'd find
+all the code for this section,
+
+8718
+08:37:49,000 --> 08:37:51,850
+like I said, in the GitHub repo
+associated with this course.
+
+8719
+08:37:51,940 --> 08:37:54,520
+Now, unlike in our last section,
+where we had to grab our
+
+8720
+08:37:54,520 --> 08:37:58,240
+contract code a little bit more
+manually, with hard hat, it's
+
+8721
+08:37:58,240 --> 08:38:00,850
+actually a number of different
+ways to grab compiled contracts.
+
+8722
+08:38:00,880 --> 08:38:02,860
+The first way we're going to do
+it, we're actually going to use
+
+8723
+08:38:03,310 --> 08:38:06,040
+ethers. And now this is where
+one of the first confusing
+
+8724
+08:38:06,040 --> 08:38:11,530
+changes actually comes in.
+Previously, we did const ethers
+
+8725
+08:38:11,770 --> 08:38:16,540
+equals require ethers. And that
+was how we went ahead and worked
+
+8726
+08:38:16,540 --> 08:38:20,890
+with ethers. However, you'll
+notice in our dev dependencies,
+
+8727
+08:38:21,280 --> 08:38:24,820
+we have this dependency called
+Hard Hat ethers. Hard Hat ethers
+
+8728
+08:38:24,820 --> 08:38:28,480
+is a package that actually wraps
+hard hat with its own built in
+
+8729
+08:38:28,510 --> 08:38:31,030
+ethers. This is really
+advantageous because it allows
+
+8730
+08:38:31,030 --> 08:38:33,760
+hard hat to keep track of
+different deployments at
+
+8731
+08:38:33,760 --> 08:38:36,610
+different scripts and all these
+other things for us. So instead
+
+8732
+08:38:36,610 --> 08:38:39,730
+of importing ethers directly
+from ethers, we're actually
+
+8733
+08:38:39,730 --> 08:38:43,750
+going to import ethers directly
+from hard hat instead. This
+
+8734
+08:38:43,750 --> 08:38:46,570
+might seem a little confusing at
+first, but just know if we want
+
+8735
+08:38:46,570 --> 08:38:49,210
+to work with ethers and heart
+it, it's usually much better to
+
+8736
+08:38:49,210 --> 08:38:52,690
+pull it in from heart and you
+can still do this and ethers
+
+8737
+08:38:52,690 --> 08:38:56,140
+will still work the same. But
+hard hat won't necessarily know
+
+8738
+08:38:56,170 --> 08:38:58,570
+about different contract
+factories in different pieces
+
+8739
+08:38:58,570 --> 08:39:00,850
+and, and you'll see that in
+action in a second. Now that
+
+8740
+08:39:00,850 --> 08:39:04,360
+we're pulling in ethers, we can
+actually immediately grab a
+
+8741
+08:39:04,360 --> 08:39:10,480
+contract factory using ethers.
+We can say const simple storage
+
+8742
+08:39:10,480 --> 08:39:22,240
+factory equals await ethers dot
+get contract. Factory simple
+
+8743
+08:39:22,780 --> 08:39:26,500
+storage. So in order to get a
+simple storage, contract
+
+8744
+08:39:26,500 --> 08:39:29,800
+factory, we can just do await
+ethers dot get contract factory.
+
+8745
+08:39:29,950 --> 08:39:33,250
+Now if we pulled right from
+ethers, the package ethers
+
+8746
+08:39:33,280 --> 08:39:35,740
+doesn't know about this
+contracts folder and ethers
+
+8747
+08:39:35,740 --> 08:39:38,620
+doesn't know we've already
+compiled simple storage dot
+
+8748
+08:39:38,620 --> 08:39:42,400
+soul. And it's in our artifacts.
+Hard Hat, on the other hand,
+
+8749
+08:39:42,490 --> 08:39:45,310
+does know about the contracts
+folder and does know that it's
+
+8750
+08:39:45,310 --> 08:39:48,760
+already compiled, which is why
+this simple storage factory
+
+8751
+08:39:48,760 --> 08:39:51,910
+grabbing work so well. Once we
+have our factory here, we can do
+
+8752
+08:39:51,910 --> 08:39:54,730
+the same thing that we did in
+our previous section and deploy
+
+8753
+08:39:54,730 --> 08:39:59,320
+the contract. So we'll do a
+quick console dot log. Deploy
+
+8754
+08:40:00,460 --> 08:40:06,130
+flooring, contract done, and
+then we'll do Kant's simple
+
+8755
+08:40:06,130 --> 08:40:16,240
+storage equals await simple
+store edge factory dot deploy
+
+8756
+08:40:17,320 --> 08:40:20,950
+And boom, with that little bit
+of code, we're already able to
+
+8757
+08:40:20,950 --> 08:40:25,090
+deploy our simple storage
+contract, then to wait to make
+
+8758
+08:40:25,090 --> 08:40:30,010
+sure it gets deployed, we can do
+await, simple storage, deployed.
+
+8759
+08:40:30,640 --> 08:40:33,880
+And that's it. Now let's see
+what happens when we go ahead
+
+8760
+08:40:33,880 --> 08:40:37,000
+and run this deploy script. As
+you know, in our last section,
+
+8761
+08:40:37,030 --> 08:40:40,030
+we had to put in a private key,
+and we had to put an RPC URL.
+
+8762
+08:40:40,420 --> 08:40:44,020
+Right now, we don't have either
+one of those defined. So what do
+
+8763
+08:40:44,020 --> 08:40:46,660
+you think should the script
+actually work? Or do you think
+
+8764
+08:40:46,660 --> 08:40:49,930
+it'll break because we, we
+didn't define what blockchain
+
+8765
+08:40:49,930 --> 08:40:52,660
+we're going to deploy you. We
+also didn't find a private key.
+
+8766
+08:40:52,960 --> 08:40:56,200
+Well, let's go ahead and try
+this out. We can run the script
+
+8767
+08:40:56,230 --> 08:41:03,430
+in our terminal by running yarn,
+hard hat, run, scripts slash
+
+8768
+08:41:04,120 --> 08:41:07,510
+deploy dot j, s. And again, I'm
+hitting tab here to do a little
+
+8769
+08:41:07,510 --> 08:41:11,410
+auto completion and see what
+happens. Well, we got deploying
+
+8770
+08:41:11,410 --> 08:41:15,460
+contract, it says done, but
+that's really it. So what really
+
+8771
+08:41:15,460 --> 08:41:18,160
+happened? Well, let's add one
+more line in here.
+
+8772
+08:41:18,339 --> 08:41:23,079
+Let's do console dot log. We'll
+do some string interpolation
+
+8773
+08:41:24,399 --> 08:41:31,569
+deployed, contract to. And then
+we'll add simple storage. That
+
+8774
+08:41:31,569 --> 08:41:36,219
+address. Let's run this now. We
+get deployed contract, and then
+
+8775
+08:41:36,219 --> 08:41:40,179
+we get deployed contract to, and
+then we get a contract address.
+
+8776
+08:41:40,539 --> 08:41:47,769
+Hmm, what's going on here.
+Hardhead has this fantastic tool
+
+8777
+08:41:47,769 --> 08:41:51,639
+built in called The Hard Hat
+Network hard hat comes built in
+
+8778
+08:41:51,639 --> 08:41:54,819
+with Hard Hat Network, a local
+Aetherium network node designed
+
+8779
+08:41:54,819 --> 08:41:58,149
+for development, akin to
+ganache, that allows you to
+
+8780
+08:41:58,149 --> 08:42:00,789
+deploy your contracts and run
+your tests and debug your code.
+
+8781
+08:42:00,879 --> 08:42:04,839
+Whenever we run a command in
+hard hat, or a script and hard
+
+8782
+08:42:04,839 --> 08:42:08,349
+hat or a task and hard hat, we
+by default deploy to this fake
+
+8783
+08:42:08,379 --> 08:42:11,439
+Hard Hat Network. This Hard Hat
+Network is very similar to
+
+8784
+08:42:11,469 --> 08:42:15,039
+ganache, except for instead of
+having this UI, it runs in the
+
+8785
+08:42:15,039 --> 08:42:18,549
+background for our scripts. In
+fact, if we go to our hard
+
+8786
+08:42:18,549 --> 08:42:22,509
+hat.config.js, we can scroll
+down to the bottom to this
+
+8787
+08:42:22,509 --> 08:42:26,409
+module that exports section and
+add more information about our
+
+8788
+08:42:26,409 --> 08:42:29,709
+default networks. So right now,
+if we don't have anything in
+
+8789
+08:42:29,709 --> 08:42:32,739
+this module that export, by
+default, it adds this piece
+
+8790
+08:42:32,739 --> 08:42:39,129
+called default network hardhat.
+So anytime we run a script,
+
+8791
+08:42:39,249 --> 08:42:42,459
+without specifying a network, it
+automatically uses this fake
+
+8792
+08:42:42,459 --> 08:42:45,399
+Hard Hat Network. And this fake
+Hard Hat Network comes
+
+8793
+08:42:45,429 --> 08:42:49,509
+automatically with an RPC URL
+and a private key for you. So
+
+8794
+08:42:49,509 --> 08:42:52,959
+you don't even have to add one
+in. This is one of the major
+
+8795
+08:42:52,959 --> 08:42:56,049
+advantages of working with
+Hardhead. It just automatically
+
+8796
+08:42:56,049 --> 08:42:59,829
+gives you this fake blockchain.
+And these fake private keys, if
+
+8797
+08:42:59,829 --> 08:43:02,349
+you want to be a little bit more
+explicit. And I always recommend
+
+8798
+08:43:02,349 --> 08:43:06,369
+being more explicit, we can add
+the default network in to the
+
+8799
+08:43:06,369 --> 08:43:09,909
+module that are experts. So now
+our default network is
+
+8800
+08:43:09,939 --> 08:43:13,569
+explicitly stated as hard hat.
+However, in any script, you run,
+
+8801
+08:43:13,599 --> 08:43:16,629
+you can choose whatever network
+you want to work with. So if I
+
+8802
+08:43:16,629 --> 08:43:20,349
+want to explicitly say I want to
+run our deploy script on our
+
+8803
+08:43:20,349 --> 08:43:25,479
+fake Hard Hat Network, I can do
+yarn, hard hat, run scripts,
+
+8804
+08:43:25,899 --> 08:43:31,689
+deploy dot j s, dash dash
+network, hard hat, this is us
+
+8805
+08:43:31,689 --> 08:43:34,719
+telling her that, hey, we want
+to run this script on the Hard
+
+8806
+08:43:34,719 --> 08:43:37,119
+Hat Network. Hopefully, you
+might be able to see where this
+
+8807
+08:43:37,119 --> 08:43:41,289
+is going. Having this network
+flag makes it incredibly easy to
+
+8808
+08:43:41,289 --> 08:43:44,469
+switch across different chains,
+different block chains,
+
+8809
+08:43:44,469 --> 08:43:48,039
+different private keys, etc. So
+we have our default network set
+
+8810
+08:43:48,039 --> 08:43:51,489
+the hard hat here, we can add
+other networks in here as well.
+
+8811
+08:43:51,489 --> 08:43:56,349
+The way we do that is we're
+going to add a networks section.
+
+8812
+08:43:56,379 --> 08:43:58,659
+And we're going to define any of
+the network sections that we
+
+8813
+08:43:58,659 --> 08:44:01,539
+want. And remember to put a
+comment there so that your
+
+8814
+08:44:01,539 --> 08:44:04,269
+Visual Studio code doesn't get
+mad at you. So recently, we
+
+8815
+08:44:04,269 --> 08:44:08,829
+worked with Rigby so let's go
+ahead and add a Rinkeby network
+
+8816
+08:44:08,829 --> 08:44:12,159
+in here. So we're gonna say
+another network is gonna be
+
+8817
+08:44:12,489 --> 08:44:16,119
+really cool. So I should just be
+able to change the network flag
+
+8818
+08:44:16,119 --> 08:44:24,429
+to Rigby now, right? Well, not
+quite. If you try to run that,
+
+8819
+08:44:24,699 --> 08:44:28,179
+you're gonna get invalid value
+undefined for hardhat config
+
+8820
+08:44:28,239 --> 08:44:32,259
+networks. Rigby, that URL, it's
+expecting you to tell it, hey,
+
+8821
+08:44:32,289 --> 08:44:35,619
+what the URL is, since this
+isn't the hard hat network, we
+
+8822
+08:44:35,619 --> 08:44:38,619
+need to tell hard hat exactly
+how we're going to connect to
+
+8823
+08:44:38,619 --> 08:44:41,739
+rink B. And this is where a lot
+of what we learned before is
+
+8824
+08:44:41,739 --> 08:44:44,439
+going to come in handy, again,
+exactly the same as what we did
+
+8825
+08:44:44,439 --> 08:44:48,279
+before. We're going to create a
+new Dotty v file, and we're
+
+8826
+08:44:48,279 --> 08:44:52,749
+going to add our Rigby URL in
+this dot env file. Just
+
+8827
+08:44:52,749 --> 08:44:56,199
+remember, dot env is an r dot
+get ignore just in case. So in
+
+8828
+08:44:56,199 --> 08:44:59,979
+our Dotty env, we're going to
+add that RPC URL from alcmi back
+
+8829
+08:44:59,979 --> 08:45:04,449
+in here before we just said RPC
+URL. But since we might want to
+
+8830
+08:45:04,449 --> 08:45:07,359
+work across multiple networks,
+it's usually good to specify
+
+8831
+08:45:07,389 --> 08:45:11,409
+exactly what network each URL
+stands for. So we're gonna say
+
+8832
+08:45:12,249 --> 08:45:18,699
+Rynkeby RPC URL equals and then
+paste that URL in here. Now, as
+
+8833
+08:45:18,699 --> 08:45:22,059
+you probably have guessed, we
+can add our URL to our Rinkeby
+
+8834
+08:45:22,059 --> 08:45:25,719
+network here. for readability, I
+usually like to add them as
+
+8835
+08:45:25,719 --> 08:45:29,679
+variables right above the module
+that experts. So I'll say const
+
+8836
+08:45:29,979 --> 08:45:40,269
+Rynkeby. RPC URL equals process
+dot E and V dot Rynkeby RPC URL.
+
+8837
+08:45:40,719 --> 08:45:43,869
+And once again, we're going to
+be pulling that Rinckey RPC URL
+
+8838
+08:45:44,079 --> 08:45:47,679
+from our environment variable.
+Of course, in order to pull that
+
+8839
+08:45:47,679 --> 08:45:50,709
+environment variable in, we're
+going to need to use that dot
+
+8840
+08:45:50,709 --> 08:45:54,789
+env package again. So to add
+that in, we're going to yarn add
+
+8841
+08:45:54,789 --> 08:46:00,609
+dash dash dev dot EMV. And at
+the top of our Hardhead config,
+
+8842
+08:46:00,909 --> 08:46:08,649
+we're going to add require dot
+EMV, and then do dot config to
+
+8843
+08:46:08,649 --> 08:46:11,769
+enable the config. Now this
+means we should be able to pull
+
+8844
+08:46:11,769 --> 08:46:15,849
+our rink the RPC URL from our
+dot env. Now that we have that
+
+8845
+08:46:15,879 --> 08:46:20,829
+in our Rinkeby network, we can
+add URL Rinckey RPC URL.
+
+8846
+08:46:21,489 --> 08:46:24,999
+Awesome. So we have an RPC URL
+for different network. But what
+
+8847
+08:46:24,999 --> 08:46:27,969
+else do we usually need? Well,
+we usually need a private key to
+
+8848
+08:46:27,969 --> 08:46:30,909
+work with an actual network, or
+that doesn't automatically give
+
+8849
+08:46:30,909 --> 08:46:33,939
+us a private key for rugby,
+because Hardhead can't just give
+
+8850
+08:46:33,939 --> 08:46:36,729
+us test and the Etherium, we
+need to have an actual account
+
+8851
+08:46:36,849 --> 08:46:40,089
+an actual test nets. Hardhead
+doesn't control those. So we
+
+8852
+08:46:40,089 --> 08:46:43,749
+have to actually give it a real
+URL and a real private key. So
+
+8853
+08:46:43,749 --> 08:46:46,089
+to add private keys, you
+actually add something called
+
+8854
+08:46:46,119 --> 08:46:50,259
+accounts, you add a list of
+accounts that you want to give
+
+8855
+08:46:50,259 --> 08:46:53,169
+to hard hat for us, we're only
+going to add one, which is going
+
+8856
+08:46:53,169 --> 08:46:55,629
+to be our private key. And for
+our private key, we're going to
+
+8857
+08:46:55,629 --> 08:46:59,199
+do the exact same thing. We're
+gonna say const private key
+
+8858
+08:46:59,859 --> 08:47:05,949
+equals process dot e NV dot
+private key. And since this
+
+8859
+08:47:05,949 --> 08:47:09,159
+private key is going to be a
+real private key for a real test
+
+8860
+08:47:09,159 --> 08:47:12,339
+net, again, we are going to have
+to grab this from our meta mask.
+
+8861
+08:47:12,369 --> 08:47:15,939
+So it will go to our meta mask,
+three dots, account details,
+
+8862
+08:47:15,969 --> 08:47:18,639
+export private key, and we'll
+add our password in here.
+
+8863
+08:47:20,710 --> 08:47:25,720
+And then in our dot env will add
+private key equals and then add
+
+8864
+08:47:25,720 --> 08:47:28,870
+our private key. Now I know I've
+said this 100 times, but please,
+
+8865
+08:47:28,870 --> 08:47:33,700
+please, please, for learning
+this, do not use a real key that
+
+8866
+08:47:33,700 --> 08:47:37,270
+is connected to any real money
+just in case, please use a new
+
+8867
+08:47:37,270 --> 08:47:40,180
+meta mask. I've know I've said
+it a bunch. But some people go
+
+8868
+08:47:40,180 --> 08:47:43,630
+no, I'm going to be okay, I'll
+be safe. Just to be super, super
+
+8869
+08:47:43,630 --> 08:47:47,020
+safe here, please use a brand
+new meta mask. So now that we
+
+8870
+08:47:47,020 --> 08:47:49,870
+have a private key, we're going
+to add it in here account
+
+8871
+08:47:50,260 --> 08:47:53,650
+private key. And now we have an
+account here. One more thing I
+
+8872
+08:47:53,650 --> 08:47:58,390
+like to do is I like to give the
+chain ID of the network, which
+
+8873
+08:47:58,390 --> 08:48:02,890
+for Rigby is going to be for
+every single EVM base network as
+
+8874
+08:48:02,920 --> 08:48:06,700
+a new chain ID and EVM network
+basically just means solidity
+
+8875
+08:48:06,700 --> 08:48:10,390
+works on it. This includes all
+test nets, there's a good site
+
+8876
+08:48:10,390 --> 08:48:13,510
+called chainless.org, which may
+or may not be going down at some
+
+8877
+08:48:13,510 --> 08:48:16,780
+point, it has a list of all
+these different networks. For
+
+8878
+08:48:16,780 --> 08:48:19,630
+example, you can see on here a
+theory main net has a chain ID
+
+8879
+08:48:19,630 --> 08:48:24,760
+of one byte and smart chain is
+56, avalanches, 4311 for
+
+8880
+08:48:24,790 --> 08:48:29,830
+Phantom, opera 250, Polygon,
+137, etc. Each one of these EVM
+
+8881
+08:48:29,830 --> 08:48:33,850
+compatible chains has their own
+chain ID, rank V, the chain ID
+
+8882
+08:48:33,850 --> 08:48:38,020
+is for adding the chain ID is
+helpful here for later on. And
+
+8883
+08:48:38,020 --> 08:48:40,390
+we'll get to that in the future.
+But for now, just go ahead and
+
+8884
+08:48:40,390 --> 08:48:43,510
+make sure to add your chain IDs.
+Okay, now that we have the RPC
+
+8885
+08:48:43,510 --> 08:48:47,050
+URL, we have the private key, we
+can go ahead and test deploying
+
+8886
+08:48:47,050 --> 08:48:51,040
+this to an actual test net, and
+actually did something incorrect
+
+8887
+08:48:51,040 --> 08:48:54,220
+here. And we're gonna get an
+error here. And I want you to go
+
+8888
+08:48:54,220 --> 08:48:57,970
+ahead and try to figure out and
+debug this error yourself.
+
+8889
+08:48:58,030 --> 08:49:03,610
+You're ready. Alright, let's do
+it. We'll do yarn, hard hat, run
+
+8890
+08:49:03,610 --> 08:49:11,470
+scripts, deploy dot j s, dash
+dash network Rinkeby. And we get
+
+8891
+08:49:11,470 --> 08:49:16,240
+this wonderfully weird error,
+which we see we have deployed
+
+8892
+08:49:16,240 --> 08:49:20,200
+contract. So we know that in our
+deploy script, we get to at
+
+8893
+08:49:20,200 --> 08:49:23,680
+least this line, but then we're
+getting an error, I highly
+
+8894
+08:49:23,680 --> 08:49:26,890
+likely hear what's going on
+saying cannot read properties
+
+8895
+08:49:26,890 --> 08:49:30,280
+have no reading send
+transaction, if you want, you
+
+8896
+08:49:30,280 --> 08:49:33,340
+can absolutely go to this spot.
+But it basically it looks like
+
+8897
+08:49:33,340 --> 08:49:36,340
+it's having a hard time
+understanding what the private
+
+8898
+08:49:36,340 --> 08:49:40,540
+key or what the account of this
+is. And what do you think I'm
+
+8899
+08:49:40,540 --> 08:49:43,630
+going to recommend we do? Well,
+if it's not clear, after doing a
+
+8900
+08:49:43,630 --> 08:49:46,090
+little bit of triaging and
+debugging, we're going to copy
+
+8901
+08:49:46,090 --> 08:49:49,600
+this air. And we're going to
+come on over to Google and paste
+
+8902
+08:49:49,600 --> 08:49:54,250
+that right in. It looks like we
+do get a question here from
+
+8903
+08:49:54,250 --> 08:49:57,520
+stackexchange Etherium. And it
+looks like it's really similar
+
+8904
+08:49:57,790 --> 08:50:01,660
+to what we're doing. We scroll
+down. They're running nearly the
+
+8905
+08:50:01,660 --> 08:50:04,180
+exact same script that we're
+running, they're using MPX
+
+8906
+08:50:04,180 --> 08:50:08,440
+instead of yarn. They've got a
+pretty minimalistic deploy file.
+
+8907
+08:50:08,740 --> 08:50:11,380
+Let's scroll down and see what
+the answers have to say. I've
+
+8908
+08:50:11,380 --> 08:50:14,950
+seen this error where my private
+key wasn't properly populated. I
+
+8909
+08:50:14,950 --> 08:50:17,500
+would also use an environment
+variable I'm pretty sure Are
+
+8910
+08:50:17,500 --> 08:50:20,560
+environment variables good. But
+we have a second one saying in
+
+8911
+08:50:20,560 --> 08:50:24,010
+your heart head, I can think
+that Jas, it should be accounts
+
+8912
+08:50:24,040 --> 08:50:27,820
+instead of account, it works for
+me, let's go back to our head
+
+8913
+08:50:27,820 --> 08:50:31,870
+config and see if that's what's
+going on. Uh huh, we put account
+
+8914
+08:50:32,260 --> 08:50:34,570
+in this should be accounts. So
+let's swap that over to
+
+8915
+08:50:34,570 --> 08:50:37,870
+accounts. We'll clear our
+terminal. And we'll run this
+
+8916
+08:50:37,870 --> 08:50:41,620
+again. Uh huh. And now it's
+reading a little bit longer,
+
+8917
+08:50:41,950 --> 08:50:44,590
+which is good. This means that
+we're probably deploying this to
+
+8918
+08:50:44,590 --> 08:50:47,740
+rink B, which is what we want to
+see. Awesome. And now we can see
+
+8919
+08:50:47,740 --> 08:50:51,250
+deployed contract to, and we
+have a contract address here. So
+
+8920
+08:50:51,250 --> 08:50:54,400
+we'll grab this contract. And
+we'll pop on over to bring the
+
+8921
+08:50:54,400 --> 08:50:57,580
+ether scan, that's numbering the
+ether scan. And we'll go ahead
+
+8922
+08:50:57,580 --> 08:51:00,610
+and we'll paste this in.
+Awesome. And we see our contract
+
+8923
+08:51:00,610 --> 08:51:04,690
+was created about 26 seconds
+ago. Perfect. Now for this part,
+
+8924
+08:51:04,720 --> 08:51:07,600
+you don't have to deploy this to
+rink be with me, if you follow
+
+8925
+08:51:07,600 --> 08:51:10,630
+along here. That's good enough.
+So remember, the flying to test
+
+8926
+08:51:10,630 --> 08:51:13,960
+that's can take a long time. So
+for this one, you don't have to
+
+8927
+08:51:13,960 --> 08:51:19,720
+deploy with me. Alright, great.
+So we've deployed to rink be
+
+8928
+08:51:19,750 --> 08:51:22,540
+using hard hat. This is
+fantastic. Now something that we
+
+8929
+08:51:22,540 --> 08:51:26,740
+notice, once again is oof, our
+contract isn't verified? Do we
+
+8930
+08:51:26,740 --> 08:51:29,890
+have to go back through and do
+this verify and publish and all
+
+8931
+08:51:29,890 --> 08:51:33,490
+that stuff again? Luckily for
+us, we actually don't need to do
+
+8932
+08:51:33,490 --> 08:51:36,790
+that. So what can we do? Well,
+back in our deploy script, we
+
+8933
+08:51:36,790 --> 08:51:40,030
+can add some code to
+automatically verify right after
+
+8934
+08:51:40,030 --> 08:51:43,510
+we deploy. So let's go ahead and
+do that. Right below our main
+
+8935
+08:51:43,510 --> 08:51:47,050
+function, we're gonna create a
+new function called verify,
+
+8936
+08:51:47,200 --> 08:51:52,810
+we're gonna say async function,
+verify. And we're gonna have
+
+8937
+08:51:52,810 --> 08:51:55,390
+this function get past some
+arguments, we're gonna have to
+
+8938
+08:51:55,390 --> 08:52:00,580
+get past a contract, address,
+and some arguments or the
+
+8939
+08:52:00,580 --> 08:52:02,740
+contract. Since our simple
+storage doesn't have a
+
+8940
+08:52:02,740 --> 08:52:05,860
+constructor, the arguments for
+simple storage are just gonna be
+
+8941
+08:52:05,860 --> 08:52:09,070
+blank. But in the future, when
+we have contracts that do have
+
+8942
+08:52:09,070 --> 08:52:12,670
+constructors, the arguments are
+going to be populated. And when
+
+8943
+08:52:12,670 --> 08:52:15,100
+we get there, you'll see what I
+mean, we need at least the
+
+8944
+08:52:15,100 --> 08:52:17,740
+contract address, and we're
+going to add some code in here
+
+8945
+08:52:18,040 --> 08:52:20,770
+to automatically verify our
+contracts after they've been
+
+8946
+08:52:20,770 --> 08:52:25,840
+deployed. This auto verification
+process works on block explorers
+
+8947
+08:52:25,870 --> 08:52:28,720
+like ether scan, it might not
+work on block explorers like
+
+8948
+08:52:28,750 --> 08:52:31,480
+eath, pler, or other block
+explorers. But if you want to
+
+8949
+08:52:31,480 --> 08:52:33,790
+verify on these other block
+explorers, I'm sure they have an
+
+8950
+08:52:33,790 --> 08:52:37,150
+API to allow you to do that as
+well. Now, ether scan in most
+
+8951
+08:52:37,150 --> 08:52:41,680
+other block explorers have a
+section on their website called
+
+8952
+08:52:41,710 --> 08:52:45,610
+API documentation, or something
+to do with API's. These are ways
+
+8953
+08:52:45,640 --> 08:52:48,790
+for us to programmatically
+interact with ether scan, and do
+
+8954
+08:52:48,790 --> 08:52:51,550
+stuff with them. One of the main
+things that we can do is we can
+
+8955
+08:52:51,550 --> 08:52:56,800
+actually verify our contracts
+through this API. Ether scan
+
+8956
+08:52:56,830 --> 08:52:59,500
+even has a tutorial in here
+called verifying contracts
+
+8957
+08:52:59,500 --> 08:53:01,780
+programmatically. And the link
+to this will be in the GitHub
+
+8958
+08:53:01,780 --> 08:53:04,720
+repo, they have an API endpoint
+that we can make some requests
+
+8959
+08:53:04,720 --> 08:53:08,860
+to to go ahead and verify our
+contracts. Now, we could
+
+8960
+08:53:08,860 --> 08:53:11,980
+absolutely make the raw API
+calls and follow the tutorial
+
+8961
+08:53:11,980 --> 08:53:14,980
+here. But there's actually an
+easier way than even going
+
+8962
+08:53:14,980 --> 08:53:17,800
+through this tutorial here.
+Hardhead is an extensible
+
+8963
+08:53:17,800 --> 08:53:21,430
+framework, meaning you can add
+something called plugins to it.
+
+8964
+08:53:21,670 --> 08:53:24,670
+There's even an advanced section
+in the documentation called
+
+8965
+08:53:24,670 --> 08:53:27,910
+Building plugins. If we scroll
+down to the bottom, we can see
+
+8966
+08:53:27,910 --> 08:53:31,030
+some popular plugins that the
+nomic labs team or the Hardhead
+
+8967
+08:53:31,030 --> 08:53:34,240
+team has created. And also a
+number of community plugins as
+
+8968
+08:53:34,240 --> 08:53:36,760
+well. One of the most used
+Hardhead plugins is going to be
+
+8969
+08:53:36,760 --> 08:53:40,420
+this hard hat ether scan plugin
+that makes this verification
+
+8970
+08:53:40,420 --> 08:53:44,350
+process much, much easier.
+Install it, you can just run npm
+
+8971
+08:53:44,350 --> 08:53:48,130
+install bash, just save dev at
+nomic labs harden ether scan,
+
+8972
+08:53:48,400 --> 08:53:51,250
+and then add it to our hard hat
+dot config. Since we're using
+
+8973
+08:53:51,250 --> 08:53:54,670
+yarn, we're just going to go
+ahead and use yarn. So back in
+
+8974
+08:53:54,670 --> 08:54:00,970
+our code, we'll do yarn, add
+dash dash Dev, at nomic, labs,
+
+8975
+08:54:02,350 --> 08:54:08,620
+slash hard hat slash hyphen,
+ether scan. Now that we have
+
+8976
+08:54:08,620 --> 08:54:12,460
+this plugin, we can go to our
+hard hat dot config, scroll to
+
+8977
+08:54:12,460 --> 08:54:22,270
+the top and add this plugin do
+require at nomic labs slash hard
+
+8978
+08:54:22,270 --> 08:54:26,560
+hat, ether scan. Now that we
+have this plugin, the hard hat
+
+8979
+08:54:26,560 --> 08:54:29,890
+documentation has some more
+information about the usage, how
+
+8980
+08:54:29,890 --> 08:54:33,460
+to actually use this plugin, and
+how to run different commands
+
+8981
+08:54:33,460 --> 08:54:36,490
+with it. In order for us to use
+this verification, we actually
+
+8982
+08:54:36,490 --> 08:54:40,660
+need an API key from ether scan.
+This is basically a password for
+
+8983
+08:54:40,780 --> 08:54:44,320
+allowing us to use the ether
+scan API. So we're going to come
+
+8984
+08:54:44,320 --> 08:54:47,500
+to ether scan. And we're going
+to go ahead and sign in. And
+
+8985
+08:54:47,500 --> 08:54:50,050
+actually we're going to click to
+sign up and create an account.
+
+8986
+08:54:51,820 --> 08:54:54,280
+And we'll go ahead and create an
+account. We'll go ahead and
+
+8987
+08:54:54,280 --> 08:54:57,190
+verify our registration by
+clicking the verification link.
+
+8988
+08:54:57,490 --> 08:55:00,190
+And we'll click the Login. Now
+that we're logged in. On the
+
+8989
+08:55:00,190 --> 08:55:03,760
+left hand side, we can scroll
+down to API keys. And we can go
+
+8990
+08:55:03,760 --> 08:55:09,370
+ahead and create a new API key.
+We call this H H hyphen sec,
+
+8991
+08:55:09,400 --> 08:55:12,400
+which stands for hardhat Free
+Code Camp. Great, this new API
+
+8992
+08:55:12,400 --> 08:55:16,120
+key will copy this and we'll go
+back to our code and we'll add
+
+8993
+08:55:16,120 --> 08:55:18,970
+this somewhere since the API
+keys basically considered a
+
+8994
+08:55:18,970 --> 08:55:21,700
+password. Where do you think we
+should add this? That's right in
+
+8995
+08:55:21,700 --> 08:55:25,990
+our dot env. So in our dot env,
+we're going to add a new entry
+
+8996
+08:55:25,990 --> 08:55:31,480
+called ether scan API key. And
+we're going to add that API key
+
+8997
+08:55:31,480 --> 08:55:34,870
+that we just got. Now that we
+have our API key, back in our
+
+8998
+08:55:34,870 --> 08:55:38,410
+Hardhead, config, we're going to
+create a new section in a module
+
+8999
+08:55:38,410 --> 08:55:42,520
+dot exports, tell hardhat that
+we have this ether scan API key,
+
+9000
+08:55:42,910 --> 08:55:44,770
+or new section is going to be
+called ether scan.
+

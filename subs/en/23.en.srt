@@ -1,0 +1,4988 @@
+23001
+23:39:25,119 --> 23:39:27,999
+can make our front end and work
+with these events. And the graph
+
+23002
+23:39:28,029 --> 23:39:31,809
+also comes with its own graph
+repo. So we'll learn all about
+
+23003
+23:39:31,809 --> 23:39:34,599
+that once we get to the front
+end section. But let me show you
+
+23004
+23:39:34,599 --> 23:39:37,479
+what we're going to build
+because it is really cool. Now
+
+23005
+23:39:37,479 --> 23:39:39,819
+that we've learned a ton about
+how to make NF T's what they
+
+23006
+23:39:39,819 --> 23:39:42,969
+are, we're going to make our own
+NFT marketplace. And like I
+
+23007
+23:39:42,969 --> 23:39:45,549
+said, this is really going to be
+our deep dive into all these
+
+23008
+23:39:45,549 --> 23:39:48,219
+amazing front end tools. So
+here's what our front end is
+
+23009
+23:39:48,219 --> 23:39:51,579
+gonna look like. But what we can
+do is we can connect with our
+
+23010
+23:39:51,579 --> 23:39:55,059
+little connect button, we hit
+Metamask Metamask pops up, we'll
+
+23011
+23:39:55,059 --> 23:39:58,419
+go ahead and connect. And now
+that we're connected, we can see
+
+23012
+23:39:58,419 --> 23:40:01,869
+the different entities in here.
+And if we're on an address
+
+23013
+23:40:01,869 --> 23:40:05,769
+that's owned by us, it will say
+owned by you. And if we switch
+
+23014
+23:40:05,769 --> 23:40:10,599
+addresses, or UI will go ahead
+and update, connect there. And
+
+23015
+23:40:10,599 --> 23:40:13,179
+now we're owned by a different
+address. Now, if it's owned by
+
+23016
+23:40:13,179 --> 23:40:15,849
+us, we get this little hover
+that says Update listing. And
+
+23017
+23:40:15,849 --> 23:40:19,149
+right now it's worth 0.18.
+That's what it's listed for on
+
+23018
+23:40:19,149 --> 23:40:22,029
+our marketplace. If it's owned
+by us, and we click it, we can
+
+23019
+23:40:22,059 --> 23:40:26,739
+update it to a different price.
+Let's update it to 50 eath, or
+
+23020
+23:40:26,739 --> 23:40:29,499
+whatever your layer one currency
+is, we'll just say new listing
+
+23021
+23:40:29,499 --> 23:40:33,159
+price, we'll go ahead and
+confirm. And I'll say listing
+
+23022
+23:40:33,159 --> 23:40:36,519
+updated, please refresh, and
+what we can do them. And we'll
+
+23023
+23:40:36,519 --> 23:40:40,269
+mine some blocks on the back
+end, and boom, now we see that
+
+23024
+23:40:40,269 --> 23:40:43,839
+it's worth 50 here. Now if we
+switch to a different account,
+
+23025
+23:40:44,169 --> 23:40:46,899
+now we can see owned by blah,
+blah, blah, and the hovered now
+
+23026
+23:40:46,899 --> 23:40:51,699
+says by me, if his selected as a
+different user, I'm gonna get
+
+23027
+23:40:51,849 --> 23:40:55,329
+this transaction to actually buy
+it. Now go ahead and confirm
+
+23028
+23:40:55,329 --> 23:40:57,609
+that I'm gonna buy it, I get a
+little pop up. This is item
+
+23029
+23:40:57,609 --> 23:41:00,999
+bought successfully. Now if I do
+a little refresh, we'll now see
+
+23030
+23:41:00,999 --> 23:41:04,179
+that that NFT is gone from the
+marketplace, since we bought it
+
+23031
+23:41:04,239 --> 23:41:07,599
+right, it's no longer available
+to be sold. Now what we can do
+
+23032
+23:41:07,599 --> 23:41:12,549
+then is we can come over to sell
+NF Ts and at the bottom, we'll
+
+23033
+23:41:12,549 --> 23:41:17,079
+see a withdraw proceeds. So
+whenever somebody buys an NF T,
+
+23034
+23:41:17,259 --> 23:41:20,109
+the NFT marketplace actually
+keeps the proceeds that actually
+
+23035
+23:41:20,109 --> 23:41:24,609
+keeps the result of the sale. So
+if we switch back to our address
+
+23036
+23:41:24,609 --> 23:41:28,179
+that had the NF T listed, we can
+now see Withdraw 50 proceeds
+
+23037
+23:41:28,179 --> 23:41:30,939
+because we know that we have 50
+eath, because we just bought
+
+23038
+23:41:30,939 --> 23:41:35,319
+that for 50. So if we hit
+withdraw, Metamask is gonna pop
+
+23039
+23:41:35,319 --> 23:41:39,909
+up, we can go ahead and confirm,
+wait a little bit as transaction
+
+23040
+23:41:39,909 --> 23:41:43,449
+populates, and boom once it goes
+through, we'll see now we have
+
+23041
+23:41:43,449 --> 23:41:46,719
+zero proceeds. Right, we
+withdrew everything from here.
+
+23042
+23:41:46,989 --> 23:41:50,769
+So what we can do now, is we can
+relist that NFT. So if we come
+
+23043
+23:41:50,769 --> 23:41:55,179
+back, let's go back to the one
+who just bought that NF t. If we
+
+23044
+23:41:55,179 --> 23:41:58,509
+know the address and the token
+ID of the NF t and we own it, we
+
+23045
+23:41:58,509 --> 23:42:00,849
+can go ahead and relist it,
+because we can place the address
+
+23046
+23:42:00,849 --> 23:42:05,829
+in here with the token ID Give
+us some sort of price, we'll
+
+23047
+23:42:05,829 --> 23:42:11,229
+submit, we'll approve giving the
+NFT marketplace access to our
+
+23048
+23:42:11,379 --> 23:42:15,519
+NFT to our little doggie. And
+then we'll go ahead and actually
+
+23049
+23:42:15,519 --> 23:42:20,439
+send the transaction to actually
+list the NFT on a marketplace
+
+23050
+23:42:20,889 --> 23:42:24,039
+that we get NFT listed
+successfully. After we remove
+
+23051
+23:42:24,039 --> 23:42:27,189
+some blocks in the back end, we
+can go back to the front end.
+
+23052
+23:42:27,519 --> 23:42:31,389
+And we now see, it's owned by
+us, instead of the original
+
+23053
+23:42:31,389 --> 23:42:35,019
+owner, right and set for 10
+ether. And then we can of
+
+23054
+23:42:35,019 --> 23:42:38,469
+course, switch back to a
+different user, and we can have
+
+23055
+23:42:38,499 --> 23:42:42,159
+them actually buy. So this is
+going to be a NFT marketplace
+
+23056
+23:42:42,159 --> 23:42:45,549
+that's completely decentralized,
+we are going to learn a ton
+
+23057
+23:42:45,579 --> 23:42:49,599
+about front end a ton about
+indexing a ton about events, and
+
+23058
+23:42:49,599 --> 23:42:53,259
+why they are so powerful. And
+I'm really excited for you for
+
+23059
+23:42:53,259 --> 23:42:55,779
+this one. Because if you get
+through this one, you will have
+
+23060
+23:42:55,779 --> 23:43:00,939
+so many tools at your fingertips
+for working with the blockchain.
+
+23061
+23:43:01,689 --> 23:43:05,109
+Are you ready, let's jump in.
+Let's build the contracts first,
+
+23062
+23:43:05,109 --> 23:43:07,659
+and then we'll build the front
+end. Let's do this. Now this
+
+23063
+23:43:07,659 --> 23:43:11,379
+project is going to be based off
+the Arteon project, which is a
+
+23064
+23:43:11,409 --> 23:43:15,609
+completely open source
+decentralized smart contract NFT
+
+23065
+23:43:15,609 --> 23:43:18,609
+marketplace, I'll leave a link
+to it in the GitHub repo
+
+23066
+23:43:18,639 --> 23:43:21,189
+associated with this course,
+ours of course, is going to be a
+
+23067
+23:43:21,189 --> 23:43:22,899
+minimalistic version of this.
+
+23068
+23:43:28,030 --> 23:43:30,430
+So we're in our VS code pre
+normal. And we're going to
+
+23069
+23:43:30,430 --> 23:43:37,060
+create a new folder here called
+hard hat. And if T marketplace,
+
+23070
+23:43:37,330 --> 23:43:43,960
+FCC, oops, MK dir, like them,
+we're gonna cd into it. And then
+
+23071
+23:43:43,960 --> 23:43:47,290
+open this up and its own VS
+code. Once again, you can use
+
+23072
+23:43:47,290 --> 23:43:51,880
+code period, or file open
+folder, and open this folder.
+
+23073
+23:43:52,000 --> 23:43:53,830
+Once we get in here, we're going
+to do all of our normal stuff
+
+23074
+23:43:53,830 --> 23:43:56,920
+that we've been doing throughout
+the course. And once again, if
+
+23075
+23:43:56,920 --> 23:43:59,440
+you want to copy paste over your
+package, JSON, if you want to
+
+23076
+23:43:59,440 --> 23:44:02,260
+copy paste in the modules,
+whatever you want to do, feel
+
+23077
+23:44:02,260 --> 23:44:06,160
+free to do so I'm gonna go ahead
+actually, this repo here, we're
+
+23078
+23:44:06,160 --> 23:44:09,970
+gonna scroll up and just grab
+once again, this line from less
+
+23079
+23:44:09,970 --> 23:44:14,350
+than nine. And just run that I
+know I'm gonna be using prettier
+
+23080
+23:44:14,380 --> 23:44:16,840
+so I'm just gonna go ahead and
+copy paste those two prettier
+
+23081
+23:44:16,840 --> 23:44:20,290
+files over prettier ignore and
+prettier RC going to be using
+
+23082
+23:44:20,290 --> 23:44:23,290
+them again, for linting. With
+solidity we're going to use Sol
+
+23083
+23:44:23,290 --> 23:44:25,780
+hint dot JSON. So we're going to
+grab that dot soul hint dot
+
+23084
+23:44:25,780 --> 23:44:30,070
+JSON. And the dots will hint dot
+ignore. I'm also going to grab
+
+23085
+23:44:30,070 --> 23:44:32,800
+the hard hat dot config dot j s
+because we're going to be using
+
+23086
+23:44:33,070 --> 23:44:36,970
+a really, really similar setup.
+And this hard hat dot config dot
+
+23087
+23:44:36,970 --> 23:44:40,510
+j s. It's got waffle in it,
+ether scan, hard hat deploy
+
+23088
+23:44:40,510 --> 23:44:44,470
+coverage gas reporter sizer and
+Dottie and v dot config, we're
+
+23089
+23:44:44,470 --> 23:44:47,320
+going to bring over our Dotty
+and V. And we're also gonna
+
+23090
+23:44:47,320 --> 23:44:50,650
+bring over our utils folder as
+well. Right, so a lot of that
+
+23091
+23:44:50,650 --> 23:44:53,290
+boilerplate we're gonna bring on
+over. And now just like that,
+
+23092
+23:44:53,290 --> 23:44:56,470
+since we have the hard hat dot
+config dot j s in here, if we
+
+23093
+23:44:56,470 --> 23:45:01,360
+run yarn, hard hat, right now,
+yarn hard hat will actually see
+
+23094
+23:45:01,390 --> 23:45:05,770
+we get the output like this. So
+let's go ahead. And before we
+
+23095
+23:45:05,770 --> 23:45:08,530
+actually write our contracts,
+let's go ahead and write a
+
+23096
+23:45:08,530 --> 23:45:11,320
+little doc saying what our
+contract is even going to do,
+
+23097
+23:45:11,350 --> 23:45:15,040
+what do we want this to do?
+We're going to create a
+
+23098
+23:45:15,040 --> 23:45:19,900
+decentralized NFT marketplace.
+So what does that mean? What
+
+23099
+23:45:19,900 --> 23:45:23,410
+will we probably need? Well,
+we'll probably need some type of
+
+23100
+23:45:23,440 --> 23:45:27,010
+list item function, because
+we'll want to list NF T's and
+
+23101
+23:45:27,010 --> 23:45:31,240
+this will be to list NF t's on
+the marketplace, we'll need some
+
+23102
+23:45:31,240 --> 23:45:34,690
+type of buy item to buy the NF
+T's. And then we'll probably
+
+23103
+23:45:34,690 --> 23:45:38,680
+need maybe like a cancel listing
+or cancel item, if you no longer
+
+23104
+23:45:38,680 --> 23:45:44,170
+want to sell it, maybe an update
+listing, update price. And then
+
+23105
+23:45:44,170 --> 23:45:50,560
+maybe a withdraw proceeds to
+withdraw payment or my bot and
+
+23106
+23:45:50,560 --> 23:45:53,950
+fts. So when somebody buys an
+NFT, I'm gonna have to withdraw
+
+23107
+23:45:53,950 --> 23:45:56,290
+it from the contract since the
+contract is going to be the one
+
+23108
+23:45:56,290 --> 23:45:58,750
+to actually hold those funds.
+That looks pretty good to me.
+
+23109
+23:45:58,810 --> 23:46:01,570
+Let's go ahead and start
+building this. So let's create a
+
+23110
+23:46:01,570 --> 23:46:06,100
+new folder, contracts. And let's
+jump into this. So we'll create
+
+23111
+23:46:06,100 --> 23:46:08,620
+a new file NFT marketplace.
+
+23112
+23:46:09,460 --> 23:46:18,520
+That's all. So let's get our
+boilerplate. spdx pragma,
+
+23113
+23:46:18,580 --> 23:46:23,950
+solidity, carrot zero, point,
+8.7, contract and ft.
+
+23114
+23:46:24,340 --> 23:46:29,560
+Marketplace, boom. If we're
+doing this, right, h h compile
+
+23115
+23:46:29,560 --> 23:46:33,760
+or yarn Hardhead to compile or
+MPX, art, hit, compile, boom,
+
+23116
+23:46:33,790 --> 23:46:37,300
+things are looking good. So if
+we go back to our readme, we can
+
+23117
+23:46:37,300 --> 23:46:42,310
+grab these here, even stick them
+in as like a little comment for
+
+23118
+23:46:42,310 --> 23:46:45,370
+us to kind of reference later
+on. Let's start with listing the
+
+23119
+23:46:45,370 --> 23:46:48,820
+items. How are we going to keep
+track of listing people's items.
+
+23120
+23:46:48,880 --> 23:46:51,580
+And once again, remember, when
+I'm usually coding this, I'm
+
+23121
+23:46:51,580 --> 23:46:54,130
+going back and forth between
+writing tests and writing the
+
+23122
+23:46:54,130 --> 23:46:57,160
+actual code. We're just going to
+write all the solidity in one
+
+23123
+23:46:57,190 --> 23:47:00,280
+chunk, and then go write the
+tests. So we're going to say,
+
+23124
+23:47:00,580 --> 23:47:04,720
+these are going to be our main
+functions. I'm going to start
+
+23125
+23:47:05,020 --> 23:47:09,190
+with function list item. And we
+are going to make this one look
+
+23126
+23:47:09,250 --> 23:47:12,190
+really, really good. So we're
+going to do natspec. And
+
+23127
+23:47:12,190 --> 23:47:15,010
+everything, this is going to
+need to be an external function,
+
+23128
+23:47:15,040 --> 23:47:18,070
+right, we're probably not going
+to want any of our internal
+
+23129
+23:47:18,100 --> 23:47:20,320
+functions calling list item,
+it's going to be called by
+
+23130
+23:47:20,320 --> 23:47:23,080
+external projects or external
+accounts are probably going to
+
+23131
+23:47:23,080 --> 23:47:26,800
+need an address and ft address,
+write the address of the NFT,
+
+23132
+23:47:26,800 --> 23:47:32,530
+contract a un 256 token ID, the
+ID of the token ID of the
+
+23133
+23:47:32,530 --> 23:47:34,720
+contract that we're going to
+use. And then we're going to
+
+23134
+23:47:34,720 --> 23:47:37,810
+want to set a un 256 price. So
+first off, we're probably going
+
+23135
+23:47:37,810 --> 23:47:41,260
+to want the price to be greater
+than zero. So maybe we'll put in
+
+23136
+23:47:41,290 --> 23:47:45,190
+like a little if or require
+statement here, we'll say if
+
+23137
+23:47:45,340 --> 23:47:50,290
+price is less than or equal to
+zero, then we'll go ahead and
+
+23138
+23:47:50,290 --> 23:47:57,280
+revert with a price must be
+above zero error. And then of
+
+23139
+23:47:57,280 --> 23:48:01,180
+course, we'll prepend it with
+the name of the contract into
+
+23140
+23:48:01,180 --> 23:48:06,310
+underscores. And then at the
+top, the error price must be
+
+23141
+23:48:06,310 --> 23:48:09,520
+above zero. Now in order for us
+to list it, we could actually do
+
+23142
+23:48:09,520 --> 23:48:13,180
+this one of two ways we could
+one, we could send the NFT to
+
+23143
+23:48:13,180 --> 23:48:16,330
+the contract, this would require
+us doing like a transfer, right,
+
+23144
+23:48:16,390 --> 23:48:21,850
+we could have got the contract
+hold the NFT. Now we could do
+
+23145
+23:48:21,850 --> 23:48:25,330
+this, but this is going to be
+kind of gas expensive for
+
+23146
+23:48:25,330 --> 23:48:29,140
+someone to actually list on f t.
+And we can have the owner of the
+
+23147
+23:48:29,140 --> 23:48:32,890
+NFT be our NFT marketplace, we
+could 100 percent do that. The issue
+
+23148
+23:48:32,890 --> 23:48:35,620
+with this, though is that the
+marketplace will then own the
+
+23149
+23:48:35,620 --> 23:48:38,350
+NFT. And the user won't be able
+to say like, Hey, I own this
+
+23150
+23:48:38,350 --> 23:48:40,990
+NFT, it's in the marketplace,
+they technically would be able
+
+23151
+23:48:40,990 --> 23:48:43,720
+to but they would have to
+withdraw it, we might do this a
+
+23152
+23:48:43,720 --> 23:48:47,680
+slightly different way where we
+can say owners can still hold
+
+23153
+23:48:47,680 --> 23:48:53,800
+their NFT and give the
+marketplace approval to sell the
+
+23154
+23:48:53,830 --> 23:48:57,220
+NFT for them. Now, of course the
+owners of the entity could
+
+23155
+23:48:57,220 --> 23:49:00,730
+withdraw approval at any time
+and the marketplace wouldn't be
+
+23156
+23:49:00,730 --> 23:49:03,010
+able to sell it anymore.
+However, this would be really
+
+23157
+23:49:03,010 --> 23:49:05,410
+easy for people to actually
+read, they would all they would
+
+23158
+23:49:05,410 --> 23:49:09,220
+have to do is read like is
+approved for marketplace. And
+
+23159
+23:49:09,220 --> 23:49:11,320
+they can actually see if the
+item was really listed or not.
+
+23160
+23:49:11,350 --> 23:49:14,560
+So we're gonna go ahead and
+write it this second way,
+
+23161
+23:49:14,860 --> 23:49:18,070
+because that's what Ardian does.
+And this is the least intrusive
+
+23162
+23:49:18,070 --> 23:49:21,460
+way to have this marketplace,
+right? People still will have
+
+23163
+23:49:21,460 --> 23:49:24,640
+ownership of their NF Ts, and
+the marketplace will just have
+
+23164
+23:49:24,640 --> 23:49:29,020
+approval to actually swap and
+sell their NF T once the prices
+
+23165
+23:49:29,020 --> 23:49:32,320
+are met. So since we want to
+make sure the marketplace has
+
+23166
+23:49:32,320 --> 23:49:36,070
+approval, let's make sure the
+marketplace has approval. So we
+
+23167
+23:49:36,070 --> 23:49:39,910
+can call we can call this get
+approved function on that token
+
+23168
+23:49:39,910 --> 23:49:44,560
+ID to make sure that the
+marketplace is approved to work
+
+23169
+23:49:44,560 --> 23:49:49,540
+with the NFT. To do this, we're
+going to need the AI ERC 720
+
+23170
+23:49:49,540 --> 23:49:52,840
+interface and we can actually
+grab that from open Zeppelin.
+
+23171
+23:49:53,170 --> 23:49:56,230
+Right and this interface will
+wrap around an address and then
+
+23172
+23:49:56,230 --> 23:50:01,810
+we can call get approved on that
+address. So we'll do import at
+
+23173
+23:50:01,810 --> 23:50:08,320
+open Zeppelin slash contracts
+slash token slash ERC 721 slash
+
+23174
+23:50:08,350 --> 23:50:13,330
+I ERC 721 dot Sol. And since
+we're doing an import from open
+
+23175
+23:50:13,330 --> 23:50:19,060
+Zeppelin, we'll do yarn add dash
+dash Dev, add open Zeppelin now
+
+23176
+23:50:19,060 --> 23:50:23,590
+that we have this interface in
+here, what we can do is we'll
+
+23177
+23:50:23,590 --> 23:50:33,550
+say I ERC 721 NF t equals IRC
+721 wrapped around this NF T
+
+23178
+23:50:33,550 --> 23:50:37,840
+address that we're passing in.
+And we'll say if NF T dot get
+
+23179
+23:50:37,840 --> 23:50:43,300
+approved of the token ID that
+we're trying to list does not
+
+23180
+23:50:43,300 --> 23:50:48,850
+equal address this. So if we are
+not approved, then we'll revert
+
+23181
+23:50:49,810 --> 23:50:56,380
+not approved or market place.
+And then we'll of course we'll
+
+23182
+23:50:56,380 --> 23:51:01,390
+want to do prepend it with NFT
+marketplace into underscores. So
+
+23183
+23:51:01,420 --> 23:51:06,910
+error like this, Bada bing bada
+boom, now that we've gotten a
+
+23184
+23:51:06,910 --> 23:51:09,730
+little bit of that out of the
+way, we're probably going to
+
+23185
+23:51:09,730 --> 23:51:12,790
+want to have some type of data
+structure to list all these NF
+
+23186
+23:51:12,790 --> 23:51:15,280
+T's. And typically we get to
+Okay, do we want to use an
+
+23187
+23:51:15,280 --> 23:51:17,740
+array? Or do we want to use a
+mapping? What do you think?
+
+23188
+23:51:17,830 --> 23:51:20,230
+Before we continue? Let's pause
+for a second, do you think it
+
+23189
+23:51:20,230 --> 23:51:23,140
+makes more sense to put these NF
+T's and an array or an A
+
+23190
+23:51:23,140 --> 23:51:25,540
+mapping? And when you're
+thinking about this, try to
+
+23191
+23:51:25,540 --> 23:51:28,270
+think about, okay, well, people
+are gonna have to buy these and
+
+23192
+23:51:28,270 --> 23:51:30,940
+sell these, what makes more
+sense, think about this for a
+
+23193
+23:51:30,940 --> 23:51:34,630
+second, maybe pause it and write
+in a comment here, what you
+
+23194
+23:51:34,630 --> 23:51:37,030
+think an array or a mapping is
+better. Now, if you said
+
+23195
+23:51:37,030 --> 23:51:40,690
+mapping, I would agree with you.
+You couldn't do an array and you
+
+23196
+23:51:40,690 --> 23:51:43,390
+wouldn't necessarily be wrong,
+but it's not the way that I
+
+23197
+23:51:43,390 --> 23:51:46,540
+would go about that for an
+array. Anytime someone wants to
+
+23198
+23:51:46,540 --> 23:51:49,150
+buy an item, we're gonna have to
+traverse through the array,
+
+23199
+23:51:49,390 --> 23:51:53,170
+we're gonna have to make this
+massive dynamic array. And that
+
+23200
+23:51:53,170 --> 23:51:56,230
+might get a little bit dicey as
+that array gets really, really
+
+23201
+23:51:56,230 --> 23:51:59,800
+big. So we're gonna go ahead and
+make this a mapping. And this is
+
+23202
+23:51:59,800 --> 23:52:03,190
+probably going to be a global
+variable or a state variable. So
+
+23203
+23:52:03,190 --> 23:52:05,890
+up at the top, let's go ahead
+and create this mapping, it's
+
+23204
+23:52:05,890 --> 23:52:08,980
+going to be a mapping of
+addresses of NFT addresses.
+
+23205
+23:52:09,400 --> 23:52:13,720
+Right? So it's going to be the
+NFT contract address mapped to
+
+23206
+23:52:13,720 --> 23:52:19,240
+the NFT, token ID mapped to some
+type of listing. So we'll say, a
+
+23207
+23:52:19,240 --> 23:52:26,290
+mapping of address to a mapping
+of UNT 256. to, well, what do we
+
+23208
+23:52:26,290 --> 23:52:28,810
+want here? Well, we want we want
+the price, right? So is that
+
+23209
+23:52:28,810 --> 23:52:32,560
+another you went up to six. But
+we also want, we also want to
+
+23210
+23:52:32,560 --> 23:52:36,190
+keep track of the sellers, we
+know who to send money to. So we
+
+23211
+23:52:36,190 --> 23:52:39,940
+could make two mappings or we
+just create a new type of type
+
+23212
+23:52:39,940 --> 23:52:42,730
+listing, let's go ahead and do
+that. We'll comment this out for
+
+23213
+23:52:42,730 --> 23:52:46,300
+now. And so at the top, since
+this is going to be a type
+
+23214
+23:52:46,780 --> 23:52:50,530
+where, say, struct listing, and
+in here, we're going to do a
+
+23215
+23:52:50,530 --> 23:52:55,690
+utility six, the price of the NF
+t, and then address the seller
+
+23216
+23:52:55,870 --> 23:52:58,810
+of the NF team. And now that we
+have that new typing, we can
+
+23217
+23:52:58,810 --> 23:53:03,070
+uncomment this, we can say NFT,
+contract address map to the NFT
+
+23218
+23:53:03,070 --> 23:53:07,360
+token ID mapped to the listing,
+and we'll make this a private
+
+23219
+23:53:08,080 --> 23:53:12,940
+variable called S underscore
+listings. Now back down in our
+
+23220
+23:53:12,970 --> 23:53:16,780
+list item function, we're going
+to update that s listing
+
+23221
+23:53:17,020 --> 23:53:21,220
+mapping. So we're gonna say s
+listing of NF T address, right,
+
+23222
+23:53:21,220 --> 23:53:25,900
+the address of the NF T at the
+token ID is going to equal we're
+
+23223
+23:53:25,900 --> 23:53:29,920
+gonna create a listing of the
+price. And then who, well the
+
+23224
+23:53:29,920 --> 23:53:32,860
+seller is going to be message
+that sender, right? So message
+
+23225
+23:53:32,860 --> 23:53:36,010
+dot sender, they're the one
+who's actually listing the item.
+
+23226
+23:53:36,100 --> 23:53:38,980
+And since we're updating a
+mapping here, what's the best
+
+23227
+23:53:38,980 --> 23:53:42,040
+practice for update mappings,
+you guessed it, we need to emit
+
+23228
+23:53:42,070 --> 23:53:46,150
+an event and especially for this
+project, you're gonna see why
+
+23229
+23:53:46,180 --> 23:53:49,900
+emitting events, for at least
+this project, this is so
+
+23230
+23:53:49,900 --> 23:53:53,500
+helpful. So we're gonna go ahead
+and emit an item listed event,
+
+23231
+23:53:53,530 --> 23:53:56,260
+which we're going to create in
+just a second. And we'll give
+
+23232
+23:53:56,260 --> 23:54:01,300
+the message that sender, the NFT
+address, the token ID, and the
+
+23233
+23:54:01,300 --> 23:54:06,460
+price item listed. And then up
+at the top, of course, but below
+
+23234
+23:54:06,460 --> 23:54:11,470
+our structure, we're gonna say
+event item listed will do an
+
+23235
+23:54:11,500 --> 23:54:14,680
+address indexed seller
+
+23236
+23:54:15,879 --> 23:54:26,979
+address indexed NFT, address,
+address indexed token ID, and
+
+23237
+23:54:26,979 --> 23:54:31,599
+then a un 256 price. Sorry, this
+needs to be a un 256 token ID,
+
+23238
+23:54:31,899 --> 23:54:37,449
+you int 56. This looks pretty
+good to us. However, we probably
+
+23239
+23:54:37,449 --> 23:54:40,839
+want to make sure we only list
+and FTEs that haven't already
+
+23240
+23:54:40,839 --> 23:54:45,069
+been listed. So we can add like
+an if then in here. And this is
+
+23241
+23:54:45,069 --> 23:54:47,559
+kind of where preference comes
+in a little bit. But I'm
+
+23242
+23:54:47,559 --> 23:54:51,009
+actually going to create a
+modifier called not listed. So
+
+23243
+23:54:51,009 --> 23:54:54,459
+we make sure we don't relist,
+and if T's that are already
+
+23244
+23:54:54,459 --> 23:54:59,979
+listed above our main functions,
+or do like a little indicator
+
+23245
+23:55:00,009 --> 23:55:06,609
+modifier not listed. This is
+gonna take an an address NFT
+
+23246
+23:55:06,609 --> 23:55:13,119
+address, a un 256 token ID and
+an address owner. And what we're
+
+23247
+23:55:13,119 --> 23:55:16,389
+going to say is we're going to
+check, we're going to make a new
+
+23248
+23:55:16,389 --> 23:55:22,869
+listing memory listing equals s
+underscore listings of NFT
+
+23249
+23:55:22,869 --> 23:55:30,339
+address token ID. Now we're
+gonna say if listing dot price
+
+23250
+23:55:30,489 --> 23:55:33,609
+is greater than zero, we're
+gonna go ahead and revert with
+
+23251
+23:55:33,639 --> 23:55:40,239
+already passing the NFT address
+and a token ID. And of course,
+
+23252
+23:55:40,689 --> 23:55:46,419
+we're going to prepend this with
+NFT marketplace. And at the top,
+
+23253
+23:55:47,199 --> 23:55:52,959
+we do error ft marketplace
+already listed, like so. And
+
+23254
+23:55:52,959 --> 23:55:56,199
+then we're going to put a little
+underscore right underneath and
+
+23255
+23:55:56,199 --> 23:56:01,689
+then up here, we'll do address
+and if the address you went to
+
+23256
+23:56:01,689 --> 23:56:06,459
+56. Okay, ID. So this modifier
+looks pretty good. Let's just
+
+23257
+23:56:06,459 --> 23:56:09,219
+make sure it's actually going to
+compile we'll do yarn Hardhead
+
+23258
+23:56:09,219 --> 23:56:13,899
+compile or hh compile. Great.
+That looks good. We'll add this
+
+23259
+23:56:13,899 --> 23:56:18,549
+modifier to our list item
+function will do NFT address,
+
+23260
+23:56:18,879 --> 23:56:23,679
+token ID message dot sender.
+Cool. What else should we check
+
+23261
+23:56:23,679 --> 23:56:28,179
+for here? Well, we should also
+check that the NF T that's being
+
+23262
+23:56:28,209 --> 23:56:32,559
+listed is owned by message dot
+sender. This way only the owners
+
+23263
+23:56:32,559 --> 23:56:35,799
+of the NF T can actually listed
+here so let's go ahead and we'll
+
+23264
+23:56:35,799 --> 23:56:44,979
+add a is owner modifier modifier
+is owner NFT address token ID
+
+23265
+23:56:45,429 --> 23:56:55,479
+spender you into 256 here and an
+address spender I ERC 721 NF t
+
+23266
+23:56:55,509 --> 23:57:01,809
+equals IRC 721 And if the
+address address owner equals NF
+
+23267
+23:57:01,809 --> 23:57:08,169
+T dot owner a Have a token ID.
+And then we'll say if spender
+
+23268
+23:57:08,199 --> 23:57:13,629
+does not equal owner. And we'll
+revert with a not owner error
+
+23269
+23:57:13,659 --> 23:57:16,659
+that we're going to go ahead and
+create up top. So we'll say
+
+23270
+23:57:16,689 --> 23:57:22,689
+error, not owner. And we'll
+prepend it with NFT marketplace
+
+23271
+23:57:22,689 --> 23:57:27,249
+with two underscores revert
+revert not owner, then will do
+
+23272
+23:57:27,279 --> 23:57:31,179
+underscore for the rest of the
+code, and boom, now underneath
+
+23273
+23:57:31,179 --> 23:57:39,189
+are not listed will do is owner
+NFT address, token ID message
+
+23274
+23:57:39,189 --> 23:57:42,999
+dot center. So now our list item
+checks to see if it's already
+
+23275
+23:57:42,999 --> 23:57:48,009
+listed, make sure that only the
+owner of the NFT of that token,
+
+23276
+23:57:48,009 --> 23:57:51,399
+Id can list it. And then it goes
+ahead and lists it looking
+
+23277
+23:57:51,429 --> 23:57:55,719
+nicely. Okay, cool. So that is
+our list item method here. Now
+
+23278
+23:57:55,719 --> 23:57:57,609
+let's go ahead and do a little
+bit of natspec on
+
+23279
+23:57:57,610 --> 23:58:05,740
+this. And now we have a little
+natspec here, which looks really
+
+23280
+23:58:05,740 --> 23:58:08,830
+professional. Alright, great. So
+we have a list item function.
+
+23281
+23:58:09,100 --> 23:58:12,490
+All right, what's next? Well,
+maybe let's make a buy item
+
+23282
+23:58:12,520 --> 23:58:15,760
+function for people to buy their
+NF T's after they've been
+
+23283
+23:58:15,760 --> 23:58:21,580
+listed. So let's create them do
+function by item. So we'll take
+
+23284
+23:58:21,580 --> 23:58:28,660
+an address, and if the address
+un 256 token ID, and this will
+
+23285
+23:58:28,660 --> 23:58:32,920
+be an external function. And
+that will also make this payable
+
+23286
+23:58:33,220 --> 23:58:36,940
+an external function because we
+know only people or contracts
+
+23287
+23:58:36,940 --> 23:58:40,120
+outside of this contract are
+going to call by item and
+
+23288
+23:58:40,120 --> 23:58:44,260
+payable so that people can spend
+eath to spend eath, or whatever
+
+23289
+23:58:44,260 --> 23:58:47,350
+layer one currency to actually
+buy these prices, we could want
+
+23290
+23:58:47,350 --> 23:58:51,610
+100 percent at channeling prices in now
+for listing, we could of course,
+
+23291
+23:58:51,820 --> 23:58:57,550
+add price and then do like, you
+know address token price. And do
+
+23292
+23:58:57,550 --> 23:59:00,310
+what we did before with chain
+link price feeds to convert the
+
+23293
+23:59:00,310 --> 23:59:02,830
+price of these tokens into how
+much they actually cost. And we
+
+23294
+23:59:02,830 --> 23:59:05,680
+could 100 percent do that with chaining
+price feeds. But for simplicity,
+
+23295
+23:59:06,010 --> 23:59:08,620
+we're gonna leave that off. But
+I will put that as a challenge
+
+23296
+23:59:08,620 --> 23:59:12,760
+to you through challenge is
+going to be have this contract
+
+23297
+23:59:12,850 --> 23:59:17,800
+accept payment in a subset of
+tokens as well, of course, we
+
+23298
+23:59:17,800 --> 23:59:21,610
+would need to give a little hint
+here is channeling price feeds
+
+23299
+23:59:21,670 --> 23:59:26,650
+to convert the price of the
+tokens between each other, we're
+
+23300
+23:59:26,650 --> 23:59:30,370
+gonna choose which NFT in which
+token ID we want to buy. So
+
+23301
+23:59:30,370 --> 23:59:33,010
+what's the first thing that we
+probably want to do? Well, we
+
+23302
+23:59:33,010 --> 23:59:36,190
+probably want to check that this
+by item is actually listed. So
+
+23303
+23:59:36,190 --> 23:59:38,740
+we're actually going to make a
+new modifier instead of not
+
+23304
+23:59:38,740 --> 23:59:43,840
+listed we'll make it is listed
+up and modifiers modifier is
+
+23305
+23:59:43,840 --> 23:59:47,950
+listed. And this is going to
+take an address and up the
+
+23306
+23:59:47,950 --> 23:59:54,100
+address un 256 token ID. And to
+check to see if this is listed,
+
+23307
+23:59:54,160 --> 00:00:01,930
+we'll say listing memory listing
+equals s underscore listings of
+
+23308
+00:00:01,930 --> 00:00:07,810
+the NFT address of the token, Id
+sort of go into the mapping
+
+23309
+00:00:07,810 --> 00:00:11,590
+here. And then we're just gonna
+check the price. So we'll say if
+
+23310
+00:00:11,620 --> 00:00:15,610
+the listing that price is less
+than or equal to zero, so
+
+23311
+00:00:15,610 --> 00:00:19,450
+basically, if there's no price,
+if it's defaulted to zero, if
+
+23312
+00:00:19,450 --> 00:00:25,060
+the price is zero, then we're
+gonna say revert, not listed.
+
+23313
+00:00:26,260 --> 00:00:32,290
+And after the address, token ID,
+and of course, we're going to
+
+23314
+00:00:32,290 --> 00:00:36,100
+prepend. And if the marketplace
+and the marketplace underscore
+
+23315
+00:00:36,100 --> 00:00:40,120
+underscore, not listed, and then
+we're gonna copy this up here,
+
+23316
+00:00:40,120 --> 00:00:45,520
+we're gonna say air listed, and
+this is going to take address,
+
+23317
+00:00:45,520 --> 00:00:51,640
+NFT address, and au int 256
+token Id like so, the down in
+
+23318
+00:00:51,640 --> 00:00:53,920
+our modifier, then we're going
+to add the underscore and to add
+
+23319
+00:00:53,920 --> 00:00:56,770
+the rest of our code here. So
+now we have an is listed
+
+23320
+00:00:56,770 --> 00:01:00,100
+modifier, we're going to check
+to make sure that that NFT is
+
+23321
+00:01:00,100 --> 00:01:03,010
+actually listed down here now
+we're gonna say is listed
+
+23322
+00:01:03,460 --> 00:01:08,800
+address and ft address or excuse
+me, and if the address and token
+
+23323
+00:01:08,800 --> 00:01:16,000
+ID. Now once again, we're gonna
+say listing memory listed item
+
+23324
+00:01:16,060 --> 00:01:24,040
+equals s underscore listings.
+And if T address token ID, or
+
+23325
+00:01:24,040 --> 00:01:30,940
+say if message dot value is less
+than listed item dot price, then
+
+23326
+00:01:30,940 --> 00:01:36,100
+we're going to revert with price
+not met. Then we'll do NFT
+
+23327
+00:01:36,100 --> 00:01:43,360
+address, Open ID listed item dot
+price Excel so we're going to
+
+23328
+00:01:43,360 --> 00:01:47,470
+create a new air price not met
+error. Price not met of course
+
+23329
+00:01:47,470 --> 00:01:51,520
+we're going to prepend this with
+NFT marketplace to take an
+
+23330
+00:01:51,520 --> 00:01:58,870
+address. And if the address you
+went to 56 token ID and then a
+
+23331
+00:01:58,870 --> 00:02:05,020
+UNT 256 price. So we can see exe
+exactly how the price wasn't
+
+23332
+00:02:05,020 --> 00:02:09,730
+met, and then back down here,
+we'll get the full error. So we
+
+23333
+00:02:09,730 --> 00:02:12,460
+want to make sure they're
+sending us enough money. First
+
+23334
+00:02:12,460 --> 00:02:16,390
+of all, when they send this
+money, it needs to belong to
+
+23335
+00:02:16,390 --> 00:02:20,500
+whomever listed the item. So we
+actually need to keep track of
+
+23336
+00:02:20,530 --> 00:02:24,040
+how much money these people
+have. So let's create another
+
+23337
+00:02:24,040 --> 00:02:28,540
+data structure called proceeds
+where we keep track of how much
+
+23338
+00:02:28,540 --> 00:02:32,650
+money people have earned selling
+their NF T's. So we'll create a
+
+23339
+00:02:32,650 --> 00:02:40,090
+mapping of address to you and
+256. And this is going to be a
+
+23340
+00:02:40,090 --> 00:02:46,300
+mapping of seller address to
+amount earned. And we'll make
+
+23341
+00:02:46,300 --> 00:02:53,170
+this private called S underscore
+proceeds. And what we'll do is
+
+23342
+00:02:53,170 --> 00:02:57,280
+when somebody buys an item, is
+will update their proceeds.
+
+23343
+00:02:58,389 --> 00:03:06,459
+So we'll say as proceeds of
+listed item, that seller equals
+
+23344
+00:03:06,549 --> 00:03:13,689
+s proceeds of illicit IO dot
+seller plus MSG dot value. Now,
+
+23345
+00:03:13,689 --> 00:03:17,109
+once we buy this item, we're
+going to want to delete the
+
+23346
+00:03:17,109 --> 00:03:21,609
+listing. So to delete a mapping
+from a wreck, so to delete an
+
+23347
+00:03:21,609 --> 00:03:26,559
+entry and a mapping, we just use
+delete s underscore listings and
+
+23348
+00:03:26,559 --> 00:03:32,709
+ft address of the token ID. So
+we remove that mapping. And then
+
+23349
+00:03:32,709 --> 00:03:35,619
+finally, we're going to go ahead
+and transfer it. So we'll say I
+
+23350
+00:03:35,619 --> 00:03:41,049
+ERC 721 and ft address, we're
+going to call dot transfer from
+
+23351
+00:03:43,779 --> 00:03:49,299
+the listed item dot seller to
+the message dot sender with the
+
+23352
+00:03:49,299 --> 00:03:54,159
+token ID. Now you'll notice
+something here, we don't just
+
+23353
+00:03:54,159 --> 00:03:58,869
+send the seller the money. Now
+why is that? Well, solidity has
+
+23354
+00:03:58,869 --> 00:04:02,319
+this concept called pull over
+push. And it's considered a best
+
+23355
+00:04:02,319 --> 00:04:05,139
+practice when working with
+solidity, you want to shift the
+
+23356
+00:04:05,139 --> 00:04:08,529
+risk associated with
+transferring ether to the user.
+
+23357
+00:04:08,619 --> 00:04:12,279
+So instead of sending the money
+to the user, this is what we
+
+23358
+00:04:12,279 --> 00:04:16,269
+don't want to do want to have
+them withdraw the money, we
+
+23359
+00:04:16,269 --> 00:04:19,929
+always want to shift the risk of
+working with money and working
+
+23360
+00:04:19,929 --> 00:04:23,799
+with eath or whatever layer one
+you're working with, to the
+
+23361
+00:04:23,799 --> 00:04:27,459
+actual user. So we don't want to
+send them the money directly, we
+
+23362
+00:04:27,459 --> 00:04:31,779
+want to create this s proceeds
+data structure and we can have
+
+23363
+00:04:31,779 --> 00:04:34,719
+them withdraw from it later on.
+Now, we could probably do some
+
+23364
+00:04:34,719 --> 00:04:39,789
+checking here. Or we could say
+okay, check to make sure the NFT
+
+23365
+00:04:39,789 --> 00:04:45,969
+was transferred. And if we look
+at I ERC 721 though, and we're
+
+23366
+00:04:45,969 --> 00:04:49,299
+looking at the transfer from
+function, we don't see it
+
+23367
+00:04:49,299 --> 00:04:56,289
+actually has a return. And if we
+go to the IP 721 We can see that
+
+23368
+00:04:56,289 --> 00:04:59,469
+none of these have a return type
+though, transfer from doesn't
+
+23369
+00:04:59,469 --> 00:05:02,799
+have a return type here.
+However, we do see this safe
+
+23370
+00:05:02,799 --> 00:05:06,309
+transfer from bit safe transfer
+from it's going to be a little
+
+23371
+00:05:06,309 --> 00:05:09,279
+bit better, right because if we
+look at transfer from transfers
+
+23372
+00:05:09,309 --> 00:05:12,369
+ownership of an entity, the
+caller is responsible to confirm
+
+23373
+00:05:12,369 --> 00:05:16,329
+that underscore two is capable
+of receiving entities or else
+
+23374
+00:05:16,359 --> 00:05:19,689
+they may be permanently lost. So
+maybe instead we want to use
+
+23375
+00:05:19,689 --> 00:05:23,769
+safe transfer from which throws
+an error unless message sender
+
+23376
+00:05:23,769 --> 00:05:26,559
+is the current owner and
+authorize operator, or blah,
+
+23377
+00:05:26,559 --> 00:05:29,169
+blah, blah. So instead of
+transfer from we're going to
+
+23378
+00:05:29,169 --> 00:05:31,929
+actually use safe transfer from
+just to be a little bit safer.
+
+23379
+00:05:32,379 --> 00:05:37,419
+So we'll do safe transfer from
+instead of transfer from. And
+
+23380
+00:05:37,419 --> 00:05:39,789
+then since we're updating a
+mapping, we're going to do what,
+
+23381
+00:05:40,149 --> 00:05:45,699
+you guessed it, let's omit an
+event, we'll call item bot. Lab
+
+23382
+00:05:45,699 --> 00:05:50,979
+will be a message that sender,
+an empty address, token ID and
+
+23383
+00:05:50,979 --> 00:05:55,179
+for listed item that price. So
+off the top, let's create a new
+
+23384
+00:05:55,179 --> 00:06:05,319
+event. To event item bought. And
+this will be a an address
+
+23385
+00:06:05,949 --> 00:06:16,719
+indexed fire an address indexed
+NFT address an address indexed
+
+23386
+00:06:17,589 --> 00:06:22,329
+token ID and then a un 236
+price. Just kidding, that
+
+23387
+00:06:22,329 --> 00:06:25,209
+doesn't look fantastic. This
+should be intuitive six. Now it
+
+23388
+00:06:25,209 --> 00:06:32,259
+looks fantastic. Now in this buy
+item, we've set this up in a way
+
+23389
+00:06:32,409 --> 00:06:36,219
+that is safe from something
+called a reentrancy attack. And
+
+23390
+00:06:36,219 --> 00:06:38,829
+we've been coding these
+contracts in a way where we kind
+
+23391
+00:06:38,829 --> 00:06:42,579
+of do all this state change
+first. And then we transfer the
+
+23392
+00:06:42,579 --> 00:06:47,949
+NFT that token or etc. But why
+are we doing that? Cognitively
+
+23393
+00:06:47,979 --> 00:06:50,529
+we think it might make sense.
+Okay, first, maybe we should
+
+23394
+00:06:50,529 --> 00:06:54,459
+actually send the NFT right,
+we'd want to send the entity
+
+23395
+00:06:54,459 --> 00:06:54,939
+first.
+
+23396
+00:06:57,040 --> 00:07:01,420
+This is actually a huge security
+vulnerability. And to understand
+
+23397
+00:07:01,420 --> 00:07:05,110
+why let's learn about one The
+most common hacks in blockchain,
+
+23398
+00:07:05,470 --> 00:07:08,260
+the reentrant. See attack. Now
+in this sub lesson, we're going
+
+23399
+00:07:08,260 --> 00:07:11,290
+to talk about reentrant. C, and
+in the GitHub repo associated
+
+23400
+00:07:11,290 --> 00:07:14,320
+with this lesson, we're going to
+have the code for everything
+
+23401
+00:07:14,320 --> 00:07:16,960
+that we're going to go through
+here. And the code that we're
+
+23402
+00:07:16,960 --> 00:07:21,130
+looking at is based off of this
+solidity by example. reentrant.
+
+23403
+00:07:21,130 --> 00:07:24,010
+See example. And I have a link
+to it in the GitHub repo
+
+23404
+00:07:24,040 --> 00:07:26,980
+associated with this course.
+Now, I have a sample contract
+
+23405
+00:07:26,980 --> 00:07:30,280
+here, it's a place where you can
+deposit and withdraw your eath.
+
+23406
+00:07:30,850 --> 00:07:34,660
+So what it does is it has a
+mapping called balances, where
+
+23407
+00:07:34,660 --> 00:07:39,280
+you can call deposit, and it'll
+update how much you've deposited
+
+23408
+00:07:39,280 --> 00:07:42,820
+into the protocol. And then it
+has a withdrawal function as
+
+23409
+00:07:42,820 --> 00:07:47,260
+well. So what it does is it
+first grabs your balance from
+
+23410
+00:07:47,260 --> 00:07:50,230
+this balances mapping, make sure
+that you have more than zero.
+
+23411
+00:07:50,650 --> 00:07:53,200
+And then the way that we've been
+sending eath, this whole time,
+
+23412
+00:07:53,470 --> 00:07:57,280
+we do message that sender dot
+call, we send the balance, and
+
+23413
+00:07:57,280 --> 00:08:01,300
+then we update bounces of
+message sender equals zero. Now
+
+23414
+00:08:01,300 --> 00:08:04,270
+this is the line that actually
+makes this contract incredibly
+
+23415
+00:08:04,300 --> 00:08:07,660
+vulnerable. And if we run this
+right now, though, we'll say
+
+23416
+00:08:07,660 --> 00:08:10,630
+hey, no, it looks like it's
+working as expected, we can go
+
+23417
+00:08:10,630 --> 00:08:16,960
+to deploy a copy the accounts
+that I'm working with, like that
+
+23418
+00:08:16,960 --> 00:08:23,470
+in a bounce zero, we can
+deposit, you know, it's going
+
+23419
+00:08:23,470 --> 00:08:28,150
+away, let's go to ether, will
+deposit to ether, come down,
+
+23420
+00:08:28,480 --> 00:08:33,370
+what deposit now had to balance
+bounces up, we'll hit withdraw,
+
+23421
+00:08:33,550 --> 00:08:36,580
+now have bounces goes back to
+zero. And it seems like it's
+
+23422
+00:08:36,580 --> 00:08:39,820
+working as intended. Now,
+there's actually a way we can
+
+23423
+00:08:39,820 --> 00:08:43,810
+attack this function to drain
+all the money in this contract.
+
+23424
+00:08:44,260 --> 00:08:48,220
+And this is what's known as a
+reentrancy attack. The two most
+
+23425
+00:08:48,220 --> 00:08:52,120
+common kinds of attacks in this
+space are going to be reentrancy
+
+23426
+00:08:52,120 --> 00:08:55,180
+attacks, which is what we're
+talking about here. And Oracle
+
+23427
+00:08:55,180 --> 00:08:58,840
+attacks, which usually only
+happen when a protocol doesn't
+
+23428
+00:08:58,840 --> 00:09:01,570
+use the decentralized Oracle,
+lucky for you, we're teaching
+
+23429
+00:09:01,570 --> 00:09:04,060
+you right from the get go how to
+use chain link so that you can
+
+23430
+00:09:04,060 --> 00:09:07,870
+be protected. And it's these two
+types of attacks that often
+
+23431
+00:09:07,900 --> 00:09:11,020
+result in the most amount of
+money last, there's a
+
+23432
+00:09:11,020 --> 00:09:14,440
+leaderboard called rec dot news,
+which keeps track of many of the
+
+23433
+00:09:14,440 --> 00:09:18,310
+top attacks that have ever
+happened in the defi space. With
+
+23434
+00:09:18,310 --> 00:09:21,490
+many of them if you go into the
+retrospectives are either an
+
+23435
+00:09:21,490 --> 00:09:25,600
+Oracle attack or a reentrancy
+attack. And you might be saying,
+
+23436
+00:09:25,600 --> 00:09:28,030
+Hey, where are we just talking
+about NF T's this, this doesn't
+
+23437
+00:09:28,030 --> 00:09:31,360
+have anything to do with NF T's
+we'll get there, don't worry. In
+
+23438
+00:09:31,360 --> 00:09:35,200
+a new contract below, we're
+going to create a new contract
+
+23439
+00:09:35,200 --> 00:09:38,950
+called attack down here. And
+what we'll do with this attack
+
+23440
+00:09:38,980 --> 00:09:42,100
+contract is we'll grab this
+reentrant vulnerable contract,
+
+23441
+00:09:42,580 --> 00:09:47,380
+we'll say reentrant, vulnerable,
+public reentrant vulnerable,
+
+23442
+00:09:47,740 --> 00:09:51,010
+like so. And we'll save that
+reentrant vulnerable contract as
+
+23443
+00:09:51,010 --> 00:09:55,960
+a global variable. And we'll say
+construct door address,
+
+23444
+00:09:56,110 --> 00:10:02,620
+underscore ranch and vulnerable
+address. And then we'll say
+
+23445
+00:10:02,620 --> 00:10:09,340
+reentrant vulnerable equals
+rancher and vulnerable at
+
+23446
+00:10:10,360 --> 00:10:14,440
+reentrant vulnerable address.
+Now what we're going to do is
+
+23447
+00:10:14,440 --> 00:10:18,280
+we're going to create a function
+called attack. And it's this
+
+23448
+00:10:18,280 --> 00:10:24,070
+function that's going to call
+withdraw in a malicious way. So
+
+23449
+00:10:24,070 --> 00:10:26,440
+we're going to say attack, this
+is going to be an external
+
+23450
+00:10:26,440 --> 00:10:30,130
+payable contract. And we're
+going to call the posit on this.
+
+23451
+00:10:30,130 --> 00:10:33,340
+So we'll deposit some money
+first. So we'll do reentrant
+
+23452
+00:10:33,340 --> 00:10:36,250
+vulnerable dot the posit
+
+23453
+00:10:37,510 --> 00:10:42,130
+will send a value of one ether.
+And then immediately we will
+
+23454
+00:10:42,130 --> 00:10:49,060
+call re N Trent vulnerable dot
+withdraw. Now at first glance,
+
+23455
+00:10:49,060 --> 00:10:50,320
+this seems pretty harmless.
+
+23456
+00:10:51,040 --> 00:10:57,490
+But remember, when we call
+message dot call like this to
+
+23457
+00:10:57,490 --> 00:11:01,870
+send we're calling back to this
+this attack contract. Now when
+
+23458
+00:11:01,870 --> 00:11:05,440
+we call this attack contract, is
+there a way to execute any other
+
+23459
+00:11:05,440 --> 00:11:10,060
+code? Well, there is remember
+how we learned about fallback
+
+23460
+00:11:10,060 --> 00:11:15,070
+functions. If we put a fallback
+function in here or a receive
+
+23461
+00:11:15,070 --> 00:11:20,890
+function. When this code runs
+call and seconds our contract
+
+23462
+00:11:20,920 --> 00:11:25,870
+ether we can have it trigger our
+fallback function to call
+
+23463
+00:11:25,870 --> 00:11:30,820
+withdraw again. So that will
+send our contract more ether
+
+23464
+00:11:30,820 --> 00:11:34,420
+than it's do before we update
+the balance. So let's see what
+
+23465
+00:11:34,420 --> 00:11:39,520
+this looks like. So in our
+fallback here, we'll say if the
+
+23466
+00:11:39,550 --> 00:11:46,960
+address of reentrant vulnerable
+balance is greater than or equal
+
+23467
+00:11:46,960 --> 00:11:50,620
+to one ether aka we're saying if
+there's money left in the
+
+23468
+00:11:50,620 --> 00:11:57,340
+contract, then rancher
+invulnerable dot withdraw. And
+
+23469
+00:11:57,340 --> 00:12:02,380
+then we'll put to get balanced
+function in our attacking
+
+23470
+00:12:02,380 --> 00:12:06,100
+contract. We're going to attack
+reentrant vulnerable by calling
+
+23471
+00:12:06,100 --> 00:12:10,150
+withdraw. When we get to this
+send section, what are we going
+
+23472
+00:12:10,150 --> 00:12:13,660
+to do, we're going to have our
+fallback function trigger
+
+23473
+00:12:13,690 --> 00:12:18,910
+calling withdraw again. Now when
+we call withdraw again, bounces
+
+23474
+00:12:18,910 --> 00:12:22,870
+a message that sender hasn't
+been zeroed out yet. So the
+
+23475
+00:12:22,870 --> 00:12:25,900
+contract code will go, oh, you
+still have some money here.
+
+23476
+00:12:26,020 --> 00:12:29,890
+Let's go ahead and let's send
+you that, which will then again,
+
+23477
+00:12:30,220 --> 00:12:32,950
+trigger us to call withdraw. And
+so we'll just keep calling
+
+23478
+00:12:32,950 --> 00:12:36,340
+withdraw until we're done. So
+let's see what this looks like.
+
+23479
+00:12:36,370 --> 00:12:40,150
+So we compile this, and then
+let's go to deploy, first, let's
+
+23480
+00:12:40,150 --> 00:12:45,610
+deploy the reentrant vulnerable
+contract. Alright, and we can
+
+23481
+00:12:45,610 --> 00:12:48,220
+have any contract address, you
+know, like the one that deployed
+
+23482
+00:12:48,220 --> 00:12:53,440
+it, we can have a deposit, let's
+do, we have a deposit one ether
+
+23483
+00:12:54,070 --> 00:12:59,740
+deposit. Now we can check the
+balances of it. Copy. Paste
+
+23484
+00:12:59,830 --> 00:13:07,300
+great, is one. So now let's have
+a do 10. Deposit, it took the
+
+23485
+00:13:07,300 --> 00:13:10,840
+balance. And now we have this
+much in here. So we have this
+
+23486
+00:13:10,840 --> 00:13:13,660
+much in here. And if we
+withdrew, we withdraw all of it.
+
+23487
+00:13:13,840 --> 00:13:18,550
+And if we switched accounts, to
+somebody else, we hit withdrew.
+
+23488
+00:13:19,990 --> 00:13:21,940
+Nothing would happen because
+that other account doesn't have
+
+23489
+00:13:21,940 --> 00:13:25,810
+anything, which makes sense. So
+there's a lot of money in here,
+
+23490
+00:13:25,810 --> 00:13:29,710
+right. And if we do get balanced
+with the contract, we can see
+
+23491
+00:13:29,740 --> 00:13:33,220
+how much money it has, right? It
+has this much money total. Now
+
+23492
+00:13:33,220 --> 00:13:36,850
+what we can do on a different
+account, let's choose this, this
+
+23493
+00:13:36,850 --> 00:13:40,810
+brand new account, let's go
+ahead and deploy the attack
+
+23494
+00:13:40,840 --> 00:13:44,980
+contract. And we'll pass it the
+reentrant value address as an
+
+23495
+00:13:44,980 --> 00:13:50,200
+input parameter. So we'll deploy
+that. And now what we'll do is
+
+23496
+00:13:50,200 --> 00:13:54,520
+we'll call attack. And you'll
+see even though this contract
+
+23497
+00:13:54,520 --> 00:13:58,330
+doesn't have anything deposited
+in the reentrant vulnerable
+
+23498
+00:13:58,330 --> 00:14:02,140
+contract, we will still steal
+all the funds in here or just
+
+23499
+00:14:02,140 --> 00:14:06,130
+about all the funds. So right
+now hit get balance, and a
+
+23500
+00:14:06,130 --> 00:14:09,340
+reentrant vulnerable, here's
+what it is, get balance a here
+
+23501
+00:14:09,340 --> 00:14:13,840
+zero, you know, there's the
+address, we had attack now, now
+
+23502
+00:14:13,840 --> 00:14:17,560
+that get bounce, oh, excuse me
+in public, and withdrawal should
+
+23503
+00:14:17,560 --> 00:14:22,510
+be payable as well. Now we'll
+pass one ether as an input
+
+23504
+00:14:22,510 --> 00:14:24,430
+parameter to our attack
+function, and we're going to
+
+23505
+00:14:24,430 --> 00:14:27,580
+deposit just one ether. And then
+we're going to withdraw. And
+
+23506
+00:14:27,580 --> 00:14:30,880
+we're going to keep withdrawing,
+because our fallback function is
+
+23507
+00:14:30,880 --> 00:14:34,750
+going to keep calling withdraw.
+And all we had to do was deposit
+
+23508
+00:14:34,750 --> 00:14:38,170
+one ether, and we're gonna be
+able to pull out all 11 that are
+
+23509
+00:14:38,170 --> 00:14:38,560
+in here.
+
+23510
+00:14:39,550 --> 00:14:44,770
+So we'll hit attack now.
+Transaction went through, the
+
+23511
+00:14:44,770 --> 00:14:48,520
+new balance of our contract is
+12, because the one that we
+
+23512
+00:14:48,520 --> 00:14:52,450
+deposited and then the 11 that
+we stole, and the new balance of
+
+23513
+00:14:52,450 --> 00:14:55,840
+our old contract is now zero. So
+this is known as a reentrant.
+
+23514
+00:14:55,840 --> 00:14:59,620
+See attack. Basically, since we
+call a function in another
+
+23515
+00:14:59,620 --> 00:15:03,490
+contract in the middle of our
+withdraw, we allow code to run
+
+23516
+00:15:03,520 --> 00:15:06,970
+on a different contract. And the
+code that ran runs on this
+
+23517
+00:15:06,970 --> 00:15:11,680
+contract, recalls withdraw
+before balances is set to zero,
+
+23518
+00:15:11,980 --> 00:15:14,740
+we get to here we call the
+fallback function of our other
+
+23519
+00:15:14,740 --> 00:15:18,460
+code, and it calls withdraw, and
+we need to reread withdraw
+
+23520
+00:15:18,460 --> 00:15:21,040
+before we get to setting
+balances a message that sender
+
+23521
+00:15:21,040 --> 00:15:24,580
+equals zero. So this is an
+issue, obviously. And there are
+
+23522
+00:15:24,580 --> 00:15:27,940
+two ways we can prevent it.
+There's the easy way. And then
+
+23523
+00:15:27,940 --> 00:15:30,370
+the mutex way, I don't wanna say
+the hard way, it's just a
+
+23524
+00:15:30,370 --> 00:15:33,070
+different way. So one of the
+things you'll always see in
+
+23525
+00:15:33,070 --> 00:15:36,760
+security tools is you always
+want to call any external
+
+23526
+00:15:36,760 --> 00:15:40,690
+contract as the last step in
+your function, or the last step
+
+23527
+00:15:40,690 --> 00:15:44,830
+in transaction. And we want to
+update bounces to zero before we
+
+23528
+00:15:44,830 --> 00:15:48,880
+call that external contract,
+because of balances of message
+
+23529
+00:15:48,910 --> 00:15:53,320
+sender is reset to zero before
+we call external code, then if
+
+23530
+00:15:53,320 --> 00:15:56,470
+it were to try to re enter this,
+it would hit this require step
+
+23531
+00:15:56,530 --> 00:15:59,350
+and just cancel out right here
+and wouldn't be able to send any
+
+23532
+00:15:59,350 --> 00:16:03,310
+ether again. So that's the first
+step that we can do. The next
+
+23533
+00:16:03,310 --> 00:16:06,250
+step that we can do is using
+something called a mutex lock.
+
+23534
+00:16:06,610 --> 00:16:09,940
+And this is what open Zeppelin
+does with one of the modifiers
+
+23535
+00:16:09,940 --> 00:16:16,420
+that they have, we can have some
+type of a Boolean called locked
+
+23536
+00:16:16,420 --> 00:16:20,050
+or something and just right at
+the top, we can just say require
+
+23537
+00:16:21,250 --> 00:16:27,070
+not locked. Otherwise, revert.
+And then the first thing we do
+
+23538
+00:16:27,070 --> 00:16:31,540
+in this contract is we can say
+locked equals true. And then the
+
+23539
+00:16:31,540 --> 00:16:34,870
+last thing we do in here is we
+say locked equals false. And
+
+23540
+00:16:34,870 --> 00:16:40,000
+using this lock in here, we only
+allow one piece of code to ever
+
+23541
+00:16:40,330 --> 00:16:44,350
+execute in here at a time and we
+only unlock it once the code
+
+23542
+00:16:44,350 --> 00:16:48,580
+finishes. Now open Zeplin comes
+with a reentrancy guard which we
+
+23543
+00:16:48,580 --> 00:16:53,620
+can use on our code. And it has
+a modifier non reentrant which
+
+23544
+00:16:53,620 --> 00:16:56,530
+does essentially what we were
+talking about with our locks it
+
+23545
+00:16:56,530 --> 00:17:01,000
+creates a variable called status
+and changes it to enter whenever
+
+23546
+00:17:01,000 --> 00:17:05,110
+a function has been entered. It
+runs out code, and then changes
+
+23547
+00:17:05,110 --> 00:17:08,320
+it back to not entered when it's
+finishes. And whenever any code
+
+23548
+00:17:08,320 --> 00:17:11,680
+runs, it just requires that it
+is not entered. So if we wanted
+
+23549
+00:17:11,680 --> 00:17:19,600
+to use this on our code, we can
+import at open Zeppelin, slash,
+
+23550
+00:17:20,230 --> 00:17:30,700
+contracts, slash security, slash
+reentrancy. Guard about so we
+
+23551
+00:17:30,700 --> 00:17:34,630
+can inherit the functions by
+saying NFT marketplace is
+
+23552
+00:17:34,630 --> 00:17:38,950
+reentrancy guard. And then any
+function that we're nervous is
+
+23553
+00:17:38,950 --> 00:17:43,030
+going to have this reentrant see
+issue, like maybe by item, for
+
+23554
+00:17:43,030 --> 00:17:48,880
+example, we would just add the
+modifier non reentrant. Just
+
+23555
+00:17:48,880 --> 00:17:51,760
+like that. And that'll add that
+mutex, that locking mechanism
+
+23556
+00:17:51,760 --> 00:17:54,130
+that we talked about. Now, the
+mutex way is a little bit more
+
+23557
+00:17:54,130 --> 00:17:56,890
+explicit with our security,
+right? Because we're saying,
+
+23558
+00:17:56,890 --> 00:18:00,610
+Hey, this is locked. This is a
+non reentrant function. Still a
+
+23559
+00:18:00,610 --> 00:18:04,090
+best practice, whenever you call
+external code, like what we see
+
+23560
+00:18:04,090 --> 00:18:08,260
+here is you do all of your state
+changes before you call an
+
+23561
+00:18:08,260 --> 00:18:10,510
+external contract. Now, you
+might be saying, Oh, that's cool
+
+23562
+00:18:10,510 --> 00:18:13,210
+at all. But what about how does
+this relate to our NF Ts? Well,
+
+23563
+00:18:13,210 --> 00:18:16,300
+imagine for a second, instead of
+message that sender dot call,
+
+23564
+00:18:16,450 --> 00:18:21,610
+this is, you know, all success
+equals, you know, some NF T dot
+
+23565
+00:18:21,610 --> 00:18:24,670
+transfer from, and then we do
+some transfers from stuff in
+
+23566
+00:18:24,670 --> 00:18:30,970
+here. And instead of doing some
+fallback stuff, our NF T has our
+
+23567
+00:18:30,970 --> 00:18:35,740
+NF T's function transfer from
+the similis code to re enter
+
+23568
+00:18:35,740 --> 00:18:38,860
+into our withdraw. If we have
+our withdrawal set up like this,
+
+23569
+00:18:38,950 --> 00:18:41,860
+since we're still calling an
+external contract with NFT. To
+
+23570
+00:18:41,860 --> 00:18:45,400
+transfer from that transfer from
+in that external contract could
+
+23571
+00:18:45,400 --> 00:18:48,610
+be malicious and try to re enter
+our contract. As a best
+
+23572
+00:18:48,610 --> 00:18:52,900
+practice, you always want to
+change your state, before you
+
+23573
+00:18:52,900 --> 00:18:57,040
+call any external contracts that
+you might not have control of, I
+
+23574
+00:18:57,040 --> 00:18:59,620
+highly recommend playing around
+with this a little bit just
+
+23575
+00:18:59,650 --> 00:19:02,980
+because seeing is believing. And
+with that being said, again, all
+
+23576
+00:19:02,980 --> 00:19:06,100
+the code for this is going to be
+available in the GitHub sociated
+
+23577
+00:19:06,100 --> 00:19:09,700
+with this lesson for this
+reentrant vulnerable code. And
+
+23578
+00:19:09,700 --> 00:19:12,070
+with that, let's go back to our
+NFT project.
+
+23579
+00:19:15,100 --> 00:19:20,080
+Okay, so now we know why we're
+doing this safe transfer from at
+
+23580
+00:19:20,080 --> 00:19:23,530
+the bottom of our function here
+at the bottom of our bio,
+
+23581
+00:19:23,590 --> 00:19:27,370
+because if our safe transfer
+function from was a little bit
+
+23582
+00:19:27,370 --> 00:19:31,990
+higher, maybe what ends up
+happening is we send multiple NF
+
+23583
+00:19:31,990 --> 00:19:35,260
+T's to the wrong address before
+we update them. So that's why we
+
+23584
+00:19:35,260 --> 00:19:38,650
+do that. And we favor push over
+Paul. As we said, Here, there's
+
+23585
+00:19:38,650 --> 00:19:41,560
+a whole lot of these security
+tips that you'll learn going on
+
+23586
+00:19:41,590 --> 00:19:44,770
+through this course and in
+solidity. But this is still
+
+23587
+00:19:44,800 --> 00:19:48,850
+fantastic, right, we have our by
+item. And we have our list item
+
+23588
+00:19:48,850 --> 00:19:52,810
+functions. Let's do a cancel
+item now, or cancelled listing.
+
+23589
+00:19:53,140 --> 00:19:54,520
+So we'll do a function.
+
+23590
+00:19:57,130 --> 00:20:04,480
+Cancel listing we'll do the NFT
+address. And the UN 256 token
+
+23591
+00:20:04,480 --> 00:20:11,200
+ID. This will be an external
+function. One will want to make
+
+23592
+00:20:11,200 --> 00:20:14,230
+sure only the owner of this
+entity can cancel it. So we'll
+
+23593
+00:20:14,230 --> 00:20:15,430
+say is owner.
+
+23594
+00:20:17,170 --> 00:20:24,850
+And if T address, token ID
+message dot Sen. Want to make
+
+23595
+00:20:24,850 --> 00:20:29,050
+sure that the NFT is actually
+listed. So we'll do is listed
+
+23596
+00:20:29,680 --> 00:20:36,310
+and ft address, token ID. And
+great. Now to cancel this, all
+
+23597
+00:20:36,310 --> 00:20:41,950
+we're going to do is we're going
+to delete s listings NFT address
+
+23598
+00:20:43,150 --> 00:20:46,930
+token ID, we're just going to
+delete that mapping. And then
+
+23599
+00:20:46,930 --> 00:20:53,350
+we'll emit an event item
+cancelled message dot sender and
+
+23600
+00:20:53,350 --> 00:20:59,410
+if T address and token ID. And
+of course, we're going to create
+
+23601
+00:20:59,410 --> 00:21:05,650
+a new event here. We'll say
+event item canceled. And it will
+
+23602
+00:21:05,650 --> 00:21:15,400
+be an address indexed seller
+address. Index NFT address. You
+
+23603
+00:21:15,400 --> 00:21:19,900
+want to 56 indexed token ID. All
+right. Great. That was pretty
+
+23604
+00:21:19,900 --> 00:21:24,790
+quick. Cancel listening. Boom.
+Jack. Done. What's next? Okay,
+
+23605
+00:21:24,790 --> 00:21:29,440
+let's update our listings. So
+we'll do function update listing
+
+23606
+00:21:30,910 --> 00:21:36,850
+address and if the address you
+went to for the sixth token ID
+
+23607
+00:21:37,510 --> 00:21:42,430
+you went to the six new price
+will update the price of this of
+
+23608
+00:21:42,430 --> 00:21:45,940
+this external we'll make sure
+it's listed with is listed
+
+23609
+00:21:51,070 --> 00:21:59,920
+say is owner do a token ID and
+then we'll do message dot
+
+23610
+00:21:59,920 --> 00:22:04,690
+sender. Now to update our
+listing We'll just say s
+
+23611
+00:22:04,690 --> 00:22:11,710
+underscore listings of NF T
+address. At token ID dot price
+
+23612
+00:22:12,640 --> 00:22:16,870
+equals the new price that we're
+giving it. And then we'll admit,
+
+23613
+00:22:16,900 --> 00:22:20,500
+we can omit like item updated.
+But we can also just omit an
+
+23614
+00:22:20,500 --> 00:22:27,310
+item listed with MSG dot sender
+NFT address, token ID, new
+
+23615
+00:22:27,310 --> 00:22:31,120
+price. Because essentially, by
+updating it, we're essentially
+
+23616
+00:22:31,120 --> 00:22:34,390
+just relisting it with a new
+price. So we're just going to do
+
+23617
+00:22:34,630 --> 00:22:38,200
+an item listed event, we only
+have one more function to do, we
+
+23618
+00:22:38,200 --> 00:22:43,510
+need to do a withdraw proceeds.
+So we'll say function, withdraw
+
+23619
+00:22:43,720 --> 00:22:49,000
+proceeds to get all the payments
+for all of our entities. So
+
+23620
+00:22:49,030 --> 00:22:52,450
+we'll get the the proceeds by
+doing new activity six proceeds
+
+23621
+00:22:52,630 --> 00:22:57,460
+equals s underscore proceeds of
+MSG dot sender, right, we're
+
+23622
+00:22:57,460 --> 00:23:01,150
+getting all the payments that
+were collected in by item, and
+
+23623
+00:23:01,150 --> 00:23:07,060
+we're saying if proceeds is less
+than or equal to zero, then
+
+23624
+00:23:07,060 --> 00:23:12,760
+we're going to revert with no
+proceeds. And we're going to
+
+23625
+00:23:12,940 --> 00:23:16,420
+make this a NFT. Marketplace
+underscore underscore no
+
+23626
+00:23:16,420 --> 00:23:23,710
+proceeds. Excel create at the
+top error empty marketplace no
+
+23627
+00:23:23,710 --> 00:23:30,970
+proceeds being otherwise, we'll
+say s underscore proceeds of MSG
+
+23628
+00:23:30,970 --> 00:23:35,290
+dot sender equals zero. So we're
+going to reset the proceeds to
+
+23629
+00:23:35,290 --> 00:23:37,600
+zero, right, we're going to do
+this before we send any
+
+23630
+00:23:37,600 --> 00:23:40,420
+proceeds. And then we're going
+to do our traditional way we
+
+23631
+00:23:40,420 --> 00:23:42,430
+send payments, so bool success
+
+23632
+00:23:43,960 --> 00:23:54,250
+equals payable, message dot
+sender call value is going to be
+
+23633
+00:23:54,250 --> 00:24:01,450
+proceeds all blank here. And
+then we could do require, you
+
+23634
+00:24:01,450 --> 00:24:03,940
+know, we could do require
+success, or we could say
+
+23635
+00:24:05,259 --> 00:24:14,259
+if not success, reverts revert
+with Aleksey marketplace,
+
+23636
+00:24:15,759 --> 00:24:19,569
+transfer failed. And then we'll
+make this a new air, air NFT
+
+23637
+00:24:19,569 --> 00:24:24,729
+marketplace transfer failed. Put
+a semicolon here. And we're
+
+23638
+00:24:24,729 --> 00:24:29,499
+looking pretty good. Now we even
+have a way to withdraw. So we
+
+23639
+00:24:29,499 --> 00:24:33,009
+have our five functions here.
+Awesome. Let's just create a
+
+23640
+00:24:33,009 --> 00:24:37,089
+couple of getters. So maybe
+we'll do we even copy this.
+
+23641
+00:24:38,829 --> 00:24:43,389
+Paste it here we'll say getter
+functions like so. And we'll do
+
+23642
+00:24:43,389 --> 00:24:47,709
+function maybe we'll do get
+listing. Take an address, NF T
+
+23643
+00:24:47,709 --> 00:24:55,569
+address, the utilities X token
+ID, external view, which returns
+
+23644
+00:24:56,259 --> 00:25:02,619
+a listing in memory. And we'll
+say return s underscore listings
+
+23645
+00:25:02,649 --> 00:25:12,699
+of NF T address token Id like
+so. And also function, get
+
+23646
+00:25:12,699 --> 00:25:19,599
+proceeds of address seller,
+external view returns, you went
+
+23647
+00:25:19,599 --> 00:25:26,019
+to the desex return s underscore
+proceeds of the seller. So we'll
+
+23648
+00:25:26,019 --> 00:25:30,399
+get how much money somebody is
+owed. And then any listings and
+
+23649
+00:25:30,399 --> 00:25:34,389
+let's run a little compile here,
+yarn, or hit Compile or hh
+
+23650
+00:25:34,389 --> 00:25:37,779
+compile just to see where we
+messed up. Oh, we did a mess up.
+
+23651
+00:25:37,809 --> 00:25:42,879
+Wow, that's great. And now,
+guess what? You have
+
+23652
+00:25:42,879 --> 00:25:47,409
+successfully created a
+minimalistic NFT marketplace
+
+23653
+00:25:47,409 --> 00:25:52,839
+that's completely decentralized.
+That is pretty wild. And that is
+
+23654
+00:25:52,839 --> 00:25:55,869
+incredibly powerful. And you
+should feel really excited for
+
+23655
+00:25:55,869 --> 00:25:59,199
+yourself. Very cool, very good
+job. But you know, we're not
+
+23656
+00:25:59,199 --> 00:26:02,349
+done, we got to write some
+deploys and some tests. So let's
+
+23657
+00:26:02,349 --> 00:26:05,919
+jump into that. Now since we've
+done this a couple of times, I
+
+23658
+00:26:05,919 --> 00:26:08,829
+actually encourage you to pause
+the video here and try writing
+
+23659
+00:26:08,829 --> 00:26:12,909
+your own deploy scripts and your
+own tests. And then go ahead and
+
+23660
+00:26:12,909 --> 00:26:15,579
+come back and follow along with
+us and see if you did it
+
+23661
+00:26:15,579 --> 00:26:21,999
+correctly, we're going to create
+a new folder called deploy. Of
+
+23662
+00:26:21,999 --> 00:26:26,259
+course, we already have the hard
+hat deploy in our hard hat
+
+23663
+00:26:26,259 --> 00:26:29,049
+config. So we know we're good to
+go here. So let's go ahead and
+
+23664
+00:26:29,049 --> 00:26:35,799
+create a one. Deploy NFT
+marketplace.js. Now once again,
+
+23665
+00:26:35,799 --> 00:26:38,439
+you've seen a lot of this
+before, so we're going to spare
+
+23666
+00:26:38,439 --> 00:26:49,299
+the details do const network
+equals require hard hat to
+
+23667
+00:26:49,299 --> 00:26:55,269
+constant development chains,
+equal equals require dot dot
+
+23668
+00:26:55,269 --> 00:27:00,249
+slash help our hard hats config,
+which we should have let's see.
+
+23669
+00:27:00,249 --> 00:27:02,859
+Do we copy paste it over? No.
+Okay, so we didn't copy paste
+
+23670
+00:27:02,859 --> 00:27:05,919
+over Are helper Hardhead config
+from the last project, let's go
+
+23671
+00:27:05,919 --> 00:27:08,049
+ahead and grab it. Or we can
+grab it from the smart contract
+
+23672
+00:27:08,049 --> 00:27:11,979
+lottery and paste that in here.
+And we really only need this
+
+23673
+00:27:12,009 --> 00:27:16,269
+file for the development chains
+here. Right for hard hat and
+
+23674
+00:27:16,269 --> 00:27:18,579
+localhost, we're going to grab
+the development chains from
+
+23675
+00:27:18,579 --> 00:27:24,129
+that. And then we'll also grab
+const. Verify, equals require,
+
+23676
+00:27:25,269 --> 00:27:29,649
+get this from utils. Verify,
+right? Do we have utils, we have
+
+23677
+00:27:29,649 --> 00:27:34,479
+verify. Fantastic. Now we'll do
+module that exports equals
+
+23678
+00:27:35,439 --> 00:27:41,589
+async. an async function where
+it's gonna take get named
+
+23679
+00:27:41,589 --> 00:27:49,149
+accounts and deployments. From
+the hard hat input parameter,
+
+23680
+00:27:49,269 --> 00:27:53,289
+and then we're gonna do const.
+Deploy comma log equals
+
+23681
+00:27:53,289 --> 00:28:00,609
+deployments. And then const,
+Deployer equals await, get named
+
+23682
+00:28:00,609 --> 00:28:04,599
+accounts. Which, of course,
+we're getting from our heart
+
+23683
+00:28:04,599 --> 00:28:08,529
+head dot config. We have named
+accounts, we have a Deployer.
+
+23684
+00:28:08,529 --> 00:28:11,019
+And we have a player or whatever
+you have in here from our last
+
+23685
+00:28:11,019 --> 00:28:14,529
+project. And now does our entity
+marketplace have a constructor?
+
+23686
+00:28:14,799 --> 00:28:18,249
+Construct? Nope, no constructor.
+So we know args is going to be
+
+23687
+00:28:18,309 --> 00:28:25,539
+blank. And then we can say const
+NFT. Marketplace equals await,
+
+23688
+00:28:25,779 --> 00:28:34,329
+deploy. And if T marketplace,
+say from Deployer, args is going
+
+23689
+00:28:34,329 --> 00:28:42,309
+to be args. Log will be true.
+And then wait confirmations will
+
+23690
+00:28:42,309 --> 00:28:50,049
+be network dot config dot wait
+confirmations or one, two, this
+
+23691
+00:28:50,049 --> 00:28:53,979
+is going to be block on for
+patients, we'll go to the
+
+23692
+00:28:53,979 --> 00:28:57,339
+config, just make sure that
+those are in here. I'm sorry, I
+
+23693
+00:28:57,339 --> 00:29:01,419
+didn't add them in here. So
+we'll do block confirmations is
+
+23694
+00:29:01,419 --> 00:29:02,559
+going to be six
+
+23695
+00:29:03,880 --> 00:29:10,330
+for all of our networks. So I
+actually grabbed this not from
+
+23696
+00:29:10,330 --> 00:29:13,330
+the last project, it looks like
+I grabbed this from the hard hat
+
+23697
+00:29:13,330 --> 00:29:15,760
+starter kit. So I'm just going
+to add those block confirmations
+
+23698
+00:29:15,760 --> 00:29:18,700
+in there. And now we're good to
+go. Now we're gonna say if we're
+
+23699
+00:29:18,700 --> 00:29:23,020
+not on a development chain, not
+development chains that includes
+
+23700
+00:29:23,590 --> 00:29:31,270
+network dot name, and process
+study and be done ether scan API
+
+23701
+00:29:32,320 --> 00:29:39,160
+key, then we're gonna go ahead,
+we'll do log verifying. And then
+
+23702
+00:29:39,160 --> 00:29:45,040
+we'll do a weight verify. And if
+the markets place dot address
+
+23703
+00:29:45,310 --> 00:29:50,470
+with arcs, and then we'll do
+like log a whole bunch of
+
+23704
+00:29:50,470 --> 00:29:56,530
+hyphens here. And then finally,
+module that exports dot tags
+
+23705
+00:29:56,740 --> 00:30:04,630
+equals all and then NFT Mar good
+place. And we can test this
+
+23706
+00:30:04,630 --> 00:30:09,970
+deploy function with yarn
+Hardhead deploy. Tada, we did
+
+23707
+00:30:09,970 --> 00:30:12,910
+it. Great. So now we have the
+deploy function, we can verify
+
+23708
+00:30:12,910 --> 00:30:15,340
+we have our contract, what else
+are we probably gonna need to
+
+23709
+00:30:15,340 --> 00:30:18,700
+do. Since this is an NFT
+marketplace, we're probably
+
+23710
+00:30:18,700 --> 00:30:22,150
+going to need some NF Ts. So
+what we can do is in our
+
+23711
+00:30:22,150 --> 00:30:26,560
+contracts, and we'll create a
+new folder for tests got a new
+
+23712
+00:30:26,560 --> 00:30:32,020
+file in here called Basic NF T
+dot soul. And in here, we can
+
+23713
+00:30:32,050 --> 00:30:36,880
+add that basic NF T from our
+last project. Or you can just go
+
+23714
+00:30:36,880 --> 00:30:40,000
+to my or you can just go to the
+GitHub repo associated with this
+
+23715
+00:30:40,000 --> 00:30:44,650
+course, go to contracts, test,
+basic NF t, and then just copy
+
+23716
+00:30:44,650 --> 00:30:50,740
+paste. That works too. So this
+basic NF t that we're using is
+
+23717
+00:30:50,740 --> 00:30:55,870
+just pointing to the pug as the
+basic NF T for us to use just to
+
+23718
+00:30:55,870 --> 00:30:59,860
+test this out. So now that we
+have a basic NFT we're gonna
+
+23719
+00:30:59,860 --> 00:31:05,770
+need to create new file, oh to
+deploy basic NF T dot j s, and
+
+23720
+00:31:05,770 --> 00:31:08,830
+we'll borrow a lot of the
+boilerplate from over here. So
+
+23721
+00:31:08,830 --> 00:31:14,290
+we'll copy all of this actually
+paste it in. We'll say const
+
+23722
+00:31:14,320 --> 00:31:20,380
+args equals blank, and we'll say
+const basic NF t equals await
+
+23723
+00:31:20,440 --> 00:31:30,400
+deploy basic NF T. From
+Deployer. args is going to be
+
+23724
+00:31:30,400 --> 00:31:36,340
+args. Log is going to be true
+weight con confirmations is
+
+23725
+00:31:36,340 --> 00:31:43,600
+going to be network dot config
+dot block confirmations or one
+
+23726
+00:31:44,800 --> 00:31:50,140
+and then we'll verify this with
+if not develop meant chains dot
+
+23727
+00:31:50,140 --> 00:31:58,450
+includes network dot name and
+process dot EMV that ether scan
+
+23728
+00:31:59,560 --> 00:32:07,000
+API key that will say log or To
+find dot A dot await there if I
+
+23729
+00:32:07,570 --> 00:32:13,990
+basic NFT dot address, and arcs,
+module dot exports dot tags
+
+23730
+00:32:14,020 --> 00:32:19,900
+equals all, and basic NFT. And
+we can test both of these with
+
+23731
+00:32:19,900 --> 00:32:25,390
+yarn, art had deploy. And
+fantastic. Both of these have
+
+23732
+00:32:25,390 --> 00:32:28,930
+been deployed. Again, you don't
+have to pause. But it is a good
+
+23733
+00:32:28,930 --> 00:32:32,890
+way to really hone in to really
+sharpen those skills on doing
+
+23734
+00:32:32,890 --> 00:32:36,670
+all this. And repetition is the
+mother of all skill. So
+
+23735
+00:32:36,670 --> 00:32:39,220
+repeating this stuff yourself
+and thinking through these
+
+23736
+00:32:39,220 --> 00:32:42,220
+problems yourself and trying to
+code these things yourself, are
+
+23737
+00:32:42,220 --> 00:32:47,740
+really what's going to make you
+successful at this. All right,
+
+23738
+00:32:47,740 --> 00:32:51,100
+awesome. Now that we have our
+deploy Betson, it's time to
+
+23739
+00:32:51,100 --> 00:32:54,400
+write some tests. Now, if you go
+to the GitHub repo associated
+
+23740
+00:32:54,400 --> 00:32:57,250
+with this course, and you go to
+the test folder, the tests and
+
+23741
+00:32:57,250 --> 00:33:00,190
+here are some of the robust,
+we've actually written out of
+
+23742
+00:33:00,190 --> 00:33:03,490
+all of our projects, there's a
+lot of tests in here. Now,
+
+23743
+00:33:03,490 --> 00:33:06,160
+pretty much everything in here,
+we've already learned about and
+
+23744
+00:33:06,160 --> 00:33:09,430
+you already know how to do you
+have the ability to do it. So
+
+23745
+00:33:09,430 --> 00:33:11,740
+I'm just going to go ahead and
+get you started off, and we're
+
+23746
+00:33:11,740 --> 00:33:14,260
+going to write one test
+together. And then I highly
+
+23747
+00:33:14,260 --> 00:33:17,080
+recommend you going back in, you
+tried to write some tests
+
+23748
+00:33:17,080 --> 00:33:20,050
+yourself, to get that code
+coverage to get that test
+
+23749
+00:33:20,050 --> 00:33:24,340
+coverage to be 100 percent. So let's go
+ahead, we'll write one test
+
+23750
+00:33:24,340 --> 00:33:27,190
+together, then you should pause
+this video and try to write some
+
+23751
+00:33:27,190 --> 00:33:30,490
+tests yourself. When you're done
+writing tests and you think
+
+23752
+00:33:30,490 --> 00:33:34,000
+you've hit 100 percent, feel free to
+compare back to the test that we
+
+23753
+00:33:34,000 --> 00:33:41,080
+wrote. So let's create a new
+folder called tests. Test. And
+
+23754
+00:33:41,080 --> 00:33:44,350
+in here, we'll do a new one
+called unit. And if you want to
+
+23755
+00:33:44,350 --> 00:33:47,440
+write staging tests later on,
+you absolutely can we will not.
+
+23756
+00:33:48,010 --> 00:33:54,640
+We'll create a new file in here
+called NFT marketplace.test.js.
+
+23757
+00:33:55,720 --> 00:33:59,110
+And we'll start some tests. So
+we'll do const.
+
+23758
+00:34:00,520 --> 00:34:11,260
+cert, expect equals require Chai
+const. Network deployments,
+
+23759
+00:34:11,530 --> 00:34:21,730
+ethers, equals require hard hat
+const development chains equals
+
+23760
+00:34:21,730 --> 00:34:26,350
+require dot dot slash dot dot
+slash helper, hothead config.
+
+23761
+00:34:26,890 --> 00:34:29,380
+And we're gonna do the same
+setup we've been doing. We'll
+
+23762
+00:34:29,380 --> 00:34:36,190
+say bang development chains dot
+includes network dot name,
+
+23763
+00:34:38,620 --> 00:34:47,620
+question mark, describe dot
+skip. Else describe. And if NF T
+
+23764
+00:34:48,640 --> 00:34:55,930
+marketplace tests, comma async
+function, excuse me, this is
+
+23765
+00:34:55,930 --> 00:34:59,230
+just gonna be a function.
+Scrabble oval is just a
+
+23766
+00:34:59,230 --> 00:35:03,490
+function, not an async function,
+like so. Great. Now let's get
+
+23767
+00:35:03,490 --> 00:35:07,780
+some variables and do a before
+each. So we'll say NF T
+
+23768
+00:35:08,350 --> 00:35:14,650
+marketplace, basic NF T, we'll
+create a constant price. So
+
+23769
+00:35:14,650 --> 00:35:17,950
+we're just always set the price
+of all of our NF T's to the same
+
+23770
+00:35:17,950 --> 00:35:20,860
+thing. This will be ethers dot
+utils dot parse
+
+23771
+00:35:22,360 --> 00:35:30,130
+ether 0.1. We'll say const token
+ID for now will always be zero.
+
+23772
+00:35:31,660 --> 00:35:35,560
+And then we'll do before each
+will be an async function.
+
+23773
+00:35:38,020 --> 00:35:45,010
+And we'll get out and we'll also
+get Deployer. Say deployer
+
+23774
+00:35:45,190 --> 00:35:50,170
+equals await, get named
+accounts. We're gonna need to
+
+23775
+00:35:50,170 --> 00:35:53,950
+grab getting into accounts from
+hard hat as well wrap this all
+
+23776
+00:35:53,950 --> 00:35:58,240
+up dot deployer Excel and then
+we'll also in our heart
+
+23777
+00:35:58,240 --> 00:36:02,680
+hat.config.js. Under get named
+accounts, we also have something
+
+23778
+00:36:02,680 --> 00:36:05,590
+called player. Now I didn't talk
+about this too much. But we're
+
+23779
+00:36:05,590 --> 00:36:08,980
+going to have a second account
+which is defaulted to the first
+
+23780
+00:36:09,010 --> 00:36:15,070
+index, right? So we can do at
+the top to come up player. And
+
+23781
+00:36:15,070 --> 00:36:21,790
+we can say player equals await
+get named accounts dot player.
+
+23782
+00:36:23,350 --> 00:36:26,590
+Now we have a player and a
+deployer account will do await
+
+23783
+00:36:26,680 --> 00:36:32,500
+deployments, that fixture. All
+will just deploy all of those
+
+23784
+00:36:32,500 --> 00:36:36,820
+contracts will run through
+everything in our deploy folder.
+
+23785
+00:36:37,090 --> 00:36:41,650
+We'll get our NFT marketplace.
+We'll say NFT marketplace equals
+
+23786
+00:36:41,680 --> 00:36:49,150
+await ethers dot get contract
+and ft. marketplace. And then
+
+23787
+00:36:49,150 --> 00:36:57,850
+we'll do basic NF t equals await
+ethers dot get contract. Basic
+
+23788
+00:36:57,910 --> 00:37:02,740
+NF T. The way ethers dot get
+contract works is it defaults to
+
+23789
+00:37:02,740 --> 00:37:06,040
+grab thing, whatever account is
+that account zero, which right
+
+23790
+00:37:06,040 --> 00:37:09,370
+now is our Deployer. If we want
+to call a function on NFT
+
+23791
+00:37:09,370 --> 00:37:12,490
+marketplace, with the player
+being the one calling the
+
+23792
+00:37:12,490 --> 00:37:17,170
+function, we would have to say,
+entity marketplace equals await
+
+23793
+00:37:18,580 --> 00:37:25,960
+and empty marketplace dot
+connect player like this. And
+
+23794
+00:37:25,960 --> 00:37:30,520
+now whenever we call a function,
+we would use the player instead
+
+23795
+00:37:30,520 --> 00:37:33,280
+of the Deployer. Sometimes what
+I like to do and you'll see this
+
+23796
+00:37:33,280 --> 00:37:39,070
+in my code, is I'll do let NFT
+marketplace contract. And then
+
+23797
+00:37:39,070 --> 00:37:45,340
+let NFT marketplace, and then
+I'll do NFT marketplace contract
+
+23798
+00:37:45,370 --> 00:37:49,450
+equals await ethers dot
+contract. And then I'll connect
+
+23799
+00:37:49,480 --> 00:37:53,530
+and set that to the NF T
+marketplace. Yes, we can do, we
+
+23800
+00:37:53,530 --> 00:37:57,520
+can automatically choose who to
+connect by placing whoever want
+
+23801
+00:37:57,520 --> 00:38:00,250
+to connect to write and get
+contract. But sometimes it's
+
+23802
+00:38:00,250 --> 00:38:02,680
+really nice to be kind of
+explicit. So it's really up to
+
+23803
+00:38:02,680 --> 00:38:06,070
+you. I'm going to undo all that,
+I just want to re show you that
+
+23804
+00:38:06,070 --> 00:38:08,530
+to make sure that you knew
+that's how you kind of switch
+
+23805
+00:38:08,530 --> 00:38:10,180
+around with the different
+accounts and the different
+
+23806
+00:38:10,180 --> 00:38:13,030
+users. Now that we have an NF T,
+we're probably going to need to
+
+23807
+00:38:13,030 --> 00:38:16,000
+mint the NFT so that we can
+actually place it on the market.
+
+23808
+00:38:16,180 --> 00:38:20,740
+So we'll do await basic NF T dot
+meant NF t, and then we'll
+
+23809
+00:38:20,740 --> 00:38:24,160
+approve to send it on to the
+marketplace. So we'll do a wait.
+
+23810
+00:38:24,640 --> 00:38:33,430
+Basic NF T dot approve and T
+market place dot address token
+
+23811
+00:38:33,430 --> 00:38:38,230
+ID, which is going to be zero.
+And just like that, the NOC
+
+23812
+00:38:38,230 --> 00:38:41,470
+marketplace remember, it can't
+call approve, because it doesn't
+
+23813
+00:38:41,470 --> 00:38:45,610
+own that NF t. So we need to
+have the Deployer. Call
+
+23814
+00:38:45,610 --> 00:38:49,840
+approved, right. And remember,
+since we're not we need to put
+
+23815
+00:38:49,840 --> 00:38:53,320
+basic NF T in here. Since we
+didn't tell ethers who to
+
+23816
+00:38:53,320 --> 00:38:56,050
+connect this to it just
+automatically connected it to
+
+23817
+00:38:56,080 --> 00:38:58,750
+our Deployer because that's
+what's at account zero. So it's
+
+23818
+00:38:58,750 --> 00:39:03,340
+the deployer calling minting it
+and then the deployer approving
+
+23819
+00:39:03,400 --> 00:39:06,850
+to send it to the marketplace.
+Only after this approved
+
+23820
+00:39:06,850 --> 00:39:10,900
+function has been called canned
+the NFT marketplace called
+
+23821
+00:39:10,900 --> 00:39:14,410
+transfer from all those NF T's.
+Now we're just going to do one
+
+23822
+00:39:14,410 --> 00:39:20,860
+test here. We're gonna say it
+lists and can be bought. That's
+
+23823
+00:39:20,860 --> 00:39:24,940
+it, and this will be an async
+function. And we're just gonna
+
+23824
+00:39:24,940 --> 00:39:31,210
+list the NFT and buy a weight
+entity marketplace.if We go to
+
+23825
+00:39:31,210 --> 00:39:33,430
+our energy marketplace, what are
+we doing, we're listing it
+
+23826
+00:39:33,430 --> 00:39:36,700
+right, we want to list the item
+or with the address token ID and
+
+23827
+00:39:36,700 --> 00:39:43,180
+the price. So we'll do dot list
+item. Basic NF T dot address,
+
+23828
+00:39:44,470 --> 00:39:47,830
+token ID is zero, which we've
+defined right here. And then
+
+23829
+00:39:47,830 --> 00:39:51,820
+price we've hard coded up here
+as well. So we're listing it. So
+
+23830
+00:39:51,820 --> 00:39:55,810
+the deployer owns the NF T, the
+player is now listing it, now we
+
+23831
+00:39:55,810 --> 00:39:59,770
+want to buy it, let's have the
+player be the one to buy it. So
+
+23832
+00:39:59,770 --> 00:40:02,110
+what we're going to do is we're
+going to have to connect the
+
+23833
+00:40:02,110 --> 00:40:07,120
+player to the NFT marketplace.
+So we can say const player
+
+23834
+00:40:07,180 --> 00:40:13,150
+connected NF T, marketplace
+equals and ft marketplace dot
+
+23835
+00:40:13,150 --> 00:40:19,510
+Connect. Player. And then we can
+buy the item by saying a weight
+
+23836
+00:40:19,750 --> 00:40:24,670
+player connected and ft
+marketplace.by item. It'll be
+
+23837
+00:40:24,670 --> 00:40:27,430
+the basic and if we look back at
+the end of the marketplace, what
+
+23838
+00:40:27,430 --> 00:40:31,720
+does buy item need, needs the
+NFT address and the token ID. So
+
+23839
+00:40:31,720 --> 00:40:33,310
+basic NF t that address
+
+23840
+00:40:35,110 --> 00:40:39,610
+and then the token ID and after
+this bot, we should check to see
+
+23841
+00:40:39,610 --> 00:40:43,720
+that the player actually does
+indeed own that NF team. So we
+
+23842
+00:40:43,720 --> 00:40:47,650
+can say const new owner and we
+check to see if that owner is
+
+23843
+00:40:47,650 --> 00:40:52,120
+indeed updated. We can say basic
+NFT dot owner of because NF T's
+
+23844
+00:40:52,120 --> 00:40:58,540
+have an owner of function, token
+ID and then we also want to see
+
+23845
+00:41:01,390 --> 00:41:04,120
+that the deployer actually is
+going to get paid. So we can say
+
+23846
+00:41:04,120 --> 00:41:08,020
+await and if T marketplace dot
+get
+
+23847
+00:41:08,049 --> 00:41:17,139
+proceeds of Deployer. So now we
+can do assert new owner dot two
+
+23848
+00:41:17,139 --> 00:41:29,349
+string equals player and we can
+assert deployer proceeds.to
+
+23849
+00:41:29,349 --> 00:41:35,379
+string equals price.to string
+because they should have been
+
+23850
+00:41:35,379 --> 00:41:38,709
+paid that price. And that's
+right, it's actually a little
+
+23851
+00:41:38,709 --> 00:41:41,259
+bit easier. instead of grabbing
+players from getting named
+
+23852
+00:41:41,259 --> 00:41:43,599
+accounts. It's a little bit
+easier just to grab it right
+
+23853
+00:41:43,599 --> 00:41:48,399
+from ethers. So we'll do const
+accounts equals await
+
+23854
+00:41:49,570 --> 00:41:56,530
+get signers. And then we'll save
+player equals accounts of one
+
+23855
+00:41:56,590 --> 00:41:59,260
+just because when we connect
+it's expecting it type of
+
+23856
+00:41:59,260 --> 00:42:02,560
+account and then the the get
+named account is a different
+
+23857
+00:42:02,560 --> 00:42:04,840
+type. So Oh, it's just a little
+bit easier to actually connect
+
+23858
+00:42:04,840 --> 00:42:07,960
+like this. So now we'll connect
+to the player like so just know
+
+23859
+00:42:07,960 --> 00:42:11,740
+that player and deployer are now
+different types. So you'll see a
+
+23860
+00:42:11,740 --> 00:42:15,220
+little bit differences there. To
+me, this is ethers that gets
+
+23861
+00:42:15,220 --> 00:42:18,550
+signers. And then when we buy
+the item, we're of course gonna
+
+23862
+00:42:18,550 --> 00:42:23,350
+have to pass a value, it's gonna
+be price, of course, we're going
+
+23863
+00:42:23,350 --> 00:42:26,890
+to need to pay the price of the
+NFT. And then of course, this
+
+23864
+00:42:26,890 --> 00:42:29,140
+needs to be player dot address.
+And that's the difference right
+
+23865
+00:42:29,200 --> 00:42:31,450
+now we got to do player that
+address whenever we want the
+
+23866
+00:42:31,450 --> 00:42:34,480
+address of one of the ethers
+accounts. And then this new
+
+23867
+00:42:34,480 --> 00:42:37,450
+owner, of course, should be in a
+wait. And now we can run this
+
+23868
+00:42:37,450 --> 00:42:47,560
+all. In Tada, we see things
+pass. So our NFT marketplace is
+
+23869
+00:42:47,590 --> 00:42:52,090
+able to facilitate the buying
+and selling of an NF T with
+
+23870
+00:42:52,120 --> 00:42:56,500
+arbitrary humans. This is
+fantastic. So we just ran the
+
+23871
+00:42:56,500 --> 00:42:58,960
+single test to show a little bit
+of the oddities when working
+
+23872
+00:42:58,960 --> 00:43:03,550
+with NF T's and some different
+accounts. But 100 percent If you feel
+
+23873
+00:43:03,550 --> 00:43:08,020
+up for the challenge, take this
+time, pause this video and try
+
+23874
+00:43:08,020 --> 00:43:11,710
+to write some tests. Remember,
+the goal here is for us to do
+
+23875
+00:43:11,710 --> 00:43:16,690
+yarn hardhat coverage, and see
+what our coverage is and try to
+
+23876
+00:43:16,690 --> 00:43:22,060
+get it to be 100 percent coverage. If
+we run it right now, we'll see
+
+23877
+00:43:22,060 --> 00:43:26,050
+Oh, my goodness, we are missing
+a lot of coverage. Here, we have
+
+23878
+00:43:26,050 --> 00:43:29,500
+a ton of uncovered lines, on top
+of uncovered functions,
+
+23879
+00:43:29,500 --> 00:43:32,560
+branches, statements, etc. Try
+to write some tests to get this
+
+23880
+00:43:32,560 --> 00:43:41,590
+to 100 percent and then come back.
+Okay, welcome back. Hopefully
+
+23881
+00:43:41,590 --> 00:43:44,890
+now you've written some tests.
+And when you run your tests, you
+
+23882
+00:43:44,890 --> 00:43:47,170
+can get some of them, I look
+like this, right. And these are
+
+23883
+00:43:47,170 --> 00:43:49,270
+my tests, these are the tests
+that I wrote, you could do more
+
+23884
+00:43:49,270 --> 00:43:51,820
+you could do last. And let's
+see, when I run yarn Hardhead
+
+23885
+00:43:51,820 --> 00:43:55,360
+coverage, I even missed some
+lines. And I could I could test
+
+23886
+00:43:55,360 --> 00:43:58,090
+a little bit more. So make your
+tests even better than the ones
+
+23887
+00:43:58,090 --> 00:44:00,550
+that I made. So these are the
+tests from the GitHub repo
+
+23888
+00:44:00,550 --> 00:44:03,370
+associated with this. Now that
+we've written some tests here,
+
+23889
+00:44:03,400 --> 00:44:06,760
+let's just write a couple of
+scripts. And the reason we're
+
+23890
+00:44:06,760 --> 00:44:08,650
+gonna write a couple of scripts
+is we're gonna need these a
+
+23891
+00:44:08,650 --> 00:44:12,520
+little bit later. So we'll write
+some scripts to mint, some
+
+23892
+00:44:12,520 --> 00:44:15,640
+amount of teased by some NF T's
+etc. And we'll need this to
+
+23893
+00:44:15,640 --> 00:44:19,750
+fiddle around and play on the
+front end a little bit later. So
+
+23894
+00:44:19,780 --> 00:44:23,410
+to create a script, again, we've
+done this perform, let's do a
+
+23895
+00:44:23,410 --> 00:44:29,920
+script called mint, and list dot
+j s. And this will be to mint at
+
+23896
+00:44:29,920 --> 00:44:34,330
+NFT. And then immediately listed
+on the marketplace. So let's
+
+23897
+00:44:34,330 --> 00:44:40,720
+create an async function called
+mint, and list. And down below,
+
+23898
+00:44:40,720 --> 00:44:42,850
+we're going to call mint and
+list I'm going to copy paste
+
+23899
+00:44:42,850 --> 00:44:45,940
+with that same script thing that
+we've been doing. Obviously,
+
+23900
+00:44:45,940 --> 00:44:48,520
+instead of Maine, though, we're
+calling this mountain list. Now
+
+23901
+00:44:48,520 --> 00:44:52,330
+in this mountain list, where
+it's a constant, NFT mark, and
+
+23902
+00:44:52,330 --> 00:44:59,260
+of tea market, place equals
+await ethers dot get contract.
+
+23903
+00:45:01,180 --> 00:45:06,280
+And ft marketplace. And right
+we're going to import ethers
+
+23904
+00:45:06,280 --> 00:45:09,850
+from hard hat. And then we'll do
+we'll grab basic NF t. So we'll
+
+23905
+00:45:09,850 --> 00:45:15,160
+say const. Basic kind of T
+equals await ethers dot get
+
+23906
+00:45:15,190 --> 00:45:21,970
+contract. Basic NF t. And then
+first we'll mint a basic NF t.
+
+23907
+00:45:22,000 --> 00:45:27,490
+So we'll do console dot log,
+maintained at the top. And we'll
+
+23908
+00:45:27,490 --> 00:45:31,960
+do a weight or actual we'll say
+const. Mint, TX equals await
+
+23909
+00:45:32,410 --> 00:45:39,340
+basic NF T dot mint NF t. And
+then we'll do await min TX dot
+
+23910
+00:45:39,340 --> 00:45:44,140
+Wait, wait one block. And
+actually we'll say const. Mint
+
+23911
+00:45:44,260 --> 00:45:50,170
+TX receipt. So that equals that.
+And in this receipt, here's
+
+23912
+00:45:50,170 --> 00:45:53,110
+another reason why events are so
+good. When we met this NFT.
+
+23913
+00:45:53,140 --> 00:45:58,090
+We're omitting the token ID in
+an event in this document ID
+
+23914
+00:45:58,090 --> 00:46:07,180
+event. So we could say const
+token ID equals mint TX receipt
+
+23915
+00:46:08,320 --> 00:46:14,680
+dot events of zero. That args
+dot token Id like that. And now
+
+23916
+00:46:14,680 --> 00:46:17,380
+we have the token ID. And now
+that we have the token ID and
+
+23917
+00:46:17,380 --> 00:46:21,940
+the basic NFT. minted we can now
+call on our NFT marketplace list
+
+23918
+00:46:21,940 --> 00:46:27,370
+item. So now we'll say console
+dot log. Approving NFT right,
+
+23919
+00:46:27,370 --> 00:46:29,800
+it's gonna be real similar to
+our tests here. I'm gonna say
+
+23920
+00:46:29,800 --> 00:46:36,250
+const approval TX equals await
+basic NFT data prove
+
+23921
+00:46:36,969 --> 00:46:42,279
+NFT marketplace dot address
+token ID and then we'll do a
+
+23922
+00:46:42,279 --> 00:46:48,549
+weight approved TX dot wait one
+and we'll do console dot log
+
+23923
+00:46:49,119 --> 00:46:54,429
+listing NF t.at that and then
+we'll do const TX equals await
+
+23924
+00:46:54,519 --> 00:47:00,219
+and if T market market place
+that list item and we'll do NFT
+
+23925
+00:47:00,819 --> 00:47:06,699
+marketplace that address So can
+Id do await TX dot wait one,
+
+23926
+00:47:07,809 --> 00:47:14,199
+console dot log listed and cool.
+And we can try this out by
+
+23927
+00:47:14,199 --> 00:47:17,049
+running yarn hardhat node, which
+is going to run through our
+
+23928
+00:47:17,049 --> 00:47:19,449
+deploy scripts, right, it's
+going to run to these deployed
+
+23929
+00:47:19,449 --> 00:47:23,709
+scripts here. And then in a new
+terminal, we'll run our script,
+
+23930
+00:47:23,919 --> 00:47:29,619
+yarn hard hat, run scripts meant
+and list dash dash network
+
+23931
+00:47:30,219 --> 00:47:34,479
+localhost. And we missed an
+argument, oh, we need a price as
+
+23932
+00:47:34,479 --> 00:47:39,009
+well to list our entity. So
+we'll create a constant price
+
+23933
+00:47:39,249 --> 00:47:49,149
+equals and we'll say ethers dot
+utils dot parse, ether 0.1. And
+
+23934
+00:47:49,149 --> 00:47:54,189
+we'll pass the price and to the
+list item. So oops, and sorry,
+
+23935
+00:47:54,189 --> 00:47:58,029
+it's not the marketplace that
+we're listing, the basic NF t
+
+23936
+00:47:58,029 --> 00:48:02,139
+that we're listing, of course,
+so run that again. And Bada
+
+23937
+00:48:02,139 --> 00:48:06,279
+bing, bada boom, got some listed
+events. And we can see here,
+
+23938
+00:48:06,609 --> 00:48:09,159
+we're doing some listing and
+awesome. So now we have a
+
+23939
+00:48:09,159 --> 00:48:12,129
+script. Alright, so now that we
+have a script, and we're going
+
+23940
+00:48:12,129 --> 00:48:14,889
+to be writing a couple other
+scripts a little bit later, we
+
+23941
+00:48:14,889 --> 00:48:19,149
+essentially have a really solid
+repo here are our totally
+
+23942
+00:48:19,149 --> 00:48:23,709
+decentralized, NFT marketplace,
+this is absolutely massive, and
+
+23943
+00:48:23,709 --> 00:48:25,899
+you should be incredibly,
+incredibly proud of yourself.
+
+23944
+00:48:31,270 --> 00:48:34,510
+Now, of course, this is all
+code. And people can interact
+
+23945
+00:48:34,510 --> 00:48:38,290
+with this, if they're software
+developers, which is great. But
+
+23946
+00:48:38,290 --> 00:48:41,980
+we're going to want to allow
+anybody to be able to interact
+
+23947
+00:48:42,010 --> 00:48:46,510
+and list their own NF t's on our
+marketplace. So what are we
+
+23948
+00:48:46,510 --> 00:48:50,470
+going to do? Well, we're going
+to want to build a front end for
+
+23949
+00:48:50,470 --> 00:48:53,440
+this. And now we're gonna get
+into the second part of this
+
+23950
+00:48:53,440 --> 00:48:58,210
+lesson. So on lesson 15, we just
+finished the backend. Now we're
+
+23951
+00:48:58,210 --> 00:49:00,970
+gonna move on to the front end,
+we're gonna start with this
+
+23952
+00:49:00,970 --> 00:49:05,260
+morass code. The code for both
+of these is pretty much nearly
+
+23953
+00:49:05,260 --> 00:49:07,510
+identical. But we're going to
+start with Morales, and we're
+
+23954
+00:49:07,510 --> 00:49:09,580
+going to teach you how to do
+both of these. And we're going
+
+23955
+00:49:09,580 --> 00:49:11,770
+to teach you the difference
+between the Morales and the
+
+23956
+00:49:11,770 --> 00:49:14,590
+MoGraph. And kind of why we're
+even using them in the first
+
+23957
+00:49:14,590 --> 00:49:17,740
+place, we're going to start with
+Morales. So if you want to
+
+23958
+00:49:17,740 --> 00:49:20,260
+follow along with this next
+section, all the code we're
+
+23959
+00:49:20,260 --> 00:49:23,830
+going to be working with, is
+going to be in here. So you
+
+23960
+00:49:23,830 --> 00:49:27,640
+excited, I hope you are because
+this is going to be a phenomenal
+
+23961
+00:49:27,640 --> 00:49:30,550
+session, we are about to build
+one of the most sophisticated
+
+23962
+00:49:30,550 --> 00:49:34,420
+front ends that we can using the
+tools that we have. And like I
+
+23963
+00:49:34,420 --> 00:49:36,880
+said, we showed you a little bit
+earlier what this is going to
+
+23964
+00:49:36,880 --> 00:49:39,790
+look like. So let's do a quick
+refresher here. So here's what
+
+23965
+00:49:39,790 --> 00:49:42,550
+our front end is going to look
+like. But what we can do is we
+
+23966
+00:49:42,550 --> 00:49:45,610
+can connect with our little
+connect button, we hit Metamask
+
+23967
+00:49:45,640 --> 00:49:48,670
+Metamask pops up, we'll go ahead
+and connect. And now that we're
+
+23968
+00:49:48,670 --> 00:49:52,990
+connected, we can see the
+different NF T's in here. And if
+
+23969
+00:49:53,020 --> 00:49:56,980
+we're on an address that's owned
+by us, it will say owned by you.
+
+23970
+00:49:57,190 --> 00:50:00,520
+And if we switch addresses, are
+you I will go ahead and update,
+
+23971
+00:50:01,120 --> 00:50:04,390
+connect there. And now we're
+owned by a different address.
+
+23972
+00:50:04,510 --> 00:50:06,850
+Now if it's owned by us, we get
+this little hover that says
+
+23973
+00:50:06,880 --> 00:50:10,000
+Update listing. And right now
+it's worth 0.18. That's what
+
+23974
+00:50:10,000 --> 00:50:13,030
+it's listed for on our
+marketplace. If it's owned by
+
+23975
+00:50:13,030 --> 00:50:16,030
+us, and we click it, we can
+update it to a different price.
+
+23976
+00:50:16,060 --> 00:50:20,140
+Let's update it to 50 eath, or
+whatever your layer one currency
+
+23977
+00:50:20,140 --> 00:50:23,110
+is, we'll just save new listing
+price. We'll go ahead and
+
+23978
+00:50:23,110 --> 00:50:26,680
+confirm. And I'll say the
+listing updated, please refresh,
+
+23979
+00:50:27,010 --> 00:50:30,250
+what we can do them. And we'll
+mine some blocks on the back
+
+23980
+00:50:30,250 --> 00:50:33,910
+end, and boom, now we see that
+it's worth 50 here. Now if we
+
+23981
+00:50:33,910 --> 00:50:37,900
+switch to a different account,
+now we can see owned by Baba
+
+23982
+00:50:37,900 --> 00:50:41,770
+blah, and the hovered now says
+by me enough is selected as a
+
+23983
+00:50:41,770 --> 00:50:45,250
+different user, I'm going to get
+this transaction to actually buy
+
+23984
+00:50:45,250 --> 00:50:48,490
+it. Now go ahead and confirm
+that I'm going to buy it, I get
+
+23985
+00:50:48,490 --> 00:50:51,250
+a little pop up. This is item
+bought successfully. Now if I do
+
+23986
+00:50:51,250 --> 00:50:55,000
+a little refresh, we'll now see
+that that NFT is gone from the
+
+23987
+00:50:55,000 --> 00:50:57,160
+marketplace since we bought it
+right and it's no longer
+
+23988
+00:50:57,160 --> 00:51:00,880
+available to be sold. Now what
+we can do then is we can come
+
+23989
+00:51:00,880 --> 00:51:05,710
+over to sell NF tees. And at the
+bottom, we'll see a withdraw
+
+23990
+00:51:05,710 --> 00:51:09,850
+proceeds. So whenever somebody
+buys an NF T, the NFT
+
+23991
+00:51:09,850 --> 00:51:13,120
+marketplace actually keeps the
+proceeds that actually keeps the
+
+23992
+00:51:13,180 --> 00:51:16,840
+result of the sale. So if we
+switch back to our address that
+
+23993
+00:51:16,840 --> 00:51:20,470
+had the NFT listed, we can now
+see Withdraw 50 proceeds because
+
+23994
+00:51:20,470 --> 00:51:23,620
+we know that we have 50 eath,
+because we just bought that for
+
+23995
+00:51:23,740 --> 00:51:27,970
+50. So if we hit withdraw,
+Metamask is going to pop up, we
+
+23996
+00:51:27,970 --> 00:51:31,960
+can go ahead and confirm, wait a
+little bit as transaction
+
+23997
+00:51:31,960 --> 00:51:35,320
+populates, and boom once it goes
+through, and we'll see now we
+
+23998
+00:51:35,320 --> 00:51:38,800
+have zero proceeds. Right? We
+withdrew everything from here.
+
+23999
+00:51:39,070 --> 00:51:42,850
+So what we can do now is we can
+relist that NFT. So if we come
+
+24000
+00:51:42,850 --> 00:51:47,260
+back, go back to the one who
+just bought that at a T if we
+

@@ -1,0 +1,4991 @@
+14001
+14:09:03,800 --> 14:09:06,470
+got our randomness there. And if
+we go back to the subscription
+
+14002
+14:09:06,470 --> 14:09:09,620
+manager app, you're going to see
+that there's actually an event
+
+14003
+14:09:09,620 --> 14:09:11,960
+history item here, we'll see
+that we spent about point three,
+
+14004
+14:09:11,960 --> 14:09:16,370
+three link to get those two
+random numbers, we've just taken
+
+14005
+14:09:16,370 --> 14:09:19,250
+a journey to see what it looks
+like and feels like to use Veera
+
+14006
+14:09:19,250 --> 14:09:20,030
+version two,
+
+14007
+14:09:20,180 --> 14:09:22,730
+now that we've learned a little
+bit more about chainlink VRF, I
+
+14008
+14:09:22,760 --> 14:09:25,520
+hope that you took some time to
+go to doxa chain link and play
+
+14009
+14:09:25,520 --> 14:09:28,070
+around with it a little bit so
+that you understand what's
+
+14010
+14:09:28,070 --> 14:09:31,520
+really going on, we're going to
+use this sample contract in here
+
+14011
+14:09:31,580 --> 14:09:34,340
+to create our function that's
+going to pick our random winner.
+
+14012
+14:09:34,400 --> 14:09:36,740
+This is an on chain contract
+that coordinates with a
+
+14013
+14:09:36,740 --> 14:09:40,340
+verifiably random chain link
+node to give us a random number,
+
+14014
+14:09:40,370 --> 14:09:42,590
+you could look at the code
+directly on chain, or you can
+
+14015
+14:09:42,590 --> 14:09:46,130
+come right to the chain link
+GitHub and look at all the code
+
+14016
+14:09:46,130 --> 14:09:49,040
+for how this is actually
+happening provably and randomly.
+
+14017
+14:09:49,100 --> 14:09:51,440
+And we'll have a link to this in
+the GitHub repo associated with
+
+14018
+14:09:51,440 --> 14:09:56,540
+this course. So we're going to
+create our function here called
+
+14019
+14:09:56,660 --> 14:09:59,150
+pick a random winner, this
+function is going to be called
+
+14020
+14:09:59,150 --> 14:10:01,670
+by the chain link keepers
+network so that this can
+
+14021
+14:10:01,700 --> 14:10:04,490
+automatically run without us
+having to interact with it. And
+
+14022
+14:10:04,490 --> 14:10:07,340
+actually, while we're updating
+this, I want to add some some
+
+14023
+14:10:07,340 --> 14:10:11,660
+stars here saying view slash
+pure functions. Now our pick
+
+14024
+14:10:11,660 --> 14:10:13,670
+random winner function, we're
+actually not going to make
+
+14025
+14:10:13,670 --> 14:10:16,940
+public we're going to make
+external, external functions are
+
+14026
+14:10:16,940 --> 14:10:19,670
+a little bit cheaper than public
+functions. Because solidity
+
+14027
+14:10:19,670 --> 14:10:22,250
+knows that our own contract can
+call this, we're actually going
+
+14028
+14:10:22,250 --> 14:10:25,130
+to change the name of this
+function, as well, very soon,
+
+14029
+14:10:25,130 --> 14:10:27,500
+but we'll get to that in a
+little bit. So in order for us
+
+14030
+14:10:27,500 --> 14:10:30,500
+to pick a random winner, we
+actually have to do two things,
+
+14031
+14:10:30,560 --> 14:10:34,190
+we first have to request the
+random number. And then once we
+
+14032
+14:10:34,190 --> 14:10:38,330
+get it, do something with it. So
+chainlink VRF is a two
+
+14033
+14:10:38,330 --> 14:10:42,470
+transaction process. And this is
+actually intentional. Having
+
+14034
+14:10:42,470 --> 14:10:45,590
+random numbers in two
+transactions is actually also
+
+14035
+14:10:45,620 --> 14:10:48,380
+much better than having it in
+one. If it's just one
+
+14036
+14:10:48,380 --> 14:10:51,140
+transaction, then people could
+just brute force tries
+
+14037
+14:10:51,140 --> 14:10:53,900
+simulating calling this
+transaction and we'll learn how
+
+14038
+14:10:53,900 --> 14:10:56,810
+to simulate calls soon simulate
+calling these transactions to
+
+14039
+14:10:56,810 --> 14:10:59,030
+see what they can manipulate to
+make sure that they are the
+
+14040
+14:10:59,030 --> 14:11:01,700
+winner. We want to make sure
+that this is absolutely fair.
+
+14041
+14:11:01,730 --> 14:11:05,240
+Nobody can manipulate our smart
+contract into having them be the
+
+14042
+14:11:05,240 --> 14:11:07,880
+winner of the lottery, this
+function is actually going to
+
+14043
+14:11:07,880 --> 14:11:10,850
+request it. And then in a second
+func the random number is going
+
+14044
+14:11:10,850 --> 14:11:13,640
+to be returned. And in the
+transaction that we actually get
+
+14045
+14:11:13,640 --> 14:11:16,760
+the random number from the chain
+link network, that's when we're
+
+14046
+14:11:16,760 --> 14:11:19,460
+going to actually send the money
+to the winner. And if we go to
+
+14047
+14:11:19,460 --> 14:11:21,830
+the chain link documentation,
+the function that the chain link
+
+14048
+14:11:21,830 --> 14:11:24,710
+node calls is this function
+called fulfill random words,
+
+14049
+14:11:24,770 --> 14:11:27,080
+this is going to be the
+requesting one, which we could
+
+14050
+14:11:27,080 --> 14:11:30,200
+even change this to request
+random winner to make it more
+
+14051
+14:11:30,200 --> 14:11:35,330
+clear, and then we'll make a
+function fulfill random words.
+
+14052
+14:11:36,080 --> 14:11:38,900
+And this is going to be an
+internal override, which we'll
+
+14053
+14:11:38,900 --> 14:11:42,380
+explain in a little bit, now
+fulfill fulfill random words
+
+14054
+14:11:42,380 --> 14:11:45,620
+basically means we're fulfilling
+random numbers. The word comes
+
+14055
+14:11:45,620 --> 14:11:47,780
+from a computer science
+terminology, but you can
+
+14056
+14:11:47,780 --> 14:11:50,570
+basically just think of this as
+fulfill random numbers, because
+
+14057
+14:11:50,570 --> 14:11:53,150
+we can get multiple random
+numbers. Now in order to make
+
+14058
+14:11:53,150 --> 14:11:57,140
+our raffle contract VRF a bowl,
+we have to import the chain link
+
+14059
+14:11:57,140 --> 14:11:59,690
+code, we can go back to the
+documentation, and we're just
+
+14060
+14:11:59,690 --> 14:12:02,930
+going to grab this bottom line
+and we'll grab the top line in a
+
+14061
+14:12:02,930 --> 14:12:06,350
+second. So we're going to do
+import, I'm going to write it
+
+14062
+14:12:06,350 --> 14:12:09,140
+out. But if you want to copy
+paste, you can at chain link
+
+14063
+14:12:09,170 --> 14:12:15,950
+slash contracts slash SRC slash
+V 0.8, slash V RF, consumer
+
+14064
+14:12:15,980 --> 14:12:20,420
+base, b two dot Sol. And since
+we're importing at chainlink,
+
+14065
+14:12:20,420 --> 14:12:23,570
+slash contracts, we're gonna
+need to add that in by running
+
+14066
+14:12:23,570 --> 14:12:28,700
+yarn, add dash dash dev at
+chainlink slash contracts. And
+
+14067
+14:12:29,810 --> 14:12:32,720
+now that we have this in here,
+we should be able to import like
+
+14068
+14:12:32,720 --> 14:12:36,380
+so. And we're going to need to
+make our raffle VRF consumer
+
+14069
+14:12:36,380 --> 14:12:39,980
+base double, we're gonna need to
+inherit VRF consumer base go
+
+14070
+14:12:39,980 --> 14:12:46,160
+into our node modules at chain
+link src, V 08 VRF, consumer
+
+14071
+14:12:46,160 --> 14:12:50,360
+base V two, it comes with this
+function fulfill random words.
+
+14072
+14:12:50,390 --> 14:12:54,740
+And you can see it's an internal
+virtual function, virtual means
+
+14073
+14:12:54,770 --> 14:12:57,200
+it's expecting to be
+overwritten, the reason that
+
+14074
+14:12:57,200 --> 14:13:00,410
+it's in the sphere of consumer
+base V two is so that the VRF
+
+14075
+14:13:00,410 --> 14:13:03,380
+coordinator, which we'll use in
+a bit knows that it can call
+
+14076
+14:13:03,380 --> 14:13:06,110
+this fulfill random words
+function. And this is the
+
+14077
+14:13:06,110 --> 14:13:09,410
+function that we're overriding.
+So back in our raffle dot salt,
+
+14078
+14:13:09,410 --> 14:13:13,670
+we're going to inherit it by
+doing is VRF consumer base V
+
+14079
+14:13:13,670 --> 14:13:18,170
+two. And now if we scroll down
+to fulfill random words, we can
+
+14080
+14:13:18,170 --> 14:13:20,960
+add in the input parameters
+fulfilled pill random words,
+
+14081
+14:13:21,020 --> 14:13:28,400
+which are going to be un 256,
+Request ID and un 256, a memory
+
+14082
+14:13:28,430 --> 14:13:32,660
+array random words. And if we
+hit Save Our linter will now
+
+14083
+14:13:32,660 --> 14:13:36,440
+notice, okay, this is what I'm
+expecting, I'm expecting us to
+
+14084
+14:13:36,440 --> 14:13:39,740
+override the Fill random words,
+which takes these parameters.
+
+14085
+14:13:39,770 --> 14:13:43,370
+Now if we look in our docs in
+our constructor, we need to pass
+
+14086
+14:13:43,400 --> 14:13:46,850
+the VRF consumer base V TOS
+constructor and pass that VRF
+
+14087
+14:13:46,850 --> 14:13:49,790
+coordinator. Again, this V RF
+coordinator is the address of
+
+14088
+14:13:49,790 --> 14:13:52,490
+the contract that does the
+random number verification. So
+
+14089
+14:13:52,490 --> 14:13:57,530
+right next to our constructor
+will add the VRF consumer base V
+
+14090
+14:13:57,530 --> 14:14:02,180
+to constructor and we need to
+pass the VRF coordinator v2
+
+14091
+14:14:02,210 --> 14:14:04,790
+address. So in our main
+constructor, we'll add that as a
+
+14092
+14:14:04,790 --> 14:14:07,040
+parameter as well. So we'll say
+address
+
+14093
+14:14:08,540 --> 14:14:13,970
+VRF core to Nate Torre v two,
+and then we'll pass this as a
+
+14094
+14:14:13,970 --> 14:14:17,540
+parameter for the VRF consumer
+basically till now that we have
+
+14095
+14:14:17,540 --> 14:14:20,390
+that we shouldn't see that
+little underscore anymore. And
+
+14096
+14:14:20,390 --> 14:14:25,250
+we should be able to run yarn
+aren't had compiled. Awesome.
+
+14097
+14:14:25,280 --> 14:14:28,370
+And we can see compiled two
+files successfully and our code
+
+14098
+14:14:28,370 --> 14:14:34,400
+is working great. Now something
+that I often do is I actually
+
+14099
+14:14:34,400 --> 14:14:37,820
+hate running yarn hard hat all
+the time, because that's too
+
+14100
+14:14:37,820 --> 14:14:40,610
+many keys for my little brain to
+work with. I would prefer to
+
+14101
+14:14:40,610 --> 14:14:43,820
+write as little keys as possible
+hard hat also would like us to
+
+14102
+14:14:43,820 --> 14:14:46,280
+write as little keys as
+possible. So hard hat comes with
+
+14103
+14:14:46,310 --> 14:14:49,670
+a shorthand and autocomplete
+hard hat shorthand is an NPM
+
+14104
+14:14:49,670 --> 14:14:53,420
+package that installs a globally
+accessible binary called H H,
+
+14105
+14:14:53,480 --> 14:14:56,030
+that runs the project's locally
+installed hard hat and supports
+
+14106
+14:14:56,060 --> 14:14:59,000
+shell auto completion for tasks.
+So what we can do is we're going
+
+14107
+14:14:59,000 --> 14:15:01,640
+to start with NPM, like this,
+but we're gonna install it with
+
+14108
+14:15:01,640 --> 14:15:07,160
+yarn, we're going to run yarn,
+global, add hardhat shorthand.
+
+14109
+14:15:08,570 --> 14:15:11,720
+And what this is going to do, we
+can see here installed hard hat
+
+14110
+14:15:11,720 --> 14:15:15,950
+shorthand with binaries H, H,
+and Hardhead completion. Now
+
+14111
+14:15:15,980 --> 14:15:19,370
+instead of running yarn,
+Hardhead compile, which we can
+
+14112
+14:15:19,370 --> 14:15:24,800
+still run, we can just run h h
+compile, running h h is going to
+
+14113
+14:15:24,800 --> 14:15:27,470
+be the same thing as if we had
+just run the Hardhead command
+
+14114
+14:15:27,500 --> 14:15:33,410
+for our local directory. So now
+we need to actually have our
+
+14115
+14:15:33,410 --> 14:15:36,560
+request random winner function
+requests a random winner. So
+
+14116
+14:15:36,560 --> 14:15:38,840
+let's go back to the
+documentation. And we'll see how
+
+14117
+14:15:38,840 --> 14:15:41,900
+to do that. We can look at this
+function request random words
+
+14118
+14:15:42,020 --> 14:15:45,920
+and see exactly how it works. On
+the Vera of coordinator address.
+
+14119
+14:15:45,950 --> 14:15:48,800
+We go ahead and call this
+request random words function,
+
+14120
+14:15:48,830 --> 14:15:51,500
+we're going to need to call this
+function on the coordinator
+
+14121
+14:15:51,530 --> 14:15:54,380
+contract to get the coordinator
+contract. We're going to use the
+
+14122
+14:15:54,380 --> 14:15:57,590
+Vera v2 coordinator interface
+and the Vir of coordinator
+
+14123
+14:15:57,590 --> 14:16:00,230
+address. So we're going to want
+to keep track of those. We can
+
+14124
+14:16:00,230 --> 14:16:03,140
+do that once again in Arkansas.
+factor, we have the address
+
+14125
+14:16:03,170 --> 14:16:06,020
+being passed to our Bureau of
+consumer base. Let's also keep
+
+14126
+14:16:06,020 --> 14:16:09,020
+it as a state variable for us.
+First, let's get the interface
+
+14127
+14:16:09,050 --> 14:16:11,510
+so we can interact with that
+contract, we can import that
+
+14128
+14:16:11,510 --> 14:16:14,810
+from chain link as well by doing
+import at chain link slash
+
+14129
+14:16:14,810 --> 14:16:24,440
+contracts, slash SRC slash fees
+0.8, slash inter faces slash VRF
+
+14130
+14:16:24,830 --> 14:16:30,500
+cord to mentor V to interface
+dot Sol. And now that we import
+
+14131
+14:16:30,500 --> 14:16:34,550
+this interface, same as we did
+with price feeds, we can do VRF,
+
+14132
+14:16:34,550 --> 14:16:40,070
+coordinator v2, interface VRF
+coordinator. And then we can
+
+14133
+14:16:40,070 --> 14:16:44,180
+save the sphere of coordinator
+using the address so we can say
+
+14134
+14:16:44,210 --> 14:16:48,770
+VRF coordinator equals this
+address VRF coordinator veto.
+
+14135
+14:16:48,860 --> 14:16:50,810
+And we're just going to wrap
+that address around the
+
+14136
+14:16:50,810 --> 14:16:53,810
+interface so that now we can
+work with this VRF coordinator
+
+14137
+14:16:53,810 --> 14:16:56,870
+contract. Now we're only going
+to set our VRF coordinator one
+
+14138
+14:16:56,870 --> 14:16:59,900
+time right in our constructor.
+So what's the best thing that we
+
+14139
+14:16:59,900 --> 14:17:03,140
+can do here, private, immutable,
+you Gosh, darn. Right, let's do
+
+14140
+14:17:03,140 --> 14:17:06,800
+private, immutable, you have
+coordinator and we'll change the
+
+14141
+14:17:06,800 --> 14:17:10,730
+name to I underscore the ref
+coordinator so that we know that
+
+14142
+14:17:10,760 --> 14:17:13,970
+your coordinator is indeed an
+immutable variable. In order to
+
+14143
+14:17:14,000 --> 14:17:16,640
+request the random word, we need
+to give it a number of
+
+14144
+14:17:16,640 --> 14:17:20,120
+parameters, I'm gonna go ahead
+and copy this line into our
+
+14145
+14:17:20,120 --> 14:17:22,820
+contract just so that we can
+talk about exactly what's going
+
+14146
+14:17:22,820 --> 14:17:26,090
+on with it. And we don't need
+the AES Request ID. And instead
+
+14147
+14:17:26,090 --> 14:17:29,270
+of coordinator we're going to do
+I underscore fear of
+
+14148
+14:17:29,270 --> 14:17:32,000
+coordinator. So we're going to
+call request random words on
+
+14149
+14:17:32,000 --> 14:17:35,150
+that VRF coordinator contract,
+and we need to pass it the key
+
+14150
+14:17:35,150 --> 14:17:39,230
+hash or the gasoline, I prefer
+calling it the gas lane, we go
+
+14151
+14:17:39,230 --> 14:17:42,140
+to the chain link, Doc's go to
+contract addresses. And we
+
+14152
+14:17:42,140 --> 14:17:44,660
+scroll down we can see different
+gas lanes a different
+
+14153
+14:17:44,660 --> 14:17:47,900
+configuration parameters for
+different networks is key hash
+
+14154
+14:17:47,930 --> 14:17:50,690
+is going to be the gasoline of
+the key hash, which tells the
+
+14155
+14:17:50,690 --> 14:17:53,450
+chain link node the maximum
+price you're willing to pay for
+
+14156
+14:17:53,450 --> 14:17:57,170
+your guests and way if for
+example, gas prices skyrocket,
+
+14157
+14:17:57,200 --> 14:17:59,270
+and it's going to cost you a ton
+of money to get that random
+
+14158
+14:17:59,270 --> 14:18:02,300
+number setting a ceiling, we'll
+make it so that random number
+
+14159
+14:18:02,300 --> 14:18:04,850
+doesn't come back. For us to
+pick a gas lane, we're probably
+
+14160
+14:18:04,850 --> 14:18:07,940
+going to want to have this gas
+lane or this key hash stored
+
+14161
+14:18:07,940 --> 14:18:10,670
+somewhere. So let's go ahead and
+make that a parameter of our
+
+14162
+14:18:10,670 --> 14:18:13,220
+constructor as well. And we'll
+save that as a state variable.
+
+14163
+14:18:13,430 --> 14:18:18,350
+So we'll do comma bytes 32,
+gasoline or key hash or whatever
+
+14164
+14:18:18,350 --> 14:18:20,750
+you want to call it. And then
+we'll make a new state variable.
+
+14165
+14:18:21,890 --> 14:18:24,050
+And we're only going to set this
+once. So we'll make this a
+
+14166
+14:18:24,050 --> 14:18:32,810
+private, immutable. I underscore
+gasoline, and then we'll say
+
+14167
+14:18:33,860 --> 14:18:37,070
+gasoline equals gasoline.
+
+14168
+14:18:38,120 --> 14:18:42,020
+So now, we can just swap this
+out, or I underscore gasoline.
+
+14169
+14:18:42,140 --> 14:18:44,900
+Okay, what's next, we need a
+subscription ID, the
+
+14170
+14:18:44,900 --> 14:18:47,210
+subscription ID is going to be
+the subscription that we need
+
+14171
+14:18:47,210 --> 14:18:50,060
+for funding our requests.
+There's actually a contract on
+
+14172
+14:18:50,060 --> 14:18:53,360
+chain, which we can use to fund
+any subscription for any of
+
+14173
+14:18:53,360 --> 14:18:56,360
+these external data or external
+computation bits. And in this
+
+14174
+14:18:56,360 --> 14:18:59,270
+contract, there's a list of
+these subscriptions for people
+
+14175
+14:18:59,270 --> 14:19:02,900
+to make requests to. So we need
+the ID of the subscription that
+
+14176
+14:19:02,900 --> 14:19:06,230
+we're using to request our
+random numbers and pay the link
+
+14177
+14:19:06,230 --> 14:19:09,140
+Oracle gas, the subscription ID
+is probably also going to be
+
+14178
+14:19:09,140 --> 14:19:12,710
+something we're going to pass as
+a parameter to our lottery. So
+
+14179
+14:19:12,710 --> 14:19:15,350
+once again, let's scroll up to
+our constructor, we'll add a new
+
+14180
+14:19:15,350 --> 14:19:18,290
+parameter. And our subscription
+ID actually doesn't need to be a
+
+14181
+14:19:18,290 --> 14:19:22,640
+un 256, it can actually be a
+little bit smaller with a un 64.
+
+14182
+14:19:22,760 --> 14:19:28,100
+So we'll pass a un 64 sub
+scription ID, we'll make a UNT
+
+14183
+14:19:28,340 --> 14:19:31,700
+64. Since we're only going to
+set this once we'll make this a
+
+14184
+14:19:31,700 --> 14:19:37,250
+private, immutable. I underscore
+sub scription ID down here and
+
+14185
+14:19:37,250 --> 14:19:42,980
+we'll say I subscription ID
+equals sub subscription ID.
+
+14186
+14:19:43,520 --> 14:19:46,910
+Alright, awesome. So now we can
+change this to our subscription
+
+14187
+14:19:46,910 --> 14:19:50,780
+ID. Okay, what's next? Request
+confirmations request
+
+14188
+14:19:50,780 --> 14:19:54,620
+confirmations is a un 16, which
+says how many confirmations the
+
+14189
+14:19:54,620 --> 14:19:57,350
+chain link node should wait
+before responding. So if you
+
+14190
+14:19:57,350 --> 14:20:00,350
+make a request, and there's only
+one block confirmation, maybe
+
+14191
+14:20:00,350 --> 14:20:02,870
+you don't actually send it
+because you don't you're afraid
+
+14192
+14:20:02,870 --> 14:20:05,300
+of some type of blockchain
+reorganization or something,
+
+14193
+14:20:05,330 --> 14:20:07,190
+we're not going to worry too
+much about this. And we're
+
+14194
+14:20:07,190 --> 14:20:09,950
+actually just going to make this
+a constant of three. So we're
+
+14195
+14:20:09,950 --> 14:20:12,890
+not even going to have this be
+per amortizable we're gonna have
+
+14196
+14:20:12,890 --> 14:20:17,840
+this one be a constant. So we'll
+say a you int 16 Private
+
+14197
+14:20:17,960 --> 14:20:24,530
+constant request, confirmations
+equals three, and we're using
+
+14198
+14:20:24,560 --> 14:20:28,280
+the capslock and underscores for
+our constant variables here. And
+
+14199
+14:20:28,280 --> 14:20:31,250
+now we'll grab request
+confirmations and stick it in
+
+14200
+14:20:31,280 --> 14:20:34,700
+right here. What's next callback
+gas limit callback gas limit is
+
+14201
+14:20:34,700 --> 14:20:37,580
+going to be the limit for how
+much gas to use for the callback
+
+14202
+14:20:37,580 --> 14:20:40,640
+request your contracts fulfill
+random words, this sets a limit
+
+14203
+14:20:40,640 --> 14:20:44,270
+for how much computation are
+fulfilled random words can be
+
+14204
+14:20:44,300 --> 14:20:47,000
+this is a good way to protect
+ourselves from spending way too
+
+14205
+14:20:47,000 --> 14:20:50,270
+much gas. If, for example, we
+accidentally code our contract
+
+14206
+14:20:50,270 --> 14:20:53,690
+in a way where fulfill random
+words is incredibly gas
+
+14207
+14:20:53,690 --> 14:20:56,360
+expensive. It'll block the
+random number from responding.
+
+14208
+14:20:56,420 --> 14:20:58,880
+We are going to make this
+parameter sizable because we
+
+14209
+14:20:58,880 --> 14:21:01,610
+want to change it depending on
+how we code our fulfill random
+
+14210
+14:21:01,610 --> 14:21:04,970
+word. So in our constructor,
+let's add one more, we'll add
+
+14211
+14:21:05,120 --> 14:21:10,910
+you int 32. Since the size of
+this is a un 32, callback, gas
+
+14212
+14:21:10,910 --> 14:21:17,300
+limit, and we'll save the sub
+top as a UNT 32, private,
+
+14213
+14:21:17,300 --> 14:21:23,810
+immutable, I underscore call
+back. Yes limit. And we'll save
+
+14214
+14:21:23,810 --> 14:21:30,140
+this. I call back gas limit
+equals call back Yes, limit. And
+
+14215
+14:21:30,140 --> 14:21:32,600
+then we'll take this, and we'll
+stick it here. All right, we got
+
+14216
+14:21:32,600 --> 14:21:35,810
+one more number of words, this
+is going to be how many random
+
+14217
+14:21:35,810 --> 14:21:38,780
+numbers that we want to get, we
+only want one. So we're gonna go
+
+14218
+14:21:38,780 --> 14:21:42,590
+back up to the top, we're going
+to create a you int 32. And
+
+14219
+14:21:42,590 --> 14:21:47,480
+we'll make this also a private
+constant. Num words equals one,
+
+14220
+14:21:47,600 --> 14:21:49,850
+because we only want one random
+number. And then that'll be the
+
+14221
+14:21:49,850 --> 14:21:54,320
+last thing we need to add for
+our IVF coordinator dot request
+
+14222
+14:21:54,320 --> 14:21:57,740
+random words. Now this request
+random words function returns a
+
+14223
+14:21:57,770 --> 14:22:02,840
+request ID a un 256 Request ID a
+unique ID that defines who's
+
+14224
+14:22:02,840 --> 14:22:05,570
+requesting this and all this
+other information. If we want to
+
+14225
+14:22:05,570 --> 14:22:10,550
+save it, we can do u and 256.
+Request ID IVF coordinator
+
+14226
+14:22:10,580 --> 14:22:13,820
+requests random words. Now for
+now, we are going to emit an
+
+14227
+14:22:13,820 --> 14:22:17,240
+event with this request ID. And
+we'll go over why we're going to
+
+14228
+14:22:17,240 --> 14:22:20,390
+do that a little bit later,
+create a new event at the top.
+
+14229
+14:22:20,570 --> 14:22:22,700
+And we're not going to follow
+the naming convention here.
+
+14230
+14:22:23,420 --> 14:22:25,160
+Because we're going to change
+the name of our functions a
+
+14231
+14:22:25,160 --> 14:22:29,630
+little bit, we're going to call
+this requested raffle winner.
+
+14232
+14:22:30,200 --> 14:22:37,760
+And we're going to take a un 256
+indexed Request ID. Down here,
+
+14233
+14:22:37,790 --> 14:22:42,260
+we're gonna do omit requested
+raffle winner Request ID. And
+
+14234
+14:22:42,260 --> 14:22:45,140
+now we have a function that we
+can use to request a random
+
+14235
+14:22:45,140 --> 14:22:47,780
+winner using chain link VRF. Now
+again, we're going to set this
+
+14236
+14:22:47,780 --> 14:22:50,030
+up so that the chain link
+keepers call this on an
+
+14237
+14:22:50,030 --> 14:22:52,820
+interval, but we'll do that in a
+little bit. For now, let's
+
+14238
+14:22:52,820 --> 14:22:54,620
+figure out what to do once we
+get that
+
+14239
+14:22:54,620 --> 14:23:02,510
+random number. Once we get that
+random number, we're going to
+
+14240
+14:23:02,510 --> 14:23:06,890
+want to pick a random winner
+from our array of players up
+
+14241
+14:23:06,890 --> 14:23:10,760
+here. So what do we do? Well,
+let's go in here. And let's pick
+
+14242
+14:23:10,790 --> 14:23:14,660
+a random winner using something
+called the module function. Now
+
+14243
+14:23:14,690 --> 14:23:18,020
+we're gonna get an array back of
+random words, or random numbers,
+
+14244
+14:23:18,020 --> 14:23:21,290
+if you will, since we're only
+requesting one random word, this
+
+14245
+14:23:21,290 --> 14:23:24,140
+random words array is going to
+be of size one with one random
+
+14246
+14:23:24,140 --> 14:23:27,860
+word in it. Now this random word
+is a un 256. So this random word
+
+14247
+14:23:27,860 --> 14:23:31,880
+could be something like this.
+Well, obviously without the
+
+14248
+14:23:31,880 --> 14:23:34,310
+hyphens, but it could be
+something absolutely massive
+
+14249
+14:23:34,340 --> 14:23:37,760
+like that our players array is
+only going to be so big. So how
+
+14250
+14:23:37,760 --> 14:23:41,360
+do we get a random winner from
+this potentially massive random
+
+14251
+14:23:41,360 --> 14:23:43,910
+number, we can use something
+called the modulo function, the
+
+14252
+14:23:43,910 --> 14:23:48,500
+module operation, a mod N
+yields, the remainder are after
+
+14253
+14:23:48,500 --> 14:23:51,200
+the division of an operand a by
+the blah, blah, blah, blah,
+
+14254
+14:23:51,200 --> 14:23:53,900
+blah. So what does this mean?
+Well, we can use the mod
+
+14255
+14:23:53,900 --> 14:23:57,050
+function to get a random number
+out of our players array. So
+
+14256
+14:23:57,050 --> 14:23:59,990
+let's say our players array or
+excuse me, our s players array
+
+14257
+14:24:00,020 --> 14:24:05,000
+is of size 10. And a random
+number is 200. So how do we pick
+
+14258
+14:24:05,060 --> 14:24:08,300
+a random person out of this
+players array, or, let's say our
+
+14259
+14:24:08,300 --> 14:24:12,860
+random number is 202. If we do
+202, which is our random number,
+
+14260
+14:24:12,890 --> 14:24:18,380
+mod 10, we're gonna basically do
+202 divided by 10. But instead
+
+14261
+14:24:18,380 --> 14:24:20,570
+of having the decimals, we're
+just going to say, Okay, how
+
+14262
+14:24:20,570 --> 14:24:24,800
+many times is 10 evenly divide
+into 202. And what's the
+
+14263
+14:24:24,800 --> 14:24:29,990
+remainder, what doesn't divide
+evenly into 202? Well, 20 times
+
+14264
+14:24:29,990 --> 14:24:34,550
+10 equals 200, with two
+leftover, so two doesn't evenly
+
+14265
+14:24:34,550 --> 14:24:40,460
+divide, or multiply into 200. So
+that means 202 mod 10 is going
+
+14266
+14:24:40,460 --> 14:24:43,250
+to equal to two. So that's how
+the module function works. And
+
+14267
+14:24:43,250 --> 14:24:46,160
+we can use that so we're always
+going to get a number between.
+
+14268
+14:24:46,280 --> 14:24:48,530
+So we're always going to get a
+number here between zero and
+
+14269
+14:24:48,530 --> 14:24:51,560
+nine, which works out perfectly
+because that which works out
+
+14270
+14:24:51,560 --> 14:24:54,800
+perfectly, because those are the
+indexes of the 10 people in our
+
+14271
+14:24:54,800 --> 14:24:58,670
+array. So let's use that here.
+We'll say a un 256 index of
+
+14272
+14:24:58,670 --> 14:25:04,670
+winner is going to be equal to
+random words, at index zero,
+
+14273
+14:25:04,670 --> 14:25:08,150
+because we're only getting one
+random word module, the S
+
+14274
+14:25:08,180 --> 14:25:12,080
+underscore players dot length.
+So this will give us the index
+
+14275
+14:25:12,080 --> 14:25:14,960
+of our random winner to get that
+address of the winner will do
+
+14276
+14:25:14,960 --> 14:25:24,200
+address payable, recent winner
+equals s players at this index
+
+14277
+14:25:24,230 --> 14:25:26,840
+of winner so awesome. So now
+we'll have the address of the
+
+14278
+14:25:26,840 --> 14:25:29,060
+person that got this random
+number, the person's that's
+
+14279
+14:25:29,060 --> 14:25:34,520
+going to be our verifiably
+random winner. Now, it might be
+
+14280
+14:25:34,520 --> 14:25:37,400
+kind of cool to brag to people
+that you're the recent winner.
+
+14281
+14:25:37,550 --> 14:25:40,370
+So let's go ahead to the top and
+we'll create a new state
+
+14282
+14:25:40,370 --> 14:25:43,610
+variable for our most recent
+winner make this state variable
+
+14283
+14:25:43,640 --> 14:25:47,240
+in a new section called lottery
+variables. We'll say address
+
+14284
+14:25:48,110 --> 14:25:52,940
+private s underscore recent
+winner and it'll start out as
+
+14285
+14:25:52,940 --> 14:25:56,510
+nobody but as we get winners
+update it with s recent winner
+
+14286
+14:25:56,540 --> 14:26:01,460
+equals recent winner and we'll
+probably want people to know who
+
+14287
+14:26:01,460 --> 14:26:05,720
+this is winter is so down below,
+we can do function get recent
+
+14288
+14:26:05,720 --> 14:26:09,320
+winner, it's going to be a
+public view that's going to
+
+14289
+14:26:09,320 --> 14:26:14,210
+return that address. And then
+we'll just say return s
+
+14290
+14:26:14,210 --> 14:26:17,270
+underscore recent winner, since
+again, the recent winner is
+
+14291
+14:26:17,270 --> 14:26:19,970
+going to be a storage variable.
+So now that we have a recent
+
+14292
+14:26:19,970 --> 14:26:22,610
+winner, what else are we gonna
+do? Well, we're probably going
+
+14293
+14:26:22,610 --> 14:26:24,860
+to want to send them the money
+in this contract. So we're going
+
+14294
+14:26:24,860 --> 14:26:27,860
+to do exactly what we did before
+with sending the money, we're
+
+14295
+14:26:27,860 --> 14:26:34,850
+going to do that bull success,
+comma, blank equals recent
+
+14296
+14:26:35,150 --> 14:26:40,940
+winner, call, I'm gonna say
+value, it's going to be address
+
+14297
+14:26:41,870 --> 14:26:45,080
+of this dot balance, we're going
+to send all the money in this
+
+14298
+14:26:45,080 --> 14:26:48,800
+contract, and we're going to
+pass it no data. And now we
+
+14299
+14:26:48,800 --> 14:26:52,160
+could say require, you know,
+success, whatever, we're going
+
+14300
+14:26:52,160 --> 14:26:54,290
+to be a little bit more gas
+efficient here. And we're just
+
+14301
+14:26:54,290 --> 14:26:59,000
+gonna say, if not success, then
+we're going to revert a new
+
+14302
+14:26:59,000 --> 14:27:01,910
+transfer failed error. So we're
+gonna go to the top, or say,
+
+14303
+14:27:01,940 --> 14:27:05,390
+error name of the contract is
+raffle, underscore, underscore,
+
+14304
+14:27:05,750 --> 14:27:10,790
+transfer failed, like that, then
+go back down, and we can now do
+
+14305
+14:27:10,790 --> 14:27:14,750
+revert, raffle transfer failed
+like that. And now that we've
+
+14306
+14:27:14,780 --> 14:27:17,540
+picked a winner, right now, we
+don't have a way to actually
+
+14307
+14:27:17,540 --> 14:27:20,570
+keep track of the list of
+previous winners. So we're just
+
+14308
+14:27:20,570 --> 14:27:23,120
+going to omit an event. So
+there's always going to be that
+
+14309
+14:27:23,390 --> 14:27:26,660
+easily query double history of
+event winners. So we're going to
+
+14310
+14:27:26,660 --> 14:27:30,410
+create a new event in the events
+section called the event winner
+
+14311
+14:27:30,410 --> 14:27:37,160
+picked. And this is going to be
+an address indexed winner. And
+
+14312
+14:27:37,160 --> 14:27:43,850
+we'll scroll down and we'll do
+MIT winner picked the address of
+
+14313
+14:27:43,850 --> 14:27:46,730
+the recent winner. This looks
+pretty good.
+
+14314
+14:27:46,820 --> 14:27:49,820
+This looks pretty good here. Now
+you'll notice our request ID as
+
+14315
+14:27:49,820 --> 14:27:53,210
+this little underscore here and
+saying, hey, it's an unused
+
+14316
+14:27:53,210 --> 14:27:56,090
+function parameter, since we
+don't use this, but we still
+
+14317
+14:27:56,090 --> 14:27:59,810
+need fulfill random words to
+take a request ID and a random
+
+14318
+14:27:59,810 --> 14:28:02,600
+words array. But we don't use
+Request ID, we can just comment
+
+14319
+14:28:02,600 --> 14:28:06,140
+out just the request ID part
+like this, this tells our
+
+14320
+14:28:06,140 --> 14:28:10,490
+function, hey, yes, we know that
+you need a un 256. But we're not
+
+14321
+14:28:10,490 --> 14:28:12,740
+going to use the request ID. So
+we'll leave it in here. But
+
+14322
+14:28:12,740 --> 14:28:16,010
+we'll leave it blank. Now let's
+run a little compile here. We'll
+
+14323
+14:28:16,010 --> 14:28:21,410
+use yarn, hard hat, compile, or
+hh compile, we'll see if we're
+
+14324
+14:28:21,410 --> 14:28:24,110
+coding things correctly. And
+indeed, we don't see any errors.
+
+14325
+14:28:24,140 --> 14:28:30,350
+So perfect, we can continue. So
+we've added the chain link VRF,
+
+14326
+14:28:30,350 --> 14:28:34,100
+where we have a way to
+verifiably get a random winner.
+
+14327
+14:28:34,340 --> 14:28:38,030
+This is fantastic. Now let's
+update this contract so that not
+
+14328
+14:28:38,030 --> 14:28:42,110
+only can it pick a verifiable
+winner, but it can also do this
+
+14329
+14:28:42,140 --> 14:28:45,260
+all programmatically and
+automatically trigger picking a
+
+14330
+14:28:45,260 --> 14:28:49,400
+random winner based off of some
+time interval without us having
+
+14331
+14:28:49,400 --> 14:28:52,880
+to interact with it. And in a
+decentralized context. In order
+
+14332
+14:28:52,880 --> 14:28:55,640
+for us to automatically trigger
+smart contracts based off of
+
+14333
+14:28:55,670 --> 14:28:59,240
+some parameter be a time
+parameter, maybe the price of
+
+14334
+14:28:59,240 --> 14:29:02,210
+some asset is some number, maybe
+there's a certain amount of
+
+14335
+14:29:02,210 --> 14:29:05,420
+money in the liquidity pool or
+really whatever trigger that you
+
+14336
+14:29:05,420 --> 14:29:08,810
+want, we can use chain link
+keepers. To do this. Steven
+
+14337
+14:29:08,810 --> 14:29:11,960
+fluid has done once again, an
+amazing introduction to chain
+
+14338
+14:29:11,960 --> 14:29:14,390
+the keepers. So we're going to
+follow along with another sub
+
+14339
+14:29:14,390 --> 14:29:16,760
+video section of Steven
+explaining chain link keeper
+
+14340
+14:29:16,760 --> 14:29:19,430
+sauce, he's going to be using
+the COVID test net, but be sure
+
+14341
+14:29:19,430 --> 14:29:22,430
+to use whatever test net is in
+the documentation. When you play
+
+14342
+14:29:22,430 --> 14:29:23,630
+with this and you try this.
+
+14343
+14:29:23,659 --> 14:29:26,299
+My name is Steven foon. Today, I
+want to show you how to use the
+
+14344
+14:29:26,299 --> 14:29:29,779
+chain link keeper network in
+order to automate your contracts
+
+14345
+14:29:29,929 --> 14:29:32,659
+and give them access to off
+chain computation. Let's go
+
+14346
+14:29:32,659 --> 14:29:34,789
+ahead and dive in. So what we're
+going to look at today is we're
+
+14347
+14:29:34,789 --> 14:29:37,339
+going to start on the chain link
+documentation webpage. And if
+
+14348
+14:29:37,339 --> 14:29:39,799
+you just scroll down a little
+bit, you're going to find using
+
+14349
+14:29:39,799 --> 14:29:43,789
+chain link keepers. Now there's
+really two parts to building a
+
+14350
+14:29:43,849 --> 14:29:46,999
+chain link keeper up kept smart
+contract. So the first thing is
+
+14351
+14:29:46,999 --> 14:29:49,159
+you need to write a smart
+contract that's compatible by
+
+14352
+14:29:49,159 --> 14:29:51,589
+implementing these two methods.
+And then second, you want to
+
+14353
+14:29:51,589 --> 14:29:54,979
+register that smart contract for
+upkeep with the channeling
+
+14354
+14:29:54,979 --> 14:29:57,259
+keeper network. So let's go
+ahead and do both of those
+
+14355
+14:29:57,259 --> 14:30:00,409
+things. So let's start off just
+by copying and deploying this
+
+14356
+14:30:00,439 --> 14:30:04,339
+sample code that we've got. With
+this one click to remix, what
+
+14357
+14:30:04,339 --> 14:30:07,069
+we're gonna see here is a very,
+very simple contract. That is
+
+14358
+14:30:07,069 --> 14:30:11,599
+just a simple counter. So we can
+see it's got a counter here. So
+
+14359
+14:30:11,599 --> 14:30:16,489
+it's got just a simple number.
+And then you're able to specify
+
+14360
+14:30:16,489 --> 14:30:19,579
+when you create the contract and
+update interval, and then the
+
+14361
+14:30:19,579 --> 14:30:22,039
+contract is going to verify Hey,
+has enough time passed. And if
+
+14362
+14:30:22,039 --> 14:30:24,769
+it has, let's update the
+counter. And you're going to
+
+14363
+14:30:24,769 --> 14:30:27,649
+notice that chinley compatible
+or timekeeper network compatible
+
+14364
+14:30:27,649 --> 14:30:30,919
+contracts use two really
+important methods that are part
+
+14365
+14:30:30,919 --> 14:30:33,799
+of this keeper compatible
+interface. The first is check
+
+14366
+14:30:33,829 --> 14:30:37,249
+upkeep, and check upkeep is
+special because this is where
+
+14367
+14:30:37,249 --> 14:30:39,859
+the off chain computation
+happens. So this is a method
+
+14368
+14:30:39,859 --> 14:30:43,819
+that's not actually run on
+chain. This is run off chain by
+
+14369
+14:30:43,849 --> 14:30:47,029
+a node from the channeling
+keeper network. And so what's
+
+14370
+14:30:47,029 --> 14:30:50,779
+really nice about this is that
+the gas used here isn't actually
+
+14371
+14:30:50,779 --> 14:30:53,569
+gas, it's on chains. This is
+just being run by a chain link
+
+14372
+14:30:53,569 --> 14:30:57,199
+node. And then what happens is
+if your check upkeep method
+
+14373
+14:30:57,199 --> 14:31:00,589
+returns, the upkeep is needed.
+Then it's going to go ahead and
+
+14374
+14:31:00,589 --> 14:31:04,549
+perform upkeep. On chain, so you
+can actually generate data off
+
+14375
+14:31:04,549 --> 14:31:07,219
+chain, and then pass that in.
+That's called the check data.
+
+14376
+14:31:07,609 --> 14:31:10,759
+And then that becomes the
+performed data that's passed
+
+14377
+14:31:10,759 --> 14:31:14,989
+into perform upkeep. And so the
+PErforM upkeep method is where
+
+14378
+14:31:14,989 --> 14:31:18,289
+you're going to want to verify
+that things are correct. And
+
+14379
+14:31:18,289 --> 14:31:22,099
+that things actually should be
+modified and run on chain, and
+
+14380
+14:31:22,099 --> 14:31:25,849
+then actually make the state
+change. And so let's go ahead
+
+14381
+14:31:25,849 --> 14:31:28,609
+and compile this contract and
+deploy it to the COVID network.
+
+14382
+14:31:28,819 --> 14:31:31,849
+So let's go ahead and within
+remix, we can do this
+
+14383
+14:31:31,849 --> 14:31:35,389
+compilation. And we're going to
+compile and deploy directly to
+
+14384
+14:31:35,389 --> 14:31:38,539
+COVID. So the zookeeper network
+is currently as of the filming
+
+14385
+14:31:38,539 --> 14:31:42,109
+of this, available on both COVID
+as well as the theory of main
+
+14386
+14:31:42,109 --> 14:31:45,979
+net. And let's go ahead and play
+the counter contract. And let's
+
+14387
+14:31:45,979 --> 14:31:49,129
+see what's not updating more
+than every 30 seconds. And so
+
+14388
+14:31:49,129 --> 14:31:52,219
+let's go ahead and deploy. So
+meta masks can ask for a little
+
+14389
+14:31:52,219 --> 14:31:54,949
+bit of payment, in order for me
+to deploy this contract to the
+
+14390
+14:31:54,949 --> 14:31:58,879
+COVID network. And it looks like
+that is live. So now what I'm
+
+14391
+14:31:58,879 --> 14:32:00,949
+going to do is I'm going to be
+able to take this keeper
+
+14392
+14:32:00,949 --> 14:32:04,609
+contract, and copy its address.
+And now we're going to register
+
+14393
+14:32:04,609 --> 14:32:07,939
+that contract for upkeep. So
+we're going to jump over to the
+
+14394
+14:32:07,939 --> 14:32:10,849
+application that powers the
+champion keeper network, there's
+
+14395
+14:32:10,849 --> 14:32:12,529
+a few different ways you can
+use, you can interact directly
+
+14396
+14:32:12,529 --> 14:32:15,259
+with the registry contract. But
+there's a very, very nice
+
+14397
+14:32:15,259 --> 14:32:17,959
+interface that lets you do this.
+So let's go ahead and register a
+
+14398
+14:32:17,959 --> 14:32:20,059
+new upkeep and it's giving me an
+error that says you need to
+
+14399
+14:32:20,059 --> 14:32:22,879
+connect your wallet. So let's go
+ahead and do that. So I'm going
+
+14400
+14:32:22,879 --> 14:32:25,729
+to just connect wallet here, and
+I'm gonna give it access to my
+
+14401
+14:32:25,729 --> 14:32:28,969
+account. And then from there, we
+should actually be able to
+
+14402
+14:32:28,999 --> 14:32:33,349
+register. So I'm going to use an
+email address here. I'll give my
+
+14403
+14:32:33,349 --> 14:32:36,709
+contract a simple name. I'll
+paste in that address from the
+
+14404
+14:32:36,709 --> 14:32:40,249
+deployed contract, and then I'll
+give it a gas limit. And then
+
+14405
+14:32:40,399 --> 14:32:42,829
+check data is this special thing
+where you can actually register
+
+14406
+14:32:42,859 --> 14:32:45,889
+multiple upkeeps On the same
+contract in passing data to
+
+14407
+14:32:45,889 --> 14:32:49,699
+specify how you want checkup
+keep to be run of, we're just
+
+14408
+14:32:49,699 --> 14:32:51,859
+going to ignore that that is an
+optional one. And then we'll
+
+14409
+14:32:51,859 --> 14:32:55,009
+give it a starting balance of
+around 10 link, it's gonna go
+
+14410
+14:32:55,009 --> 14:32:58,759
+ahead and use Metamask again to
+register that transaction on the
+
+14411
+14:32:58,759 --> 14:33:02,329
+network. And once it's
+confirmed, my upkeep should be
+
+14412
+14:33:02,329 --> 14:33:05,809
+registered with the network and
+funded with 10 Link To kick
+
+14413
+14:33:05,809 --> 14:33:09,409
+things off. Alright, if we go
+ahead and view the upkeep, we
+
+14414
+14:33:09,409 --> 14:33:15,799
+can see it's registered. And as
+soon as the next round of the
+
+14415
+14:33:15,799 --> 14:33:19,129
+keeper nodes executes, which
+should be roughly about every
+
+14416
+14:33:19,129 --> 14:33:23,269
+block, we should see that the
+check upkeep method is going to
+
+14417
+14:33:23,299 --> 14:33:25,819
+return that hey, upkeep is
+actually needed because the
+
+14418
+14:33:25,819 --> 14:33:28,999
+timestamp is more than 30
+seconds ago. And then we should
+
+14419
+14:33:28,999 --> 14:33:32,629
+go ahead and perform upkeep. So
+as soon as I take a look at this
+
+14420
+14:33:32,659 --> 14:33:36,109
+in remix, I can actually make
+this bigger here, we're going to
+
+14421
+14:33:36,109 --> 14:33:38,629
+be able to see from the methods
+of the contract, if we check the
+
+14422
+14:33:38,629 --> 14:33:41,779
+counter, it's going to start at
+zero. And as soon as that 30
+
+14423
+14:33:41,779 --> 14:33:44,269
+seconds has passed, we'll be
+able to hit the counter again,
+
+14424
+14:33:44,449 --> 14:33:47,089
+we'll see that the channeling
+keeper network has performed
+
+14425
+14:33:47,119 --> 14:33:50,989
+upkeep on my contract. Alright,
+we just refresh and we see the
+
+14426
+14:33:50,989 --> 14:33:55,789
+balance of the upkeep has been
+decreased by about point 01
+
+14427
+14:33:55,789 --> 14:33:59,719
+link. And we should also see
+within our contract that our
+
+14428
+14:33:59,719 --> 14:34:02,929
+counter has now updated via
+proof that perform upkeep method
+
+14429
+14:34:02,929 --> 14:34:07,459
+call. And now our counter is at
+one showing us that our contract
+
+14430
+14:34:07,459 --> 14:34:10,249
+is being approved by the
+chainlink keeper network. And
+
+14431
+14:34:10,279 --> 14:34:13,639
+everything is working exactly as
+we expect. So as you can see, it
+
+14432
+14:34:13,639 --> 14:34:16,819
+is very, very easy to create a
+contract that is compatible with
+
+14433
+14:34:16,819 --> 14:34:19,969
+the keeper network. And it's
+very easy to register that
+
+14434
+14:34:19,969 --> 14:34:23,179
+upkeep and start seeing that
+your contract automation and
+
+14435
+14:34:23,179 --> 14:34:25,639
+option computation are working
+flawlessly.
+
+14436
+14:34:25,699 --> 14:34:27,589
+Now that we've learned a little
+bit more about how chainlink
+
+14437
+14:34:27,619 --> 14:34:30,439
+keepers work if you want to take
+some time to go through the
+
+14438
+14:34:30,439 --> 14:34:33,949
+documentation and open up way
+down below this open and remix
+
+14439
+14:34:33,949 --> 14:34:36,409
+button. So you can actually work
+with one of these and see these
+
+14440
+14:34:36,409 --> 14:34:39,709
+in action for yourself on a test
+net, feel free to do so we're
+
+14441
+14:34:39,709 --> 14:34:42,469
+gonna be using a setup very
+similar to this keepers counter
+
+14442
+14:34:42,469 --> 14:34:47,419
+setup in the chain link
+documentation. So now let's
+
+14443
+14:34:47,449 --> 14:34:50,629
+update our code so that this
+request random numbers
+
+14444
+14:34:50,659 --> 14:34:53,479
+automatically happens using
+chain link keepers. And if we
+
+14445
+14:34:53,479 --> 14:34:56,389
+look at the example contract can
+actually read more about what's
+
+14446
+14:34:56,419 --> 14:34:59,779
+really important for this to
+work. And we need a check upkeep
+
+14447
+14:34:59,809 --> 14:35:03,769
+and a perform upkeep function in
+our code. So instead of request
+
+14448
+14:35:03,769 --> 14:35:06,799
+random winner, this is going to
+be the PErforM upkeep that we're
+
+14449
+14:35:06,799 --> 14:35:09,799
+going to change. But first let's
+make this check upkeep checkup
+
+14450
+14:35:09,799 --> 14:35:12,709
+keep function is basically going
+to be checking to see is it time
+
+14451
+14:35:12,709 --> 14:35:15,529
+for us to get a random number to
+update the recent winner and to
+
+14452
+14:35:15,529 --> 14:35:17,929
+send them all the funds. So
+let's go ahead and make that
+
+14453
+14:35:17,929 --> 14:35:20,209
+function. I'm going to add some
+notes here, just so that it's
+
+14454
+14:35:20,209 --> 14:35:23,629
+clear what's going on. And maybe
+I'll even do natspec To tell
+
+14455
+14:35:23,629 --> 14:35:26,179
+developers what's going on with
+this function. So we're going to
+
+14456
+14:35:26,179 --> 14:35:30,439
+create this function check
+upkeep. And if we look at what
+
+14457
+14:35:30,469 --> 14:35:34,669
+this needs, it needs to be
+external override external
+
+14458
+14:35:35,779 --> 14:35:38,719
+override. And if we see this
+override keyword, this means
+
+14459
+14:35:38,719 --> 14:35:41,269
+that okay, there's probably a
+perform upkeep somewhere else.
+
+14460
+14:35:41,329 --> 14:35:43,819
+And if we scroll to the top, and
+we're going to import this
+
+14461
+14:35:43,849 --> 14:35:46,759
+keeper compatible interface, so
+that we make sure that we
+
+14462
+14:35:46,759 --> 14:35:50,869
+implement both check upkeep and
+perform upkeep in our code here.
+
+14463
+14:35:51,049 --> 14:35:54,499
+If you want you can just import
+keeper compatible in here or
+
+14464
+14:35:54,499 --> 14:35:56,869
+just the keeper compatible
+interface in our code. We're
+
+14465
+14:35:56,869 --> 14:36:04,909
+going to do import at chain link
+slash contracts slash SRC slash
+
+14466
+14:36:04,909 --> 14:36:13,129
+V 0.8 point two interfaces slash
+keeper compatible interface that
+
+14467
+14:36:13,129 --> 14:36:16,549
+soul and now we're just gonna
+say contract raffle is Veera of
+
+14468
+14:36:16,549 --> 14:36:19,999
+consumer base V two and keeper
+compatible interface and this
+
+14469
+14:36:19,999 --> 14:36:22,669
+keeper compatible interface
+inheritance just make sure that
+
+14470
+14:36:22,669 --> 14:36:25,639
+we add checkup keep and perform
+upkeep, which we're going to add
+
+14471
+14:36:25,639 --> 14:36:28,339
+in a little bit. And if we look
+back at the docs we can see
+
+14472
+14:36:28,339 --> 14:36:32,359
+checkup keep takes a bytes
+called Data check data as an
+
+14473
+14:36:32,359 --> 14:36:37,339
+input parameter. So we'll do
+bytes called data. Check data as
+
+14474
+14:36:37,339 --> 14:36:40,699
+a parameter. Now this check
+upkeep bytes call data allows us
+
+14475
+14:36:40,699 --> 14:36:44,539
+to specify really anything that
+we want when we call this check
+
+14476
+14:36:44,569 --> 14:36:47,629
+upkeep function. Having this
+check data be of type bytes
+
+14477
+14:36:47,659 --> 14:36:51,649
+means that we can even specify
+this to call other functions,
+
+14478
+14:36:51,709 --> 14:36:54,709
+there's a lot of advanced things
+you can do by just having an
+
+14479
+14:36:54,709 --> 14:36:58,399
+input parameter as type of bytes
+for us though, we're going to
+
+14480
+14:36:58,399 --> 14:37:00,949
+keep it a little bit simple. And
+we're actually not going to use
+
+14481
+14:37:00,949 --> 14:37:03,739
+this check data piece. So
+similar to how below we're not
+
+14482
+14:37:03,739 --> 14:37:06,559
+using Request ID, we can just
+comment it out. However, we
+
+14483
+14:37:06,559 --> 14:37:09,589
+still need to make sure that
+this parameter is type of bytes
+
+14484
+14:37:09,589 --> 14:37:12,469
+called data. Now anyways, let's
+go ahead and annotate this check
+
+14485
+14:37:12,499 --> 14:37:16,819
+upkeep function, we'll say this
+is the function that the chain
+
+14486
+14:37:16,819 --> 14:37:25,849
+link keeper nodes call they look
+for the to return true. Look
+
+14487
+14:37:25,849 --> 14:37:28,879
+back at the documentation, we
+can see that this check upkeep
+
+14488
+14:37:28,999 --> 14:37:33,169
+returns both and upkeep needed
+and to perform data, which
+
+14489
+14:37:33,199 --> 14:37:36,679
+again, we're going to ignore
+this upkeep needed is going to
+
+14490
+14:37:36,679 --> 14:37:41,029
+be true or false. If it's true,
+that means it's time to get a
+
+14491
+14:37:41,029 --> 14:37:46,129
+new random number following
+should be true in order to
+
+14492
+14:37:46,279 --> 14:37:50,599
+return true. So in order for it
+to be time to request a random
+
+14493
+14:37:50,599 --> 14:37:54,019
+winner, what should happen, our
+time interval should have
+
+14494
+14:37:54,019 --> 14:37:58,489
+passed, which we haven't defined
+yet. But we will lottery should
+
+14495
+14:37:58,489 --> 14:38:04,429
+have at least one player and
+have some eath. And then our
+
+14496
+14:38:04,429 --> 14:38:09,439
+subscription is funded with Link
+similar to how with channeling
+
+14497
+14:38:09,439 --> 14:38:12,499
+Vir f your subscription needs to
+be funded with Link, the same
+
+14498
+14:38:12,499 --> 14:38:15,919
+thing needs to happen for check
+upkeep and keepers to run your
+
+14499
+14:38:15,919 --> 14:38:18,019
+subscription needs to be funded
+with link. Now we're going to
+
+14500
+14:38:18,019 --> 14:38:21,319
+add one more additional piece
+here, we're going to say for the
+
+14501
+14:38:21,319 --> 14:38:26,359
+lottery should be in an open
+state, something that we want to
+
+14502
+14:38:26,359 --> 14:38:30,349
+avoid when we're waiting for a
+random number to return. And
+
+14503
+14:38:30,349 --> 14:38:33,199
+when we've requested a random
+winner. We're technically in
+
+14504
+14:38:33,199 --> 14:38:35,779
+this weird limbo state where
+we're waiting for a random
+
+14505
+14:38:35,779 --> 14:38:38,479
+number to be returned. And we
+really shouldn't allow any new
+
+14506
+14:38:38,479 --> 14:38:40,729
+players to join. So what we
+actually want to do is create
+
+14507
+14:38:40,729 --> 14:38:43,999
+some state variable telling us
+whether the lottery is open or
+
+14508
+14:38:43,999 --> 14:38:46,879
+not. And while we're waiting for
+our random number to get back,
+
+14509
+14:38:46,909 --> 14:38:49,189
+we'll be in a closed or a
+calculating state.
+
+14510
+14:38:51,770 --> 14:38:54,650
+Now what we could do at the top
+of our contract, we can just say
+
+14511
+14:38:54,710 --> 14:38:59,420
+Boolean, private, s underscore
+is open. And we can just set
+
+14512
+14:38:59,420 --> 14:39:03,080
+this to true if we're open
+otherwise false. Well, what if
+
+14513
+14:39:03,080 --> 14:39:05,600
+we have a ton of different
+states? What if we want it to be
+
+14514
+14:39:05,600 --> 14:39:10,790
+like pending, open, closed,
+calculating, etc? What do we
+
+14515
+14:39:10,790 --> 14:39:14,360
+have a ton of different states?
+Well, we could make this a U and
+
+14516
+14:39:14,360 --> 14:39:18,530
+256. Private s underscore state.
+And we could just keep track of
+
+14517
+14:39:18,530 --> 14:39:21,860
+the state having like zero b
+pending a one reopen to be
+
+14518
+14:39:21,860 --> 14:39:24,830
+closed, three, be calculating,
+etc. But this can be a little
+
+14519
+14:39:24,830 --> 14:39:27,710
+tricky to keep track of. So a
+better way to actually keep
+
+14520
+14:39:27,710 --> 14:39:31,220
+track of all this in our code is
+to use an enum enums, can be
+
+14521
+14:39:31,220 --> 14:39:35,270
+used to create custom types with
+a finite set of constant values.
+
+14522
+14:39:35,300 --> 14:39:39,110
+So we can create, for example, a
+state created locked inactive,
+
+14523
+14:39:39,200 --> 14:39:42,680
+and it's basically a new type
+for a smart contract for us,
+
+14524
+14:39:42,710 --> 14:39:45,080
+we're going to create a new
+type. And if we go back to the
+
+14525
+14:39:45,080 --> 14:39:48,170
+layout of variables, and our
+smart contract types should
+
+14526
+14:39:48,170 --> 14:39:50,840
+actually be first thing in our
+contract. So we're going to
+
+14527
+14:39:50,840 --> 14:39:54,920
+create an E new called raffle
+state. And for now, and we're
+
+14528
+14:39:54,920 --> 14:39:57,590
+just going to have it be open,
+we're just gonna have to be open
+
+14529
+14:39:57,650 --> 14:40:02,570
+or calculating. Now when we
+create an enum like this, we're
+
+14530
+14:40:02,570 --> 14:40:07,610
+kind of secretly creating a un
+256, where zero equals open, and
+
+14531
+14:40:07,610 --> 14:40:12,020
+one equals calculating. However,
+this is much more explicit that
+
+14532
+14:40:12,020 --> 14:40:15,080
+we know what each one of these
+numbers actually means. Now that
+
+14533
+14:40:15,080 --> 14:40:18,290
+we've created this new type
+called raffle state, we can
+
+14534
+14:40:18,290 --> 14:40:21,980
+create a new lottery state
+variable of type raffle state.
+
+14535
+14:40:22,100 --> 14:40:25,190
+So the exact same way we declare
+any other variable, we'll name
+
+14536
+14:40:25,190 --> 14:40:28,070
+its type, which is going to be
+raffle state. And this is going
+
+14537
+14:40:28,070 --> 14:40:31,520
+to be a storage variable. So
+we'll go ahead and do private s
+
+14538
+14:40:31,550 --> 14:40:34,910
+underscore raffle state in our
+constructor, right when we
+
+14539
+14:40:34,910 --> 14:40:38,060
+launched this contract, we
+should open up this raffle. So
+
+14540
+14:40:38,060 --> 14:40:43,340
+we'll say s, raffle state equals
+and we could use a un 256.
+
+14541
+14:40:43,730 --> 14:40:48,260
+Wrapped in type raffle state
+like so. Or we can be more
+
+14542
+14:40:48,260 --> 14:40:52,460
+explicit and say raffle state
+DOT open. Now we know that the
+
+14543
+14:40:52,460 --> 14:40:55,760
+raffle state is in an open state
+and we only want checkup keep to
+
+14544
+14:40:55,760 --> 14:40:59,090
+work is if the lottery is
+actually open. Additionally, we
+
+14545
+14:40:59,090 --> 14:41:01,730
+probably only want people to be
+able to enter if the law
+
+14546
+14:41:01,730 --> 14:41:04,730
+battery's open. So let's go
+ahead and create another if
+
+14547
+14:41:04,730 --> 14:41:07,760
+statement and revert if the
+lottery isn't open. So we can
+
+14548
+14:41:07,760 --> 14:41:14,630
+say if s underscore raffle state
+does not equal raffle state DOT
+
+14549
+14:41:14,630 --> 14:41:19,400
+open, then we're going to revert
+with a new error, we're going to
+
+14550
+14:41:19,400 --> 14:41:24,530
+create raffle underscore
+underscore, not open. And of
+
+14551
+14:41:24,530 --> 14:41:29,990
+course, at the top will create
+error, raffle not open. Now
+
+14552
+14:41:29,990 --> 14:41:33,980
+additionally, let's go down when
+we're requesting a random word.
+
+14553
+14:41:34,100 --> 14:41:37,310
+Let's update the state to be
+calculating so other people
+
+14554
+14:41:37,310 --> 14:41:41,300
+can't jump in here. So right
+above our VRF coordinator dot
+
+14555
+14:41:41,300 --> 14:41:45,890
+request, random words will do s
+underscore raffle state equals
+
+14556
+14:41:46,700 --> 14:41:51,950
+raffle state DOT calculating so
+that nobody can enter our
+
+14557
+14:41:51,950 --> 14:41:56,060
+lottery and nobody can trigger a
+new update. And then once we
+
+14558
+14:41:56,060 --> 14:41:59,960
+fulfill after we pick our
+winner, we'll say s raffle state
+
+14559
+14:41:59,990 --> 14:42:07,070
+equals raffle state DOT open
+again. Something else that we
+
+14560
+14:42:07,070 --> 14:42:10,880
+forgot to do was after we pick a
+winner from s players, we need
+
+14561
+14:42:10,880 --> 14:42:14,180
+to reset our players array. So
+let's add that in here as well
+
+14562
+14:42:14,690 --> 14:42:21,890
+as players equals new address
+payable. array of size zero. So
+
+14563
+14:42:21,890 --> 14:42:24,980
+we'll reset the raffle state.
+And we'll reset our players
+
+14564
+14:42:24,980 --> 14:42:27,350
+array. Alright, great. So now
+that we've learned about enum,
+
+14565
+14:42:27,530 --> 14:42:30,230
+let's add it to our checkup keep
+here, we're going to check these
+
+14566
+14:42:30,230 --> 14:42:33,650
+four things. And if they all
+pass checkup keys will be true
+
+14567
+14:42:33,680 --> 14:42:36,890
+and will trigger the chain the
+keepers to request a new random
+
+14568
+14:42:36,890 --> 14:42:41,510
+winner. So first, we'll say bool
+is open. It's going to be equal
+
+14569
+14:42:41,510 --> 14:42:48,590
+to raffle state. That open
+equals equals s underscore
+
+14570
+14:42:49,640 --> 14:42:53,900
+raffle state. So you can think
+of that as this boolean is open
+
+14571
+14:42:53,990 --> 14:42:58,100
+is going to be true if raffle
+state is in an open state, and
+
+14572
+14:42:58,100 --> 14:43:01,550
+it will be false if raffle state
+is in any other state. So great.
+
+14573
+14:43:01,580 --> 14:43:04,820
+We haven't is open Boolean that
+we can check later on. What else
+
+14574
+14:43:04,820 --> 14:43:07,250
+do we need? Well, we need to
+check to make sure our time
+
+14575
+14:43:07,250 --> 14:43:10,850
+interval is past well, we don't
+have a time interval yet. So
+
+14576
+14:43:10,850 --> 14:43:14,030
+let's create a time interval. In
+order to check the time we can
+
+14577
+14:43:14,030 --> 14:43:17,420
+use another one a solidity is
+globally available variables
+
+14578
+14:43:17,480 --> 14:43:20,840
+with block dot timestamp block
+that timestamp returns the
+
+14579
+14:43:20,840 --> 14:43:23,300
+current timestamp of the
+blockchain to get the current
+
+14580
+14:43:23,300 --> 14:43:26,090
+timestamp, we're gonna need
+block dot timestamp. But to get
+
+14581
+14:43:26,090 --> 14:43:28,640
+if enough time has passed, we're
+going to need to get the current
+
+14582
+14:43:28,640 --> 14:43:33,260
+block dot timestamp minus the
+last block timestamp, which we
+
+14583
+14:43:33,260 --> 14:43:35,900
+don't have yet. Let's go ahead
+and create a state variable to
+
+14584
+14:43:35,900 --> 14:43:39,350
+keep track of the previous block
+timestamp. So this is going to
+
+14585
+14:43:39,350 --> 14:43:41,660
+be a new state variable that
+we're going to make. I'm gonna
+
+14586
+14:43:41,660 --> 14:43:47,570
+say u and 256. Private s
+underscore last timestamp.
+
+14587
+14:43:49,250 --> 14:43:52,280
+And right when we deploy this
+contract, we'll update this with
+
+14588
+14:43:52,280 --> 14:43:56,360
+the current timestamp s last
+timestamp equals block dot
+
+14589
+14:43:56,390 --> 14:44:01,910
+timestamp. Alright, awesome. Now
+we have a last block timestamp.
+
+14590
+14:44:01,940 --> 14:44:04,430
+But we're going to need to check
+that the difference between the
+
+14591
+14:44:04,430 --> 14:44:07,940
+current timestamp and the last
+timestamp is greater than some
+
+14592
+14:44:07,940 --> 14:44:10,670
+interval. So we also need to
+create an interval. And this is
+
+14593
+14:44:10,670 --> 14:44:13,430
+going to be some interval, this
+is going to be some number in
+
+14594
+14:44:13,430 --> 14:44:18,110
+seconds of how long we want to
+wait between lottery runs. So
+
+14595
+14:44:18,110 --> 14:44:21,590
+let's go ahead and add this to
+our constructor as well. And do
+
+14596
+14:44:21,590 --> 14:44:25,820
+a comma here. And we'll do u and
+256. Interval. And we're going
+
+14597
+14:44:25,820 --> 14:44:31,070
+to create another global
+variable u and 256 Private s
+
+14598
+14:44:31,100 --> 14:44:34,970
+underscore interval. And in our
+constructor and we'll say s
+
+14599
+14:44:34,970 --> 14:44:38,780
+interval equals interval. Now
+interval isn't going to change
+
+14600
+14:44:38,780 --> 14:44:42,290
+after we set it. So instead of
+making a storage variable, let's
+
+14601
+14:44:42,290 --> 14:44:46,340
+make it an immutable variable to
+save some gas. Okay, perfect.
+
+14602
+14:44:46,400 --> 14:44:48,920
+Now that we have all this, I'm
+actually create a boolean to
+
+14603
+14:44:48,920 --> 14:44:51,800
+check to see if enough time has
+passed. So we'll say Boolean
+
+14604
+14:44:52,280 --> 14:44:59,900
+time passed equals the current
+block that timestamp minus s
+
+14605
+14:44:59,930 --> 14:45:05,510
+underscore last timestamp. And
+we should check to see that this
+
+14606
+14:45:05,570 --> 14:45:09,680
+is actually greater than I
+underscore interval. So we have
+
+14607
+14:45:09,680 --> 14:45:12,680
+a Boolean check to see if we're
+open. It'll be true if we're
+
+14608
+14:45:12,680 --> 14:45:15,560
+open and we'll have a boolean to
+see if enough time has passed.
+
+14609
+14:45:15,590 --> 14:45:18,140
+This will be true if enough time
+has passed. What else should we
+
+14610
+14:45:18,140 --> 14:45:21,110
+check? While we should check to
+see if we have enough players.
+
+14611
+14:45:21,200 --> 14:45:26,300
+So we'll do Boolean has players
+equals and we'll check to see if
+
+14612
+14:45:26,300 --> 14:45:32,240
+s underscore players dot length
+is greater than zero. If s
+
+14613
+14:45:32,240 --> 14:45:34,970
+players dot length is greater
+than zero as players will be
+
+14614
+14:45:34,970 --> 14:45:38,210
+true, otherwise it'll be false.
+And we'll also see if we have a
+
+14615
+14:45:38,210 --> 14:45:44,840
+balance so we'll do Boolean has
+balance equals address. This dot
+
+14616
+14:45:44,840 --> 14:45:48,680
+balance is greater than zero.
+Then finally, we're going to
+
+14617
+14:45:48,680 --> 14:45:52,280
+take all these booleans and turn
+them into the return variable
+
+14618
+14:45:52,310 --> 14:45:54,950
+that we're looking for. We're
+gonna say Boolean up keep
+
+14619
+14:45:54,950 --> 14:46:06,980
+needed. Equals is open and time
+passed. And as players and as
+
+14620
+14:46:06,980 --> 14:46:11,330
+balance, like that, so all these
+combined is gonna be this
+
+14621
+14:46:11,330 --> 14:46:15,020
+Boolean upkeep needed. And if
+this returns true, it's time to
+
+14622
+14:46:15,020 --> 14:46:18,800
+request a new random number and
+it's time to end the lottery. If
+
+14623
+14:46:18,800 --> 14:46:21,440
+this is false, it's not time
+yet, it's not time to end the
+
+14624
+14:46:21,440 --> 14:46:24,290
+lottery up. Now again, if we go
+to the chainlink, documentation
+
+14625
+14:46:24,440 --> 14:46:28,100
+upkeep needed, actually needs to
+return that Boolean upkeep
+
+14626
+14:46:28,100 --> 14:46:30,890
+needed and some bytes memory
+perform data. So we need to
+
+14627
+14:46:30,890 --> 14:46:34,850
+update we need to update our
+function here. And say returns
+
+14628
+14:46:35,360 --> 14:46:44,300
+full upkeep needed, comma, bytes
+memory, perform data star slash.
+
+14629
+14:46:44,480 --> 14:46:47,120
+And since we've initialized
+Boolean up, keep needed up here,
+
+14630
+14:46:47,150 --> 14:46:51,770
+we don't need to say what type
+of upkeep needed is down here.
+
+14631
+14:46:52,040 --> 14:46:55,130
+Since this will automatically
+get returned performed data is
+
+14632
+14:46:55,130 --> 14:46:58,610
+something that we can use. If we
+want to have checkup, keep do
+
+14633
+14:46:58,610 --> 14:47:02,060
+some other stuff. Depending on
+how this checkup keep went. We
+
+14634
+14:47:02,060 --> 14:47:04,100
+don't really need it to do
+anything else. So we can just
+
+14635
+14:47:04,100 --> 14:47:07,580
+leave it as such. Right. So now
+we have a check upkeep, we have
+
+14636
+14:47:07,580 --> 14:47:11,000
+a way to check to see if it's
+time to trigger picking our
+
+14637
+14:47:11,000 --> 14:47:12,830
+random winner of our lottery
+
+14638
+14:47:12,920 --> 14:47:18,170
+or our raffle. Now that we
+learned how to actually do this
+
+14639
+14:47:18,170 --> 14:47:21,260
+trigger, let's write the
+function that gets executed
+
+14640
+14:47:21,290 --> 14:47:25,130
+after this returns true. This is
+going to be our perform upkeep
+
+14641
+14:47:25,130 --> 14:47:28,280
+function, which we can see an
+example again in the chainlink
+
+14642
+14:47:28,280 --> 14:47:31,730
+documentation. Now when it's
+time to pick a random winner,
+
+14643
+14:47:31,790 --> 14:47:34,160
+actually, what we're going to do
+is just we're just going to call
+
+14644
+14:47:34,160 --> 14:47:36,770
+this request random winner
+function. So instead of having
+
+14645
+14:47:36,770 --> 14:47:40,160
+this extra function, let's just
+transform our request random
+
+14646
+14:47:40,160 --> 14:47:44,030
+winner function into this
+perform upkeep. Since once check
+
+14647
+14:47:44,060 --> 14:47:47,000
+upkeep returns true, the chain
+link nodes will automatically
+
+14648
+14:47:47,000 --> 14:47:50,270
+call this perform upkeep
+function. So in function request
+
+14649
+14:47:50,270 --> 14:47:54,380
+random winner, let's rename this
+to perform upkeep. And we'll
+
+14650
+14:47:54,380 --> 14:47:58,070
+have it take the input parameter
+bytes called Data perform data
+
+14651
+14:47:58,400 --> 14:48:03,650
+bytes, called data, perform
+data. In our checkup, keep we
+
+14652
+14:48:03,650 --> 14:48:06,560
+had to perform data, we would
+automatically pass it to our
+
+14653
+14:48:06,560 --> 14:48:08,780
+performance keep, we're not
+going to pass anything to
+
+14654
+14:48:08,780 --> 14:48:11,840
+perform upkeep, we can leave it
+commented out like this. Since
+
+14655
+14:48:11,840 --> 14:48:14,630
+perform upkeep is actually
+identified in the keeper
+
+14656
+14:48:14,630 --> 14:48:17,360
+compatible interface, this is
+now going to have to override
+
+14657
+14:48:17,390 --> 14:48:20,150
+that function. Now we want to do
+a little bit of validation
+
+14658
+14:48:20,150 --> 14:48:24,050
+before we continue here. Because
+right now anybody can call our
+
+14659
+14:48:24,050 --> 14:48:26,930
+perform upkeep function. So we
+want to make sure that it only
+
+14660
+14:48:26,930 --> 14:48:30,710
+gets called when checkup keep is
+true. An easy way for us to do
+
+14661
+14:48:30,710 --> 14:48:33,740
+that is to actually call our own
+checkup, keep function. Now
+
+14662
+14:48:33,740 --> 14:48:36,980
+right now, checkup keep it's an
+external. So we actually can't
+
+14663
+14:48:36,980 --> 14:48:39,830
+call our own checkup keep
+function. So let's change it to
+
+14664
+14:48:39,830 --> 14:48:42,950
+public so that even our own
+smart contracts can call this
+
+14665
+14:48:42,950 --> 14:48:45,950
+checkup keep function. Now that
+we've made it public in perform
+
+14666
+14:48:45,950 --> 14:48:49,400
+upkeep, we can call checkup,
+keep passing nothing, and then
+
+14667
+14:48:49,400 --> 14:48:52,400
+return the upkeep needed and
+perform data which we don't
+
+14668
+14:48:52,400 --> 14:48:56,660
+really care about. So we'll get
+we'll get that ball up keep
+
+14669
+14:48:57,860 --> 14:49:01,640
+needed. And then we don't care
+about perform data. So we'll
+
+14670
+14:49:01,640 --> 14:49:06,500
+leave that blank equals check up
+keep. And we'll pass it a blank
+
+14671
+14:49:06,530 --> 14:49:10,280
+called data. Now, we want to
+make sure that this is true in
+
+14672
+14:49:10,280 --> 14:49:12,680
+order to keep going with the
+function. So we could write a
+
+14673
+14:49:12,680 --> 14:49:19,280
+require here, but we're going to
+do if not up keep needed, then
+
+14674
+14:49:19,280 --> 14:49:22,640
+we're going to revert with a new
+error that we create raffle.
+
+14675
+14:49:24,529 --> 14:49:29,269
+upkeep not needed. And we're
+going to pass some variables to
+
+14676
+14:49:29,269 --> 14:49:29,719
+this error
+
+14677
+14:49:29,720 --> 14:49:32,690
+so that whoever was running into
+this bug can hopefully see why
+
+14678
+14:49:32,690 --> 14:49:34,940
+they're getting this error. So
+we'll pass the balance of this
+
+14679
+14:49:34,940 --> 14:49:38,360
+contract just in case there's no
+ether in here. We'll add the
+
+14680
+14:49:38,360 --> 14:49:41,990
+players dot length, just in case
+there's no players. And we'll
+
+14681
+14:49:41,990 --> 14:49:47,990
+add a un 256 s underscore raffle
+state. Make sure that the
+
+14682
+14:49:47,990 --> 14:49:52,130
+raffles actually open. And then
+of course, we'll need to create
+
+14683
+14:49:52,130 --> 14:49:56,030
+this air at the top air, raffle
+upkeep not needed, which is
+
+14684
+14:49:56,030 --> 14:50:03,710
+going to take a un 256 current
+balance un 256 non players and
+
+14685
+14:50:03,710 --> 14:50:08,720
+you went to fit six raffle
+state. Our code is starting to
+
+14686
+14:50:08,720 --> 14:50:11,960
+look really professional. This
+is awesome. Now something that
+
+14687
+14:50:11,960 --> 14:50:14,630
+we forgot to do back in the
+fulfill random words because we
+
+14688
+14:50:14,630 --> 14:50:17,960
+actually forgot to reset
+timestamp every time a winner is
+
+14689
+14:50:17,960 --> 14:50:21,230
+picked. We want to reset the
+timestamp as well so that we can
+
+14690
+14:50:21,230 --> 14:50:23,720
+wait another interval and let
+people participate in the
+
+14691
+14:50:23,720 --> 14:50:27,110
+lottery for that interval. So
+we'll scroll down into fulfill
+
+14692
+14:50:27,110 --> 14:50:31,430
+random words. And right after we
+reset players will also reset
+
+14693
+14:50:31,460 --> 14:50:34,490
+the timestamp. Okay great and I
+think we're just about done
+
+14694
+14:50:34,490 --> 14:50:40,730
+here. Let's add a little bit of
+natspec to make this look even
+
+14695
+14:50:40,730 --> 14:50:43,040
+more professional and and give
+people who are reading our
+
+14696
+14:50:43,040 --> 14:50:48,020
+contract even more information.
+So let's add title here at title
+
+14697
+14:50:48,230 --> 14:50:52,220
+and we'll say a sample raffle
+contract will say an author is
+
+14698
+14:50:52,220 --> 14:50:55,400
+going to be me Patrick Collins
+or you can put your own name
+
+14699
+14:50:55,400 --> 14:51:00,980
+there as well at notice. This
+contract is for creating and
+
+14700
+14:51:01,010 --> 14:51:05,900
+untampered orrible decentralized
+smart contract. And then we'll
+
+14701
+14:51:05,900 --> 14:51:12,470
+do add Dev, this implements
+chain link VRF v two, and chain
+
+14702
+14:51:12,470 --> 14:51:16,220
+link keepers. Alright, awesome.
+We've got our type declarations,
+
+14703
+14:51:16,250 --> 14:51:19,250
+we've got our state variables,
+we've got lottery variables,
+
+14704
+14:51:19,250 --> 14:51:22,430
+which are still state variables,
+we've got our events. Now it's
+
+14705
+14:51:22,430 --> 14:51:26,480
+time for our functions.
+Afterwards, we've done a little
+
+14706
+14:51:26,480 --> 14:51:29,360
+bit of natspec, at least on our
+check upkeep. If you want to add
+
+14707
+14:51:29,360 --> 14:51:32,600
+some more natspec on things like
+enter, raffle, perform upkeep,
+
+14708
+14:51:32,600 --> 14:51:35,720
+etc, you can absolutely do so.
+And then down at the bottom, we
+
+14709
+14:51:35,720 --> 14:51:38,720
+have our views slash pure getter
+functions. Let's see, do we want
+
+14710
+14:51:38,720 --> 14:51:41,540
+any other getter functions here?
+Well, we probably want to give
+
+14711
+14:51:41,540 --> 14:51:43,760
+people the chance to get a
+raffle state. So we'll do
+
+14712
+14:51:43,760 --> 14:51:50,270
+function, get raffle state, this
+will be a public, you returns a
+
+14713
+14:51:50,810 --> 14:51:57,440
+raffle state. We'll say return s
+underscore raffle state, we
+
+14714
+14:51:57,440 --> 14:52:00,080
+probably want to give people the
+chance to get the number of
+
+14715
+14:52:00,080 --> 14:52:03,020
+words. And this is going to be a
+little bit interesting here
+
+14716
+14:52:03,290 --> 14:52:09,890
+running. So if we do function,
+get num words, public view
+
+14717
+14:52:10,010 --> 14:52:15,380
+returns, you went to the six
+return num words, you'll see
+
+14718
+14:52:15,380 --> 14:52:19,640
+something interesting happened
+here. We pull up our compiler
+
+14719
+14:52:19,970 --> 14:52:24,260
+and run hh compile. Hopefully
+everything works here. Oh, and
+
+14720
+14:52:24,260 --> 14:52:27,890
+everything doesn't work because
+I didn't import this correctly.
+
+14721
+14:52:28,250 --> 14:52:30,470
+Let's fix that. Let's try again.
+
+14722
+14:52:31,520 --> 14:52:35,150
+Oh, there's a couple things I
+missed. Let's fix es players.
+
+14723
+14:52:35,240 --> 14:52:37,760
+This is why it's good to compile
+as you code as players dot
+
+14724
+14:52:37,760 --> 14:52:42,320
+length. Let's try again. And I
+spelt interval wrong. I
+
+14725
+14:52:42,320 --> 14:52:47,420
+underscore inter vol strike to
+compile again, see how many more
+
+14726
+14:52:47,420 --> 14:52:51,560
+spelling mistakes I made. And
+there it is. I underscore in
+
+14727
+14:52:51,800 --> 14:52:56,270
+error go to paste that and we do
+get another error here. Invalid
+
+14728
+14:52:56,270 --> 14:52:59,210
+type for argument in a function
+call invalid implicit conversion
+
+14729
+14:52:59,210 --> 14:53:02,300
+from literal string to bytes
+called data requested. Since
+
+14730
+14:53:02,300 --> 14:53:06,020
+we're passing this empty string
+here. And checkup keep needs a
+
+14731
+14:53:06,020 --> 14:53:09,140
+call data called data actually
+doesn't work with strings. So we
+
+14732
+14:53:09,140 --> 14:53:12,590
+need to make this bytes memory
+instead. And our compiler is now
+
+14733
+14:53:12,590 --> 14:53:15,650
+happy with us. And I spell it
+the timestamp wrong. That's a
+
+14734
+14:53:15,650 --> 14:53:19,820
+lowercase s so and you might see
+some squiggles here on Check
+
+14735
+14:53:20,000 --> 14:53:23,210
+upkeep, we could make this a
+view function since we're not
+
+14736
+14:53:23,210 --> 14:53:26,210
+actually modifying any state.
+But I want to keep it public for
+
+14737
+14:53:26,210 --> 14:53:29,330
+reasons I'll show you a little
+bit later. But finally we get
+
+14738
+14:53:29,330 --> 14:53:32,360
+the the yellow squiggly that I
+was looking for here. And if we
+
+14739
+14:53:32,360 --> 14:53:37,100
+run hh compile, we should see a
+warning in our compiler as well.
+
+14740
+14:53:37,220 --> 14:53:39,950
+Okay, so we see all those yellow
+squigglies here. Unnamed return
+
+14741
+14:53:39,950 --> 14:53:43,490
+variable can remain unassigned.
+We need this bytes memory in
+
+14742
+14:53:43,490 --> 14:53:46,250
+here because that's what the
+keepers are looking for. Morning
+
+14743
+14:53:46,280 --> 14:53:49,310
+function state mutability can be
+restricted to view for our
+
+14744
+14:53:49,310 --> 14:53:52,520
+function checkup key. You can
+make a view if you want, but I'm
+
+14745
+14:53:52,520 --> 14:53:54,890
+going to keep it public for
+reasons I'll show you a little
+
+14746
+14:53:54,890 --> 14:53:58,160
+bit later. And finally, function
+state mutability can be
+
+14747
+14:53:58,160 --> 14:54:01,880
+restricted to pure this is what
+I wanted to show you since num
+
+14748
+14:54:01,880 --> 14:54:05,420
+words is actually in the
+bytecode, since it's a constant
+
+14749
+14:54:05,420 --> 14:54:08,570
+variable technically isn't
+reading from storage, and
+
+14750
+14:54:08,570 --> 14:54:13,250
+therefore this can be a pure
+function. Returning num words
+
+14751
+14:54:13,280 --> 14:54:16,250
+doesn't actually read in
+storage, it literally will go
+
+14752
+14:54:16,280 --> 14:54:20,900
+and read the number one. So
+doing get num words in solidity
+
+14753
+14:54:20,930 --> 14:54:23,600
+with num words being a constant
+variable, it's going to
+
+14754
+14:54:23,600 --> 14:54:27,110
+literally be the exact same as
+saying get one and we would
+
+14755
+14:54:27,110 --> 14:54:29,450
+return one here, we might also
+want to get the number of
+
+14756
+14:54:29,450 --> 14:54:34,100
+players. So we'll create a
+function get number of players.
+
+14757
+14:54:35,510 --> 14:54:42,140
+And this will be a public view,
+returns a un 256. Turn s
+
+14758
+14:54:42,140 --> 14:54:47,840
+underscore players dot length.
+We're also probably going to
+
+14759
+14:54:47,840 --> 14:54:51,590
+want the latest timestamp. So
+we'll do function get latest
+
+14760
+14:54:51,860 --> 14:54:58,610
+timestamp. public view returns
+you in 256. And we're just going
+
+14761
+14:54:58,610 --> 14:55:05,270
+to return s underscore last
+timestamp. And maybe we'll want
+
+14762
+14:55:05,270 --> 14:55:09,020
+to do request confirmation. So
+we'll do function GET request
+
+14763
+14:55:09,380 --> 14:55:14,270
+confirmations. Public pure since
+request confirmations is also a
+
+14764
+14:55:14,270 --> 14:55:19,790
+constant function returns you
+went to you went to 56 Turn
+
+14765
+14:55:20,060 --> 14:55:25,430
+request confirmations. All
+right, we've got some wonderful
+
+14766
+14:55:25,430 --> 14:55:28,940
+getters here. Some views slash
+pure functions, we have a way to
+
+14767
+14:55:28,940 --> 14:55:32,870
+get a random number we have a
+way in a decentralized context.
+
+14768
+14:55:33,080 --> 14:55:36,500
+Automatic automatically execute.
+picking a random winner we have
+
+14769
+14:55:36,500 --> 14:55:40,340
+a way for people to enter our
+raffle to enter this lottery.
+
+14770
+14:55:40,550 --> 14:55:46,340
+And we have a bullet proof way
+to solve creating a truly fair
+
+14771
+14:55:46,370 --> 14:55:50,180
+decentralized lottery. Oh my
+goodness. Let's do one more
+
+14772
+14:55:50,180 --> 14:55:54,380
+compile for good measure H H
+compile. And these are just
+
+14773
+14:55:54,380 --> 14:55:57,560
+warnings. So we're good to go
+here. Our code is compiling
+
+14774
+14:55:57,590 --> 14:56:03,620
+successfully. Like I said
+Normally, this definitely isn't
+
+14775
+14:56:03,650 --> 14:56:05,840
+going to be the way that you're
+going to write your smart
+
+14776
+14:56:05,840 --> 14:56:09,410
+contracts, it's almost
+impossible to write a full smart
+
+14777
+14:56:09,410 --> 14:56:11,900
+contract without making any
+mistakes. And without flipping
+
+14778
+14:56:11,900 --> 14:56:14,840
+back and forth between
+documentation, I have already
+
+14779
+14:56:14,840 --> 14:56:18,800
+written this contract many times
+myself, and I still made a whole
+
+14780
+14:56:18,800 --> 14:56:21,950
+bunch of mistakes. So it is
+totally reasonable and totally
+
+14781
+14:56:21,950 --> 14:56:25,340
+rational for anybody and
+everybody to make mistakes going
+
+14782
+14:56:25,340 --> 14:56:28,040
+through this. And to use
+resources and to write tests
+
+14783
+14:56:28,070 --> 14:56:31,070
+along the way. Now that we have
+our raffle dot Seoul created,
+
+14784
+14:56:31,370 --> 14:56:34,700
+it's time to add everything
+else. So we're going to come
+
+14785
+14:56:34,700 --> 14:56:38,210
+over here, we're gonna create a
+new folder, and add our deploy
+
+14786
+14:56:38,210 --> 14:56:39,350
+folder per usual.
+
+14787
+14:56:39,440 --> 14:56:41,840
+And we're going to do exactly
+what we've already done a couple
+
+14788
+14:56:41,840 --> 14:56:44,420
+of times, we're going to create
+some scripts to deploy our
+
+14789
+14:56:44,420 --> 14:56:46,910
+raffle contract. Now with our
+raffle contract, there's a
+
+14790
+14:56:46,910 --> 14:56:49,340
+couple of things in here that we
+want to make note of first thing
+
+14791
+14:56:49,340 --> 14:56:53,000
+is that our constructor right
+now is absolutely massive. There
+
+14792
+14:56:53,000 --> 14:56:56,120
+are a ton of parameters in here
+that we need to account for.
+
+14793
+14:56:56,210 --> 14:56:58,520
+Let's take a look at our
+constructors and see if there's
+
+14794
+14:56:58,520 --> 14:57:01,340
+any contracts that we're already
+interacting with. Okay, VRF,
+
+14795
+14:57:01,340 --> 14:57:05,450
+coordinator v2. This is a
+contract address, entrance fee,
+
+14796
+14:57:05,450 --> 14:57:09,650
+no gasline, no subscription ID
+no callback, guestimate No, and
+
+14797
+14:57:09,650 --> 14:57:13,190
+interval. No. So knowing that
+this is an address should be a
+
+14798
+14:57:13,190 --> 14:57:15,890
+tip that Ah, okay, we're
+probably going to need to deploy
+
+14799
+14:57:15,920 --> 14:57:19,040
+some mocks. For this, since
+we're going to need to interact
+
+14800
+14:57:19,040 --> 14:57:22,520
+with a VRF coordinator contract
+that's outside of our project.
+
+14801
+14:57:22,550 --> 14:57:24,650
+But let's go ahead and start
+working on our raffle deployment
+
+14802
+14:57:24,650 --> 14:57:27,770
+script first, and we know we're
+going to have to deploy some
+
+14803
+14:57:27,770 --> 14:57:30,770
+mocks. So we'll just keep that
+in mind. So let's create a new
+
+14804
+14:57:30,770 --> 14:57:38,450
+file. Oh, one, deploy raffle.js.
+And let's get started deploying
+
+14805
+14:57:38,480 --> 14:57:41,180
+our raffle contract. Now, this
+is going to look really similar
+
+14806
+14:57:41,180 --> 14:57:43,610
+to what we've done before. And
+we're going to do it again here.
+
+14807
+14:57:43,640 --> 14:57:46,040
+If you want to use your previous
+deploy scripts as a reference, I
+
+14808
+14:57:46,040 --> 14:57:48,920
+absolutely recommend you do so.
+But let's get started with
+
+14809
+14:57:49,340 --> 14:57:56,090
+module that exports equals an
+async function. That's going to
+
+14810
+14:57:56,090 --> 14:58:04,070
+take get named accounts and
+deployments. As input
+
+14811
+14:58:04,070 --> 14:58:10,220
+parameters, then we're going to
+do const. Deploy log equals
+
+14812
+14:58:10,340 --> 14:58:15,710
+deployments, then we're gonna
+say const, Deployer, equals
+
+14813
+14:58:15,740 --> 14:58:21,050
+await, get named accounts. Let's
+go to our config and update
+
+14814
+14:58:21,050 --> 14:58:24,350
+module that exports to to have
+this I'm just going to copy
+
+14815
+14:58:24,350 --> 14:58:27,740
+paste, so that employer is going
+to be defaulted to account zero
+
+14816
+14:58:27,770 --> 14:58:30,380
+and player is going to be
+defaulted to account one, if you
+
+14817
+14:58:30,380 --> 14:58:32,630
+want to go ahead and write this
+out, feel free to pause and
+
+14818
+14:58:32,630 --> 14:58:34,730
+write out your name accounts.
+Right now, there's gonna be a
+
+14819
+14:58:34,730 --> 14:58:38,900
+lot of boilerplate in our heart
+hat.config.js. So feel free to
+
+14820
+14:58:38,900 --> 14:58:42,350
+have the GitHub repo for this
+lesson up with you or your
+
+14821
+14:58:42,350 --> 14:58:44,780
+previous scripts that you've
+already written as a reference
+
+14822
+14:58:44,840 --> 14:58:47,660
+named accounts Deployer. And
+we're also going to have a
+
+14823
+14:58:47,660 --> 14:58:51,500
+player named account so that we
+can separate different users or
+
+14824
+14:58:51,500 --> 14:58:53,900
+different players who are
+interacting with our contracts.
+
+14825
+14:58:53,990 --> 14:58:56,000
+But for now, we're gonna grab
+our Deployer. And we're gonna
+
+14826
+14:58:56,000 --> 14:58:59,090
+get started. Now similar to last
+time, we would just do const,
+
+14827
+14:58:59,120 --> 14:59:05,570
+raffle equals await ploy,
+raffle, comma, and then add all
+
+14828
+14:59:05,570 --> 14:59:09,530
+of our stuff in here, right? So
+this would be from Deployer.
+
+14829
+14:59:10,610 --> 14:59:14,210
+args, we're going to have a ton
+of args. So we're going to come
+
+14830
+14:59:14,210 --> 14:59:19,250
+back to this. And then log is
+going to be true. And then we're
+
+14831
+14:59:19,250 --> 14:59:21,080
+going to have wait
+confirmations, there's a little
+
+14832
+14:59:21,080 --> 14:59:23,750
+bit more boilerplate we need to
+work with here in our Hardhead
+
+14833
+14:59:23,750 --> 14:59:26,840
+config, we don't have a network
+here. So let's add our network
+
+14834
+14:59:26,840 --> 14:59:29,420
+information. So we can get those
+block confirmations will be
+
+14835
+14:59:29,420 --> 14:59:33,320
+specific in here, as well. And
+we'll say default network is
+
+14836
+14:59:33,320 --> 14:59:35,960
+going to be hard hat. And then
+we'll say
+
+14837
+14:59:37,460 --> 14:59:40,370
+networks, and we'll add our
+network information that's going
+
+14838
+14:59:40,370 --> 14:59:46,190
+to be working with heart hub,
+which has a chain ID of 31337
+
+14839
+14:59:46,220 --> 14:59:49,490
+miles, we'll put that in here as
+well. And block confirmations
+
+14840
+14:59:49,580 --> 14:59:53,000
+were just set to one lot this
+column here, we're also gonna be
+
+14841
+14:59:53,000 --> 14:59:56,150
+running some staging tests on
+the Rinkeby network. So we'll
+
+14842
+14:59:56,150 --> 15:00:01,640
+add rink B in here with a chain
+ID of four, block confirmations
+
+14843
+15:00:02,240 --> 15:00:07,490
+of six, and we need to add a URL
+and then also some accounts for
+
+14844
+15:00:07,490 --> 15:00:11,870
+our URL. We've done this 100
+times. We'll do const. rinky
+
+14845
+15:00:12,260 --> 15:00:18,530
+dink could be RPC URL equals
+process study and v dot rake,
+
+14846
+15:00:18,530 --> 15:00:22,370
+the RPC URL, that's private key,
+blah, blah, blah, we're going to
+
+14847
+15:00:22,370 --> 15:00:26,030
+add all these same variables
+from our last projects. So I'm
+
+14848
+15:00:26,030 --> 15:00:28,790
+going to ask you to pause here
+and just copy paste all those
+
+14849
+15:00:28,790 --> 15:00:32,270
+variables from our last project.
+Boom, like so since running
+
+14850
+15:00:32,270 --> 15:00:35,720
+rink, prpc, URL, private key
+corn market cap and ether scan,
+
+14851
+15:00:35,720 --> 15:00:39,230
+we're also going to want to make
+sure you folder, excuse me, new
+
+14852
+15:00:39,230 --> 15:00:43,400
+file, dot env. And we're going
+to drop all of our information
+
+14853
+15:00:43,400 --> 15:00:47,870
+in here our rink, prpc, URL,
+private key, ether scan API key,
+
+14854
+15:00:47,900 --> 15:00:50,780
+and then our coin market cap API
+key as well. Now that we have
+
+14855
+15:00:50,780 --> 15:00:56,060
+our private key or ring prpc URL
+down in URL, B RPC URL, and for
+
+14856
+15:00:56,060 --> 15:00:59,450
+accounts, we're just going to
+add that single private key. Now
+
+14857
+15:00:59,450 --> 15:01:02,750
+for weight confirmations is
+going to equal For network
+
+14858
+15:01:03,590 --> 15:01:10,700
+config dot block con formations,
+or one, we're gonna have to
+
+14859
+15:01:10,700 --> 15:01:13,520
+import network from Hardhead,
+which looks like my VS code
+
+14860
+15:01:13,550 --> 15:01:16,670
+automatically did for me. Thanks
+VS code. So this is how we're
+
+14861
+15:01:16,670 --> 15:01:19,220
+going to deploy a raffle.
+Obviously, we have a ton of
+
+14862
+15:01:19,220 --> 15:01:22,070
+arguments that we need to
+account for. So let's get to it.
+
+14863
+15:01:22,280 --> 15:01:24,590
+Let's look at our raffle
+constructor to see what we need
+
+14864
+15:01:24,590 --> 15:01:27,170
+to get. Okay, well, the first
+thing that we need to get via of
+
+14865
+15:01:27,170 --> 15:01:30,410
+coordinator v2, we're gonna use
+the same strategy we used in our
+
+14866
+15:01:30,410 --> 15:01:34,100
+Funmi project with using mocks,
+if we're on a development chain,
+
+14867
+15:01:34,190 --> 15:01:37,040
+and using the actual contract
+address if we're on a test net,
+
+14868
+15:01:37,070 --> 15:01:40,460
+or a live network, so let's get
+to it. So let's go ahead,
+
+14869
+15:01:40,850 --> 15:01:46,670
+recreate that helper, hard hat
+config dot j s and create that
+
+14870
+15:01:46,670 --> 15:01:53,600
+const. Network. Config, say it
+equals for hard hat, we're going
+
+14871
+15:01:53,600 --> 15:01:56,420
+to use a mock. So we don't need
+to put that in here for now. But
+
+14872
+15:01:56,420 --> 15:02:01,100
+for rink B, let's go ahead, but
+a foreign here, so the name is
+
+14873
+15:02:01,100 --> 15:02:04,640
+going to be Rinkeby. And we're
+going to need to go to the chain
+
+14874
+15:02:04,640 --> 15:02:07,400
+link documentation, the VRF
+contracts, and we're going to
+
+14875
+15:02:07,400 --> 15:02:11,900
+need to grab the RF coordinator
+for the Rinkeby. Test net, we're
+
+14876
+15:02:11,900 --> 15:02:15,170
+going to grab this address here,
+plop it in here, we'll say V RF
+
+14877
+15:02:15,350 --> 15:02:20,720
+core did an eight tour v two,
+bam, right like that. So back in
+
+14878
+15:02:20,720 --> 15:02:23,060
+our deploy raffle, we're gonna
+have to pick whether or not to
+
+14879
+15:02:23,060 --> 15:02:26,750
+use the V RF coordinator v two
+in the network config or some
+
+14880
+15:02:26,750 --> 15:02:30,560
+mock that we deployed, which of
+course, leads us to us having to
+
+14881
+15:02:30,560 --> 15:02:37,430
+deploy a mock, let's create the
+new file 00. Deploy marks.js. So
+
+14882
+15:02:37,460 --> 15:02:43,010
+same thing module that exports
+equals async function where it's
+
+14883
+15:02:43,010 --> 15:02:48,830
+taking, get named accounts, and
+deployments, as its input
+
+14884
+15:02:48,830 --> 15:02:51,830
+variables from the heart at
+runtime environment, or do const
+
+14885
+15:02:52,160 --> 15:02:57,860
+deploy COMM A log equals
+deployments. And then const,
+
+14886
+15:02:58,160 --> 15:03:05,570
+Deployer equals await, get named
+accounts, Excel, and then we're
+
+14887
+15:03:05,570 --> 15:03:08,180
+going to grab the chain ID as
+well as we're going to only
+
+14888
+15:03:08,180 --> 15:03:11,240
+wants to deploy this on a
+development chain. So we'll do
+
+14889
+15:03:11,240 --> 15:03:17,780
+const chain ID equals network
+dot config dot chain ID. Now
+
+14890
+15:03:17,810 --> 15:03:19,850
+we're going to only want to
+deploy mocks, if we're on a
+
+14891
+15:03:19,850 --> 15:03:22,370
+development chain. So once
+again, we're going to go to our
+
+14892
+15:03:22,370 --> 15:03:24,920
+helper config, we're going to
+add those development chains in
+
+14893
+15:03:24,920 --> 15:03:31,130
+here. We'll say const,
+development chains equals hard
+
+14894
+15:03:31,130 --> 15:03:35,360
+hat, and localhost. And then
+we're gonna want to export both
+
+14895
+15:03:35,360 --> 15:03:41,780
+of these. So module, dot
+exports, equals network config,
+
+14896
+15:03:42,470 --> 15:03:47,180
+and development chance. Now in
+our deploy mocks, we're gonna
+
+14897
+15:03:47,180 --> 15:03:54,590
+want to grab those are saying
+const development chains, equals
+
+14898
+15:03:55,190 --> 15:04:01,220
+require dot dot slash helper
+helper hardhat config. Now we
+
+14899
+15:04:01,220 --> 15:04:07,190
+can check to see if development
+chains dot includes the network
+
+14900
+15:04:07,220 --> 15:04:10,580
+dot name that we're currently
+on. If we're in a development
+
+14901
+15:04:10,580 --> 15:04:14,210
+chain, we're gonna go ahead and
+log local network, the
+
+14902
+15:04:14,330 --> 15:04:20,690
+protected, deploying box. And
+now we'll have to deploy a mock
+
+14903
+15:04:20,870 --> 15:04:25,340
+VRF coordinator, where do we get
+a mock VRF to coordinator Well,
+
+14904
+15:04:25,340 --> 15:04:26,870
+let's go ahead and create one of
+those.
+
+14905
+15:04:29,510 --> 15:04:33,560
+We go to the chainlink. GitHub
+again, we go to contracts. So C
+
+14906
+15:04:33,980 --> 15:04:39,470
+0.8, actually have a mocks
+folder with VF coordinator v2
+
+14907
+15:04:39,470 --> 15:04:42,680
+Mach dot Sol, and we're just
+going to use this as our mock.
+
+14908
+15:04:42,800 --> 15:04:45,800
+So in our contracts folder,
+we're gonna create a new file
+
+14909
+15:04:45,830 --> 15:04:53,270
+called test new file called V RF
+core, in a core, the two mock
+
+14910
+15:04:53,330 --> 15:04:56,960
+dot Sol, and we're just going to
+import this mock and have it be
+
+14911
+15:04:56,960 --> 15:05:03,710
+our mock. So we'll do spdx.
+We'll do pragma, solidity,
+
+14912
+15:05:04,130 --> 15:05:08,870
+carrot zero, point 8.0, or seven
+or whatever we want to do, we'll
+
+14913
+15:05:08,870 --> 15:05:14,990
+do import at chainlink slash
+contracts slash SRC slash v 0.8.
+
+14914
+15:05:15,410 --> 15:05:23,210
+Slash, mocks, slash VRF. Pour
+did a tour B to mock that soul.
+
+14915
+15:05:23,450 --> 15:05:25,460
+And we'll just check to see if
+it compiles with Hardhead
+
+14916
+15:05:25,460 --> 15:05:28,850
+compile, and it looks like it's
+compiling as well. Awesome. So
+
+14917
+15:05:28,850 --> 15:05:31,730
+now that we have our mock
+contract, we can actually go
+
+14918
+15:05:31,730 --> 15:05:38,450
+ahead and deploy it. So we'll do
+a weight loi, the RF core de ne
+
+14919
+15:05:38,450 --> 15:05:40,070
+Tor V to Mach
+
+14920
+15:05:41,120 --> 15:05:44,420
+comma, and then we'll give it
+our parameters in here. We'll
+
+14921
+15:05:44,420 --> 15:05:49,880
+say from Deployer. Log is going
+to be true, and then we're going
+
+14922
+15:05:49,880 --> 15:05:53,570
+to do our arguments. Now, what
+are the arguments of this VRF
+
+14923
+15:05:53,690 --> 15:05:57,050
+coordinator, v2 Mk. Well, if we
+open the VRF coordinator v2
+
+14924
+15:05:57,050 --> 15:06:01,670
+Mock, right in our VS code, or
+on GitHub, we can actually see
+
+14925
+15:06:02,030 --> 15:06:05,060
+We will roll over to the
+constructor that it takes two
+
+14926
+15:06:05,060 --> 15:06:10,010
+things. It takes a base fee and
+a gas price link. What are these
+
+14927
+15:06:10,040 --> 15:06:14,390
+first one? Well, the first one
+is this const base fee. If we go
+
+14928
+15:06:14,390 --> 15:06:17,510
+back to the documentation, we
+can see that there's this
+
+14929
+15:06:17,510 --> 15:06:22,550
+premium section of 0.25 Link
+rink B, this means that for each
+
+14930
+15:06:22,550 --> 15:06:27,920
+request, there's a base fee of
+0.25 link for every request. So
+
+14931
+15:06:27,920 --> 15:06:30,980
+anytime we want to request a
+random number on Rinckey, it's
+
+14932
+15:06:30,980 --> 15:06:35,480
+going to cost us 0.25. Link, or
+you can think of it as 0.25
+
+14933
+15:06:35,510 --> 15:06:39,770
+Oracle gas to make this request.
+So back in our deploy mocks, we
+
+14934
+15:06:39,770 --> 15:06:44,300
+can say base V equals, we could
+resemble Rinckey here and do 25,
+
+14935
+15:06:44,300 --> 15:06:49,490
+blah, blah, blah, or we could do
+ethers dot utils dot parse eath,
+
+14936
+15:06:49,670 --> 15:06:55,730
+of 0.25. And I'll even put a
+little comment here, say 0.25 is
+
+14937
+15:06:55,730 --> 15:07:02,180
+the premium, it costs 0.25 Link
+per request. And remember, the
+
+14938
+15:07:02,180 --> 15:07:06,410
+reason that this cost 0.25 Link
+per request versus the price
+
+14939
+15:07:06,410 --> 15:07:09,320
+feeds didn't cost anything is
+because the price feeds. If we
+
+14940
+15:07:09,320 --> 15:07:13,610
+look back at a chain that link,
+each one of these price feeds is
+
+14941
+15:07:13,610 --> 15:07:17,810
+being sponsored by a group of
+protocols who are paying for all
+
+14942
+15:07:17,810 --> 15:07:20,630
+these requests already, since
+there isn't a sponsor for this,
+
+14943
+15:07:20,660 --> 15:07:24,110
+we are the only ones requesting
+the randomness, we get to be the
+
+14944
+15:07:24,110 --> 15:07:26,720
+ones to actually sponsor getting
+this random number, then the
+
+14945
+15:07:26,720 --> 15:07:30,230
+second thing here is going to be
+the gas price link. So let's
+
+14946
+15:07:30,230 --> 15:07:35,990
+create another const here to
+const. gas price link. But what
+
+14947
+15:07:35,990 --> 15:07:39,920
+this is, is actually a
+calculated value is a calculated
+
+14948
+15:07:39,920 --> 15:07:44,750
+value based on the gas price of
+the chain. Here's an example if
+
+14949
+15:07:44,750 --> 15:07:47,360
+we were to request a random
+number on Aetherium, and the
+
+14950
+15:07:47,360 --> 15:07:52,010
+eath price skyrocketed up to
+like to like a billion dollars,
+
+14951
+15:07:52,070 --> 15:07:55,370
+gas would be incredibly,
+incredibly expensive. Now when
+
+14952
+15:07:55,370 --> 15:07:59,780
+chain link nodes respond chain
+link nodes pay the gas fees, who
+
+14953
+15:07:59,990 --> 15:08:05,330
+give us randomness, and do
+external execution, the chain
+
+14954
+15:08:05,330 --> 15:08:07,730
+link nodes are actually the ones
+that pay the gas when returning
+
+14955
+15:08:07,730 --> 15:08:11,570
+randomness or executing an
+upkeep or etc. If we go to our
+
+14956
+15:08:11,570 --> 15:08:15,860
+raffle dot soul, and scroll down
+to perform upkeep, or fulfill
+
+14957
+15:08:15,860 --> 15:08:18,770
+random words, it's actually the
+chain link nodes that are
+
+14958
+15:08:18,770 --> 15:08:21,260
+calling these two functions and
+paying the gas for it, they get
+
+14959
+15:08:21,260 --> 15:08:24,920
+paid in Oracle gas to offset
+those costs. But if the price of
+
+14960
+15:08:24,950 --> 15:08:28,490
+eath, or any native blockchain
+skyrocketed the chain that nodes
+
+14961
+15:08:28,490 --> 15:08:31,610
+itself to pay the gas fee. So
+the chain link nodes have a
+
+14962
+15:08:31,610 --> 15:08:34,310
+calculated price have a
+calculated variable called the
+
+14963
+15:08:34,310 --> 15:08:37,880
+gas price per link, which
+fluctuates based off the price
+
+14964
+15:08:37,880 --> 15:08:40,790
+of the actual chain, so that
+they never go bankrupt.
+
+14965
+15:08:41,000 --> 15:08:43,610
+Basically, the price of a
+request changes based off the
+
+14966
+15:08:43,610 --> 15:08:45,830
+price of gas for that
+blockchain, you can kind of
+
+14967
+15:08:45,830 --> 15:08:49,700
+think of this as the link per
+gas, if you will, for now we can
+
+14968
+15:08:49,700 --> 15:08:52,340
+kind of just set it to whatever
+we want. And we'll just set it
+
+14969
+15:08:52,340 --> 15:08:58,250
+to one e nine, which is going to
+be equivalent to 1123456789. So
+
+14970
+15:08:58,250 --> 15:09:01,700
+now that we have the base fee,
+and the gas price link, we'll
+
+14971
+15:09:01,700 --> 15:09:05,420
+grab this base fee, we'll have
+these be the arguments for our
+
+14972
+15:09:05,450 --> 15:09:08,420
+VR chord, enter V to mock, so
+we'll say and actually we can
+
+14973
+15:09:08,420 --> 15:09:14,990
+delete that will say const, args
+equals base fee, and gas price
+
+14974
+15:09:15,290 --> 15:09:18,920
+link, then we can take this args
+variable and just plop it in
+
+14975
+15:09:18,920 --> 15:09:23,480
+here. Now we can do log mocks
+deployed, then we can do log
+
+14976
+15:09:23,570 --> 15:09:26,330
+that a little line like this to
+let people know that this deploy
+
+14977
+15:09:26,330 --> 15:09:29,720
+script is done, then we'll just
+do a module that exports dot
+
+14978
+15:09:29,720 --> 15:09:35,600
+tags equals all and mocks. So
+now that we have a view of
+
+14979
+15:09:35,600 --> 15:09:38,690
+coordinator v2 Mock deployed,
+we'll come back over to our
+
+14980
+15:09:38,690 --> 15:09:42,200
+raffle and make some code around
+it. Similar to what we just did
+
+14981
+15:09:42,230 --> 15:09:46,790
+with our deploy mocks. We can
+say if development chains that
+
+14982
+15:09:46,820 --> 15:09:51,440
+includes network dot name, we'll
+do some stuff. And we need to
+
+14983
+15:09:51,470 --> 15:09:54,650
+import development chains from
+our helper Hardhead config. And
+
+14984
+15:09:54,650 --> 15:09:57,290
+we need to import network from
+hard hat. My VS code
+
+14985
+15:09:57,290 --> 15:10:00,320
+automatically added them Wow,
+thanks VS code. Let's even just
+
+14986
+15:10:00,320 --> 15:10:03,890
+do const args and make this
+variable down here. Stick it in
+
+14987
+15:10:03,890 --> 15:10:07,610
+args. Our first argument is
+going to need to be this Vera fi
+
+14988
+15:10:07,610 --> 15:10:12,290
+to coordinator so let's make a
+variable we'll say let VRF core
+
+14989
+15:10:12,770 --> 15:10:17,270
+need torby to address and if
+we're on a development chain,
+
+14990
+15:10:17,300 --> 15:10:21,020
+we're going to grab that mock
+contract. So we'll say const
+
+14991
+15:10:21,050 --> 15:10:28,010
+PRF, Cor de ATAR V to mock
+equals await ethers dot get
+
+14992
+15:10:28,040 --> 15:10:35,990
+contract, the RF cord the cord
+to NATO Tor v two MK, and then
+
+14993
+15:10:35,990 --> 15:10:40,820
+we can set the RF coordinator v
+two address equals VRF core
+
+14994
+15:10:40,850 --> 15:10:43,490
+denater V two mach dot
+
+14995
+15:10:43,520 --> 15:10:50,780
+address. Cool. We have that
+address here. Else if we're not
+
+14996
+15:10:50,780 --> 15:10:54,290
+on a local network, the VRF v2
+coordinator address is simply
+
+14997
+15:10:54,290 --> 15:10:58,010
+going to be derived from our
+network config. So let's import
+
+14998
+15:10:58,010 --> 15:11:01,640
+the network config as well from
+our helper Hardhead config and
+
+14999
+15:11:01,640 --> 15:11:06,530
+we'll say else VRF coordinator
+v2 address equals network config
+
+15000
+15:11:07,160 --> 15:11:11,390
+of our chain ID. Let's which
+actually sorry, we do need the
+

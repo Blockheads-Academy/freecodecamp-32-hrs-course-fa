@@ -1,0 +1,4992 @@
+22001
+22:32:35,129 --> 22:32:39,089
+bytes to string. And that's how
+we concatenate them. Now, at
+
+22002
+22:32:39,089 --> 22:32:39,509
+this point, you
+
+22003
+22:32:39,510 --> 22:32:42,540
+might be thinking, okay, cool.
+Great, Patrick. I'm all set. I
+
+22004
+22:32:42,540 --> 22:32:45,720
+understand this. I'm happy to go
+back to my project. And if you
+
+22005
+22:32:45,720 --> 22:32:48,540
+want to do that, absolutely go
+for it and skip over this
+
+22006
+22:32:48,540 --> 22:32:51,750
+section, but some other viewers
+might be going okay, Patrick,
+
+22007
+22:32:51,750 --> 22:32:55,890
+this is seems pretty cool. But
+I'm sure this encode pacts in
+
+22008
+22:32:55,890 --> 22:32:58,950
+this encode function aren't just
+here to concatenate strings,
+
+22009
+22:32:59,280 --> 22:33:01,290
+they probably have some other
+function, what do they actually
+
+22010
+22:33:01,290 --> 22:33:04,470
+do? Well, if that's what you're
+asking, I'm glad you asked. And
+
+22011
+22:33:04,470 --> 22:33:06,750
+I'm glad you're curious, because
+we're going to find out. Now not
+
+22012
+22:33:06,750 --> 22:33:11,370
+only can you encode stuff, like
+strings and numbers, and really
+
+22013
+22:33:11,370 --> 22:33:17,010
+anything, but you can decode
+stuff. So I can say, function,
+
+22014
+22:33:17,280 --> 22:33:23,370
+decode string, public, your
+returns string memory, string
+
+22015
+22:33:23,370 --> 22:33:28,890
+memory, some string equals ABI
+dot decode. This is going to
+
+22016
+22:33:28,890 --> 22:33:32,880
+take a couple parameters. So if
+you look in the docs here, abi
+
+22017
+22:33:32,880 --> 22:33:38,430
+dot decode, it takes as a first
+argument, the encoded data, and
+
+22018
+22:33:38,430 --> 22:33:41,610
+then it takes a tuple. You can
+kind of think of it as a list
+
+22019
+22:33:41,610 --> 22:33:45,750
+but not quite a list, a set of
+types to decode this into and it
+
+22020
+22:33:45,750 --> 22:33:48,690
+returns the number of parameters
+that you gave it. So we might
+
+22021
+22:33:48,690 --> 22:33:52,290
+want to say this string memory
+some string Adding, let's give
+
+22022
+22:33:52,290 --> 22:33:56,160
+it as input this encode string
+function, the result of this
+
+22023
+22:33:56,160 --> 22:33:58,770
+encode string function, right,
+which again, is going to be this
+
+22024
+22:33:58,770 --> 22:34:02,310
+big thing. So this is kind of
+equivalent to sticking this
+
+22025
+22:34:02,310 --> 22:34:04,560
+massive thing in here, but we're
+just not going to stick the
+
+22026
+22:34:04,560 --> 22:34:06,720
+massive thing in there, because
+it's really big. So we're gonna
+
+22027
+22:34:06,720 --> 22:34:10,920
+say, Let's decode the result of
+ENCODE string, and let's decode
+
+22028
+22:34:10,920 --> 22:34:16,590
+it into a string. Because we
+need to tell solidity, hey,
+
+22029
+22:34:16,590 --> 22:34:19,890
+we're going to decode this, but
+it doesn't know what to decode
+
+22030
+22:34:19,890 --> 22:34:22,530
+it into. It's like, okay, cool.
+I can decode this, but like,
+
+22031
+22:34:22,530 --> 22:34:26,070
+what, what do you want me to do
+with it, and we say, Oh, this is
+
+22032
+22:34:26,070 --> 22:34:29,340
+a string, so decode it into a
+string. And then we can do
+
+22033
+22:34:29,340 --> 22:34:33,570
+return some string. Now, once
+again, we deploy that old
+
+22034
+22:34:33,570 --> 22:34:36,270
+Cotters, we delete the last
+contract, we deploy this new
+
+22035
+22:34:36,270 --> 22:34:40,560
+one. So in code string, and code
+string, whereas in code, string,
+
+22036
+22:34:40,590 --> 22:34:43,800
+and code string returns this
+massive thing, as a human being,
+
+22037
+22:34:43,800 --> 22:34:47,670
+we're like, God, I can't read
+that computers can read that.
+
+22038
+22:34:47,790 --> 22:34:50,430
+But we can't really read that.
+So we say, okay, let's decode
+
+22039
+22:34:50,430 --> 22:34:54,540
+that back into its string form,
+we hit decode string, and we get
+
+22040
+22:34:54,540 --> 22:34:58,950
+back some string. And now we can
+actually multi encode and multi
+
+22041
+22:34:58,950 --> 22:35:02,430
+and decode, right, we can encode
+as much stuff as we want. So I
+
+22042
+22:35:02,430 --> 22:35:07,770
+can say function, multi ENCODE,
+public pure, returns bytes
+
+22043
+22:35:07,770 --> 22:35:10,560
+memory, we're going to encode a
+couple of things, we'll say
+
+22044
+22:35:10,560 --> 22:35:16,230
+bytes, memory, some string
+equals ABI dot encode some
+
+22045
+22:35:16,230 --> 22:35:21,960
+string, comma, it's bigger. So
+we're going to encode two
+
+22046
+22:35:21,960 --> 22:35:25,890
+strings here, we're gonna encode
+some string, and it's bigger. So
+
+22047
+22:35:25,890 --> 22:35:29,610
+we have two strings, we're going
+to encode and we'll return some
+
+22048
+22:35:29,610 --> 22:35:33,030
+string, even though it's you
+know, bytes. And then we can
+
+22049
+22:35:33,030 --> 22:35:38,280
+actually multi decode. So we'll
+say function, multi decode, this
+
+22050
+22:35:38,280 --> 22:35:42,150
+will be a public pure returns,
+we'll say it returns two
+
+22051
+22:35:42,150 --> 22:35:46,710
+strings, string memory, and
+string memory. And instead of
+
+22052
+22:35:46,710 --> 22:35:51,060
+doing string memory, some string
+equals API decode, we'll say,
+
+22053
+22:35:51,720 --> 22:35:57,810
+string memory, some string,
+comma string memory, some other
+
+22054
+22:35:57,810 --> 22:36:02,940
+string. So we're gonna get to
+returns equals Avi dot decode.
+
+22055
+22:36:03,060 --> 22:36:07,590
+Let's decode this multi encode
+result, which is the doubly
+
+22056
+22:36:07,590 --> 22:36:12,870
+encoded strings into a string
+and another string. And then
+
+22057
+22:36:12,870 --> 22:36:17,610
+we'll return both of these are
+some string, there we go. Now
+
+22058
+22:36:17,610 --> 22:36:20,130
+we'll return some string, and
+then some other string,
+
+22059
+22:36:20,580 --> 22:36:24,450
+I need a semicolon here. So now
+when we deploy this, let's close
+
+22060
+22:36:24,450 --> 22:36:28,140
+this out, deploy this new one,
+right, we now have this multi in
+
+22061
+22:36:28,140 --> 22:36:32,100
+code, which gives us this even
+bigger bites object, right?
+
+22062
+22:36:32,100 --> 22:36:36,210
+Because this is two strings
+encoded. And now if we hit multi
+
+22063
+22:36:36,210 --> 22:36:38,670
+decode, take a second, what do
+you think it's going to put out
+
+22064
+22:36:38,700 --> 22:36:41,550
+output? Let's go ahead and hit
+it. Now it's gonna give us two
+
+22065
+22:36:41,550 --> 22:36:44,550
+strings, right, it's gonna give
+you these two strings, some
+
+22066
+22:36:44,550 --> 22:36:49,410
+string, it's bigger. So we can
+tell solidity to encode a bunch
+
+22067
+22:36:49,410 --> 22:36:53,070
+of stuff. And then we can even
+decode it by telling it, okay,
+
+22068
+22:36:53,160 --> 22:36:56,130
+this big object here, it's two
+strings combined, and then we
+
+22069
+22:36:56,130 --> 22:37:00,030
+decode it. Now you can even
+multi encode with that encode
+
+22070
+22:37:00,030 --> 22:37:03,930
+pack thing, right? We could do
+function, multi encode packed,
+
+22071
+22:37:04,500 --> 22:37:10,080
+public pure returns, bytes
+memory, and then bytes memory,
+
+22072
+22:37:10,080 --> 22:37:14,910
+some string equals ABI dot
+encode packed some string,
+
+22073
+22:37:15,150 --> 22:37:20,910
+comma, it's bigger than return
+some string, we could do this,
+
+22074
+22:37:20,940 --> 22:37:24,120
+right, but this is going to give
+us the packed version of these
+
+22075
+22:37:24,120 --> 22:37:29,460
+two strings. So the decoding
+actually isn't going to work on
+
+22076
+22:37:29,460 --> 22:37:33,570
+this because this is packed
+encoding. So if we tried to do,
+
+22077
+22:37:33,870 --> 22:37:38,130
+I'm gonna say this doesn't work.
+Try to do function, multi
+
+22078
+22:37:38,310 --> 22:37:45,390
+decode, packed, public pure
+returns, string memory, string
+
+22079
+22:37:45,420 --> 22:37:51,900
+memory, some string equals Avi
+dot decode multi encode packed
+
+22080
+22:37:52,560 --> 22:37:56,160
+in a string and have exactly
+what we did above to, if we do
+
+22081
+22:37:56,160 --> 22:38:00,210
+return some string, what do you
+think's gonna happen? Let's,
+
+22082
+22:38:00,390 --> 22:38:02,940
+let's try to delete the old
+contract, deploy a new one.
+
+22083
+22:38:03,420 --> 22:38:07,410
+We'll do multi decode, packed,
+multi encode multi decode,
+
+22084
+22:38:07,410 --> 22:38:11,280
+packed, and we actually just get
+an error. solidity basically
+
+22085
+22:38:11,280 --> 22:38:15,870
+goes, Yeah, this looks like it's
+packed. I don't know how to
+
+22086
+22:38:15,870 --> 22:38:19,260
+decode that. But instead, what
+we can do is we can do function
+
+22087
+22:38:19,620 --> 22:38:26,040
+more to string cast packed like
+this a public pure returns
+
+22088
+22:38:26,430 --> 22:38:33,630
+string memory, string, memory,
+some string equals string, multi
+
+22089
+22:38:33,930 --> 22:38:39,720
+and code packed, return some
+string. This one will work right
+
+22090
+22:38:39,720 --> 22:38:43,530
+because again, this pact
+encoding is kind of similar to
+
+22091
+22:38:43,530 --> 22:38:48,660
+just type casting. So we'll
+compile will redeploy multi
+
+22092
+22:38:48,660 --> 22:38:52,650
+string cast pact, we get some
+Trying, it's bigger, right? And
+
+22093
+22:38:52,650 --> 22:38:54,660
+we don't have a space here. But
+we should have put a space in
+
+22094
+22:38:54,660 --> 22:39:03,360
+there. Now that we've learned
+more about this in ABI dot
+
+22095
+22:39:03,360 --> 22:39:06,360
+encode and decoding, and we know
+that okay, this is what the
+
+22096
+22:39:06,360 --> 22:39:09,840
+computer, this is, what
+Aetherium. This is what the EVM,
+
+22097
+22:39:09,840 --> 22:39:12,990
+or any EVM compatible chain is
+looking for. It's looking for
+
+22098
+22:39:12,990 --> 22:39:16,560
+this bytecode. It's looking for
+this, this binary stuff. And we
+
+22099
+22:39:16,560 --> 22:39:19,410
+just learned a little bit more
+about how to encode different
+
+22100
+22:39:19,410 --> 22:39:22,380
+variables into the binary into
+that data bit. Well,
+
+22101
+22:39:22,619 --> 22:39:26,819
+what do we do now? Now since we
+know that our transactions are
+
+22102
+22:39:26,819 --> 22:39:30,059
+just going to be compiled down
+to this binary stuff, what we
+
+22103
+22:39:30,059 --> 22:39:35,159
+can do then is we can actually
+populate this data value of our
+
+22104
+22:39:35,159 --> 22:39:38,879
+transactions ourselves with the
+binary that code is going to
+
+22105
+22:39:38,879 --> 22:39:42,509
+use. So here's our transaction
+for a contract deployment, the
+
+22106
+22:39:42,509 --> 22:39:44,999
+data field of the contract
+deployment is going to be all
+
+22107
+22:39:44,999 --> 22:39:49,409
+that binary code of the contract
+for a function call, the data
+
+22108
+22:39:49,409 --> 22:39:53,879
+piece is going to be what to
+send to the address what data
+
+22109
+22:39:53,879 --> 22:39:57,119
+what function to call on the to
+address. Let's look at another
+
+22110
+22:39:57,119 --> 22:39:59,699
+one of our transactions on ether
+scan right on one of our
+
+22111
+22:39:59,699 --> 22:40:02,549
+contracts, you don't have to I'm
+going to look at enter raffle
+
+22112
+22:40:02,549 --> 22:40:06,929
+from a previous section. And if
+we select down, we look at input
+
+22113
+22:40:06,929 --> 22:40:09,989
+data. It says function enter
+raffle method ID. But if we look
+
+22114
+22:40:09,989 --> 22:40:14,369
+at the original, this is what's
+getting sent in the data field.
+
+22115
+22:40:14,579 --> 22:40:18,929
+It's this binary, it's this hex
+it's this weird, low level bytes
+
+22116
+22:40:18,929 --> 22:40:22,139
+thing. This is how the Ethereum
+blockchain or the or whatever
+
+22117
+22:40:22,139 --> 22:40:25,319
+EVM chain you're working with
+knows which function to call, it
+
+22118
+22:40:25,319 --> 22:40:29,969
+translates this into a function.
+And we can do the exact same
+
+22119
+22:40:29,969 --> 22:40:34,079
+thing and call these functions
+ourselves. So what we can
+
+22120
+22:40:34,079 --> 22:40:38,849
+actually do with this crazy
+newfound data and coding stuff,
+
+22121
+22:40:38,909 --> 22:40:43,619
+what we can actually do is send
+the data field of a transaction
+
+22122
+22:40:43,649 --> 22:40:48,329
+ourself, in a transaction call
+back in this ether throwback
+
+22123
+22:40:48,329 --> 22:40:52,259
+where this data thing was the
+contract creation code. Well,
+
+22124
+22:40:52,259 --> 22:40:56,339
+instead, we could populate this
+data thing with our function
+
+22125
+22:40:56,339 --> 22:41:00,449
+call code, the exact function
+that we want to call in the
+
+22126
+22:41:00,449 --> 22:41:04,679
+binary in hex addition. Now you
+might be thinking, Oh, well, why
+
+22127
+22:41:04,679 --> 22:41:08,039
+would I do that, I can always
+just use the interface, the ABI,
+
+22128
+22:41:08,039 --> 22:41:10,619
+all that stuff, well, maybe you
+don't have that maybe all you
+
+22129
+22:41:10,619 --> 22:41:14,189
+have is the function name, maybe
+all you have is the parameters
+
+22130
+22:41:14,189 --> 22:41:17,249
+you want to send. Or maybe you
+want to make your code, be able
+
+22131
+22:41:17,249 --> 22:41:21,149
+to send arbitrary functions, or
+make arbitrary calls or do
+
+22132
+22:41:21,479 --> 22:41:25,019
+random really advanced stuff,
+right, that's where sending our
+
+22133
+22:41:25,019 --> 22:41:27,899
+function calls directly by
+populating this data field is
+
+22134
+22:41:27,899 --> 22:41:30,269
+going to be incredibly
+important. So remember, I said,
+
+22135
+22:41:30,269 --> 22:41:33,989
+you're always going to need the
+ABI, and the contract address,
+
+22136
+22:41:34,109 --> 22:41:37,589
+send a function. Now, when I
+said, you always need the API.
+
+22137
+22:41:37,919 --> 22:41:41,639
+Originally, we were kind of
+talking about this thing, this
+
+22138
+22:41:41,639 --> 22:41:45,269
+big, this big thing, which is
+cool, which is the API. But this
+
+22139
+22:41:45,269 --> 22:41:48,779
+is like the human readable API,
+you can also do it with the non
+
+22140
+22:41:48,779 --> 22:41:52,139
+human readable API. And
+additionally, you don't need all
+
+22141
+22:41:52,139 --> 22:41:56,789
+this stuff, you can really use
+just the name of a function, and
+
+22142
+22:41:56,789 --> 22:42:00,749
+then the input types to send a
+function call. So the question
+
+22143
+22:42:00,749 --> 22:42:05,519
+is, then, okay, how do we send?
+How do we send transactions that
+
+22144
+22:42:05,519 --> 22:42:10,589
+call functions with just the
+data field populated? And then
+
+22145
+22:42:10,589 --> 22:42:14,699
+the next question is, how do we
+populate the data field? What do
+
+22146
+22:42:14,699 --> 22:42:17,309
+we populate the data field with
+to make one of these function
+
+22147
+22:42:17,309 --> 22:42:20,639
+calls? And then how do we send
+these transactions slowly,
+
+22148
+22:42:20,639 --> 22:42:25,019
+actually has some more low level
+keywords, namely, static call
+
+22149
+22:42:25,049 --> 22:42:29,579
+and call we actually we've used
+call in the past before, does
+
+22150
+22:42:29,609 --> 22:42:32,999
+this code look at all familiar
+to you? Well, it should, because
+
+22151
+22:42:32,999 --> 22:42:36,719
+this is, we use a similar setup
+in our fulfill random words for
+
+22152
+22:42:36,719 --> 22:42:40,259
+our lottery, right, we sent
+money doing this recent winner
+
+22153
+22:42:40,259 --> 22:42:42,989
+dot call, right? Recently, it
+was the address of the recent
+
+22154
+22:42:42,989 --> 22:42:46,409
+winner, and we did not call. And
+then we have this weird stuff in
+
+22155
+22:42:46,409 --> 22:42:49,229
+this brackets here, and then
+nothing in the parentheses. So
+
+22156
+22:42:49,229 --> 22:42:52,979
+we did actually, essentially, we
+use this call keyword
+
+22157
+22:42:52,979 --> 22:42:56,249
+previously, but we didn't really
+tell you what it did. So call is
+
+22158
+22:42:56,249 --> 22:42:58,589
+how we can call functions to
+change the state of the
+
+22159
+22:42:58,589 --> 22:43:02,759
+blockchain. Static call is
+basically how at a low level, we
+
+22160
+22:43:02,759 --> 22:43:05,249
+call our view, or pure
+functions, write static calls
+
+22161
+22:43:05,249 --> 22:43:07,619
+gonna be like, okay, don't
+change the state of the
+
+22162
+22:43:07,619 --> 22:43:10,829
+blockchain with this one, just
+give us the return value. So
+
+22163
+22:43:10,829 --> 22:43:13,589
+this is kind of similar to like
+a view or a pure function at low
+
+22164
+22:43:13,589 --> 22:43:17,129
+level, there's also a Send word
+but like, basically forget about
+
+22165
+22:43:17,129 --> 22:43:20,399
+it. We're just gonna be working
+with call, instead of call. And,
+
+22166
+22:43:20,489 --> 22:43:21,239
+you know, later on, we'll
+
+22167
+22:43:21,240 --> 22:43:23,250
+learn about another one called
+delegate call. But don't worry
+
+22168
+22:43:23,250 --> 22:43:27,300
+about that for now. Recent
+winter duck call like this, in
+
+22169
+22:43:27,300 --> 22:43:30,540
+these little squiggly brackets,
+we said, Okay, we updated the
+
+22170
+22:43:30,540 --> 22:43:33,840
+value directly of our
+transaction in solidity. So
+
+22171
+22:43:33,840 --> 22:43:36,780
+which again, if we have these
+transaction fields, and we just
+
+22172
+22:43:36,780 --> 22:43:40,260
+directly updated value in these
+little brackets, right, we can
+
+22173
+22:43:40,260 --> 22:43:43,290
+also directly update gas limited
+gas price in these little
+
+22174
+22:43:43,290 --> 22:43:46,470
+brackets if we wanted to as
+well. And in here, these
+
+22175
+22:43:46,470 --> 22:43:49,650
+parentheses is where we're going
+to stick our data. Since all we
+
+22176
+22:43:49,650 --> 22:43:52,380
+wanted to do with our
+withdrawal. function previously
+
+22177
+22:43:52,380 --> 22:43:57,090
+was send money. We said, Okay,
+send money change the value that
+
+22178
+22:43:57,090 --> 22:44:00,600
+we're going to send. But don't
+pass any data, keep that data
+
+22179
+22:44:00,600 --> 22:44:05,130
+bit empty, which is why, again,
+remember how we hit this button
+
+22180
+22:44:05,130 --> 22:44:08,310
+before, right and we had called
+data be empty, that's
+
+22181
+22:44:08,400 --> 22:44:12,840
+essentially running this command
+with called data be empty with
+
+22182
+22:44:12,840 --> 22:44:17,010
+this section be empty, and then
+just updating the value that we
+
+22183
+22:44:17,010 --> 22:44:19,620
+set with the transaction. And so
+it's this section that we can
+
+22184
+22:44:19,620 --> 22:44:23,160
+use to populate data to actually
+call specific functions. We're
+
+22185
+22:44:23,160 --> 22:44:25,230
+going to put a whole bunch more
+comments here. So when our
+
+22186
+22:44:25,230 --> 22:44:27,990
+squiggly brackets, we're able to
+pass specific fields of a
+
+22187
+22:44:27,990 --> 22:44:31,380
+transaction like value. And in
+our parentheses, we're able to
+
+22188
+22:44:31,380 --> 22:44:34,530
+pass data in order to call a
+specific function. But in here,
+
+22189
+22:44:34,530 --> 22:44:37,110
+there's no function to call
+since we were just sending them
+
+22190
+22:44:37,170 --> 22:44:40,530
+if we want to call a function or
+send any data, we can do this in
+
+22191
+22:44:40,530 --> 22:44:49,440
+the parentheses. And I think I
+spelt that wrong. Now, we've
+
+22192
+22:44:49,440 --> 22:44:52,560
+learned a ton here. So let's do
+a quick refresher of what we
+
+22193
+22:44:52,560 --> 22:44:55,410
+just learned. And then we're
+going to actually learn how we
+
+22194
+22:44:55,410 --> 22:44:59,880
+can call any function just by
+using this syntax here. Well, we
+
+22195
+22:44:59,880 --> 22:45:02,850
+learned from really high level,
+if we want to combine strings,
+
+22196
+22:45:02,880 --> 22:45:05,610
+we can do ABI dot encode packed
+and then typecast that to a
+
+22197
+22:45:05,610 --> 22:45:09,420
+string. And in newer versions of
+solidity you can do, you can do
+
+22198
+22:45:09,420 --> 22:45:16,320
+string dot concat, you know, Hi,
+Mom, come on, miss you. In newer
+
+22199
+22:45:16,320 --> 22:45:18,690
+versions of solidity. This works
+as well, but not in older
+
+22200
+22:45:18,690 --> 22:45:22,050
+versions of solidity. Then we
+learned a lot about some low
+
+22201
+22:45:22,050 --> 22:45:25,200
+level stuff we learned, okay,
+when we compile our contracts,
+
+22202
+22:45:25,410 --> 22:45:29,490
+we get an ABI file, and this
+weird binary thing that numbers
+
+22203
+22:45:29,490 --> 22:45:33,030
+and letters stuff that gets when
+we deploy a contract that gets
+
+22204
+22:45:33,030 --> 22:45:36,990
+sent in the data field of our
+contract creation transaction.
+
+22205
+22:45:37,020 --> 22:45:40,050
+So for contract creations, the
+data is populated with that
+
+22206
+22:45:40,050 --> 22:45:43,440
+binary code for function calls
+is going to define which
+
+22207
+22:45:43,440 --> 22:45:46,380
+functions to call in with what
+parameters and this is what
+
+22208
+22:45:46,380 --> 22:45:49,530
+we're gonna go over next. Now,
+we learned that we can actually
+
+22209
+22:45:49,560 --> 22:45:54,330
+encode stuff into this binary
+into this low level code. And
+
+22210
+22:45:54,360 --> 22:45:58,680
+any program any process that can
+read this low level stuff and
+
+22211
+22:45:58,680 --> 22:46:02,040
+execute accordingly, read this
+EVM stuff, read the specific
+
+22212
+22:46:02,040 --> 22:46:05,700
+binary that Aetherium has
+specified, or the EVM has
+
+22213
+22:46:05,700 --> 22:46:09,150
+specified is considered EVM.
+compatible. We can encode
+
+22214
+22:46:09,180 --> 22:46:12,660
+numbers, we can encode strings,
+we can encode pretty much
+
+22215
+22:46:12,870 --> 22:46:16,710
+anything we want to encode. To
+save space, we do encode packed,
+
+22216
+22:46:16,890 --> 22:46:20,670
+we can decode stuff that we've
+encoded, but we can't decode
+
+22217
+22:46:20,700 --> 22:46:24,090
+stuff that we encode packed, we
+can multi encode stuff, and then
+
+22218
+22:46:24,090 --> 22:46:27,720
+multi decode stuff. And then
+finally, we can use this call
+
+22219
+22:46:27,720 --> 22:46:32,550
+function and add data in here to
+make any call that we want to
+
+22220
+22:46:32,550 --> 22:46:34,860
+any smart contract. And this is
+what we're going to learn next.
+
+22221
+22:46:35,070 --> 22:46:37,530
+Alright, so now's a great time
+to take a break, because we just
+
+22222
+22:46:37,530 --> 22:46:40,200
+learned some really difficult
+concepts. And like I said, if
+
+22223
+22:46:40,200 --> 22:46:41,340
+you don't get it the first
+
+22224
+22:46:41,340 --> 22:46:49,440
+time, that is okay. Alright,
+welcome back. Now that we've
+
+22225
+22:46:49,440 --> 22:46:52,320
+learned about this encoding
+stuff, let's learn how we can
+
+22226
+22:46:52,320 --> 22:46:56,820
+populate this parenthesis this
+data field, so we can call any
+
+22227
+22:46:56,820 --> 22:47:00,900
+function and we can do
+essentially, what the blockchain
+
+22228
+22:47:00,900 --> 22:47:03,060
+is going to do at the low level,
+we can work with just that
+
+22229
+22:47:03,060 --> 22:47:05,490
+binary, we can work with just
+that bytes, we can work with
+
+22230
+22:47:05,490 --> 22:47:08,910
+that hex to interact with our
+smart contracts. So let's create
+
+22231
+22:47:08,910 --> 22:47:12,480
+a new file. And we're gonna call
+it call anything, that's all
+
+22232
+22:47:12,870 --> 22:47:16,200
+start off with spdx, license
+identifier, MIT. And let's talk
+
+22233
+22:47:16,200 --> 22:47:19,590
+about this. Now in order to call
+now in order to call a function
+
+22234
+22:47:19,650 --> 22:47:23,340
+using only the data field of the
+call, we need to encode the
+
+22235
+22:47:23,340 --> 22:47:26,010
+function name, and the
+parameters that we want to add,
+
+22236
+22:47:26,010 --> 22:47:27,900
+right, because when we call a
+function, we call the function
+
+22237
+22:47:27,900 --> 22:47:31,380
+name. And we call the
+parameters. So we need to encode
+
+22238
+22:47:31,380 --> 22:47:35,490
+these down to the binary level
+so that the EVM, or these
+
+22239
+22:47:35,550 --> 22:47:38,280
+Aetherium based smart contracts
+and solidity stuff can
+
+22240
+22:47:38,310 --> 22:47:40,860
+understand what's actually going
+on. In order to do this, we're
+
+22241
+22:47:40,860 --> 22:47:44,250
+going to need to work with two
+concepts to encode the function
+
+22242
+22:47:44,250 --> 22:47:48,060
+name so that the EVM or solidity
+can understand it, we actually
+
+22243
+22:47:48,060 --> 22:47:51,030
+have to grab something called
+the function selector. Now the
+
+22244
+22:47:51,030 --> 22:47:54,570
+function selector is going to be
+the first four bytes of the
+
+22245
+22:47:54,570 --> 22:47:58,140
+function signature. And the
+function signature is just going
+
+22246
+22:47:58,140 --> 22:48:00,720
+to be a string, which defines
+the function name of parameter.
+
+22247
+22:48:00,960 --> 22:48:03,240
+Now, what does this actually
+mean? Well, if we have a
+
+22248
+22:48:03,240 --> 22:48:06,240
+transfer function, this right
+here is known as the function
+
+22249
+22:48:06,270 --> 22:48:09,570
+signature. So the function name
+is going to be transfer. And
+
+22250
+22:48:09,570 --> 22:48:14,310
+it's going to take an address
+and a un 256 as its inputs, if
+
+22251
+22:48:14,310 --> 22:48:17,760
+we encode this transfer
+function, and then we take the
+
+22252
+22:48:17,760 --> 22:48:21,510
+first four bytes of it, we get
+this, which refers to the
+
+22253
+22:48:21,510 --> 22:48:25,800
+function selector. So that's how
+solidity knows. So in the
+
+22254
+22:48:25,800 --> 22:48:29,700
+bytecode, in the binary code,
+this function selector is how
+
+22255
+22:48:29,700 --> 22:48:32,340
+slitting knows Oh, they're
+talking about the transfer
+
+22256
+22:48:32,340 --> 22:48:35,130
+function they want me to call
+the transfer function. And this
+
+22257
+22:48:35,130 --> 22:48:38,730
+is one of the first things that
+we need to use call to call any
+
+22258
+22:48:38,730 --> 22:48:42,360
+function that we want, we need
+to get the function selector and
+
+22259
+22:48:42,360 --> 22:48:44,310
+we can get it a number of
+different ways but one of the
+
+22260
+22:48:44,310 --> 22:48:47,670
+ways is by encoding the function
+signature and grabbing the first
+
+22261
+22:48:47,670 --> 22:48:51,120
+four bytes. So we'll create this
+contract we'll do pragma
+
+22262
+22:48:51,480 --> 22:48:57,360
+solidity zero point 8.7 Say
+contract, call anything. And
+
+22263
+22:48:57,360 --> 22:49:00,030
+we'll give this to stored
+variables, give the to stored
+
+22264
+22:49:00,030 --> 22:49:04,440
+variables and address public s,
+underscore some amount, or some
+
+22265
+22:49:04,440 --> 22:49:10,080
+address, and then you in 256,
+public s underscore mount. And
+
+22266
+22:49:10,080 --> 22:49:12,570
+then we'll create a function
+called transfer function
+
+22267
+22:49:12,570 --> 22:49:15,960
+transfer. Now normally in here,
+we would actually do like
+
+22268
+22:49:15,960 --> 22:49:19,110
+transfer for like an ERC 20
+transfer, but we're just going
+
+22269
+22:49:19,110 --> 22:49:24,750
+to do address some address, and
+then you add 256 amount, amount
+
+22270
+22:49:24,750 --> 22:49:28,230
+here, we'll make this a public
+function. And then all we'll do
+
+22271
+22:49:28,350 --> 22:49:32,850
+is we'll set S, some address
+equals some address, and then s
+
+22272
+22:49:32,850 --> 22:49:36,930
+amount equals amount. So here's
+gonna be the function that we're
+
+22273
+22:49:36,930 --> 22:49:39,930
+going to work with. And the
+function selector for that
+
+22274
+22:49:39,930 --> 22:49:43,320
+function is this, the function
+signature is this. So it takes
+
+22275
+22:49:43,320 --> 22:49:46,710
+an address some address amount,
+that gets boiled down to the
+
+22276
+22:49:46,710 --> 22:49:49,350
+function selector, and the
+function signature. And of
+
+22277
+22:49:49,350 --> 22:49:52,110
+course, in our bytecode, there's
+going to be some code saying,
+
+22278
+22:49:52,110 --> 22:49:55,440
+Okay, here's what this function
+does, blah, blah, blah. So we
+
+22279
+22:49:55,440 --> 22:49:57,570
+can actually even write a
+function to get that function
+
+22280
+22:49:57,570 --> 22:50:01,770
+selector. So we can say,
+function, get selector and I'm
+
+22281
+22:50:01,770 --> 22:50:03,780
+gonna say get selector one,
+because I'm gonna show you a few
+
+22282
+22:50:03,780 --> 22:50:05,940
+ways to get the function
+selector, we'll make this a
+
+22283
+22:50:05,940 --> 22:50:11,550
+public pure. And we'll have this
+return a bytes for selector, we
+
+22284
+22:50:11,550 --> 22:50:17,700
+could say select or equals bytes
+for, and then we hash with a
+
+22285
+22:50:17,700 --> 22:50:25,230
+check to 56 of the bytes of that
+signature, which is transfer.
+
+22286
+22:50:25,500 --> 22:50:31,080
+And it takes an address and a
+UNT 56. Right? If we compile
+
+22287
+22:50:31,080 --> 22:50:34,650
+this, and then we run it, let's
+get rid of our old contract,
+
+22288
+22:50:34,800 --> 22:50:37,350
+deploy, make sure we're on call
+anything, if you have the other
+
+22289
+22:50:37,350 --> 22:50:41,670
+one up. In here, now we have a
+couple of things, we hit Get
+
+22290
+22:50:41,670 --> 22:50:47,190
+selector one, we get this Oh X,
+a 905, blah, blah, blah, right.
+
+22291
+22:50:47,190 --> 22:50:49,890
+And that's the same as the
+example I just gave. So this
+
+22292
+22:50:49,890 --> 22:50:53,670
+right here tells solidity tells
+our smart contract, okay, when
+
+22293
+22:50:53,670 --> 22:50:57,450
+we make a call to this contract,
+if you see this in the function
+
+22294
+22:50:57,450 --> 22:51:01,710
+data, this is referring to our
+transfer function with an
+
+22295
+22:51:01,710 --> 22:51:05,580
+address and a un 256 as input
+parameter. So we see address you
+
+22296
+22:51:05,580 --> 22:51:09,570
+into 56. Our function knows to
+execute this data here. Great.
+
+22297
+22:51:09,570 --> 22:51:12,570
+And then of course, sml, and S
+address are zeros. Now, while
+
+22298
+22:51:12,570 --> 22:51:15,600
+we're here, we can also see,
+okay, what happens if we call
+
+22299
+22:51:15,600 --> 22:51:18,450
+the transfer function, right? It
+takes an address and an amount,
+
+22300
+22:51:18,450 --> 22:51:21,180
+so let's just give it its own
+address or an address. And we'll
+
+22301
+22:51:21,180 --> 22:51:25,650
+do 777 for an amount. If we hit
+transfer, we have the log up,
+
+22302
+22:51:25,710 --> 22:51:28,590
+right, we'll get a little
+checkmark here saying success.
+
+22303
+22:51:28,650 --> 22:51:32,190
+Now, if we hit S amount, we'll
+get 777. And then the address
+
+22304
+22:51:32,190 --> 22:51:34,320
+will be the same, right? So
+that's us directly calling
+
+22305
+22:51:34,320 --> 22:51:38,490
+transfer. When we directly call
+transfer, we're basically
+
+22306
+22:51:38,490 --> 22:51:41,160
+saying, hey, grab this function
+selector, and then do some other
+
+22307
+22:51:41,160 --> 22:51:43,080
+stuff, which we'll we'll tell
+you the other stuff in a minute.
+
+22308
+22:51:43,110 --> 22:51:46,050
+Now we have the function
+selector. Okay, great. What else
+
+22309
+22:51:46,050 --> 22:51:49,440
+do we need, we also now need the
+parameters we want to add. So
+
+22310
+22:51:49,440 --> 22:51:54,120
+we're going to need to encode
+those parameters with our
+
+22311
+22:51:54,120 --> 22:51:56,370
+function selector. So what we're
+gonna do is we're gonna say
+
+22312
+22:51:56,370 --> 22:52:03,000
+function, get data to call
+transfer. And in here, we're
+
+22313
+22:52:03,000 --> 22:52:05,340
+just going to have this get data
+to call transfer, we're going to
+
+22314
+22:52:05,340 --> 22:52:07,710
+have it take these input
+parameters, and we're going to
+
+22315
+22:52:07,710 --> 22:52:11,460
+encode these to work with our
+function selector, we're gonna
+
+22316
+22:52:11,460 --> 22:52:18,630
+say address, some address. And
+if it is x, amount, public pure
+
+22317
+22:52:18,660 --> 22:52:21,720
+returns, bytes memory.
+
+22318
+22:52:22,800 --> 22:52:26,760
+And then we can return and use
+one of those ABI and codings
+
+22319
+22:52:26,790 --> 22:52:29,670
+from the cheat sheet. Now, so
+far, we've just been doing API
+
+22320
+22:52:29,670 --> 22:52:32,880
+and code for a lot of our
+encoding. So it since we have
+
+22321
+22:52:32,880 --> 22:52:37,080
+the function selector, we can
+actually do ABI dot encode with
+
+22322
+22:52:37,110 --> 22:52:40,740
+selector. This ABI encodes the
+given arguments starting from
+
+22323
+22:52:40,740 --> 22:52:43,800
+the second and prepends, the
+given four byte selector. When
+
+22324
+22:52:43,800 --> 22:52:47,760
+we do in Cobra selector, we're
+just sticking our selector onto
+
+22325
+22:52:47,790 --> 22:52:49,920
+the data that we're going to
+give it. So we're going to do
+
+22326
+22:52:49,920 --> 22:52:56,040
+return API dot encode with
+select door. And we're going to
+
+22327
+22:52:56,040 --> 22:53:00,840
+pass it the result of get
+selector one, and then we're
+
+22328
+22:53:00,840 --> 22:53:05,220
+going to give it some address,
+and amount. So what this is
+
+22329
+22:53:05,220 --> 22:53:08,400
+going to do, it's gonna give us
+all the data that we need to put
+
+22330
+22:53:08,400 --> 22:53:11,820
+in that data field of our
+transaction, to send to this
+
+22331
+22:53:11,820 --> 22:53:15,420
+contract to let this contract
+know, hey, go use the transfer
+
+22332
+22:53:15,420 --> 22:53:18,720
+function, pass in some address,
+and then an amount. And then if
+
+22333
+22:53:18,720 --> 22:53:22,080
+we compile this, we run it,
+let's delete our old contract,
+
+22334
+22:53:22,110 --> 22:53:25,950
+we'll deploy up, we now got a
+new function called Get Data to
+
+22335
+22:53:25,950 --> 22:53:29,820
+call and transfer, we'll just
+pass you know, we'll just pass
+
+22336
+22:53:29,850 --> 22:53:34,140
+this contract address and then
+we'll also do 777 again. And so
+
+22337
+22:53:34,140 --> 22:53:37,500
+this thing right here is what
+we're going to put into the data
+
+22338
+22:53:37,500 --> 22:53:41,880
+field of our transaction in
+order for us to call transfer
+
+22339
+22:53:41,880 --> 22:53:45,480
+from anywhere. So this is the
+bytes This is the binary encoded
+
+22340
+22:53:45,480 --> 22:53:50,640
+data of Hey, call the transfer
+function with this address that
+
+22341
+22:53:50,640 --> 22:53:54,750
+we specified. with, you know,
+777 Mt. So what we can do once
+
+22342
+22:53:54,750 --> 22:53:57,240
+we have all this, we can
+actually call our transfer
+
+22343
+22:53:57,240 --> 22:54:01,380
+function without even having to
+directly call it. So what we can
+
+22344
+22:54:01,380 --> 22:54:07,620
+do is we can say function, call
+transfer function directly, or I
+
+22345
+22:54:07,620 --> 22:54:11,490
+guess with binary might be a
+better title, but you get the
+
+22346
+22:54:11,490 --> 22:54:15,540
+gist, we'll say address some
+address, you in 256 amount,
+
+22347
+22:54:16,230 --> 22:54:18,660
+we'll make this a public
+function. And we'll have a
+
+22348
+22:54:18,660 --> 22:54:23,610
+returns a bytes four and a bool.
+You'll see why in a minute. And
+
+22349
+22:54:23,610 --> 22:54:27,780
+we'll do that same call thing
+that we did to send our raffle
+
+22350
+22:54:27,780 --> 22:54:31,320
+money. So what we'll do is,
+before we did recent winner dot
+
+22351
+22:54:31,320 --> 22:54:34,620
+call, right, we're going to do
+some address. And then for us,
+
+22352
+22:54:34,620 --> 22:54:38,610
+we're going to address this dot
+call. And then we're saying this
+
+22353
+22:54:38,610 --> 22:54:41,970
+contracts address which we could
+put any address here address dot
+
+22354
+22:54:41,970 --> 22:54:46,530
+call, and we're going to call
+the encoded data that points us
+
+22355
+22:54:46,530 --> 22:54:50,460
+to the transfer function with
+some parameters. So we're going
+
+22356
+22:54:50,460 --> 22:54:54,540
+to do address this.com. And we
+could just do get data to call
+
+22357
+22:54:54,540 --> 22:54:55,470
+transfer
+
+22358
+22:54:56,940 --> 22:55:01,020
+address amounts, right, we could
+do it like this. Or we could do
+
+22359
+22:55:01,020 --> 22:55:04,410
+it kind of the wrong way. We
+could do ABI dot and code with
+
+22360
+22:55:04,410 --> 22:55:10,800
+select dorm, get selector one,
+comma, some address, comma
+
+22361
+22:55:10,800 --> 22:55:14,040
+amount. And actually, there's no
+semicolon there, sorry. So those
+
+22362
+22:55:14,040 --> 22:55:18,270
+are going to be the same. And
+this dot call thing, right, it's
+
+22363
+22:55:18,270 --> 22:55:21,630
+going to return exactly what we
+saw before, it's going to return
+
+22364
+22:55:21,630 --> 22:55:23,940
+a bool success. So whether or
+not the transaction was
+
+22365
+22:55:23,940 --> 22:55:29,790
+successful, and then bytes,
+memory, returned data, which is
+
+22366
+22:55:29,790 --> 22:55:32,520
+going to be you know, whatever
+the call returns. So right, and
+
+22367
+22:55:32,520 --> 22:55:35,190
+this is where we put like
+require success, right. But for
+
+22368
+22:55:35,190 --> 22:55:40,110
+us, we're just going to return
+bytes, four bytes for a return
+
+22369
+22:55:40,110 --> 22:55:43,620
+datum, and then success. So
+we're just going to return the
+
+22370
+22:55:43,620 --> 22:55:47,370
+first four bytes of whatever
+data we get returned. And then
+
+22371
+22:55:47,370 --> 22:55:49,620
+we're going to return whether
+this was successful or not. So
+
+22372
+22:55:49,620 --> 22:55:54,000
+this function is going to have
+us directly call the transfer
+
+22373
+22:55:54,000 --> 22:55:57,900
+function by passing these
+parameters without us having to
+
+22374
+22:55:57,900 --> 22:56:01,320
+do like contract dot transfer,
+or, or transfer whatever, right.
+
+22375
+22:56:01,440 --> 22:56:04,320
+And you can do this across
+multiple contracts across
+
+22376
+22:56:04,320 --> 22:56:07,290
+different contracts, just by
+changing the address that you
+
+22377
+22:56:07,290 --> 22:56:10,410
+call on. So let's go ahead and
+compile this. We'll run this now
+
+22378
+22:56:10,410 --> 22:56:13,620
+we'll delete our old contract,
+we'll deploy call anything. Now
+
+22379
+22:56:13,620 --> 22:56:17,070
+if we if we were. So right now
+sml, and estimators are both
+
+22380
+22:56:17,070 --> 22:56:21,630
+zero. Now, if we do call
+transfer function directly, and
+
+22381
+22:56:21,630 --> 22:56:26,040
+we'll pass in this one's
+address, and then we'll do 777.
+
+22382
+22:56:26,490 --> 22:56:31,800
+Now, if we pull up the logs, we
+hit this, we're gonna get this
+
+22383
+22:56:31,800 --> 22:56:35,070
+transaction response here. But
+if we scroll down, we'll ever
+
+22384
+22:56:35,070 --> 22:56:38,550
+see the decoded output, which is
+a bytes for of just a bunch of
+
+22385
+22:56:38,550 --> 22:56:41,520
+zeros, right? Because our
+transfer doesn't actually return
+
+22386
+22:56:41,520 --> 22:56:44,580
+anything. So it's just gonna be
+a whole bunch of zeros, and then
+
+22387
+22:56:44,580 --> 22:56:47,580
+our Boolean true, which means it
+was successful. So since it was
+
+22388
+22:56:47,580 --> 22:56:51,510
+successful, these two should
+have changed based off of that.
+
+22389
+22:56:51,510 --> 22:56:54,180
+So let's go ahead and try them
+out. And we do indeed see that
+
+22390
+22:56:54,180 --> 22:56:58,110
+they're changed. So we have just
+directly called this transfer
+
+22391
+22:56:58,110 --> 22:57:01,710
+function without having to call
+the transfer function itself, we
+
+22392
+22:57:01,710 --> 22:57:05,880
+can also do encode with
+signature instead of selector.
+
+22393
+22:57:05,970 --> 22:57:08,640
+So if we go to our cheat sheet,
+there's also this encode with
+
+22394
+22:57:08,640 --> 22:57:12,240
+signature down here, which takes
+the string memory signature, and
+
+22395
+22:57:12,240 --> 22:57:15,600
+it's equivalent to doing ABI dot
+encode with selector bytes for
+
+22396
+22:57:15,600 --> 22:57:18,900
+CAC bytes, you know, signature,
+it's, it's equivalent to doing
+
+22397
+22:57:18,900 --> 22:57:23,190
+exactly what we did up here. But
+it does this step for us. So we
+
+22398
+22:57:23,190 --> 22:57:26,340
+could copy this whole thing,
+paste it down here, right, and
+
+22399
+22:57:26,340 --> 22:57:30,090
+we could do, instead of encoded
+with selector, we can do encode
+
+22400
+22:57:30,360 --> 22:57:35,550
+with SIG netshare, the function
+signature, and then we'll copy
+
+22401
+22:57:35,550 --> 22:57:39,030
+our function signature from up
+here, paste that in here.
+
+22402
+22:57:39,870 --> 22:57:43,170
+Compile, we ran into a
+compilation error, up, these are
+
+22403
+22:57:43,170 --> 22:57:47,730
+the same call transfer function
+directly SIG, called that
+
+22404
+22:57:48,210 --> 22:57:53,190
+compile, leader, old contract,
+deploy. Now these two are both
+
+22405
+22:57:53,190 --> 22:57:56,370
+zeros again. Now if we copy the
+contract address, we do call
+
+22406
+22:57:56,370 --> 22:57:59,310
+contract call transfer function
+directly SIG. We paste that in
+
+22407
+22:57:59,310 --> 22:58:03,930
+here, we do 777, we call it, let
+me check these we can see that
+
+22408
+22:58:03,930 --> 22:58:07,440
+that does the exact same thing.
+So this is API dot encode with
+
+22409
+22:58:07,440 --> 22:58:10,650
+signature. This is abi dot
+encode selector. Encode with
+
+22410
+22:58:10,650 --> 22:58:14,280
+signature just turns us into the
+selector for us. That's all up
+
+22411
+22:58:14,280 --> 22:58:17,940
+here, we just, we encoded this
+selector ourselves. Now, there
+
+22412
+22:58:17,940 --> 22:58:20,190
+are a whole bunch of different
+ways to get the selectors. And
+
+22413
+22:58:20,430 --> 22:58:22,860
+we're not going to code these
+out ourselves. I'm just gonna
+
+22414
+22:58:22,860 --> 22:58:29,790
+say a bunch of different ways to
+get selector. And who knows why
+
+22415
+22:58:29,820 --> 22:58:31,710
+why you might want to use one of
+these other reasons, right?
+
+22416
+22:58:31,710 --> 22:58:34,110
+There's there's a ton of reasons
+why you might want to get the
+
+22417
+22:58:34,110 --> 22:58:36,960
+selector a different way. And
+here's some now in this video,
+
+22418
+22:58:36,960 --> 22:58:40,020
+we're not going to explain or go
+over all these different all
+
+22419
+22:58:40,020 --> 22:58:43,320
+these different function
+selector getting methods. But if
+
+22420
+22:58:43,320 --> 22:58:45,330
+you go through them in the
+GitHub repo associated with this
+
+22421
+22:58:45,330 --> 22:58:48,120
+course, they all have a ton of
+comments to explain what they're
+
+22422
+22:58:48,120 --> 22:58:50,190
+doing. Well, we are going to
+show you though, it's actually
+
+22423
+22:58:50,190 --> 22:58:53,850
+how to contracts can interact
+with each other without actually
+
+22424
+22:58:53,850 --> 22:58:56,880
+having all the code for each
+contract. So we're going to make
+
+22425
+22:58:56,910 --> 22:59:00,300
+a second contract that has all
+this binary this byte
+
+22426
+22:59:00,300 --> 22:59:03,960
+information to call the transfer
+function on a different
+
+22427
+22:59:03,960 --> 22:59:06,360
+contract. And we're gonna show
+you how that can work. This is
+
+22428
+22:59:06,360 --> 22:59:09,000
+just another contract that I've
+made called call function
+
+22429
+22:59:09,000 --> 22:59:11,580
+without contract. Actually, down
+here, we're going to call the
+
+22430
+22:59:11,580 --> 22:59:15,240
+transfer function, just by using
+the address and the function
+
+22431
+22:59:15,240 --> 22:59:18,060
+selector signature and stuff,
+we're going to update these
+
+22432
+22:59:18,060 --> 22:59:22,200
+storage variables in our call
+anything contract from another
+
+22433
+22:59:22,200 --> 22:59:26,520
+contract just by doing this
+binary calling, if you will,
+
+22434
+22:59:26,790 --> 22:59:29,760
+right, so let's compile, it's
+going to deploy, we can actually
+
+22435
+22:59:29,760 --> 22:59:32,820
+leave this up right, we can
+leave this up is let's deploy
+
+22436
+22:59:32,820 --> 22:59:36,330
+our call function without
+contract, we'll pass it as an
+
+22437
+22:59:36,330 --> 22:59:40,800
+input parameter, the call
+anything contract address, we'll
+
+22438
+22:59:40,800 --> 22:59:45,240
+deploy it. Now in here, I can
+call the transfer function
+
+22439
+22:59:45,240 --> 22:59:50,220
+directly by you know, maybe I'll
+switch it to this, this contract
+
+22440
+22:59:50,220 --> 22:59:53,130
+address this new contract
+address, and we'll give it a new
+
+22441
+22:59:53,130 --> 22:59:57,240
+number of 123. Right, and we'll
+click call transfer function.
+
+22442
+22:59:57,750 --> 22:59:59,700
+And then when we go back up
+here, we see that this has
+
+22443
+22:59:59,700 --> 23:00:03,000
+indeed been updated. Now doing
+this call stuff is considered
+
+22444
+23:00:03,030 --> 23:00:06,240
+low level. And it's a best
+practice to try to avoid it when
+
+22445
+23:00:06,240 --> 23:00:09,420
+you can. So if you can import an
+interface, it's much better to
+
+22446
+23:00:09,420 --> 23:00:11,700
+do it like that. Because you're
+going to have the compiler on
+
+22447
+23:00:11,700 --> 23:00:13,830
+your side, you're going to be
+able to check to see if your
+
+22448
+23:00:13,860 --> 23:00:17,400
+types are matching and all this
+other stuff. So usually doing
+
+22449
+23:00:17,400 --> 23:00:21,000
+these low level calls some
+security auditor checkers might
+
+22450
+23:00:21,000 --> 23:00:24,090
+say, hey, like this books been
+out a little bit, you doing this
+
+22451
+23:00:24,090 --> 23:00:24,870
+low level stuff.
+
+22452
+23:00:24,930 --> 23:00:28,470
+But with that being said, You
+have just learned a ton about
+
+22453
+23:00:28,500 --> 23:00:31,050
+lower level solidity. This is
+some really advanced stuff. And
+
+22454
+23:00:31,050 --> 23:00:34,260
+like I said, if this was hard,
+if you're kind of confused here,
+
+22455
+23:00:34,650 --> 23:00:37,110
+don't worry, you can always come
+back to this section and try it
+
+22456
+23:00:37,110 --> 23:00:39,780
+again, when you're a little bit
+more advanced, if you want to
+
+22457
+23:00:39,780 --> 23:00:43,080
+try to understand it all now.
+Awesome. Absolutely, we've left
+
+22458
+23:00:43,080 --> 23:00:45,840
+some links in the GitHub repo
+associated with this lesson that
+
+22459
+23:00:45,840 --> 23:00:48,570
+I definitely recommend you check
+out one of the ones you should
+
+22460
+23:00:48,570 --> 23:00:51,330
+definitely check out, it's going
+to be this deconstructing
+
+22461
+23:00:51,330 --> 23:00:55,170
+solidity by openzeppelin, it
+really breaks down exactly
+
+22462
+23:00:55,170 --> 23:00:57,180
+what's going on behind the
+scenes of a contract. If you
+
+22463
+23:00:57,180 --> 23:00:59,700
+want to learn more about
+opcodes, about low level stuff,
+
+22464
+23:00:59,970 --> 23:01:02,190
+definitely give this a read, it
+is a phenomenal read,
+
+22465
+23:01:02,220 --> 23:01:04,710
+essentially, it breaks down a
+little bit more than what we
+
+22466
+23:01:04,710 --> 23:01:08,160
+went over here. A couple other
+videos as well. And I've left a
+
+22467
+23:01:08,160 --> 23:01:09,030
+whole bunch of links in here
+
+22468
+23:01:09,030 --> 23:01:19,320
+too. With that being said, here
+we are back in our NFT. And now
+
+22469
+23:01:19,320 --> 23:01:22,320
+we know all about this ABI dot
+encoding stuff, right and what
+
+22470
+23:01:22,320 --> 23:01:25,080
+it does, and we know that ABI
+dot encode packed, the way we're
+
+22471
+23:01:25,080 --> 23:01:27,540
+using here is just a way to
+concatenate strings. And we're
+
+22472
+23:01:27,540 --> 23:01:30,630
+not using ABI dot encode for
+really any of its crazy
+
+22473
+23:01:30,630 --> 23:01:33,750
+superpowers, but we might in the
+later section of this course. In
+
+22474
+23:01:33,750 --> 23:01:37,980
+other case, so we do use this
+base 64 dot encode thing that
+
+22475
+23:01:37,980 --> 23:01:41,310
+we've imported, right, we
+imported this base 64 dot encode
+
+22476
+23:01:41,310 --> 23:01:46,080
+so that we can encode our SVG
+that we pass it in to its base
+
+22477
+23:01:46,080 --> 23:01:48,960
+64 encoding. I'm going to copy
+paste an example here, you don't
+
+22478
+23:01:48,960 --> 23:01:51,930
+have to do this. But like, for
+example, we'll pass it in like
+
+22479
+23:01:51,960 --> 23:01:55,950
+SVG width equals blah, blah,
+blah, all this SVG stuff, kind
+
+22480
+23:01:55,950 --> 23:01:59,280
+of similar to what I was showing
+you before, we pass that in as
+
+22481
+23:01:59,280 --> 23:02:02,400
+an input parameter here, and
+output it, we're gonna get the
+
+22482
+23:02:02,400 --> 23:02:05,310
+base 64 encoding of it, we're
+gonna get this massive kind of
+
+22483
+23:02:05,310 --> 23:02:08,940
+string here. We will test this
+later to make sure that this
+
+22484
+23:02:08,940 --> 23:02:12,270
+works. Normally, if I added a
+function in like this right now,
+
+22485
+23:02:12,270 --> 23:02:14,970
+I probably would test it right
+away. For now we can just leave
+
+22486
+23:02:14,970 --> 23:02:17,790
+it in here. That's going to be
+great for getting this image
+
+22487
+23:02:17,790 --> 23:02:21,660
+here. But we don't want just an
+image, right? We were going to
+
+22488
+23:02:21,660 --> 23:02:25,710
+need that metadata. We need this
+to be a JSON object, not just an
+
+22489
+23:02:25,710 --> 23:02:30,600
+image URL like this, we need
+stick this image, this base 64
+
+22490
+23:02:30,600 --> 23:02:35,580
+encoded image into this image
+field of our JSON. So how do we
+
+22491
+23:02:35,580 --> 23:02:39,450
+actually do this? Well, what we
+can do is we know that our ERC
+
+22492
+23:02:39,450 --> 23:02:44,580
+721 code comes with a token URI,
+and it's that token URI that
+
+22493
+23:02:44,580 --> 23:02:48,150
+points to this, which tells us
+what our code is going to look
+
+22494
+23:02:48,150 --> 23:02:52,590
+like. So what we can do is we
+can actually base 64 encode our
+
+22495
+23:02:52,590 --> 23:02:58,020
+JSON as well, to turn into a
+JSON token URI. So we basically
+
+22496
+23:02:58,020 --> 23:03:01,590
+four encoded this image to get
+this, we're going to stick this
+
+22497
+23:03:01,590 --> 23:03:05,220
+URL into our JSON. And then
+we're going to base 64 encode
+
+22498
+23:03:05,220 --> 23:03:09,720
+our JSON, and that's going to be
+the URI that our token uses. So
+
+22499
+23:03:09,720 --> 23:03:14,610
+we have our function, token URI,
+right. And this takes a un 256
+
+22500
+23:03:14,640 --> 23:03:19,980
+token ID, we'll say it's going
+to be a public view, public view
+
+22501
+23:03:20,010 --> 23:03:24,540
+override, and it returns a
+string memory. So we're going to
+
+22502
+23:03:24,540 --> 23:03:29,310
+override the token URI function
+of the ERC 721 to whatever we
+
+22503
+23:03:29,310 --> 23:03:33,300
+want it to be. And here we're
+going to encode some JSON text
+
+22504
+23:03:33,300 --> 23:03:39,870
+that we give our contract into a
+base 64 based JSON token URI
+
+22505
+23:03:39,930 --> 23:03:45,600
+just to get started we'll do a
+require underscore exists. Token
+
+22506
+23:03:45,600 --> 23:03:51,180
+ID, and then I'm just gonna say
+your I query for non existent
+
+22507
+23:03:51,480 --> 23:03:56,160
+token. And yeah, this price
+should be an if not exists,
+
+22508
+23:03:56,340 --> 23:03:59,250
+Revert with an error. However,
+we're just going to go like
+
+22509
+23:03:59,250 --> 23:04:05,370
+this. And this exists function
+comes in my ear C 721. So we're
+
+22510
+23:04:05,370 --> 23:04:07,440
+going to do same thing here. So
+we're gonna say require this
+
+22511
+23:04:07,440 --> 23:04:10,920
+token, a D exists. And again, we
+can 100 percent. And probably should
+
+22512
+23:04:10,920 --> 23:04:14,490
+make this an IF EXISTS token,
+ID, you know, now what we want
+
+22513
+23:04:14,490 --> 23:04:17,910
+to do is we want to figure out
+how to make this token URI
+
+22514
+23:04:17,940 --> 23:04:23,310
+return a base 64 encoded version
+of this JSON. So first, we know
+
+22515
+23:04:23,310 --> 23:04:26,070
+how to how to concatenate a
+string, right, so that's gonna
+
+22516
+23:04:26,070 --> 23:04:28,350
+be the first thing that we're
+going to do. So we'll do API dot
+
+22517
+23:04:28,350 --> 23:04:33,840
+and code packed. And we're going
+to encode ourselves the JSON on
+
+22518
+23:04:33,840 --> 23:04:36,570
+chain, we're going to use single
+quotes here, because inside of
+
+22519
+23:04:36,570 --> 23:04:39,480
+this API and code packed, we're
+going to use double quotes in
+
+22520
+23:04:39,480 --> 23:04:43,530
+here is where we're going to add
+our JSON. So we'll give a name,
+
+22521
+23:04:43,800 --> 23:04:47,400
+right, so the first piece of
+metadata needs to be a name. So
+
+22522
+23:04:47,400 --> 23:04:52,290
+we'll give it a name. And we'll
+put a comma here. And we'll say
+
+22523
+23:04:52,350 --> 23:04:57,570
+the name of this NF T is going
+to be the name we get from, we
+
+22524
+23:04:57,570 --> 23:05:00,540
+have a name function, which
+returns the name. So we're gonna
+
+22525
+23:05:00,540 --> 23:05:02,850
+say the name is going to be the
+name. And we're gonna just
+
+22526
+23:05:02,850 --> 23:05:05,820
+concatenate all this stuff, name
+right there. We're gonna
+
+22527
+23:05:05,820 --> 23:05:09,750
+continue on with the JSON. So we
+put a little quote here, and a
+
+22528
+23:05:09,750 --> 23:05:13,800
+little quote here. So we
+encapsulate this name in quotes,
+
+22529
+23:05:13,830 --> 23:05:16,230
+right? Because remember, we're,
+we're concatenating, this big
+
+22530
+23:05:16,230 --> 23:05:19,560
+string that we're making here,
+we'll do a comma, we'll say,
+
+22531
+23:05:19,980 --> 23:05:23,790
+description, we'll do another
+quote. And this time, we're just
+
+22532
+23:05:23,790 --> 23:05:26,760
+going to put the description
+ourselves, and we'll say, and
+
+22533
+23:05:26,760 --> 23:05:32,880
+NFT, that changes, based on the
+chain link feed, we'll put an
+
+22534
+23:05:32,880 --> 23:05:35,940
+end quote here and a comma, and
+we'll put a comma outside the
+
+22535
+23:05:35,940 --> 23:05:40,500
+quote, down here, we'll say,
+attributes.
+
+22536
+23:05:42,390 --> 23:05:52,710
+We'll just say, trait type, it's
+going to be coolness. Comma,
+
+22537
+23:05:53,070 --> 23:06:01,440
+value, me 100. Boom, to a comma
+to image. We'll put a comma out
+
+22538
+23:06:01,440 --> 23:06:05,160
+here. And this is where we're
+going to put our image URI,
+
+22539
+23:06:05,460 --> 23:06:08,400
+image URI, which we're going to
+have to get from somewhere. So
+
+22540
+23:06:08,400 --> 23:06:11,160
+for now, I'm just gonna say,
+string.
+
+22541
+23:06:12,690 --> 23:06:16,770
+Memory image URI equals i,
+right, which clearly isn't an
+
+22542
+23:06:16,770 --> 23:06:18,990
+image arrived. But just to make
+this format and stuff, we'll
+
+22543
+23:06:18,990 --> 23:06:21,570
+we'll put this there. This is
+where we're going to put that
+
+22544
+23:06:21,600 --> 23:06:26,520
+image URI that we get from SVG
+to image URI. And then that's
+
+22545
+23:06:26,520 --> 23:06:31,440
+it. I mean, close off our JSON,
+though. So doing ABI dot encode
+
+22546
+23:06:31,440 --> 23:06:34,380
+pack is going to concatenate
+this all together. So this is
+
+22547
+23:06:34,380 --> 23:06:37,980
+basically going to be a string
+that looks like this. Great. But
+
+22548
+23:06:37,980 --> 23:06:43,140
+how do we turn this into a base
+64 encoded token you arrive so
+
+22549
+23:06:43,140 --> 23:06:45,840
+that other people can read it is
+we're going to typecast this
+
+22550
+23:06:45,840 --> 23:06:48,930
+whole thing to bytes. And then
+now that this whole thing is in
+
+22551
+23:06:48,930 --> 23:06:52,680
+bytes, we can do exactly what we
+did with the SVG above is now we
+
+22552
+23:06:52,680 --> 23:06:57,210
+can base 64 encoded. So we'll do
+base 64, dot ENCODE. And then
+
+22553
+23:06:57,210 --> 23:07:00,210
+we'll just put another pair of
+parentheses around this save and
+
+22554
+23:07:00,210 --> 23:07:04,830
+auto formatted. And this here is
+going to give us this second
+
+22555
+23:07:04,830 --> 23:07:08,010
+line, right, it's going to give
+us all of this bit, but it's not
+
+22556
+23:07:08,010 --> 23:07:11,550
+going to give us this first bit,
+right. So we just need to append
+
+22557
+23:07:11,550 --> 23:07:14,700
+to this first bit now. And we
+should be good to go. For basics
+
+22558
+23:07:14,700 --> 23:07:19,830
+before data image SVG plus XML
+basics, the form, this is the
+
+22559
+23:07:19,830 --> 23:07:24,270
+prefix for images for SVG
+images, right? We use that above
+
+22560
+23:07:24,270 --> 23:07:27,690
+because that's the prefix for
+SVG images. The prefix for base
+
+22561
+23:07:27,690 --> 23:07:32,670
+64. Jason is going to be it's
+going to be data application
+
+22562
+23:07:32,670 --> 23:07:36,990
+JSON base 64. So we're going to
+do it like this instead. Now the
+
+22563
+23:07:36,990 --> 23:07:40,410
+ERC 721 has something called a
+base URI that we're going to
+
+22564
+23:07:40,410 --> 23:07:43,500
+override and that we're going to
+use. So we're gonna say function
+
+22565
+23:07:43,650 --> 23:07:48,120
+underscore base URI. This will
+be internal pure. And we're
+
+22566
+23:07:48,120 --> 23:07:51,960
+going to override the one that
+ERC 721 has. And this is going
+
+22567
+23:07:51,960 --> 23:07:57,660
+to returns a string memory. And
+we're just going to return this
+
+22568
+23:07:57,660 --> 23:08:02,640
+bit right here. And now we can
+use this base URI. to append,
+
+22569
+23:08:02,760 --> 23:08:06,630
+right, we're going to append
+this first part to our base 64
+
+22570
+23:08:06,630 --> 23:08:11,670
+encoded JSON. So in order to
+append them, once again, we'll
+
+22571
+23:08:11,670 --> 23:08:18,090
+do ABI dot ENCODE, packed. And
+then we'll put this down here.
+
+22572
+23:08:19,110 --> 23:08:22,740
+And we'll say, we're going to,
+we're going to concatenate base
+
+22573
+23:08:22,740 --> 23:08:25,740
+URI to this massive thing that
+we just created. And then we
+
+22574
+23:08:25,740 --> 23:08:28,440
+save and we ought to format the
+now this is obviously a bytes
+
+22575
+23:08:28,440 --> 23:08:31,830
+object, and we want it to be a
+string. So then all we got to do
+
+22576
+23:08:32,100 --> 23:08:36,180
+is typecast it as a string, but
+another prints see down here,
+
+22577
+23:08:36,990 --> 23:08:39,570
+and then we can actually just
+return this, but basically what
+
+22578
+23:08:39,570 --> 23:08:44,610
+we're doing is we're creating a
+JSON string, we encode it in
+
+22579
+23:08:44,610 --> 23:08:49,590
+bytes, that way we can encode it
+in base 64. Once we have encoded
+
+22580
+23:08:49,590 --> 23:08:53,280
+in base 64, which is going to
+look like this second string,
+
+22581
+23:08:53,400 --> 23:08:57,540
+it's gonna look like here out,
+we then just append this initial
+
+22582
+23:08:57,540 --> 23:09:03,420
+part. But for JSON objects, it's
+data application JSON. We we
+
+22583
+23:09:03,420 --> 23:09:06,480
+append that we do API dot encode
+packed, and then cast it to
+
+22584
+23:09:06,480 --> 23:09:10,350
+string and then boom, we now
+have a token URI. That'll look
+
+22585
+23:09:10,350 --> 23:09:12,690
+something like this. And then
+all we have to do is update our
+
+22586
+23:09:12,690 --> 23:09:16,110
+image URI with what we get from
+our function appear, and then
+
+22587
+23:09:16,110 --> 23:09:19,860
+we'll be good to go. So let's
+finish this out. Let's do this.
+
+22588
+23:09:25,080 --> 23:09:29,010
+So in our constructor, we're
+passing a low SVG and a high
+
+22589
+23:09:29,010 --> 23:09:32,400
+SVG. And what are these low SVG
+is in these high SVG as well,
+
+22590
+23:09:32,610 --> 23:09:38,100
+basically saying, when the price
+of this asset is too low, show a
+
+22591
+23:09:38,100 --> 23:09:42,180
+frown. And when the price of the
+asset is high, show a smiley
+
+22592
+23:09:42,180 --> 23:09:46,350
+face. So we're gonna give it
+this frown, SVG, and this happy
+
+22593
+23:09:46,350 --> 23:09:50,490
+SVG as input parameters, low CG
+and high SVG, we probably want
+
+22594
+23:09:50,490 --> 23:09:53,790
+to save those. But we don't
+necessarily want to save them in
+
+22595
+23:09:53,790 --> 23:09:57,690
+like their SVG format. So we
+just want to store the image
+
+22596
+23:09:57,690 --> 23:10:00,750
+URI, right, we will just want to
+store this string up here
+
+22597
+23:10:00,780 --> 23:10:04,230
+instead of the actual SVG. So
+right in our constructor, we can
+
+22598
+23:10:04,230 --> 23:10:12,060
+do I underscore low image URI
+equals, and we have this SVG to
+
+22599
+23:10:12,060 --> 23:10:17,160
+image your eye function, where
+we can pass the low SVG. And
+
+22600
+23:10:17,160 --> 23:10:22,080
+then we can do the same thing
+for the high image URI. So now,
+
+22601
+23:10:22,110 --> 23:10:26,520
+SVG image URI is going to return
+something that looks like this.
+
+22602
+23:10:26,640 --> 23:10:30,690
+And we're going to store just
+this string this image URI on
+
+22603
+23:10:30,690 --> 23:10:34,110
+chain. Now that we have the two
+of those, we can use that down
+
+22604
+23:10:34,110 --> 23:10:37,920
+below. In our token, Uri
+function, when somebody calls
+
+22605
+23:10:37,920 --> 23:10:41,700
+token, your I have token ID
+zero, we're going to stick into
+
+22606
+23:10:41,730 --> 23:10:45,900
+our JSON, either the low image
+or I or the high image arrive.
+
+22607
+23:10:46,380 --> 23:10:48,990
+And we're actually going to base
+that off of the channeling price
+
+22608
+23:10:48,990 --> 23:10:51,390
+feed. So how do we do that?
+Well,
+
+22609
+23:10:51,510 --> 23:10:53,400
+we've already worked with
+channeling price feeds before so
+
+22610
+23:10:53,400 --> 23:10:56,880
+let's go ahead and add it. So
+yarn add dash dash dev at chain
+
+22611
+23:10:56,880 --> 23:11:00,720
+link slash contracts. Once
+that's done at the top, we can
+
+22612
+23:11:00,720 --> 23:11:07,290
+do import at chain link slash
+contracts, slash SRC slash V
+
+22613
+23:11:07,290 --> 23:11:14,790
+0.8, slash interfaces, slash ag
+reg gate, Tor V three interface,
+
+22614
+23:11:14,850 --> 23:11:20,010
+that soul like so. And then down
+here, let's comment this out.
+
+22615
+23:11:20,010 --> 23:11:23,220
+For now, we're going to want to
+call a price feed to figure out
+
+22616
+23:11:23,220 --> 23:11:26,250
+what the price is and then show
+the high image or the low image
+
+22617
+23:11:26,250 --> 23:11:28,410
+based off that. So in order to
+get a price feed in our
+
+22618
+23:11:28,410 --> 23:11:30,810
+constructor, let's just add
+another price feed address,
+
+22619
+23:11:31,500 --> 23:11:36,060
+street address. And then we'll
+make another variable. We'll do
+
+22620
+23:11:36,870 --> 23:11:44,220
+aggregate Tor v3 interface.
+Internal, immutable, I
+
+22621
+23:11:44,220 --> 23:11:48,930
+underscore price feed. And we'll
+say in our constructor, I price
+
+22622
+23:11:48,930 --> 23:11:55,380
+feed equals aggregate Tor v3
+interface at price feed,
+
+22623
+23:11:56,100 --> 23:12:00,030
+address. And then what we can do
+down here, the old bunch of
+
+22624
+23:12:00,030 --> 23:12:05,790
+commas in here into 256 Price
+comma, comma comma equals i
+
+22625
+23:12:05,790 --> 23:12:12,960
+price feed that latest round
+data. And what we can do is we
+
+22626
+23:12:12,960 --> 23:12:19,320
+can say if price is greater than
+or equal to some value, then
+
+22627
+23:12:19,320 --> 23:12:22,410
+show one image dry otherwise,
+show another one. So we can say
+
+22628
+23:12:22,410 --> 23:12:30,030
+String memory, image URI equals
+s underscore low image URI. And
+
+22629
+23:12:30,030 --> 23:12:32,640
+then if the price is higher than
+some value, well greater than
+
+22630
+23:12:32,640 --> 23:12:35,820
+the image URI we're going to use
+is going to be there's gonna be
+
+22631
+23:12:35,850 --> 23:12:40,920
+AI is going to equal the high
+image URI. And then we have
+
+22632
+23:12:40,920 --> 23:12:43,650
+image right down here. So all we
+got to do is figure out the
+
+22633
+23:12:43,650 --> 23:12:47,640
+price. So we can make, and in
+our mind, we'll let the mentors
+
+22634
+23:12:47,640 --> 23:12:53,760
+choose the value that they want
+to use. So we can say, into 256,
+
+22635
+23:12:54,090 --> 23:12:58,830
+I value and we'll assign each
+NFT, their own high value. So
+
+22636
+23:12:58,830 --> 23:13:02,040
+we'll need to create like a
+little mapping up top, we'll
+
+22637
+23:13:02,040 --> 23:13:09,540
+say, mapping, you went to 56.
+Two, you went to 56. Let's just
+
+22638
+23:13:09,540 --> 23:13:15,720
+make this public for the heck of
+it public s underscore token ID
+
+22639
+23:13:15,840 --> 23:13:22,200
+to high value. And we'll say
+that when they meant an NF T
+
+22640
+23:13:22,530 --> 23:13:26,220
+will do s token ID to high
+value, s underscore token
+
+22641
+23:13:26,220 --> 23:13:31,140
+counter. We'll set that equal to
+high value. So when they meant
+
+22642
+23:13:31,140 --> 23:13:34,470
+they choose the high value that
+they want. And then down here
+
+22643
+23:13:34,470 --> 23:13:38,160
+we'll say if the price is
+greater than or equal to the
+
+22644
+23:13:38,160 --> 23:13:42,300
+high value of the token ID, then
+we'll use the high one.
+
+22645
+23:13:42,330 --> 23:13:44,730
+Otherwise, we'll just use the
+low one. Oops, and this needs to
+
+22646
+23:13:44,730 --> 23:13:49,110
+be you into videos x two into
+256. Excuse me, since we want to
+
+22647
+23:13:49,110 --> 23:13:53,190
+be able to compare them pretty
+equally. And boom, our contract
+
+22648
+23:13:53,190 --> 23:13:56,580
+looks really good. Now the only
+thing we'd want to add in here
+
+22649
+23:13:56,610 --> 23:13:59,820
+is probably an event. So we
+probably want to emit an event
+
+22650
+23:13:59,850 --> 23:14:04,230
+in time we met to one of these
+NF T's. So we might do event
+
+22651
+23:14:05,040 --> 23:14:11,820
+created NF T, will say you went
+to 56 indexed token ID comma int
+
+22652
+23:14:11,880 --> 23:14:18,780
+256. I value like so. And then
+when we met this NFT, will do
+
+22653
+23:14:19,410 --> 23:14:25,290
+emit create n t, s underscore
+token counter, comma, I value.
+
+22654
+23:14:25,620 --> 23:14:29,310
+And then it's best practice to
+to have to update our token
+
+22655
+23:14:29,310 --> 23:14:31,800
+counter before we actually do
+the minting. So we'll do that as
+
+22656
+23:14:31,800 --> 23:14:35,790
+well. Okay, there's a ton of
+code here. And like I said, we
+
+22657
+23:14:35,790 --> 23:14:38,790
+definitely would not have
+written all that code without
+
+22658
+23:14:38,820 --> 23:14:41,370
+having compiled to run some
+tests first, but we decided we
+
+22659
+23:14:41,370 --> 23:14:44,910
+want to just write it all right
+off first. So and I did some
+
+22660
+23:14:45,120 --> 23:14:47,820
+misspellings. Let's just make
+sure everything compiles here.
+
+22661
+23:14:48,150 --> 23:14:50,850
+Awesome. Everything's compiled
+here. As you already know, a
+
+22662
+23:14:50,880 --> 23:14:53,370
+couple things that we're going
+to need to do to test this out.
+
+22663
+23:14:53,640 --> 23:14:56,310
+First thing we're gonna need to
+do is write our deploy function,
+
+22664
+23:14:56,460 --> 23:15:01,500
+we've got our basic NFT, we've
+got our random and f t, both of
+
+22665
+23:15:01,500 --> 23:15:06,030
+these hosted on IPFS. Now we're
+going to do a dynamic NFT that's
+
+22666
+23:15:06,030 --> 23:15:11,130
+hosted 100 percent on chain, and it
+changes based off the price of
+
+22667
+23:15:11,220 --> 23:15:24,840
+an asset. So let's do this. Oh,
+three, deploy dynamic, SVG
+
+22668
+23:15:25,740 --> 23:15:28,620
+nft.js. We are no, we're gonna
+need a little bit of
+
+22669
+23:15:28,620 --> 23:15:32,430
+boilerplate. So let's go to our
+basic NFT. And we'll just grab
+
+22670
+23:15:32,430 --> 23:15:36,780
+all this the first seven lines
+or so. And we'll just paste it
+
+22671
+23:15:36,780 --> 23:15:39,420
+in here. What do we need for our
+constructor? Well, we
+
+22672
+23:15:39,420 --> 23:15:44,130
+need a price feed address, a low
+SVG and a highest CG. Okay, so
+
+22673
+23:15:44,130 --> 23:15:47,580
+let's get all of those. So price
+feed address is something we've
+
+22674
+23:15:47,580 --> 23:15:50,460
+already done before. And we can
+add that into our helper
+
+22675
+23:15:50,460 --> 23:15:54,660
+Hardhead config. And we'll do
+one and a foreign local, we're
+
+22676
+23:15:54,660 --> 23:15:57,150
+going to use what we're going to
+use a mock. And if we're on
+
+22677
+23:15:57,150 --> 23:15:59,790
+Rinkeby, or an actual network,
+we're going to use an actual
+
+22678
+23:15:59,940 --> 23:16:03,180
+address. So let's go ahead to
+dark side chain that link will
+
+22679
+23:16:03,180 --> 23:16:08,700
+grab a price feed address, the M
+Aetherium. data feeds will go to
+
+22680
+23:16:08,700 --> 23:16:14,550
+rank B, rank B and let's just
+use eath USD copy that will make
+
+22681
+23:16:14,550 --> 23:16:21,150
+a new entry eath USD price feed
+like so. And for localhost,
+
+22682
+23:16:21,150 --> 23:16:23,190
+we're good. So since we know for
+localhost, we're going to need
+
+22683
+23:16:23,190 --> 23:16:27,330
+to do a mock. Let's see if we
+have a price feed mock. Okay,
+
+22684
+23:16:27,330 --> 23:16:31,380
+now we don't, we're gonna need a
+mock v3 aggregator dot soul. I
+
+22685
+23:16:31,380 --> 23:16:34,470
+just copied pasted mine. If you
+want, you can just go right to
+
+22686
+23:16:34,470 --> 23:16:38,160
+the to a repo here. Or you can
+copy from a previous section,
+
+22687
+23:16:38,190 --> 23:16:43,320
+just a reminder heart at f and f
+t FCC contracts asked moc v3
+
+22688
+23:16:43,320 --> 23:16:48,240
+aggregator and this is using
+point 06 of solidity. So we're
+
+22689
+23:16:48,240 --> 23:16:51,150
+going to want to make sure that
+in our hard hat dot config, we
+
+22690
+23:16:51,150 --> 23:16:55,650
+have at least one 0.6 version,
+which we do so we're good there.
+
+22691
+23:16:55,980 --> 23:17:18,390
+That means in our deploy mocks,
+we're going to want to add So
+
+22692
+23:17:18,390 --> 23:17:21,570
+initial price will be 2000
+decimals will be a team. So now
+
+22693
+23:17:21,570 --> 23:17:24,420
+we've waited to deploy mocks for
+that price feed. So we're gonna
+
+22694
+23:17:24,420 --> 23:17:29,790
+say const chain ID equals
+network dot config dot chain Id
+
+22695
+23:17:30,090 --> 23:17:36,600
+do if development chains dot
+includes network dot name, and
+
+22696
+23:17:36,600 --> 23:17:38,520
+the more we need to import
+development chains looks like
+
+22697
+23:17:38,520 --> 23:17:45,810
+where did say const eth USD
+akregator equals we'll get that
+
+22698
+23:17:45,810 --> 23:17:52,230
+price feed equals awaits ethers
+dot get contract Mark v3 Air
+
+22699
+23:17:52,320 --> 23:17:57,390
+gate tour, and then we'll up
+here we'll do let eath USD price
+
+22700
+23:17:57,600 --> 23:18:03,000
+feed address eath USD price feed
+address equals eath USD
+
+22701
+23:18:03,120 --> 23:18:08,910
+aggregate tore that address else
+will say the eath USD price feed
+
+22702
+23:18:08,910 --> 23:18:11,250
+address is going to be equal to
+what we find in the network
+
+22703
+23:18:11,250 --> 23:18:19,920
+config. Network config. Chain ID
+dot eth USD price. Okay, so we
+
+22704
+23:18:19,920 --> 23:18:24,090
+have the eth USD price feed
+rate. Now we need the lowest VG
+
+22705
+23:18:24,090 --> 23:18:28,440
+and the high SVG. So we're going
+to create a new folder in our
+
+22706
+23:18:28,440 --> 23:18:35,370
+images folder. So we go CD
+images, MK dir dynamic NF t. And
+
+22707
+23:18:35,370 --> 23:18:38,700
+now we'll have two folders in
+here dynamic which is empty and
+
+22708
+23:18:38,700 --> 23:18:41,250
+random, which has all the random
+stuff. If you want to use your
+
+22709
+23:18:41,250 --> 23:18:44,760
+own SVGs for this, you
+absolutely can. But if you want
+
+22710
+23:18:44,760 --> 23:18:48,030
+to just come to my images file
+and then save these images as so
+
+22711
+23:18:48,030 --> 23:18:52,110
+just come right click Save image
+as. Save them. and then drag and
+
+22712
+23:18:52,110 --> 23:18:54,810
+drop them into your images files
+here, you can absolutely do
+
+22713
+23:18:54,810 --> 23:19:00,810
+that. So now that we have those,
+we want to go ahead and read
+
+22714
+23:19:00,810 --> 23:19:05,220
+those into our script here.
+We'll say const, low SVG equals
+
+22715
+23:19:05,250 --> 23:19:09,240
+a weight. And we're going to use
+Fs again. So we're gonna do
+
+22716
+23:19:10,260 --> 23:19:17,760
+const Fs equals require Fs, or
+do await Fs dot read file sync,
+
+22717
+23:19:18,600 --> 23:19:22,470
+we're going to read in this
+file, which for me, it's at dot
+
+22718
+23:19:22,470 --> 23:19:29,550
+slash images slash dynamic NF T
+slash brown dot SVG. And we're
+
+22719
+23:19:29,550 --> 23:19:35,130
+using encoding of UTF eight. And
+then we'll say const. Hi, SVG
+
+22720
+23:19:35,460 --> 23:19:41,430
+equals await Fs dot read file
+sync. Copy this whole thing,
+
+22721
+23:19:41,460 --> 23:19:44,730
+because we're using the same
+stuff. This one's going to be
+
+22722
+23:19:44,730 --> 23:19:49,560
+happy about SVG. And that's it.
+So when price is good, we're
+
+22723
+23:19:49,560 --> 23:19:52,080
+gonna do happiness, SVG, when
+price is bad, we're gonna do
+
+22724
+23:19:52,080 --> 23:19:54,780
+frown at SVG. Now, let's go
+ahead and let's deploy this
+
+22725
+23:19:54,780 --> 23:19:59,460
+contract. So we'll say arguments
+or args equals, it's gonna be
+
+22726
+23:19:59,460 --> 23:20:05,430
+the price feed address, low SVG,
+and then high SVG. And we'll say
+
+22727
+23:20:05,460 --> 23:20:14,760
+const, dynamic S, G and F T
+equals await, deploy dynamic SVG
+
+22728
+23:20:14,910 --> 23:20:19,830
+and f t, comma little bracket
+here, from Deployer.
+
+22729
+23:20:21,990 --> 23:20:29,820
+args, args log true. And the
+weights confirmations, it's
+
+22730
+23:20:29,820 --> 23:20:38,370
+going to be network dot config,
+that block confirmations, or one
+
+22731
+23:20:38,910 --> 23:20:45,270
+will do some logging, I will do
+log to do that. But Larry, do
+
+22732
+23:20:45,270 --> 23:20:48,180
+some verification, I'm actually
+just going to copy paste that
+
+22733
+23:20:48,180 --> 23:20:50,730
+from our last script, because
+it's going to be exactly the
+
+22734
+23:20:50,730 --> 23:20:55,020
+same copy paste. But instead of
+random IPFS, it's going to be
+
+22735
+23:20:55,080 --> 23:20:59,730
+dynamic SVG and f t. The rest of
+this looks good. And that's just
+
+22736
+23:20:59,730 --> 23:21:06,000
+about it. So we'll do module,
+exports dot tags, equals and
+
+22737
+23:21:06,000 --> 23:21:14,880
+we'll do all dynamic. SVG. And
+we'll do main. Oh, okay. Let's
+
+22738
+23:21:14,880 --> 23:21:19,260
+try to see if our deploy script
+that we just created works. To
+
+22739
+23:21:19,260 --> 23:21:26,280
+do h h, or yarn hardhat deployed
+dash dash tags, die Namic SVG,
+
+22740
+23:21:26,430 --> 23:21:28,830
+that makes sense, because we
+didn't deploy the mocks. So
+
+22741
+23:21:28,830 --> 23:21:33,150
+we'll do tags, dynamic SVGs. And
+then also the mocks. Local
+
+22742
+23:21:33,150 --> 23:21:36,660
+network detected play marks, we
+deploy the marks, deploying
+
+22743
+23:21:36,660 --> 23:21:45,930
+dynamic SVG, awesome. You know
+what comes next? You Gosh, darn
+
+22744
+23:21:45,930 --> 23:21:50,730
+right, it's time for some tests.
+Now, once again, I'm going to
+
+22745
+23:21:50,730 --> 23:21:53,700
+encourage you to pause the video
+now and try to write your own
+
+22746
+23:21:53,700 --> 23:21:57,480
+test for this test for this
+section actually can be a little
+
+22747
+23:21:57,480 --> 23:22:00,750
+bit tricky. Since we are going
+to be manipulating the price of
+
+22748
+23:22:00,750 --> 23:22:04,680
+our mock aggregator, we are
+checking for these long strings,
+
+22749
+23:22:04,860 --> 23:22:08,340
+and such. So be sure to use the
+GitHub repository associated
+
+22750
+23:22:08,340 --> 23:22:11,670
+with this lesson, in case you
+get lost. Now, I want to show
+
+22751
+23:22:11,670 --> 23:22:18,660
+you what this looks like on a
+marketplace, like OpenCL. So we
+
+22752
+23:22:18,660 --> 23:22:22,020
+are going to deploy this to rink
+B. Now keep in mind test that
+
+22753
+23:22:22,020 --> 23:22:24,990
+can be slow. So you might want
+to be patient here. And you
+
+22754
+23:22:24,990 --> 23:22:27,630
+don't even have to do it if you
+don't want to. But it is kind of
+
+22755
+23:22:27,630 --> 23:22:30,270
+nice to see. Okay, that's what
+it really looks like. And you
+
+22756
+23:22:30,270 --> 23:22:33,180
+can go to the contract on chain
+once it's verified. And you can
+
+22757
+23:22:33,180 --> 23:22:35,970
+read the token URI and
+everything. And it's pretty fun.
+
+22758
+23:22:35,970 --> 23:22:40,110
+So let's just add one more bit
+to our deploy folder. Let's add
+
+22759
+23:22:40,110 --> 23:22:43,260
+a mint script that just emits an
+NF T for each one of these
+
+22760
+23:22:43,260 --> 23:22:47,820
+contracts. So we're going to
+create no for mint.js. And we're
+
+22761
+23:22:47,820 --> 23:22:52,350
+just going to have each one of
+these contracts mint NFT. Let's
+
+22762
+23:22:52,350 --> 23:22:57,000
+go ahead and do this. So in
+here, we'll do const ethers
+
+22763
+23:22:57,480 --> 23:23:03,330
+network equals require arhat.
+And then I'm going to do a
+
+22764
+23:23:03,330 --> 23:23:06,540
+little copy paste in. I'm just
+going to copy this part because
+
+22765
+23:23:06,540 --> 23:23:10,440
+I know I'm going to need that.
+We are going to need a deploy
+
+22766
+23:23:10,440 --> 23:23:13,560
+but we're not going to need to
+deploy. So I'll grab get named
+
+22767
+23:23:13,560 --> 23:23:16,320
+accounts, get named accounts,
+it's going to come right from
+
+22768
+23:23:16,320 --> 23:23:19,530
+there. So we have a Deployer.
+Our deployer is just gonna be
+
+22769
+23:23:19,530 --> 23:23:22,800
+used to mint them. First we'll
+mint the basic NF t. So we'll
+
+22770
+23:23:22,800 --> 23:23:29,130
+say const basic NF t equals wait
+ethers dot get contract, basic N
+
+22771
+23:23:29,130 --> 23:23:32,370
+ft, and we'll connect the
+deployer to it. And then we'll
+
+22772
+23:23:32,370 --> 23:23:38,370
+say const basic mint and if T or
+basic mint, TX equals await
+
+22773
+23:23:38,580 --> 23:23:44,640
+basic NF T dot mint NF t. And
+then we'll do a weight basic
+
+22774
+23:23:45,210 --> 23:23:50,610
+mint, TX dot weight one and then
+we'll do a little console dot
+
+22775
+23:23:50,610 --> 23:23:57,630
+log base Again, T index zero has
+token URI, we'll put in a little
+
+22776
+23:23:57,810 --> 23:24:02,970
+await basic NF T dot token URI
+of zero. That's it for the basic
+
+22777
+23:24:02,970 --> 23:24:09,300
+entity. Now we'll do our random
+IPFS and empty. So we'll say
+
+22778
+23:24:09,300 --> 23:24:16,830
+const, random IPFS NF t equals
+await ethers dot get contract,
+
+22779
+23:24:16,950 --> 23:24:22,170
+random IPFS and f t, connected
+to the Deployer. This one, we
+
+22780
+23:24:22,170 --> 23:24:26,310
+need a mint fee. So we'll say
+const, mint V equals await
+
+22781
+23:24:26,550 --> 23:24:31,200
+random IPFS NF T dot get mint
+fee. And then we'll do the mint.
+
+22782
+23:24:31,230 --> 23:24:37,590
+So we'll say const, random IPFS
+and ft mint, TX equals await,
+
+22783
+23:24:38,190 --> 23:24:44,550
+random IPFS and F T dot request
+and F team. And for this one, we
+
+22784
+23:24:44,550 --> 23:24:47,910
+need to pass a value, which is
+going to be the mint v.to
+
+22785
+23:24:47,910 --> 23:24:53,220
+string. Now for this one, just
+like what we saw in our tests,
+
+22786
+23:24:53,370 --> 23:24:57,690
+we're going to have to do this
+await new promise again, right,
+
+22787
+23:24:57,690 --> 23:25:01,200
+because we need to wait for it
+to return need to listen for
+
+22788
+23:25:01,200 --> 23:25:04,440
+those events, we probably should
+set up the listener first. So
+
+22789
+23:25:04,440 --> 23:25:06,510
+let's actually set up the
+listener first. So we're going
+
+22790
+23:25:06,510 --> 23:25:11,010
+to do await new promise, and
+we're gonna do async function.
+
+22791
+23:25:11,760 --> 23:25:16,170
+And we're going to do resolve
+reject. In here, we're gonna use
+
+22792
+23:25:16,170 --> 23:25:18,810
+that, that fun little arrow
+syntax in here.
+
+22793
+23:25:19,050 --> 23:25:21,900
+And now since we're in this
+function here, we actually set
+
+22794
+23:25:21,900 --> 23:25:27,150
+the timeout resolve like this,
+which means we have five minutes
+
+22795
+23:25:27,450 --> 23:25:30,810
+to time this out, you might want
+to bump this up even more five
+
+22796
+23:25:30,810 --> 23:25:33,360
+minutes might not be enough,
+this is gonna be 300
+
+22797
+23:25:33,630 --> 23:25:36,270
+milliseconds here, we're gonna
+do that once again. So we'll say
+
+22798
+23:25:36,270 --> 23:25:41,100
+random IPFS and ft dot once.
+Once we get that NFT minted
+
+22799
+23:25:41,460 --> 23:25:45,960
+event, we're going to run an
+async function, we're just gonna
+
+22800
+23:25:45,960 --> 23:25:50,340
+do resolve. And inside here is
+where we can actually put,
+
+22801
+23:25:50,610 --> 23:25:56,670
+actually requesting the NFT. But
+below our listener, right, so in
+
+22802
+23:25:56,670 --> 23:26:02,400
+there, and then we can say if
+developments chains, that
+
+22803
+23:26:02,430 --> 23:26:07,410
+includes network dot name. So
+let's just make sure we import
+
+22804
+23:26:07,410 --> 23:26:11,400
+those development chains and
+network or affect them and
+
+22805
+23:26:11,400 --> 23:26:14,280
+chains that includes network dot
+name. So we're on a test net,
+
+22806
+23:26:14,310 --> 23:26:17,130
+this is where we go ahead and we
+pretend to be those mocks. So
+
+22807
+23:26:17,130 --> 23:26:21,630
+we'll say const Request ID
+equals random IPFS. Oh,
+
+22808
+23:26:21,630 --> 23:26:27,360
+actually, we're going to need to
+do const random IPFS and ft min
+
+22809
+23:26:27,360 --> 23:26:32,550
+TX receipt equals await on IPFS
+and empty minted TX dot weight
+
+22810
+23:26:32,640 --> 23:26:36,090
+one. So we're gonna need to get
+the receipt. And from the
+
+22811
+23:26:36,090 --> 23:26:41,370
+receipt, we can get the request
+ID. That events one dot args dot
+
+22812
+23:26:41,370 --> 23:26:49,590
+request id.to string. And then
+we can do const VRF. coordinator
+
+22813
+23:26:49,620 --> 23:26:56,190
+V to mock equals await ethers
+dot get contract, the RF
+
+22814
+23:26:56,280 --> 23:27:00,360
+coordinate for V to mock,
+connect this to the Deployer.
+
+22815
+23:27:00,780 --> 23:27:06,510
+And then we'll do a wait the RF
+corded and a Tor V to mock that
+
+22816
+23:27:06,510 --> 23:27:12,450
+fulfill random words with
+Request ID, random IPFS. And if
+
+22817
+23:27:12,450 --> 23:27:19,770
+T dot address, we can do console
+dot log random IPFS and have T
+
+22818
+23:27:20,190 --> 23:27:29,010
+index zero token URI to await
+random IP. That's NF T dot token
+
+22819
+23:27:29,040 --> 23:27:37,500
+URI of zero. Finally, we can do
+our dynamic SVG, NF t. So we can
+
+22820
+23:27:37,500 --> 23:27:43,920
+say const, high high value
+equals ethers.utils.do parse
+
+22821
+23:27:43,920 --> 23:27:48,630
+ether here. So we'll say
+4000 $4,000 will be the high
+
+22822
+23:27:48,630 --> 23:27:55,680
+value. We'll say const. Dynamic
+SVG and f t equals await ethers
+
+22823
+23:27:55,680 --> 23:28:00,300
+dot get contract, dynamic. SVG
+and a T will connect it to the
+
+22824
+23:28:00,300 --> 23:28:09,330
+deployer say const by Namic, s,
+B, G, and f t mint, TX equals
+
+22825
+23:28:09,360 --> 23:28:17,130
+await dynamic SVG and F T dot
+mint and f t i value to string
+
+22826
+23:28:17,460 --> 23:28:24,300
+then we'll just do wait. This
+stat wait one. And finally
+
+22827
+23:28:24,300 --> 23:28:33,000
+console dot log dynamic. SVG NFT
+index zero token URI is going to
+
+22828
+23:28:33,000 --> 23:28:42,270
+be a weight dynamic. SVG and ft
+dot token URI of zero. Okay, I
+
+22829
+23:28:42,270 --> 23:28:44,910
+think that looks good. Let's try
+this on a local network. So
+
+22830
+23:28:44,910 --> 23:28:49,230
+we'll do yarn hard hat deploy.
+And we'll run all those scripts
+
+22831
+23:28:51,480 --> 23:28:55,860
+It looks like everything worked.
+So we have random, basic NFT
+
+22832
+23:28:55,980 --> 23:29:00,000
+index zero has a token year, I
+have this IPFS thing, random
+
+22833
+23:29:00,030 --> 23:29:04,920
+IPFS NFT. index zero has this
+thing. And then our SVG has this
+
+22834
+23:29:04,920 --> 23:29:07,380
+giant monstrosity, okay,
+perfect. And then we can even
+
+22835
+23:29:07,380 --> 23:29:12,210
+check, right, we can even grab
+this IPFS hash, we go to our
+
+22836
+23:29:12,210 --> 23:29:16,020
+IPFS node, or if you installed
+IPFS in your browser, or you're
+
+22837
+23:29:16,020 --> 23:29:18,240
+working with Brave, we can just
+pop it right into our browsers
+
+22838
+23:29:18,240 --> 23:29:20,790
+and see what it looks like.
+Right. And then if I zoom in,
+
+22839
+23:29:21,270 --> 23:29:24,330
+and adorable St. Bernard, with
+the image of the St. Bernard,
+
+22840
+23:29:25,170 --> 23:29:27,720
+looking like that, this one's
+also gonna be St. Bernard. And
+
+22841
+23:29:27,720 --> 23:29:31,950
+then of course, are SVG, which
+we can also copy, paste, and
+
+22842
+23:29:31,950 --> 23:29:35,640
+boom, that looks great. And then
+we can copy the image. And it's
+
+22843
+23:29:35,640 --> 23:29:39,660
+a frowny face or shad. But
+Awesome. Okay, so it's working
+
+22844
+23:29:39,690 --> 23:29:43,500
+locally for us. Now, let's go
+ahead and try to make this work
+
+22845
+23:29:43,620 --> 23:29:47,490
+on an actual test net. So
+hopefully, our helper hard hat
+
+22846
+23:29:47,490 --> 23:29:50,820
+config is set up correctly. And
+there's enough stuff in here
+
+22847
+23:29:50,880 --> 23:29:54,510
+where we need to make sure that
+we have a subscription ID,
+
+22848
+23:29:54,630 --> 23:29:56,610
+right, we're going to need to
+make sure we have a subscription
+
+22849
+23:29:56,610 --> 23:30:00,180
+ID. And we shouldn't call the
+mint function, right, because
+
+22850
+23:30:00,180 --> 23:30:03,810
+we're going to need to add our
+consumer to the VRF. Before we
+
+22851
+23:30:03,810 --> 23:30:07,140
+can actually meant so let me
+let's add some tags to our meant
+
+22852
+23:30:07,140 --> 23:30:11,940
+here. So we'll do module dot
+exports, dot tags equals, and
+
+22853
+23:30:11,940 --> 23:30:17,340
+we'll say all comma meant a
+while ago, I said okay, let's
+
+22854
+23:30:17,340 --> 23:30:22,530
+add a main tag. Now we're coming
+around to why we added this main
+
+22855
+23:30:22,530 --> 23:30:25,770
+tag here. So what we want to do
+is want to deploy all of these
+
+22856
+23:30:25,770 --> 23:30:31,590
+contracts. But before we finally
+meant for our IPFS one, we need
+
+22857
+23:30:31,590 --> 23:30:34,560
+to add that contract to our
+consumer, here's what we're
+
+22858
+23:30:34,560 --> 23:30:38,790
+gonna do, we're gonna run yarn,
+Hardhead, deploy dash dash
+
+22859
+23:30:38,790 --> 23:30:45,030
+network Rinkeby dash dash tags
+main. Now, this won't meant any
+
+22860
+23:30:45,030 --> 23:30:48,240
+of our NF T's, okay, won't mean
+to any of our NF T's, it'll just
+
+22861
+23:30:48,240 --> 23:30:51,090
+deploy those contracts might
+just sit around and wait a
+
+22862
+23:30:51,090 --> 23:30:54,270
+little bit for these to actually
+deploy. So this is a great time
+
+22863
+23:30:54,270 --> 23:30:56,880
+to go take a break, maybe go
+take a walk, get a sip of water,
+
+22864
+23:30:56,880 --> 23:30:59,550
+get a cup of coffee, whatever
+you want to do. Yeah, once
+
+22865
+23:30:59,550 --> 23:31:02,280
+everything is deployed, then we
+can go to V or F dot chain dot
+
+22866
+23:31:02,280 --> 23:31:06,450
+link, we're already connected
+here, we used our subscription.
+
+22867
+23:31:06,690 --> 23:31:11,400
+And then we would just add our
+IPFS consumer in here. And we'd
+
+22868
+23:31:11,400 --> 23:31:13,890
+be good to go. And All right,
+once everything goes through,
+
+22869
+23:31:13,890 --> 23:31:16,830
+and we have all three of our
+transactions on the blockchain,
+
+22870
+23:31:17,100 --> 23:31:21,810
+we can go ahead, we can grab our
+random IPFS NF T, we'll grab
+
+22871
+23:31:21,810 --> 23:31:24,870
+that address, we'll come back
+over to V or F dot chain dot
+
+22872
+23:31:24,870 --> 23:31:30,150
+link slash rink D, we'll go to
+our subscription ID, and we'll
+
+22873
+23:31:30,150 --> 23:31:35,280
+add a new consumer will add that
+contract address. So we'll go
+
+22874
+23:31:35,280 --> 23:31:38,520
+ahead and approve and Metamask.
+And once this goes through, we
+
+22875
+23:31:38,520 --> 23:31:42,600
+can finish running the mint part
+of our deploy folder. Once it's
+
+22876
+23:31:42,600 --> 23:31:46,170
+confirmed, we can close maybe we
+can do a little refresh, we
+
+22877
+23:31:46,170 --> 23:31:49,410
+should see our new address added
+as a subscription here. Now that
+
+22878
+23:31:49,410 --> 23:31:52,890
+we've added that we can mint one
+NF T from each one of these
+
+22879
+23:31:52,890 --> 23:31:58,650
+contracts are in hard hats,
+deploy dash dash tags meant dash
+
+22880
+23:31:58,650 --> 23:32:02,670
+dash network Rinkeby. And we'll
+have to wait a little bit for
+
+22881
+23:32:02,670 --> 23:32:06,240
+this too. Okay, now that we have
+them all minted, we should get a
+
+22882
+23:32:06,240 --> 23:32:10,230
+little output like this. Right?
+Basic NF t zero has token URI
+
+22883
+23:32:10,230 --> 23:32:15,300
+here. Basic random IPFS NF T has
+token your eye here. And then
+
+22884
+23:32:15,300 --> 23:32:19,620
+our SVG has this as a token
+year, right. So what can we do
+
+22885
+23:32:19,620 --> 23:32:24,570
+now? Well, let me go grab, I'll
+grab my wallet address and stick
+
+22886
+23:32:24,570 --> 23:32:28,320
+it into Rinkeby ether scan. And
+we can see we called mint
+
+22887
+23:32:28,470 --> 23:32:33,030
+request and mint again. And we
+created three contracts, right,
+
+22888
+23:32:33,030 --> 23:32:37,590
+we created our basic NFT, our
+random IPFS NFT and our dynamic
+
+22889
+23:32:37,710 --> 23:32:42,750
+SVG NFT. What we can do now is
+we can grab, we can copy the
+
+22890
+23:32:42,750 --> 23:32:46,890
+address of our contract. And we
+can go to test nets that open
+
+22891
+23:32:46,890 --> 23:32:48,840
+see that i Oh,
+
+22892
+23:32:49,860 --> 23:32:53,280
+and we can put that address in
+the bar here in the search bar
+
+22893
+23:32:53,280 --> 23:32:57,810
+here. Now this part is
+incredibly, incredibly variable.
+
+22894
+23:32:57,840 --> 23:33:01,830
+Okay, open C can be really slow.
+And it can take open see up to a
+
+22895
+23:33:01,830 --> 23:33:05,520
+couple of hours to register that
+a contract has been deployed to
+
+22896
+23:33:05,520 --> 23:33:08,700
+a test net. So if it doesn't
+show up right away, don't be
+
+22897
+23:33:08,700 --> 23:33:11,850
+discouraged. Don't let it drag
+you down. But if it does, you
+
+22898
+23:33:11,850 --> 23:33:15,750
+should be able to click on your
+collection and see the NFT is
+
+22899
+23:33:15,750 --> 23:33:19,860
+actually here. I'm going to grab
+our random IPFS NFT. Let's grab
+
+22900
+23:33:19,860 --> 23:33:23,130
+that contract address. I'm going
+to grab that test net site open
+
+22901
+23:33:23,130 --> 23:33:27,840
+c.io. Paste that address in
+there. And what do you know we
+
+22902
+23:33:27,840 --> 23:33:32,130
+do indeed see, random IPFS and f
+t, right and I've deployed a
+
+22903
+23:33:32,130 --> 23:33:35,190
+couple of them. So this one's v
+two, and we have our adorable
+
+22904
+23:33:35,190 --> 23:33:38,610
+Shiva in you right here. So this
+is what it looks like an open C
+
+22905
+23:33:38,640 --> 23:33:43,320
+now we can 100 percent verify that our
+code is good even if it doesn't
+
+22906
+23:33:43,320 --> 23:33:46,920
+show up on Open. See. If we go
+to the contract we go to read
+
+22907
+23:33:46,920 --> 23:33:51,750
+contract. And then we go to
+token URI punch and zero here. A
+
+22908
+23:33:51,960 --> 23:33:56,370
+query, grabbed this, stick it
+into our browsers, the JSON
+
+22909
+23:33:56,370 --> 23:34:00,660
+looks good. So let's grab the
+image URI. Paste that in. And if
+
+22910
+23:34:00,660 --> 23:34:04,560
+we can see this here, that means
+that our code is good. And you
+
+22911
+23:34:04,560 --> 23:34:08,850
+have successfully deployed a
+number of FFTs to the
+
+22912
+23:34:08,850 --> 23:34:15,210
+blockchain. We have learned a
+massive amount in this course,
+
+22913
+23:34:15,210 --> 23:34:17,340
+this is definitely one of the
+most jam packed one. And it's
+
+22914
+23:34:17,340 --> 23:34:20,700
+all about art. Right? Isn't that
+crazy? Let's do a quick
+
+22915
+23:34:20,700 --> 23:34:25,230
+refresher of this entire course
+here. So first off, we learned
+
+22916
+23:34:25,230 --> 23:34:29,400
+the basics of an NF T with our
+basic NF T dot Sol, we learn
+
+22917
+23:34:29,400 --> 23:34:33,450
+that these NF T's are based off
+of the ERC 721 standard. And
+
+22918
+23:34:33,450 --> 23:34:37,080
+that just means they have
+functions like name, token, Uri,
+
+22919
+23:34:37,110 --> 23:34:42,900
+etc. We learned that NF T's use
+this token URI to tell us what
+
+22920
+23:34:43,020 --> 23:34:45,540
+the token actually looks like a
+token, your eye will look
+
+22921
+23:34:45,540 --> 23:34:49,410
+something like this, it's going
+to be a name a description, it's
+
+22922
+23:34:49,410 --> 23:34:52,710
+going to have an image URL,
+which points to a different
+
+22923
+23:34:52,710 --> 23:34:56,340
+location for what the NFT
+actually looks like. It'll have
+
+22924
+23:34:56,340 --> 23:34:59,340
+stuff like attributes, it can
+have stuff like attributes, and
+
+22925
+23:34:59,340 --> 23:35:03,570
+a few other tags. This is known
+as the metadata of the NFT. And
+
+22926
+23:35:03,570 --> 23:35:07,560
+this tells us about the NFT. We
+can also have all that metadata
+
+22927
+23:35:07,560 --> 23:35:10,800
+on chain, of course, to
+customize it on chain, and make
+
+22928
+23:35:10,800 --> 23:35:14,460
+it look and grow and change and
+be interactive on chain, we
+
+22929
+23:35:14,460 --> 23:35:17,760
+learned more about IPFS, we
+actually wrote a script called
+
+22930
+23:35:17,790 --> 23:35:21,420
+upload to pinjarra.js, where we
+can actually programmatically
+
+22931
+23:35:21,450 --> 23:35:26,490
+upload images and files to
+another IPFS pinning service for
+
+22932
+23:35:26,490 --> 23:35:31,410
+us, we can of course, always use
+our own IPFS nodes if we want.
+
+22933
+23:35:31,440 --> 23:35:35,760
+Now this token URI can really be
+anything. And we hosted it on
+
+22934
+23:35:35,910 --> 23:35:40,350
+IPFS for our basic NFT and for
+our random NFT. But for our
+
+22935
+23:35:40,350 --> 23:35:45,270
+dynamic NFT, we actually hosted
+the token, you're right 100 percent On
+
+22936
+23:35:45,270 --> 23:35:49,230
+chain, so we didn't use IPFS.
+And we made this dynamic where
+
+22937
+23:35:49,230 --> 23:35:54,000
+the token URI actually changes
+based off of the price of a
+
+22938
+23:35:54,030 --> 23:35:58,890
+changeling price feed in our
+random IPFS NFT, we gave our NFT
+
+22939
+23:35:59,160 --> 23:36:03,030
+a chance we gave different
+rarities to the different dogs
+
+22940
+23:36:03,060 --> 23:36:06,810
+so that we could create
+programmatically rare NF TS
+
+22941
+23:36:06,840 --> 23:36:10,680
+where our pug is super rare. Our
+Shiva is sort of rare, and our
+
+22942
+23:36:10,680 --> 23:36:13,170
+St. Bernard is pretty common. So
+the fact that we got to ship it
+
+22943
+23:36:13,170 --> 23:36:16,680
+in you was awesome. We did some
+amazing deployments, we wrote
+
+22944
+23:36:16,680 --> 23:36:19,860
+some tests. Not only that, but
+we learned a lot about
+
+22945
+23:36:19,890 --> 23:36:23,610
+transactions, and how we can
+actually add whatever data we
+
+22946
+23:36:23,610 --> 23:36:26,010
+want to this data section. And a
+little bit more about what our
+
+22947
+23:36:26,010 --> 23:36:29,910
+transactions look like, and how
+we can actually use functions,
+
+22948
+23:36:29,910 --> 23:36:33,270
+selectors and function
+signatures to be able to call
+
+22949
+23:36:33,330 --> 23:36:37,110
+anything, right and we learn
+more about ABI dot encoding, and
+
+22950
+23:36:37,110 --> 23:36:39,630
+encoding packed and all this
+binary stuff if you want it to
+
+22951
+23:36:39,630 --> 23:36:42,900
+go deep into that. So this was
+an absolutely JAM PACKED
+
+22952
+23:36:42,930 --> 23:36:45,690
+session. And you should be
+incredibly proud of yourself,
+
+22953
+23:36:45,750 --> 23:36:48,090
+especially with your little
+puppy that you can see on open
+
+22954
+23:36:48,090 --> 23:36:51,510
+sea or you can see directly on
+ether scan, or you can just look
+
+22955
+23:36:51,510 --> 23:36:55,410
+at it and IPFS and be really
+proud of what you've done. But
+
+22956
+23:36:55,440 --> 23:36:58,230
+with that being said, huge
+congratulations on making this
+
+22957
+23:36:58,230 --> 23:37:01,110
+far. Definitely definitely
+definitely take a break here,
+
+22958
+23:37:01,290 --> 23:37:02,820
+and we'll see you in the next
+one.
+
+22959
+23:37:12,219 --> 23:37:16,179
+Okay, now we have less than
+fifth team, which is going to be
+
+22960
+23:37:16,179 --> 23:37:21,369
+our next JS NFT marketplace. And
+if you finish this lesson, you
+
+22961
+23:37:21,399 --> 23:37:25,899
+are a web three full stack
+monster, this is going to be our
+
+22962
+23:37:25,929 --> 23:37:30,159
+most complicated front end using
+the web three stack and using a
+
+22963
+23:37:30,159 --> 23:37:33,669
+lot of really advanced web
+three, and blockchain tools. So
+
+22964
+23:37:33,669 --> 23:37:37,119
+get really excited because we
+are going to learn a ton in this
+
+22965
+23:37:37,119 --> 23:37:40,299
+lesson. Now there are actually
+three different repos associated
+
+22966
+23:37:40,299 --> 23:37:43,599
+with this lesson. The first one
+is going to be our typical hard
+
+22967
+23:37:43,599 --> 23:37:46,839
+hat project. For the back end,
+after the hard hat project, we
+
+22968
+23:37:46,839 --> 23:37:50,589
+actually have two repos both are
+going to be our front end repos,
+
+22969
+23:37:50,589 --> 23:37:53,349
+and they're going to be slightly
+different. In this project,
+
+22970
+23:37:53,349 --> 23:37:56,439
+we're going to learn more about
+how events are so important and
+
+22971
+23:37:56,439 --> 23:37:59,139
+why events are so important,
+especially for off chain
+
+22972
+23:37:59,139 --> 23:38:01,599
+services. And so we're actually
+going to look at two different
+
+22973
+23:38:01,599 --> 23:38:04,119
+ways to work with them, one
+using the mirallas, or a
+
+22974
+23:38:04,119 --> 23:38:07,989
+centralized database, and then
+one using the graph. And the
+
+22975
+23:38:07,989 --> 23:38:10,899
+reason that I want to show both
+of these is that oftentimes,
+
+22976
+23:38:10,899 --> 23:38:12,909
+when people are looking to scale
+the projects, when people are
+
+22977
+23:38:12,909 --> 23:38:16,059
+looking to get things done
+really quickly, taking a more
+
+22978
+23:38:16,059 --> 23:38:19,539
+centralized approach can often
+be a little quicker, and you can
+
+22979
+23:38:19,539 --> 23:38:22,479
+sometimes add more functionality
+to your website. And there's
+
+22980
+23:38:22,479 --> 23:38:24,969
+still a lot of protocols that
+have decentralized backends. And
+
+22981
+23:38:24,969 --> 23:38:29,379
+centralized front ends. One such
+example, is open sea, open sea,
+
+22982
+23:38:29,379 --> 23:38:33,309
+for example, has the ability to
+actually like different and fts.
+
+22983
+23:38:33,369 --> 23:38:36,039
+Now, this isn't something that
+we would actually want to spend
+
+22984
+23:38:36,039 --> 23:38:38,499
+any gas on. But it is something
+that we're gonna have to store
+
+22985
+23:38:38,499 --> 23:38:41,139
+in some type of database
+somewhere, so that people have
+
+22986
+23:38:41,139 --> 23:38:44,139
+the ability to do that. So I
+want to show you this optional
+
+22987
+23:38:44,139 --> 23:38:47,469
+first way to build these front
+ends, since all of our logic is
+
+22988
+23:38:47,469 --> 23:38:50,829
+still going to be 100 percent. On
+chain, the front end matters a
+
+22989
+23:38:50,829 --> 23:38:53,469
+little bit less, because anybody
+can still interact with the
+
+22990
+23:38:53,469 --> 23:38:56,319
+contracts that we build on
+chain. Now in web three, we
+
+22991
+23:38:56,319 --> 23:38:59,439
+don't want to stay there.
+However, getting an MVP done
+
+22992
+23:38:59,439 --> 23:39:02,439
+getting a minimal viable project
+done is really, really
+
+22993
+23:39:02,439 --> 23:39:04,599
+important. So using a
+centralized server, like
+
+22994
+23:39:04,599 --> 23:39:07,749
+Morales, or centralized project
+can make us much quicker. In
+
+22995
+23:39:07,749 --> 23:39:10,479
+fact, we have been using
+centralized services, like
+
+22996
+23:39:10,479 --> 23:39:13,419
+alchemy, kind of throughout this
+whole project. But of course, I
+
+22997
+23:39:13,449 --> 23:39:16,119
+also want to show you the
+decentralized way to make your
+
+22998
+23:39:16,119 --> 23:39:18,729
+front end. So after we work with
+Morales, we're also going to
+
+22999
+23:39:18,729 --> 23:39:21,729
+show you how to use the graph
+then for to do all this event
+
+23000
+23:39:21,729 --> 23:39:25,119
+indexing. Now the graph is going
+to be the decentralized way we
+

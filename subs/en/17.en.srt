@@ -1,0 +1,4992 @@
+17001
+17:13:41,990 --> 17:13:47,420
+just run that connect bit. So
+we'll say if type of window does
+
+17002
+17:13:47,420 --> 17:13:51,710
+not equal, undefined, right,
+because we want to check for
+
+17003
+17:13:51,710 --> 17:13:56,720
+that window object. Again, we'll
+say if window dot local storage
+
+17004
+17:13:57,140 --> 17:14:02,630
+dot get item connected,
+connected, so if that connected
+
+17005
+17:14:02,630 --> 17:14:07,970
+key exists, then we'll just run
+Enable Web three. So now We have
+
+17006
+17:14:07,970 --> 17:14:11,450
+some functionality in here,
+which even when we refresh, it
+
+17007
+17:14:11,450 --> 17:14:14,270
+will automatically run enable of
+three for us. So now if I go
+
+17008
+17:14:14,270 --> 17:14:17,750
+ahead and refresh the front end,
+we don't have to press that
+
+17009
+17:14:17,750 --> 17:14:21,410
+connect button anymore, because
+it goes, Oh, I see that locally,
+
+17010
+17:14:21,410 --> 17:14:25,940
+we stored this connected key
+whenever you refresh. Now, it
+
+17011
+17:14:25,940 --> 17:14:28,880
+checks for this first it sees it
+and then runs enabled web three.
+
+17012
+17:14:28,910 --> 17:14:32,390
+Now on the other side, though,
+if we're in here, and now we
+
+17013
+17:14:32,390 --> 17:14:35,990
+disconnect, and then we refresh.
+This will show up, which is
+
+17014
+17:14:35,990 --> 17:14:38,660
+really annoying. And every time
+we refresh, it'll keep showing
+
+17015
+17:14:38,660 --> 17:14:40,940
+up, which we don't want. We want
+it to be that when we
+
+17016
+17:14:40,940 --> 17:14:44,360
+disconnect, we tell it hey,
+we've we've gone ahead and
+
+17017
+17:14:44,360 --> 17:14:48,470
+disconnected here. So back in
+our application, we can add
+
+17018
+17:14:48,500 --> 17:14:52,760
+another use effect to check to
+see if we've disconnected. So
+
+17019
+17:14:52,760 --> 17:14:56,270
+let's create another use effect.
+That's going to costly just look
+
+17020
+17:14:56,270 --> 17:14:59,870
+for us being connected, we'll
+say use effect, do a little
+
+17021
+17:14:59,870 --> 17:15:03,890
+arrow bracket thing here. And
+we're going to do this anytime.
+
+17022
+17:15:04,160 --> 17:15:06,320
+And oh my goodness, anytime I
+save, it's going to keep popping
+
+17023
+17:15:06,320 --> 17:15:08,690
+up. So I'm just going to just
+going to comment that out for
+
+17024
+17:15:08,690 --> 17:15:11,600
+now. So in here, we want to say
+okay, whatever, there's a
+
+17025
+17:15:11,600 --> 17:15:15,530
+rerender we want to run if any
+account has changed. And Morales
+
+17026
+17:15:15,530 --> 17:15:18,620
+has some functionality for us to
+do this as well. So from user
+
+17027
+17:15:18,620 --> 17:15:22,580
+morass, we're going to import
+more Alice, and then down here
+
+17028
+17:15:22,700 --> 17:15:26,450
+in our use effect. Inside the
+little function, we're gonna say
+
+17029
+17:15:26,450 --> 17:15:29,900
+mirallas.on account, changed
+
+17030
+17:15:31,460 --> 17:15:36,080
+of account, we're gonna do some
+stuff. So on account changed,
+
+17031
+17:15:36,170 --> 17:15:39,830
+takes a function as an input
+parameter. So we'll say console
+
+17032
+17:15:39,860 --> 17:15:47,240
+dot log, account, change to
+account. And what we can do is
+
+17033
+17:15:47,240 --> 17:15:50,390
+we can check to see if this
+account is not. And we can say
+
+17034
+17:15:50,420 --> 17:15:55,790
+if account equals equals no,
+then if the account is null, we
+
+17035
+17:15:55,790 --> 17:15:59,480
+can assume they've disconnected.
+So we can say window dot local
+
+17036
+17:15:59,480 --> 17:16:05,720
+storage, dot remove item,
+connected, we'll also run a
+
+17037
+17:16:05,720 --> 17:16:10,790
+deactivate web three function.
+So from Ross, deactivate, web
+
+17038
+17:16:10,790 --> 17:16:16,760
+three will also run, deactivate
+web three, which is going to set
+
+17039
+17:16:17,060 --> 17:16:20,390
+is web three enabled to false.
+So we're going to disconnect the
+
+17040
+17:16:20,390 --> 17:16:23,780
+web three, and then we're going
+to say console dot log.
+
+17041
+17:16:25,190 --> 17:16:25,940
+No
+
+17042
+17:16:27,350 --> 17:16:30,920
+count found. So let's try this
+out. Now. Let's go back to our
+
+17043
+17:16:30,920 --> 17:16:33,350
+front end, we'll do a little
+refresh here. So right now it
+
+17044
+17:16:33,350 --> 17:16:36,560
+says we're connected. Even
+though in my meta mask, we're
+
+17045
+17:16:36,560 --> 17:16:38,750
+not connected, right? And to
+start from scratch here, you can
+
+17046
+17:16:38,750 --> 17:16:41,300
+go ahead and disconnect it. But
+but my browser says, Hey, we're
+
+17047
+17:16:41,300 --> 17:16:44,600
+connected, right? So now we'll
+connect. And we'll actually be
+
+17048
+17:16:44,600 --> 17:16:48,170
+connected right, next connect,
+and it and it just overrode
+
+17049
+17:16:48,170 --> 17:16:50,720
+connected, you know, with
+inject, let's, let's make this
+
+17050
+17:16:50,720 --> 17:16:55,460
+injected. And then we'll remove
+Yep, okay, injected, we'll
+
+17051
+17:16:55,460 --> 17:16:58,880
+refresh, like, connect, and now
+it says injected. Okay, cool. So
+
+17052
+17:16:58,880 --> 17:17:03,110
+now we're connected here. If in
+here, if I just switch accounts,
+
+17053
+17:17:03,320 --> 17:17:07,220
+right, let's go to Account
+three, I'll connect. If we go
+
+17054
+17:17:07,220 --> 17:17:10,910
+back to our console real quick,
+we'll say account change to
+
+17055
+17:17:10,910 --> 17:17:14,150
+blah, blah, blah, I can change
+back, right, we'll go change
+
+17056
+17:17:14,180 --> 17:17:17,030
+account change to blah, blah,
+blah. Now, if we go back to our
+
+17057
+17:17:17,030 --> 17:17:22,340
+application, go in here. And we
+disconnect. Now let's disconnect
+
+17058
+17:17:22,340 --> 17:17:27,770
+both of these disconnect. And
+disconnect. We'll see it's now
+
+17059
+17:17:27,770 --> 17:17:31,490
+been removed from local storage.
+And if we go to our console,
+
+17060
+17:17:31,490 --> 17:17:36,050
+it'll say, no account, change
+the No, no account found and
+
+17061
+17:17:36,080 --> 17:17:39,440
+removed it. Now if I hit
+refresh, nothing happens here, I
+
+17062
+17:17:39,440 --> 17:17:44,150
+can go ahead and connect. Right
+next connect, I can refresh.
+
+17063
+17:17:44,390 --> 17:17:47,690
+Oops, I need to go back in here
+and re enable this. So sorry,
+
+17064
+17:17:47,690 --> 17:17:51,650
+let's add this back in here. But
+now it can refresh. Let's go
+
+17065
+17:17:51,650 --> 17:17:56,240
+ahead and disconnect here. Let's
+connect. Let's go back to the
+
+17066
+17:17:56,240 --> 17:18:02,090
+console, we can connect thing
+will pop up next connect, I can
+
+17067
+17:18:02,090 --> 17:18:07,760
+refresh. It stays connected for
+me, I can switch accounts, I can
+
+17068
+17:18:07,760 --> 17:18:11,390
+go ahead and here, I can switch
+accounts, I can even disconnect.
+
+17069
+17:18:12,320 --> 17:18:14,960
+And it will automatically update
+for me, which is what we want.
+
+17070
+17:18:15,080 --> 17:18:19,010
+So now we've essentially made a
+way more robust connect button,
+
+17071
+17:18:19,400 --> 17:18:22,310
+where it goes back and forth
+with when we're connected now.
+
+17072
+17:18:24,980 --> 17:18:28,070
+Now one more thing that we might
+want to do, or application is
+
+17073
+17:18:28,070 --> 17:18:30,770
+when we hit Connect, we want to
+maybe disable this button,
+
+17074
+17:18:30,950 --> 17:18:34,400
+right? We don't want it to allow
+it to be able to be pressed. So
+
+17075
+17:18:34,400 --> 17:18:36,830
+I'm gonna hit Cancel, we're just
+gonna add one more bit of
+
+17076
+17:18:36,830 --> 17:18:42,050
+functionality here, we're going
+to add this is web three enable
+
+17077
+17:18:42,260 --> 17:18:46,100
+loading. And what this does is
+it just checks to see if
+
+17078
+17:18:46,100 --> 17:18:49,250
+Metamask has popped up. And so
+what our button after the on
+
+17079
+17:18:49,250 --> 17:18:55,340
+click section, we can add
+disabled. Equals is web three
+
+17080
+17:18:55,340 --> 17:18:58,880
+enable loading, so it'll be
+disabled if we're loading here.
+
+17081
+17:18:58,910 --> 17:19:02,750
+So let's go ahead and we'll
+disconnect disconnect. Now we'll
+
+17082
+17:19:02,750 --> 17:19:05,990
+hit Connect, and you'll see the
+button can be clicked. So that
+
+17083
+17:19:05,990 --> 17:19:09,920
+just makes it a little bit nice.
+Turn, Next connect Bada bing,
+
+17084
+17:19:09,920 --> 17:19:14,630
+bada boom, awesome, we have just
+made a way more robust front end
+
+17085
+17:19:14,660 --> 17:19:17,780
+than what we had before this
+connect button is super slick.
+
+17086
+17:19:17,780 --> 17:19:19,790
+And it allows us to kind of flip
+back and forth. And our
+
+17087
+17:19:19,790 --> 17:19:23,720
+application is incredibly
+powerful and knows how to handle
+
+17088
+17:19:23,720 --> 17:19:28,670
+all these different changes. Now
+that we've learned how to do it
+
+17089
+17:19:28,670 --> 17:19:31,460
+the manual way, let me give you
+the Chiti way, in our
+
+17090
+17:19:31,460 --> 17:19:34,880
+components, we're gonna create a
+new file header dot j s, and
+
+17091
+17:19:34,880 --> 17:19:37,970
+what we're going to do is we're
+going to install this web three
+
+17092
+17:19:38,000 --> 17:19:40,760
+UI kit, it's a front end kit,
+and it has a whole bunch of
+
+17093
+17:19:40,760 --> 17:19:43,880
+these components already built
+for us. So we can build like a
+
+17094
+17:19:43,880 --> 17:19:47,120
+header component and a connect
+button component just by using
+
+17095
+17:19:47,120 --> 17:19:50,810
+this. So to install, install it,
+we're gonna come back here,
+
+17096
+17:19:50,870 --> 17:19:53,390
+we're gonna stop our front end.
+And we're just going to run
+
+17097
+17:19:53,390 --> 17:19:58,820
+yarn, add web three UI kit, like
+that. And again, we don't want
+
+17098
+17:19:58,820 --> 17:20:01,160
+this to be a dev dependency,
+because it is going to be a part
+
+17099
+17:20:01,160 --> 17:20:05,000
+of our website, and then we'll
+do in our header.js, we'll do
+
+17100
+17:20:05,000 --> 17:20:12,050
+import connect button from web
+three UI kit. And then we'll do
+
+17101
+17:20:12,080 --> 17:20:18,890
+export default function header.
+And then all we'll do is return
+
+17102
+17:20:19,610 --> 17:20:23,660
+do like a div. And then inside
+this div, we'll do next button.
+
+17103
+17:20:24,740 --> 17:20:27,110
+With a little backslash here, we
+aren't going to need this for
+
+17104
+17:20:27,110 --> 17:20:29,240
+this project. But if we want to
+be super explicit, we'll say
+
+17105
+17:20:29,240 --> 17:20:34,880
+Morales off equals false. Just
+again, to reiterate, hey, we're
+
+17106
+17:20:34,880 --> 17:20:37,010
+not trying to connect to a
+server here just to make that
+
+17107
+17:20:37,010 --> 17:20:40,910
+super explicit. But this connect
+button does everything, this
+
+17108
+17:20:40,910 --> 17:20:44,870
+manual header thing that we just
+created, does. So back in our
+
+17109
+17:20:44,870 --> 17:20:49,820
+index.js, we can comment or
+delete this line will do import
+
+17110
+17:20:50,180 --> 17:20:56,180
+header from dot dot slash
+components slash header. And
+
+17111
+17:20:56,180 --> 17:21:01,790
+then instead of manual header,
+we'll just do header. We start
+
+17112
+17:21:01,790 --> 17:21:03,470
+our app back up with yarn dev
+again,
+
+17113
+17:21:04,850 --> 17:21:08,330
+we go back to the page, we do a
+little refresh here, we now see
+
+17114
+17:21:08,330 --> 17:21:10,910
+we have this connect Wallet
+button. And it's even looks a
+
+17115
+17:21:10,910 --> 17:21:13,940
+lot nicer. It's got some nice
+styling to it as well, we can
+
+17116
+17:21:13,940 --> 17:21:17,900
+hit Connect wallet. And it'll
+give us this little ngModel
+
+17117
+17:21:17,960 --> 17:21:20,870
+asking us which wallet we want
+to connect to. So asking us
+
+17118
+17:21:20,870 --> 17:21:23,690
+which wall we want to connect to
+is kind of similar in our manual
+
+17119
+17:21:23,690 --> 17:21:28,220
+header to this or set item
+connected, injected, right or
+
+17120
+17:21:28,220 --> 17:21:31,220
+wallet connect, it would do
+connected wallet Connect for
+
+17121
+17:21:31,220 --> 17:21:34,400
+trust wallet, it would it would
+set item as connected wallet
+
+17122
+17:21:34,400 --> 17:21:38,390
+connect, etc. So it allows us to
+connect in different ways. And
+
+17123
+17:21:38,390 --> 17:21:41,690
+we if we hit Metamask, we go
+ahead and connect like so even
+
+17124
+17:21:41,690 --> 17:21:45,230
+had some nice styling here where
+it gives us our wallet address
+
+17125
+17:21:45,230 --> 17:21:49,010
+here. But it also gives us our
+wallet balance as well. And
+
+17126
+17:21:49,010 --> 17:21:51,080
+again, if we go ahead and
+disconnect, we'll see it
+
+17127
+17:21:51,080 --> 17:21:54,680
+automatically disconnect. We
+connect like so we can reconnect
+
+17128
+17:21:54,680 --> 17:21:57,860
+like so boom, boom. If we switch
+accounts, it's smart enough to
+
+17129
+17:21:57,860 --> 17:22:00,710
+know that we're switching
+accounts. So I know I showed you
+
+17130
+17:22:00,710 --> 17:22:02,780
+kind of the hard way. But I
+wanted to show you kind of
+
+17131
+17:22:02,780 --> 17:22:05,240
+what's going on. It's setting
+this local storage in the
+
+17132
+17:22:05,240 --> 17:22:08,300
+background so that it knows
+which where it's actually
+
+17133
+17:22:08,300 --> 17:22:11,180
+connected. But for headers
+moving forward, this is all you
+
+17134
+17:22:11,180 --> 17:22:14,630
+need. And your life will be
+drastically drastically easier.
+
+17135
+17:22:14,660 --> 17:22:19,610
+And let's just add a centralized
+lottery or decentralized raffle
+
+17136
+17:22:19,640 --> 17:22:22,190
+or whatever you want to our
+header as well. So it says
+
+17137
+17:22:22,190 --> 17:22:27,440
+decentralized lottery, you know
+the button Hello. Now that we
+
+17138
+17:22:27,440 --> 17:22:30,950
+have that, what else do we need?
+Well, well, the main thing that
+
+17139
+17:22:30,950 --> 17:22:33,890
+this app needs to do is just
+have a big button that says
+
+17140
+17:22:33,890 --> 17:22:36,230
+enter the lottery. And then
+ideally, you know, show how many
+
+17141
+17:22:36,230 --> 17:22:38,540
+people are in the lottery and
+then the recent winner as well.
+
+17142
+17:22:38,570 --> 17:22:41,900
+So let's go ahead, we'll create
+a new component called lottery
+
+17143
+17:22:41,930 --> 17:22:44,840
+entrance. And we'll grab that
+component similar to like what
+
+17144
+17:22:44,840 --> 17:22:49,070
+we did with our header, we'll
+drop this component right here.
+
+17145
+17:22:49,100 --> 17:22:51,980
+And then our app will pretty
+much be done. So let's create
+
+17146
+17:22:51,980 --> 17:22:57,020
+this lottery entrance component,
+lottery entrance, that Jas,
+
+17147
+17:22:57,350 --> 17:22:59,060
+right and again, in the reason
+we're putting these in
+
+17148
+17:22:59,060 --> 17:23:02,510
+components, we could 100% Stick
+it all, you know all our code in
+
+17149
+17:23:02,510 --> 17:23:05,720
+here to make it more modular so
+that we in the future, if we
+
+17150
+17:23:05,720 --> 17:23:08,420
+want to have more pages or do
+other stuff, I'm going to zoom
+
+17151
+17:23:08,420 --> 17:23:11,180
+out a little bit just so that we
+can see all of our code a little
+
+17152
+17:23:11,180 --> 17:23:14,840
+bit easier. This is our whole
+index j s. This is our whole
+
+17153
+17:23:14,840 --> 17:23:18,230
+header. Let's create a new
+lottery entrance app just for
+
+17154
+17:23:18,230 --> 17:23:23,810
+the boilerplate code here we're
+going to export default lottery
+
+17155
+17:23:24,230 --> 17:23:28,940
+entrance, excuse me, export
+default function, lottery
+
+17156
+17:23:28,940 --> 17:23:31,310
+entrance, and this is just going
+to be you know, another
+
+17157
+17:23:31,310 --> 17:23:35,900
+component where we're going to
+return some that JSX HTML stuff,
+
+17158
+17:23:35,930 --> 17:23:40,670
+right? So we're gonna do div and
+do like hi from lottery
+
+17159
+17:23:40,670 --> 17:23:44,870
+entrance, Excel. And now that we
+do that, we can go back to our
+
+17160
+17:23:45,380 --> 17:23:51,950
+index.js. We can do import
+lottery entrance from dot dot
+
+17161
+17:23:51,950 --> 17:23:57,890
+slash components. Slash lottery
+entrance, will stick it right
+
+17162
+17:23:57,890 --> 17:24:01,760
+underneath the header like that.
+And if we go back to our
+
+17163
+17:24:01,790 --> 17:24:05,330
+website, we see high from
+lottery entrance so our lottery
+
+17164
+17:24:05,330 --> 17:24:07,430
+entrance is going to be right
+underneath the header would
+
+17165
+17:24:07,430 --> 17:24:09,350
+Here's what we want. And then
+we'll delete this line that
+
+17166
+17:24:09,350 --> 17:24:12,650
+says, Hello. So lottery
+entrance, what is the what is
+
+17167
+17:24:12,650 --> 17:24:15,470
+the first thing that we really
+need to do in here? Well, we're
+
+17168
+17:24:15,470 --> 17:24:21,140
+going to want to have a function
+to call the lottery to enter the
+
+17169
+17:24:21,140 --> 17:24:24,980
+lottery. Let's go ahead and do
+this. Now let's go back to how
+
+17170
+17:24:24,980 --> 17:24:28,730
+we did this with HTML fund me
+recall that old fun function
+
+17171
+17:24:28,760 --> 17:24:31,490
+like this, but doing it like
+this won't rerender. And there's
+
+17172
+17:24:31,490 --> 17:24:33,890
+a whole lot of other
+functionality that doing it like
+
+17173
+17:24:33,890 --> 17:24:37,280
+this won't give us so we're
+going to use Morales to actually
+
+17174
+17:24:37,280 --> 17:24:40,610
+call some of these functions,
+because mirallas has in React
+
+17175
+17:24:40,610 --> 17:24:43,490
+mirallas. Again, they have hooks
+for us to do pretty much
+
+17176
+17:24:43,490 --> 17:24:47,240
+anything we want to do. And one
+of these hooks is called use web
+
+17177
+17:24:47,240 --> 17:24:50,990
+three contract. And what this
+does is it gives us a hook that
+
+17178
+17:24:50,990 --> 17:24:55,400
+will give us the data returned
+from a function called an error
+
+17179
+17:24:55,400 --> 17:24:59,330
+returned, a little function that
+we can use to call any function.
+
+17180
+17:24:59,690 --> 17:25:02,420
+And then we also have these
+really helpful is fetching in is
+
+17181
+17:25:02,420 --> 17:25:06,170
+loading. So if we want everyone
+to have our UI or our website,
+
+17182
+17:25:06,170 --> 17:25:09,530
+do something while it's fetching
+or while it's loading the
+
+17183
+17:25:09,530 --> 17:25:12,500
+transaction, we can use these
+two variables to do that. And
+
+17184
+17:25:12,500 --> 17:25:14,840
+then all we need to do is we
+just need to pass it the
+
+17185
+17:25:14,840 --> 17:25:17,240
+contract information, which
+similar to ethers is going to be
+
+17186
+17:25:17,240 --> 17:25:21,560
+the ABI contract address, we'll
+pass the function name, and then
+
+17187
+17:25:21,560 --> 17:25:24,410
+any parameters for that
+function. So we're going to use
+
+17188
+17:25:24,410 --> 17:25:27,740
+this syntax here to make that
+transaction to the blockchain.
+
+17189
+17:25:28,040 --> 17:25:30,500
+And to call these functions. So
+what we're going to do is we're
+
+17190
+17:25:30,500 --> 17:25:34,010
+going to import us web three
+contract
+
+17191
+17:25:35,600 --> 17:25:40,100
+from react mirallas. And inside
+our function, but before I
+
+17192
+17:25:40,100 --> 17:25:44,150
+return, of course, we're going
+to say const. And then we'll do
+
+17193
+17:25:44,180 --> 17:25:47,840
+kind of exactly what we see in
+here. For now, let's just get
+
+17194
+17:25:47,870 --> 17:25:50,120
+the function, let's just get
+this run contract function,
+
+17195
+17:25:50,120 --> 17:25:53,240
+because this is going to be the
+function that we can call to
+
+17196
+17:25:53,240 --> 17:25:57,350
+actually enter the lottery. So
+we'll say const, run contract
+
+17197
+17:25:57,380 --> 17:26:00,440
+function, and we're actually
+going to call this enter raffle.
+
+17198
+17:26:00,590 --> 17:26:05,180
+And we'll say equals, use web
+three contract, and we need to
+
+17199
+17:26:05,180 --> 17:26:10,640
+pass the ABI, we're gonna need
+to pass the contract address,
+
+17200
+17:26:11,300 --> 17:26:14,030
+we're gonna need to give it the
+function name, we'll need to
+
+17201
+17:26:14,030 --> 17:26:17,210
+give it the params, which
+actually we do know it's going
+
+17202
+17:26:17,210 --> 17:26:20,180
+to be blank. But then finally,
+we will need the message value.
+
+17203
+17:26:20,390 --> 17:26:23,720
+Because if we remember back into
+raffle doesn't take any
+
+17204
+17:26:23,720 --> 17:26:27,860
+parameters, all it takes is this
+message dot value bit. So that's
+
+17205
+17:26:27,860 --> 17:26:33,200
+all we're going to need to pass.
+So how do we get all this stuff,
+
+17206
+17:26:33,230 --> 17:26:35,630
+and I'm going to leave this in
+here. But we're going to comment
+
+17207
+17:26:35,630 --> 17:26:39,440
+it out for now, because this is
+what we need to do. But we need
+
+17208
+17:26:39,440 --> 17:26:42,260
+to get all of this stuff into
+our code here. So how do we
+
+17209
+17:26:42,260 --> 17:26:46,040
+actually get all that stuff?
+Well, ABI is easy, right? Abi
+
+17210
+17:26:46,070 --> 17:26:49,760
+isn't going to change at all, no
+matter what network or on ABI is
+
+17211
+17:26:49,790 --> 17:26:52,550
+always going to stay the same.
+Now if you've already deployed
+
+17212
+17:26:52,550 --> 17:26:55,100
+your smart contracts, and you
+know exactly what address it is,
+
+17213
+17:26:55,100 --> 17:26:57,200
+because you've deployed to a
+main net, or you've deployed to
+
+17214
+17:26:57,200 --> 17:27:00,500
+a test net, all this stuff isn't
+really going to change. And we
+
+17215
+17:27:00,500 --> 17:27:04,130
+can just hard code it all right
+into here. Or we can do what a
+
+17216
+17:27:04,130 --> 17:27:06,980
+lot of people do is they'll
+create a constants folder. And
+
+17217
+17:27:06,980 --> 17:27:12,050
+in here, they'll add like an API
+dot JSON, maybe they'll add a
+
+17218
+17:27:12,410 --> 17:27:16,550
+contract addresses dot JSON. And
+then they'll add maybe like an
+
+17219
+17:27:16,550 --> 17:27:19,100
+index dot j s or something,
+we're gonna build our
+
+17220
+17:27:19,100 --> 17:27:23,030
+application in a way we can
+actually test locally using our
+
+17221
+17:27:23,030 --> 17:27:26,000
+own Hard Hat Network, and then
+compare it to what it looks like
+
+17222
+17:27:26,030 --> 17:27:28,250
+on the actual test net as well.
+So we're going to make it
+
+17223
+17:27:28,280 --> 17:27:31,670
+network agnostic. So the front
+end works exactly the same no
+
+17224
+17:27:31,670 --> 17:27:34,940
+matter what network that we're
+on. And we can go back, download
+
+17225
+17:27:34,970 --> 17:27:39,890
+a directory back into our CD,
+hard hat smart contract lottery
+
+17226
+17:27:39,890 --> 17:27:44,690
+Free Code Camp, and spin up our
+node here, right with hh node or
+
+17227
+17:27:44,690 --> 17:27:48,860
+yarn hard hat node. And we'll
+use this as the blockchain that
+
+17228
+17:27:48,860 --> 17:27:51,830
+we're going to connect to. The
+thing is, if I go back here, and
+
+17229
+17:27:51,830 --> 17:27:53,900
+I'm building the front end, and
+I go, ah, like this would be
+
+17230
+17:27:53,900 --> 17:27:57,140
+better if we did X, Y, or Z. And
+maybe I changed the name of some
+
+17231
+17:27:57,140 --> 17:28:00,950
+functions, you know, blah, blah,
+blah, something else, I want
+
+17232
+17:28:00,980 --> 17:28:04,340
+that change to be reflected on
+my front end. And I want to be
+
+17233
+17:28:04,340 --> 17:28:07,880
+able to code my front end as
+such. So since we are the only
+
+17234
+17:28:07,880 --> 17:28:10,610
+developer right now, we kind of
+have the ability of where we
+
+17235
+17:28:10,610 --> 17:28:13,970
+both know, the back end code and
+the front end code. So something
+
+17236
+17:28:13,970 --> 17:28:16,400
+that I like to do to make my
+life a little bit easier is I
+
+17237
+17:28:16,400 --> 17:28:20,090
+like to create an update front
+end deploy script. So after we
+
+17238
+17:28:20,090 --> 17:28:24,140
+deploy stuff, we run a little
+script that will create this
+
+17239
+17:28:24,140 --> 17:28:27,710
+constants folder for us with a
+whole bunch of stuff, right?
+
+17240
+17:28:27,710 --> 17:28:30,980
+It'll give an ABI, it'll give
+contract addresses and anything
+
+17241
+17:28:30,980 --> 17:28:34,760
+else we might need in our front
+end from our back end. So what I
+
+17242
+17:28:34,760 --> 17:28:38,690
+like to do is I like to come
+back to my original code and an
+
+17243
+17:28:38,720 --> 17:28:42,590
+update this for a new script. So
+I'll come in here in this deploy
+
+17244
+17:28:42,590 --> 17:28:46,370
+script, I'll create a new file,
+and I'll call it oh two or even
+
+17245
+17:28:46,370 --> 17:28:54,500
+like 9999, up, date, front, and
+dot Jas. And the reason I do 99,
+
+17246
+17:28:54,500 --> 17:28:57,380
+obviously, is because we want
+this to be always the last
+
+17247
+17:28:57,380 --> 17:28:59,870
+script in our deploy folder. And
+then we can just write a little
+
+17248
+17:28:59,870 --> 17:29:03,110
+script that's connected. We just
+write a little script that's
+
+17249
+17:29:03,110 --> 17:29:06,200
+connected to our front end here
+so that whenever we deploy
+
+17250
+17:29:06,200 --> 17:29:09,860
+contracts, no matter what chain,
+we can update that constants
+
+17251
+17:29:09,860 --> 17:29:12,470
+folder on our front end. So
+let's go ahead and create that
+
+17252
+17:29:12,470 --> 17:29:17,810
+script right now we'll do module
+dot exports, equals async
+
+17253
+17:29:17,810 --> 17:29:21,650
+function. And we'll add all our
+stuff in here, we don't really
+
+17254
+17:29:21,650 --> 17:29:24,350
+need to deploy any contracts,
+because we're just updating the
+
+17255
+17:29:24,350 --> 17:29:26,540
+front end. So we can just leave
+the parameters of this one
+
+17256
+17:29:26,540 --> 17:29:30,140
+blank. And the other thing I
+like to do, because sometimes I
+
+17257
+17:29:30,140 --> 17:29:34,010
+don't care about the front end,
+what I'll do is I'll only update
+
+17258
+17:29:34,010 --> 17:29:38,000
+the front end if we've specified
+a dot env variable. So I'll
+
+17259
+17:29:38,000 --> 17:29:43,970
+create a dot env variable called
+up date, front end. And then
+
+17260
+17:29:43,970 --> 17:29:47,420
+I'll set this to true. And now
+in our script here, we can say
+
+17261
+17:29:47,450 --> 17:29:53,480
+if process dot E and V dot
+update, front end. And we can
+
+17262
+17:29:53,480 --> 17:29:58,490
+just say like console dot log,
+updating front end. And now back
+
+17263
+17:29:58,490 --> 17:30:01,730
+in here, right, if a mat if I'm
+in the correct directory in
+
+17264
+17:30:01,730 --> 17:30:03,710
+here, if our own hard hit
+Deploy,
+
+17265
+17:30:05,060 --> 17:30:07,280
+you know, get this little
+updating front end. And now we
+
+17266
+17:30:07,280 --> 17:30:10,100
+can update front end. So let's
+do it. So I'm actually going to
+
+17267
+17:30:10,100 --> 17:30:15,620
+create one function called
+Update contract addresses. And
+
+17268
+17:30:15,620 --> 17:30:17,060
+this is going to be our function
+that we're going to use to
+
+17269
+17:30:17,060 --> 17:30:19,580
+update contract addresses, then
+I'm going to make one called
+
+17270
+17:30:19,610 --> 17:30:23,000
+Update API, where we just update
+the API's and the front end so
+
+17271
+17:30:23,090 --> 17:30:25,670
+so we're going to call this
+update contract addresses. So
+
+17272
+17:30:25,670 --> 17:30:29,900
+I'm going to create a new
+function async function, update
+
+17273
+17:30:29,900 --> 17:30:35,180
+contract addresses. And first,
+we're going to get that raffle
+
+17274
+17:30:35,180 --> 17:30:37,580
+contract since we're going to
+need to get its address. So
+
+17275
+17:30:37,580 --> 17:30:40,370
+we're gonna say const, raffle
+equals await. And we're gonna do
+
+17276
+17:30:40,370 --> 17:30:45,020
+the same thing we've been doing
+ethers dot get contract, raffle,
+
+17277
+17:30:45,140 --> 17:30:48,530
+and then my VS code auto
+imported, it doesn't const
+
+17278
+17:30:48,560 --> 17:30:51,710
+ethers equals require Hardhead,
+like so. So we have raffle in
+
+17279
+17:30:51,710 --> 17:30:55,670
+here. And we're gonna want to
+pass this raffle address to our
+
+17280
+17:30:55,670 --> 17:30:58,670
+front end, since this is going
+to be a variable that we might
+
+17281
+17:30:58,670 --> 17:31:03,230
+use a lot of places, we can just
+add it like const, front end
+
+17282
+17:31:03,230 --> 17:31:07,820
+location, addresses file,
+equals, and we're going to give
+
+17283
+17:31:07,820 --> 17:31:10,760
+it the relative path to where we
+are now, which is going to be
+
+17284
+17:31:10,760 --> 17:31:15,800
+you know, if we see the download
+directory to next year's smart
+
+17285
+17:31:15,800 --> 17:31:20,030
+contract lottery, FCC, I can
+even just copy this, paste that
+
+17286
+17:31:20,030 --> 17:31:23,510
+in here. And then it's in the
+constants folder, and it's going
+
+17287
+17:31:23,510 --> 17:31:28,550
+to be contract addresses dot
+JSON. And let's get the ABI
+
+17288
+17:31:28,550 --> 17:31:35,270
+file, we'll say const. Front and
+a bi file is going to equal and
+
+17289
+17:31:35,270 --> 17:31:38,510
+this is going to be nearly the
+same thing. So we can just copy
+
+17290
+17:31:38,510 --> 17:31:44,450
+paste that. And then we'll do
+slash API dot JSON. And now in
+
+17291
+17:31:44,450 --> 17:31:48,410
+our update contract addresses
+function, we can say const,
+
+17292
+17:31:48,800 --> 17:31:55,400
+current addresses, equals and we
+can read again, in our front
+
+17293
+17:31:55,400 --> 17:31:58,340
+end, we can read from this file.
+So I'll usually start out with
+
+17294
+17:31:58,340 --> 17:32:01,250
+just two brackets. So that's
+like JSON compatible in both of
+
+17295
+17:32:01,250 --> 17:32:05,180
+these files. And so to read it,
+we're gonna say JSON dot parse,
+
+17296
+17:32:05,690 --> 17:32:11,690
+FS dot read file sync, we're
+gonna have to import, say const.
+
+17297
+17:32:11,720 --> 17:32:16,520
+FS equals require, I know we've
+used Fs extra in the past, but
+
+17298
+17:32:16,790 --> 17:32:19,460
+this one, we're just gonna use
+Fs, which is going to be our
+
+17299
+17:32:19,490 --> 17:32:26,420
+front and addresses file, we're
+going to read it in with UTF
+
+17300
+17:32:27,080 --> 17:32:29,540
+eight encoding. So now this is
+going to be our current
+
+17301
+17:32:29,540 --> 17:32:32,330
+addresses. And we're going to
+update the list of current
+
+17302
+17:32:32,330 --> 17:32:35,090
+addresses with some new
+addresses. Because our contract
+
+17303
+17:32:35,090 --> 17:32:37,430
+addresses we want this to be
+chain agnostic, we would do
+
+17304
+17:32:37,430 --> 17:32:40,970
+something like for you know, and
+then the addresses on rink B, we
+
+17305
+17:32:40,970 --> 17:32:45,500
+could do 31337, and then the
+addresses on our local host,
+
+17306
+17:32:45,530 --> 17:32:48,200
+right, we want to be able to
+keep track of all the different
+
+17307
+17:32:48,200 --> 17:32:51,560
+addresses across all the
+different chains. So back in our
+
+17308
+17:32:51,590 --> 17:32:58,550
+function here, then we'll say if
+if network, dot config dot chain
+
+17309
+17:32:58,550 --> 17:33:05,900
+id.to string in contract
+addresses that were config ideas
+
+17310
+17:33:05,900 --> 17:33:08,660
+in there, then we're just gonna
+go ahead and add this new
+
+17311
+17:33:08,660 --> 17:33:11,180
+contract address in there. But
+before we add this new address
+
+17312
+17:33:11,180 --> 17:33:13,310
+in there, let's just check to
+make sure it's not are already
+
+17313
+17:33:13,310 --> 17:33:18,410
+in there. So we're just gonna
+say if contract addresses of
+
+17314
+17:33:18,410 --> 17:33:23,180
+network dot config dot chain
+id.to string, this is so long, I
+
+17315
+17:33:23,180 --> 17:33:25,550
+don't want to keep writing that
+I'm gonna say const chain ID
+
+17316
+17:33:25,640 --> 17:33:31,580
+equals network, config that
+chain id.to string, and we're
+
+17317
+17:33:31,580 --> 17:33:36,140
+just gonna use chain ID. If
+chain ID and contract address
+
+17318
+17:33:36,200 --> 17:33:41,600
+then if we don't already have
+that includes raffle dot
+
+17319
+17:33:41,600 --> 17:33:51,290
+address. We're gonna go ahead
+and add this new address and
+
+17320
+17:33:51,290 --> 17:33:54,620
+then if the chain ID doesn't
+even exist, we're gonna go ahead
+
+17321
+17:33:54,680 --> 17:34:01,040
+and do contract addresses
+current addresses, equals or
+
+17322
+17:34:01,040 --> 17:34:05,240
+assuming current addresses of
+chain ID equals and then we'll
+
+17323
+17:34:05,240 --> 17:34:08,300
+just create a new array, raffled
+that out address. So we're
+
+17324
+17:34:08,300 --> 17:34:10,940
+saying if the chain ID doesn't
+exist in current addresses,
+
+17325
+17:34:10,970 --> 17:34:13,100
+we're just going to add this new
+array in there. And then
+
+17326
+17:34:13,100 --> 17:34:16,040
+finally, now that we've updated
+its object, we're gonna write it
+
+17327
+17:34:16,040 --> 17:34:22,430
+back to this file, we'll say Fs
+dot write, file sync, front and
+
+17328
+17:34:22,880 --> 17:34:26,150
+addresses file. And then we're
+gonna do JSON dot string of
+
+17329
+17:34:26,150 --> 17:34:29,900
+five. So we're going to
+Stringify this JSON object, so
+
+17330
+17:34:29,900 --> 17:34:32,450
+we're just gonna go ahead and
+write it back. And then bottom
+
+17331
+17:34:32,600 --> 17:34:39,080
+module that exports that tags
+equals all and then front end. I
+
+17332
+17:34:39,080 --> 17:34:41,900
+cool. So we have a function to
+update the contract addresses,
+
+17333
+17:34:41,900 --> 17:34:46,280
+but we also need the ABI. So
+we're gonna do date API, and
+
+17334
+17:34:46,280 --> 17:34:50,540
+we're gonna create another
+function async function, update
+
+17335
+17:34:50,540 --> 17:34:54,500
+API. And in here, we're gonna do
+the exact same thing on raffle
+
+17336
+17:34:54,620 --> 17:34:59,300
+equals await ethers that
+contract,
+
+17337
+17:35:00,799 --> 17:35:08,359
+raffle FX dot right file, sync,
+front and abi. It's just going
+
+17338
+17:35:08,359 --> 17:35:13,339
+to copy paste it front end, AVI
+file. And then to pass just the
+
+17339
+17:35:13,339 --> 17:35:16,639
+ABI, we can actually get it
+directly from this raffle
+
+17340
+17:35:16,639 --> 17:35:23,269
+object, we can actually just do
+raffle dot interface that format
+
+17341
+17:35:23,989 --> 17:35:29,149
+ethers dot utils, dot format
+types, dot JSON. If you look in
+
+17342
+17:35:29,149 --> 17:35:32,449
+the ethers, Docs, ethers has
+this contract dot interface
+
+17343
+17:35:32,479 --> 17:35:35,299
+thing which returns an interface
+which is different from a
+
+17344
+17:35:35,299 --> 17:35:38,599
+solidity interface. But it
+allows us basically just to get
+
+17345
+17:35:38,599 --> 17:35:41,449
+the API with this one line of
+code. So in our back end code
+
+17346
+17:35:41,449 --> 17:35:46,909
+here, now if you run h h deploy
+or H H node, we should
+
+17347
+17:35:46,939 --> 17:35:50,869
+automatically update our
+contract addresses in our API
+
+17348
+17:35:50,869 --> 17:35:55,639
+dot JSON. So let's go and try
+this. So we'll run h h node. So
+
+17349
+17:35:55,639 --> 17:35:58,999
+we'll start a node, right in
+this terminal over here, we'll
+
+17350
+17:35:58,999 --> 17:36:03,529
+flip back to the front end. And
+if we open ABI to JSON, we do
+
+17351
+17:36:03,529 --> 17:36:07,699
+indeed, now see, we have the
+raffle API in this file. And if
+
+17352
+17:36:07,699 --> 17:36:12,319
+we go to contract addresses, we
+see on network 31337, here's our
+
+17353
+17:36:12,319 --> 17:36:15,139
+first address, right. And if we
+deploy to different chains, this
+
+17354
+17:36:15,139 --> 17:36:18,979
+will get populated with
+different network IDs, and then
+
+17355
+17:36:18,979 --> 17:36:21,679
+a list of addresses associated
+with them. So it helps make our
+
+17356
+17:36:21,679 --> 17:36:25,069
+front ends a lot easier to
+maintain, and bounce around and
+
+17357
+17:36:25,069 --> 17:36:27,859
+kind of test and work with. Now
+that we've done all this, we can
+
+17358
+17:36:27,859 --> 17:36:31,249
+actually close our hardhat smart
+contract lottery Free Code Camp,
+
+17359
+17:36:31,249 --> 17:36:33,829
+the hard hat project for this,
+and we're just going to have all
+
+17360
+17:36:33,829 --> 17:36:37,099
+of our terminals be in here. So
+what we're gonna do is we're
+
+17361
+17:36:37,099 --> 17:36:40,849
+gonna go down and directory CD
+dot dot, and we're going to cd
+
+17362
+17:36:40,849 --> 17:36:44,479
+into Oh, sorry, we're actually
+we're already in their CDs, hard
+
+17363
+17:36:44,479 --> 17:36:47,239
+hat, smart contract, lottery
+Free Code Camp. And then in this
+
+17364
+17:36:47,239 --> 17:36:51,949
+one, we're going to run hh node
+or yarn hardhat node. Now we'll
+
+17365
+17:36:51,949 --> 17:36:55,069
+have a local blockchain running
+so we can test everything that
+
+17366
+17:36:55,069 --> 17:36:57,379
+we're doing in the front end,
+actually, I'm gonna move this up
+
+17367
+17:36:57,379 --> 17:37:01,609
+one. So now in our first area,
+here, we have our front end code
+
+17368
+17:37:01,609 --> 17:37:05,239
+running, then we have our
+blockchain running. And then in
+
+17369
+17:37:05,239 --> 17:37:07,219
+this one, we're just going to
+add, you know, whatever we want
+
+17370
+17:37:07,219 --> 17:37:09,919
+to add. Now, we can actually go
+ahead and hit this little X
+
+17371
+17:37:09,919 --> 17:37:13,129
+button here to close the panel.
+So that's just hiding the panel,
+
+17372
+17:37:13,159 --> 17:37:15,679
+these are all still out, they
+only get trashed when you
+
+17373
+17:37:15,679 --> 17:37:17,539
+actually hit the little
+trashcan. So we're just going to
+
+17374
+17:37:17,539 --> 17:37:20,359
+close the panel. But all those
+terminals are still running, I
+
+17375
+17:37:20,359 --> 17:37:24,019
+promise back. So where were we?
+Okay, back to our function here.
+
+17376
+17:37:24,049 --> 17:37:28,159
+So we just automated the process
+of updating our API's and then
+
+17377
+17:37:28,189 --> 17:37:31,879
+updating our contracts as well.
+And now we can import these into
+
+17378
+17:37:31,879 --> 17:37:34,669
+our files. Now we can import
+them one at a time, it'd be like
+
+17379
+17:37:34,699 --> 17:37:41,569
+import API, from dot dot slash
+constants, slash API, or we
+
+17380
+17:37:41,569 --> 17:37:44,449
+could do something a little bit
+clever is we could export these
+
+17381
+17:37:44,479 --> 17:37:47,209
+in the same file. So if we
+create a new file, a new
+
+17382
+17:37:47,209 --> 17:37:51,409
+index.js, in here, we can import
+them and then export them in
+
+17383
+17:37:51,409 --> 17:37:55,849
+this one file. We can say const,
+contract editor says equals
+
+17384
+17:37:55,849 --> 17:38:02,359
+require dot slash contract
+editor dot JSON, and then const
+
+17385
+17:38:02,359 --> 17:38:08,149
+API equals require dot slash API
+dot JSON. And then we'll do
+
+17386
+17:38:08,149 --> 17:38:14,479
+module dot exports equals API
+and contract addresses. So now
+
+17387
+17:38:14,479 --> 17:38:17,749
+once we export them like this
+back in our lottery entrance, we
+
+17388
+17:38:17,749 --> 17:38:22,279
+can import them just in one
+line. So we'll say import API
+
+17389
+17:38:22,279 --> 17:38:29,659
+comma contract addresses from
+dot dot slash constants. So we
+
+17390
+17:38:29,659 --> 17:38:32,329
+can just specify the folder
+instead of each individual
+
+17391
+17:38:32,329 --> 17:38:35,119
+files, because we have this
+index dot j s here, which
+
+17392
+17:38:35,149 --> 17:38:40,609
+basically represents this whole
+folder. Back in here, what do we
+
+17393
+17:38:40,609 --> 17:38:44,509
+have now? Let's uncomment this
+abi. Okay, great. We have the
+
+17394
+17:38:44,509 --> 17:38:48,169
+ABI we're importing it from our
+constants, folder, contract
+
+17395
+17:38:48,199 --> 17:38:51,529
+addresses, we have our contract
+addresses. And we're going to
+
+17396
+17:38:51,529 --> 17:38:56,059
+need to specify the network ID
+in just a second here. We have
+
+17397
+17:38:56,059 --> 17:38:59,449
+the function name here, which is
+going to be what enter the
+
+17398
+17:38:59,929 --> 17:39:04,879
+raffle. There are no params. So
+all we need to do so how do we
+
+17399
+17:39:04,879 --> 17:39:09,409
+get both the chain ID and then
+Also the message dot value will
+
+17400
+17:39:09,409 --> 17:39:11,989
+change, it is something that we
+can get really easily with
+
+17401
+17:39:11,989 --> 17:39:14,479
+Morales, let's comment this
+whole section out one more time,
+
+17402
+17:39:14,509 --> 17:39:18,739
+just so I can show you something
+we can do import. Once again,
+
+17403
+17:39:18,739 --> 17:39:25,579
+we're going to get that use
+Morales book from react Morales.
+
+17404
+17:39:25,639 --> 17:39:28,069
+And what we can do is we can say
+const.
+
+17405
+17:39:29,569 --> 17:39:37,039
+Chain ID equals use ralis. Now,
+the reason morality knows about
+
+17406
+17:39:37,039 --> 17:39:40,159
+what chain we're on is because
+back in our header component,
+
+17407
+17:39:40,369 --> 17:39:44,629
+the header actually passes up
+all the information about the
+
+17408
+17:39:44,629 --> 17:39:48,169
+Metamask to the Morales
+provider. And then the Morales
+
+17409
+17:39:48,169 --> 17:39:52,549
+provider passes it down to all
+the components inside those
+
+17410
+17:39:52,549 --> 17:39:55,999
+Morales provided tags
+concentrated equals use Morales.
+
+17411
+17:39:56,059 --> 17:39:59,539
+And I'm just gonna do a little
+console log chain ID because I
+
+17412
+17:39:59,539 --> 17:40:02,209
+want to show you what it looks
+like. So if we do a little
+
+17413
+17:40:02,209 --> 17:40:05,239
+refresh, and we're in the
+console here, we can ignore some
+
+17414
+17:40:05,239 --> 17:40:09,019
+of these warnings here, but we
+see the chain ID is actually 0x
+
+17415
+17:40:09,019 --> 17:40:12,379
+Five, well, because I'm on the
+rink B chain or the Grilley
+
+17416
+17:40:12,379 --> 17:40:15,079
+chain excuse me, if I switch
+back to hard hat localhost,
+
+17417
+17:40:15,109 --> 17:40:17,599
+which you should know how to do
+from a SEMA fun we bet if you
+
+17418
+17:40:17,599 --> 17:40:20,149
+don't have hard hat localhost
+and your Metamask go back to
+
+17419
+17:40:20,149 --> 17:40:23,359
+that HTML font we bit follow
+that along. Okay, great. Now
+
+17420
+17:40:23,359 --> 17:40:26,209
+it's going to print this Oh x
+bla bla bla bla bla. So that
+
+17421
+17:40:26,209 --> 17:40:30,829
+might be a little bit confusing.
+But this is the hex version of
+
+17422
+17:40:30,859 --> 17:40:34,129
+our chain ID. Right. So let's
+switch to Etherium main net. Now
+
+17423
+17:40:34,129 --> 17:40:37,489
+we pronounce Oh x one, right?
+Oh, x one is the hex version of
+
+17424
+17:40:37,489 --> 17:40:42,319
+the number one. So chain ID
+gives us the hex addition of the
+
+17425
+17:40:42,319 --> 17:40:45,229
+chain ID. So I don't want the
+hex addition, I want the actual
+
+17426
+17:40:45,229 --> 17:40:48,139
+number. So what I'm going to do
+is I'm going to say Okay, chain
+
+17427
+17:40:48,139 --> 17:40:52,459
+ID, your name is actually going
+to be chain ID hex. And we can
+
+17428
+17:40:52,459 --> 17:40:55,939
+do console dot log chain ID hex,
+but I want the number. So what
+
+17429
+17:40:55,939 --> 17:41:02,389
+we can do is parse a built in
+JavaScript parse int, CIN ID hex
+
+17430
+17:41:02,419 --> 17:41:05,929
+like that. Now if I go back,
+we'll do a little refresh here.
+
+17431
+17:41:06,409 --> 17:41:09,769
+Scroll away from the warning, we
+can see the one here. Now let's
+
+17432
+17:41:09,769 --> 17:41:14,659
+switch to hard hat, localhost.
+We'll scroll down we see 31337.
+
+17433
+17:41:14,689 --> 17:41:18,499
+So use Morales chain ID returns
+the hex we parse it with Parson
+
+17434
+17:41:18,559 --> 17:41:21,589
+to get the actual number. Okay,
+great. So we can stick the chain
+
+17435
+17:41:21,589 --> 17:41:24,439
+ID into here. Now this raffle
+address is something that we're
+
+17436
+17:41:24,439 --> 17:41:26,839
+actually going to use a lot, we
+might as well have it be at the
+
+17437
+17:41:26,839 --> 17:41:30,109
+top of our code here, we aren't
+going to be changing the raffle
+
+17438
+17:41:30,109 --> 17:41:32,719
+address. So we don't need to put
+it in a hook. We are going to
+
+17439
+17:41:32,719 --> 17:41:35,209
+technically be changing the
+address when we change networks.
+
+17440
+17:41:35,239 --> 17:41:39,199
+But our header app takes care of
+re rendering and dealing with
+
+17441
+17:41:39,199 --> 17:41:41,839
+all that. So we can just make
+this a constant variable. So we
+
+17442
+17:41:41,839 --> 17:41:47,149
+can say const, raffle address
+equals, first let's check the
+
+17443
+17:41:47,149 --> 17:41:50,419
+chain ID hex and if there's a
+chain ID hex and if there's not
+
+17444
+17:41:50,419 --> 17:41:52,429
+a chain ID hex we're gonna do
+something else. Excuse me, we're
+
+17445
+17:41:52,429 --> 17:41:56,089
+gonna say chain ID hex in
+contract addresses. And
+
+17446
+17:41:56,089 --> 17:41:58,189
+actually, there's never gonna be
+a chain ID hex. So we'll do
+
+17447
+17:41:58,189 --> 17:42:04,489
+const chain ID equals Gen ID hex
+parsed, Parsons, chinati hex,
+
+17448
+17:42:04,519 --> 17:42:06,649
+and you might be thinking, hey,
+this, these are both the same
+
+17449
+17:42:06,649 --> 17:42:09,919
+name. Well, what we're doing up
+here in use Morales is we're
+
+17450
+17:42:09,919 --> 17:42:13,519
+saying hey, pull out the chin ID
+object, and then rename it to
+
+17451
+17:42:13,519 --> 17:42:15,769
+chain ID hex and down here,
+we're saying, Hey, we're going
+
+17452
+17:42:15,769 --> 17:42:18,859
+to create a new variable called
+Chain ID. So we'll say contract
+
+17453
+17:42:19,519 --> 17:42:26,029
+addresses of chain ID at zero.
+So in here, we're saying this
+
+17454
+17:42:26,059 --> 17:42:29,929
+network ID and this address,
+otherwise, we'll just say no.
+
+17455
+17:42:30,559 --> 17:42:34,309
+Okay, we're getting there. Let's
+uncomment this, now we have the
+
+17456
+17:42:34,339 --> 17:42:37,819
+raffle address, and we can just
+stick it in here. All we do now
+
+17457
+17:42:37,969 --> 17:42:42,259
+is the message dot value. If we
+remember back to our raffle, we
+
+17458
+17:42:42,259 --> 17:42:46,069
+actually set that fee
+dynamically. So we have in here
+
+17459
+17:42:46,099 --> 17:42:48,409
+we do entrance fee equals
+entrance fee, which is the
+
+17460
+17:42:48,409 --> 17:42:51,769
+parameter in the constructor. So
+we want to call this get
+
+17461
+17:42:51,769 --> 17:42:54,709
+entrance fee function. This is
+one of the ways we can send a
+
+17462
+17:42:54,709 --> 17:42:57,949
+transaction. And we can also
+send functions, one of the ways
+
+17463
+17:42:57,949 --> 17:43:01,129
+that we're going to do it right
+when our lottery entrance loads,
+
+17464
+17:43:01,159 --> 17:43:05,389
+we're going to run a function to
+read that entrance fee value. So
+
+17465
+17:43:05,479 --> 17:43:08,119
+how do we do that? Well, we can
+use one of our hooks again,
+
+17466
+17:43:08,149 --> 17:43:11,239
+right use effect use effect can
+run right when something
+
+17467
+17:43:11,239 --> 17:43:13,789
+changes, we're only going to
+want to try to get that raffle
+
+17468
+17:43:13,789 --> 17:43:17,779
+entrance fee if web three is
+enabled. So what we can do is
+
+17469
+17:43:17,779 --> 17:43:21,769
+back up in here and use Morales
+will pull in that is web three
+
+17470
+17:43:21,769 --> 17:43:25,309
+enabled. And we'll have our use
+effect in our function, we'll
+
+17471
+17:43:25,309 --> 17:43:31,249
+just say if this is web three
+enabled, then we'll try to read.
+
+17472
+17:43:32,870 --> 17:43:36,050
+So we can go ahead and use this
+use web three, contract Wagan.
+
+17473
+17:43:36,140 --> 17:43:38,780
+Let's go ahead and just copy
+paste this. And we'll use the
+
+17474
+17:43:38,780 --> 17:43:44,120
+same setup here. Except instead
+of enter raffle, of course,
+
+17475
+17:43:44,120 --> 17:43:48,710
+we're going to be doing get
+entrance fee. So we're going to
+
+17476
+17:43:48,740 --> 17:43:52,640
+get entrance fee. We need the
+API we got it raffle address got
+
+17477
+17:43:52,640 --> 17:43:55,550
+it. This is going to be the
+function name is going to be get
+
+17478
+17:43:55,550 --> 17:43:59,480
+entrance fee params nothing
+message that value, nothing.
+
+17479
+17:43:59,660 --> 17:44:02,120
+We're going to be calling this
+get entrance fee function. And
+
+17480
+17:44:02,120 --> 17:44:05,780
+now I finally show you how to
+actually call one of these in
+
+17481
+17:44:05,780 --> 17:44:09,080
+our contracts here. Use web
+three contract, download our use
+
+17482
+17:44:09,080 --> 17:44:12,440
+effect, we're actually going to
+call get entrance fee. Now if we
+
+17483
+17:44:12,440 --> 17:44:15,260
+just call get entrance fee like
+this, and we say like, you know,
+
+17484
+17:44:15,260 --> 17:44:19,220
+const something equals get
+entrance fee and then console
+
+17485
+17:44:19,220 --> 17:44:22,730
+dot log something, what do you
+think's going to happen? And
+
+17486
+17:44:22,760 --> 17:44:27,620
+oops, I need to import, I need
+to import use effect from react.
+
+17487
+17:44:27,830 --> 17:44:33,380
+There we go. We look or logs, I
+don't see console dot log,
+
+17488
+17:44:33,380 --> 17:44:36,680
+something won't get entrance fee
+is going to be an async
+
+17489
+17:44:36,680 --> 17:44:40,190
+function. Once again, we need to
+wait we would need to do a wait
+
+17490
+17:44:40,220 --> 17:44:43,850
+get into T, right? There's an
+issue we can't call await in our
+
+17491
+17:44:43,850 --> 17:44:47,420
+use effect. So what can we do?
+Well, we can actually make an
+
+17492
+17:44:47,450 --> 17:44:52,550
+async function, call it update
+UI. And then we can stick this
+
+17493
+17:44:52,580 --> 17:44:56,930
+inside of the async function
+here. And we can call update UI
+
+17494
+17:44:57,050 --> 17:45:00,500
+right outside of it like this.
+So now we go back to our front
+
+17495
+17:45:00,500 --> 17:45:03,500
+end, we do a little refresh. And
+if we scroll up, we still see
+
+17496
+17:45:03,500 --> 17:45:07,610
+nothing. Well, is web three
+enabled actually changes. So the
+
+17497
+17:45:07,610 --> 17:45:11,600
+first time that this runs, is
+web three enabled probably is
+
+17498
+17:45:11,630 --> 17:45:15,500
+false. But when it turns to
+true, we want to we want to run
+
+17499
+17:45:15,500 --> 17:45:18,230
+this section in our little
+dependency array. We're going to
+
+17500
+17:45:18,230 --> 17:45:21,320
+add this in here, right? And the
+reason that it's false to start
+
+17501
+17:45:21,320 --> 17:45:25,280
+with is because of exactly what
+we showed in that manual header,
+
+17502
+17:45:25,340 --> 17:45:28,760
+right? What does it do? Well,
+first, we check to see after we
+
+17503
+17:45:28,760 --> 17:45:31,520
+do a refresh, if window dot
+local storage get item is
+
+17504
+17:45:31,520 --> 17:45:34,850
+connected, then we call Enable
+Web three, which will make this
+
+17505
+17:45:34,880 --> 17:45:38,000
+enabled. So in our lottery
+entrance, is what they're
+
+17506
+17:45:38,000 --> 17:45:42,020
+enabled starts off as false when
+we do a refresh. And then the
+
+17507
+17:45:42,020 --> 17:45:45,110
+browser checks the local storage
+says, oh, web three should be
+
+17508
+17:45:45,110 --> 17:45:48,140
+enabled, let's enable it and
+turn to true. So now if we hit
+
+17509
+17:45:48,140 --> 17:45:52,160
+save, and we do a little refresh
+in our console, we can now see
+
+17510
+17:45:52,190 --> 17:45:55,610
+the logged out entrance fee. So
+then we'll switch this to
+
+17511
+17:45:56,270 --> 17:46:03,710
+entrance fee from contract. Now,
+we also probably want to show
+
+17512
+17:46:03,860 --> 17:46:08,840
+this entrance fee on our UI, if
+we do let entrance fee, we'll
+
+17513
+17:46:08,840 --> 17:46:14,240
+say equals blank. And we'll take
+this and we'll update, you know,
+
+17514
+17:46:14,240 --> 17:46:16,820
+and we'll update this just
+saying entrance fee equals await
+
+17515
+17:46:16,820 --> 17:46:19,820
+entrance fee. Cool. Now we have
+this as kind of a global
+
+17516
+17:46:19,820 --> 17:46:22,940
+variable, we can add it in here.
+And then let's even do a weight
+
+17517
+17:46:22,940 --> 17:46:26,150
+entrance fee. But this whole
+thing in parentheses, and then
+
+17518
+17:46:26,150 --> 17:46:31,640
+do.to string, and we can even
+console dot log entrance fee.
+
+17519
+17:46:33,200 --> 17:46:36,260
+Now we're adding in a new
+browser. But there's still an
+
+17520
+17:46:36,260 --> 17:46:39,170
+issue here. Let's see if you can
+spot it, we'll do a little
+
+17521
+17:46:39,170 --> 17:46:39,980
+refresh.
+
+17522
+17:46:41,330 --> 17:46:45,440
+We don't see the entrance fee in
+the UI here. But we do see it
+
+17523
+17:46:45,440 --> 17:46:47,750
+good console dot log out, right.
+And again, this is going to be
+
+17524
+17:46:47,750 --> 17:46:51,560
+in a way here, what is going on
+here will use effect is going to
+
+17525
+17:46:51,590 --> 17:46:54,860
+rerender our browser, right? And
+that's what we want is what
+
+17526
+17:46:54,860 --> 17:46:57,830
+three enable goes from false to
+true, our browser re renders
+
+17527
+17:46:57,860 --> 17:47:02,420
+watch, once we get our entrance
+fee, does our browser rerender?
+
+17528
+17:47:02,720 --> 17:47:06,170
+No, it does not because entrance
+fee is just one of these normal
+
+17529
+17:47:06,170 --> 17:47:09,560
+variables, right. So we want to
+actually change this from being
+
+17530
+17:47:09,560 --> 17:47:12,980
+just a normal variable to being
+a hook because entrance fee does
+
+17531
+17:47:12,980 --> 17:47:16,190
+get updated, but it's not
+triggering a rerender. So we
+
+17532
+17:47:16,190 --> 17:47:19,520
+actually want to change this to
+being what's called a use state
+
+17533
+17:47:19,520 --> 17:47:22,280
+hook. So you can read some more
+on the documentation about the
+
+17534
+17:47:22,280 --> 17:47:24,890
+using the state hook, it's kind
+of the same as doing let
+
+17535
+17:47:24,890 --> 17:47:28,070
+entrance fee, you know, equals
+blah, blah, blah, and setting it
+
+17536
+17:47:28,070 --> 17:47:32,090
+below. But it also will trigger
+a rerender for us. And to do it,
+
+17537
+17:47:32,090 --> 17:47:37,670
+we actually do const entrance
+fee, comma, set entrance fee
+
+17538
+17:47:38,840 --> 17:47:44,870
+equals use state zero import use
+state from react as well. So
+
+17539
+17:47:44,870 --> 17:47:47,630
+basically, entrance fee is going
+to be our value, right, so if we
+
+17540
+17:47:47,630 --> 17:47:50,480
+do console dot log entrance fee,
+it's going to print out the
+
+17541
+17:47:50,480 --> 17:47:53,810
+entrance fee entrance fee is
+going to be the variable we call
+
+17542
+17:47:53,810 --> 17:47:57,050
+to get the entrance fee, the
+entrance fee is going to be the
+
+17543
+17:47:57,050 --> 17:48:01,400
+function we call to update or
+set that entrance fee. And
+
+17544
+17:48:01,400 --> 17:48:04,700
+whatever that this entrance fee
+variable is set, we trigger a
+
+17545
+17:48:04,700 --> 17:48:08,360
+rerender. From the front end, we
+have the state or the actual
+
+17546
+17:48:08,360 --> 17:48:11,870
+variable in the function to
+update it. And then in the use
+
+17547
+17:48:11,870 --> 17:48:14,330
+state here, we just give it its
+starting values we're saying
+
+17548
+17:48:14,630 --> 17:48:18,350
+entrance fee is going to start
+out as zero. So now that we know
+
+17549
+17:48:18,350 --> 17:48:22,130
+that, let's go back down here,
+and instead of saying entrance
+
+17550
+17:48:22,130 --> 17:48:28,160
+fee equals this, we can say
+const entrance fee from call
+
+17551
+17:48:28,760 --> 17:48:32,960
+equals away entrance fee.to
+string and then we can say set
+
+17552
+17:48:32,960 --> 17:48:37,700
+entrance fee to this entrance
+fee from call. And now when we
+
+17553
+17:48:37,700 --> 17:48:40,730
+set the use state, we're going
+to trigger a rerender. So
+
+17554
+17:48:40,730 --> 17:48:43,970
+entrance fee will actually be
+populated. Now if we go to our
+
+17555
+17:48:43,970 --> 17:48:49,010
+browser, do a little refresh
+here. We can see that the
+
+17556
+17:48:49,010 --> 17:48:51,860
+entrance fee has indeed been re
+rendered here and we can
+
+17557
+17:48:51,860 --> 17:48:54,440
+actually see it here. We see the
+console dot log of zero here
+
+17558
+17:48:54,470 --> 17:48:56,870
+even though we're doing console
+dot log entrance fee because
+
+17559
+17:48:56,900 --> 17:48:59,630
+this set entrance to function
+hasn't finished running it
+
+17560
+17:48:59,630 --> 17:49:02,840
+basically. So we're just gonna
+get rid of that line will
+
+17561
+17:49:02,840 --> 17:49:06,860
+refresh and Bada bing bada boom,
+this huge number is kind of
+
+17562
+17:49:06,860 --> 17:49:10,160
+gross. We might even want to
+update it so that it looks a
+
+17563
+17:49:10,160 --> 17:49:16,040
+little bit nicer. So once again,
+we can import ethers, ethers
+
+17564
+17:49:16,070 --> 17:49:23,180
+from ethers. And down below,
+we'll do a little ethers dot
+
+17565
+17:49:23,180 --> 17:49:32,750
+utils dot format units. And
+we'll do entrance fee from call
+
+17566
+17:49:32,750 --> 17:49:36,110
+and we'll do a comma and type
+in. And if we refresh on the
+
+17567
+17:49:36,110 --> 17:49:40,340
+front end, now we can see,
+entrance fee is 0.1. So we can
+
+17568
+17:49:40,340 --> 17:49:44,180
+even label this we'll say
+entrance fee, blah, blah, blah.
+
+17569
+17:49:45,440 --> 17:49:49,460
+Now if we do a little refresh on
+the front end, entrance fee 0.1
+
+17570
+17:49:49,490 --> 17:49:49,700
+E.
+
+17571
+17:49:52,400 --> 17:49:56,120
+Finally, we have the entrance
+fee, and now uses finally on our
+
+17572
+17:49:56,120 --> 17:49:59,540
+function to enter the lottery.
+So let's finally uncomment this
+
+17573
+17:49:59,540 --> 17:50:02,090
+out. And for message value,
+we're going to want to use this
+
+17574
+17:50:02,090 --> 17:50:04,820
+entrance fee. And I'm realizing
+it's actually better to store
+
+17575
+17:50:04,820 --> 17:50:08,090
+this in its raw to string
+format. So we're going to undo
+
+17576
+17:50:08,090 --> 17:50:11,660
+this part that we just did.
+We're going to add it down here.
+
+17577
+17:50:11,810 --> 17:50:15,560
+So we're going to ethers, that
+format units, entrance fee,
+
+17578
+17:50:15,560 --> 17:50:19,880
+comma, ether, like that. So that
+like that, and let's comment
+
+17579
+17:50:19,880 --> 17:50:22,880
+this back out real quick. So
+that at least in the UI, it
+
+17580
+17:50:22,880 --> 17:50:26,450
+shows up at 0.1. But on the back
+end, we're actually going to
+
+17581
+17:50:26,450 --> 17:50:30,500
+save it as its raw, and have way
+value. So we're saying that we
+
+17582
+17:50:30,500 --> 17:50:34,550
+have this entrance fee and what
+we can do uncomment, this, we
+
+17583
+17:50:34,550 --> 17:50:38,060
+can just grab this entrance fee,
+and plop it in here. So we need
+
+17584
+17:50:38,060 --> 17:50:41,540
+to make a button that's gonna do
+that. Now again, we want to make
+
+17585
+17:50:41,540 --> 17:50:44,510
+our code that all this works,
+even if we're connected to a
+
+17586
+17:50:44,510 --> 17:50:47,330
+supported chain, though. So
+before we even add this, right,
+
+17587
+17:50:47,330 --> 17:50:50,750
+if we switch from hard hat to
+like, Aetherium main net, do a
+
+17588
+17:50:50,750 --> 17:50:53,870
+little refresh. We're getting
+kind of get an error here,
+
+17589
+17:50:53,930 --> 17:50:58,460
+because we're calling get
+entrance fee.to string on an
+
+17590
+17:50:58,460 --> 17:51:01,220
+address that doesn't exist,
+right? So it's gonna get really
+
+17591
+17:51:01,220 --> 17:51:04,760
+confused and be like, hey, what,
+what are you doing here? Let's
+
+17592
+17:51:04,790 --> 17:51:07,580
+add a little button here so that
+we can actually enter the
+
+17593
+17:51:07,580 --> 17:51:11,690
+raffle. Before we actually do
+that, let's make sure that we
+
+17594
+17:51:11,690 --> 17:51:14,120
+can only call the function so
+long as there actually is a
+
+17595
+17:51:14,120 --> 17:51:18,650
+raffle address. So we'll do
+raffle address. And we'll do
+
+17596
+17:51:18,650 --> 17:51:22,520
+this ternary operator once
+again. So that only if this
+
+17597
+17:51:22,520 --> 17:51:26,060
+raffle address is valid, right?
+And it's not, no, we'll add all
+
+17598
+17:51:26,060 --> 17:51:28,520
+this code here, right. So we'll
+say if the raffle address
+
+17599
+17:51:28,520 --> 17:51:31,370
+exists, we're going to do some
+stuff. And for now, we can
+
+17600
+17:51:31,370 --> 17:51:35,990
+actually just copy paste this
+line, stick it in here. And then
+
+17601
+17:51:36,020 --> 17:51:41,060
+otherwise, we'll say div.
+Excellence div, close it off.
+
+17602
+17:51:41,090 --> 17:51:46,550
+We'll save reformat, great.
+We'll say no raffle address,
+
+17603
+17:51:46,940 --> 17:51:50,870
+detected. Now we'll just do all
+of our code in this section up
+
+17604
+17:51:50,870 --> 17:51:53,930
+here. So we have this little div
+here, which is great. Inside of
+
+17605
+17:51:53,930 --> 17:52:00,410
+this div, let's add a button.
+Button button, we'll save it got
+
+17606
+17:52:00,410 --> 17:52:05,240
+a little button here, we'll have
+it say, enter raffle. And we'll
+
+17607
+17:52:05,240 --> 17:52:09,200
+say on click, well, we're going
+to do some JavaScript. So let's
+
+17608
+17:52:09,200 --> 17:52:13,610
+do some JavaScript, we want to
+call an async function async
+
+17609
+17:52:13,610 --> 17:52:16,970
+function. So I know the double
+brackets is going to be
+
+17610
+17:52:16,970 --> 17:52:19,040
+confusing, right. But these
+brackets allow us to do
+
+17611
+17:52:19,040 --> 17:52:23,810
+JavaScript in our HTML, or JSX,
+or whatever. And these brackets
+
+17612
+17:52:23,840 --> 17:52:27,470
+represent this function, it's
+going to an async function. And
+
+17613
+17:52:27,470 --> 17:52:33,440
+we're gonna say, await, enter
+raffle. And that's it. So let's
+
+17614
+17:52:33,440 --> 17:52:35,750
+go back to the front end. Now we
+have a little enter raffle
+
+17615
+17:52:35,750 --> 17:52:40,010
+function. If we do refresh,
+let's just make sure our account
+
+17616
+17:52:40,010 --> 17:52:43,640
+is reset here. So we're gonna go
+down to settings, advanced,
+
+17617
+17:52:44,120 --> 17:52:48,680
+reset accounts, yes. I hit ENTER
+raffle. metamath does indeed pop
+
+17618
+17:52:48,680 --> 17:52:53,330
+up. And we can go ahead and
+confirm. Awesome, okay, we can
+
+17619
+17:52:53,330 --> 17:52:56,930
+now enter our raffle. We're
+doing incredibly well with this.
+
+17620
+17:52:59,690 --> 17:53:02,480
+As you saw, we just got that pop
+up. And that was pretty much it,
+
+17621
+17:53:02,480 --> 17:53:05,960
+right? It's not very helpful for
+the users who are following
+
+17622
+17:53:05,960 --> 17:53:09,380
+along with this to look at this
+and go, Okay, did it go through?
+
+17623
+17:53:09,410 --> 17:53:12,860
+Or we did it fail, like, what,
+what just happened? So what we
+
+17624
+17:53:12,860 --> 17:53:15,860
+want to do is create what's
+called notifications, right? We
+
+17625
+17:53:15,860 --> 17:53:18,800
+want a little pop up saying,
+Hey, you sent your transaction,
+
+17626
+17:53:18,830 --> 17:53:22,370
+great job, we're going to use a
+library. Again, we're going to
+
+17627
+17:53:22,370 --> 17:53:24,740
+use the web through UI Kit,
+which comes with some
+
+17628
+17:53:24,770 --> 17:53:27,770
+notifications that we can go
+ahead and use. So if you come to
+
+17629
+17:53:27,770 --> 17:53:30,920
+this little interactive thing,
+which is right in their GitHub,
+
+17630
+17:53:31,370 --> 17:53:34,340
+there's a whole bunch of stuff
+in here. And you can actually
+
+17631
+17:53:34,340 --> 17:53:36,530
+click around and play with
+different buttons and different
+
+17632
+17:53:36,530 --> 17:53:39,920
+things. And you can actually go
+ahead and even go to docs for
+
+17633
+17:53:39,920 --> 17:53:43,100
+each one of these. And you can
+go show code. And you can
+
+17634
+17:53:43,100 --> 17:53:45,620
+literally like copy paste code
+into your project, like whatever
+
+17635
+17:53:45,620 --> 17:53:49,100
+you want to do styling and
+everything for us. So back in
+
+17636
+17:53:49,100 --> 17:53:54,740
+our app dot j s, we're going to
+add import, no to vacations
+
+17637
+17:53:54,770 --> 17:54:01,490
+provider from web three UI kit
+and inside of the Morales
+
+17638
+17:54:01,490 --> 17:54:04,310
+provider, but outside of the
+components, we're gonna do
+
+17639
+17:54:04,310 --> 17:54:07,760
+notification provider
+notification provide Add it like
+
+17640
+17:54:07,760 --> 17:54:10,610
+this. So it goes Morales
+provider notification provider
+
+17641
+17:54:10,610 --> 17:54:13,670
+component. So wrapping our
+component in this notifications
+
+17642
+17:54:13,670 --> 17:54:18,470
+thing, and that's notification
+provider not notifications. And
+
+17643
+17:54:18,470 --> 17:54:22,160
+this is going to allow us to
+actually make notifications back
+
+17644
+17:54:22,160 --> 17:54:24,710
+in our lottery entrance. Back in
+our lottery entrance, we're
+
+17645
+17:54:24,710 --> 17:54:28,130
+gonna scroll up to the top,
+we're going to import a hook
+
+17646
+17:54:28,160 --> 17:54:34,370
+those notifications called us
+know, to the occasion from web
+
+17647
+17:54:34,370 --> 17:54:39,500
+three UI kit. And this use
+notification gives us this thing
+
+17648
+17:54:39,500 --> 17:54:43,310
+back called a dispatch. So I'm
+gonna say const, dispatch,
+
+17649
+17:54:43,640 --> 17:54:47,240
+equals use notification. So use
+notification returns this
+
+17650
+17:54:47,240 --> 17:54:49,880
+dispatch, and this dispatch is
+like a little pop up that will
+
+17651
+17:54:49,880 --> 17:54:54,110
+give us so down here, when we
+call this enter raffle, we're
+
+17652
+17:54:54,110 --> 17:54:56,330
+gonna give it a little some
+parameters in here, we're gonna
+
+17653
+17:54:56,330 --> 17:55:00,530
+say on success, these functions
+come with onsuccess, they come
+
+17654
+17:55:00,530 --> 17:55:05,120
+with onComplete, they come with
+an error, all this stuff. And
+
+17655
+17:55:05,150 --> 17:55:08,930
+when this function is
+successful, we'll do handle
+
+17656
+17:55:09,080 --> 17:55:12,950
+success, we'll create a new
+handle success function that
+
+17657
+17:55:12,950 --> 17:55:16,070
+will handle the success. And
+this is Patrick from the future
+
+17658
+17:55:16,070 --> 17:55:18,890
+coming back to show one
+additional point. I know I
+
+17659
+17:55:18,890 --> 17:55:23,900
+mentioned it, but it is really
+good to add this on error, colon
+
+17660
+17:55:24,260 --> 17:55:29,270
+error console dot log error for
+any run contract functions, even
+
+17661
+17:55:29,270 --> 17:55:33,290
+the reads, If any of your run
+contract functions break, you
+
+17662
+17:55:33,290 --> 17:55:36,500
+won't know. So definitely want
+to add this on error error
+
+17663
+17:55:36,500 --> 17:55:40,880
+console dot log error to all of
+your run contract functions. So
+
+17664
+17:55:40,880 --> 17:55:45,320
+up here, before the return,
+we'll create a new const handle
+
+17665
+17:55:45,320 --> 17:55:51,170
+success. We'll say this is an
+async function async function
+
+17666
+17:55:51,170 --> 17:55:55,190
+that takes the transaction as
+input parameters. And remember,
+
+17667
+17:55:55,490 --> 17:55:59,900
+you can turn functions into
+constant variables. And we'll
+
+17668
+17:55:59,900 --> 17:56:05,750
+say await TX dot Wait, one, so
+we'll wait for that transaction
+
+17669
+17:56:05,750 --> 17:56:08,750
+to go through. And then we'll
+create another function called
+
+17670
+17:56:08,960 --> 17:56:13,160
+handle new notification, dx. And
+you'll see why I'm doing it like
+
+17671
+17:56:13,160 --> 17:56:16,640
+this in a minute. And we'll say
+const and Linoone notification,
+
+17672
+17:56:17,240 --> 17:56:19,880
+this is just going to be a
+synchronous function because we
+
+17673
+17:56:19,880 --> 17:56:22,730
+don't need it to be async. And
+we're just going to call this
+
+17674
+17:56:22,730 --> 17:56:26,000
+dispatch, we're going to set up
+this notification basically. So
+
+17675
+17:56:26,000 --> 17:56:28,280
+we'll say notify, or dispatch,
+and then we'll add the
+
+17676
+17:56:28,280 --> 17:56:31,550
+parameters in here. So it takes
+an object as a parameter, we'll
+
+17677
+17:56:31,550 --> 17:56:38,600
+say type info. Message, it's
+going to be transaction
+
+17678
+17:56:38,690 --> 17:56:50,300
+complete, the title is going to
+be TX notification. Jose, Shawn,
+
+17679
+17:56:50,390 --> 17:56:55,610
+we're going to say, top are and
+then icon, we're going to say a
+
+17680
+17:56:55,610 --> 17:56:56,210
+little bell.
+
+17681
+17:56:58,100 --> 17:57:01,430
+And you can find all this stuff
+right in here, type icon
+
+17682
+17:57:01,430 --> 17:57:05,180
+position, you can read all about
+the different parameters you can
+
+17683
+17:57:05,180 --> 17:57:07,910
+kind of set this up with so
+handle new notification handle
+
+17684
+17:57:07,910 --> 17:57:12,470
+success. So we're saying, enter
+raffle once this transaction is
+
+17685
+17:57:12,470 --> 17:57:16,010
+successful, call this handle
+success function, which is going
+
+17686
+17:57:16,010 --> 17:57:19,580
+to call handle new notification.
+Okay. And you'll see why we
+
+17687
+17:57:19,580 --> 17:57:22,820
+split this into two instead of
+just having handle success. Also
+
+17688
+17:57:22,820 --> 17:57:26,450
+do the dispatch. When we press
+our enter raffle button, we're
+
+17689
+17:57:26,450 --> 17:57:29,180
+going to call enter raffle is
+successful, we're going to call
+
+17690
+17:57:29,180 --> 17:57:32,000
+handle success. We're going to
+wait for that transaction to
+
+17691
+17:57:32,000 --> 17:57:35,720
+finish Yes, it passes a
+parameter to our handle success
+
+17692
+17:57:35,720 --> 17:57:38,360
+function. And then all we're
+going to do is we're going to
+
+17693
+17:57:38,360 --> 17:57:41,810
+call handle new notification.
+And we're going to dispatch
+
+17694
+17:57:41,810 --> 17:57:44,420
+we're going to launch one of
+these notifications. So back
+
+17695
+17:57:44,420 --> 17:57:49,010
+here, let's hit enter raffle.
+metamath pops up will confirm.
+
+17696
+17:57:49,280 --> 17:57:52,280
+And after it completes, we get
+this wonderful transaction
+
+17697
+17:57:52,280 --> 17:57:55,130
+notification transaction
+complete, right. So we've let
+
+17698
+17:57:55,130 --> 17:57:59,480
+the user know, great job, you've
+submitted a transaction. Great
+
+17699
+17:57:59,480 --> 17:58:03,050
+work. So this is great. We're
+giving our users some helpful
+
+17700
+17:58:03,050 --> 17:58:08,300
+pieces here. Now let's add a
+little bit more here so that the
+
+17701
+17:58:08,300 --> 17:58:11,210
+users know what else is going on
+with this lottery. But we need
+
+17702
+17:58:11,210 --> 17:58:13,820
+to display a little bit more
+data, right, let's display how
+
+17703
+17:58:13,820 --> 17:58:17,600
+many people are in this lottery.
+How many people are in this
+
+17704
+17:58:17,600 --> 17:58:21,380
+game. And we can do that. Of
+course, because we have a number
+
+17705
+17:58:21,410 --> 17:58:24,650
+players command. We also
+probably want to get the recent
+
+17706
+17:58:24,650 --> 17:58:27,830
+winner. And we can do that as
+well. Up here, we're going to
+
+17707
+17:58:27,830 --> 17:58:30,650
+copy this get entrance fee,
+we're going to create another
+
+17708
+17:58:30,650 --> 17:58:36,980
+one called Get num players. And
+this is going to call go back to
+
+17709
+17:58:36,980 --> 17:58:39,890
+raffle dot soul. It's going to
+call get number of players
+
+17710
+17:58:39,920 --> 17:58:43,100
+actually so let's just call it
+call it the same thing. Get
+
+17711
+17:58:43,100 --> 17:58:46,220
+number of players and we're
+going to call and get number of
+
+17712
+17:58:46,220 --> 17:58:50,180
+players. And to store this
+value. Once again up at the top.
+
+17713
+17:58:50,630 --> 17:58:55,160
+We're going to copy this line,
+paste it right and we'll do non
+
+17714
+17:58:55,160 --> 17:59:00,440
+players. And then we'll do set
+num players. And then we'll copy
+
+17715
+17:59:00,440 --> 17:59:05,150
+this line again. A recent winner
+so we'll do recent Winner.
+
+17716
+17:59:05,900 --> 17:59:11,600
+Winner will do Set, recent
+winner, then we'll copy this
+
+17717
+17:59:11,600 --> 17:59:16,520
+again, instead of getting number
+players will do get get recent
+
+17718
+17:59:16,520 --> 17:59:20,510
+winner. So we'll call it get
+recent winner get recent winner
+
+17719
+17:59:20,990 --> 17:59:24,350
+in our use effect, let's do more
+than just get the entrance fee,
+
+17720
+17:59:24,350 --> 17:59:30,020
+let's get everything. So we can
+say const num players, from call
+
+17721
+17:59:30,380 --> 17:59:37,250
+equals, we'll do a weight, get
+number of players.to string, and
+
+17722
+17:59:37,250 --> 17:59:42,590
+then we'll do set set num
+players do like that. So we'll
+
+17723
+17:59:42,590 --> 17:59:47,630
+do set num players, num players
+from call. And then we'll also
+
+17724
+17:59:47,630 --> 17:59:53,270
+do const recent winner from call
+this is going to be await get
+
+17725
+17:59:54,080 --> 17:59:57,410
+recent winner. And we might need
+to wrap this to string but I
+
+17726
+17:59:57,410 --> 18:00:00,920
+think I don't think we need to.
+So we'll do set recent winner
+
+17727
+18:00:01,310 --> 18:00:04,070
+paste that in here. So now we've
+had a number of players, we've
+
+17728
+18:00:04,070 --> 18:00:07,550
+added a recent winner. Let's
+come back down here. We have an
+
+17729
+18:00:07,550 --> 18:00:14,060
+entrance fee. Let's go ahead and
+do number of players. And we'll
+
+17730
+18:00:14,060 --> 18:00:19,490
+add number of players or what
+did we call it? Oh my god, we
+
+17731
+18:00:19,490 --> 18:00:22,970
+called setting employers twice
+oops, it's called non players,
+
+17732
+18:00:23,090 --> 18:00:27,020
+scroll down players gonna be non
+players, and then we'll do
+
+17733
+18:00:27,770 --> 18:00:28,970
+recent winner.
+
+17734
+18:00:30,350 --> 18:00:35,600
+And then we'll add in the recent
+winner. Awesome. Okay, entrance
+
+17735
+18:00:35,600 --> 18:00:40,670
+fees 0.1 eath number of players
+to recent winner is nobody here.
+
+17736
+18:00:40,730 --> 18:00:45,080
+And if we go ahead and we enter
+the raffle metamath pops up.
+
+17737
+18:00:45,680 --> 18:00:48,680
+We'll go ahead and confirm. Once
+a transaction goes through,
+
+17738
+18:00:48,710 --> 18:00:53,210
+we'll get transaction complete.
+And if we do a refresh, we see
+
+17739
+18:00:53,210 --> 18:00:56,600
+the number of players has
+updated. But we had to refresh
+
+17740
+18:00:56,600 --> 18:00:58,490
+which is kind of annoying,
+right, let's enter the raffle
+
+17741
+18:00:58,490 --> 18:01:03,170
+again, we'll go confirm
+transaction complete. But this
+
+17742
+18:01:03,170 --> 18:01:06,260
+didn't rerender. Right. So we
+want to set something up so that
+
+17743
+18:01:06,260 --> 18:01:09,590
+we automatically rerender. And
+guess what's going to do that
+
+17744
+18:01:09,620 --> 18:01:11,900
+the handle success that we were
+talking about before. That's
+
+17745
+18:01:11,900 --> 18:01:15,650
+right, all of this update UI
+stuff, we can actually pull out
+
+17746
+18:01:15,650 --> 18:01:19,220
+of the use effect. So we're
+going to copy it all deleted
+
+17747
+18:01:19,220 --> 18:01:22,610
+there. And we're going to have
+it be its own standalone
+
+17748
+18:01:22,610 --> 18:01:26,120
+function like this. And then in
+our handle success, whenever
+
+17749
+18:01:26,120 --> 18:01:29,480
+this successful transaction goes
+through, we're going to update
+
+17750
+18:01:29,480 --> 18:01:33,890
+the UI, right? So handle success
+handled new notification, and
+
+17751
+18:01:33,920 --> 18:01:37,040
+we're going to update the white.
+So now if we go back here, let's
+
+17752
+18:01:37,040 --> 18:01:41,450
+enter the lottery. Let's
+confirm, we see we get the five
+
+17753
+18:01:41,480 --> 18:01:43,910
+and we get transaction
+Notification. Now we want to
+
+17754
+18:01:43,910 --> 18:01:47,810
+test getting a recent winner
+here. So what we can do,
+
+17755
+18:01:47,840 --> 18:01:51,440
+actually back in our hard hat
+project is we want to create a
+
+17756
+18:01:51,440 --> 18:01:54,350
+new script. And I actually
+already created it for you,
+
+17757
+18:01:54,620 --> 18:01:56,630
+that's going to mock the
+channeling VRF. And that's going
+
+17758
+18:01:56,630 --> 18:01:59,990
+to mock being a keepers. So all
+this is really doing is pretty
+
+17759
+18:01:59,990 --> 18:02:02,780
+much exactly what our tests were
+doing. If you want to pause
+
+17760
+18:02:02,780 --> 18:02:05,780
+right now and look through this
+yourself, pause here and add
+
+17761
+18:02:05,780 --> 18:02:09,440
+this mock off chain, which is
+both keepers and VRF. Or you can
+
+17762
+18:02:09,440 --> 18:02:13,250
+just go to the GitHub repo here.
+Just go to the GitHub repo for
+
+17763
+18:02:13,340 --> 18:02:17,090
+Lesson Nine. It's already in
+scripts go down to scripts
+
+17764
+18:02:17,390 --> 18:02:21,230
+Markov chain, you can just copy
+paste it here. Because I want to
+
+17765
+18:02:21,230 --> 18:02:24,740
+test that that recent winner. So
+in my hard hat, smart contract
+
+17766
+18:02:24,740 --> 18:02:30,110
+lottery, so we'll do yarn,
+hardhats run scripts, slash mock
+
+17767
+18:02:30,110 --> 18:02:34,730
+off chain dash test network
+local host, we're going to mock
+
+17768
+18:02:34,970 --> 18:02:37,460
+you know, basically picking a
+winner from an upkeep with
+
+17769
+18:02:37,460 --> 18:02:40,700
+Request ID one, we're on a local
+network. Okay, let's pretend the
+
+17770
+18:02:40,700 --> 18:02:43,850
+recent winner was so and so. And
+what we can do is we can do a
+
+17771
+18:02:43,850 --> 18:02:48,140
+little refresh here, we can see
+we have a winner updated. Boom.
+
+17772
+18:02:48,530 --> 18:02:51,110
+Now we're gonna clean up the UI.
+But I want to talk about a
+
+17773
+18:02:51,110 --> 18:02:53,780
+couple of things. Before we do
+that, because we're almost done
+
+17774
+18:02:53,780 --> 18:02:59,180
+with this section. Something I
+want to make really clear
+
+17775
+18:02:59,180 --> 18:03:02,540
+because it confused me a little
+bit is that this onsuccess isn't
+
+17776
+18:03:02,540 --> 18:03:05,810
+checking that the transaction
+has a block confirmation, it's
+
+17777
+18:03:05,810 --> 18:03:09,410
+just checking to see that the
+transaction was successfully
+
+17778
+18:03:09,410 --> 18:03:14,120
+sent to Metamask. So onsuccess
+checks to see a transaction is
+
+17779
+18:03:14,120 --> 18:03:17,000
+successfully sent the Metamask.
+And that's why up in that other
+
+17780
+18:03:17,000 --> 18:03:20,180
+function, we do TX dot wait one
+because that's the piece that
+
+17781
+18:03:20,180 --> 18:03:22,820
+actually waits for the
+transaction to be confirmed.
+
+17782
+18:03:25,400 --> 18:03:29,030
+Right now we're using Morales to
+make once we call that mocking
+
+17783
+18:03:29,030 --> 18:03:32,300
+script, I had to refresh the
+browser to see the winner here,
+
+17784
+18:03:32,300 --> 18:03:35,240
+right and number of players
+obviously got reset to zero,
+
+17785
+18:03:35,270 --> 18:03:39,080
+which is great. That's not
+ideal. Ideally, we want our UI
+
+17786
+18:03:39,110 --> 18:03:43,400
+to just automatically update
+when some event gets fired. In
+
+17787
+18:03:43,400 --> 18:03:47,630
+our raffle contract, we get this
+event emitted. Instead of in our
+
+17788
+18:03:47,630 --> 18:03:51,650
+code doing this await success
+here. What we could do is we
+
+17789
+18:03:51,650 --> 18:03:57,410
+could set up a portion to listen
+for that event being emitted and
+
+17790
+18:03:57,410 --> 18:04:00,140
+update the front end
+accordingly. With that knowledge
+
+17791
+18:04:00,140 --> 18:04:03,920
+we can also listen for the
+winner event being emitted. We
+
+17792
+18:04:03,920 --> 18:04:06,560
+could update our front end
+instead of having to refresh
+
+17793
+18:04:06,710 --> 18:04:09,320
+it's your cue Yes, and you want
+to see if you can add to this
+
+17794
+18:04:09,320 --> 18:04:12,230
+right now, I highly recommend
+you do. So
+
+17795
+18:04:14,869 --> 18:04:17,779
+we've pretty much finished all
+the functionality. And wow,
+
+17796
+18:04:17,779 --> 18:04:20,089
+you've learned a ton in this
+little bit, right? We've learned
+
+17797
+18:04:20,089 --> 18:04:23,449
+about use effects use Morales,
+all these hooks, all this stuff,
+
+17798
+18:04:23,449 --> 18:04:27,169
+and we've got a front end that
+very nicely handles interacting
+
+17799
+18:04:27,169 --> 18:04:29,839
+with our smart contract. The
+only thing is, is it looks
+
+17800
+18:04:29,869 --> 18:04:34,549
+really ugly. This is kind of
+gross. So let's make this look
+
+17801
+18:04:34,579 --> 18:04:37,369
+at least a little bit nicer.
+There's two things to think
+
+17802
+18:04:37,369 --> 18:04:39,379
+about when it comes to building
+these front ends. There's
+
+17803
+18:04:39,379 --> 18:04:42,829
+component libraries, like web
+three UI Kit, which we're using,
+
+17804
+18:04:42,859 --> 18:04:45,859
+which gives us kind of like
+components that give us, you
+
+17805
+18:04:45,859 --> 18:04:48,889
+know, blocks of code, like this
+connect button that are already
+
+17806
+18:04:48,919 --> 18:04:52,279
+formatted for us. And then
+there's CSS libraries that
+
+17807
+18:04:52,279 --> 18:04:55,849
+actually will help us format the
+rest of our stuff here. So we're
+
+17808
+18:04:55,849 --> 18:04:58,369
+using one of these component
+libraries. We're also going to
+
+17809
+18:04:58,369 --> 18:05:01,159
+use one of these formatting
+libraries, and the library that
+
+17810
+18:05:01,159 --> 18:05:03,829
+we're going to use is tailwind.
+And the reason that we're going
+
+17811
+18:05:03,829 --> 18:05:07,309
+to use tailwind CSS is because
+it's really popular. If you want
+
+17812
+18:05:07,309 --> 18:05:09,829
+to learn CSS, there's some
+wonderful resources that you can
+
+17813
+18:05:09,829 --> 18:05:12,889
+use to learn CSS web three
+schools is one that I've used a
+
+17814
+18:05:12,889 --> 18:05:16,219
+ton. So there's going to be a
+link to that in the GitHub repo
+
+17815
+18:05:16,249 --> 18:05:19,069
+associated with this course so
+that you can make your websites
+
+17816
+18:05:19,069 --> 18:05:21,919
+look pretty when formatting
+stuff but we are actually going
+
+17817
+18:05:21,919 --> 18:05:24,949
+to work with tailwind because
+it's going to make us doing CSS
+
+17818
+18:05:24,949 --> 18:05:28,939
+stuff a lot easier. Since we're
+using tailwind with next Jas.
+
+17819
+18:05:28,969 --> 18:05:31,849
+There's actually a wonderful
+little guide here for installing
+
+17820
+18:05:31,849 --> 18:05:34,969
+tailwind with next Jas. And
+we're gonna go basically go
+
+17821
+18:05:34,969 --> 18:05:37,849
+ahead and follow along with
+this. This link is available in
+
+17822
+18:05:37,849 --> 18:05:40,849
+the GitHub repo associated with
+this course with this lesson. So
+
+17823
+18:05:40,849 --> 18:05:42,919
+we've already created our
+project we've seeded into our
+
+17824
+18:05:42,919 --> 18:05:46,309
+project. Now we're gonna go
+ahead and install tailwind npm
+
+17825
+18:05:46,309 --> 18:05:49,399
+install dash D instead, since
+we're using yarn, we're going to
+
+17826
+18:05:49,399 --> 18:05:55,609
+do yarn or pop this open, green
+new yarn, add dash dash Dev,
+
+17827
+18:05:56,209 --> 18:05:59,779
+paste those three in tailwind
+CSS, post CSS and then
+
+17828
+18:05:59,809 --> 18:06:02,539
+autoprefixer and it's the three
+of these that are going to
+
+17829
+18:06:02,539 --> 18:06:06,349
+basically make up tailwind with
+next Jas. Once we have those
+
+17830
+18:06:06,349 --> 18:06:09,379
+we're going to basically init
+tailwind and make a config file
+
+17831
+18:06:09,379 --> 18:06:13,099
+for tailwind. So we're gonna do
+yarn tailwind CSS and it does p
+
+17832
+18:06:13,789 --> 18:06:18,139
+yarn tailwind CSS init dash P
+will run that. This is going to
+
+17833
+18:06:18,139 --> 18:06:23,059
+give us this post CSS dot config
+dot j s and this tailwind dot
+
+17834
+18:06:23,059 --> 18:06:26,569
+config dot j s and what we're
+going to want to do is literally
+
+17835
+18:06:26,599 --> 18:06:29,479
+just hit this copy button, and
+we're going to update our
+
+17836
+18:06:29,479 --> 18:06:35,059
+tailwind.config.js tailwind Jas
+so that it says okay, all of
+
+17837
+18:06:35,059 --> 18:06:40,039
+this stuff, anything in Pages
+anything with.js.ts dot JSX or
+
+17838
+18:06:40,039 --> 18:06:43,429
+TSX. And anything in these
+components, anything in those
+
+17839
+18:06:43,429 --> 18:06:47,029
+two folders is going to be
+considered tailwind double. We
+
+17840
+18:06:47,029 --> 18:06:49,969
+want to use tailwind on these
+two folders. Then we're going to
+
+17841
+18:06:49,969 --> 18:06:54,739
+add the tailwind directives to
+our global CSS files. So if we
+
+17842
+18:06:54,739 --> 18:06:57,559
+go back, we're going to styles
+Global's we're going to
+
+17843
+18:06:57,559 --> 18:07:01,099
+overwrite everything in here
+with ADD tailwind base and add
+
+17844
+18:07:01,099 --> 18:07:03,589
+tailwind components at tailwind
+utilities. And this makes it so
+
+17845
+18:07:03,589 --> 18:07:07,609
+that our global CSS file uses
+tailwind. Now, you'll see like
+
+17846
+18:07:07,639 --> 18:07:10,579
+unknown rule at tailwind, what
+we can do is we can go to
+
+17847
+18:07:10,579 --> 18:07:14,209
+components, what we can do is we
+can look up this post CSS
+
+17848
+18:07:14,209 --> 18:07:18,019
+language support extension,
+paste that in here, boom, let's
+
+17849
+18:07:18,019 --> 18:07:20,599
+go ahead and install this. And
+now we get those little
+
+17850
+18:07:20,629 --> 18:07:24,259
+underscores to go away, which is
+really nice. Now, per usual, we
+
+17851
+18:07:24,259 --> 18:07:27,619
+can just do NPM, run Dev and
+start adding tailwind to our
+
+17852
+18:07:27,619 --> 18:07:32,869
+divs. Now what tailwind does is
+allows us in our divs to set
+
+17853
+18:07:32,869 --> 18:07:35,449
+everything as a class name, and
+then just set some real
+
+17854
+18:07:35,449 --> 18:07:38,719
+minimalistic text in these class
+names here. So let's look at our
+
+17855
+18:07:38,719 --> 18:07:41,659
+smart contract lottery here.
+We've just tailwind did it. So
+
+17856
+18:07:41,659 --> 18:07:44,359
+it already has been updated a
+little bit. Let's update our
+
+17857
+18:07:44,359 --> 18:07:46,729
+header here. Well, let's see. We
+want to give our header a border
+
+17858
+18:07:46,879 --> 18:07:52,399
+from the tailwind. We'll do a
+quick search. Look a border we
+
+17859
+18:07:52,399 --> 18:07:55,609
+can see all this border stuff
+like border width border this
+
+17860
+18:07:55,609 --> 18:08:00,529
+border that say we want a border
+on the bottom, we can see we can
+
+17861
+18:08:00,529 --> 18:08:03,439
+get a border on the bottom with
+something like this. Let's do
+
+17862
+18:08:03,439 --> 18:08:07,129
+border on the bottom with a
+width of two pixels. We just do
+
+17863
+18:08:07,129 --> 18:08:11,179
+border b two. So I'm going to
+copy border B to do border b
+
+17864
+18:08:11,179 --> 18:08:14,479
+two, I'm going to save it and
+what we need to do for our CSS
+
+17865
+18:08:14,479 --> 18:08:18,109
+and everything to take effect.
+Go ahead and kill the front end.
+
+17866
+18:08:18,349 --> 18:08:20,899
+And then we'll rerun it with
+yarn Dev. Go back to our front
+
+17867
+18:08:20,899 --> 18:08:24,079
+end now. Give it a little
+refresh and Okay, cool. Now we
+
+17868
+18:08:24,079 --> 18:08:27,919
+have a little border here. So
+we're starting to add some stuff
+
+17869
+18:08:27,919 --> 18:08:31,339
+and it's just not a whole lot
+yet. Oh, and then we can also
+
+17870
+18:08:31,339 --> 18:08:35,239
+add tailwind to me go to
+Extensions. We can also look up
+
+17871
+18:08:35,239 --> 18:08:38,479
+tailwind. There's a tailwind
+extension here. So I'm just
+
+17872
+18:08:38,479 --> 18:08:40,849
+going to add a whole bunch of
+stuff in here. We're gonna do
+
+17873
+18:08:40,849 --> 18:08:42,829
+flex, flex row.
+
+17874
+18:08:44,329 --> 18:08:47,029
+We're gonna make our
+decentralized lottery and h one
+
+17875
+18:08:48,589 --> 18:08:53,569
+which stands for like header
+one. Do class name equals, we'll
+
+17876
+18:08:53,569 --> 18:08:59,059
+do the y dash force. We'll give
+it padding the top of form the X
+
+17877
+18:08:59,059 --> 18:09:03,079
+padding on the x axis of four.
+We'll make it bold font and
+
+17878
+18:09:03,079 --> 18:09:06,559
+we'll make the text three XL
+size. So we'll make everything
+
+17879
+18:09:06,559 --> 18:09:11,419
+bigger. Cool. Then we'll do one
+more, we'll wrap our Connect
+
+17880
+18:09:11,419 --> 18:09:16,189
+button in a div. So we'll say
+div class name equals, and we'll
+
+17881
+18:09:16,189 --> 18:09:21,199
+give it a an automatic left
+margin. We'll do py too. So some
+
+17882
+18:09:21,199 --> 18:09:27,529
+y padding, some x padding. See
+what we have done. Okay. Now if
+
+17883
+18:09:27,529 --> 18:09:31,519
+we zoom out a little bit, we can
+see, if we close this too, we
+
+17884
+18:09:31,519 --> 18:09:34,249
+can see now our Connect button
+is on the side here. And they're
+
+17885
+18:09:34,249 --> 18:09:36,979
+kind of separated like that. And
+I think that looks nice. So
+
+17886
+18:09:36,979 --> 18:09:39,259
+we're going to keep that now
+we're going to go back to our
+
+17887
+18:09:39,259 --> 18:09:42,559
+lottery entrance, we're going to
+change this up just a hair,
+
+17888
+18:09:42,589 --> 18:09:48,259
+we'll say div class name equals
+P. Five, we'll make our button
+
+17889
+18:09:48,259 --> 18:09:53,239
+look really nice. We'll say
+class name equals background
+
+17890
+18:09:53,239 --> 18:10:00,619
+blue 500. When we hover over, it
+will say, background blue 700.
+
+17891
+18:10:00,649 --> 18:10:03,499
+So now if I just say that, and
+when we hover over it, it looks
+
+17892
+18:10:03,499 --> 18:10:07,369
+a little different, that's
+really nice. We'll say text is
+
+17893
+18:10:07,369 --> 18:10:12,169
+white, we'll say the font is
+bold, we'll give it some white
+
+17894
+18:10:12,169 --> 18:10:16,579
+padding, I'll give it some x
+padding, we'll have the bunbee
+
+17895
+18:10:16,579 --> 18:10:20,149
+rounded, and we'll give it a
+margin left auto, now looks a
+
+17896
+18:10:20,149 --> 18:10:22,609
+lot better, right? That's a lot
+prettier. We're just going to be
+
+17897
+18:10:22,609 --> 18:10:25,639
+doing some basic CSS here just
+to make it look a little bit
+
+17898
+18:10:25,639 --> 18:10:28,219
+nicer, right, but just that by
+itself already made this lottery
+
+17899
+18:10:28,219 --> 18:10:31,189
+button look a lot cooler. Now
+some functionality that we
+
+17900
+18:10:31,189 --> 18:10:34,849
+didn't add here. So we need to
+add a disabled, kind of like
+
+17901
+18:10:34,849 --> 18:10:39,589
+what we did before. And in our
+enter a raffle it comes with,
+
+17902
+18:10:39,589 --> 18:10:43,159
+like I said, is loading and it
+is fetching. None of our
+
+17903
+18:10:43,159 --> 18:10:45,769
+transaction is loading or
+fetching, we'll just make this
+
+17904
+18:10:45,799 --> 18:10:50,149
+disabled. So we'll say is
+loading or is fetching this will
+
+17905
+18:10:50,149 --> 18:10:52,489
+be disabled. Right? Now, if we
+go back to the front, we hit
+
+17906
+18:10:52,489 --> 18:10:57,349
+enter raffle, go ahead and hit
+confirm, we can add a CSS for
+
+17907
+18:10:57,349 --> 18:11:00,319
+it. But when a transaction is
+loading, they will not be able
+
+17908
+18:11:00,319 --> 18:11:02,719
+to click that button anymore,
+which that's something else
+
+17909
+18:11:02,719 --> 18:11:05,239
+pretty that we want to do
+speaking of is loading and is
+
+17910
+18:11:05,239 --> 18:11:09,199
+fetching. When it's loading or
+fetching, we probably want it to
+
+17911
+18:11:09,229 --> 18:11:11,749
+have that like little spinny
+thing right when we hit it right
+
+17912
+18:11:11,749 --> 18:11:15,619
+now. And mash is pops up. And we
+can confirm but it would be cool
+
+17913
+18:11:15,619 --> 18:11:18,769
+if it had like a little spinny
+thing here, right. So you can
+
+17914
+18:11:18,769 --> 18:11:22,009
+usually just Google like how to
+add spinny thing or stuff like
+
+17915
+18:11:22,009 --> 18:11:25,039
+that, and you'll get something.
+But you can again, you can just
+
+17916
+18:11:25,039 --> 18:11:27,919
+copy paste this from my code,
+I'm going to show you what I
+
+17917
+18:11:27,919 --> 18:11:31,369
+ended up doing for this section.
+And we're gonna say is, if is
+
+17918
+18:11:31,369 --> 18:11:35,899
+loading or is fetching. And
+we're going to use that ternary
+
+17919
+18:11:35,899 --> 18:11:39,799
+operator all the time, then in
+here, we're going to do a little
+
+17920
+18:11:39,799 --> 18:11:43,009
+div. And otherwise, we're going
+to do a different div for
+
+17921
+18:11:43,009 --> 18:11:44,959
+loading or for fetching, we're
+going to add like a little
+
+17922
+18:11:44,959 --> 18:11:49,129
+spinny thing in here. So we're
+going to add class name equals.
+
+17923
+18:11:54,409 --> 18:11:56,809
+If we're loading, we're going to
+add this little spinny thing,
+
+17924
+18:11:56,809 --> 18:11:59,209
+which I'll show you what it
+looks like in a second. And if
+
+17925
+18:11:59,209 --> 18:12:02,449
+we're not loading, we're just
+gonna do enter, raffle like
+
+17926
+18:12:02,449 --> 18:12:06,139
+that. So we'll come back to the
+front end, see answer raffle,
+
+17927
+18:12:06,169 --> 18:12:08,359
+we'll click the button. Now we
+get this cute little spinny
+
+17928
+18:12:08,359 --> 18:12:12,049
+thing, confirm transaction goes
+through. So anything goes away.
+
+17929
+18:12:12,229 --> 18:12:15,859
+Nice. Well, let's put these on
+different lines. So we'll just
+
+17930
+18:12:15,859 --> 18:12:16,279
+do
+
+17931
+18:12:23,450 --> 18:12:26,600
+so those will be on different
+lines. Now boom, entrance fee,
+
+17932
+18:12:26,900 --> 18:12:31,760
+number players recent winner,
+once a lottery now will confirm
+
+17933
+18:12:32,210 --> 18:12:35,630
+transaction complete number of
+players has gone up and we have
+
+17934
+18:12:35,660 --> 18:12:38,960
+done it. Now this looks a lot
+nicer. It's clearly not perfect,
+
+17935
+18:12:38,960 --> 18:12:41,330
+but it's much easier to read
+than kind of that lump that we
+
+17936
+18:12:41,330 --> 18:12:43,370
+had before. And the reason I
+wanted to show you this was
+
+17937
+18:12:43,370 --> 18:12:46,520
+really just kind of giving you
+your footholds for making these
+
+17938
+18:12:46,520 --> 18:12:49,580
+look a little bit nicer. This
+definitely isn't a CSS course.
+
+17939
+18:12:52,280 --> 18:12:56,540
+Oh, wow. Okay, this is
+phenomenal. We have an app that
+
+17940
+18:12:56,540 --> 18:12:59,720
+we really like. And we're like,
+you know what, we want to deploy
+
+17941
+18:12:59,720 --> 18:13:02,540
+this bad, Larry, let's talk
+about how we can deploy this,
+
+17942
+18:13:02,570 --> 18:13:04,820
+this section is going to be
+optional, okay, because I'm
+
+17943
+18:13:04,820 --> 18:13:06,770
+going to deploy something to
+rank B and deploying to test
+
+17944
+18:13:06,770 --> 18:13:09,440
+sets can take a long time. So
+we're going to deploy our
+
+17945
+18:13:09,440 --> 18:13:12,770
+contracts to rink B. And then
+we're going to deploy our
+
+17946
+18:13:12,770 --> 18:13:16,670
+website to a hosting provider.
+So first, let's talk about
+
+17947
+18:13:16,670 --> 18:13:19,760
+hosting providers for a quick
+second, if we want to host our
+
+17948
+18:13:19,760 --> 18:13:22,370
+beautiful website that we just
+created, there are ways to
+
+17949
+18:13:22,370 --> 18:13:26,300
+deploy it using things like for
+cell or Google Cloud, or AWS.
+
+17950
+18:13:26,390 --> 18:13:28,910
+Nettle. Phi is another really
+popular one there, all these
+
+17951
+18:13:28,910 --> 18:13:31,820
+different places that we can
+deploy our application. Now, the
+
+17952
+18:13:31,820 --> 18:13:34,820
+thing about these though, is
+that these are all centralized
+
+17953
+18:13:34,820 --> 18:13:37,520
+deployment places, having a
+centralized deployment
+
+17954
+18:13:37,520 --> 18:13:40,550
+application can still be
+incredibly important, right? If
+
+17955
+18:13:40,550 --> 18:13:42,950
+we look at ether scan for a
+second ether scan is a
+
+17956
+18:13:42,950 --> 18:13:45,440
+centralized application right at
+the end of the day, but it's
+
+17957
+18:13:45,440 --> 18:13:48,230
+still one that we've been using
+a lot. However, if we want to
+
+17958
+18:13:48,230 --> 18:13:50,990
+have a front end that's
+decentralized. Well, that's a
+
+17959
+18:13:50,990 --> 18:13:53,750
+little bit harder. The more
+important thing for us is that
+
+17960
+18:13:53,750 --> 18:13:56,030
+our back end, our smart
+contracts are decentralized,
+
+17961
+18:13:56,030 --> 18:13:58,220
+right? That's the most important
+thing because that will give
+
+17962
+18:13:58,220 --> 18:14:00,590
+users the ability to interact
+with our logic in a
+
+17963
+18:14:00,590 --> 18:14:03,620
+decentralized way. But maybe we
+also want our front ends
+
+17964
+18:14:03,620 --> 18:14:07,040
+decentralized. Now at some point
+we will still use a centralized
+
+17965
+18:14:07,040 --> 18:14:10,550
+service Like VSL to deploy an
+application, and I'll show you
+
+17966
+18:14:10,550 --> 18:14:13,700
+why when we get there, there's
+some features that right now,
+
+17967
+18:14:14,000 --> 18:14:16,760
+they're really just hard to do
+without like a really solid
+
+17968
+18:14:16,760 --> 18:14:20,300
+centralized back end. What's
+important to keep in mind is
+
+17969
+18:14:20,300 --> 18:14:24,080
+that our back end, the logic of
+our contract is on a
+
+17970
+18:14:24,080 --> 18:14:28,580
+decentralized blockchain. So
+even if we host the front end on
+
+17971
+18:14:28,580 --> 18:14:32,420
+a centralized hosting provider,
+using some type of centralized
+
+17972
+18:14:32,450 --> 18:14:36,800
+database to make the front end
+easier to work with, the logic
+
+17973
+18:14:36,800 --> 18:14:39,260
+of the application is
+decentralized. And that's the
+
+17974
+18:14:39,260 --> 18:14:42,380
+most important piece. So I'm
+going to give you some tools
+
+17975
+18:14:42,410 --> 18:14:46,670
+later on, and how to introduce
+more of these feature richness.
+
+17976
+18:14:46,910 --> 18:14:50,840
+If you choose to do so doing so
+will add a centralized component
+
+17977
+18:14:50,870 --> 18:14:53,240
+on your front end. And it's
+something to keep in mind,
+
+17978
+18:14:53,240 --> 18:14:56,510
+depending on how you want your
+architecture. So when doing that
+
+17979
+18:14:56,510 --> 18:15:00,080
+just be absolutely sure that the
+smart contracts on the back end
+
+17980
+18:15:00,350 --> 18:15:04,400
+are deployed are decentralized
+on one of these blockchains.
+
+17981
+18:15:04,580 --> 18:15:07,580
+Now, we'll learn about some of
+those centralized ways to do
+
+17982
+18:15:07,580 --> 18:15:11,480
+that in a later section. For
+now, let's learn how to deploy
+
+17983
+18:15:11,480 --> 18:15:14,030
+this front end in a more
+decentralized way.
+
+17984
+18:15:16,640 --> 18:15:20,810
+And the tool that we're going to
+use is a tool called IPFS. Now,
+
+17985
+18:15:20,810 --> 18:15:24,050
+let me explain a little bit
+about how IPFS works. It's this
+
+17986
+18:15:24,080 --> 18:15:29,390
+distributed decentralized data
+structure. That's not exactly a
+
+17987
+18:15:29,390 --> 18:15:32,600
+blockchain. But it's similar to
+a blockchain. There's no mining,
+
+17988
+18:15:32,600 --> 18:15:35,540
+though. But there is pinning
+data, you can add data to this.
+
+17989
+18:15:35,540 --> 18:15:38,210
+So let me explain how this
+actually works. And you can read
+
+17990
+18:15:38,210 --> 18:15:40,730
+how this works on the site,
+there's going to be a link to
+
+17991
+18:15:40,730 --> 18:15:42,950
+this and the GitHub repo
+associated with this course. But
+
+17992
+18:15:42,980 --> 18:15:46,400
+we give you my basic take on it.
+So we have our code, or our
+
+17993
+18:15:46,400 --> 18:15:50,810
+file, or whatever it is, right,
+we have some piece of data. Now
+
+17994
+18:15:50,810 --> 18:15:53,960
+as we know, when you really have
+anything, you can hash that
+
+17995
+18:15:53,960 --> 18:15:57,020
+thing, you can hash that data,
+right, so you can get a unique
+
+17996
+18:15:57,050 --> 18:15:59,870
+output. So and that's actually
+the first thing that IPFS does.
+
+17997
+18:16:00,140 --> 18:16:04,580
+It hashes our data to get a
+unique hash, that only points to
+
+17998
+18:16:04,580 --> 18:16:09,410
+that data. Yes, a massive code
+file a ton of text. Yes, you can
+
+17999
+18:16:09,410 --> 18:16:13,850
+encode all of that into a single
+hash function, your IPFS node
+
+18000
+18:16:13,850 --> 18:16:17,810
+does this hashing for you. And
+every single IPFS node on the
+

@@ -1,0 +1,4995 @@
+16001
+16:17:19,879 --> 16:17:25,669
+do assert dot equal, this should
+be a winner ending balance. That
+
+16002
+16:17:25,669 --> 16:17:32,329
+to string should be equal to
+winner starting balance, add
+
+16003
+16:17:34,219 --> 16:17:38,929
+raffle entrance fee.to string.
+So if we look down here, they
+
+16004
+16:17:38,929 --> 16:17:42,139
+enter the raffle we check their
+starting balance right after
+
+16005
+16:17:42,139 --> 16:17:45,109
+they enter. And they basically
+should just get that raffle
+
+16006
+16:17:45,109 --> 16:17:48,529
+entrance fee back right because
+they are the only ones who have
+
+16007
+16:17:48,529 --> 16:17:51,049
+entered this raffle. And then we
+can do one more assert, do
+
+16008
+16:17:51,049 --> 16:17:56,209
+assert that the ending timestamp
+is greater than the starting
+
+16009
+16:17:56,239 --> 16:18:00,709
+timestamp. And then we'll of
+course, say resolve. So this all
+
+16010
+16:18:00,709 --> 16:18:04,759
+goes well, we resolve. If
+there's an issue with any of
+
+16011
+16:18:04,759 --> 16:18:07,129
+these asserts, we're going to
+catch those errors and we're
+
+16012
+16:18:07,129 --> 16:18:09,949
+going to reject and this is
+going to be false. And this
+
+16013
+16:18:09,949 --> 16:18:12,679
+whole test is gonna go ah, there
+was an issue, we now have a
+
+16014
+16:18:12,679 --> 16:18:15,799
+staging test that looks really
+good here. Let's try
+
+16015
+16:18:15,800 --> 16:18:22,940
+this out. Let's try our staging
+test out from start to finish.
+
+16016
+16:18:23,000 --> 16:18:27,350
+So now in order for us to test
+this staging test, from end to
+
+16017
+16:18:27,350 --> 16:18:30,440
+end, you first going to need to
+get our sub ID for the
+
+16018
+16:18:30,440 --> 16:18:32,600
+channeling fear F then we're
+going to need to deploy our
+
+16019
+16:18:32,600 --> 16:18:35,960
+contract using the sub ID, we're
+going to need to register the
+
+16020
+16:18:35,960 --> 16:18:39,560
+contract with chain link VRF.
+And it's somebody we're going to
+
+16021
+16:18:39,590 --> 16:18:42,260
+then need to register it with
+chain link keepers. And then of
+
+16022
+16:18:42,260 --> 16:18:45,140
+course, we're going to run the
+staging tests. So let's do it.
+
+16023
+16:18:45,350 --> 16:18:48,200
+So first thing we're going to
+need to do is what? Get our sub
+
+16024
+16:18:48,200 --> 16:18:51,110
+ID for chain link VRF. Okay,
+great. So we're going to come
+
+16025
+16:18:51,110 --> 16:18:54,920
+over to VRF dot chain dot link.
+And we're going to need to
+
+16026
+16:18:54,920 --> 16:18:58,850
+create a new subscription. If we
+don't have enough rink B eath.
+
+16027
+16:18:58,940 --> 16:19:02,540
+Let's we want to head over to
+the full blockchain solidity
+
+16028
+16:19:02,540 --> 16:19:05,030
+course, here, we're going to
+scroll down. And we're going to
+
+16029
+16:19:05,030 --> 16:19:08,030
+look for the recommended test
+and here, which is ranked v. And
+
+16030
+16:19:08,030 --> 16:19:11,120
+we're going to use the faucets
+link to get some Rigby link, run
+
+16031
+16:19:11,120 --> 16:19:15,410
+Fosses dot chain dot link, let's
+switch over from COVID to a
+
+16032
+16:19:15,410 --> 16:19:18,890
+cerium. Rigby, we know we're
+going to need some link and some
+
+16033
+16:19:18,920 --> 16:19:23,900
+eath. So let's just go ahead and
+get both. Alright, great now
+
+16034
+16:19:23,900 --> 16:19:26,780
+that our transaction has gone
+through, let's just double check
+
+16035
+16:19:26,780 --> 16:19:30,230
+our wallet here. And it looks
+like we do indeed have Ethereum
+
+16036
+16:19:30,230 --> 16:19:33,140
+here. And if you don't see the
+link, you can head over to link
+
+16037
+16:19:33,140 --> 16:19:35,960
+token contracts, Link token
+contracts in the chain link
+
+16038
+16:19:35,960 --> 16:19:39,140
+documentation. We'll scroll down
+to Rigby, we'll grab this
+
+16039
+16:19:39,140 --> 16:19:43,730
+contract address import tokens
+and we'll paste it in here. Add
+
+16040
+16:19:43,730 --> 16:19:48,050
+Custom tokens, import tokens.
+Great. Now I can see my eath and
+
+16041
+16:19:48,050 --> 16:19:51,440
+my link here, perfect. We have
+some eath we have some link,
+
+16042
+16:19:51,560 --> 16:19:53,720
+let's head over to V REF
+subscription management. And
+
+16043
+16:19:53,720 --> 16:19:56,420
+we're going to create a new
+subscription. Again, we could
+
+16044
+16:19:56,420 --> 16:19:58,550
+totally do this
+programmatically, because the
+
+16045
+16:19:58,550 --> 16:20:02,090
+user interface here is only
+helping us facilitate call
+
+16046
+16:20:02,090 --> 16:20:05,450
+contracts to the registration
+contract that's completely
+
+16047
+16:20:05,450 --> 16:20:07,790
+decentralized and on chain. So
+let's go ahead and create
+
+16048
+16:20:07,790 --> 16:20:10,850
+subscription will create
+subscription will confirm the
+
+16049
+16:20:10,850 --> 16:20:14,780
+transaction and Metamask on the
+Rinkeby network will do a little
+
+16050
+16:20:14,780 --> 16:20:17,540
+bit of wading in great once it's
+gone through, you can go ahead
+
+16051
+16:20:17,540 --> 16:20:20,150
+and click the add funds button.
+I'm going to show you what it
+
+16052
+16:20:20,150 --> 16:20:23,360
+looks like if you accidentally
+refresh and jump off though. So
+
+16053
+16:20:23,360 --> 16:20:26,690
+if you refresh and you go back
+to veer off the chain dot link,
+
+16054
+16:20:26,840 --> 16:20:29,870
+you should have a new active
+subscription. And you'll see
+
+16055
+16:20:29,870 --> 16:20:33,410
+this number here. If you click
+on it, this is your subscription
+
+16056
+16:20:33,440 --> 16:20:38,120
+ID great. So we can actually
+take this, come back to our code
+
+16057
+16:20:38,210 --> 16:20:41,900
+into our helper Hardhead config.
+And we can paste our
+
+16058
+16:20:41,900 --> 16:20:45,830
+subscription ID under
+subscription ID for our Rinkeby
+
+16059
+16:20:45,860 --> 16:20:49,040
+network here. Awesome. Now that
+we have a subscription we can
+
+16060
+16:20:49,040 --> 16:20:52,280
+see it's not funded with any
+link. So we don't have any
+
+16061
+16:20:52,280 --> 16:20:55,970
+Oracle gas here. And we don't
+have any consumers. Right our
+
+16062
+16:20:55,970 --> 16:20:59,600
+consumer is going to be a raffle
+or a lottery contract. So let's
+
+16063
+16:20:59,600 --> 16:21:02,240
+add some funds first and we
+don't need to add A whole lot
+
+16064
+16:21:02,240 --> 16:21:05,060
+because we're only going to be
+testing once. So let's go just
+
+16065
+16:21:05,060 --> 16:21:08,240
+go ahead and add to link here,
+this number might change
+
+16066
+16:21:08,240 --> 16:21:10,970
+depending on different costs of
+the test nets and how much link
+
+16067
+16:21:10,970 --> 16:21:13,520
+token there's available. So if
+you're actually working on a
+
+16068
+16:21:13,520 --> 16:21:16,580
+main net, be sure to head over
+Doc's touching that link EVM
+
+16069
+16:21:16,580 --> 16:21:20,210
+chains contract addresses, you
+can read more about the costs
+
+16070
+16:21:20,240 --> 16:21:22,700
+some of these different chains,
+so you can figure out exactly
+
+16071
+16:21:22,700 --> 16:21:25,340
+how much to put in here. And if
+you go to the full blockchain
+
+16072
+16:21:25,340 --> 16:21:29,480
+solidity course, Jas, we can
+scroll down to Lesson Nine,
+
+16073
+16:21:29,510 --> 16:21:32,990
+there's a recommended link
+amounts or rinky saving tests
+
+16074
+16:21:33,080 --> 16:21:35,180
+for chain link VRF. For now
+we're going to put two for
+
+16075
+16:21:35,180 --> 16:21:37,490
+keepers, we're going to put
+eight, but feel free to refer to
+
+16076
+16:21:37,490 --> 16:21:40,160
+here so you know how much to put
+in. So let's go ahead and
+
+16077
+16:21:40,160 --> 16:21:43,340
+confirm, we're going to approve
+adding funds here, go ahead and
+
+16078
+16:21:43,340 --> 16:21:47,270
+confirm. And we're now funding
+our subscription to so we can
+
+16079
+16:21:47,270 --> 16:21:50,300
+pay that Oracle gas to get our
+random numbers. Great. And once
+
+16080
+16:21:50,300 --> 16:21:53,390
+we're funded, we can close it,
+we'll do a little refresh. And
+
+16081
+16:21:53,390 --> 16:21:56,720
+we can see the balance is now to
+link when we don't have any
+
+16082
+16:21:56,720 --> 16:22:00,980
+consumers perfect. So we've got
+our sub ID, we funded it. Now
+
+16083
+16:22:01,010 --> 16:22:05,120
+let's go ahead and deploy our
+contract. And we already know
+
+16084
+16:22:05,450 --> 16:22:08,570
+that we should be all good for
+deploying our contract, we go to
+
+16085
+16:22:08,570 --> 16:22:12,290
+our Dotty and V will need to add
+all of those same parameters
+
+16086
+16:22:12,320 --> 16:22:14,840
+from our previous projects,
+we'll need to shrink the RPC
+
+16087
+16:22:14,840 --> 16:22:18,770
+URL, we'll need our private key.
+If we want to verify we'll need
+
+16088
+16:22:18,770 --> 16:22:22,040
+our ether scan API key. And if
+we want to do gas output, we'll
+
+16089
+16:22:22,040 --> 16:22:25,100
+need our coin market cap API
+key. So let's make sure we have
+
+16090
+16:22:25,100 --> 16:22:28,070
+all that. And we'll look at our
+deploy script. Once again, just
+
+16091
+16:22:28,070 --> 16:22:31,220
+real quick look at our helper
+hardcat config just real quick,
+
+16092
+16:22:31,220 --> 16:22:34,040
+and it looks like we do indeed
+have everything in here. And we
+
+16093
+16:22:34,040 --> 16:22:36,260
+should just be able to deploy it
+in one command.
+
+16094
+16:22:40,369 --> 16:22:44,659
+So we should be able to do yarn,
+hard hat or just h h again,
+
+16095
+16:22:44,839 --> 16:22:51,139
+ploy, dash dash network Rinkeby.
+Let's go try this out. All
+
+16096
+16:22:51,139 --> 16:22:53,569
+right, it looks like we've
+compiled successfully, we've
+
+16097
+16:22:53,569 --> 16:22:57,259
+deployed it successfully. And
+we've even verified it, we can
+
+16098
+16:22:57,259 --> 16:23:00,829
+go and open it up on Rinku ether
+scan. And we can see our code
+
+16099
+16:23:00,829 --> 16:23:04,309
+here has been verified. And it's
+looking beautiful. We can read
+
+16100
+16:23:04,309 --> 16:23:07,009
+from it, which is great. We can
+see all these commands here now
+
+16101
+16:23:07,009 --> 16:23:09,709
+that it's verified. And if we
+look at the Git raffle state, we
+
+16102
+16:23:09,709 --> 16:23:12,319
+should indeed see that it's
+open, right, and it's going to
+
+16103
+16:23:12,319 --> 16:23:16,009
+stay open until somebody ends
+the raffle and updates the
+
+16104
+16:23:16,009 --> 16:23:19,189
+amount of eath that the contract
+actually has. Now that we've
+
+16105
+16:23:19,189 --> 16:23:22,369
+deployed a contract using that
+sub ID, we need to register the
+
+16106
+16:23:22,369 --> 16:23:25,639
+contract with chain link V REF.
+And with chain link keepers. So
+
+16107
+16:23:25,639 --> 16:23:29,659
+we need to add this consumer
+does tell chinley VRF. Hey, this
+
+16108
+16:23:29,659 --> 16:23:31,789
+is the contract that you're
+looking for now. So we're gonna
+
+16109
+16:23:31,789 --> 16:23:34,909
+go back to V REF dot chain dot
+link, and we're going to grab
+
+16110
+16:23:34,909 --> 16:23:38,089
+this contract address, and we're
+going to add it as a consumer,
+
+16111
+16:23:38,149 --> 16:23:40,639
+your subscription is ready, you
+can now add consumers we're
+
+16112
+16:23:40,639 --> 16:23:43,909
+gonna add consumer. And again,
+this website is just here to
+
+16113
+16:23:43,909 --> 16:23:47,059
+help facilitate us interacting
+with the contract. So we're
+
+16114
+16:23:47,059 --> 16:23:49,729
+going to approve that user,
+we'll go ahead and confirm and
+
+16115
+16:23:49,729 --> 16:23:52,189
+the transaction is going
+through. While we wait for this
+
+16116
+16:23:52,189 --> 16:23:56,689
+to go through, we can go to
+keepers dot chain dot link, and
+
+16117
+16:23:56,689 --> 16:23:59,779
+do the same thing work with the
+user interface to register a new
+
+16118
+16:23:59,779 --> 16:24:04,369
+upkeep. So we'll go ahead and
+add our email Hardhead free code
+
+16119
+16:24:04,369 --> 16:24:09,949
+camp@gmail.com. We'll call this
+raffle upkeep. We'll paste our
+
+16120
+16:24:09,949 --> 16:24:13,249
+upkeep address in here we have
+our admin address, and you can
+
+16121
+16:24:13,249 --> 16:24:16,129
+ignore this bit right here. For
+gas limit, this is going to be
+
+16122
+16:24:16,129 --> 16:24:19,399
+the gas limit of the PErforM
+upkeep function. If we did our
+
+16123
+16:24:19,429 --> 16:24:22,399
+gas estimator, we could just
+check to see how much that
+
+16124
+16:24:22,429 --> 16:24:25,069
+perform upkeep costs. But for
+now, I'm just going to put
+
+16125
+16:24:25,099 --> 16:24:29,269
+500,000 That's probably
+overkill, but that's fine. Check
+
+16126
+16:24:29,269 --> 16:24:32,419
+data, we're going to keep blank
+because again, our checkup keep
+
+16127
+16:24:32,419 --> 16:24:35,239
+doesn't take anything. And then
+starting balance, we're going to
+
+16128
+16:24:35,239 --> 16:24:38,479
+put as eight. And if you forget
+to put a starting balance here,
+
+16129
+16:24:38,479 --> 16:24:41,749
+you can always find it later. So
+let's go ahead and register,
+
+16130
+16:24:42,559 --> 16:24:45,649
+we're gonna get a Metamask pop
+up, we're gonna go ahead and hit
+
+16131
+16:24:45,649 --> 16:24:50,029
+Confirm. And we can go back to
+our VRF and see that it's indeed
+
+16132
+16:24:50,029 --> 16:24:53,359
+been added and awesome, we now
+have a consumer on our VRF. So
+
+16133
+16:24:53,359 --> 16:24:55,819
+now let's just wait for our
+keepers to go through upkeep
+
+16134
+16:24:55,819 --> 16:24:59,539
+registration requests submitted
+successfully on domain net, you
+
+16135
+16:24:59,539 --> 16:25:02,239
+might actually have to wait a
+little bit for your request to
+
+16136
+16:25:02,239 --> 16:25:04,819
+go through, but I'll test that
+it should automatically go
+
+16137
+16:25:04,819 --> 16:25:08,509
+through. Now if we go back to
+keepers dot chain dot link, we
+
+16138
+16:25:08,509 --> 16:25:12,409
+should now see we now if we
+scroll down to my upkeeps We
+
+16139
+16:25:12,409 --> 16:25:15,859
+have a raffle upkeep here and I
+have to because I accidentally
+
+16140
+16:25:15,919 --> 16:25:18,439
+use the same account that I
+tested on, you can ignore the
+
+16141
+16:25:18,439 --> 16:25:21,169
+two you'll have one but this is
+the one that we just created.
+
+16142
+16:25:21,289 --> 16:25:24,589
+And we can actually see what our
+balances and then what the
+
+16143
+16:25:24,589 --> 16:25:26,809
+minimum balance for this
+actually is. So it looks like
+
+16144
+16:25:26,839 --> 16:25:30,499
+eight Link was a little bit too
+low. So let's go back to Fosses
+
+16145
+16:25:30,499 --> 16:25:35,959
+dot chain dot link slash rinky.
+Now that we have some more link,
+
+16146
+16:25:35,989 --> 16:25:38,899
+we can come back to our raffle
+upkeep. And we go ahead and hit
+
+16147
+16:25:38,899 --> 16:25:43,009
+add funds. And we'll add just
+three. And we'll go ahead and
+
+16148
+16:25:43,009 --> 16:25:47,239
+confirm we first need to give
+permission to spend. We approved
+
+16149
+16:25:47,239 --> 16:25:50,179
+our link transfer now let's
+actually transfer the link to
+
+16150
+16:25:50,179 --> 16:25:53,569
+the contract and alright funds
+added successfully. So now let's
+
+16151
+16:25:53,569 --> 16:25:56,659
+do a little refresh. Now we no
+longer see that message saying
+
+16152
+16:25:56,659 --> 16:25:59,539
+that it's underfunded and we
+have our balance and we can see
+
+16153
+16:25:59,539 --> 16:26:02,359
+that it's more than the minimum
+balance. We have See the history
+
+16154
+16:26:02,359 --> 16:26:05,509
+that we just funded this twice.
+Once this actually kicks off,
+
+16155
+16:26:05,539 --> 16:26:09,079
+we'll see activity type will be
+like perform upkeep or something
+
+16156
+16:26:09,109 --> 16:26:12,259
+got our sub ID, we've deployed
+the contract, we've registered
+
+16157
+16:26:12,259 --> 16:26:14,389
+with chain link V REF, we've
+registered it with chain link
+
+16158
+16:26:14,389 --> 16:26:18,079
+keepers. Now all we need to do
+is run the staging tests. Now
+
+16159
+16:26:18,079 --> 16:26:20,899
+running our staging test is
+essentially going to be the same
+
+16160
+16:26:20,989 --> 16:26:24,589
+as us calling this enter script,
+right, because all we're doing
+
+16161
+16:26:24,679 --> 16:26:27,349
+in our staging test is entering
+the lottery. And then we just
+
+16162
+16:26:27,349 --> 16:26:29,839
+have a whole bunch of validators
+that we're running to make sure
+
+16163
+16:26:29,839 --> 16:26:33,409
+that things are doing as we
+expect, since our contract is
+
+16164
+16:26:33,409 --> 16:26:37,069
+actually verified, what we could
+do on Rigby ether scan is we can
+
+16165
+16:26:37,069 --> 16:26:39,739
+actually go to this right
+contract section of the
+
+16166
+16:26:39,739 --> 16:26:44,659
+contract. And we could even
+connect our wallets to it. And
+
+16167
+16:26:44,659 --> 16:26:48,079
+once this turns from red to
+green, after a little refresh,
+
+16168
+16:26:48,139 --> 16:26:51,409
+we'll now see that it's green,
+it's connected, we can even call
+
+16169
+16:26:51,409 --> 16:26:55,279
+functions on this contract
+ourself, so we could enter the
+
+16170
+16:26:55,279 --> 16:26:58,309
+raffle ourself, we would add,
+you know, however much eath to
+
+16171
+16:26:58,309 --> 16:27:01,069
+enter the raffle, and that would
+kick off the keepers in the VRF,
+
+16172
+16:27:01,069 --> 16:27:03,889
+as well. So we could call it via
+ether scan, we could obviously
+
+16173
+16:27:03,889 --> 16:27:06,559
+call it via our staging tests
+here, we could call it via our
+
+16174
+16:27:06,559 --> 16:27:09,109
+scripts, we could call it via
+the console, there's a ton of
+
+16175
+16:27:09,109 --> 16:27:12,949
+ways to actually do this. But
+moment of truth here, we're
+
+16176
+16:27:12,949 --> 16:27:15,949
+gonna run our staging tests,
+which is going to have us enter
+
+16177
+16:27:15,949 --> 16:27:19,609
+the lottery, and set up a
+listener to make sure that
+
+16178
+16:27:19,609 --> 16:27:23,089
+everything works correctly. And
+additionally, we'll see on our
+
+16179
+16:27:23,089 --> 16:27:26,839
+raffle upkeep history, we'll see
+a transaction go through, and
+
+16180
+16:27:26,839 --> 16:27:30,769
+then we'll see a transaction on
+our chain like VRF as well. Are
+
+16181
+16:27:30,769 --> 16:27:32,719
+you ready? I sure am.
+
+16182
+16:27:32,900 --> 16:27:40,250
+Let's do this. So we'll do h h,
+test, dash dash network, rink B.
+
+16183
+16:27:40,400 --> 16:27:43,220
+And that should be all we need
+to do. In our state and tests,
+
+16184
+16:27:43,220 --> 16:27:46,040
+we probably should have added
+some console dot logs in here to
+
+16185
+16:27:46,040 --> 16:27:49,160
+tell us hey, to tell us what
+steps that we're on with each.
+
+16186
+16:27:49,400 --> 16:27:52,640
+But we forgot to. So if you
+follow along with the repo
+
+16187
+16:27:52,640 --> 16:27:55,160
+associated with this, we've
+added the console dot logs in
+
+16188
+16:27:55,160 --> 16:27:58,700
+the test there. But all right,
+if we go to the ether scan for
+
+16189
+16:27:58,700 --> 16:28:01,580
+this contract, we go back to the
+rink the ether scan for this, we
+
+16190
+16:28:01,580 --> 16:28:04,730
+paste in that address, the first
+step that we're doing in this
+
+16191
+16:28:04,730 --> 16:28:08,210
+test, of course, while we're
+setting up this listener, the
+
+16192
+16:28:08,210 --> 16:28:11,210
+first transaction is going to be
+entering the raffle that's going
+
+16193
+16:28:11,210 --> 16:28:13,970
+to kick everything off. Right.
+So if we refresh a little bit on
+
+16194
+16:28:13,970 --> 16:28:17,720
+ether scan, we do indeed see
+we've entered the raffle. And
+
+16195
+16:28:17,720 --> 16:28:22,400
+we've updated the balance of the
+raffle. Okay, awesome. So raffle
+
+16196
+16:28:22,400 --> 16:28:26,600
+has been entered. Now then what
+happens? Well, if the raffle has
+
+16197
+16:28:26,600 --> 16:28:30,140
+been entered, if we go to raffle
+dot soul, if it's open, if
+
+16198
+16:28:30,140 --> 16:28:32,540
+enough time has passed, if
+there's players and it has a
+
+16199
+16:28:32,540 --> 16:28:36,110
+balance, which we just checked
+does, this will get kicked off
+
+16200
+16:28:36,110 --> 16:28:39,530
+by the keepers. So if we go to
+the keepers, and we do a little
+
+16201
+16:28:39,530 --> 16:28:43,190
+refresh here, after a little
+bit, we do indeed see checkup
+
+16202
+16:28:43,190 --> 16:28:46,280
+key passed and we see a perform
+upkeep having gone through
+
+16203
+16:28:46,670 --> 16:28:50,960
+great, what does perform upkeep
+to well perform upkeep calls the
+
+16204
+16:28:50,960 --> 16:28:55,220
+chainlink VRF. So now if we go
+over to chainlink, VRF, we do a
+
+16205
+16:28:55,220 --> 16:28:59,900
+refresh here, go down to
+history, we do indeed see one of
+
+16206
+16:28:59,900 --> 16:29:02,060
+the transactions has gone
+through we can see the
+
+16207
+16:29:02,060 --> 16:29:05,030
+transaction hash, the link
+spent, etc. And now if we go
+
+16208
+16:29:05,030 --> 16:29:08,480
+back to our tests, we do indeed
+see raffle unit tests for friend
+
+16209
+16:29:08,510 --> 16:29:12,830
+fulfill random request winner
+pick event fired. And this means
+
+16210
+16:29:12,830 --> 16:29:16,460
+that we just went through this
+entire process of having a
+
+16211
+16:29:16,460 --> 16:29:20,090
+perfectly truly decentralized
+raffle work on an actual
+
+16212
+16:29:20,090 --> 16:29:22,460
+Testament with our integration
+tests working correctly.
+
+16213
+16:29:22,490 --> 16:29:25,130
+Absolutely massive, huge
+congratulations if you've made
+
+16214
+16:29:25,130 --> 16:29:27,230
+it this far. And if you just
+walk through the integration
+
+16215
+16:29:27,230 --> 16:29:30,320
+test with me now bounce over
+contract has now been reset to
+
+16216
+16:29:30,320 --> 16:29:33,560
+zero because our wallet address
+just won the lottery right and
+
+16217
+16:29:33,560 --> 16:29:36,890
+got the money back. Now you
+might be wondering, Hey, I see
+
+16218
+16:29:36,890 --> 16:29:40,580
+the Create raffle function. And
+I see enter raffle but I don't
+
+16219
+16:29:40,580 --> 16:29:43,550
+see didn't the chain link nodes
+just call perform upkeep and
+
+16220
+16:29:43,550 --> 16:29:46,880
+fulfill random words, I'll come
+no matter how often I refresh, I
+
+16221
+16:29:46,880 --> 16:29:49,430
+don't see those transactions
+here. Well, those are actually
+
+16222
+16:29:49,430 --> 16:29:52,730
+going to be considered internal
+transactions fulfill random
+
+16223
+16:29:52,730 --> 16:29:55,910
+words, it's actually called
+through the VRF coordinator and
+
+16224
+16:29:55,910 --> 16:29:59,510
+the VRF coordinator contract
+then calls for full randomness.
+
+16225
+16:29:59,840 --> 16:30:03,320
+So we can go to internal
+transactions. And one of these
+
+16226
+16:30:03,320 --> 16:30:06,110
+transactions is going to be the
+transaction to the VRF
+
+16227
+16:30:06,110 --> 16:30:10,220
+coordinator contract, which
+calls our contract. Same thing
+
+16228
+16:30:10,220 --> 16:30:13,580
+with perform upkeep. Perform
+upkeep, the chain link nodes
+
+16229
+16:30:13,580 --> 16:30:16,190
+actually call through the
+registry contract and then the
+
+16230
+16:30:16,190 --> 16:30:19,370
+registry contract calls perform
+upkeep. That's what we see here.
+
+16231
+16:30:19,550 --> 16:30:22,070
+And if we go through the
+internal transactions, we'll see
+
+16232
+16:30:22,070 --> 16:30:25,490
+him there. Now let's look at
+this enter raffle as well. And
+
+16233
+16:30:25,490 --> 16:30:28,880
+since we've learned about events
+and logs, we can actually go to
+
+16234
+16:30:28,910 --> 16:30:33,680
+the logs section now. And we can
+see our log or event being
+
+16235
+16:30:33,710 --> 16:30:37,190
+emitted here we can see the name
+raffle, enter, we can see the
+
+16236
+16:30:37,190 --> 16:30:40,610
+topic zero which is going to
+identify this entire event. And
+
+16237
+16:30:40,610 --> 16:30:44,600
+then we also see this number
+here which is what which is
+
+16238
+16:30:44,600 --> 16:30:48,170
+index topic, one address player
+and then there's no data
+
+16239
+16:30:48,170 --> 16:30:50,780
+associated with this right
+because we only have index
+
+16240
+16:30:50,780 --> 16:30:54,770
+parameters which again show up
+as topics so this is absolutely
+
+16241
+16:30:54,770 --> 16:31:01,370
+phenomenal. Wow, absolutely
+massive and we can rerun a unit
+
+16242
+16:31:01,370 --> 16:31:05,600
+test Just by hh test in this
+will only run our unit tests.
+
+16243
+16:31:06,080 --> 16:31:08,600
+And we can see that these are
+all passing as well, things are
+
+16244
+16:31:08,600 --> 16:31:12,590
+looking fantastic here. And we
+have just successfully created a
+
+16245
+16:31:12,620 --> 16:31:17,870
+verifiably random, autonomous,
+decentralized, raffle and or
+
+16246
+16:31:17,870 --> 16:31:21,470
+lottery deployed on the
+blockchain, you should be so
+
+16247
+16:31:21,470 --> 16:31:24,050
+excited right now. Now, I'm not
+going to show you how to push
+
+16248
+16:31:24,050 --> 16:31:26,900
+this up to GitHub. However, if
+you want to push this up to get
+
+16249
+16:31:26,900 --> 16:31:30,020
+up, and again, tweet at me,
+tweet at chainlink tweet at Free
+
+16250
+16:31:30,020 --> 16:31:33,380
+Code Camp, please feel free to
+do so because you just did an
+
+16251
+16:31:33,380 --> 16:31:36,200
+amazing job getting this far.
+And if you're gonna want to push
+
+16252
+16:31:36,200 --> 16:31:38,750
+this up to GitHub, remember,
+we're going to want to put a dot
+
+16253
+16:31:38,750 --> 16:31:42,860
+Git ignore. In here, we add a
+ton of stuff like that VS code
+
+16254
+16:31:42,890 --> 16:31:47,000
+artifacts, cash deployments,
+known modules, etc. Type chain
+
+16255
+16:31:47,000 --> 16:31:51,410
+types, all this stuff, you can
+find a sample dot Git ignore, of
+
+16256
+16:31:51,410 --> 16:31:54,770
+course, in the GitHub repo
+associated with this, this is an
+
+16257
+16:31:54,770 --> 16:31:58,400
+advanced project, we did a lot
+of really advanced things here.
+
+16258
+16:31:58,730 --> 16:32:03,080
+And this is the section of the
+course, where I think at this
+
+16259
+16:32:03,080 --> 16:32:06,320
+point, you've got most of the
+fundamentals down. And now we're
+
+16260
+16:32:06,320 --> 16:32:08,150
+going to move into more front
+end. And we're going to move
+
+16261
+16:32:08,150 --> 16:32:11,210
+into more industry specific and
+more advanced topics that are
+
+16262
+16:32:11,210 --> 16:32:15,230
+really going to supercharge you
+and make you one of the masters
+
+16263
+16:32:15,230 --> 16:32:17,600
+of the blockchain in the smart
+contract realm. So huge
+
+16264
+16:32:17,600 --> 16:32:20,120
+congratulations, one more time,
+definitely go celebrate,
+
+16265
+16:32:20,120 --> 16:32:22,550
+definitely go for that walk,
+take a quick break, let
+
+16266
+16:32:22,550 --> 16:32:25,760
+everything we just learned
+settling your brain and get
+
+16267
+16:32:25,760 --> 16:32:26,810
+ready for the next one.
+
+16268
+16:32:39,980 --> 16:32:43,130
+Alright, now we're gonna go over
+the TypeScript edition of this
+
+16269
+16:32:43,130 --> 16:32:46,010
+lesson, we're gonna go a little
+bit quickly here, because we're
+
+16270
+16:32:46,010 --> 16:32:49,250
+not learning too much new stuff
+for this TypeScript edition. So
+
+16271
+16:32:49,340 --> 16:32:51,830
+if you want to just follow
+along, you can open up the repo
+
+16272
+16:32:51,830 --> 16:32:55,460
+here and use the TypeScript
+branch. One thing to note that
+
+16273
+16:32:55,460 --> 16:32:58,070
+is a little bit different is
+when we do our promise in our
+
+16274
+16:32:58,070 --> 16:33:01,460
+tests, we're doing a weight
+promise void, because we're not
+
+16275
+16:33:01,460 --> 16:33:04,070
+going to be returning anything
+with our promise here. But the
+
+16276
+16:33:04,070 --> 16:33:07,370
+rest is going to be exactly the
+same. We're going to have a hard
+
+16277
+16:33:07,370 --> 16:33:10,070
+hat dot config to TypeScript
+that's going to use imports.
+
+16278
+16:33:10,100 --> 16:33:13,940
+Once again, everything else is
+pretty much the same. We're
+
+16279
+16:33:13,940 --> 16:33:17,810
+going to export the config like
+we did last time. In our package
+
+16280
+16:33:17,810 --> 16:33:20,960
+dot JSON. Of course, we're going
+to have all of our TypeScript
+
+16281
+16:33:20,960 --> 16:33:23,900
+dependencies as well. And then
+our deploy scripts are going to
+
+16282
+16:33:23,900 --> 16:33:26,900
+follow that same functionality
+that we've used before. So now
+
+16283
+16:33:26,900 --> 16:33:30,710
+our deploy scripts use a type
+deploy function on our variables
+
+16284
+16:33:30,740 --> 16:33:34,940
+that we export at the bottom.
+And we also import the hard hat
+
+16285
+16:33:34,940 --> 16:33:37,610
+runtime environment type, which
+where we pull the deployments
+
+16286
+16:33:37,610 --> 16:33:40,730
+get named account and networks
+from in our tests. Of course,
+
+16287
+16:33:40,760 --> 16:33:44,270
+we're still importing the types
+of these contracts from type
+
+16288
+16:33:44,270 --> 16:33:47,690
+chain slash types, like you see
+here, like for example, raffle
+
+16289
+16:33:47,690 --> 16:33:51,290
+is going to be signed to raffle
+VRF coordinator V to mock is
+
+16290
+16:33:51,290 --> 16:33:54,500
+going to be signed to type VRF
+coordinator V to MK and if we
+
+16291
+16:33:54,500 --> 16:33:57,260
+wanted to deploy with these
+contract factories, we could as
+
+16292
+16:33:57,260 --> 16:33:59,120
+well. So those are going to be
+the main differences with
+
+16293
+16:33:59,120 --> 16:34:02,030
+TypeScript. There's not anything
+really new there. But again, if
+
+16294
+16:34:02,030 --> 16:34:04,130
+you want to follow along with
+TypeScript, and you want to code
+
+16295
+16:34:04,130 --> 16:34:06,590
+everything in TypeScript, and
+example is here for you
+
+16296
+16:34:10,520 --> 16:34:13,850
+All right, welcome back. I hope
+your break was absolutely
+
+16297
+16:34:13,850 --> 16:34:18,500
+fantastic because now we are
+getting into more advanced full
+
+16298
+16:34:18,500 --> 16:34:21,410
+stack slash front end
+development. We've done the back
+
+16299
+16:34:21,410 --> 16:34:24,170
+end development, we've created
+smart contracts, we created our
+
+16300
+16:34:24,170 --> 16:34:28,670
+lottery. In our last section, we
+have all this wonderful code
+
+16301
+16:34:28,670 --> 16:34:32,360
+that allows us to work with our
+own provably decentralized
+
+16302
+16:34:32,390 --> 16:34:35,330
+lottery. In order for regular
+everyday people to use our
+
+16303
+16:34:35,330 --> 16:34:39,020
+lottery, we're going to need to
+build a front end. Now
+
+16304
+16:34:39,020 --> 16:34:42,350
+previously, we learned to build
+a front end with raw HTML
+
+16305
+16:34:42,380 --> 16:34:46,100
+JavaScript, with our Funmi
+project, we created a front end
+
+16306
+16:34:46,100 --> 16:34:49,190
+with just pure HTML and
+JavaScript, just creating
+
+16307
+16:34:49,190 --> 16:34:51,830
+applications with HTML and
+JavaScript is great. And if
+
+16308
+16:34:51,830 --> 16:34:55,070
+that's what you want to do, you
+absolutely can. But doing it
+
+16309
+16:34:55,070 --> 16:34:58,580
+with those vanilla protocols has
+some limitations. And working
+
+16310
+16:34:58,580 --> 16:35:00,500
+with a framework, like what
+we're going to be working with
+
+16311
+16:35:00,500 --> 16:35:04,010
+in this section is going to make
+our lives a lot easier, we're
+
+16312
+16:35:04,010 --> 16:35:06,890
+going to be able to develop
+quicker, have more
+
+16313
+16:35:06,890 --> 16:35:10,610
+functionality, and do more in
+less time. As you remember back
+
+16314
+16:35:10,610 --> 16:35:13,760
+to the project wasn't really a
+fleshed out project, if you
+
+16315
+16:35:13,760 --> 16:35:16,490
+remember, it was just a bunch of
+buttons. And that was really it.
+
+16316
+16:35:16,490 --> 16:35:19,910
+So working with a framework is
+really going to enable us to put
+
+16317
+16:35:19,940 --> 16:35:23,510
+more features and add more
+styling to our applications
+
+16318
+16:35:23,690 --> 16:35:27,350
+really easy. Once again, the
+code for this entire section is
+
+16319
+16:35:27,350 --> 16:35:30,290
+located in our lesson and is
+located in this GitHub
+
+16320
+16:35:30,290 --> 16:35:33,410
+repository associated with the
+course. Now I have to put an
+
+16321
+16:35:33,410 --> 16:35:36,980
+asterisk here, as I've said many
+times, the front end sections of
+
+16322
+16:35:36,980 --> 16:35:39,860
+this course are not required,
+we're not going to learn
+
+16323
+16:35:39,860 --> 16:35:43,340
+anything new about the back end
+in this front end section. So if
+
+16324
+16:35:43,340 --> 16:35:45,650
+you don't care about building
+websites, all you want to do is
+
+16325
+16:35:45,650 --> 16:35:49,100
+learn the smart contract aspect
+of this course, you can skip
+
+16326
+16:35:49,130 --> 16:35:51,380
+these sections. But if you do
+want to learn how to build these
+
+16327
+16:35:51,410 --> 16:35:55,490
+front end applications, if you
+do want to give users and non
+
+16328
+16:35:55,490 --> 16:35:57,680
+developers the abilities to
+interact with our smart
+
+16329
+16:35:57,680 --> 16:36:00,860
+contracts, then please continue
+to watch. Now I also have to put
+
+16330
+16:36:00,860 --> 16:36:03,290
+an asterix here, because if you
+haven't worked with some of
+
+16331
+16:36:03,290 --> 16:36:06,680
+these frameworks before, the
+learning curve can seem a little
+
+16332
+16:36:06,680 --> 16:36:09,500
+bit steep. And as I've said many
+times, this isn't going to be a
+
+16333
+16:36:09,500 --> 16:36:12,050
+front end course that would take
+several more hours than what we
+
+16334
+16:36:12,050 --> 16:36:14,840
+want to do for this video. So if
+you've never done front end
+
+16335
+16:36:14,840 --> 16:36:17,660
+before, this is one of the
+sections where I do recommend
+
+16336
+16:36:18,020 --> 16:36:21,110
+you follow along with one of
+these optional sub lessons,
+
+16337
+16:36:21,110 --> 16:36:23,330
+we're not going to play them
+here. But if you follow along
+
+16338
+16:36:23,330 --> 16:36:25,520
+with one of these sub lessons,
+that will definitely be
+
+16339
+16:36:25,520 --> 16:36:28,100
+incredibly helpful. One of the
+videos that I have for the sub
+
+16340
+16:36:28,100 --> 16:36:31,880
+lessons is this video right
+here, how to connect your smart
+
+16341
+16:36:31,880 --> 16:36:35,420
+contracts to Metamask. And it
+shows a number of ways
+
+16342
+16:36:35,420 --> 16:36:37,880
+connecting your smart contracts
+and building kind of these these
+
+16343
+16:36:37,880 --> 16:36:41,360
+front ends. It does start with a
+raw HTML and JavaScript edition.
+
+16344
+16:36:41,360 --> 16:36:44,090
+So you can really get some more
+practice in here with HTML and
+
+16345
+16:36:44,090 --> 16:36:47,660
+JavaScript. And then it moves to
+index js ethers and a few other
+
+16346
+16:36:47,660 --> 16:36:50,720
+next Jas based applications.
+Doing it a few different ways
+
+16347
+16:36:50,720 --> 16:36:53,450
+will install a new some more
+insight on what you should be
+
+16348
+16:36:53,450 --> 16:36:56,120
+thinking about when you're
+approaching these. So this is
+
+16349
+16:36:56,120 --> 16:36:59,000
+absolutely a video to watch if
+you're new to front end
+
+16350
+16:36:59,000 --> 16:37:01,610
+development. Additionally, for
+this section, like I said, we're
+
+16351
+16:37:01,610 --> 16:37:03,950
+going to be using a framework.
+And in particular, we're going
+
+16352
+16:37:03,950 --> 16:37:07,850
+to be using the next Jas
+framework. Now. Next, Jas is a
+
+16353
+16:37:07,850 --> 16:37:11,210
+react based framework. React is
+a framework for building front
+
+16354
+16:37:11,210 --> 16:37:14,960
+end and full stack applications.
+Next, Jas is a framework on top
+
+16355
+16:37:14,990 --> 16:37:17,870
+of the React framework. So if
+you already know react, most of
+
+16356
+16:37:17,870 --> 16:37:20,840
+this is going to come very
+naturally to the reason that
+
+16357
+16:37:20,840 --> 16:37:24,740
+we're using React in next Jas is
+because React is easily as of
+
+16358
+16:37:24,740 --> 16:37:27,590
+right now one of the most
+popular frameworks and languages
+
+16359
+16:37:27,590 --> 16:37:30,350
+out there. And it's no surprise
+why we've got a little article
+
+16360
+16:37:30,350 --> 16:37:33,440
+in the GitHub repo titled Why
+you should use React js for web
+
+16361
+16:37:33,440 --> 16:37:36,230
+development, which we'll go into
+a little bit more. Some of the
+
+16362
+16:37:36,230 --> 16:37:38,960
+biggest applications like
+Facebook and Instagram use React
+
+16363
+16:37:38,960 --> 16:37:42,860
+js and a number of other Fortune
+500 companies and React js
+
+16364
+16:37:42,890 --> 16:37:46,130
+especially in the blockchain
+space is easily the most popular
+
+16365
+16:37:46,160 --> 16:37:49,730
+with protocols like uniswap, and
+Avi also using React Jas. Now
+
+16366
+16:37:49,730 --> 16:37:53,600
+the reason we're using this next
+Jas on top of React Jas is that
+
+16367
+16:37:53,720 --> 16:37:58,070
+next Jas, I think makes working
+with react much easier. And I
+
+16368
+16:37:58,070 --> 16:38:01,250
+want us to work with the easiest
+and most powerful framework out
+
+16369
+16:38:01,250 --> 16:38:04,880
+there. Next, Jas is also getting
+a ton of steam has some really
+
+16370
+16:38:04,880 --> 16:38:08,960
+advanced but in my mind easier
+to use features than just raw
+
+16371
+16:38:09,050 --> 16:38:11,330
+react. Now, like I said, if
+you've never worked with React
+
+16372
+16:38:11,330 --> 16:38:14,270
+before, if you've never worked
+with next Jas before, and you
+
+16373
+16:38:14,270 --> 16:38:16,730
+want to do a little brush up,
+definitely watch my video six
+
+16374
+16:38:16,730 --> 16:38:19,460
+ways to connect your depth to a
+wallet. And if you find yourself
+
+16375
+16:38:19,460 --> 16:38:21,650
+struggling with with this
+section, because the front end
+
+16376
+16:38:21,650 --> 16:38:25,190
+stuff doesn't really make sense.
+We also have a next Jas crash
+
+16377
+16:38:25,190 --> 16:38:27,740
+course in the GitHub repo
+associated with this course.
+
+16378
+16:38:28,040 --> 16:38:30,890
+It's about an hour long and it
+is absolutely phenomenal. Free
+
+16379
+16:38:30,890 --> 16:38:34,460
+Code Camp also has some next Jas
+crash courses. So if you're
+
+16380
+16:38:34,460 --> 16:38:37,340
+struggling with the front of it,
+go take it next Jas course, and
+
+16381
+16:38:37,340 --> 16:38:40,190
+then come back to this section
+or skip the front end sections
+
+16382
+16:38:40,190 --> 16:38:42,890
+all together, do the rest of the
+course of just the back end, and
+
+16383
+16:38:42,890 --> 16:38:45,050
+then come back and do these
+front end sections. We're going
+
+16384
+16:38:45,050 --> 16:38:48,350
+to show you the cutting edge
+ways to interact and work with
+
+16385
+16:38:48,350 --> 16:38:51,170
+your front end and then also
+deploy them. And if you follow
+
+16386
+16:38:51,170 --> 16:38:53,360
+along correctly, by the end of
+this, you'll have a website
+
+16387
+16:38:53,360 --> 16:38:56,480
+deployed that you can show off
+and you can send a link of it to
+
+16388
+16:38:56,510 --> 16:38:59,450
+your friends. And now I know we
+already showed you what this
+
+16389
+16:38:59,450 --> 16:39:01,880
+looks like but I'm going to show
+you it one more time just so we
+
+16390
+16:39:01,880 --> 16:39:04,460
+can walk through and see exactly
+what we're doing. So we're going
+
+16391
+16:39:04,460 --> 16:39:07,250
+to have this decentralized
+lottery where we can go ahead
+
+16392
+16:39:07,250 --> 16:39:10,550
+with can connect our wallet if
+not already connected. And we
+
+16393
+16:39:10,550 --> 16:39:13,880
+can switch, we can switch around
+between networks. And our app
+
+16394
+16:39:13,880 --> 16:39:16,940
+will actually recognize it and
+say, hey, the only supported
+
+16395
+16:39:16,940 --> 16:39:20,240
+chains that we're working with
+here are going to be 31337,
+
+16396
+16:39:20,270 --> 16:39:23,870
+which is localhost, or four,
+which is ring feed. And we'll
+
+16397
+16:39:23,870 --> 16:39:26,870
+learn how to add this validation
+into our application so that our
+
+16398
+16:39:26,870 --> 16:39:30,920
+app only works when we're on a
+chain that we want, then we can
+
+16399
+16:39:30,920 --> 16:39:33,920
+go ahead and interact with it.
+Normally, we can click a button
+
+16400
+16:39:33,920 --> 16:39:36,710
+Metamask will pop up, we can go
+ahead and confirm we'll get a
+
+16401
+16:39:36,710 --> 16:39:39,560
+little transaction notification
+saying that transaction is
+
+16402
+16:39:39,560 --> 16:39:43,340
+complete. And we'll get our
+front end updated. And then on
+
+16403
+16:39:43,340 --> 16:39:46,040
+the back end, we'll be able to
+see the chain link nodes and the
+
+16404
+16:39:46,040 --> 16:39:49,130
+Chinuch V REF do their work. And
+once they actually pick a
+
+16405
+16:39:49,130 --> 16:39:52,880
+winner, after a refresh, we'll
+be able to see that the back end
+
+16406
+16:39:52,910 --> 16:39:56,750
+node was updated, we do indeed
+have a previous winner. Awesome.
+
+16407
+16:39:56,960 --> 16:39:59,600
+Now, not only that, we're going
+to show you how to build this,
+
+16408
+16:39:59,600 --> 16:40:04,130
+but also, we're going to show
+you how to host it on an actual
+
+16409
+16:40:04,160 --> 16:40:07,790
+site. So you'll be able to push
+it up to your own blockchain.
+
+16410
+16:40:07,790 --> 16:40:11,510
+And additionally, we're gonna
+host it in a decentralized
+
+16411
+16:40:11,510 --> 16:40:14,090
+context. So this site that we
+have here is it's going to be
+
+16412
+16:40:14,090 --> 16:40:18,260
+hosted on a technology that
+allows us to host websites in
+
+16413
+16:40:18,260 --> 16:40:21,290
+decentralized contexts as well
+swore backends. And even our
+
+16414
+16:40:21,290 --> 16:40:25,580
+front ends can be hosted in
+decentralized context. So So I
+
+16415
+16:40:25,580 --> 16:40:27,860
+hope you're incredibly excited
+for this because we're going to
+
+16416
+16:40:27,860 --> 16:40:31,700
+be showing you the cutting edge
+tools that many of the top
+
+16417
+16:40:31,700 --> 16:40:35,030
+blockchain projects use. And
+let's just jump right into it.
+
+16418
+16:40:37,790 --> 16:40:40,400
+Now, I'm currently in the
+Hardhead smart contract lottery
+
+16419
+16:40:40,400 --> 16:40:43,280
+project, the project that we
+just did, we did this hard hat
+
+16420
+16:40:43,280 --> 16:40:45,410
+smart contract lottery, which is
+great. What we're going to do
+
+16421
+16:40:45,410 --> 16:40:48,470
+now is we're going to create a
+new folder, although we are
+
+16422
+16:40:48,470 --> 16:40:51,260
+going to be coming back to this
+folder from time to time to make
+
+16423
+16:40:51,290 --> 16:40:53,930
+a couple of updates. So if you
+want to keep it open, you
+
+16424
+16:40:53,930 --> 16:40:56,930
+absolutely can. But for me, I'm
+gonna go ahead and CD download
+
+16425
+16:40:56,930 --> 16:41:00,050
+directory to kind of my main
+directory for this whole course.
+
+16426
+16:41:00,440 --> 16:41:05,510
+And we're going to create a new
+directory called next Jas. smart
+
+16427
+16:41:05,510 --> 16:41:11,990
+contract. Lottery, FCC, then
+we're going to cd into next Jas
+
+16428
+16:41:11,990 --> 16:41:15,050
+smart contract lottery FCC, and
+go ahead and hit code period.
+
+16429
+16:41:15,320 --> 16:41:17,960
+And like I said, if you want to
+keep that one up and have this
+
+16430
+16:41:17,960 --> 16:41:21,200
+new folder up, you absolutely
+can. But basically, again, we're
+
+16431
+16:41:21,200 --> 16:41:24,500
+just opening up our VS code in
+this next Jas smart contract
+
+16432
+16:41:24,500 --> 16:41:27,200
+lottery folder. Now for this
+front end stuff, in particular,
+
+16433
+16:41:27,230 --> 16:41:30,020
+if you want to be absolutely
+sure you're using the same
+
+16434
+16:41:30,020 --> 16:41:33,080
+versions as I am, what you can
+do is you can git clone this
+
+16435
+16:41:33,080 --> 16:41:37,310
+repo, and then copy the yarn dot
+lock and package dot JSON, and
+
+16436
+16:41:37,310 --> 16:41:40,250
+then run yarn, this will make
+sure you're always using the
+
+16437
+16:41:40,250 --> 16:41:43,880
+exact same packages that I'm
+using, and you'll never run into
+
+16438
+16:41:43,880 --> 16:41:46,730
+any weird issues. So if you do
+run into an issue, one of the
+
+16439
+16:41:46,730 --> 16:41:49,520
+first things to do, especially
+for these front end parts is to
+
+16440
+16:41:49,520 --> 16:41:53,660
+go back, make sure you have the
+exact same yarn dot lock and
+
+16441
+16:41:53,660 --> 16:41:56,690
+package that JSON that I do in
+my examples here, and go from
+
+16442
+16:41:56,690 --> 16:41:59,630
+there. Now we're here in our
+front end project. And we're
+
+16443
+16:41:59,630 --> 16:42:02,900
+going to create a website, we're
+gonna create a front end for
+
+16444
+16:42:02,900 --> 16:42:05,660
+application, like I said, we're
+gonna be using next Jas, if you
+
+16445
+16:42:05,660 --> 16:42:08,240
+want to follow along with the
+next Jas documentation here,
+
+16446
+16:42:08,330 --> 16:42:10,730
+they do have a great getting
+started and walking through
+
+16447
+16:42:10,730 --> 16:42:17,420
+this. So for us, we're going to
+do yarn, create next app, and
+
+16448
+16:42:17,420 --> 16:42:19,880
+then put a little period saying
+we want our next app in this
+
+16449
+16:42:19,880 --> 16:42:22,370
+directory. If you don't put this
+period, it'll create it in a new
+
+16450
+16:42:22,370 --> 16:42:26,420
+folder, and you'll have double
+folders. Okay, awesome. So and
+
+16451
+16:42:26,420 --> 16:42:29,990
+once we do this, in our little
+files explorer section, we now
+
+16452
+16:42:29,990 --> 16:42:34,430
+can see all the different files
+that come boilerplate with this.
+
+16453
+16:42:34,490 --> 16:42:36,620
+Now, let me just do a quick
+walkthrough of what's going on
+
+16454
+16:42:36,620 --> 16:42:39,440
+here. Again, we also go through
+this in those two videos that I
+
+16455
+16:42:39,440 --> 16:42:42,470
+recommended, but it doesn't hurt
+to go over it twice. So node
+
+16456
+16:42:42,470 --> 16:42:44,900
+modules, of course, is going to
+be the package in the
+
+16457
+16:42:44,900 --> 16:42:47,780
+installations pages is going to
+be the different pages on our
+
+16458
+16:42:47,780 --> 16:42:50,720
+site. Let me let me show you
+what I mean by this. To run this
+
+16459
+16:42:50,720 --> 16:42:54,890
+whole thing. Actually, we can
+just run yarn, run Dev, and
+
+16460
+16:42:54,890 --> 16:42:57,890
+we'll get started server on
+blah, blah, blah, blah, blah,
+
+16461
+16:42:58,220 --> 16:43:01,670
+you can command click it or copy
+paste it into your browser. And
+
+16462
+16:43:01,670 --> 16:43:05,360
+now you'll see on localhost
+3000, we have our page up here.
+
+16463
+16:43:05,510 --> 16:43:09,410
+Now what we can do, actually, so
+index.js is going to be our
+
+16464
+16:43:09,410 --> 16:43:12,560
+default page, which is, you
+know, considered this slash
+
+16465
+16:43:12,560 --> 16:43:16,160
+here. But what we can do is we
+can create new pages. So I could
+
+16466
+16:43:16,160 --> 16:43:21,080
+do new file, you know, dog dot
+Jas. And then you know, just
+
+16467
+16:43:21,080 --> 16:43:25,100
+copy paste index into dog to
+Jas, paste it, delete everything
+
+16468
+16:43:25,100 --> 16:43:27,200
+inside the div, you don't have
+to follow along here and just go
+
+16469
+16:43:27,200 --> 16:43:34,310
+Hi, save this, go back here. I
+can now put in dog and get this.
+
+16470
+16:43:34,550 --> 16:43:37,490
+So pages is going to be all kind
+of these different routes to
+
+16471
+16:43:37,490 --> 16:43:40,700
+these different spots on our
+website. And index is going to
+
+16472
+16:43:40,700 --> 16:43:44,030
+be our default, kind of like our
+homepage. So I'm going to delete
+
+16473
+16:43:44,030 --> 16:43:47,210
+Dardo. And inside these files is
+going to be something called
+
+16474
+16:43:47,240 --> 16:43:51,890
+react syntax or JSX. They come
+as Jas but they're basically
+
+16475
+16:43:51,890 --> 16:43:54,860
+reacts in text. Next, Jas is
+based on React, you'll see these
+
+16476
+16:43:54,860 --> 16:43:59,960
+pages are this weird combination
+of both JavaScript and HTML. We
+
+16477
+16:43:59,960 --> 16:44:02,900
+see some import stuff at this at
+the top, which reminds us of
+
+16478
+16:44:02,900 --> 16:44:06,410
+JavaScript and again, you'll see
+some important stuff at the top
+
+16479
+16:44:06,440 --> 16:44:11,690
+and then down here, you'll See,
+like div head main h1 P, you'll
+
+16480
+16:44:11,690 --> 16:44:15,710
+see all these like HTML tags
+react index js allow us to do
+
+16481
+16:44:15,710 --> 16:44:20,540
+this combination of JavaScript
+and HTML. And it actually makes
+
+16482
+16:44:20,540 --> 16:44:24,050
+life a lot easier. Now, you'll
+also notice we're doing imports
+
+16483
+16:44:24,050 --> 16:44:27,830
+in here. Remember, I told you
+all this earlier, imports work
+
+16484
+16:44:27,860 --> 16:44:31,370
+with our front end require does
+not. So that's some of the
+
+16485
+16:44:31,370 --> 16:44:35,300
+difference between node does not
+equal JavaScript, right? This is
+
+16486
+16:44:35,300 --> 16:44:37,700
+where the differences can start
+getting a little bit confusing.
+
+16487
+16:44:37,700 --> 16:44:40,580
+But the way that I usually like
+to think about it is I just say,
+
+16488
+16:44:40,670 --> 16:44:45,410
+no JS, excuse me, I'll just say
+back end. I can J S is a little
+
+16489
+16:44:45,470 --> 16:44:49,250
+different from front end. Yes.
+So back end, Jas and front end
+
+16490
+16:44:49,250 --> 16:44:51,260
+Jas are a little bit different.
+That's kind of the way I like to
+
+16491
+16:44:51,260 --> 16:44:54,500
+think about it. app.js is going
+to be our entry point for
+
+16492
+16:44:54,530 --> 16:44:58,010
+everything the way react and
+next Jas work is everything is
+
+16493
+16:44:58,010 --> 16:45:01,670
+what's called component based in
+all of our files here, you're
+
+16494
+16:45:01,670 --> 16:45:05,930
+gonna see this export default
+function home or something along
+
+16495
+16:45:05,930 --> 16:45:10,400
+those lines. What react and next
+Jas do is they say, Hey, this
+
+16496
+16:45:10,400 --> 16:45:15,530
+huge clump of HTML stuff that
+has a hodgepodge of JavaScript
+
+16497
+16:45:15,530 --> 16:45:19,910
+inside of it is considered a
+component. And so all of our
+
+16498
+16:45:19,910 --> 16:45:24,230
+pages get wrapped through this
+underscore app.js page. So this
+
+16499
+16:45:24,230 --> 16:45:27,050
+is a page but it's kind of like
+the main entry point. And they
+
+16500
+16:45:27,050 --> 16:45:31,340
+get stuck into this component
+section of our app that Jas so
+
+16501
+16:45:31,340 --> 16:45:34,250
+you can think of this on this
+graph. The GS is kind of the
+
+16502
+16:45:34,250 --> 16:45:38,840
+whole application or whole front
+end. And on this homepage, this
+
+16503
+16:45:38,840 --> 16:45:41,660
+component, we're sticking index
+dot j s right in here, we're
+
+16504
+16:45:41,660 --> 16:45:44,990
+swapping out component for index
+dot J. S. Now API is what we
+
+16505
+16:45:44,990 --> 16:45:50,150
+wanted to do if we wanted to do
+like some HTTP, GET HTTP POST
+
+16506
+16:45:50,150 --> 16:45:52,670
+requests, but we're not going to
+do any of that. So we're going
+
+16507
+16:45:52,670 --> 16:45:55,940
+to pretty much ignore API for
+now public is just going to be
+
+16508
+16:45:56,000 --> 16:46:00,020
+some public images like a
+favicon or Versaille, that SVG
+
+16509
+16:46:00,170 --> 16:46:05,150
+styles is going to be the CSS
+for our project. CSS stands for
+
+16510
+16:46:05,150 --> 16:46:08,630
+Cascading Style Sheets. And it's
+basically a way to style your
+
+16511
+16:46:08,630 --> 16:46:11,720
+HTML, we're going to change the
+way we do styling and a little
+
+16512
+16:46:11,720 --> 16:46:14,780
+bit, but that's basically what
+these both do the ESLint I'm
+
+16513
+16:46:14,780 --> 16:46:17,450
+dumping this right now we have
+our dot Git ignore which we know
+
+16514
+16:46:17,450 --> 16:46:21,230
+what it does. We have our next
+dot config dot J. S. This is a
+
+16515
+16:46:21,230 --> 16:46:24,530
+configuration file or next. Jas,
+of course, we have our package
+
+16516
+16:46:24,560 --> 16:46:28,460
+json, we have a readme, and we
+have our yarn dot lock. So most
+
+16517
+16:46:28,460 --> 16:46:31,250
+of what we're going to do is
+actually going to be inside this
+
+16518
+16:46:31,250 --> 16:46:34,040
+Pages folder. And we're also
+going to create a couple other
+
+16519
+16:46:34,040 --> 16:46:37,370
+folders that are going to be our
+main stuff now, because I'm me,
+
+16520
+16:46:37,400 --> 16:46:39,590
+and like I said, I love working
+with prettier, I'm going to
+
+16521
+16:46:39,590 --> 16:46:43,190
+automatically dump a prettier
+RC, and a prettier ignore in
+
+16522
+16:46:43,190 --> 16:46:46,520
+here, just so that I can format
+my code a little bit nicer, you
+
+16523
+16:46:46,520 --> 16:46:49,640
+can grab your prettier RC from
+our last projects, you can grab
+
+16524
+16:46:49,640 --> 16:46:53,300
+your prettier ignore as well. Or
+you can just pause me right now
+
+16525
+16:46:53,300 --> 16:46:55,850
+copy, paste them from the GitHub
+repo associated with this
+
+16526
+16:46:55,850 --> 16:46:59,330
+lesson, paste them in, and then
+we'll do yarn, add dash dash
+
+16527
+16:46:59,330 --> 16:47:02,990
+Dev, prettier, so that we can
+auto format all of our code for
+
+16528
+16:47:02,990 --> 16:47:06,020
+come back over to here, we can
+save and boom, stuff gets auto
+
+16529
+16:47:06,020 --> 16:47:08,330
+formatted. Now, again, we're
+going to be using the multi
+
+16530
+16:47:08,330 --> 16:47:11,930
+terminal feature. So right now I
+have one running my front end.
+
+16531
+16:47:11,960 --> 16:47:14,270
+So if I come back to the front
+end, I hit refresh. It's still
+
+16532
+16:47:14,270 --> 16:47:16,940
+running. And then I have one to
+do, you know my scripts and
+
+16533
+16:47:16,940 --> 16:47:19,940
+stuff. We have yarn run dev
+running right now. And if we go
+
+16534
+16:47:19,940 --> 16:47:23,960
+to our package, JSON, running
+yarn, run dev just runs next
+
+16535
+16:47:23,960 --> 16:47:27,860
+Dev. And actually, let me cancel
+it and just do yarn dev yarn is
+
+16536
+16:47:27,860 --> 16:47:30,620
+actually smart enough that don't
+need to do run Dev, but it just
+
+16537
+16:47:30,620 --> 16:47:34,730
+runs next Dev. And this next
+command comes built in once we
+
+16538
+16:47:34,730 --> 16:47:37,970
+installed next, which we did
+when we did yarn create next
+
+16539
+16:47:37,970 --> 16:47:40,850
+app. So next Jas comes with
+these scripts already built in
+
+16540
+16:47:40,880 --> 16:47:45,020
+for us, we want to build our
+front end to enable people to
+
+16541
+16:47:45,020 --> 16:47:48,050
+interact with our lottery in a
+fair way, and connect with the
+
+16542
+16:47:48,050 --> 16:47:51,020
+smart contract that's running.
+Let's create some simple front
+
+16543
+16:47:51,020 --> 16:47:53,450
+end pieces for this. So first
+thing we're gonna do is we're
+
+16544
+16:47:53,450 --> 16:47:56,990
+gonna go to Pages, and we're
+going to go to index.js. All
+
+16545
+16:47:56,990 --> 16:48:00,140
+this stuff in here is cute and
+nice. And thank you next, Jas,
+
+16546
+16:48:00,140 --> 16:48:03,350
+but we're going to delete it all
+and delete everything except for
+
+16547
+16:48:03,350 --> 16:48:05,870
+that headpiece, we're gonna
+leave that up, we're just going
+
+16548
+16:48:05,870 --> 16:48:08,930
+to change the name. But this way
+down here, we're going to change
+
+16549
+16:48:08,930 --> 16:48:15,380
+the name from Crate next app to
+smart contract lottery or raffle
+
+16550
+16:48:15,380 --> 16:48:19,700
+or whatever we want to do.
+description will be our smart
+
+16551
+16:48:19,730 --> 16:48:23,360
+contract, lottery. And then
+right below the head, we're
+
+16552
+16:48:23,360 --> 16:48:28,490
+going to write hello, blue, and
+save. And if we look at our
+
+16553
+16:48:28,490 --> 16:48:31,850
+front end, we now see that it
+says smart contract lottery and
+
+16554
+16:48:31,850 --> 16:48:33,620
+the top and I'm going to move
+this all the way over here,
+
+16555
+16:48:33,800 --> 16:48:37,070
+smart contract lottery and the
+top and we see Hello, so smart
+
+16556
+16:48:37,070 --> 16:48:39,680
+contract lottery. Hello, the
+description here, we're not
+
+16557
+16:48:39,680 --> 16:48:41,930
+going to see this is going to be
+something that web scrapers and
+
+16558
+16:48:41,930 --> 16:48:42,860
+stuff we're going to find.
+
+16559
+16:48:45,380 --> 16:48:48,110
+Now one of the first things that
+we're going to need to do is
+
+16560
+16:48:48,110 --> 16:48:50,690
+we're going to need to create
+that connect button. We've done
+
+16561
+16:48:50,690 --> 16:48:53,600
+this in the past with raw
+JavaScript, but now we're going
+
+16562
+16:48:53,600 --> 16:48:57,350
+to do it with next js and react.
+The one that we made previously
+
+16563
+16:48:57,350 --> 16:49:00,470
+was pretty minimalistic. In
+fact, we bring it back up it
+
+16564
+16:49:00,470 --> 16:49:03,320
+checked to see if there was
+windows that Aetherium and then
+
+16565
+16:49:03,320 --> 16:49:06,080
+went and requested and connected
+and said okay, cool. You're
+
+16566
+16:49:06,080 --> 16:49:09,560
+connected. Now what did didn't
+do was a lot of things that we
+
+16567
+16:49:09,560 --> 16:49:13,130
+would want an application to do.
+When we change networks, our
+
+16568
+16:49:13,130 --> 16:49:15,830
+application didn't detect that
+when we change users or
+
+16569
+16:49:15,830 --> 16:49:19,370
+application didn't detect that
+it was really stringent in the
+
+16570
+16:49:19,370 --> 16:49:22,730
+functionality that it actually
+had for connecting to a wallet.
+
+16571
+16:49:22,730 --> 16:49:25,100
+So we're going to make our
+wallet connect button,
+
+16572
+16:49:25,400 --> 16:49:28,400
+incredibly powerful, so that you
+can connect with the button, you
+
+16573
+16:49:28,400 --> 16:49:30,500
+can switch networks, you can
+switch accounts, you can pretty
+
+16574
+16:49:30,500 --> 16:49:33,470
+much do anything in our
+application will know our
+
+16575
+16:49:33,470 --> 16:49:36,500
+application will be responsive.
+So that's gonna be one of the
+
+16576
+16:49:36,500 --> 16:49:38,300
+first things that we're going to
+do, we're going to create a
+
+16577
+16:49:38,330 --> 16:49:42,290
+header and connect button nav
+bar one a little navbar here,
+
+16578
+16:49:42,290 --> 16:49:45,350
+saying, hey, you know, you can
+connect with this button. So
+
+16579
+16:49:45,350 --> 16:49:47,120
+that's gonna be the first thing
+that we're going to do. Now we
+
+16580
+16:49:47,120 --> 16:49:50,060
+can build our whole connect
+button in this index dot j s and
+
+16581
+16:49:50,060 --> 16:49:52,820
+stick it in here. But instead,
+what we're going to do is we're
+
+16582
+16:49:52,820 --> 16:49:55,520
+going to make it a what's called
+a component. So we're going to
+
+16583
+16:49:55,520 --> 16:49:59,300
+create a new folder called
+components. And we're going to
+
+16584
+16:49:59,300 --> 16:50:03,680
+create a new file in here called
+header.js. And you might also
+
+16585
+16:50:03,680 --> 16:50:08,570
+see a lot of people do
+header.js x.js and.js x do
+
+16586
+16:50:08,600 --> 16:50:11,750
+literally the exact same thing,
+you can do either one, I'm going
+
+16587
+16:50:11,750 --> 16:50:16,400
+to do dot JSX, just to remind me
+that this is a React file that
+
+16588
+16:50:16,400 --> 16:50:18,230
+we're creating. This is a
+component that we're creating.
+
+16589
+16:50:18,230 --> 16:50:21,230
+But yeah, you can do J S JSX. If
+you want to learn a little bit
+
+16590
+16:50:21,230 --> 16:50:24,260
+more about components, we've got
+a link to learning about
+
+16591
+16:50:24,260 --> 16:50:27,290
+components. They're basically
+independent and reusable bits of
+
+16592
+16:50:27,290 --> 16:50:30,230
+code. They serve the same
+purpose as JavaScript functions,
+
+16593
+16:50:30,230 --> 16:50:33,620
+but work in isolation and return
+HTML. So basically, we're going
+
+16594
+16:50:33,620 --> 16:50:37,760
+to create like a little chunk of
+HTML that we're going to export
+
+16595
+16:50:37,970 --> 16:50:40,670
+into our index such as like what
+we've done in the past, this
+
+16596
+16:50:40,670 --> 16:50:43,820
+just helps modularize and reuse
+this header component, you know,
+
+16597
+16:50:43,820 --> 16:50:46,250
+across our project. Now, we're
+only going to be using our
+
+16598
+16:50:46,250 --> 16:50:49,700
+header in one area. However,
+it's still nice to modularize
+
+16599
+16:50:49,700 --> 16:50:52,880
+the project regardless. And to
+get start, this is going to be
+
+16600
+16:50:52,910 --> 16:50:55,370
+what's called a functional base
+component. So we're going to
+
+16601
+16:50:55,370 --> 16:50:59,540
+create basically a function
+called home write really pretty
+
+16602
+16:50:59,540 --> 16:51:02,990
+much exactly like what we see in
+JavaScript, except it's going to
+
+16603
+16:51:02,990 --> 16:51:09,230
+return some HTML. So we can do
+like a little div. And my VS
+
+16604
+16:51:09,230 --> 16:51:12,110
+code auto created the closing
+div here. And in here, I'm going
+
+16605
+16:51:12,110 --> 16:51:15,920
+to be like hi from header. This
+is going to be a real
+
+16606
+16:51:15,920 --> 16:51:19,370
+minimalistic component like this
+is a valid component here. Now
+
+16607
+16:51:19,370 --> 16:51:23,660
+we have this function that
+returns HTML. And to give other
+
+16608
+16:51:23,660 --> 16:51:26,990
+applications, the ability to use
+this component will do export
+
+16609
+16:51:27,110 --> 16:51:32,570
+default function home. And then
+in our index.js, we can import
+
+16610
+16:51:32,570 --> 16:51:36,590
+it with imports. Home actually,
+excuse me, I'm not going to call
+
+16611
+16:51:36,590 --> 16:51:39,290
+it home, we're going to call it
+header, header, excuse me,
+
+16612
+16:51:39,320 --> 16:51:44,210
+export default function header,
+and then import header from the
+
+16613
+16:51:44,210 --> 16:51:49,850
+down directory components slash
+header, like so. So now we've
+
+16614
+16:51:49,850 --> 16:51:53,270
+imported our header in index
+such as if we go back to our
+
+16615
+16:51:53,270 --> 16:51:56,090
+front end, which is still
+running, we don't see it in
+
+16616
+16:51:56,090 --> 16:51:59,420
+here, right? Remember,
+everything goes through our app.
+
+16617
+16:51:59,450 --> 16:52:03,500
+And when we're on the slash
+page, that's going to go to our
+
+16618
+16:52:03,530 --> 16:52:08,000
+index.js. index js is importing
+our header, but it's not
+
+16619
+16:52:08,000 --> 16:52:11,240
+returning our header, right, we
+see. And here, we see it
+
+16620
+16:52:11,240 --> 16:52:15,260
+returns. And this is the HTML
+that it's returning. And as you
+
+16621
+16:52:15,260 --> 16:52:17,330
+can see, there's clearly no
+header in here. So now that
+
+16622
+16:52:17,330 --> 16:52:20,750
+we've imported our header, we
+need to actually add our header
+
+16623
+16:52:20,780 --> 16:52:24,590
+in here. So we'll do header, and
+then adds the closing tag right
+
+16624
+16:52:24,590 --> 16:52:27,320
+here. If you don't add any
+stuff, you know, in between two
+
+16625
+16:52:27,320 --> 16:52:30,710
+tags, you can go ahead and just
+do this one liner here, with a
+
+16626
+16:52:30,710 --> 16:52:34,490
+backslash at the end saying,
+Hey, this is an open and closed
+
+16627
+16:52:34,550 --> 16:52:36,680
+tag here. Now that we've
+imported it, what do you think
+
+16628
+16:52:36,710 --> 16:52:39,530
+we'll see on the front end, now
+that we've added it to our index
+
+16629
+16:52:39,560 --> 16:52:43,790
+js, you're right, we see hi from
+header, because we added our
+
+16630
+16:52:43,790 --> 16:52:46,940
+header here. And then we see
+Hello. So high from header,
+
+16631
+16:52:47,150 --> 16:52:51,470
+hello, boom. Now, anything that
+we do, obviously now in our
+
+16632
+16:52:51,500 --> 16:52:55,130
+header.js, will see reflected on
+our front end. So we can do hi
+
+16633
+16:52:55,130 --> 16:52:58,310
+from header, blah, blah, blah,
+you know, just a bunch of
+
+16634
+16:52:58,310 --> 16:53:00,950
+dribbles, and we'll see it on
+our front end. So this is going
+
+16635
+16:53:00,950 --> 16:53:03,110
+to be our section where we're
+going to make our header or a
+
+16636
+16:53:03,110 --> 16:53:05,720
+navbar or all the functionality
+for the Connect button. Now I'm
+
+16637
+16:53:05,720 --> 16:53:07,700
+going to tell you something, and
+some of you are going to love
+
+16638
+16:53:07,700 --> 16:53:09,950
+this summer, you're going to
+hate this. I'm going to show
+
+16639
+16:53:09,950 --> 16:53:13,760
+you. I'm going to show you the
+hard way first, then the easy
+
+16640
+16:53:13,760 --> 16:53:16,310
+way. Why am I going to show you
+the hard way first? Well,
+
+16641
+16:53:16,340 --> 16:53:18,890
+because I want you to become
+familiar with what's actually
+
+16642
+16:53:18,890 --> 16:53:21,560
+going on behind the scenes and
+what's actually going on with
+
+16643
+16:53:21,560 --> 16:53:23,960
+some of these components because
+it is really helpful when
+
+16644
+16:53:23,960 --> 16:53:26,390
+building these front ends to
+understand, Okay, here's what's
+
+16645
+16:53:26,390 --> 16:53:28,310
+going on. If you don't
+understand what's going on
+
+16646
+16:53:28,310 --> 16:53:30,860
+behind the scenes, you're gonna
+go to try to build more advanced
+
+16647
+16:53:30,860 --> 16:53:33,740
+applications, and you're gonna
+have no idea what to do because
+
+16648
+16:53:33,740 --> 16:53:35,870
+you've just learned the
+shortcut. I like to think of it
+
+16649
+16:53:35,870 --> 16:53:38,510
+as like calculus, like we're
+going to learn how to calculate
+
+16650
+16:53:38,540 --> 16:53:40,400
+a derivative first, and then
+we're going to learn the
+
+16651
+16:53:40,400 --> 16:53:44,030
+shortcut to quickly getting
+derivatives. So don't skip this
+
+16652
+16:53:44,030 --> 16:53:47,750
+part, because this is going to
+help you well and beyond down
+
+16653
+16:53:47,750 --> 16:53:51,170
+the line. Okay, we're going to
+learn this the harder way to set
+
+16654
+16:53:51,170 --> 16:53:55,340
+everything up in our HTML Funmi.
+We just use raw ethers to kind
+
+16655
+16:53:55,340 --> 16:53:58,490
+of do everything and you
+absolutely can use raw ethers to
+
+16656
+16:53:58,490 --> 16:54:01,490
+do everything. However, there
+are some packages especially for
+
+16657
+16:54:01,490 --> 16:54:05,120
+React that make life developing
+a front end substantially better
+
+16658
+16:54:05,150 --> 16:54:08,390
+and in our full blockchain
+solidity course, Jas. We have a
+
+16659
+16:54:08,390 --> 16:54:11,300
+number of other packages that
+you can use will stack
+
+16660
+16:54:11,300 --> 16:54:13,850
+development and other libraries.
+And if you watch this six ways
+
+16661
+16:54:13,850 --> 16:54:15,920
+to connect your depth to a
+wallet, you'll actually
+
+16662
+16:54:15,950 --> 16:54:18,740
+understand some of the
+differences. So if you haven't
+
+16663
+16:54:18,740 --> 16:54:21,350
+watched that video, go back,
+watch that video. But there's a
+
+16664
+16:54:21,350 --> 16:54:24,500
+whole bunch of libraries that we
+can use that are going to make
+
+16665
+16:54:24,500 --> 16:54:27,890
+our lives a lot easier. We've
+listed some of them here. React
+
+16666
+16:54:27,890 --> 16:54:30,530
+Morales is the one that we're
+going to be using today, they
+
+16667
+16:54:30,530 --> 16:54:32,600
+have some additional plugins,
+and they have probably my
+
+16668
+16:54:32,600 --> 16:54:34,610
+favorite thing on the planet,
+which I'm going to show you how
+
+16669
+16:54:34,610 --> 16:54:38,060
+to do very soon. But these are
+also open source, Ross also
+
+16670
+16:54:38,060 --> 16:54:41,270
+comes with some optional
+functionality to hook into your
+
+16671
+16:54:41,300 --> 16:54:44,930
+own back end to give your app
+even more features and even more
+
+16672
+16:54:44,930 --> 16:54:46,940
+functionality. And that's the
+other reason that we're doing
+
+16673
+16:54:46,940 --> 16:54:49,250
+it. So and we're gonna go over
+that later. And if you want to
+
+16674
+16:54:49,250 --> 16:54:52,220
+use pure ethers, you absolutely
+still can. A lot of these
+
+16675
+16:54:52,220 --> 16:54:55,430
+packages that we're using do
+rely on ethers, but we're not
+
+16676
+16:54:55,430 --> 16:54:58,550
+going to use just ether. So we
+go to the React Morales page.
+
+16677
+16:54:58,580 --> 16:55:02,000
+And to get started, we can just
+do this bit right here. So we're
+
+16678
+16:55:02,000 --> 16:55:05,060
+literally going to copy this and
+bring it into our project. And
+
+16679
+16:55:05,060 --> 16:55:08,060
+if you go to our package that
+JSON, we actually already have
+
+16680
+16:55:08,060 --> 16:55:13,280
+react and react DOM. So we can
+just do yarn, add Morales, and
+
+16681
+16:55:13,340 --> 16:55:19,130
+react oralis. Now you'll notice
+I'm not doing these as dev
+
+16682
+16:55:19,130 --> 16:55:23,510
+dependencies, I didn't do yarn,
+add dash dash dev here. The
+
+16683
+16:55:23,510 --> 16:55:26,390
+reason is, because for our
+production builds, when we
+
+16684
+16:55:26,390 --> 16:55:29,540
+actually create the website
+here, you will need Morales and
+
+16685
+16:55:29,540 --> 16:55:33,020
+you will need react Morales we
+don't need prettier to create a
+
+16686
+16:55:33,020 --> 16:55:37,100
+website prettier is a tool that
+we're using as developers. So in
+
+16687
+16:55:37,100 --> 16:55:40,640
+all of our projects, so far,
+we've been using just dev
+
+16688
+16:55:40,640 --> 16:55:43,880
+dependencies. That's because
+we've only been building our
+
+16689
+16:55:43,880 --> 16:55:47,450
+projects for developers, our
+GitHub repos, they haven't been
+
+16690
+16:55:47,480 --> 16:55:50,840
+made to build a website, they've
+only been to do things on the
+
+16691
+16:55:50,840 --> 16:55:53,330
+back end, for our website, we're
+actually going to be building a
+
+16692
+16:55:53,330 --> 16:55:56,630
+front end. So we need to put
+this in the dependencies
+
+16693
+16:55:56,660 --> 16:55:59,510
+section, because we need to say,
+Hey, these are the ones that we
+
+16694
+16:55:59,540 --> 16:56:02,660
+need to bundle up together for
+the front end, and you can
+
+16695
+16:56:02,660 --> 16:56:05,180
+ignore these ones. And if it's
+just like a tool to make our
+
+16696
+16:56:05,180 --> 16:56:07,850
+lives better, it's gonna go in
+dev dependencies. So we're
+
+16697
+16:56:07,850 --> 16:56:11,030
+adding Morales and react
+Morales. And a lot of the syntax
+
+16698
+16:56:11,030 --> 16:56:13,100
+that we're going to do for our
+header is actually going to be
+
+16699
+16:56:13,100 --> 16:56:16,040
+really similar to what we've
+been seeing so far. So let's do
+
+16700
+16:56:16,040 --> 16:56:18,140
+this. And then actually, we're
+just going to change this name
+
+16701
+16:56:18,140 --> 16:56:21,650
+to manual header, manual header
+update imports for manual
+
+16702
+16:56:21,650 --> 16:56:25,700
+header, you can go ahead and hit
+yes to man you all header here,
+
+16703
+16:56:25,850 --> 16:56:28,850
+we're gonna copy manual header,
+make sure it's in our index.js
+
+16704
+16:56:29,360 --> 16:56:31,610
+it we're gonna change header to
+manual header, and we're gonna
+
+16705
+16:56:31,610 --> 16:56:34,640
+change how to manual header
+here. And the reason we're doing
+
+16706
+16:56:34,640 --> 16:56:36,830
+this is because like I said,
+we're going to create a much
+
+16707
+16:56:36,860 --> 16:56:40,250
+simpler header after we create
+this kind of harder one. And
+
+16708
+16:56:40,250 --> 16:56:42,350
+we're going to want to create
+that connect button, which
+
+16709
+16:56:42,350 --> 16:56:46,550
+again, we made in HTML Funmi. By
+calling eath request accounts,
+
+16710
+16:56:46,580 --> 16:56:49,250
+what we can do actually with
+Morales is we can just do this
+
+16711
+16:56:49,250 --> 16:56:53,090
+thing called Enable Web three.
+So at the top, we're going to
+
+16712
+16:56:53,090 --> 16:56:56,060
+import, use mirallas.
+
+16713
+16:56:57,320 --> 16:57:03,020
+From react ralis. And if you go
+to the React Morales page here
+
+16714
+16:57:03,050 --> 16:57:06,080
+or to their GitHub, you'll learn
+how to set all this up too and
+
+16715
+16:57:06,080 --> 16:57:08,030
+learn more about the
+documentation. So we're going to
+
+16716
+16:57:08,030 --> 16:57:11,840
+import use Morales from react
+Morales, and inside our function
+
+16717
+16:57:11,840 --> 16:57:17,270
+here, but outside of our return,
+we're going to say const, Enable
+
+16718
+16:57:17,270 --> 16:57:23,480
+Web three equals use mirallas.
+Now use Morales is what's known
+
+16719
+16:57:23,510 --> 16:57:27,110
+as a hook as a React hook. And
+it's a way to keep track of
+
+16720
+16:57:27,110 --> 16:57:30,710
+state in our application. Now,
+in order to use mirallas, our
+
+16721
+16:57:30,710 --> 16:57:33,680
+entire application needs to be
+wrapped around what's called a
+
+16722
+16:57:33,680 --> 16:57:37,220
+Morales provider, which is going
+to be a context provider for us.
+
+16723
+16:57:37,520 --> 16:57:39,650
+And I'll explain what that means
+in a minute. But basically, what
+
+16724
+16:57:39,650 --> 16:57:43,280
+we need to do is we need to add
+this Morales provider to our
+
+16725
+16:57:43,280 --> 16:57:49,580
+app.js. So in here, we're going
+to import oralis provider from
+
+16726
+16:57:50,120 --> 16:57:55,310
+react oralis. And we're going to
+wrap our entire app around this
+
+16727
+16:57:55,310 --> 16:57:58,460
+Morales provided so we're going
+to do some little parentheses
+
+16728
+16:57:58,460 --> 16:58:03,140
+here. New Line, we're going to
+paste morass provider like this,
+
+16729
+16:58:04,160 --> 16:58:07,910
+it's going to give us the
+closing tag, copy it, paste it
+
+16730
+16:58:07,910 --> 16:58:12,440
+like this and save. And then in
+here, we're going to write in
+
+16731
+16:58:12,440 --> 16:58:18,980
+the sheet allies on Mount equals
+false. This initialize on Mount
+
+16732
+16:58:19,010 --> 16:58:23,510
+piece here is the optionality to
+hook into a server to add some
+
+16733
+16:58:23,510 --> 16:58:26,330
+more features to our website. We
+don't want to hook into a server
+
+16734
+16:58:26,330 --> 16:58:28,340
+for this application, we want
+everything just to be open
+
+16735
+16:58:28,340 --> 16:58:30,800
+source, and we don't need any of
+this additional functionality.
+
+16736
+16:58:30,980 --> 16:58:33,020
+So we're just going to do
+initialize on Mount equals
+
+16737
+16:58:33,020 --> 16:58:35,600
+false. Now that the whole thing
+is wrapped in this Morales
+
+16738
+16:58:35,600 --> 16:58:38,420
+provider, we go to the front end
+we should be able to refresh
+
+16739
+16:58:38,420 --> 16:58:41,810
+everything looks pretty much the
+same. And we can start using
+
+16740
+16:58:41,840 --> 16:58:47,810
+these hooks. Now this use
+Morales is what's known as a
+
+16741
+16:58:47,840 --> 16:58:51,860
+hook and hooks can be a little
+bit confusing to understand at
+
+16742
+16:58:51,860 --> 16:58:54,980
+first glance, but they're
+incredibly powerful and they are
+
+16743
+16:58:55,010 --> 16:58:58,700
+the de facto way for us to build
+react projects. And if you're
+
+16744
+16:58:58,700 --> 16:59:01,220
+familiar with class components,
+we're not gonna be using class
+
+16745
+16:59:01,220 --> 16:59:04,040
+components because hooks are
+much better hooks allow function
+
+16746
+16:59:04,040 --> 16:59:07,430
+components to have access to
+state and other react feature
+
+16747
+16:59:07,430 --> 16:59:10,160
+ers state being probably one of
+the biggest ones and the most
+
+16748
+16:59:10,160 --> 16:59:13,460
+popular ones, we want our
+application to be different if
+
+16749
+16:59:13,460 --> 16:59:16,670
+we're connected to Metamask,
+versus if we're not, right, if
+
+16750
+16:59:16,670 --> 16:59:20,210
+we go back, if we go back to our
+example website here, right, if
+
+16751
+16:59:20,210 --> 16:59:23,030
+we're not connected, we want to
+say, Please connect to a wallet.
+
+16752
+16:59:23,060 --> 16:59:25,880
+And then when we are connected,
+we want to go ahead and be
+
+16753
+16:59:25,880 --> 16:59:28,880
+connected. If I have, let's say,
+I have some variable like, and I
+
+16754
+16:59:28,880 --> 16:59:32,540
+don't have this hook here, I
+have like, let connected equals
+
+16755
+16:59:32,540 --> 16:59:35,870
+false, right, or enable Web
+three, or is web three enabled,
+
+16756
+16:59:35,870 --> 16:59:38,360
+let's say I've led connected
+equals false. And then I have,
+
+16757
+16:59:38,390 --> 16:59:41,900
+you know, let's say have some
+button that connects us and
+
+16758
+16:59:41,900 --> 16:59:47,210
+changes connected to be true,
+changing connected to be true is
+
+16759
+16:59:47,210 --> 16:59:51,080
+great and all but it won't
+rerender our application, you
+
+16760
+16:59:51,080 --> 16:59:54,560
+see, when I disconnect and I
+reconnect here, our application
+
+16761
+16:59:54,560 --> 16:59:57,800
+actually changes based off of
+whether or not we're connected.
+
+16762
+16:59:57,830 --> 17:00:01,220
+And this is what we want, we
+want our front end to rerender.
+
+16763
+17:00:01,340 --> 17:00:04,850
+When we're connected, if I just
+use a variable like this inside
+
+16764
+17:00:04,850 --> 17:00:08,690
+of our component, our front end
+isn't going to rerender. Or even
+
+16765
+17:00:08,690 --> 17:00:12,080
+worse, if I use it outside, our
+component doesn't even know
+
+16766
+17:00:12,110 --> 17:00:15,800
+anything about this changing. So
+hooks are a way for us to
+
+16767
+17:00:15,800 --> 17:00:19,160
+actually work with state
+especially and automatically
+
+16768
+17:00:19,160 --> 17:00:22,580
+rerender when something changes
+and enable Web three is going to
+
+16769
+17:00:22,580 --> 17:00:25,730
+be a function that we get from
+this use Morales hook to do
+
+16770
+17:00:25,730 --> 17:00:28,250
+that. So for a lot of our
+components, instead of just
+
+16771
+17:00:28,250 --> 17:00:32,840
+saying like, let web three
+enabled equals true, like we did
+
+16772
+17:00:32,870 --> 17:00:35,420
+in normal JavaScript, we're
+going to be doing a lot of this,
+
+16773
+17:00:35,450 --> 17:00:38,690
+these hooks. For the most part,
+we usually want our website to
+
+16774
+17:00:38,690 --> 17:00:42,860
+change based off of if some
+variable has changed and enabled
+
+16775
+17:00:42,860 --> 17:00:46,040
+web three is a function that we
+get from this hook that says,
+
+16776
+17:00:46,070 --> 17:00:48,830
+Okay, go ahead and connect
+Enable Web three is basically
+
+16777
+17:00:48,830 --> 17:00:52,700
+the equivalent of saying try
+await Aetherium dot request,
+
+16778
+17:00:52,970 --> 17:00:55,940
+like this. Now enable Web three,
+the way we're going to use it
+
+16779
+17:00:55,940 --> 17:00:58,640
+here only works on Metamask. But
+we will show you how to get this
+
+16780
+17:00:58,640 --> 17:01:01,730
+kind of this cool little module
+up where we can choose between
+
+16781
+17:01:01,730 --> 17:01:03,080
+different ways to connect our
+app.
+
+16782
+17:01:05,660 --> 17:01:08,390
+We have our enabled web three,
+let's go ahead and create a
+
+16783
+17:01:08,390 --> 17:01:12,290
+button, that's going to do the
+same as what we did in our HTML
+
+16784
+17:01:12,290 --> 17:01:15,590
+Funmi in our return, but here,
+instead of hi friend header,
+
+16785
+17:01:15,650 --> 17:01:17,720
+we're going to add a new
+component, or we're going to add
+
+16786
+17:01:17,720 --> 17:01:20,480
+a new tag, we're gonna add the
+button tag, and for me it
+
+16787
+17:01:20,480 --> 17:01:24,140
+automatically close to, and I'm
+just gonna call it connect, I'm
+
+16788
+17:01:24,140 --> 17:01:26,600
+gonna go ahead and save. Now we
+see a little button that says
+
+16789
+17:01:26,600 --> 17:01:28,730
+connect. And obviously, it
+doesn't do anything, we're gonna
+
+16790
+17:01:28,730 --> 17:01:32,180
+give this some functionality,
+we're gonna say on click now
+
+16791
+17:01:32,180 --> 17:01:37,280
+since again, this is a JSX
+component. This isn't raw HTML,
+
+16792
+17:01:37,400 --> 17:01:41,240
+in raw HTML, we can't just kind
+of stick JavaScript wherever we
+
+16793
+17:01:41,240 --> 17:01:45,200
+want. But in JSX files, we can
+stick JavaScript kind of
+
+16794
+17:01:45,200 --> 17:01:49,070
+wherever we want. So inside of
+this, inside of this block of
+
+16795
+17:01:49,070 --> 17:01:52,700
+HTML, we can actually stick
+JavaScript in here by adding
+
+16796
+17:01:52,700 --> 17:01:55,130
+these little brackets. So adding
+these little brackets in our
+
+16797
+17:01:55,130 --> 17:01:58,370
+jobs can return. But here, we
+can add JavaScript. And what we
+
+16798
+17:01:58,370 --> 17:02:02,510
+want to do is we want to have
+our On Click Call Enable Web
+
+16799
+17:02:02,510 --> 17:02:06,560
+three, we're going to call an
+async function, we're going to
+
+16800
+17:02:06,560 --> 17:02:08,840
+use the arrow syntax here, one
+click, we're gonna call this
+
+16801
+17:02:08,870 --> 17:02:12,860
+async function, which is just
+going to be await, Enable Web
+
+16802
+17:02:12,860 --> 17:02:16,670
+three, await Enable Web three,
+let's add the little parentheses
+
+16803
+17:02:16,670 --> 17:02:19,880
+here. And essentially, with just
+this, we've done pretty much
+
+16804
+17:02:19,910 --> 17:02:23,390
+everything that we had back in
+this big connect function here.
+
+16805
+17:02:23,450 --> 17:02:26,060
+Now if we go back to our front
+end, do a little refresh, we can
+
+16806
+17:02:26,060 --> 17:02:28,970
+see that right now, we can see
+that I'm actually connected, I'm
+
+16807
+17:02:28,970 --> 17:02:31,580
+gonna go ahead and disconnect.
+I'm still connected from some of
+
+16808
+17:02:31,580 --> 17:02:34,640
+the last applications I was
+doing, we can hit Connect, and
+
+16809
+17:02:34,640 --> 17:02:38,180
+now we see metamath does indeed
+pop up, we'll hit Next connect,
+
+16810
+17:02:38,510 --> 17:02:40,970
+and boom. And that's all we need
+to do. Now, if we look at our
+
+16811
+17:02:40,970 --> 17:02:43,880
+Metamask, it says connected.
+Great. Okay, cool. So now we
+
+16812
+17:02:43,880 --> 17:02:46,310
+have a way to actually connect
+here, let's add some
+
+16813
+17:02:46,310 --> 17:02:48,800
+functionality and make our
+application smart enough to have
+
+16814
+17:02:48,800 --> 17:02:51,110
+the connect button if we're
+connected. And if we're not
+
+16815
+17:02:51,110 --> 17:02:54,260
+connected, not have that button.
+So what we'll do now is use
+
+16816
+17:02:54,260 --> 17:02:58,730
+Morales comes with another hook
+called is web three, enabled,
+
+16817
+17:02:58,850 --> 17:03:01,850
+which is just a variable part of
+our hook that keeps track of
+
+16818
+17:03:01,850 --> 17:03:04,790
+whether or not our Metamask is
+connected. But we can actually
+
+16819
+17:03:04,790 --> 17:03:08,240
+do one better, we can actually
+check to see if there's an
+
+16820
+17:03:08,240 --> 17:03:11,900
+account because maybe web three
+is connected. But but they
+
+16821
+17:03:11,900 --> 17:03:15,680
+didn't connect it to an account.
+So let's go ahead and we'll
+
+16822
+17:03:15,770 --> 17:03:19,100
+import count from us. Morales
+will check to see if there's an
+
+16823
+17:03:19,100 --> 17:03:22,580
+account. So what we'll do is
+inside of our div tags, we'll do
+
+16824
+17:03:22,580 --> 17:03:25,250
+a little JavaScript, we'll do
+that ternary operator again,
+
+16825
+17:03:25,340 --> 17:03:28,280
+we'll put a count here with a
+question mark. And we'll do that
+
+16826
+17:03:28,310 --> 17:03:32,060
+that same syntax that we've seen
+before, we'll say account, if
+
+16827
+17:03:32,060 --> 17:03:35,840
+account exists, do this. If
+there's no account, do this. And
+
+16828
+17:03:35,840 --> 17:03:39,260
+if there's no account, we want
+to add this Connect button. So
+
+16829
+17:03:39,260 --> 17:03:42,230
+we'll go ahead and we'll stick
+this in here. If there is an
+
+16830
+17:03:42,230 --> 17:03:45,440
+account, we'll just show that
+account, right. So we'll do div
+
+16831
+17:03:45,560 --> 17:03:50,000
+backslash div in here, we'll
+just say connected, like that.
+
+16832
+17:03:50,150 --> 17:03:53,930
+Now if we go back to our front
+end, we see connected. If we do
+
+16833
+17:03:53,930 --> 17:03:57,470
+a little refresh, it'll go away.
+So we'll we'll re hit Connect,
+
+16834
+17:03:57,500 --> 17:04:00,110
+and now we're connected, which
+is great. Let's make it even
+
+16835
+17:04:00,110 --> 17:04:04,250
+smarter. We'll have it show our
+account here. So instead of just
+
+16836
+17:04:04,250 --> 17:04:08,390
+saying connected, we'll say
+connected to I'll put some
+
+16837
+17:04:08,390 --> 17:04:10,850
+JavaScript, we'll put some
+JavaScript inside of our
+
+16838
+17:04:10,850 --> 17:04:14,240
+JavaScript. But since this is
+that HTML stuff, we got to use
+
+16839
+17:04:14,240 --> 17:04:17,300
+these brackets to say JavaScript
+again. So we'll put JavaScript
+
+16840
+17:04:17,300 --> 17:04:20,540
+inside of the JavaScript, we'll
+say connected to, we can just
+
+16841
+17:04:20,540 --> 17:04:23,810
+say account. Now go back to our
+front end, we see connected to
+
+16842
+17:04:23,840 --> 17:04:25,910
+blah, blah, blah, blah, blah,
+you'll notice if you hit
+
+16843
+17:04:25,910 --> 17:04:28,430
+refresh, you'll have to
+reconnect, we'll get to that in
+
+16844
+17:04:28,430 --> 17:04:30,770
+a minute, what a lot of people
+do is they'll do a count dot
+
+16845
+17:04:30,770 --> 17:04:35,720
+slice, zero, comma six. And then
+outside of the brackets, they'll
+
+16846
+17:04:35,720 --> 17:04:41,180
+do dot that dot, another set of
+brackets account, that slice,
+
+16847
+17:04:42,320 --> 17:04:46,160
+count dot length minus four,
+close that off like that, we
+
+16848
+17:04:46,160 --> 17:04:49,070
+have our account, when we hit
+Connect, now it says connected
+
+16849
+17:04:49,070 --> 17:04:52,760
+to blah, blah, blah, hello. And
+because of these hooks, when I
+
+16850
+17:04:52,760 --> 17:04:56,210
+switch accounts, and I connect
+with these new accounts, it even
+
+16851
+17:04:56,240 --> 17:04:59,600
+automatically re renders
+switching accounts. So these
+
+16852
+17:04:59,600 --> 17:05:02,690
+hooks are really good for re
+rendering our websites whenever
+
+16853
+17:05:02,690 --> 17:05:07,250
+some value changes. For example,
+if I said like, let count number
+
+16854
+17:05:07,340 --> 17:05:10,130
+equals seven, and we had a
+button, that updated account
+
+16855
+17:05:10,130 --> 17:05:13,520
+number, our front end wouldn't
+rerender unless we told it
+
+16856
+17:05:13,520 --> 17:05:16,490
+specifically to rerender, which
+gets really annoying. So hooks
+
+16857
+17:05:16,490 --> 17:05:19,910
+kind of help us a lot with doing
+that. And it allows us to keep
+
+16858
+17:05:19,910 --> 17:05:22,250
+track of states between renders.
+
+16859
+17:05:24,830 --> 17:05:27,530
+Now, here's something that right
+now it doesn't do, if I hit
+
+16860
+17:05:27,530 --> 17:05:31,160
+refresh, I have to re hit this
+connect button, even though my
+
+16861
+17:05:31,160 --> 17:05:34,040
+Metamask says, Hey, we're
+connected. But if I refresh, I
+
+16862
+17:05:34,040 --> 17:05:36,230
+have to re hit this Connect
+button. Why is this happening.
+
+16863
+17:05:36,380 --> 17:05:39,680
+Or when I hit refresh, our
+website doesn't know that we've
+
+16864
+17:05:39,680 --> 17:05:42,440
+hit enable Web three already,
+right, because we basically go
+
+16865
+17:05:42,440 --> 17:05:45,500
+back to blank when I refresh,
+and then I have to hit Connect,
+
+16866
+17:05:45,530 --> 17:05:48,740
+which is really obnoxious and
+really annoying. So we want to
+
+16867
+17:05:48,770 --> 17:05:52,610
+add some functionality, so that
+automatically the instant we
+
+16868
+17:05:52,610 --> 17:05:55,640
+render, we go ahead and we check
+to see if we're already
+
+16869
+17:05:55,640 --> 17:05:58,730
+connected. And if we're
+connected to show this. Now to
+
+16870
+17:05:58,730 --> 17:06:03,230
+do that, we can use another hook
+called use effect. And this is a
+
+16871
+17:06:03,230 --> 17:06:10,400
+core react hook. So we'll do
+import use effect from react
+
+16872
+17:06:11,270 --> 17:06:15,530
+like this. This is a core hook
+directly from react. And it's
+
+16873
+17:06:15,530 --> 17:06:18,200
+one of the most popular out
+there along with use state. And
+
+16874
+17:06:18,230 --> 17:06:21,140
+we've left some links to
+learning more about the effect
+
+16875
+17:06:21,140 --> 17:06:23,810
+hook in the GitHub repo
+associated with this course, I'm
+
+16876
+17:06:23,810 --> 17:06:27,050
+gonna give you my summary of
+basically what this use effect
+
+16877
+17:06:27,050 --> 17:06:29,360
+does, we basically have this
+function called use effect,
+
+16878
+17:06:29,390 --> 17:06:32,720
+which takes two parameters, it
+takes a function as its first
+
+16879
+17:06:32,720 --> 17:06:36,950
+parameter, and then second, it
+optionally takes a dependency
+
+16880
+17:06:36,980 --> 17:06:40,130
+array. And what this use effect
+is going to do is it's going to
+
+16881
+17:06:40,130 --> 17:06:44,120
+keep checking the values in this
+dependency array. And if
+
+16882
+17:06:44,120 --> 17:06:48,110
+anything in this dependency rate
+changes, it's going to call some
+
+16883
+17:06:48,110 --> 17:06:52,220
+function, and then rerender, the
+front end. So for example, using
+
+16884
+17:06:52,220 --> 17:06:56,300
+Morales comes with this function
+called is web three enabled or
+
+16885
+17:06:56,300 --> 17:06:59,660
+this variable called is what
+three enabled. If we add this to
+
+16886
+17:06:59,660 --> 17:07:03,050
+our dependency array, what we
+can do in our use effect is do
+
+16887
+17:07:03,050 --> 17:07:10,040
+console dot log, hi. And then we
+can do console dot log is web
+
+16888
+17:07:10,040 --> 17:07:13,730
+three enabled, what this use
+effect is going to be doing is
+
+16889
+17:07:13,760 --> 17:07:16,430
+it's going to constantly be
+running, this is running all the
+
+16890
+17:07:16,430 --> 17:07:20,150
+time. And it's going to be
+listening to see if is web three
+
+16891
+17:07:20,150 --> 17:07:23,570
+enabled changes, right? And
+anytime we run Enable Web three
+
+16892
+17:07:23,600 --> 17:07:27,020
+is web three enabled becomes
+true. So so now if we go to the
+
+16893
+17:07:27,020 --> 17:07:31,190
+front end, we do a little
+refresh, we see high false, high
+
+16894
+17:07:31,190 --> 17:07:34,760
+false. Now why do we see this
+twice is web three enabled only
+
+16895
+17:07:34,760 --> 17:07:38,780
+changed once? Well, this is
+because of how use effect works,
+
+16896
+17:07:38,810 --> 17:07:43,490
+it will automatically run on
+load or right or the first time
+
+16897
+17:07:43,580 --> 17:07:48,110
+it does and then it'll run
+checking the value. So we're
+
+16898
+17:07:48,110 --> 17:07:50,720
+basically seeing this run twice,
+it runs the first time we load
+
+16899
+17:07:50,720 --> 17:07:53,420
+it, and then it'll check the
+value and run again. So we see
+
+16900
+17:07:53,420 --> 17:07:55,880
+go twice, even though it's
+really just once. But if we go
+
+16901
+17:07:55,880 --> 17:07:59,570
+back here, sorry, let me just do
+a quick reload again. We hit
+
+16902
+17:07:59,570 --> 17:08:04,610
+Connect, we now see Hi is now
+true, because it saw is what
+
+16903
+17:08:04,610 --> 17:08:07,700
+three enabled change to true
+because enabled web three made
+
+16904
+17:08:07,760 --> 17:08:11,570
+is what enabled return true. And
+it ran this again, right. So
+
+16905
+17:08:11,570 --> 17:08:14,600
+that's how that actually works.
+And there's a couple of
+
+16906
+17:08:14,600 --> 17:08:17,150
+different ways to think about
+this. Actually, we actually
+
+16907
+17:08:17,150 --> 17:08:19,790
+don't even need to give this an
+array. And what happens if we
+
+16908
+17:08:19,790 --> 17:08:23,150
+don't give this an array? Well,
+let's refresh. We'll hit
+
+16909
+17:08:23,150 --> 17:08:26,540
+Connect, and we'll see it's
+still ran a couple of times. So
+
+16910
+17:08:26,540 --> 17:08:31,010
+if we don't give it array, no
+dependency array, it'll run any
+
+16911
+17:08:31,010 --> 17:08:34,610
+time something re renders. And
+you need to be careful with
+
+16912
+17:08:34,610 --> 17:08:38,990
+this. Because then you can get
+circular renders, if you have
+
+16913
+17:08:38,990 --> 17:08:42,230
+some use effect that changes
+some value. And you have another
+
+16914
+17:08:42,230 --> 17:08:44,960
+use effect that re renders when
+that value changes while they're
+
+16915
+17:08:44,960 --> 17:08:47,330
+both just going to keep changing
+back and back and forth. So no
+
+16916
+17:08:47,330 --> 17:08:50,690
+dependency array like this. It
+will run anytime something re
+
+16917
+17:08:50,690 --> 17:08:54,230
+renders we'll give it a blank
+dependency array. It'll just run
+
+16918
+17:08:54,230 --> 17:08:57,860
+once on load, just run one time.
+So now like we have a blank
+
+16919
+17:08:57,860 --> 17:09:01,370
+dependency right in here, we
+reload. Right? We see that it
+
+16920
+17:09:01,370 --> 17:09:04,610
+runs twice. That's actually
+because we're basically re
+
+16921
+17:09:04,610 --> 17:09:07,220
+rendering once in the
+background. So it really is just
+
+16922
+17:09:07,220 --> 17:09:09,290
+running Once but there's
+something else going on in the
+
+16923
+17:09:09,290 --> 17:09:11,720
+background. So it looks like
+it's running twice. Now if we
+
+16924
+17:09:11,720 --> 17:09:16,040
+just add is web three enabled,
+do a little refresh, it'll do
+
+16925
+17:09:16,040 --> 17:09:19,550
+the exact same thing, it'll run
+the same amount as if this was
+
+16926
+17:09:19,550 --> 17:09:22,850
+blank. But when we connect,
+it'll add here. If this was a
+
+16927
+17:09:22,850 --> 17:09:27,020
+blank array, when we refresh,
+we'll see kick out twice, which
+
+16928
+17:09:27,380 --> 17:09:29,600
+should be ones. But like I said,
+there's something going on in
+
+16929
+17:09:29,600 --> 17:09:32,120
+the background. If we hit
+connect. Now, we don't see
+
+16930
+17:09:32,120 --> 17:09:36,080
+anything here, because the blank
+dependency array says, Hey, I'm
+
+16931
+17:09:36,080 --> 17:09:39,560
+only going to run one time on
+load. Now, if there's our stuff
+
+16932
+17:09:39,560 --> 17:09:42,230
+in this array, like is web three
+enabled, it's going to run
+
+16933
+17:09:42,230 --> 17:09:45,740
+anytime something in this array
+changes, right. So again, we'll
+
+16934
+17:09:45,740 --> 17:09:50,510
+refresh will connect, we see it
+ran again, after a hit Connect
+
+16935
+17:09:50,510 --> 17:09:55,940
+will refresh. Hi, hi connected,
+ran one more time. So so that's
+
+16936
+17:09:55,940 --> 17:09:58,790
+kind of the cheat sheet here. If
+we give it no dependency array,
+
+16937
+17:09:58,820 --> 17:10:01,520
+it's going to run any time
+anything in this project re
+
+16938
+17:10:01,520 --> 17:10:04,520
+renders, if we give it a blank
+dependency array, it's just
+
+16939
+17:10:04,520 --> 17:10:08,510
+going to run one time, or like
+we saw, it ran twice. But that's
+
+16940
+17:10:08,510 --> 17:10:10,790
+because there's something else
+we render in the background. And
+
+16941
+17:10:10,790 --> 17:10:13,100
+if we give it dependencies in
+this array, it's going to run
+
+16942
+17:10:13,100 --> 17:10:16,820
+anytime something in this array
+changes. And this is really
+
+16943
+17:10:16,820 --> 17:10:19,730
+helpful, because oftentimes,
+we're going to want our front
+
+16944
+17:10:19,730 --> 17:10:23,060
+ends to rerender, this use
+effect will say, oh, cool, some
+
+16945
+17:10:23,060 --> 17:10:26,240
+value changed, I'm going to run
+this function, and then I'm
+
+16946
+17:10:26,240 --> 17:10:27,890
+going to rerender, your front
+end.
+
+16947
+17:10:30,500 --> 17:10:33,200
+And now we're going to use this
+use effect thing to make sure
+
+16948
+17:10:33,200 --> 17:10:35,870
+that when we refresh, it
+remembers that we're actually
+
+16949
+17:10:35,870 --> 17:10:38,720
+connected. So how do we do that
+inside here, we are going to use
+
+16950
+17:10:38,720 --> 17:10:41,870
+this is web three enabled thing.
+And the first thing that we want
+
+16951
+17:10:41,870 --> 17:10:46,190
+to just do is we want to say if
+is what three enabled, then
+
+16952
+17:10:46,190 --> 17:10:49,370
+we'll just return. Because if
+we're already connected to web
+
+16953
+17:10:49,370 --> 17:10:52,880
+three, then we don't need to do
+anything. Now, if we're not
+
+16954
+17:10:52,880 --> 17:10:55,730
+connected to web three, and we
+don't have an account, we'll
+
+16955
+17:10:55,730 --> 17:10:58,910
+want to go ahead and call Enable
+Web three, right want to
+
+16956
+17:10:58,910 --> 17:11:02,900
+automatically enable Web three.
+So now if I go back, you'll see
+
+16957
+17:11:02,930 --> 17:11:06,050
+with just this code, I'm just
+always automatically calling
+
+16958
+17:11:06,080 --> 17:11:09,170
+Enable Web three. But this can
+get really annoying. Because if
+
+16959
+17:11:09,170 --> 17:11:13,160
+I disconnect, right, let's go
+disconnect everything. Now
+
+16960
+17:11:13,160 --> 17:11:18,260
+refresh, it's going to always
+call Enable Web three, right,
+
+16961
+17:11:18,260 --> 17:11:20,780
+every time we refresh, it's
+going to automatically call
+
+16962
+17:11:20,780 --> 17:11:23,390
+enabled through without us even
+hitting the Connect button. So
+
+16963
+17:11:23,390 --> 17:11:26,870
+that's no good to we want to
+actually see if we're connected.
+
+16964
+17:11:26,900 --> 17:11:29,480
+So the way we do this, like I
+said, we want to use our local
+
+16965
+17:11:29,480 --> 17:11:32,930
+storage, again, application, or
+these little, this little thing
+
+16966
+17:11:32,930 --> 17:11:37,070
+here go to Application, we want
+our we want our application to
+
+16967
+17:11:37,070 --> 17:11:40,100
+remember that somebody hit this
+connect button, and they went
+
+16968
+17:11:40,100 --> 17:11:43,070
+and connected to us. So what
+we're going to do is in our
+
+16969
+17:11:43,070 --> 17:11:46,040
+little onClick function down
+here, we're not just going to
+
+16970
+17:11:46,040 --> 17:11:49,640
+call await Enable Web three,
+we're also going to store a
+
+16971
+17:11:49,640 --> 17:11:53,060
+little remembrance here saying,
+Hey, we actually did connect
+
+16972
+17:11:53,060 --> 17:11:57,830
+recently. So below this, we're
+going to run window, dot local
+
+16973
+17:11:57,830 --> 17:12:07,370
+storage, dot set item,
+connected, comma injected. I'm
+
+16974
+17:12:07,370 --> 17:12:09,290
+actually going to comment this
+out for now, because my friend
+
+16975
+17:12:09,290 --> 17:12:12,620
+is just going to keep popping up
+like that. So what this does is
+
+16976
+17:12:12,620 --> 17:12:16,310
+we're saying, okay, in our
+window, because again, if you go
+
+16977
+17:12:16,310 --> 17:12:20,360
+back to the window, you go to
+console, a type window, you're
+
+16978
+17:12:20,360 --> 17:12:23,450
+actually going to see this giant
+window thing here, right, which
+
+16979
+17:12:23,450 --> 17:12:26,090
+we showed you before, there's
+always this window object in
+
+16980
+17:12:26,090 --> 17:12:29,750
+here. And we're going to do
+window dot local storage, which
+
+16981
+17:12:29,780 --> 17:12:34,340
+relates to if we go to this
+application section, this local
+
+16982
+17:12:34,340 --> 17:12:38,450
+storage section here, that set
+item connected to inject it. So
+
+16983
+17:12:38,450 --> 17:12:41,540
+we're going to set a new key
+value in here, we're doing it
+
+16984
+17:12:41,540 --> 17:12:44,540
+like this because in the future,
+maybe you want to do you know
+
+16985
+17:12:44,540 --> 17:12:48,740
+connect it to Wallet connect or
+connected to Coinbase wallet or
+
+16986
+17:12:48,740 --> 17:12:51,140
+something, right, but we're just
+gonna say injected, meaning
+
+16987
+17:12:51,140 --> 17:12:54,050
+we're connected to that meta
+mask. And in some versions of
+
+16988
+17:12:54,050 --> 17:12:56,930
+next, Jas next, Jas has a hard
+time knowing about this window
+
+16989
+17:12:56,930 --> 17:13:02,990
+variable. So we can just do if
+type of window does not equal
+
+16990
+17:13:02,990 --> 17:13:07,580
+equal, undefined, then we're
+going to do this. So we're just
+
+16991
+17:13:07,580 --> 17:13:10,490
+making sure that window doesn't
+equal undefined that there is a
+
+16992
+17:13:10,490 --> 17:13:13,160
+window. So now if I go back to
+the front end, and I hit
+
+16993
+17:13:13,160 --> 17:13:18,410
+Connect, and we go ahead, and we
+connect here, we'll see now in
+
+16994
+17:13:18,410 --> 17:13:23,060
+our application, local storage,
+we'll see we've added this
+
+16995
+17:13:23,060 --> 17:13:26,510
+connected injected bit here,
+we're storing in the browser
+
+16996
+17:13:26,510 --> 17:13:29,570
+that we are indeed connected to
+this. Now that we've added this
+
+16997
+17:13:29,600 --> 17:13:33,440
+into our browser, we can roll
+back up to our use effect here
+
+16998
+17:13:33,620 --> 17:13:36,020
+and say, Okay, if they're
+already connected, great, we'll
+
+16999
+17:13:36,020 --> 17:13:39,320
+be done. But before we do
+anything, let's check to see if
+
+17000
+17:13:39,320 --> 17:13:41,990
+they have this here. And if they
+already are connected, let's
+

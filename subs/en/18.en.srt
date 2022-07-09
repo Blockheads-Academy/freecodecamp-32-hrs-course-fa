@@ -1,0 +1,4994 @@
+18001
+18:16:17,810 --> 18:16:21,470
+planet has the exact same
+hashing function, kind of like a
+
+18002
+18:16:21,470 --> 18:16:25,070
+blockchain, right, they all kind
+of run this same spec, the same
+
+18003
+18:16:25,100 --> 18:16:29,120
+specification. So we can hash
+our data on our IPFS node and
+
+18004
+18:16:29,120 --> 18:16:32,600
+get this unique output. What we
+can do then is we can pin that
+
+18005
+18:16:32,600 --> 18:16:36,290
+data or pin that code, or pin
+that file or pin that whatever,
+
+18006
+18:16:36,530 --> 18:16:40,220
+to our node, we have some data,
+we get a unique hash of it, all
+
+18007
+18:16:40,220 --> 18:16:43,610
+it does is host this data and
+have these hashes. That's it,
+
+18008
+18:16:43,820 --> 18:16:48,470
+our node is connected to a
+network of other IPFS nodes. So
+
+18009
+18:16:48,470 --> 18:16:51,740
+there's a massive network of
+people running IPFS nodes,
+
+18010
+18:16:51,770 --> 18:16:54,650
+they're incredibly lightweight,
+way lighter weight than any
+
+18011
+18:16:54,650 --> 18:16:57,860
+other blockchain node. And they
+all talk to each other. So if I
+
+18012
+18:16:57,860 --> 18:17:00,950
+asked the network, hey, I want
+to get this hash. All these
+
+18013
+18:17:00,950 --> 18:17:03,410
+nodes would talk to each other.
+And eventually they'd reach up
+
+18014
+18:17:03,410 --> 18:17:06,920
+at our node saying, Oh, I found
+a node that has that hash.
+
+18015
+18:17:07,100 --> 18:17:09,920
+Here's the file associated with
+it. Now, you might be thinking,
+
+18016
+18:17:09,920 --> 18:17:12,080
+Okay, well, that's kind of
+centralized, because we have the
+
+18017
+18:17:12,080 --> 18:17:15,290
+data on one node here, right?
+Well, you're right, well, here's
+
+18018
+18:17:15,290 --> 18:17:20,060
+the thing, what other nodes can
+do is they can say, oh, that
+
+18019
+18:17:20,060 --> 18:17:24,140
+data looks really cool, I want
+to have that persist, what they
+
+18020
+18:17:24,140 --> 18:17:27,650
+can do is they can pin your
+hash, they can pin your data,
+
+18021
+18:17:27,920 --> 18:17:31,820
+and they'll get a copy of your
+data on their node. And you can
+
+18022
+18:17:31,820 --> 18:17:35,930
+keep doing this. And so you
+easily allow an entire network
+
+18023
+18:17:36,170 --> 18:17:40,430
+to easily replicate any code or
+any data in a decentralized
+
+18024
+18:17:40,460 --> 18:17:42,620
+sense. And they're incredibly
+easy to spin up. And they're
+
+18025
+18:17:42,620 --> 18:17:46,010
+incredibly easy to work with
+something about IPFS, that makes
+
+18026
+18:17:46,010 --> 18:17:49,610
+it drastically different than a
+blockchain is the can't do smart
+
+18027
+18:17:49,610 --> 18:17:52,550
+contract, there's no execution,
+it can really only store it's
+
+18028
+18:17:52,550 --> 18:17:57,050
+just decentralized storage that
+IPFS can do. Now, the issue here
+
+18029
+18:17:57,080 --> 18:18:00,830
+is that in order for our data to
+really be decentralized, another
+
+18030
+18:18:00,830 --> 18:18:04,280
+node does need to pin our data,
+right? Because if we're the only
+
+18031
+18:18:04,280 --> 18:18:08,300
+IPFS node that's got this hash,
+it's kind of centralized on our
+
+18032
+18:18:08,300 --> 18:18:11,600
+node, if our node goes down,
+that data is gone, and the
+
+18033
+18:18:11,600 --> 18:18:14,510
+network won't be able to access
+that data anymore. So we'll talk
+
+18034
+18:18:14,510 --> 18:18:17,450
+about strategies in the future
+about having other people pin
+
+18035
+18:18:17,450 --> 18:18:21,140
+your data. But for now, this is
+a way we can host data, we can
+
+18036
+18:18:21,140 --> 18:18:25,520
+send code and have it be in a
+decentralized context. So unlike
+
+18037
+18:18:25,520 --> 18:18:29,000
+a blockchain, where every single
+node in a blockchain is going to
+
+18038
+18:18:29,030 --> 18:18:33,050
+have a copy of the entire
+blockchain IPFS nodes get to
+
+18039
+18:18:33,080 --> 18:18:37,070
+optionally choose which data
+they want to pin, and they can't
+
+18040
+18:18:37,070 --> 18:18:39,920
+do any execution. So you could
+have an IPFS node, half a
+
+18041
+18:18:39,920 --> 18:18:42,650
+megabyte, and you could have an
+IPFS node, that several
+
+18042
+18:18:42,650 --> 18:18:46,970
+terabytes, it's up to the node
+operators, how much data and
+
+18043
+18:18:46,970 --> 18:18:50,270
+what data they want to pin. Now
+that we know about IPFS.
+
+18044
+18:18:52,909 --> 18:18:57,709
+Let's actually deploy our
+wonderful application to IPFS so
+
+18045
+18:18:57,709 --> 18:19:00,799
+that anybody can use it and
+anybody can connect to it. So
+
+18046
+18:19:00,799 --> 18:19:05,479
+long as our node is up. Are you
+ready? Okay, get excited here.
+
+18047
+18:19:05,539 --> 18:19:08,239
+We're first going to do this
+kind of the Manuel Wait, because
+
+18048
+18:19:08,239 --> 18:19:10,819
+I'm going to show you how to
+install IPFS. And work with
+
+18049
+18:19:10,819 --> 18:19:14,419
+IPFS. Hit get started, there's a
+number of ways to install and
+
+18050
+18:19:14,419 --> 18:19:18,619
+work with IPFS, you can get it
+with a desktop application, get
+
+18051
+18:19:18,619 --> 18:19:23,299
+a command line. And then we can
+also add IPFS to our browser
+
+18052
+18:19:23,419 --> 18:19:28,099
+using something like brave or I
+think Firefox to some this IPFS
+
+18053
+18:19:28,099 --> 18:19:30,439
+router is automatically built
+it. But if using something like
+
+18054
+18:19:30,439 --> 18:19:33,109
+Chrome, you might have to add a
+little companion, because what
+
+18055
+18:19:33,109 --> 18:19:37,339
+we want to do is we can actually
+use those little hashes as URLs
+
+18056
+18:19:37,369 --> 18:19:40,879
+for websites, right, and so we
+want to be able to put that URL
+
+18057
+18:19:41,149 --> 18:19:45,079
+in our browser and connect to
+that node or that piece of code.
+
+18058
+18:19:45,109 --> 18:19:48,139
+So what we're gonna do is we're
+gonna have you install the IPFS
+
+18059
+18:19:48,169 --> 18:19:51,079
+desktop, so you're gonna hit
+that. And when you do that, you
+
+18060
+18:19:51,079 --> 18:19:54,859
+should be able to open up IPFS.
+Now, if you install it, you
+
+18061
+18:19:54,859 --> 18:19:58,429
+might get this little guy, this
+little box here in your upper
+
+18062
+18:19:58,429 --> 18:20:01,159
+section. Otherwise, you might be
+able to open it up with with
+
+18063
+18:20:01,159 --> 18:20:04,939
+IPFS desktop and see it as a
+regular desktop app. Well, once
+
+18064
+18:20:04,939 --> 18:20:08,659
+you install it, you might see
+IPFS is running, you can restart
+
+18065
+18:20:08,659 --> 18:20:11,869
+stop, you can do all this stuff,
+we're gonna go to the file
+
+18066
+18:20:11,869 --> 18:20:15,079
+section, and we're gonna get a
+little pop up that looks like
+
+18067
+18:20:15,079 --> 18:20:17,899
+this. Now, I've got a ton of
+stuff in here, because I've been
+
+18068
+18:20:17,899 --> 18:20:20,839
+using IPFS for some time in
+here, right now, you might have
+
+18069
+18:20:20,839 --> 18:20:24,469
+no data. So let's just go ahead
+and import some file. And maybe
+
+18070
+18:20:24,469 --> 18:20:27,619
+for now we'll just import, you
+know, our next dot config dot j
+
+18071
+18:20:27,619 --> 18:20:30,439
+s, right? It doesn't matter,
+just import something. And now
+
+18072
+18:20:30,439 --> 18:20:34,369
+in here, we have this next dot
+config dot j s or whatever file
+
+18073
+18:20:34,369 --> 18:20:37,849
+you import it. So what we can do
+with this is we can actually
+
+18074
+18:20:37,879 --> 18:20:43,039
+copy the CID. And we can view
+this in our browser. So if we do
+
+18075
+18:20:43,039 --> 18:20:47,299
+IPFS dot dot slash slash, and we
+paste it in, we hit enter, we
+
+18076
+18:20:47,299 --> 18:20:53,029
+can give our browser access to
+actually rendering IPFS URLs. If
+
+18077
+18:20:53,029 --> 18:20:57,049
+using brave, you can just do use
+a brave local IPFS node or let's
+
+18078
+18:20:57,049 --> 18:21:00,679
+go ahead and download this IPFS
+companion. So we'll get IPFS
+
+18079
+18:21:00,679 --> 18:21:04,549
+companion, there's a Firefox
+install for Chrome brave, blah,
+
+18080
+18:21:04,549 --> 18:21:07,669
+blah, blah. So I'm gonna go to
+the Chrome store to get it for
+
+18081
+18:21:07,669 --> 18:21:11,149
+brave, we're just going to hit
+Add to brave add extension. But
+
+18082
+18:21:11,179 --> 18:21:13,639
+once you download it, you'll get
+something that looks like this.
+
+18083
+18:21:13,849 --> 18:21:16,249
+Even on a little browser
+companion, we can see like
+
+18084
+18:21:16,249 --> 18:21:19,219
+import, we can see stuff about
+our node, if we click our node,
+
+18085
+18:21:19,249 --> 18:21:22,519
+we will see a very similar
+setup. But now that we have the
+
+18086
+18:21:22,519 --> 18:21:27,409
+companion in our browser, we can
+copy that Cid that hash. Now
+
+18087
+18:21:27,409 --> 18:21:30,919
+brave, we can just do use brave
+local IPFS node, and will
+
+18088
+18:21:30,979 --> 18:21:35,029
+automatically get dropped into
+the file. Now, if IPFS companion
+
+18089
+18:21:35,029 --> 18:21:38,569
+doesn't work for you, and you
+can't see the URL inside of
+
+18090
+18:21:38,569 --> 18:21:42,049
+something like Google Chrome or
+some other browser, what you can
+
+18091
+18:21:42,049 --> 18:21:45,739
+do is you can use something
+called the IPFS gateway. Now
+
+18092
+18:21:45,739 --> 18:21:49,279
+using a gateway, you're not
+actually directly requesting the
+
+18093
+18:21:49,279 --> 18:21:53,449
+data through IPFS requesting the
+data through another server,
+
+18094
+18:21:53,449 --> 18:21:56,479
+which is requesting it through
+IPFS. But if you are having some
+
+18095
+18:21:56,479 --> 18:22:00,049
+trouble accessing these files,
+you can use the gateway. So what
+
+18096
+18:22:00,049 --> 18:22:02,869
+you'll do is we'll do HTTPS,
+
+18097
+18:22:05,900 --> 18:22:11,270
+slash IPFS, slash and then paste
+the hash code there. And you'll
+
+18098
+18:22:11,270 --> 18:22:14,030
+be able to see your file. Now if
+you do it like this, you won't
+
+18099
+18:22:14,030 --> 18:22:17,720
+even need IPFS companion at all.
+So we're going to deploy our
+
+18100
+18:22:17,720 --> 18:22:22,070
+website to IPFS. So that anybody
+else who wants to pin this can,
+
+18101
+18:22:22,250 --> 18:22:26,120
+and we will now have the ability
+to have an incorruptible, in
+
+18102
+18:22:26,150 --> 18:22:29,990
+unputdownable website, which is
+just awesome. We're going to
+
+18103
+18:22:29,990 --> 18:22:32,540
+learn how to do this the wrong
+way first, and then we're going
+
+18104
+18:22:32,540 --> 18:22:34,910
+to use a tool that's going to
+make it a lot easier for us.
+
+18105
+18:22:34,910 --> 18:22:39,140
+Okay, so first, let's go to our
+website here. And, and if you
+
+18106
+18:22:39,140 --> 18:22:41,930
+want to deploy to rink B, go
+ahead and feel free. Just
+
+18107
+18:22:41,930 --> 18:22:46,670
+remember to make sure that your
+contract addresses file updates
+
+18108
+18:22:46,700 --> 18:22:50,480
+accordingly. Okay. Now, next,
+Jas has the ability to create
+
+18109
+18:22:50,480 --> 18:22:54,410
+static websites. And that's
+going to be an important term to
+
+18110
+18:22:54,410 --> 18:22:57,770
+know we're going to make a
+static website. At the moment,
+
+18111
+18:22:57,770 --> 18:23:02,720
+we don't want our website to be
+tangled with any server stuff.
+
+18112
+18:23:02,780 --> 18:23:05,000
+And the reason we we don't want
+it to be tangled with any server
+
+18113
+18:23:05,000 --> 18:23:07,430
+stuff is because if our website
+runs with server stuff, and we
+
+18114
+18:23:07,430 --> 18:23:11,090
+deploy it to IPFS, will IPFS
+doesn't have the ability to run
+
+18115
+18:23:11,090 --> 18:23:14,840
+any code, it just hosts code. If
+our front end has any server
+
+18116
+18:23:14,840 --> 18:23:18,920
+stuff, it won't work. Now, in
+its current state IPFS can't
+
+18117
+18:23:18,920 --> 18:23:21,320
+come to our project and know
+what to do, right, it doesn't
+
+18118
+18:23:21,320 --> 18:23:24,980
+know how to do yarn dev can't do
+yarn Dev. So we need to put all
+
+18119
+18:23:24,980 --> 18:23:28,910
+of our code into its static
+equivalents. So to do that,
+
+18120
+18:23:28,940 --> 18:23:32,300
+we're gonna do yarn build. And
+if again, if we look at our
+
+18121
+18:23:32,300 --> 18:23:36,230
+package dot JSON, it comes with
+this build, which just runs next
+
+18122
+18:23:36,230 --> 18:23:39,860
+build. And running this build
+command is going to build our
+
+18123
+18:23:39,860 --> 18:23:42,590
+code, what's called like a
+production build, creating an
+
+18124
+18:23:42,620 --> 18:23:46,310
+optimized production build here.
+And we'll get something that
+
+18125
+18:23:46,310 --> 18:23:49,880
+looks like this. And we can see
+this point down here. Static,
+
+18126
+18:23:49,910 --> 18:23:53,780
+automatically rendered as static
+HTML uses no initial props.
+
+18127
+18:23:53,930 --> 18:23:57,110
+There's some server based
+applications that next Jas comes
+
+18128
+18:23:57,110 --> 18:24:00,620
+with that if we use them. Our
+static build won't work. And
+
+18129
+18:24:00,620 --> 18:24:05,000
+actually, you'll see when we run
+yarn, next export, it'll fail if
+
+18130
+18:24:05,000 --> 18:24:08,030
+you have any that non static
+stuff. So let's Go ahead and try
+
+18131
+18:24:08,030 --> 18:24:11,750
+yarn next export. And let's see
+if it fails, it didn't fail, we
+
+18132
+18:24:11,750 --> 18:24:15,620
+now have a new folder called
+out. And this is our folder,
+
+18133
+18:24:15,680 --> 18:24:19,700
+that's just pure static code and
+that we can use on IPFS. In a
+
+18134
+18:24:19,700 --> 18:24:22,100
+later section, I'll show you
+what it looks like when you
+
+18135
+18:24:22,100 --> 18:24:25,250
+don't use some of those static
+things. Both Morales and next
+
+18136
+18:24:25,250 --> 18:24:28,880
+Jas have the optionality to not
+have static code. So we'll just
+
+18137
+18:24:28,880 --> 18:24:31,220
+want to keep that in mind. So
+now that we have this out
+
+18138
+18:24:31,220 --> 18:24:35,960
+folder, we can go back to IPFS.
+And we can import a folder,
+
+18139
+18:24:35,990 --> 18:24:39,050
+we're going to import that whole
+folder in here. So hit that hit
+
+18140
+18:24:39,050 --> 18:24:43,430
+that import button and go to the
+folder. Where that is mine is in
+
+18141
+18:24:43,910 --> 18:24:47,120
+next year smart contract lottery
+out. So now we're going to
+
+18142
+18:24:47,180 --> 18:24:50,450
+upload this to our IPFS node.
+Once it's done, we'll get this
+
+18143
+18:24:50,450 --> 18:24:54,500
+little checkmark. And we can go
+through IPFS files and see our
+
+18144
+18:24:54,530 --> 18:24:58,160
+output here. What we can do,
+let's go ahead and pin this to
+
+18145
+18:24:58,160 --> 18:25:01,760
+our node, we'll pin it to our
+local node here. And now once
+
+18146
+18:25:01,760 --> 18:25:05,900
+it's up, we can copy the CID and
+go back to brave or chrome or
+
+18147
+18:25:05,900 --> 18:25:11,000
+whatever. You type in IPFS colon
+slash slash, paste that in
+
+18148
+18:25:11,000 --> 18:25:15,110
+there. And we immediately get
+dropped into our smart contract
+
+18149
+18:25:15,110 --> 18:25:19,070
+lottery in a browser. And we see
+hi from lottery, no raffle
+
+18150
+18:25:19,100 --> 18:25:22,850
+address detected, because right
+now the way I set mine up Was it
+
+18151
+18:25:22,850 --> 18:25:25,850
+only works with, you know, our
+local hard hats, let's connect
+
+18152
+18:25:25,850 --> 18:25:29,240
+our Metamask we'll hit the
+connect button, connect, and
+
+18153
+18:25:29,240 --> 18:25:33,620
+voila, we are right back where
+we were. But with our data
+
+18154
+18:25:33,620 --> 18:25:37,040
+stored in IPFS, we can enter
+raffle as long as our node is
+
+18155
+18:25:37,040 --> 18:25:41,420
+running a confirm. And we see
+exactly what we get in our local
+
+18156
+18:25:41,420 --> 18:25:44,210
+browsers. So this is phenomenal.
+
+18157
+18:25:46,940 --> 18:25:49,610
+Now that I've shown you how to
+do this, this is the manual way
+
+18158
+18:25:49,610 --> 18:25:54,680
+of adding our code to IPFS. Let
+me show you the easier way of
+
+18159
+18:25:54,680 --> 18:25:57,620
+adding your code to IPFS we're
+gonna go to this site called
+
+18160
+18:25:57,650 --> 18:26:03,350
+fleek HQ. Go to fleek.co. And to
+get to it, I'm going to turn my
+
+18161
+18:26:03,380 --> 18:26:06,650
+my IPFS companion note off
+because of some of the oddities
+
+18162
+18:26:06,650 --> 18:26:10,460
+with working with brave but now
+we're here@flickr.co fleek.co
+
+18163
+18:26:10,490 --> 18:26:13,190
+makes it easy to to deploy
+websites and apps to the new
+
+18164
+18:26:13,190 --> 18:26:16,130
+open web permissionless,
+trustless, censorship resistant,
+
+18165
+18:26:16,160 --> 18:26:19,610
+etc. I like to think about it as
+kind of like an auto deployment
+
+18166
+18:26:19,790 --> 18:26:22,460
+for our websites. And
+additionally, it does some
+
+18167
+18:26:22,460 --> 18:26:25,370
+things to help out with that
+problem. I was talking about how
+
+18168
+18:26:25,580 --> 18:26:29,450
+we want to get other nodes to
+pin our data. So it helps us out
+
+18169
+18:26:29,450 --> 18:26:32,150
+with that. So let me show you
+what it does. So let's go ahead,
+
+18170
+18:26:32,270 --> 18:26:35,630
+we'll sign up. And why don't you
+know, you can sign in with
+
+18171
+18:26:35,630 --> 18:26:38,510
+GitHub. So if you have your
+GitHub, definitely want to sign
+
+18172
+18:26:38,510 --> 18:26:42,350
+in with GitHub here. Because
+we're going to use GitHub to
+
+18173
+18:26:42,350 --> 18:26:46,310
+actually help us automatically
+deploy. So we'll authorize fleet
+
+18174
+18:26:46,310 --> 18:26:49,340
+to work with our GitHub. You've
+authorized your GitHub, let's go
+
+18175
+18:26:49,340 --> 18:26:52,850
+ahead and add a new site or add
+new site. Now we can use fleet
+
+18176
+18:26:52,850 --> 18:26:55,880
+to just automatically deploy
+websites, once we push them to
+
+18177
+18:26:55,880 --> 18:27:00,440
+our GitHub. So we can come to
+our GitHub once again. And click
+
+18178
+18:27:00,440 --> 18:27:03,260
+the little plus button, we'll do
+a new repository. We'll call
+
+18179
+18:27:03,260 --> 18:27:09,110
+this next Jas smart contract,
+lottery Free Code Camp. We'll
+
+18180
+18:27:09,110 --> 18:27:15,290
+make it public create the
+repository. Let's push all this
+
+18181
+18:27:15,290 --> 18:27:18,230
+code to GitHub. We did it once
+before, let's do it again. We'll
+
+18182
+18:27:18,230 --> 18:27:22,760
+do git add, we'll do a little
+dot, then we'll do git commit
+
+18183
+18:27:22,880 --> 18:27:30,800
+minus m, say like initial commit
+or whatever. We'll do git
+
+18184
+18:27:31,040 --> 18:27:39,680
+remote, add origin, and then
+we'll grab that URL, paste it
+
+18185
+18:27:39,680 --> 18:27:45,320
+right here. And then we'll just
+do git push origin, main. Now we
+
+18186
+18:27:45,320 --> 18:27:48,530
+go back to our application we
+see it in here we can do is back
+
+18187
+18:27:48,530 --> 18:27:52,400
+in our fleek. We can connect
+with GitHub, we're going to say
+
+18188
+18:27:52,430 --> 18:27:56,480
+only select repositories, we're
+only going to do this next js
+
+18189
+18:27:56,480 --> 18:27:59,630
+application, this next JS get
+we're going to install an
+
+18190
+18:27:59,630 --> 18:28:04,550
+Authorize. Authorize Great. So
+now we're going to pick a repo
+
+18191
+18:28:04,550 --> 18:28:08,180
+we've picked a repo, we're going
+to choose this application. And
+
+18192
+18:28:08,180 --> 18:28:11,690
+we're going to use IPFS as our
+hosting service. And now we're
+
+18193
+18:28:11,690 --> 18:28:14,390
+going to add our information in
+here. So we're going to use the
+
+18194
+18:28:14,390 --> 18:28:18,110
+main branch. Here's the repo.
+There's gonna be our framework
+
+18195
+18:28:18,110 --> 18:28:23,180
+is gonna be next Jas. So we're
+do fleek next. Jas, we're using
+
+18196
+18:28:23,180 --> 18:28:28,310
+yarn. So we're gonna do yarn
+install, and yarn, run build,
+
+18197
+18:28:28,640 --> 18:28:32,570
+and then yarn run export. If you
+want you could also just do
+
+18198
+18:28:32,570 --> 18:28:35,600
+yarn, yarn build and yarn run
+export, those are gonna be the
+
+18199
+18:28:35,600 --> 18:28:38,720
+same thing. Publish directory is
+going to be out and then we just
+
+18200
+18:28:38,720 --> 18:28:43,430
+hit Deploy site, yarn, next
+export as the last command, not
+
+18201
+18:28:43,460 --> 18:28:47,030
+yarn, run, export. The accident
+did the wrong one, you go over
+
+18202
+18:28:47,030 --> 18:28:51,710
+deploys. Click on this, go to
+deploy settings and then Edit
+
+18203
+18:28:51,710 --> 18:28:57,260
+Settings and then just change it
+to yarn. Next, export save. Then
+
+18204
+18:28:57,260 --> 18:28:59,900
+we'll go back to deploys and
+trigger deploy, if you did the
+
+18205
+18:28:59,900 --> 18:29:02,180
+wrong one that was just a
+learning opportunity for you to
+
+18206
+18:29:02,210 --> 18:29:05,540
+learn where the settings are
+after you deploy. And what this
+
+18207
+18:29:05,540 --> 18:29:08,690
+is going to do is we're going to
+do to deploy, it's going to run
+
+18208
+18:29:08,690 --> 18:29:11,780
+those three commands yarn build,
+yarn export, it's going to run
+
+18209
+18:29:11,810 --> 18:29:14,930
+everything. And then it's going
+to deploy a site for us both on
+
+18210
+18:29:14,930 --> 18:29:19,790
+IPFS. And it's going to give a
+regular URL that we can use for
+
+18211
+18:29:20,030 --> 18:29:24,290
+normies, if you will. And while
+this deploys, you'll actually
+
+18212
+18:29:24,290 --> 18:29:28,100
+see down here we have this thing
+called file coin di D in deal
+
+18213
+18:29:28,100 --> 18:29:32,720
+proposal, Cid IPFS. Like I said,
+we need other people to host our
+
+18214
+18:29:32,720 --> 18:29:36,860
+node. File coin is actually a
+blockchain that helps you pin
+
+18215
+18:29:36,860 --> 18:29:40,760
+your data and uses decentralized
+storage to do so. And fleek
+
+18216
+18:29:40,790 --> 18:29:44,090
+helps you create those deals and
+helps you pin your data with
+
+18217
+18:29:44,090 --> 18:29:46,880
+this filecoin Blockchain
+filecoin is one definitely to
+
+18218
+18:29:46,880 --> 18:29:49,820
+take a look at. And then after a
+while, you might have to wait a
+
+18219
+18:29:49,820 --> 18:29:53,840
+little bit. And once it's done,
+get a little deployed website,
+
+18220
+18:29:53,870 --> 18:29:58,520
+we go back to hosting, we click
+on our thing we can see we have
+
+18221
+18:29:58,520 --> 18:30:02,150
+like a little website here. And
+if we click it, we get a normal
+
+18222
+18:30:02,360 --> 18:30:06,320
+URL for connecting and
+interacting with our website,
+
+18223
+18:30:06,830 --> 18:30:09,260
+you might even see this little
+IPFS thing which will connect to
+
+18224
+18:30:09,260 --> 18:30:12,500
+your IPFS node. And
+additionally, we scroll down in
+
+18225
+18:30:12,500 --> 18:30:16,340
+here we can see current IPFS
+hash, so we can just stick that
+
+18226
+18:30:16,340 --> 18:30:22,580
+in, um, and Bada bing, we have
+an IP Fs deployed application.
+
+18227
+18:30:22,580 --> 18:30:25,790
+Now what's cool is let's say I
+make some changes, you know,
+
+18228
+18:30:25,790 --> 18:30:29,690
+I'll go to lottery entrance. And
+I'll do, I'll scroll on the
+
+18229
+18:30:29,690 --> 18:30:35,420
+bottom to recent winner, I'll
+make a new div. What a close the
+
+18230
+18:30:35,420 --> 18:30:41,990
+div off, we'll save git add dot
+Git commit minus m, add a dot
+
+18231
+18:30:42,590 --> 18:30:44,450
+git push origin mean.
+
+18232
+18:30:46,700 --> 18:30:50,510
+In our GitHub, we'll do a little
+refresh, add a.as, the most
+
+18233
+18:30:50,510 --> 18:30:54,920
+recently added one, go back over
+to fleek. Go back to hosting
+
+18234
+18:30:54,920 --> 18:30:58,940
+click on the section that we
+just made go to deploys, and
+
+18235
+18:30:58,940 --> 18:31:02,120
+you'll see there's a new deploy
+going through. So it
+
+18236
+18:31:02,180 --> 18:31:05,090
+automatically deploys your new
+site, it'll automatically create
+
+18237
+18:31:05,090 --> 18:31:08,810
+a new IPFS hash for your new
+data. However, it'll still be on
+
+18238
+18:31:08,810 --> 18:31:12,680
+this holy bird, you know, or
+whatever your URL is here. And
+
+18239
+18:31:12,680 --> 18:31:16,730
+this is kind of just a router
+for IPSs. So that people without
+
+18240
+18:31:16,730 --> 18:31:20,150
+IPFS connected can also connect
+to this still. And now that my
+
+18241
+18:31:20,150 --> 18:31:23,330
+application is done, pushing
+automatically, with fleek, we
+
+18242
+18:31:23,330 --> 18:31:29,780
+can see what's up being post in
+my application here. Now, like I
+
+18243
+18:31:29,780 --> 18:31:32,690
+said, filecoin isn't going to be
+a technology, we're gonna go too
+
+18244
+18:31:32,690 --> 18:31:36,890
+deep into introduce ourselves.
+But like I was just saying IPFS
+
+18245
+18:31:36,920 --> 18:31:41,360
+does have this limitation. It
+doesn't have data persistence,
+
+18246
+18:31:41,450 --> 18:31:44,720
+you have to have people pin your
+data, in order for it to stay
+
+18247
+18:31:44,720 --> 18:31:48,200
+distributed, and stay
+decentralized. File coin is a
+
+18248
+18:31:48,200 --> 18:31:52,250
+blockchain dedicated to keeping
+this data, both decentralized
+
+18249
+18:31:52,280 --> 18:31:55,250
+and persistent. And to give us a
+better understanding of
+
+18250
+18:31:55,250 --> 18:31:58,610
+filecoin. We actually have Ali
+here to give us an overview.
+
+18251
+18:31:58,640 --> 18:32:00,830
+Take it away, Ali. Hello, I'm
+
+18252
+18:32:00,830 --> 18:32:03,440
+Ali, and I'm a developer
+advocate here at the filecoin
+
+18253
+18:32:03,440 --> 18:32:07,400
+Foundation, which works closely
+with protocol labs and IPFS.
+
+18254
+18:32:07,580 --> 18:32:12,560
+Just a quick note, protocol Labs
+is our r&d arm. So it works on
+
+18255
+18:32:13,640 --> 18:32:17,270
+creating tooling and technology
+for a truly open and democratic
+
+18256
+18:32:17,270 --> 18:32:20,300
+internet and web. And it's
+building out some of the
+
+18257
+18:32:20,300 --> 18:32:23,720
+foundational tooling like IPFS,
+and filecoin, which are two
+
+18258
+18:32:23,720 --> 18:32:27,710
+separate projects to enable
+that. And hopefully, today,
+
+18259
+18:32:27,710 --> 18:32:30,080
+because you're here to build, I
+want to impart on you the
+
+18260
+18:32:30,080 --> 18:32:32,810
+knowledge and tools you need to
+get started with both of those
+
+18261
+18:32:32,810 --> 18:32:36,320
+projects. So as anyone that's
+kind of played around in this
+
+18262
+18:32:36,320 --> 18:32:39,320
+ecosystem, or tech, in general
+would know, data is an
+
+18263
+18:32:39,320 --> 18:32:42,380
+absolutely essential part of our
+daily lives. And not
+
+18264
+18:32:42,380 --> 18:32:45,770
+surprisingly, it's also a super
+fast growing field in web three,
+
+18265
+18:32:46,040 --> 18:32:49,160
+and one, that's fundamental one,
+and it's one of the fundamental
+
+18266
+18:32:49,160 --> 18:32:52,910
+necessities of the decentralized
+web stack as well. So the
+
+18267
+18:32:52,910 --> 18:32:56,150
+current model of centralization
+that's grown up, and basically
+
+18268
+18:32:56,150 --> 18:32:59,330
+out of a lack of an identity
+layer on the internet, is one
+
+18269
+18:32:59,330 --> 18:33:02,540
+where only a few big companies
+offer storage, and only a few
+
+18270
+18:33:02,540 --> 18:33:05,720
+entities hold our data for
+authorization purposes. And this
+
+18271
+18:33:05,720 --> 18:33:08,900
+is an obvious problem, both in
+terms of being an attack vector
+
+18272
+18:33:08,900 --> 18:33:12,320
+for data mining, so without
+data, getting leaked through
+
+18273
+18:33:12,620 --> 18:33:17,060
+insecure service to third
+parties, and also creating a
+
+18274
+18:33:17,060 --> 18:33:20,540
+data resilience problem. So
+whole services go down every
+
+18275
+18:33:20,540 --> 18:33:22,820
+time one of these companies
+servers does and we've
+
+18276
+18:33:22,820 --> 18:33:26,120
+definitely seen that. So it
+really leads to the question,
+
+18277
+18:33:26,150 --> 18:33:29,090
+why aren't we designing the web
+for the autonomy and resilience
+
+18278
+18:33:29,090 --> 18:33:31,910
+we need in the first place? And
+how do we store data in a way
+
+18279
+18:33:31,910 --> 18:33:35,180
+that aligns with both the
+original vision of the internet
+
+18280
+18:33:35,180 --> 18:33:38,570
+as an open place for knowledge
+sharing and collaboration, and,
+
+18281
+18:33:38,630 --> 18:33:43,580
+and, and in a way that agrees
+with the web three mission as
+
+18282
+18:33:43,580 --> 18:33:46,310
+well. So these are the core
+problems we're solving with IPFS
+
+18283
+18:33:46,310 --> 18:33:50,210
+and file coin. Firstly, IPFS is
+a distributed system for storing
+
+18284
+18:33:50,210 --> 18:33:54,350
+and accessing files, folders,
+websites, applications and data.
+
+18285
+18:33:54,560 --> 18:33:56,960
+And it's designed to be able to
+work even when the networks
+
+18286
+18:33:56,960 --> 18:34:00,200
+between planets, so it's a
+distributed by design, it has no
+
+18287
+18:34:00,200 --> 18:34:03,110
+central authority servers, and
+it's designed to be offline
+
+18288
+18:34:03,110 --> 18:34:05,840
+first for resilience. And it's
+not just a fancy name for
+
+18289
+18:34:05,840 --> 18:34:08,360
+another peer to peer network
+either. Because the nice thing
+
+18290
+18:34:08,360 --> 18:34:12,770
+about the IPFS protocol is the
+standard it uses for addressing
+
+18291
+18:34:12,770 --> 18:34:16,820
+content on the network. IPFS is
+unique because rather than using
+
+18292
+18:34:16,820 --> 18:34:20,270
+traditional methods we might be
+with familiar with from the web,
+
+18293
+18:34:20,600 --> 18:34:24,290
+like those are location parts
+that point to a particular HTTP
+
+18294
+18:34:24,290 --> 18:34:28,160
+address where your content may
+or may not be available and
+
+18295
+18:34:28,160 --> 18:34:32,420
+stored. IPFS uses content
+addressing so content addressing
+
+18296
+18:34:32,420 --> 18:34:36,110
+means that each piece of data,
+each meme or even full file
+
+18297
+18:34:36,110 --> 18:34:39,800
+system has its own unique
+cryptographically verifiable
+
+18298
+18:34:39,830 --> 18:34:43,580
+fingerprint, you might call it.
+So if you change even one pixel
+
+18299
+18:34:43,580 --> 18:34:47,480
+of your main image, for example,
+then the content ID or Cid
+
+18300
+18:34:47,510 --> 18:34:52,160
+associated with it also changes.
+So importantly, this hash
+
+18301
+18:34:52,160 --> 18:34:55,370
+function is also upgradeable. So
+let's say quantum computing
+
+18302
+18:34:55,370 --> 18:34:58,910
+breaks out current secure hash
+algorithms, we can upgrade the
+
+18303
+18:34:58,910 --> 18:35:02,960
+standard we use. And it means
+you will always get the same
+
+18304
+18:35:02,960 --> 18:35:07,520
+content returned by an IPFS. Cid
+as what you expect. So this is
+
+18305
+18:35:07,520 --> 18:35:10,730
+fundamentally important, because
+when you don't have to care
+
+18306
+18:35:10,730 --> 18:35:14,600
+where the data comes from, you
+open up the web to massively
+
+18307
+18:35:14,600 --> 18:35:18,920
+distributed storage systems.
+Hello, decentralization. So now
+
+18308
+18:35:18,920 --> 18:35:21,680
+we have a really important and
+valuable protocol that enables
+
+18309
+18:35:21,680 --> 18:35:25,100
+distribution at scale. And it
+provides verifiability of data
+
+18310
+18:35:25,520 --> 18:35:28,280
+to serve and retrieve content on
+the web. And not just for web
+
+18311
+18:35:28,280 --> 18:35:33,650
+three, either, but also for all
+web, or tech use cases. The
+
+18312
+18:35:33,650 --> 18:35:36,680
+problem is, and it's one that
+the early internet also faced,
+
+18313
+18:35:36,770 --> 18:35:39,140
+who's going to ensure the
+persistence and permanence of
+
+18314
+18:35:39,140 --> 18:35:42,290
+all this data on the network. So
+unless you're running your own
+
+18315
+18:35:42,290 --> 18:35:46,340
+nodes 24/7, or your content is
+really popular or other nodes
+
+18316
+18:35:46,340 --> 18:35:49,520
+decide to altruistically store
+your data. Because I think it's
+
+18317
+18:35:49,520 --> 18:35:53,000
+important, then this data can
+become unreliable because
+
+18318
+18:35:53,000 --> 18:35:55,580
+they're no longer actively
+hosted on any nodes on the
+
+18319
+18:35:55,580 --> 18:35:58,760
+network's. So to avoid this, you
+could also turn to a pinning
+
+18320
+18:35:58,760 --> 18:36:01,910
+service that you pay to keep a
+copy of your content around.
+
+18321
+18:36:02,870 --> 18:36:04,970
+Unfortunately, the problem with
+this though, is that we're
+
+18322
+18:36:04,970 --> 18:36:07,340
+heading back towards
+centralization of data. And
+
+18323
+18:36:07,340 --> 18:36:11,330
+we're creating new data silos
+with this solution and losing
+
+18324
+18:36:11,330 --> 18:36:13,610
+the trust lessness and
+resilience we're looking for.
+
+18325
+18:36:13,850 --> 18:36:18,650
+And these one a bad solution
+prior to file coin, and it's why
+
+18326
+18:36:18,650 --> 18:36:22,490
+they sprung up initially, but we
+want a better solution. So this
+
+18327
+18:36:22,490 --> 18:36:26,810
+is where file coin comes in. So
+far coins architecture, then
+
+18328
+18:36:26,810 --> 18:36:29,990
+designed to leverage a crypto
+economic incentive model
+
+18329
+18:36:29,990 --> 18:36:33,320
+together with cryptographic
+proofs in order to ensure data
+
+18330
+18:36:33,320 --> 18:36:38,390
+is stored persistently, highly
+reliably and verifiably. It uses
+
+18331
+18:36:38,390 --> 18:36:41,960
+these cryptographic proofs to
+also enable smart contract based
+
+18332
+18:36:41,960 --> 18:36:45,080
+permanence. And that means that
+it's designed to be as permanent
+
+18333
+18:36:45,080 --> 18:36:48,770
+as you, the data owner want it
+to be. It's your data, so it's
+
+18334
+18:36:48,770 --> 18:36:52,250
+your choice. It's also designed
+to enable internet scale
+
+18335
+18:36:52,250 --> 18:36:55,550
+capacity. It's currently the
+largest distributed storage
+
+18336
+18:36:55,550 --> 18:37:00,020
+network in the world with over
+18 million terabytes of capacity
+
+18337
+18:37:00,020 --> 18:37:05,120
+available, which is apparently
+about 135 copies of the European
+
+18338
+18:37:05,120 --> 18:37:09,620
+Union's nuclear program, CERN's
+data which, which is kind of a
+
+18339
+18:37:09,620 --> 18:37:14,240
+fun fact. It's also file coins
+also designed to be and stay
+
+18340
+18:37:14,240 --> 18:37:19,460
+hyper competitive on pricing due
+to its market economics. And
+
+18341
+18:37:19,460 --> 18:37:23,780
+this comes down to storage
+deals. So to make this network
+
+18342
+18:37:23,780 --> 18:37:27,170
+feasible, filecoin uses storage
+deals. And these include two
+
+18343
+18:37:27,170 --> 18:37:30,530
+main consensus mechanisms that
+ensure both rewards for good
+
+18344
+18:37:30,530 --> 18:37:33,440
+actors in the system, and
+penalties for bad actors. So
+
+18345
+18:37:33,440 --> 18:37:36,950
+when you make a deal with one or
+more storage providers to store
+
+18346
+18:37:36,980 --> 18:37:39,980
+your important data, the
+provider generates a proof of
+
+18347
+18:37:39,980 --> 18:37:43,490
+replication. So this proves that
+the storage provider is storing
+
+18348
+18:37:43,520 --> 18:37:48,680
+a unique copy of your original
+data over time to make sure that
+
+18349
+18:37:48,680 --> 18:37:53,090
+this data is persisted. These
+storage providers must prove
+
+18350
+18:37:53,090 --> 18:37:56,120
+that they still have random
+subsets of this client data and
+
+18351
+18:37:56,150 --> 18:37:59,930
+they create proof of space
+times. And these proof this
+
+18352
+18:37:59,930 --> 18:38:04,220
+proof of space time is something
+that is stored on the
+
+18353
+18:38:04,220 --> 18:38:07,730
+blockchain. So anyone at any
+time can also check that this is
+
+18354
+18:38:07,730 --> 18:38:11,690
+true. And it also makes up the
+mechanism by which miners are
+
+18355
+18:38:11,720 --> 18:38:15,050
+rewarded or penalized because
+you have to stake Phil on the
+
+18356
+18:38:15,050 --> 18:38:19,910
+network in order to become a
+storage provider. So when a
+
+18357
+18:38:19,910 --> 18:38:24,860
+storage deal comes to an end, or
+user can you can opt to let it
+
+18358
+18:38:24,860 --> 18:38:27,590
+expire or renew the deal. If you
+opt for renewal, then the
+
+18359
+18:38:27,590 --> 18:38:31,190
+providers again bid to host this
+content. So this creates an
+
+18360
+18:38:31,190 --> 18:38:34,310
+efficient market for pricing a
+continual efficient market for
+
+18361
+18:38:34,310 --> 18:38:38,030
+pricing as well. It can even go
+negative. So the storage
+
+18362
+18:38:38,030 --> 18:38:40,760
+provider can even pay you to
+store your data if it's an
+
+18363
+18:38:40,760 --> 18:38:43,670
+important data set due to some
+of the block rewards that are
+
+18364
+18:38:43,670 --> 18:38:48,320
+being offered by the filecoin
+Foundation as well. So these
+
+18365
+18:38:48,320 --> 18:38:52,490
+mechanisms are what built in not
+just data permanence, but data
+
+18366
+18:38:52,490 --> 18:38:55,460
+timeframes, sovereignty, too so
+it's your data, it's your
+
+18367
+18:38:55,460 --> 18:38:57,800
+choice. You can decide you want
+to store your data for five
+
+18368
+18:38:57,800 --> 18:39:01,700
+minutes or 500 years. It's also
+your choice over how much
+
+18369
+18:39:01,700 --> 18:39:05,270
+resilience you want to have that
+data so or how many copies of
+
+18370
+18:39:05,270 --> 18:39:08,360
+that data you want to have and
+with what store to providers. So
+
+18371
+18:39:08,600 --> 18:39:13,190
+this allows you to comply with
+regulations like GDPR. And
+
+18372
+18:39:13,190 --> 18:39:15,380
+there's a growing number of
+tools in the ecosystem like
+
+18373
+18:39:15,380 --> 18:39:19,340
+murmurations bit screen that are
+allowing for you to do this
+
+18374
+18:39:19,340 --> 18:39:23,990
+filtering. But it also gives you
+some guarantees that your data,
+
+18375
+18:39:24,020 --> 18:39:27,080
+you know, if one storage
+provided goes down, you know,
+
+18376
+18:39:27,080 --> 18:39:30,080
+surely not 10 of them are going
+to go down. So that's a
+
+18377
+18:39:30,080 --> 18:39:32,690
+guarantee for your resilience
+there as well.
+
+18378
+18:39:34,130 --> 18:39:36,890
+And this is why IPFS and
+filecoin are great complements
+
+18379
+18:39:36,890 --> 18:39:40,010
+of each other. So IPF s gives
+you that benefit of content
+
+18380
+18:39:40,010 --> 18:39:43,130
+addressing file coin gives you
+persistent guarantees that even
+
+18381
+18:39:43,130 --> 18:39:45,710
+if your computer or your
+favorite IPFS pinning service
+
+18382
+18:39:45,710 --> 18:39:50,990
+where to go away, the content
+persists. Just as a quick final
+
+18383
+18:39:50,990 --> 18:39:53,990
+note on these concepts as well,
+IPFS and file coin is separate
+
+18384
+18:39:53,990 --> 18:39:57,590
+projects, as I mentioned. So
+IPFS is a protocol much like
+
+18385
+18:39:57,590 --> 18:40:02,960
+HTTP, whereas file coin is a
+blockchain. So IPFS is also
+
+18386
+18:40:02,960 --> 18:40:05,930
+storage layer agnostic, you can
+combine it with the storage
+
+18387
+18:40:05,930 --> 18:40:08,630
+layer of your choice. And while
+file coin was specifically
+
+18388
+18:40:08,630 --> 18:40:11,810
+designed to complement it, and
+we think is a great choice, you
+
+18389
+18:40:11,810 --> 18:40:15,080
+can also store your IPFS data in
+the cloud or an other storage
+
+18390
+18:40:15,080 --> 18:40:19,310
+solutions as well. So hopefully,
+you've got a good baseline for
+
+18391
+18:40:19,310 --> 18:40:22,520
+why you'd want to use IPFS, and
+filecoin. And for those
+
+18392
+18:40:22,520 --> 18:40:25,790
+engineers out there that like a
+challenge, and are interested in
+
+18393
+18:40:25,790 --> 18:40:30,440
+working on the base protocols
+and code of IPFS, and file coin,
+
+18394
+18:40:30,440 --> 18:40:33,770
+which isn't always easy for the
+average user, I'd encourage you
+
+18395
+18:40:33,770 --> 18:40:36,260
+to go and take a look at the
+project docs and get hubs and
+
+18396
+18:40:36,260 --> 18:40:39,290
+some of the associated grants
+available for extensions to
+
+18397
+18:40:39,290 --> 18:40:42,170
+these open source projects. And
+this is a great site here if you
+
+18398
+18:40:42,170 --> 18:40:45,800
+want to get more information
+into the nitty gritty and really
+
+18399
+18:40:45,800 --> 18:40:49,940
+dig into the code behind IPFS
+and filecoin. And extend some of
+
+18400
+18:40:49,940 --> 18:40:52,610
+that. For those of you that just
+want to build out of the box
+
+18401
+18:40:52,610 --> 18:40:55,580
+though. And this is definitely a
+camp that I often fall into. I
+
+18402
+18:40:55,580 --> 18:40:57,980
+want to talk about some of the
+dev tooling and storage helpers
+
+18403
+18:40:57,980 --> 18:41:01,700
+that make it easy for you to get
+started. So firstly, Flake Flake
+
+18404
+18:41:01,700 --> 18:41:04,970
+is one of my favorite IPFS dev
+tools. And projects Flake is a
+
+18405
+18:41:04,970 --> 18:41:09,320
+CI CD tool that you can use to
+deploy your apps for free as
+
+18406
+18:41:09,320 --> 18:41:12,500
+simply as easy as you would with
+some of the web tools you might
+
+18407
+18:41:12,620 --> 18:41:15,860
+web to tools you might be
+familiar with like Netlify
+
+18408
+18:41:16,100 --> 18:41:20,300
+oversell. The big difference,
+though, is fleek uses IPFS to
+
+18409
+18:41:20,300 --> 18:41:23,330
+host your site or app. And it
+even offers an AES domain
+
+18410
+18:41:23,330 --> 18:41:26,960
+routing on their platform. So if
+you're deploying a front end
+
+18411
+18:41:26,960 --> 18:41:29,750
+app, I would encourage you to
+use fleek to make it more
+
+18412
+18:41:29,750 --> 18:41:33,080
+distributed instead of some of
+the traditional web two tools.
+
+18413
+18:41:33,110 --> 18:41:37,340
+It's just as easy, I promise. So
+another one of my favorite tools
+
+18414
+18:41:37,340 --> 18:41:41,540
+is NFT storage, storing your NFT
+metadata immutably and
+
+18415
+18:41:41,540 --> 18:41:45,200
+persistently, as you already
+probably know, is integral to
+
+18416
+18:41:45,200 --> 18:41:48,260
+keeping the main value
+proposition of NF Ts, then on
+
+18417
+18:41:48,260 --> 18:41:53,750
+fungibility. So if you're not
+storing this data on chain,
+
+18418
+18:41:53,780 --> 18:41:57,170
+which obviously can become
+pretty financially unviable for
+
+18419
+18:41:57,170 --> 18:42:00,680
+large files, then this is
+exactly where NF T storage comes
+
+18420
+18:42:00,680 --> 18:42:03,680
+in. So it was specifically
+created as a public good to
+
+18421
+18:42:03,710 --> 18:42:07,940
+archive and persist NF T data.
+So it's free. And it takes care
+
+18422
+18:42:07,940 --> 18:42:11,540
+of the complexity around firstly
+creating an IPFS Cid for this
+
+18423
+18:42:11,540 --> 18:42:15,110
+metadata, and then making
+automatic deals with filecoin
+
+18424
+18:42:15,110 --> 18:42:19,190
+storage providers. So it does
+this with at least eight storage
+
+18425
+18:42:19,190 --> 18:42:21,770
+providers. So eight times
+redundancy and it does it with a
+
+18426
+18:42:21,770 --> 18:42:25,160
+multigenerational timeframe. So
+it automatically renews those
+
+18427
+18:42:25,160 --> 18:42:28,640
+deals. Because it's a public
+good, it's all free as well. And
+
+18428
+18:42:28,640 --> 18:42:31,790
+it's also super easy to use,
+because you just need because
+
+18429
+18:42:31,790 --> 18:42:36,290
+it's a JavaScript service. So
+you just need to say import that
+
+18430
+18:42:36,290 --> 18:42:39,950
+as an NPM package or JavaScript
+library and then call the API
+
+18431
+18:42:39,950 --> 18:42:45,140
+and NFT dot storage takes care
+of the rest. For data that isn't
+
+18432
+18:42:45,140 --> 18:42:48,890
+NF T metadata as well, we built
+web three dot storage, web three
+
+18433
+18:42:48,890 --> 18:42:53,450
+storage is designed to give you
+those same web two benefits. So
+
+18434
+18:42:53,450 --> 18:42:56,840
+similar to NF T dot storage,
+make it super easy for you to
+
+18435
+18:42:56,840 --> 18:43:00,890
+use. And it's got JavaScript and
+go client libraries.
+
+18436
+18:43:02,300 --> 18:43:05,990
+While giving you you know the
+power of IPFS and filecoin of
+
+18437
+18:43:05,990 --> 18:43:09,830
+decentralized storage and IPFS
+content addressing so it's got
+
+18438
+18:43:09,830 --> 18:43:12,710
+one terabyte after terabyte, one
+terabyte of free storage with
+
+18439
+18:43:12,710 --> 18:43:15,440
+that. So try that out if you're
+not just like trying to store
+
+18440
+18:43:15,440 --> 18:43:19,760
+and obtain metadata. The next
+tool is a bit more advanced.
+
+18441
+18:43:20,000 --> 18:43:23,390
+It's called textil Palghat gate,
+and it's for you know, more
+
+18442
+18:43:23,390 --> 18:43:27,080
+advanced developers or those
+looking for more flexibility to
+
+18443
+18:43:27,080 --> 18:43:31,970
+interact with IPFS live peer to
+peer and filecoin. It's a Docker
+
+18444
+18:43:31,970 --> 18:43:35,180
+container wrapped around
+filecoin and IPFS nodes. And it
+
+18445
+18:43:35,180 --> 18:43:37,190
+gives you a lot of options to
+configure it's a minor
+
+18446
+18:43:37,190 --> 18:43:40,760
+selections and extend
+functionality. It also offers
+
+18447
+18:43:40,760 --> 18:43:43,880
+some bridges to several layer
+ones which might be of interest
+
+18448
+18:43:43,880 --> 18:43:49,070
+to developers out there. Another
+one here and I'll preface this
+
+18449
+18:43:49,070 --> 18:43:52,760
+by saying you need an invite to
+this is ESRI tech. So it's for
+
+18450
+18:43:52,760 --> 18:43:56,240
+people looking to store really
+meaningful public data. It's
+
+18451
+18:43:56,240 --> 18:44:00,410
+currently in alpha mode and like
+I said, it requires an invite
+
+18452
+18:44:00,410 --> 18:44:03,350
+because it's been built as a
+public goods specifically to
+
+18453
+18:44:03,350 --> 18:44:07,940
+store important information. If
+you are I do have Use case
+
+18454
+18:44:07,940 --> 18:44:11,120
+around this slide, please feel
+free to reach out to us on this
+
+18455
+18:44:11,120 --> 18:44:16,130
+project. Other final tool I'll
+mention is orbit dB. So many
+
+18456
+18:44:16,130 --> 18:44:19,100
+people coming to the web three
+space from web two are often
+
+18457
+18:44:19,100 --> 18:44:22,640
+looking for the same sort of
+relational databases that we're
+
+18458
+18:44:22,640 --> 18:44:25,910
+so used to in traditional
+computing except in a
+
+18459
+18:44:25,910 --> 18:44:30,230
+decentralized or distributed
+format. And this isn't an easy
+
+18460
+18:44:30,230 --> 18:44:33,710
+problem. So Oba to me is
+currently in active development.
+
+18461
+18:44:33,710 --> 18:44:37,850
+And because this isn't an easy
+problem to solve, this isn't an
+
+18462
+18:44:37,850 --> 18:44:40,130
+ideal solution for those of you
+looking for an out of the box
+
+18463
+18:44:40,130 --> 18:44:43,970
+experience. But if you are
+looking for something like that,
+
+18464
+18:44:44,120 --> 18:44:47,960
+try out orbit dB. And there's
+also several other tools in the
+
+18465
+18:44:47,960 --> 18:44:51,980
+ecosystem leveraging IPFS and
+filecoin, including ceramic,
+
+18466
+18:44:51,980 --> 18:44:55,100
+which is similar to textil power
+gate, except it uses
+
+18467
+18:44:55,100 --> 18:44:58,730
+decentralized identities.
+Lighthouse is file drive, and
+
+18468
+18:44:58,730 --> 18:45:03,110
+there's even Morales has an IPFS
+API, so check those out as well.
+
+18469
+18:45:04,370 --> 18:45:07,670
+So storage is really a
+fundamental component on one
+
+18470
+18:45:07,670 --> 18:45:10,160
+technology system. So and
+there's so many use cases you
+
+18471
+18:45:10,160 --> 18:45:13,190
+could dive into here. And so
+hopefully, I've provided you
+
+18472
+18:45:13,190 --> 18:45:15,500
+with some of the knowledge and
+tools you need to get started
+
+18473
+18:45:15,500 --> 18:45:19,640
+with IPFS and file Goyt. Coin
+and really make powerful
+
+18474
+18:45:19,640 --> 18:45:23,270
+distributed applications. And
+there's just one more tool
+
+18475
+18:45:23,270 --> 18:45:26,270
+that's also in active
+development now. So if you look
+
+18476
+18:45:26,270 --> 18:45:29,660
+closely at this diagram, you'll
+notice probably unfamiliar logo
+
+18477
+18:45:29,660 --> 18:45:32,690
+right at the end of the logic
+layer. And that's the logo for
+
+18478
+18:45:32,690 --> 18:45:36,980
+the filecoin virtual machine. So
+FBM will be launching at the end
+
+18479
+18:45:36,980 --> 18:45:40,310
+of this year. And we're super
+excited about it. And it's going
+
+18480
+18:45:40,310 --> 18:45:44,240
+to allow smart contracts,
+contract use combined with like
+
+18481
+18:45:44,240 --> 18:45:48,290
+colocation of storage data,
+loads, so computing capabilities
+
+18482
+18:45:48,320 --> 18:45:51,950
+with storage capabilities, and
+will also be EVM compatible. So
+
+18483
+18:45:51,950 --> 18:45:54,770
+as I said, we're super excited
+for the kinds of use cases that
+
+18484
+18:45:54,770 --> 18:45:58,790
+we're going to see come out of
+this project as well. And you
+
+18485
+18:45:58,790 --> 18:46:02,300
+can follow along here on the
+website here as well. So
+
+18486
+18:46:02,300 --> 18:46:04,430
+hopefully, I've given you all
+the tools you need to get
+
+18487
+18:46:04,430 --> 18:46:08,030
+started with IPFS. And file
+coin. If you do need more
+
+18488
+18:46:08,030 --> 18:46:11,180
+resources or want to get
+involved, we have proto School,
+
+18489
+18:46:11,180 --> 18:46:14,360
+which is interactive tutorials
+on decentralized web protocols.
+
+18490
+18:46:14,600 --> 18:46:19,130
+There's also NFT, school dot
+Dev, or join a hackathon, check
+
+18491
+18:46:19,130 --> 18:46:22,670
+out our hackathons.filecoin.io
+page for all the latest
+
+18492
+18:46:22,670 --> 18:46:25,970
+hackathons we're involved in.
+And if you do really want to dig
+
+18493
+18:46:25,970 --> 18:46:30,080
+deep and build tooling in IPFS,
+and file coin or build a cool
+
+18494
+18:46:30,080 --> 18:46:34,220
+project, check out our grants
+options as well for that, in the
+
+18495
+18:46:34,220 --> 18:46:39,260
+meantime, all please learn long
+build and prosper.
+
+18496
+18:46:42,320 --> 18:46:46,310
+So we've learned a ton in this
+section. And that is it. So
+
+18497
+18:46:46,310 --> 18:46:49,430
+let's do a summary of all the
+amazing things that we've
+
+18498
+18:46:49,430 --> 18:46:52,550
+learned. And then we'll go into
+the TypeScript edition of this
+
+18499
+18:46:52,550 --> 18:46:55,130
+because the TypeScript edition
+is definitely a little bit
+
+18500
+18:46:55,130 --> 18:46:58,340
+different. So let's talk.
+Alright, so first, we learned
+
+18501
+18:46:58,340 --> 18:47:00,800
+more about next Jas. And we
+learned we can have an
+
+18502
+18:47:00,800 --> 18:47:04,010
+application using next Jas. And
+it's a framework that's gonna
+
+18503
+18:47:04,010 --> 18:47:06,950
+allow us to build really
+powerful front ends and full
+
+18504
+18:47:06,950 --> 18:47:10,340
+stack applications really
+easily. We learned about the
+
+18505
+18:47:10,340 --> 18:47:13,640
+layout of our next JS project,
+we add components in a
+
+18506
+18:47:13,640 --> 18:47:17,270
+components folder, which are
+basically minimalistic blocks of
+
+18507
+18:47:17,270 --> 18:47:21,590
+JavaScript and HTML that we can
+use to modularize and create our
+
+18508
+18:47:21,590 --> 18:47:24,920
+website out of these components.
+Constants is a folder that we
+
+18509
+18:47:24,920 --> 18:47:29,390
+can put constant variables, Node
+modules is node modules. And out
+
+18510
+18:47:29,390 --> 18:47:32,210
+folders. What happens when we
+export all of our code to a
+
+18511
+18:47:32,210 --> 18:47:35,960
+static example, pages are going
+to be basically the routes or
+
+18512
+18:47:35,960 --> 18:47:38,780
+the different pages of our
+website, everything goes through
+
+18513
+18:47:38,810 --> 18:47:43,760
+app.js. Public is just some
+public stuff styles is for any
+
+18514
+18:47:43,760 --> 18:47:47,240
+CSS or styling of our
+application. And then we have
+
+18515
+18:47:47,270 --> 18:47:52,010
+our basic files here. In our
+pages section, we have our app,
+
+18516
+18:47:52,130 --> 18:47:55,520
+which is surrounded by both this
+notification provider and our
+
+18517
+18:47:55,520 --> 18:47:59,480
+Morales provider, all of our
+components run through this app
+
+18518
+18:47:59,600 --> 18:48:03,440
+on all of our pages run through
+this app. So this is kind of
+
+18519
+18:48:03,440 --> 18:48:07,460
+considered the entry point for
+our entire application. Having
+
+18520
+18:48:07,460 --> 18:48:10,760
+this Morales provider wrapped
+around our notifications in
+
+18521
+18:48:10,760 --> 18:48:15,080
+component means that we don't
+have to pass parameters between
+
+18522
+18:48:15,080 --> 18:48:18,680
+our components. And our lottery
+will just know what chain ID
+
+18523
+18:48:18,680 --> 18:48:21,290
+that we're on, because our
+header is going to pass it up to
+
+18524
+18:48:21,290 --> 18:48:23,780
+Morales provider and the Morales
+provider is going to pass it
+
+18525
+18:48:23,780 --> 18:48:27,650
+back down to our lottery
+entrance. And we saw with our
+
+18526
+18:48:27,650 --> 18:48:30,380
+manual header, the way that that
+connect button works behind the
+
+18527
+18:48:30,380 --> 18:48:33,260
+scenes. So it's doing some local
+storage, where we're storing
+
+18528
+18:48:33,260 --> 18:48:35,990
+whether or not we're actually
+connected, we learned about use
+
+18529
+18:48:35,990 --> 18:48:39,170
+effect, and you state and these
+different hooks in our front
+
+18530
+18:48:39,170 --> 18:48:42,020
+ends were one of the main
+reasons we want hooks is we want
+
+18531
+18:48:42,050 --> 18:48:45,560
+we want our websites to
+rerender. When stuff changes, we
+
+18532
+18:48:45,560 --> 18:48:49,040
+want our components to be able
+to talk about the state of the
+
+18533
+18:48:49,040 --> 18:48:52,250
+blockchain with each other. And
+they're incredibly powerful for
+
+18534
+18:48:52,250 --> 18:48:55,460
+building our React applications.
+Use effect is one of the most
+
+18535
+18:48:55,460 --> 18:48:58,910
+popular ones where if we don't
+have a dependency array, our
+
+18536
+18:48:58,910 --> 18:49:02,210
+function inside of our use
+effect will run anytime
+
+18537
+18:49:02,210 --> 18:49:06,050
+something re renders a blank
+dependency array means it'll
+
+18538
+18:49:06,050 --> 18:49:09,950
+just run once on load. And if
+there are dependencies in the
+
+18539
+18:49:09,950 --> 18:49:14,360
+array, it'll run any time any of
+the variables in those change.
+
+18540
+18:49:14,420 --> 18:49:18,020
+We also learned about the use
+state hook, which is really
+
+18541
+18:49:18,020 --> 18:49:21,200
+similar to saying like, let
+variable equals x. But it also
+
+18542
+18:49:21,200 --> 18:49:24,500
+comes with the RE rendering
+ability. And it comes with some
+
+18543
+18:49:24,500 --> 18:49:26,870
+other nice abilities that we
+didn't really discuss here, we
+
+18544
+18:49:26,870 --> 18:49:29,420
+learned how to call different
+contract functions with
+
+18545
+18:49:29,450 --> 18:49:33,680
+mirallas. Not only sending
+transactions, but also calling
+
+18546
+18:49:33,680 --> 18:49:36,560
+data. Morales is smart enough to
+know that when it sees get
+
+18547
+18:49:36,560 --> 18:49:40,160
+entrance fee that this is going
+to be a view function. And this
+
+18548
+18:49:40,190 --> 18:49:42,470
+is going to be a transaction, it
+can tell the difference between
+
+18549
+18:49:42,470 --> 18:49:45,770
+the two. So this one's going to
+populate Metamask to pop up. And
+
+18550
+18:49:45,770 --> 18:49:48,470
+this one just going to return
+kind of normally like a view
+
+18551
+18:49:48,470 --> 18:49:51,560
+function, what we can actually
+use the same syntax between
+
+18552
+18:49:51,590 --> 18:49:54,380
+sending transactions and then
+calling view functions on our
+
+18553
+18:49:54,380 --> 18:49:57,680
+contract, we added a button,
+calling one of these Morales
+
+18554
+18:49:57,680 --> 18:50:01,880
+pieces and then had an onsuccess
+section where when our
+
+18555
+18:50:01,880 --> 18:50:05,420
+transaction completed, we update
+the UI and we add a little pop
+
+18556
+18:50:05,420 --> 18:50:08,750
+up for notifications, we learned
+how to deploy our code directly
+
+18557
+18:50:08,750 --> 18:50:14,900
+to IPFS. And use that IPFS hash
+to interact and see our code, we
+
+18558
+18:50:14,900 --> 18:50:18,170
+also learned about fleek and how
+fleek automatically deploys to
+
+18559
+18:50:18,170 --> 18:50:22,130
+IPFS. Whenever we do a git push
+to our GitHub repository, and it
+
+18560
+18:50:22,130 --> 18:50:26,270
+makes continuously updating our
+websites much easier. It also
+
+18561
+18:50:26,270 --> 18:50:30,290
+gives us a regular canonical URL
+as well. And then finally, we
+
+18562
+18:50:30,290 --> 18:50:33,680
+learned about IPFS and
+decentralized database storage.
+
+18563
+18:50:33,890 --> 18:50:36,110
+Now you might be asking, Okay,
+well, why don't we just store
+
+18564
+18:50:36,110 --> 18:50:39,050
+all the data for this website on
+Aetherium, or polygon or
+
+18565
+18:50:39,050 --> 18:50:41,810
+avalanche, etc? And the answer
+to that is that can get
+
+18566
+18:50:41,810 --> 18:50:45,800
+incredibly expensive storing
+data, storing a ton of data on
+
+18567
+18:50:45,800 --> 18:50:50,060
+the blockchain costs a ton of
+gas, whereas this is a much
+
+18568
+18:50:50,090 --> 18:50:53,840
+cheaper alternative. Aetherium
+avalanche and the smart contract
+
+18569
+18:50:53,900 --> 18:50:57,230
+platforms aren't really meant to
+be data storage layers, they're
+
+18570
+18:50:57,230 --> 18:51:00,050
+meant to be logic layers, right?
+Decentralized logic,
+
+18571
+18:51:00,050 --> 18:51:03,260
+decentralized smart contracts,
+oftentimes, yes, we're gonna
+
+18572
+18:51:03,260 --> 18:51:06,410
+have to store data in them. But
+when it's a ton of data, there
+
+18573
+18:51:06,410 --> 18:51:08,630
+are better solutions. And there
+are different solutions out
+
+18574
+18:51:08,630 --> 18:51:12,410
+there for storing our data, like
+IPFS and filecoin, you should be
+
+18575
+18:51:12,440 --> 18:51:15,080
+incredibly proud of yourself, if
+you've made it this far, because
+
+18576
+18:51:15,080 --> 18:51:18,680
+you've just made a really solid
+app, a really solid front end
+
+18577
+18:51:18,680 --> 18:51:21,770
+application. And you've learned
+how to really easily add
+
+18578
+18:51:21,770 --> 18:51:24,650
+functionality for interacting
+with your smart contracts. So
+
+18579
+18:51:24,680 --> 18:51:27,800
+give yourself a pat on the back,
+maybe even tweet this out, share
+
+18580
+18:51:27,800 --> 18:51:30,320
+this really cool application
+with your friends and family.
+
+18581
+18:51:30,380 --> 18:51:33,290
+Take a break. And I'll see you
+in the next lesson.
+
+18582
+18:51:38,840 --> 18:51:41,360
+All right, welcome to one of the
+fastest lessons that we're going
+
+18583
+18:51:41,360 --> 18:51:43,520
+to have here. And in this
+lesson, we're going to talk
+
+18584
+18:51:43,520 --> 18:51:46,460
+about the hardhat starter kit.
+Really quickly, I'm going to
+
+18585
+18:51:46,460 --> 18:51:49,130
+walk you through it and show you
+how to use it. Now we've learned
+
+18586
+18:51:49,130 --> 18:51:51,290
+a lot about projects, we've
+learned a lot about different
+
+18587
+18:51:51,290 --> 18:51:54,290
+repos, learnt the basics of
+smart contracts. And we've
+
+18588
+18:51:54,290 --> 18:51:57,500
+learned a lot about front end as
+well and building front ends for
+
+18589
+18:51:57,500 --> 18:52:01,700
+applications. So this smart
+contract kit repo comes packed
+
+18590
+18:52:01,700 --> 18:52:06,410
+with a ton of starter kits that
+you can use to start deploying
+
+18591
+18:52:06,410 --> 18:52:09,530
+your projects right away. And as
+you can see, that hard hat
+
+18592
+18:52:09,530 --> 18:52:12,650
+starter kit is easily one of the
+most popular ones with the most
+
+18593
+18:52:12,650 --> 18:52:15,830
+stars the most forks out there.
+The smart contract kit repo
+
+18594
+18:52:15,830 --> 18:52:18,170
+actually comes with a ton of
+frameworks, like if you want to
+
+18595
+18:52:18,170 --> 18:52:21,080
+work with SWANA, if you want to
+work with Python and Brownie, if
+
+18596
+18:52:21,080 --> 18:52:25,040
+you want to work with foundry,
+truffle, really any other
+
+18597
+18:52:25,040 --> 18:52:27,590
+framework out there, you can get
+started, clone one of these
+
+18598
+18:52:27,590 --> 18:52:30,560
+repos, work with one of these
+repos and build your project and
+
+18599
+18:52:30,560 --> 18:52:32,960
+get started right away, we're
+going to show you how to use the
+
+18600
+18:52:32,960 --> 18:52:37,130
+hard hat starter kit. So you can
+just grab the repo and go and
+
+18601
+18:52:37,160 --> 18:52:40,400
+already have some boilerplate
+code and a boilerplate really
+
+18602
+18:52:40,400 --> 18:52:43,190
+good looking repo to start your
+projects with, we come to the
+
+18603
+18:52:43,190 --> 18:52:46,010
+smart contract kit, hard hat
+starter kit repo here. And if
+
+18604
+18:52:46,010 --> 18:52:48,140
+you're working with GitHub, you
+can just go ahead and use this
+
+18605
+18:52:48,140 --> 18:52:51,470
+template and it will
+automatically generate you a new
+
+18606
+18:52:51,470 --> 18:52:54,320
+GitHub repo with the hardest
+starter kit. So let's go ahead,
+
+18607
+18:52:54,320 --> 18:52:57,320
+we'll click use this template,
+we come up with our own name
+
+18608
+18:52:57,320 --> 18:53:02,450
+here, we'll call it make it
+public create repository from
+
+18609
+18:53:02,450 --> 18:53:06,860
+Template. it'll generate our
+repository. And now we
+
+18610
+18:53:06,860 --> 18:53:10,190
+automatically have it in our own
+repo here. And we can get
+
+18611
+18:53:10,190 --> 18:53:12,620
+started working with it. And we
+can get started working with it.
+
+18612
+18:53:12,680 --> 18:53:15,260
+If you don't want to click the
+use that template button, we can
+
+18613
+18:53:15,260 --> 18:53:18,740
+also just copy the URL. And in
+our code editor, we can just do
+
+18614
+18:53:18,740 --> 18:53:21,740
+git clone and paste that in
+there. So for now, I am going to
+
+18615
+18:53:21,740 --> 18:53:24,500
+get clone, but I'm going to get
+clone with this repo that we
+
+18616
+18:53:24,500 --> 18:53:30,080
+just created. Come back in with
+the git clone, hard hat play FCC
+
+18617
+18:53:30,110 --> 18:53:34,310
+or hard hat starter kit. We're
+going to cd into our head play
+
+18618
+18:53:34,310 --> 18:53:38,720
+FCC, and then open that up in a
+new code editor. And awesome.
+
+18619
+18:53:38,960 --> 18:53:41,150
+Now you'll see in this repo, it
+comes packed with a ton of
+
+18620
+18:53:41,150 --> 18:53:45,770
+contracts, deployments, scripts,
+tasks, test, everything, you
+
+18621
+18:53:45,770 --> 18:53:48,800
+name it to really get started in
+a professional environment. We
+
+18622
+18:53:48,800 --> 18:53:52,430
+look in the contract section, we
+can see we have a couple of
+
+18623
+18:53:52,460 --> 18:53:56,120
+sample contracts. We have a
+contract for making an API call
+
+18624
+18:53:56,120 --> 18:54:00,080
+to a chain link node, working
+with keepers working with price
+
+18625
+18:54:00,080 --> 18:54:03,350
+feeds, and then working with
+chain link Vir Fe two. We've got
+
+18626
+18:54:03,350 --> 18:54:06,140
+some test contracts and we
+additionally have this fuzzing
+
+18627
+18:54:06,140 --> 18:54:09,620
+folder, which we'll talk talk
+about in a much later section of
+
+18628
+18:54:09,620 --> 18:54:11,750
+this course, we have deployed
+scripts where we start with
+
+18629
+18:54:11,750 --> 18:54:14,780
+deploying mocks, then we deploy
+each one of those contracts, we
+
+18630
+18:54:14,780 --> 18:54:17,660
+have a sample script to read the
+price from one of these
+
+18631
+18:54:17,660 --> 18:54:21,260
+contracts. And we have a whole
+bunch of sample tasks. Now at
+
+18632
+18:54:21,260 --> 18:54:23,960
+the time of recording, instead
+of scripts, this repo uses
+
+18633
+18:54:23,960 --> 18:54:26,840
+tasks. But again, they're a
+little bit interchangeable. And
+
+18634
+18:54:26,840 --> 18:54:29,570
+of course, we have some unit
+tests and some staging tests as
+
+18635
+18:54:29,570 --> 18:54:32,420
+well, that you can go through
+and take a look at, once we're
+
+18636
+18:54:32,420 --> 18:54:35,930
+in this repo, we can run some
+familiar commands here, we'll do
+
+18637
+18:54:35,930 --> 18:54:39,560
+yarn, of course, to install our
+all of our packages. And then
+
+18638
+18:54:39,590 --> 18:54:42,140
+everything that we're going to
+do, if you get lost, you can
+
+18639
+18:54:42,140 --> 18:54:45,590
+always come back to this repo.
+And you can follow along with
+
+18640
+18:54:45,590 --> 18:54:47,810
+getting started and the
+Quickstart. So we just did the
+
+18641
+18:54:47,810 --> 18:54:51,050
+git clone. Now we're doing the
+yarn, and then we're gonna go
+
+18642
+18:54:51,050 --> 18:54:53,930
+ahead and run yarn hard hat
+test. This hard hat starter kit
+
+18643
+18:54:53,930 --> 18:54:57,710
+repo is very consistently up to
+date, we did the last push being
+
+18644
+18:54:57,740 --> 18:55:00,590
+just a few days ago, and will
+constantly have some best
+
+18645
+18:55:00,590 --> 18:55:03,590
+practices for building our smart
+contracts and having a really
+
+18646
+18:55:03,590 --> 18:55:06,230
+professional coding environment.
+And it's got this really cute
+
+18647
+18:55:06,230 --> 18:55:09,170
+logo. Once we've installed all
+the dependencies, we can run
+
+18648
+18:55:09,170 --> 18:55:14,360
+yarn, art hath test, we can run
+all of the tests in the test
+
+18649
+18:55:14,360 --> 18:55:17,660
+folder, which also will show us
+how to interact and how to use
+
+18650
+18:55:17,660 --> 18:55:20,930
+all these different contracts in
+here. And they each have some
+
+18651
+18:55:20,930 --> 18:55:23,780
+console dot log, so you can see
+more about what's actually going
+
+18652
+18:55:23,780 --> 18:55:28,070
+on when these tests actually
+run. If we look in the Hardhead
+
+18653
+18:55:28,070 --> 18:55:31,700
+config.js, it's got some really
+familiar code in here, we have
+
+18654
+18:55:31,700 --> 18:55:35,000
+all our imports at the top, we
+grab a whole bunch of
+
+18655
+18:55:35,000 --> 18:55:38,720
+environment variables, we've got
+the ether scan plugin, we've got
+
+18656
+18:55:38,720 --> 18:55:42,230
+the gas reporter, the contract
+sizer, which is a plugin that
+
+18657
+18:55:42,230 --> 18:55:45,650
+tells you how big your contracts
+are. So named accounts,
+
+18658
+18:55:45,650 --> 18:55:48,830
+different solidity versions, and
+then mocha timeout as well. We
+
+18659
+18:55:48,830 --> 18:55:53,270
+can of course, do yarn hard hat
+node, which will run through our
+
+18660
+18:55:53,270 --> 18:55:57,770
+deploy scripts, and then spin up
+a new note for us, which has
+
+18661
+18:55:57,860 --> 18:56:01,550
+mock chainlink tokens, mock
+Oracle's mock aggregators, and
+
+18662
+18:56:01,550 --> 18:56:04,760
+mock up VRF for us to go ahead
+and interact with once that's
+
+18663
+18:56:04,760 --> 18:56:09,050
+up, we can then of course, to
+hard hat, console, dash dash
+
+18664
+18:56:09,050 --> 18:56:13,760
+network localhost, and begin
+interacting with contracts on
+
+18665
+18:56:13,790 --> 18:56:16,550
+localhost. So we can kind of
+follow along with price feed,
+
+18666
+18:56:16,550 --> 18:56:22,310
+for example, and do const price
+consumer B three equals await
+
+18667
+18:56:22,850 --> 18:56:27,950
+ethers dot get contract, price,
+consumer V three.
+
+18668
+18:56:29,270 --> 18:56:34,490
+And then we can do await price
+consumer B three dot get latest
+
+18669
+18:56:34,490 --> 18:56:40,640
+price. Let's wrap that in a to
+string. And we can see a mock
+
+18670
+18:56:40,640 --> 18:56:43,940
+latest price from a contract
+that uses channeling price
+
+18671
+18:56:43,940 --> 18:56:47,000
+feeds. And we can interact with
+any of our contracts and work
+
+18672
+18:56:47,000 --> 18:56:50,360
+with any of the mocks as well in
+here. If we want to deploy this
+
+18673
+18:56:50,360 --> 18:56:53,750
+to an actual test net like
+Rinckey, or main net will just
+
+18674
+18:56:53,750 --> 18:56:57,950
+pop in our dot env file, we'll
+close our node terminal, and we
+
+18675
+18:56:57,950 --> 18:57:03,080
+can run yarn hardhat or just hh
+deploy. And then we'll add
+
+18676
+18:57:03,080 --> 18:57:05,510
+whatever tags we want to do
+here. So let's just deploy our
+
+18677
+18:57:05,510 --> 18:57:08,930
+price feed contract. If we go to
+the price feed deploy, we scroll
+
+18678
+18:57:08,930 --> 18:57:12,890
+down, we'll get the tags. Okay,
+great, we'll use the feed tag,
+
+18679
+18:57:13,070 --> 18:57:17,900
+dash tags feeds dash to or feed
+dash dash network brings beam.
+
+18680
+18:57:18,200 --> 18:57:21,020
+And while we're waiting for this
+to deploy, we can go back to the
+
+18681
+18:57:21,020 --> 18:57:24,230
+actual repo. And just make sure
+to follow along with the
+
+18682
+18:57:24,230 --> 18:57:26,840
+documentation here and the
+Quickstart in all the usage and
+
+18683
+18:57:26,840 --> 18:57:29,210
+everything so that you make sure
+that you're working with the
+
+18684
+18:57:29,210 --> 18:57:32,420
+most up to date version. There's
+even documentation on running a
+
+18685
+18:57:32,420 --> 18:57:36,230
+local network using a test net
+or live network working with
+
+18686
+18:57:36,230 --> 18:57:39,560
+Aetherium. Rigby adding your
+private keys and dotting envies
+
+18687
+18:57:39,590 --> 18:57:42,560
+all this stuff that you already
+know, forking, which we'll learn
+
+18688
+18:57:42,560 --> 18:57:45,590
+a little bit later, auto funding
+your contracts for working with
+
+18689
+18:57:45,830 --> 18:57:49,400
+chain link API running tests,
+you can additionally run your
+
+18690
+18:57:49,400 --> 18:57:53,180
+tests in parallel by adding the
+dash dash parallel flag to our
+
+18691
+18:57:53,180 --> 18:57:56,390
+tests. We can interact with our
+deployed contracts with those
+
+18692
+18:57:56,390 --> 18:57:59,480
+different tasks that we've
+created linting code formatting,
+
+18693
+18:57:59,510 --> 18:58:02,450
+estimated gas code coverage
+fuzzing, we'll talk about later.
+
+18694
+18:58:02,750 --> 18:58:06,650
+And then contributions. PRs
+issues are always welcome here.
+
+18695
+18:58:06,770 --> 18:58:09,320
+And once it's outputted, and
+even verified, if you have
+
+18696
+18:58:09,320 --> 18:58:12,110
+verification turned on, you'll
+get a little task that we can
+
+18697
+18:58:12,110 --> 18:58:15,050
+run to just go ahead and read
+the price feed or interact with
+
+18698
+18:58:15,050 --> 18:58:18,800
+the contract. So we can copy
+that task out. Yarn hardhat.
+
+18699
+18:58:18,830 --> 18:58:22,520
+Read price feed since it's a
+task here, contract the contract
+
+18700
+18:58:22,520 --> 18:58:25,640
+data which we just deployed
+network Rigby. And we'll get
+
+18701
+18:58:25,700 --> 18:58:28,610
+reading data price feed from
+consumer contract on network,
+
+18702
+18:58:28,610 --> 18:58:31,910
+Rigby price is here, which of
+course, we're saying the price
+
+18703
+18:58:31,910 --> 18:58:36,830
+of Aetherium is $3,033, because
+it has eight decimal places. So
+
+18704
+18:58:36,830 --> 18:58:39,500
+if you're ever looking to start
+a new project, and you want some
+
+18705
+18:58:39,500 --> 18:58:42,920
+boilerplate code, this hard hat
+Starter Kit is a great place to
+
+18706
+18:58:42,920 --> 18:58:46,100
+get started. And of course, you
+can open it and get pod if you
+
+18707
+18:58:46,100 --> 18:58:49,460
+want to just test it out and try
+it and get pot in a Cloud Shell.
+
+18708
+18:58:49,520 --> 18:58:52,430
+So that's it for this lesson.
+Wasn't that fast. This was the
+
+18709
+18:58:52,430 --> 18:58:55,280
+fastest lesson ever. So if you
+want to do a little extra
+
+18710
+18:58:55,280 --> 18:58:58,010
+learnings here, I would fork
+this I would clone this I would
+
+18711
+18:58:58,010 --> 18:59:00,710
+use this template, try to play
+around with the repo a little
+
+18712
+18:59:00,710 --> 18:59:03,620
+bit yourself and see what you
+recognize, see what you don't
+
+18713
+18:59:03,620 --> 18:59:07,400
+recognize and keep that prepped
+in your mind for later so
+
+18714
+18:59:07,430 --> 18:59:09,560
+Questions in the course. And
+then for everyone here who is
+
+18715
+18:59:09,560 --> 18:59:13,010
+TypeScript, there is, of course,
+a TypeScript version of this as
+
+18716
+18:59:13,010 --> 18:59:17,330
+well that you can get cloned.
+And it has a nice blue logo here
+
+18717
+18:59:17,510 --> 18:59:20,330
+to show that it's a little bit
+different. So, that being said,
+
+18718
+18:59:20,570 --> 18:59:24,290
+use the repo, have fun. Let's
+get to lesson 12.
+
+18719
+18:59:29,750 --> 18:59:33,560
+Alright, now we're moving on to
+the hard hat ERC. 20s are the
+
+18720
+18:59:33,560 --> 18:59:36,470
+section where we're going to
+learn how to create our own ERC
+
+18721
+18:59:36,470 --> 18:59:42,620
+20 or EIP 20 Or B E P 20 or AEP
+20 any of these tokens on the
+
+18722
+18:59:42,620 --> 18:59:45,770
+blockchain before we can
+understand what an ERC 20 is, or
+
+18723
+18:59:45,770 --> 18:59:48,650
+even what one of these tokens
+are, we first need to understand
+
+18724
+18:59:48,650 --> 18:59:53,330
+what is an ERC. And then also
+what is an EIP in Aetherium, and
+
+18725
+18:59:53,330 --> 18:59:56,480
+avalanche and finance and
+polygon. All these blockchains
+
+18726
+18:59:56,480 --> 18:59:59,630
+have what's called improvement
+proposals. And for Aetherium,
+
+18727
+18:59:59,870 --> 19:00:03,410
+they're called Aetherium
+improvement proposals, or E IPs.
+
+18728
+19:00:03,500 --> 19:00:07,160
+And what people would do is they
+come up with these ideas to
+
+18729
+19:00:07,160 --> 19:00:10,880
+improve Aetherium or improve
+these layer ones like polygon,
+
+18730
+19:00:11,090 --> 19:00:15,140
+Matic avalanche, etc. And on
+some GitHub or some open source
+
+18731
+19:00:15,140 --> 19:00:18,770
+repository, they'll add these
+new EIP is they'll add these new
+
+18732
+19:00:18,770 --> 19:00:21,890
+improvement ideas to make these
+protocols better. Now, these
+
+18733
+19:00:21,890 --> 19:00:23,990
+improvements can really be
+anything, they can be anything
+
+18734
+19:00:23,990 --> 19:00:27,980
+from a core blockchain update to
+some standard, that is going to
+
+18735
+19:00:27,980 --> 19:00:31,340
+be a best practice for the
+entire community to adopt. Once
+
+18736
+19:00:31,340 --> 19:00:35,780
+an EIP gets enough insight, they
+also create an E RC, which
+
+18737
+19:00:35,780 --> 19:00:39,650
+stands for Aetherium request for
+comments. So EIP a theory and
+
+18738
+19:00:39,830 --> 19:00:43,130
+improvement proposals ERC a
+theory and request for comments.
+
+18739
+19:00:43,160 --> 19:00:48,740
+And again, these can be like BP,
+Pep, you know, etc. For all
+
+18740
+19:00:48,740 --> 19:00:51,170
+these different blockchains.
+Both the improvement proposals
+
+18741
+19:00:51,170 --> 19:00:54,110
+and the Request for Comments,
+all have these different tags,
+
+18742
+19:00:54,110 --> 19:00:56,900
+now they're numbered
+chronologically, so something
+
+18743
+19:00:56,900 --> 19:01:03,020
+like an ERC 20 is going to be
+the 20th ERC slash EIP, the ERC
+
+18744
+19:01:03,020 --> 19:01:06,440
+is and the EFPs share that same
+number. And there are websites
+
+18745
+19:01:06,440 --> 19:01:10,130
+like EIP is that aetherium.org
+That keep track of all of these
+
+18746
+19:01:10,160 --> 19:01:12,680
+new Aetherium improvement
+proposals, and you can actually
+
+18747
+19:01:12,680 --> 19:01:15,530
+see them real time go through
+the process of being adopted by
+
+18748
+19:01:15,530 --> 19:01:20,300
+the community. Now, one of these
+e IPs or ERC is, is going to be
+
+18749
+19:01:20,300 --> 19:01:24,410
+the ERC 20 or the token standard
+for smart contracts. This is an
+
+18750
+19:01:24,410 --> 19:01:28,280
+improvement proposal that talks
+about how to actually create
+
+18751
+19:01:28,280 --> 19:01:31,040
+tokens and create these smart
+contract tokens. I made a video
+
+18752
+19:01:31,040 --> 19:01:33,890
+about this recently. So in the
+GitHub repo associated with this
+
+18753
+19:01:33,890 --> 19:01:35,990
+course, we're going to have a
+sub lesson, and we're going to
+
+18754
+19:01:35,990 --> 19:01:38,720
+watch a quick video that
+explains more about these
+
+18755
+19:01:38,720 --> 19:01:44,780
+different tokens. Now first,
+let's define even what are ERC
+
+18756
+19:01:44,780 --> 19:01:49,040
+20s So ERC 20s are tokens that
+are deployed on a chain using
+
+18757
+19:01:49,040 --> 19:01:52,040
+what's called the ERC 20 token
+standard, you can read more
+
+18758
+19:01:52,040 --> 19:01:54,620
+about it in the year 20 token
+standard here link in the
+
+18759
+19:01:54,620 --> 19:01:56,960
+description as well. But
+basically, it's a smart contract
+
+18760
+19:01:56,990 --> 19:02:00,050
+that actually represents a
+token. So it's token or the
+
+18761
+19:02:00,050 --> 19:02:03,230
+smart contract. It's both it's
+really cool tether chainlink
+
+18762
+19:02:03,320 --> 19:02:07,640
+unique token and dye are all
+examples of ERC 20s Technically,
+
+18763
+19:02:07,730 --> 19:02:11,990
+chain link is in the ERC. 677 as
+there are upgrades to the ERC 20
+
+18764
+19:02:11,990 --> 19:02:15,530
+that some tokens take that are
+still backwards compatible with
+
+18765
+19:02:15,560 --> 19:02:18,770
+ERC. 20s And so basically, you
+can think of them as ERC 20s
+
+18766
+19:02:18,800 --> 19:02:21,410
+with a little additional
+functionality. Now why would I
+
+18767
+19:02:21,410 --> 19:02:23,930
+even care to want to make an ERC
+20 Well, you can do a lot of
+
+18768
+19:02:23,930 --> 19:02:26,450
+really cool stuff with it. You
+can make governance token, you
+
+18769
+19:02:26,450 --> 19:02:28,880
+can secure an underlying
+network, you can create some
+
+18770
+19:02:28,880 --> 19:02:32,570
+type of synthetic acid, or
+really anything else. In any
+
+18771
+19:02:32,570 --> 19:02:35,300
+case, how do we build one of
+these ERC? 20s How do we build
+
+18772
+19:02:35,300 --> 19:02:38,450
+one of these tokens? Well, all
+we have to do is build a smart
+
+18773
+19:02:38,450 --> 19:02:41,810
+contract that follows the token
+standard, all we have to do is
+
+18774
+19:02:41,960 --> 19:02:45,080
+build a smart contract that has
+these functions that has a name
+
+18775
+19:02:45,080 --> 19:02:48,410
+function, symbol function,
+decimals function, etc. All
+
+18776
+19:02:48,410 --> 19:02:50,990
+these functions we need to be
+able to transfer it, we need to
+
+18777
+19:02:50,990 --> 19:02:53,570
+be able to get the balance of it
+etc. And again, if you want to
+
+18778
+19:02:53,570 --> 19:02:56,240
+check out some of the
+improvements that are still ERC
+
+18779
+19:02:56,240 --> 19:03:01,730
+20 compatible, like the ERC 677
+or the ERC 777. Definitely go
+
+18780
+19:03:01,730 --> 19:03:06,740
+check those out and build one of
+those instead. All right,
+
+18781
+19:03:06,740 --> 19:03:10,370
+awesome. Now that we know what
+one of these ERC 20s is, we can
+
+18782
+19:03:10,370 --> 19:03:14,120
+go ahead and create our own per
+usual in the GitHub repo
+
+18783
+19:03:14,180 --> 19:03:16,850
+associated with this course. We
+have all the code available
+
+18784
+19:03:16,850 --> 19:03:20,060
+here. If you want to just get
+clone. This is going to be again
+
+18785
+19:03:20,090 --> 19:03:22,610
+another one of our quicker
+lessons here. So we're in our
+
+18786
+19:03:22,610 --> 19:03:25,250
+terminal. We're in our VS code
+here. We're going to make a new
+
+18787
+19:03:25,250 --> 19:03:31,760
+directory. I'm going to call it
+hard hat ERC 20 FCC will cd into
+
+18788
+19:03:31,760 --> 19:03:35,630
+hard hat, your C 20 sec. And
+we're going to create a new hard
+
+18789
+19:03:35,630 --> 19:03:38,510
+hat project the exact same way
+we've been doing it yarn add
+
+18790
+19:03:38,510 --> 19:03:43,970
+dash dash dev or tab. Let's
+actually open it in its own VS
+
+18791
+19:03:43,970 --> 19:03:49,280
+code will do code.or file open
+this folder. And okay, we're in
+
+18792
+19:03:49,280 --> 19:03:52,130
+our project now. Let's create a
+new hard hat project. We'll do
+
+18793
+19:03:52,130 --> 19:03:53,990
+yarn, art hats.
+
+18794
+19:03:55,460 --> 19:03:59,150
+We'll do create an empty hard
+hat dot config dot j s here and
+
+18795
+19:03:59,150 --> 19:04:02,540
+great. We've now got an empty
+hard hat dot config dot j s. If
+
+18796
+19:04:02,540 --> 19:04:05,720
+you want to copy paste your hard
+hat dot config from a previous
+
+18797
+19:04:05,720 --> 19:04:08,780
+projects you want to copy paste
+your heart Have dot config or
+
+18798
+19:04:08,780 --> 19:04:11,300
+your dot EMV file, because you
+know we're going to need those
+
+18799
+19:04:11,480 --> 19:04:15,200
+feel free to do so now, I'm just
+going to update this to 8.7.
+
+18800
+19:04:15,380 --> 19:04:19,340
+I'll add the rest of my stuff
+later. So as we've heard this
+
+18801
+19:04:19,370 --> 19:04:23,330
+EIP 20, or this ERC 20. All it
+needs is to have these functions
+
+18802
+19:04:23,360 --> 19:04:26,330
+in its token standard so that we
+can transfer tokens, we can do
+
+18803
+19:04:26,330 --> 19:04:29,540
+all the stuff in the ERC 20
+contract itself, it really is
+
+18804
+19:04:29,540 --> 19:04:33,230
+just keeping track of how much
+of each token people have. So
+
+18805
+19:04:33,230 --> 19:04:36,200
+the smart contract, kind of in a
+weird way it keeps track of
+
+18806
+19:04:36,200 --> 19:04:38,750
+itself. To get started, we're
+going to do this kind of the
+
+18807
+19:04:38,750 --> 19:04:42,140
+manual way. First, we're going
+to create our own manual token
+
+18808
+19:04:42,140 --> 19:04:45,800
+here, or a really minimalistic
+one anyways, so let's create a
+
+18809
+19:04:45,800 --> 19:04:52,280
+new folder. contracts will
+create a new file called manual
+
+18810
+19:04:52,280 --> 19:04:56,690
+token dot soul. Yes, I'm going
+to show you kind of the hard way
+
+18811
+19:04:56,690 --> 19:04:59,330
+to make it and then I'll show
+you a much easier way to make
+
+18812
+19:04:59,330 --> 19:05:04,310
+it. So to get started here are
+usual we can do pragma, solidity
+
+18813
+19:05:05,060 --> 19:05:11,570
+to carrot zero, point 8.7. And
+then we'll even do spdx, license
+
+18814
+19:05:11,840 --> 19:05:18,770
+identifier, MIT do contract,
+manual token, and boom, let's
+
+18815
+19:05:18,770 --> 19:05:22,370
+get started. The main reason
+this token smart contract works
+
+18816
+19:05:22,640 --> 19:05:28,010
+is that there's some balances
+mapping. So we have a mapping of
+
+18817
+19:05:28,010 --> 19:05:33,740
+addresses to you in 256. And
+it's usually public called
+
+18818
+19:05:34,550 --> 19:05:38,840
+balance of and all this does is
+this mapping is obviously the
+
+18819
+19:05:38,840 --> 19:05:42,170
+key is going to be every single
+address on the planet, and then
+
+18820
+19:05:42,170 --> 19:05:45,230
+how much they have. And
+basically, when we transfer
+
+18821
+19:05:45,230 --> 19:05:50,720
+tokens, transfer tokens, we're
+basically just subtract from
+
+18822
+19:05:50,750 --> 19:05:56,960
+address, amount, and add to to
+address. So a really
+
+18823
+19:05:56,960 --> 19:05:59,840
+minimalistic way to implement
+this would be to create this
+
+18824
+19:05:59,840 --> 19:06:02,990
+transfer function first. So
+we'll create this function, I'm
+
+18825
+19:06:02,990 --> 19:06:05,600
+going to call it underscore
+transfer, we can do an address
+
+18826
+19:06:05,600 --> 19:06:12,170
+from address to you into fifth
+sixth mount. And now we'd
+
+18827
+19:06:12,170 --> 19:06:14,960
+probably put some requirements,
+we probably omit some events,
+
+18828
+19:06:15,290 --> 19:06:17,870
+and let's make this public as
+well. And really, at the end of
+
+18829
+19:06:17,870 --> 19:06:25,670
+the day, is we're gonna say
+balance of from minus equals
+
+18830
+19:06:27,350 --> 19:06:31,730
+value, which is the same as
+saying bounce of from equals
+
+18831
+19:06:31,760 --> 19:06:35,420
+bounce from minus value, or
+excuse me, amount, and then
+
+18832
+19:06:35,420 --> 19:06:40,490
+we're gonna say balance of two,
+excuse me, plus equals, which is
+
+18833
+19:06:40,490 --> 19:06:43,820
+the same as saying, you know,
+balance of two plus. And
+
+18834
+19:06:43,820 --> 19:06:46,970
+technically, that's really all
+we need, right, we probably want
+
+18835
+19:06:46,970 --> 19:06:49,640
+to do some asserts ins here,
+some requires to make sure all
+
+18836
+19:06:49,640 --> 19:06:52,610
+of our numbers make sense. But
+really, at the end of the day,
+
+18837
+19:06:52,640 --> 19:06:56,060
+this is all that this function
+is doing. Transfer works when
+
+18838
+19:06:56,060 --> 19:06:59,930
+the caller is sending money
+directly into another address.
+
+18839
+19:07:00,230 --> 19:07:03,710
+But what happens if we want to
+allow some smart contract to
+
+18840
+19:07:03,710 --> 19:07:06,890
+work with our token, or we want
+to allow somebody else to work
+
+18841
+19:07:06,890 --> 19:07:09,920
+with our token, you know, maybe
+to deposit it into a protocol,
+
+18842
+19:07:10,100 --> 19:07:13,010
+or do some more functionality
+with it, there will be some
+
+18843
+19:07:13,010 --> 19:07:15,380
+approved function that will
+approve that contract to do
+
+18844
+19:07:15,380 --> 19:07:21,740
+that. And then we'll have a
+function transfer from and this
+
+18845
+19:07:21,740 --> 19:07:24,050
+function will, you know, it'll
+just implement taking funds from
+
+18846
+19:07:24,050 --> 19:07:27,440
+user and this will be public as
+well. And then at the top will
+
+18847
+19:07:27,440 --> 19:07:31,430
+be some type of allowances
+mapping that will tell who's
+
+18848
+19:07:31,430 --> 19:07:35,000
+allowed which address to take
+how much token, which sounds a
+
+18849
+19:07:35,000 --> 19:07:36,860
+little confusing, but let me
+just add the mapping. So it'll
+
+18850
+19:07:36,860 --> 19:07:42,530
+be a mapping of addresses to a
+mapping of addresses to an
+
+18851
+19:07:42,530 --> 19:07:47,240
+amount to a unit tivity sex and
+this will be public allowance,
+
+18852
+19:07:47,480 --> 19:07:52,340
+we're gonna say address, Patrick
+is going to allow address of
+
+18853
+19:07:52,340 --> 19:07:56,120
+Patrick's brother to use 25
+tokens. And that's how this
+
+18854
+19:07:56,150 --> 19:08:00,560
+allowance works. And in our
+transfer from transfer from will
+
+18855
+19:08:00,560 --> 19:08:04,640
+check this allowance mapping and
+save Hmm. Did Patrick give you
+
+18856
+19:08:04,820 --> 19:08:08,180
+authorization to borrow those
+tokens? Oh, yes, you did. Okay,
+
+18857
+19:08:08,180 --> 19:08:11,330
+we'll let you transfer from. And
+I'm just, I'm just going to copy
+
+18858
+19:08:11,330 --> 19:08:13,820
+paste an implementation of it,
+you can check out the GitHub
+
+18859
+19:08:13,820 --> 19:08:16,940
+repo as well. And it would look
+something like this is we check
+
+18860
+19:08:16,940 --> 19:08:20,300
+the allowed amounts, update the
+allowance, and then transfer the
+
+18861
+19:08:20,300 --> 19:08:22,730
+tokens. So those are some of the
+main functions. So we need an
+
+18862
+19:08:22,730 --> 19:08:26,120
+approved function, obviously, to
+update the allowances here. And
+
+18863
+19:08:26,120 --> 19:08:33,830
+usually, you'll have like a un
+256 initial supply. And this
+
+18864
+19:08:33,830 --> 19:08:37,010
+will be like how many tokens
+there are starting with how many
+
+18865
+19:08:37,010 --> 19:08:39,230
+tokens there are total,
+sometimes you'll add a mint
+
+18866
+19:08:39,230 --> 19:08:42,110
+function to add more functions.
+But you can basically start to
+
+18867
+19:08:42,110 --> 19:08:45,170
+see this contract ramping up.
+One thing we could do is we
+
+18868
+19:08:45,170 --> 19:08:49,430
+could go ahead go through this
+spec and just line by line, you
+
+18869
+19:08:49,430 --> 19:08:52,520
+know, build our token ourself.
+And after we do that, it might
+
+18870
+19:08:52,520 --> 19:08:56,270
+look something like this. So I'm
+just copy pasted the code from
+
+18871
+19:08:56,270 --> 19:08:59,720
+the GitHub repo. If you go to
+contracts, manual token, I just
+
+18872
+19:08:59,720 --> 19:09:03,500
+copy paste this code in here.
+This is what a contract a token
+
+18873
+19:09:03,500 --> 19:09:06,320
+contract might look like. Okay.
+So we have all these functions,
+
+18874
+19:09:06,320 --> 19:09:09,320
+we have all these arrays. We
+have all this stuff. And you can
+
+18875
+19:09:09,320 --> 19:09:12,680
+see in the constructor, we're
+taking initial supply, and then
+
+18876
+19:09:12,680 --> 19:09:16,010
+a token name and a token symbol.
+The name, you know, might be
+
+18877
+19:09:16,010 --> 19:09:18,890
+something like dy token. And
+then the symbol might be
+
+18878
+19:09:18,890 --> 19:09:22,130
+something like dy, just so that
+it's easily recognizable just by
+
+18879
+19:09:22,130 --> 19:09:23,090
+its name and its token.
+
+18880
+19:09:25,850 --> 19:09:28,520
+coding it all from scratch, like
+that is definitely something
+
+18881
+19:09:28,520 --> 19:09:31,340
+that we can do. But as
+engineers, we know that that's
+
+18882
+19:09:31,370 --> 19:09:33,770
+probably really annoying. And we
+don't actually want to do that.
+
+18883
+19:09:33,800 --> 19:09:37,370
+So what can we do instead? Well,
+we can use an open source
+
+18884
+19:09:37,400 --> 19:09:42,080
+library, like open Zeppelin, to
+actually get some boilerplate
+
+18885
+19:09:42,080 --> 19:09:45,440
+code work with open Zeppelin is
+almost considered kind of the
+
+18886
+19:09:45,440 --> 19:09:48,950
+standard library of solidity.
+They have a list of open source
+
+18887
+19:09:48,950 --> 19:09:52,190
+contracts that anybody can use
+and import into their contracts
+
+18888
+19:09:52,190 --> 19:09:55,010
+that have a ton of boilerplate,
+so that you don't have to
+
+18889
+19:09:55,010 --> 19:09:58,070
+manually write everything out,
+we can see all their code in
+
+18890
+19:09:58,070 --> 19:10:00,860
+their GitHub repository, open
+Zeppelin slash open Zeppelin
+
+18891
+19:10:00,860 --> 19:10:03,950
+contracts, and we're going to be
+using them a lot moving forward.
+
+18892
+19:10:03,980 --> 19:10:06,320
+So for example, you can see kind
+of on the left side of their
+
+18893
+19:10:06,320 --> 19:10:09,860
+documentation, they have this
+tokens section, and they have an
+
+18894
+19:10:09,890 --> 19:10:13,130
+ERC 20, which is one of those
+tokens standards. If you scroll
+
+18895
+19:10:13,130 --> 19:10:17,330
+on here, they even have some
+minimalistic examples of how to
+
+18896
+19:10:17,330 --> 19:10:20,510
+create your own ERC 20 token.
+And that's what we're going to
+
+18897
+19:10:20,510 --> 19:10:23,330
+be using to build our token.
+Because you see how much smaller
+
+18898
+19:10:23,330 --> 19:10:26,150
+this is how much less code this
+is to maintain. Let's go ahead
+
+18899
+19:10:26,150 --> 19:10:29,240
+and let's use open Zeppelin for
+us to create our token. So let's
+
+18900
+19:10:29,240 --> 19:10:33,500
+create a new file. We'll call
+our token dot soul. I'm going to
+
+18901
+19:10:33,500 --> 19:10:38,750
+create our own token here. So
+let's do spdx. License
+
+18902
+19:10:38,930 --> 19:10:44,630
+identifier, MIT, we'll do
+pragma, solidity carrot zero,
+
+18903
+19:10:45,050 --> 19:10:50,600
+point 8.7, we'll do contract our
+token. Now, what we're going to
+
+18904
+19:10:50,600 --> 19:10:53,930
+do, we're going to import
+openzeppelin contracts into our
+
+18905
+19:10:53,930 --> 19:10:56,060
+hard hat project. And we're
+going to do it the same way we
+
+18906
+19:10:56,060 --> 19:10:58,910
+did with chain link and any
+other packages in the future. So
+
+18907
+19:10:58,910 --> 19:11:04,280
+we'll do yarn, add dash dash
+Dev, at open Zeppelin slash
+
+18908
+19:11:04,280 --> 19:11:07,670
+contracts. And this is going to
+add the open Zeppelin slash
+
+18909
+19:11:07,670 --> 19:11:10,850
+contracts NPM package to our
+project. And one of the code
+
+18910
+19:11:10,850 --> 19:11:14,450
+pieces that they have is this
+ERC 20 contract that we can use
+
+18911
+19:11:14,450 --> 19:11:17,960
+and we can have our token
+inherit all the functions. So
+
+18912
+19:11:17,960 --> 19:11:21,920
+we'll go ahead and import it
+with import at openzeppelin.
+
+18913
+19:11:22,490 --> 19:11:27,440
+Slash contracts slash tokens
+slash ERC 20 slash ERC 20
+
+18914
+19:11:27,440 --> 19:11:31,160
+ditzel. And just by importing it
+like this, all we have to do is
+
+18915
+19:11:31,160 --> 19:11:34,880
+have our token inherited now. So
+we'll say contract. Our token is
+
+18916
+19:11:35,240 --> 19:11:39,650
+ERC 20. Boom. And just like that
+our token is almost done. Now
+
+18917
+19:11:39,650 --> 19:11:42,410
+you might get this little wiggle
+this little red line here saying
+
+18918
+19:11:42,530 --> 19:11:45,860
+our token should be marked
+abstract. And that's because if
+
+18919
+19:11:45,860 --> 19:11:50,330
+we look into the ERC 20 dot soul
+of openzeppelin We'll see that
+
+18920
+19:11:50,330 --> 19:11:53,840
+it has a constructor. So in
+order for us to inherit your C
+
+18921
+19:11:53,840 --> 19:11:58,400
+20 token, we have to use the ERC
+20 constructor and we just need
+
+18922
+19:11:58,400 --> 19:12:01,880
+to give our token a name and a
+symbol. But we can say in our
+
+18923
+19:12:01,880 --> 19:12:05,480
+constructor, we can leave it
+blank. And then right next to
+
+18924
+19:12:05,480 --> 19:12:09,830
+our constructor, we'll add the
+ERC 20 constructor and our name
+
+18925
+19:12:09,830 --> 19:12:14,000
+will be our token. And then our
+symbol will just be OT and then
+
+18926
+19:12:14,000 --> 19:12:18,140
+this ERC. 20 token also comes
+with something called a mint
+
+18927
+19:12:18,140 --> 19:12:21,350
+functionality, which is
+essentially a function that
+
+18928
+19:12:21,350 --> 19:12:24,200
+allows us to create tokens,
+right because right now we
+
+18929
+19:12:24,230 --> 19:12:27,740
+actually get initialized with
+zero tokens, right. So nobody's
+
+18930
+19:12:27,740 --> 19:12:31,310
+actually allowed to have any
+tokens. So we want to mint the
+
+18931
+19:12:31,310 --> 19:12:35,090
+initial amount of tokens and
+then who owns all those tokens
+
+18932
+19:12:35,090 --> 19:12:37,970
+to start with. So usually what
+you'll see is you'll see a mint
+
+18933
+19:12:37,970 --> 19:12:41,150
+function like this, it'll be
+passed in message that sender,
+
+18934
+19:12:41,180 --> 19:12:44,420
+so whoever deploys this contract
+will own all the tokens to
+
+18935
+19:12:44,420 --> 19:12:48,470
+start. And then we'll give it
+like an in their soul supply.
+
+18936
+19:12:49,010 --> 19:12:52,430
+And then we could do like, you
+went to 56 initial supply equals
+
+18937
+19:12:52,430 --> 19:12:56,630
+like seven, or whatever. But
+instead, a common practice is
+
+18938
+19:12:56,630 --> 19:12:59,210
+just to add it to the
+constructor. So you and 256
+
+18939
+19:12:59,570 --> 19:13:02,840
+initial supply like that, as we
+know about solidity decimals
+
+18940
+19:13:02,840 --> 19:13:09,170
+don't work so great. So if I say
+my initial supply is 50, that 50
+
+18941
+19:13:09,200 --> 19:13:13,130
+is going to be like 50 way, and
+there's all these ERC 20s come
+
+18942
+19:13:13,130 --> 19:13:16,970
+with a decimals and decimals
+function, which tells us how
+
+18943
+19:13:16,970 --> 19:13:21,530
+many decimals we should expect
+with our ERC 20. The default is
+
+18944
+19:13:21,830 --> 19:13:24,980
+18. And we can override this
+function if we want a different
+
+18945
+19:13:24,980 --> 19:13:28,370
+amount of decimals. And if we
+know the default is 18. And we
+
+18946
+19:13:28,370 --> 19:13:32,690
+want to deploy 50, we might want
+to do our initial supply of 50 e
+
+18947
+19:13:32,690 --> 19:13:38,390
+18. Or you can also say like 50
+times 10, raise the 18th or
+
+18948
+19:13:38,390 --> 19:13:41,720
+whatever you want there. And in
+our code when we deploy this
+
+18949
+19:13:41,750 --> 19:13:43,580
+now, this is actually where
+we're going to finish the
+
+18950
+19:13:43,580 --> 19:13:46,790
+project. Because everything else
+that we would do here, we've
+
+18951
+19:13:46,790 --> 19:13:50,030
+already done, all we need to do
+is make a deploy script and
+
+18952
+19:13:50,030 --> 19:13:52,850
+write some tests. That's really
+it. Because right now you have
+
+18953
+19:13:52,850 --> 19:13:55,940
+all the skills that you need to
+write a deploy script and then
+
+18954
+19:13:55,940 --> 19:13:59,330
+optionally write some tests for
+this project. So I highly
+
+18955
+19:13:59,330 --> 19:14:01,970
+encourage you to pause the video
+here and try to write your own
+
+18956
+19:14:01,970 --> 19:14:05,360
+deploy script. And even if you
+want to write your own tests,
+
+18957
+19:14:05,690 --> 19:14:09,170
+you can always refer back To the
+GitHub repo associated with this
+
+18958
+19:14:09,170 --> 19:14:13,580
+lesson, as we do have a deploy
+script in here, we also have a
+
+18959
+19:14:13,580 --> 19:14:16,400
+TypeScript edition in here as
+well that we're additionally not
+
+18960
+19:14:16,400 --> 19:14:19,460
+going to go over. And of course,
+if you get totally lost, there's
+
+18961
+19:14:19,460 --> 19:14:22,940
+a ton of instructions in here to
+help you learn more and help you
+
+18962
+19:14:22,940 --> 19:14:25,190
+work with this specific
+repository.
+
+18963
+19:14:27,950 --> 19:14:31,760
+So let's do a quick review of
+what we just learned. So ERC 20
+
+18964
+19:14:31,760 --> 19:14:37,160
+tokens, or EIP 20 tokens or or b
+p or p p, or any of these dash
+
+18965
+19:14:37,160 --> 19:14:41,960
+20. Improvement proposals are
+what's known as the token
+
+18966
+19:14:41,990 --> 19:14:45,050
+standard. And the token
+standard, these tokens on chain
+
+18967
+19:14:45,080 --> 19:14:48,380
+actually just tokens that are
+smart contracts. Now, these
+
+18968
+19:14:48,380 --> 19:14:51,350
+tokens are obviously different
+than the layer one tokens like
+
+18969
+19:14:51,380 --> 19:14:55,280
+Aetherium, or polygon or
+Avalanche or arbitration, those
+
+18970
+19:14:55,280 --> 19:14:57,200
+are not going to be smart
+contracts, those are going to be
+
+18971
+19:14:57,200 --> 19:15:00,350
+blockchain native tokens, and
+you'll hear me refer to it as
+
+18972
+19:15:00,350 --> 19:15:04,550
+blockchain native tokens a lot.
+versus these tokens, these ERC
+
+18973
+19:15:04,550 --> 19:15:08,240
+20, these smart contract tokens,
+which are just smart contracts.
+
+18974
+19:15:08,300 --> 19:15:10,310
+And they're just kind of a
+combination of these functions
+
+18975
+19:15:10,310 --> 19:15:14,810
+that represent how many tokens
+each address has, we can create
+
+18976
+19:15:14,840 --> 19:15:19,070
+our own token with all the
+specifications added. Or we can
+
+18977
+19:15:19,070 --> 19:15:22,430
+just use openzeppelin to import
+a token in now another popular
+
+18978
+19:15:22,430 --> 19:15:25,730
+repo like open Zeppelin is going
+to be this one from Rory capital
+
+18979
+19:15:25,730 --> 19:15:29,150
+called soulmate. And they're
+both aimed to be standard
+
+18980
+19:15:29,150 --> 19:15:32,060
+libraries for solidity. And one
+of the important things to keep
+
+18981
+19:15:32,060 --> 19:15:35,660
+in mind is that these tokens
+have this allowance mapping. And
+
+18982
+19:15:35,660 --> 19:15:39,170
+you can allow other addresses to
+have access to your tokens and
+
+18983
+19:15:39,170 --> 19:15:42,290
+move your tokens around. This is
+important, especially when we
+
+18984
+19:15:42,290 --> 19:15:45,590
+get to later on when working
+with defy when we want to give
+
+18985
+19:15:45,590 --> 19:15:48,410
+some smart contract access to
+our tokens so that they can
+
+18986
+19:15:48,440 --> 19:15:51,140
+input it into their defy
+protocol. It's also a little bit
+
+18987
+19:15:51,140 --> 19:15:54,350
+tricky. And you want to make
+sure you're not allowing
+
+18988
+19:15:54,410 --> 19:15:58,040
+malicious contracts to interact
+with your tokens. And we'll also
+
+18989
+19:15:58,040 --> 19:16:01,220
+see that when we start to
+interact with these tokens more
+
+18990
+19:16:01,400 --> 19:16:04,550
+before any contract can interact
+with our tokens, we need to
+
+18991
+19:16:04,580 --> 19:16:07,760
+approve them to interact with
+our tokens. And that's it. Now
+
+18992
+19:16:07,760 --> 19:16:10,550
+you're a token wizard, and you
+can deploy your own tokens. Take
+
+18993
+19:16:10,550 --> 19:16:13,220
+a break, get that coffee, and
+I'll see you in the next one.
+
+18994
+19:16:18,770 --> 19:16:22,430
+All right, welcome to the next
+session, we are going to be
+
+18995
+19:16:22,430 --> 19:16:24,890
+learning about defy in this
+session and going to be
+
+18996
+19:16:24,890 --> 19:16:28,370
+programmatic, and going to be
+programmatically interacting
+
+18997
+19:16:28,370 --> 19:16:31,700
+with the defy protocol. I am
+incredibly excited for you for
+
+18998
+19:16:31,700 --> 19:16:35,450
+this session, because defi is
+one of the best use cases for
+
+18999
+19:16:35,450 --> 19:16:38,960
+smart contracts. And one of the
+use cases that I am specifically
+
+19000
+19:16:39,170 --> 19:16:43,010
+most excited for now, as I've
+mentioned, the past defy stands
+

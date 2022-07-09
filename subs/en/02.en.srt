@@ -1,0 +1,4983 @@
+2001
+01:52:32,760 --> 01:52:35,550
+fantastic because it allows us
+to very easily protect against
+
+2002
+01:52:35,550 --> 01:52:38,580
+the Sybil attacks and keep our
+blockchain is decentralized and
+
+2003
+01:52:38,580 --> 01:52:42,660
+secure. However, it has some
+drawbacks as well. Proof of Work
+
+2004
+01:52:42,660 --> 01:52:45,540
+costs a lot of electricity,
+because every single node is
+
+2005
+01:52:45,540 --> 01:52:48,630
+running as fast as they can to
+win this race to get the
+
+2006
+01:52:48,630 --> 01:52:52,440
+rewards. This leads to obviously
+an environmental impact. Now
+
+2007
+01:52:52,440 --> 01:52:54,960
+since proof of work and Nakamoto
+consensus, a lot of other
+
+2008
+01:52:54,960 --> 01:52:57,660
+protocols have taken this idea
+and gone in a different
+
+2009
+01:52:57,660 --> 01:53:00,780
+direction with a different civil
+resistance protocol, a lot of
+
+2010
+01:53:00,780 --> 01:53:03,210
+them with the intention to be a
+lot more environmentally
+
+2011
+01:53:03,210 --> 01:53:06,690
+friendly. And the most popular
+one right now is proof of stake.
+
+2012
+01:53:06,720 --> 01:53:09,060
+There are some chains that are
+already using this proof of
+
+2013
+01:53:09,060 --> 01:53:12,420
+stake protocol, and that are
+live and thriving. Some of them
+
+2014
+01:53:12,420 --> 01:53:16,350
+are like avalanche, LaLana,
+Polygon, polka dot and Terra and
+
+2015
+01:53:16,380 --> 01:53:20,730
+additionally Aetherium is
+decided to upgrade to eath. Two,
+
+2016
+01:53:20,760 --> 01:53:23,940
+which will have this proof of
+stake algorithm as well, it will
+
+2017
+01:53:23,940 --> 01:53:26,730
+also have some other features,
+which we'll talk about in a bit.
+
+2018
+01:53:26,880 --> 01:53:29,340
+Now as a quick aside, all the
+tools that we're going to learn
+
+2019
+01:53:29,340 --> 01:53:32,550
+here are still going to work in
+eath. Two, so depending on when
+
+2020
+01:53:32,550 --> 01:53:34,980
+you watch this, everything here
+is still valid. So let's talk
+
+2021
+01:53:34,980 --> 01:53:37,830
+about proof of stake. Now,
+again, this is a different civil
+
+2022
+01:53:37,830 --> 01:53:40,770
+resistance mechanism. Instead of
+solving this difficult problem,
+
+2023
+01:53:40,980 --> 01:53:44,100
+proof of stake nodes put up some
+collateral that they're going to
+
+2024
+01:53:44,100 --> 01:53:49,080
+behave honestly, aka, they stake
+in the example of Aetherium. two
+
+2025
+01:53:49,260 --> 01:53:52,680
+nodes put up some Aetherium as a
+stake that they're going to
+
+2026
+01:53:52,680 --> 01:53:55,470
+behave honestly in the network,
+if they misbehave to the
+
+2027
+01:53:55,470 --> 01:53:58,560
+network, they are going to be
+slashed or remove some of their
+
+2028
+01:53:58,560 --> 01:54:01,920
+steak. Obviously, this is a very
+good civil resistance mechanism.
+
+2029
+01:54:01,920 --> 01:54:04,440
+Because if you try to create a
+whole bunch of anonymous
+
+2030
+01:54:04,440 --> 01:54:07,500
+accounts, then each one of those
+accounts, you have to put up
+
+2031
+01:54:07,500 --> 01:54:10,170
+some stake. And if you
+misbehave, you're going to run
+
+2032
+01:54:10,170 --> 01:54:13,320
+the risk of losing all the money
+that you put up as collateral.
+
+2033
+01:54:13,560 --> 01:54:16,860
+In this system, miners are
+actually called validators
+
+2034
+01:54:16,860 --> 01:54:18,870
+because they're no longer
+binding anything, they're
+
+2035
+01:54:18,870 --> 01:54:21,630
+actually just validating other
+nodes. Now, unlike proof of
+
+2036
+01:54:21,630 --> 01:54:24,360
+work, which every node is racing
+to be the first one to find the
+
+2037
+01:54:24,360 --> 01:54:28,260
+block, and proof of stake nodes
+are actually randomly chosen to
+
+2038
+01:54:28,260 --> 01:54:31,470
+propose the new block and then
+the rest of the validators will
+
+2039
+01:54:31,530 --> 01:54:35,340
+validate if that node has
+proposed the block. Honestly, as
+
+2040
+01:54:35,340 --> 01:54:38,250
+we saw with our cryptography
+lesson, it's usually very easy
+
+2041
+01:54:38,250 --> 01:54:42,090
+for other nodes to verify if a
+proposal or a transaction is
+
+2042
+01:54:42,090 --> 01:54:45,210
+honest. Now randomness is a
+really important topic when
+
+2043
+01:54:45,210 --> 01:54:47,910
+we're talking about blockchains.
+Because keep in mind, these
+
+2044
+01:54:47,910 --> 01:54:51,120
+blockchains are deterministic
+systems. They're walled gardens
+
+2045
+01:54:51,120 --> 01:54:54,420
+from the rest of the world. And
+as you know, a deterministic
+
+2046
+01:54:54,420 --> 01:54:58,080
+system by definition can't have
+random numbers. So how do we
+
+2047
+01:54:58,080 --> 01:55:01,350
+choose the random validators in
+the system? While it changes
+
+2048
+01:55:01,350 --> 01:55:04,020
+from blockchain to blockchain,
+and actually choosing the node
+
+2049
+01:55:04,020 --> 01:55:07,050
+will change blockchain to
+blockchain, but eath two,
+
+2050
+01:55:07,200 --> 01:55:09,780
+they're using what's called Rand
+doubt, at least for the original
+
+2051
+01:55:09,780 --> 01:55:12,120
+implementation. This is a
+decentralized autonomous
+
+2052
+01:55:12,120 --> 01:55:15,270
+organization that collectively
+chooses the random number and
+
+2053
+01:55:15,270 --> 01:55:18,450
+collectively chooses which node
+is going to run. Next, we aren't
+
+2054
+01:55:18,450 --> 01:55:20,610
+going to dive too deep into this
+because there's a good chance
+
+2055
+01:55:20,610 --> 01:55:23,220
+that this might change in the
+future. But we will go into
+
+2056
+01:55:23,220 --> 01:55:25,410
+randomness solutions and
+blockchain later on in this
+
+2057
+01:55:25,410 --> 01:55:28,080
+course. Now, proof of stake
+obviously has some pros and cons
+
+2058
+01:55:28,080 --> 01:55:31,230
+as well, pros are that again, it
+is a great civil resistance
+
+2059
+01:55:31,230 --> 01:55:33,810
+mechanism. And a great way to
+figure out who the author of a
+
+2060
+01:55:33,810 --> 01:55:37,110
+block should be. The other pros
+are that it's way less
+
+2061
+01:55:37,110 --> 01:55:39,810
+computationally expensive to
+figure out the new block,
+
+2062
+01:55:40,050 --> 01:55:42,990
+because instead of every single
+node on the network trying to do
+
+2063
+01:55:42,990 --> 01:55:46,500
+this, only one node needs to do
+this. And then the rest of the
+
+2064
+01:55:46,500 --> 01:55:49,440
+nodes just need to validate it.
+The cons are that it's usually
+
+2065
+01:55:49,440 --> 01:55:52,440
+considered a slightly less
+decentralized network, due to
+
+2066
+01:55:52,440 --> 01:55:55,530
+the upfront staking costs it
+cost to participate. Now, this
+
+2067
+01:55:55,530 --> 01:55:58,170
+gets into a little bit of a
+philosophical battle on how
+
+2068
+01:55:58,170 --> 01:56:01,380
+decentralized is decentralized
+enough. And I think that's up to
+
+2069
+01:56:01,380 --> 01:56:04,320
+the community to decide. And as
+we progress, I think we'll learn
+
+2070
+01:56:04,320 --> 01:56:06,930
+more and more about how
+decentralized is decentralized
+
+2071
+01:56:06,960 --> 01:56:09,930
+enough. The general consensus
+amongst blockchain engineers,
+
+2072
+01:56:09,930 --> 01:56:13,110
+though, is that proof of stake
+is very, very decentralized and
+
+2073
+01:56:13,110 --> 01:56:16,290
+very secure. This massive
+environmental impact improvement
+
+2074
+01:56:16,320 --> 01:56:19,500
+is one of the two main reasons
+why eath is shifting to eath.
+
+2075
+01:56:19,500 --> 01:56:21,960
+Two, it reduces the
+environmental impact by up to
+
+2076
+01:56:21,960 --> 01:56:25,710
+99%. Now, these are the main
+pieces of proof of work and
+
+2077
+01:56:25,710 --> 01:56:28,380
+proof of stake. But I did want
+to talk about another concept
+
+2078
+01:56:28,380 --> 01:56:31,530
+that's really important in these
+ecosystems. And that is
+
+2079
+01:56:31,530 --> 01:56:34,320
+scalability. When we were
+talking about gas prices, we
+
+2080
+01:56:34,320 --> 01:56:37,230
+were saying that the gas prices
+can get really high if a lot of
+
+2081
+01:56:37,230 --> 01:56:40,260
+people want to send a
+transaction, because a block
+
+2082
+01:56:40,290 --> 01:56:43,200
+only has so much black space,
+and the nodes can only add so
+
+2083
+01:56:43,200 --> 01:56:46,560
+many notes. So when a lot of
+people want to use a blockchain,
+
+2084
+01:56:46,740 --> 01:56:51,630
+the gas price skyrockets. This
+is not very scalable, because if
+
+2085
+01:56:51,630 --> 01:56:54,240
+we want to add more and more
+people to these blockchains,
+
+2086
+01:56:54,360 --> 01:56:57,390
+it's going to cost more and more
+to use the blockchains. Because
+
+2087
+01:56:57,390 --> 01:57:00,090
+more people are going to want to
+get into these blocks. This
+
+2088
+01:57:00,090 --> 01:57:02,070
+means that there's kind of a
+ceiling to how many people can
+
+2089
+01:57:02,070 --> 01:57:04,560
+use the system because of the
+financial constraints that will
+
+2090
+01:57:04,560 --> 01:57:08,130
+get imposed as gas prices keep
+rising. Aetherium too is not
+
+2091
+01:57:08,130 --> 01:57:10,860
+only attacking the environmental
+impact of proof of work by
+
+2092
+01:57:10,860 --> 01:57:13,800
+switching to proof of steak, but
+they're also implementing this
+
+2093
+01:57:13,800 --> 01:57:18,090
+new methodology called sharding.
+And sharding is a solution to
+
+2094
+01:57:18,090 --> 01:57:21,510
+the scalability problem, a
+sharded blockchain really just
+
+2095
+01:57:21,510 --> 01:57:24,930
+means that it's going to be a
+blockchain of blockchains
+
+2096
+01:57:24,960 --> 01:57:27,450
+there's a main chain that's
+going to coordinate everything
+
+2097
+01:57:27,480 --> 01:57:32,340
+amongst several chains that hook
+into this main chain. This means
+
+2098
+01:57:32,370 --> 01:57:35,280
+that there's more chains for
+people to make transactions on
+
+2099
+01:57:35,490 --> 01:57:38,250
+effectively increasing the
+amount of block space that there
+
+2100
+01:57:38,250 --> 01:57:41,880
+is sharding can greatly increase
+the number of transactions on a
+
+2101
+01:57:41,880 --> 01:57:44,880
+blockchain layer one now there's
+another term that might be the
+
+2102
+01:57:44,880 --> 01:57:47,970
+first time you heard it, a layer
+one, we're going to talk about
+
+2103
+01:57:47,970 --> 01:57:50,580
+layer one and layer twos in
+terms of scalability really
+
+2104
+01:57:50,580 --> 01:57:54,720
+quickly as well. A layer one
+refers to any base layer
+
+2105
+01:57:54,720 --> 01:57:58,200
+blockchain implementation
+Bitcoins, a layer one Aetherium
+
+2106
+01:57:58,200 --> 01:58:01,830
+the layer one avalanches, a
+layer one, these are the base
+
+2107
+01:58:01,830 --> 01:58:06,420
+layer blockchain solutions. A
+layer two is any application
+
+2108
+01:58:06,450 --> 01:58:09,750
+that is added on top of a layer
+one added on top of the
+
+2109
+01:58:09,750 --> 01:58:12,420
+blockchain. Some examples of
+layer twos are going to be chain
+
+2110
+01:58:12,420 --> 01:58:16,890
+link arbitrage, or optimism.
+Arbitrage and optimism are very
+
+2111
+01:58:16,890 --> 01:58:19,890
+interesting because they are
+layer twos that also look to
+
+2112
+01:58:19,890 --> 01:58:22,860
+solve this scalability issue.
+Arbitrage and optimism are
+
+2113
+01:58:22,860 --> 01:58:27,180
+what's known as roll ups and
+they roll up their transactions
+
+2114
+01:58:27,210 --> 01:58:30,090
+into a layer one like Aetherium,
+we're not going to go too deep
+
+2115
+01:58:30,120 --> 01:58:32,280
+into roll ups and how they
+actually work. But all you
+
+2116
+01:58:32,280 --> 01:58:35,700
+really need to know is that a
+roll up is kind of like a
+
+2117
+01:58:35,700 --> 01:58:38,910
+sharded chain, they derive their
+security from the base layer
+
+2118
+01:58:38,910 --> 01:58:41,670
+from the layer one like
+Aetherium. And they bulk send
+
+2119
+01:58:41,670 --> 01:58:44,310
+their transactions onto the
+layer one, they solve some of
+
+2120
+01:58:44,310 --> 01:58:47,190
+the scalability issues by being
+another blockchain that people
+
+2121
+01:58:47,190 --> 01:58:51,120
+can make transactions on, still
+on kind of this base Aetherium
+
+2122
+01:58:51,150 --> 01:58:54,570
+layer. Now they're different
+from side chains. Because side
+
+2123
+01:58:54,570 --> 01:58:58,110
+chains derive their security
+from their own protocols, roll
+
+2124
+01:58:58,110 --> 01:59:01,620
+ups, derive their security from
+the base layers. So arbitrage
+
+2125
+01:59:01,620 --> 01:59:04,200
+and optimism, for example, is
+going to be just about as secure
+
+2126
+01:59:04,260 --> 01:59:06,810
+as Aetherium. There's some
+fantastic guys in there that go
+
+2127
+01:59:06,810 --> 01:59:09,210
+a little bit deeper into roll
+ups and I've left a link in the
+
+2128
+01:59:09,210 --> 01:59:12,570
+description for you. All right,
+so we just talked about a lot of
+
+2129
+01:59:12,570 --> 01:59:16,170
+stuff. So let's do a quick recap
+before moving on. Aetherium and
+
+2130
+01:59:16,170 --> 01:59:19,740
+Bitcoin are currently both proof
+of work blockchains that follow
+
+2131
+01:59:19,770 --> 01:59:23,370
+Nakamoto consensus, however,
+Aetherium is moving to Aetherium
+
+2132
+01:59:23,370 --> 01:59:26,610
+two, which will be a proof of
+stake sharded blockchain Sybil
+
+2133
+01:59:26,610 --> 01:59:29,760
+attacks are prevented due to
+protocols like proof of work and
+
+2134
+01:59:29,760 --> 01:59:33,780
+proof of steak 51% attacks grow
+increasingly harder with the
+
+2135
+01:59:33,780 --> 01:59:37,110
+size of blockchain. So you
+should run a node consensus is
+
+2136
+01:59:37,110 --> 01:59:39,990
+the mechanism that allows a
+blockchain to agree upon what
+
+2137
+01:59:39,990 --> 01:59:43,560
+the state of the blockchain is
+sharding and roll ups are
+
+2138
+01:59:43,560 --> 01:59:48,180
+solutions to scalability issues
+on layer ones. Layer One is any
+
+2139
+01:59:48,180 --> 01:59:51,330
+based blockchain implementation
+like Bitcoin or Aetherium. A
+
+2140
+01:59:51,330 --> 01:59:53,940
+blockchain scalability problem
+is that there's not always
+
+2141
+01:59:53,970 --> 01:59:56,490
+enough block space for the
+amount of transactions that want
+
+2142
+01:59:56,490 --> 02:00:00,000
+to get in them. This leads to
+very high gas prices and a
+
+2143
+02:00:00,000 --> 02:00:03,000
+Again, gas prices or how much it
+costs to interact with the
+
+2144
+02:00:03,000 --> 02:00:03,570
+blockchain.
+
+2145
+02:00:04,680 --> 02:00:08,250
+So that's it for the blockchain
+basics and the blockchain
+
+2146
+02:00:08,280 --> 02:00:12,540
+explainers. With just this
+information, you now can go off
+
+2147
+02:00:12,540 --> 02:00:15,930
+into the world and start working
+with blockchains and interacting
+
+2148
+02:00:15,930 --> 02:00:19,380
+with blockchains. With at least
+some level of knowledge as to
+
+2149
+02:00:19,410 --> 02:00:22,770
+what's going on, you should be
+incredibly proud of yourself for
+
+2150
+02:00:22,770 --> 02:00:26,160
+just making it this far.
+Definitely be sure to give
+
+2151
+02:00:26,160 --> 02:00:29,220
+yourself a pat on the back and a
+round of applause. Now that
+
+2152
+02:00:29,220 --> 02:00:31,890
+we've gotten a lot of the basics
+and the fundamentals of the way,
+
+2153
+02:00:32,250 --> 02:00:36,000
+let's start jumping into the
+coding aspect. This is where
+
+2154
+02:00:36,000 --> 02:00:38,790
+you're going to learn how to
+actually build these smart
+
+2155
+02:00:38,790 --> 02:00:42,030
+contracts, how to build these
+trust minimized agreements, in
+
+2156
+02:00:42,030 --> 02:00:45,270
+these blockchains. And in the
+smart contract platforms. This
+
+2157
+02:00:45,270 --> 02:00:48,780
+next section, this solidity
+basics, the solidity
+
+2158
+02:00:48,780 --> 02:00:52,530
+fundamentals section will give
+you all the skills to start
+
+2159
+02:00:52,530 --> 02:00:56,160
+actually coding solidity and
+understanding how these smart
+
+2160
+02:00:56,160 --> 02:00:59,370
+contracts work underneath the
+hood. So at this point,
+
+2161
+02:00:59,490 --> 02:01:02,430
+absolutely, give yourself a high
+five, maybe say hi, in the
+
+2162
+02:01:02,430 --> 02:01:05,400
+GitHub discussions, maybe say hi
+in the community, on Twitter, on
+
+2163
+02:01:05,400 --> 02:01:09,330
+Reddit, etc, and be proud of
+just making it this far, the
+
+2164
+02:01:09,330 --> 02:01:11,670
+journey has really only just
+begun, but you've already
+
+2165
+02:01:11,670 --> 02:01:15,450
+learned so much. Let's begin the
+next section. And let's
+
+2166
+02:01:15,450 --> 02:01:16,560
+jump into the code.
+
+2167
+02:01:19,350 --> 02:01:21,780
+Now that we're getting to the
+coding sections, I need to
+
+2168
+02:01:21,780 --> 02:01:25,200
+stress to absolutely use the
+GitHub repository associated
+
+2169
+02:01:25,200 --> 02:01:28,470
+with this course. If you come to
+the GitHub repo, and you scroll
+
+2170
+02:01:28,470 --> 02:01:31,500
+down, and you click the lesson
+that we're on right now, we're
+
+2171
+02:01:31,500 --> 02:01:35,430
+on lesson two. Welcome to remix,
+simple storage. If you click on
+
+2172
+02:01:35,430 --> 02:01:38,490
+it, it'll give you a ton of
+timestamps and, and other
+
+2173
+02:01:38,490 --> 02:01:42,060
+helpful links associated with
+this lesson. Additionally, the
+
+2174
+02:01:42,060 --> 02:01:45,360
+biggest piece is that all the
+code will be available right
+
+2175
+02:01:45,360 --> 02:01:49,260
+underneath the lesson title.
+This will have all the code that
+
+2176
+02:01:49,260 --> 02:01:52,230
+we're going to be working with,
+as well as some more additional
+
+2177
+02:01:52,230 --> 02:01:55,560
+information on how to work with
+the code. Please, when asking
+
+2178
+02:01:55,560 --> 02:01:58,590
+questions and entering in
+discussions, though, please ask
+
+2179
+02:01:58,590 --> 02:02:00,990
+your questions and the full
+blockchain solidity course
+
+2180
+02:02:01,020 --> 02:02:03,780
+repository. Thank you. And if
+we're at the top of the
+
+2181
+02:02:03,780 --> 02:02:06,780
+repository, and we scroll down,
+we have the resources for this
+
+2182
+02:02:06,780 --> 02:02:09,720
+course section. Which brings us
+to the GitHub discussions in
+
+2183
+02:02:09,840 --> 02:02:12,930
+which you can ask questions in
+the GitHub discussion section of
+
+2184
+02:02:12,930 --> 02:02:17,790
+this course. Additionally, on
+Stack Exchange, Aetherium, or at
+
+2185
+02:02:17,790 --> 02:02:21,600
+Stack Overflow. I'll talk a
+little bit about how to format
+
+2186
+02:02:21,600 --> 02:02:24,840
+questions and ask questions the
+best way so that you have the
+
+2187
+02:02:24,840 --> 02:02:28,260
+highest chance of getting a good
+answer in a later lesson, I
+
+2188
+02:02:28,260 --> 02:02:32,220
+highly recommend you pause and
+make accounts for Stack Exchange
+
+2189
+02:02:32,250 --> 02:02:36,150
+Aetherium, Stack Overflow, and
+GitHub right now, if you haven't
+
+2190
+02:02:36,180 --> 02:02:38,760
+already, links to them, of
+course, can be found in our
+
+2191
+02:02:38,760 --> 02:02:42,120
+GitHub repository. Typically,
+for each coding section, I'll
+
+2192
+02:02:42,120 --> 02:02:45,270
+start it off by giving a quick
+overview of the code of what
+
+2193
+02:02:45,270 --> 02:02:46,830
+we're going to be working with
+and what we're going to be
+
+2194
+02:02:46,830 --> 02:02:49,380
+building towards, since
+everything that we're doing is
+
+2195
+02:02:49,380 --> 02:02:51,690
+going to be project based. And
+that's how we're going to learn.
+
+2196
+02:02:51,990 --> 02:02:55,020
+For our first one and remix
+though, we're going to skip over
+
+2197
+02:02:55,020 --> 02:02:58,440
+that because there's a lot of
+stuff to get used to. Now, I
+
+2198
+02:02:58,440 --> 02:03:01,890
+highly recommend that as I'm
+coding this. And as I'm doing
+
+2199
+02:03:01,890 --> 02:03:05,250
+all this in remix, you follow
+along with me and you code along
+
+2200
+02:03:05,250 --> 02:03:08,250
+with me. Remember, you can
+change my speed if I'm coding
+
+2201
+02:03:08,250 --> 02:03:10,740
+too fast, or if I'm coding too
+slow. To start, we're going to
+
+2202
+02:03:10,740 --> 02:03:13,920
+jump into a tool called remix.
+If you're unsure how to get
+
+2203
+02:03:13,920 --> 02:03:17,880
+there, there's a link to remix
+in our GitHub repository. This
+
+2204
+02:03:17,910 --> 02:03:21,210
+is where we're gonna be writing
+all of our code. So welcome to
+
+2205
+02:03:21,210 --> 02:03:25,500
+the remix IDE, or integrated
+development environment. This is
+
+2206
+02:03:25,500 --> 02:03:28,230
+where we're going to learn how
+to code and interact with our
+
+2207
+02:03:28,230 --> 02:03:32,130
+smart contracts. If you want,
+you can go ahead and accept help
+
+2208
+02:03:32,130 --> 02:03:35,070
+out remix. If you've never been
+here before, it'll give you a
+
+2209
+02:03:35,070 --> 02:03:38,130
+quick walkthrough of some of the
+tools that remix actually has,
+
+2210
+02:03:38,190 --> 02:03:40,230
+we're going to skip over them
+for now. Because I'm gonna
+
+2211
+02:03:40,230 --> 02:03:42,990
+explain everything that's going
+up. Remix is such a powerful
+
+2212
+02:03:42,990 --> 02:03:46,080
+tool because it has a lot of
+features that allow us to really
+
+2213
+02:03:46,080 --> 02:03:49,710
+see and interact with our smart
+contracts. Eventually, we're
+
+2214
+02:03:49,710 --> 02:03:52,470
+going to move off of remix,
+actually to a local development
+
+2215
+02:03:52,470 --> 02:03:56,070
+environment. However, remix is
+absolutely fantastic for
+
+2216
+02:03:56,070 --> 02:03:58,740
+learning the fundamentals of
+solidity. And I highly recommend
+
+2217
+02:03:58,770 --> 02:04:01,680
+everybody start with remix when
+they're getting started. When
+
+2218
+02:04:01,680 --> 02:04:04,680
+you come to the remix IDE,
+there's a whole lot of different
+
+2219
+02:04:04,680 --> 02:04:07,500
+things that are popping out to
+us. There's a lot of different
+
+2220
+02:04:07,500 --> 02:04:09,840
+plugins as well. Since we're
+going to be working with
+
+2221
+02:04:09,840 --> 02:04:12,600
+solidity, which is going to be
+the language that we're using to
+
+2222
+02:04:12,630 --> 02:04:15,510
+develop our smart contracts. We
+can go ahead and get started by
+
+2223
+02:04:15,510 --> 02:04:18,840
+clicking the solidity plugin,
+and a couple of other tools will
+
+2224
+02:04:18,840 --> 02:04:22,140
+show up on the side. Even if you
+don't click the solidity plugin,
+
+2225
+02:04:22,290 --> 02:04:25,050
+you'll still be able to code
+solidity smart contracts, the
+
+2226
+02:04:25,050 --> 02:04:27,090
+left hand side is where we're
+going to start to actually
+
+2227
+02:04:27,090 --> 02:04:30,690
+interact with things. The button
+on the top most of the left is
+
+2228
+02:04:30,690 --> 02:04:34,140
+our files or explore
+directories, remix comes
+
+2229
+02:04:34,140 --> 02:04:38,070
+boilerplate with some different
+contracts, some different
+
+2230
+02:04:38,070 --> 02:04:42,600
+scripts, some different tests,
+and different dependencies. We
+
+2231
+02:04:42,600 --> 02:04:45,060
+are going to minimize this a
+little bit. So if you want to go
+
+2232
+02:04:45,060 --> 02:04:48,270
+ahead and right click and delete
+some of these folders other than
+
+2233
+02:04:48,270 --> 02:04:51,780
+the contracts folders, feel free
+to do so. Or if you kind of like
+
+2234
+02:04:51,780 --> 02:04:55,020
+them there, feel free to leave
+them as well. We're going to
+
+2235
+02:04:55,020 --> 02:04:57,660
+leave our contracts folder and
+we're going to delete the
+
+2236
+02:04:57,660 --> 02:05:00,240
+different files inside of it
+just so that we can start From a
+
+2237
+02:05:00,240 --> 02:05:07,470
+blank slate. Most projects come
+with something known as a
+
+2238
+02:05:07,470 --> 02:05:10,530
+readme. Usually it's a
+readme.md, which usually
+
+2239
+02:05:10,530 --> 02:05:13,380
+explains how to actually work
+with code. But for our purposes,
+
+2240
+02:05:13,410 --> 02:05:15,360
+we're going to delete this as
+well. And you can just follow
+
+2241
+02:05:15,360 --> 02:05:15,720
+along with
+
+2242
+02:05:15,720 --> 02:05:20,400
+me. Now we have a blank
+
+2243
+02:05:20,430 --> 02:05:23,400
+remix Setup, click on the
+contracts folder and click the
+
+2244
+02:05:23,400 --> 02:05:27,000
+little page icon to create a new
+file, a little box will pop up
+
+2245
+02:05:27,210 --> 02:05:30,390
+and you can start typing text
+into it. We're going to type in
+
+2246
+02:05:30,480 --> 02:05:37,350
+simple storage dot Sol, dot Sol
+tells our compilers that this is
+
+2247
+02:05:37,350 --> 02:05:39,990
+going to be a solidity file, and
+that we're going to code
+
+2248
+02:05:40,020 --> 02:05:43,950
+solidity in this solidity is the
+primary coding language of smart
+
+2249
+02:05:43,950 --> 02:05:46,590
+contracts. There are a few other
+smart contract languages as
+
+2250
+02:05:46,590 --> 02:05:50,280
+well. But solidity by far is the
+most dominant smart contract
+
+2251
+02:05:50,280 --> 02:05:53,340
+coding language out there. And
+now we have a simple storage dot
+
+2252
+02:05:53,340 --> 02:05:56,970
+soul contract on the right that
+we can actually start coding our
+
+2253
+02:05:56,970 --> 02:06:00,750
+solidity with. So let's start
+coding some solidity. Now if you
+
+2254
+02:06:00,750 --> 02:06:04,440
+click on this button right below
+the files button that looks like
+
+2255
+02:06:04,440 --> 02:06:08,070
+the solidity logo, you'll see a
+bunch of stuff pop up in here.
+
+2256
+02:06:08,490 --> 02:06:11,820
+These are different parameters
+for us to actually compile our
+
+2257
+02:06:11,820 --> 02:06:14,730
+solidity code so that we can run
+it. So the first thing that
+
+2258
+02:06:14,730 --> 02:06:17,910
+you're going to need in any
+solidity smart contract is going
+
+2259
+02:06:17,910 --> 02:06:20,790
+to be the version of solidity
+that you're going to use. And
+
+2260
+02:06:20,790 --> 02:06:24,000
+this should always be at the top
+of your solidity code, solidity
+
+2261
+02:06:24,000 --> 02:06:26,460
+is a constantly changing
+language, and it constantly
+
+2262
+02:06:26,490 --> 02:06:29,280
+updating language. Because it's
+relatively new compared to other
+
+2263
+02:06:29,280 --> 02:06:32,280
+languages, we need to tell our
+code, hey, this is the version
+
+2264
+02:06:32,280 --> 02:06:35,070
+that I want you to use, we can
+add the solidity version by
+
+2265
+02:06:35,070 --> 02:06:39,990
+doing pragma. solidity. And then
+the version that we want to use,
+
+2266
+02:06:40,050 --> 02:06:42,750
+if we want to choose a very
+specific version, we could say
+
+2267
+02:06:42,780 --> 02:06:47,820
+zero, point 8.7. The most
+current version to date is 0.8.
+
+2268
+02:06:48,060 --> 02:06:51,090
+Point 12. But getting used to
+different versions of solidity
+
+2269
+02:06:51,360 --> 02:06:54,030
+is good practice, and different
+versions of solidity are
+
+2270
+02:06:54,030 --> 02:06:57,990
+considered more stable than
+others. Zero point 8.7 is one of
+
+2271
+02:06:57,990 --> 02:07:00,510
+those versions that is
+considered more stable. These
+
+2272
+02:07:00,510 --> 02:07:03,660
+double slashes here are what's
+known as a comment, there are
+
+2273
+02:07:03,660 --> 02:07:06,810
+places where you can type stuff
+that won't actually get executed
+
+2274
+02:07:06,840 --> 02:07:09,720
+in won't get compiled and isn't
+really considered part of your
+
+2275
+02:07:09,720 --> 02:07:15,000
+code. For example, I could write
+Hello all. I'm Patrick. And if
+
+2276
+02:07:15,000 --> 02:07:17,550
+we were going to run this code,
+this part of my code would get
+
+2277
+02:07:17,550 --> 02:07:20,970
+completely ignored. So this
+double backslash is how we do
+
+2278
+02:07:20,970 --> 02:07:23,520
+what's called comments. And as
+we're coding, and as we're
+
+2279
+02:07:23,520 --> 02:07:27,480
+building our projects, be sure
+to use this comments tool to
+
+2280
+02:07:27,480 --> 02:07:31,440
+your advantage every time you
+write a new function, or you
+
+2281
+02:07:31,440 --> 02:07:34,110
+learn something that you didn't
+understand, or you learned
+
+2282
+02:07:34,110 --> 02:07:37,290
+something new that you want to
+remember, put it in a comment in
+
+2283
+02:07:37,290 --> 02:07:40,230
+your code, you're going to be
+most effective at taking notes
+
+2284
+02:07:40,230 --> 02:07:43,650
+in this course, by making them
+comments in your code and then
+
+2285
+02:07:43,650 --> 02:07:46,680
+saving your code so you can
+refer back to it later. So leave
+
+2286
+02:07:46,680 --> 02:07:49,440
+comments in your code, leave
+notes in your code. And that
+
+2287
+02:07:49,440 --> 02:07:51,870
+will be one of the best ways for
+you to understand what you're
+
+2288
+02:07:51,870 --> 02:07:54,420
+coding when you want to refer
+back to it later. Now when it
+
+2289
+02:07:54,420 --> 02:07:56,760
+comes to the versions of
+solidity, there's actually a few
+
+2290
+02:07:56,760 --> 02:07:59,880
+different ways we can actually
+write it, we can say we want to
+
+2291
+02:07:59,880 --> 02:08:04,170
+use only zero point 8.7. And
+this is how we would write that.
+
+2292
+02:08:04,440 --> 02:08:07,800
+But maybe we're okay if we use a
+more new version of solidity
+
+2293
+02:08:07,800 --> 02:08:11,520
+than zero point 8.7 to tell our
+code that we're okay with a more
+
+2294
+02:08:11,520 --> 02:08:15,480
+new version, we can put a little
+caret here. And this is how we
+
+2295
+02:08:15,480 --> 02:08:20,340
+tell solidity. Hey, any version
+of zero point 8.7 And above is
+
+2296
+02:08:20,370 --> 02:08:24,480
+okay for this contract. This
+means zero point 8.8 would work
+
+2297
+02:08:24,690 --> 02:08:29,310
+zero point 8.9 0.8 point 10,
+etc. But if we wanted to use
+
+2298
+02:08:29,310 --> 02:08:33,270
+just 0.17, we would type in like
+that if we want to use solidity
+
+2299
+02:08:33,270 --> 02:08:36,000
+versions between a specific
+range, we could do something
+
+2300
+02:08:36,000 --> 02:08:39,180
+like this, we can say we want
+our solidity version greater
+
+2301
+02:08:39,180 --> 02:08:45,510
+than or equal to zero point 8.7
+But less than zero point 9.0.
+
+2302
+02:08:45,570 --> 02:08:49,950
+This means that any compiler
+between zero point 8.7 and zero
+
+2303
+02:08:50,370 --> 02:08:55,500
+point 9.0 would work. This means
+zero point 8.8 would work. Zero
+
+2304
+02:08:55,950 --> 02:09:00,270
+point 8.9 would work 0.8 point
+10 would work. But zero point
+
+2305
+02:09:00,270 --> 02:09:06,210
+9.0 would not work because it is
+not strictly less than 0.9 point
+
+2306
+02:09:06,210 --> 02:09:09,660
+00 point 9.1 would also not
+work. To keep things simple for
+
+2307
+02:09:09,660 --> 02:09:13,500
+us, we're going to use zero
+point 8.8. And every line of
+
+2308
+02:09:13,500 --> 02:09:17,160
+solidity that's completed, every
+completed section needs to end
+
+2309
+02:09:17,160 --> 02:09:20,010
+with one of these semicolons
+this is how you tell solidity
+
+2310
+02:09:20,010 --> 02:09:23,490
+it's the end of the line. Also
+at the top of your code, you're
+
+2311
+02:09:23,490 --> 02:09:26,730
+always going to want to put
+what's called an spdx license
+
+2312
+02:09:26,730 --> 02:09:30,750
+identifier. This is optional,
+but some compilers will flag
+
+2313
+02:09:30,750 --> 02:09:33,870
+your warning that you don't have
+one. This is to make licensing
+
+2314
+02:09:33,870 --> 02:09:37,470
+and sharing code a lot easier.
+We have a link to more about how
+
+2315
+02:09:37,470 --> 02:09:40,710
+licenses work in the section of
+this lesson in our GitHub
+
+2316
+02:09:40,710 --> 02:09:45,210
+repository to do an spdx license
+identifier, we just say spdx
+
+2317
+02:09:45,900 --> 02:09:51,600
+license identifier, and we're
+gonna choose MIT, the MIT
+
+2318
+02:09:51,600 --> 02:09:54,870
+license is one of the least
+restrictive licenses out there.
+
+2319
+02:09:54,930 --> 02:09:58,320
+So we use the MIT license for
+most of our code samples once
+
+2320
+02:09:58,320 --> 02:10:01,410
+you have a version and once you
+have Is this much written, we
+
+2321
+02:10:01,410 --> 02:10:04,020
+can actually go ahead and write
+to our compiler tab and scroll
+
+2322
+02:10:04,020 --> 02:10:08,220
+down and hit Compile, that
+little turn thing will go. And
+
+2323
+02:10:08,220 --> 02:10:11,670
+in a minute, we'll see, this
+contract is attempted to be
+
+2324
+02:10:11,670 --> 02:10:14,700
+compiled. Since we actually
+don't have a contract, we see no
+
+2325
+02:10:14,700 --> 02:10:17,970
+contract compiled yet, but we
+see the compiler automatically
+
+2326
+02:10:17,970 --> 02:10:21,480
+switched to zero point 8.8.
+compiling our code means taking
+
+2327
+02:10:21,480 --> 02:10:24,660
+our more human readable code
+like pragma, solidity and
+
+2328
+02:10:24,900 --> 02:10:29,160
+transforming it into computer
+code, or very specific
+
+2329
+02:10:29,160 --> 02:10:32,310
+instructions for the computer to
+use. We'll go over what a lot of
+
+2330
+02:10:32,310 --> 02:10:36,360
+this machine level code or this
+computer level code is doing in
+
+2331
+02:10:36,390 --> 02:10:39,390
+a later section. If you're using
+a Mac, you can also hit command
+
+2332
+02:10:39,420 --> 02:10:42,870
+S, and it will run the compiler
+for you as well. On Windows, it
+
+2333
+02:10:42,870 --> 02:10:46,530
+might be Ctrl S, we can actually
+choose the compiler version that
+
+2334
+02:10:46,530 --> 02:10:49,950
+we want to use. However, if we
+tell in our code to specifically
+
+2335
+02:10:49,950 --> 02:10:53,760
+use zero, point 8.8, and we hit
+the compile button, it'll
+
+2336
+02:10:53,760 --> 02:10:56,850
+automatically switch to zero
+point 8.8. However, if we use
+
+2337
+02:10:56,850 --> 02:11:00,360
+the carrot thing, we get
+specifically say, hey, we want
+
+2338
+02:11:00,450 --> 02:11:05,370
+0.8 point 10, we can hit
+compile, and it will compile
+
+2339
+02:11:05,370 --> 02:11:09,420
+with 0.8 point 10. Because
+again, remember, the carrot says
+
+2340
+02:11:09,420 --> 02:11:13,740
+we want to use at least zero,
+point eight, all the way up to
+
+2341
+02:11:13,740 --> 02:11:18,120
+the latest version of 0.8. Now
+let's stay on zero point 8.8.
+
+2342
+02:11:18,240 --> 02:11:20,520
+The next thing that we're going
+to do in our code is define our
+
+2343
+02:11:20,520 --> 02:11:23,280
+contract. And to get a full
+screen view, you can go ahead
+
+2344
+02:11:23,280 --> 02:11:25,950
+and hit the compiler button to
+get rid of it there. To start
+
+2345
+02:11:25,950 --> 02:11:27,900
+defining our contract, we're
+gonna go ahead and write the
+
+2346
+02:11:27,900 --> 02:11:31,980
+word contract. This tells
+solidity that the next pieces of
+
+2347
+02:11:31,980 --> 02:11:35,370
+code is going to be a contract
+contract is a key word in
+
+2348
+02:11:35,370 --> 02:11:37,950
+solidity, and it tells our
+compiler that the next section
+
+2349
+02:11:37,980 --> 02:11:41,370
+of this code is going to define
+a contract. You can think of a
+
+2350
+02:11:41,370 --> 02:11:44,790
+contract similar to a class in
+any object oriented programming
+
+2351
+02:11:44,790 --> 02:11:48,180
+like Java or JavaScript. Let's
+go ahead and give our contract a
+
+2352
+02:11:48,180 --> 02:11:53,010
+name here, we're going to call
+RS simple storage. And then we
+
+2353
+02:11:53,010 --> 02:11:57,240
+add this little open and close
+curly brackets. Everything
+
+2354
+02:11:57,240 --> 02:12:00,330
+inside this open and close curly
+brackets is going to be the
+
+2355
+02:12:00,330 --> 02:12:03,450
+contents of this contract.
+Simple Storage. Now, if we go
+
+2356
+02:12:03,450 --> 02:12:06,930
+ahead and hit command S or Ctrl
+S, we can see this little green
+
+2357
+02:12:06,930 --> 02:12:09,990
+checkmark show up. And if you
+don't, you can always go back to
+
+2358
+02:12:09,990 --> 02:12:13,500
+the compiler tab, scroll down
+and hit Compile and see the
+
+2359
+02:12:13,500 --> 02:12:16,470
+little green checkmark. That
+little green checkmark means
+
+2360
+02:12:16,470 --> 02:12:19,260
+that our code is compiling
+successfully. And we don't have
+
+2361
+02:12:19,260 --> 02:12:21,750
+any errors, we could
+hypothetically deploy this
+
+2362
+02:12:21,750 --> 02:12:25,080
+contract right now. And it would
+be a valid contract. So
+
+2363
+02:12:25,080 --> 02:12:27,690
+congratulations on writing your
+first contract.
+
+2364
+02:12:30,270 --> 02:12:33,300
+Now solidity has multiple
+different types or primitive
+
+2365
+02:12:33,300 --> 02:12:36,630
+data types. And if you go to the
+solidity documentation, which
+
+2366
+02:12:36,660 --> 02:12:39,480
+again, is in our GitHub
+repository, you can read more
+
+2367
+02:12:39,480 --> 02:12:41,430
+and learn more about the
+different types that are in
+
+2368
+02:12:41,430 --> 02:12:44,460
+here. The four most basic types
+are going to be Boolean,
+
+2369
+02:12:45,480 --> 02:12:48,930
+you int, int, and an address
+
+2370
+02:12:49,110 --> 02:12:52,230
+or bytes, which is a lower level
+type, which we'll talk about a
+
+2371
+02:12:52,230 --> 02:12:55,170
+little bit later. A boolean
+define some type of true false,
+
+2372
+02:12:55,860 --> 02:12:58,980
+a you int is going to be an
+unsigned integer, which means
+
+2373
+02:12:58,980 --> 02:13:01,800
+it's going to be a whole number
+that isn't positive or negative.
+
+2374
+02:13:01,830 --> 02:13:05,190
+It's just positive, we have an
+integer, which is going to be a
+
+2375
+02:13:05,190 --> 02:13:08,460
+positive or negative whole
+number. And then we have an
+
+2376
+02:13:08,460 --> 02:13:12,630
+address, which is going to be an
+address, like what we see in our
+
+2377
+02:13:12,630 --> 02:13:15,120
+meta mask here. There are some
+other types as well that you'll
+
+2378
+02:13:15,120 --> 02:13:18,330
+learn later on. The reason that
+we have these types is we use
+
+2379
+02:13:18,330 --> 02:13:22,080
+them to define what different
+variables are. Variables are
+
+2380
+02:13:22,080 --> 02:13:25,590
+basically holders for different
+values. For example, we could
+
+2381
+02:13:25,590 --> 02:13:31,350
+create a variable called has
+favorite number to represent if
+
+2382
+02:13:31,350 --> 02:13:35,850
+somebody has a favorite number.
+And we would put this bull
+
+2383
+02:13:35,880 --> 02:13:40,170
+keyword before has to renumber
+say, Okay, we have a variable
+
+2384
+02:13:40,200 --> 02:13:44,070
+called has favorite number, and
+it's of type boolean. So this
+
+2385
+02:13:44,070 --> 02:13:47,730
+has favorite number is going to
+represent a true or a false to
+
+2386
+02:13:47,730 --> 02:13:52,890
+set its value, we could say has
+favorite number equals true. Now
+
+2387
+02:13:52,920 --> 02:13:56,640
+has favorite number is going to
+be true. We could also say has
+
+2388
+02:13:56,640 --> 02:14:00,900
+favorite number equals false. So
+this Boolean has faded number is
+
+2389
+02:14:00,900 --> 02:14:05,460
+now going to be false. For uns
+we could say you went favorite
+
+2390
+02:14:05,460 --> 02:14:11,220
+number equals and then set a
+number 123. This means that our
+
+2391
+02:14:11,220 --> 02:14:14,910
+favorite number is going to be
+123 You'll enter is special
+
+2392
+02:14:14,910 --> 02:14:18,630
+because we can actually specify
+how many bits want to allocate
+
+2393
+02:14:18,780 --> 02:14:22,020
+to this number bits and bytes
+are pretty fundamental pieces of
+
+2394
+02:14:22,020 --> 02:14:24,750
+information for computer
+science. We're not going to go
+
+2395
+02:14:24,750 --> 02:14:27,810
+over it here. However, there's a
+fantastic video in the GitHub
+
+2396
+02:14:27,810 --> 02:14:30,450
+repository that explains it
+more. Basically, it's how much
+
+2397
+02:14:30,450 --> 02:14:34,860
+storage or memory to allocate to
+this number. How big can it get,
+
+2398
+02:14:34,950 --> 02:14:38,250
+if we say a you int eight can
+have eight bits all the way up
+
+2399
+02:14:38,250 --> 02:14:42,270
+to you went to 56. If you don't
+specify how big it is, it
+
+2400
+02:14:42,270 --> 02:14:46,260
+automatically defaults to you
+into 256. Oftentimes, it's
+
+2401
+02:14:46,260 --> 02:14:49,710
+better when writing our code to
+be very explicit. So usually
+
+2402
+02:14:49,710 --> 02:14:53,970
+you'll see me just do you int
+256 to represent a un 256. We
+
+2403
+02:14:53,970 --> 02:14:59,730
+could also do an int favorite
+number equals 123 or an int 256.
+
+2404
+02:14:59,790 --> 02:15:01,800
+I'm just Going to go ahead and
+add this Boolean back here,
+
+2405
+02:15:01,950 --> 02:15:05,460
+we're going to change this back
+to UNT to 36. And let's change
+
+2406
+02:15:05,460 --> 02:15:07,740
+our favorite number to five
+here, we could also do something
+
+2407
+02:15:07,740 --> 02:15:13,080
+called strings, string, favorite
+number in text
+
+2408
+02:15:14,130 --> 02:15:16,080
+equals five
+
+2409
+02:15:16,560 --> 02:15:20,550
+strings represent basically
+words, and you can represent
+
+2410
+02:15:20,550 --> 02:15:23,190
+them by putting them in these
+quotes, it's going to be some
+
+2411
+02:15:23,190 --> 02:15:25,620
+word or phrase, or really,
+really just kind of any
+
+2412
+02:15:25,620 --> 02:15:30,930
+combination of keystrokes in
+here, our ends can be positive
+
+2413
+02:15:30,930 --> 02:15:34,830
+or negative. So we could say,
+negative five or positive five,
+
+2414
+02:15:35,640 --> 02:15:39,810
+both are going to be valid,
+since we can also do address my
+
+2415
+02:15:39,810 --> 02:15:45,720
+address equals and grab our
+address, right from Metamask.
+
+2416
+02:15:45,990 --> 02:15:48,780
+And paste it in, you'll notice
+that we end all of these lines
+
+2417
+02:15:48,780 --> 02:15:53,070
+of code with the semicolon. We
+also have bytes objects, or a
+
+2418
+02:15:53,070 --> 02:15:56,910
+bytes 32, again, representing
+how many bytes we want them to
+
+2419
+02:15:56,910 --> 02:16:04,110
+be. And this says that we have
+called favorite bytes, and we're
+
+2420
+02:16:04,110 --> 02:16:07,050
+just gonna set it equal to cat.
+So strings are actually really
+
+2421
+02:16:07,050 --> 02:16:11,550
+interesting, because strings are
+secretly just bytes objects, but
+
+2422
+02:16:11,550 --> 02:16:15,570
+only for text to a cat is
+actually a string, but can
+
+2423
+02:16:15,570 --> 02:16:18,750
+automatically get converted into
+one of these bytes object bytes,
+
+2424
+02:16:18,750 --> 02:16:23,280
+objects typically look like 0x.
+And then some random letters and
+
+2425
+02:16:23,280 --> 02:16:26,610
+numbers that represent the bytes
+object, but cat can
+
+2426
+02:16:26,610 --> 02:16:29,370
+automatically get converted down
+to bytes. We'll talk about bytes
+
+2427
+02:16:29,370 --> 02:16:32,880
+more in coming sessions, you can
+also do bytes, two bytes, three
+
+2428
+02:16:32,880 --> 02:16:37,530
+bytes, five bytes 22, you get
+the picture for our uns and our
+
+2429
+02:16:37,530 --> 02:16:41,340
+into the sixth lowest we can go
+is eight bits, because eight
+
+2430
+02:16:41,340 --> 02:16:44,430
+bits is a byte. And we can go up
+by steps of eight. So we can do
+
+2431
+02:16:44,430 --> 02:16:51,750
+816 32, etc, all the way to 256.
+For example, down here, we can't
+
+2432
+02:16:51,750 --> 02:16:58,080
+do bytes 64. And if we go ahead
+and try to compile this, we get
+
+2433
+02:16:58,110 --> 02:17:02,250
+a little red thing here. And if
+we scroll down, we get a
+
+2434
+02:17:02,250 --> 02:17:06,510
+declaration error identifier not
+found or not unique. Bytes 64
+
+2435
+02:17:06,540 --> 02:17:10,080
+favorite bytes equals cats. And
+we even got a little red warning
+
+2436
+02:17:10,080 --> 02:17:13,830
+sign here in our remix. This is
+remix telling us there's
+
+2437
+02:17:13,830 --> 02:17:16,500
+something wrong with this line.
+So we can switch back to bite
+
+2438
+02:17:16,500 --> 02:17:20,460
+32. Since byte 32 is the maximum
+size that a bytes can be, you
+
+2439
+02:17:20,460 --> 02:17:23,520
+could also do just a bytes
+object, which means it can have
+
+2440
+02:17:23,520 --> 02:17:26,970
+any size, but we typically want
+to be explicit. And we're going
+
+2441
+02:17:26,970 --> 02:17:29,880
+to stick with bytes 32 For now
+want to learn more about the
+
+2442
+02:17:29,880 --> 02:17:32,100
+different types and how to use
+them and all the different
+
+2443
+02:17:32,100 --> 02:17:34,350
+features with them, be sure to
+check out the solidity
+
+2444
+02:17:34,350 --> 02:17:37,380
+documentation. For now for our
+simple storage, let's say we
+
+2445
+02:17:37,380 --> 02:17:40,110
+only want to store numbers. So
+let's go ahead and delete
+
+2446
+02:17:40,140 --> 02:17:42,720
+everything except for the
+favorite number section.
+
+2447
+02:17:45,660 --> 02:17:46,710
+Now in solidity,
+
+2448
+02:17:46,740 --> 02:17:50,340
+if I do this, and I remove the
+equals five, this favorite
+
+2449
+02:17:50,340 --> 02:17:54,240
+number actually does get set to
+a default value, the default
+
+2450
+02:17:54,240 --> 02:17:57,660
+value for solidity is going to
+be whatever the null value is,
+
+2451
+02:17:57,900 --> 02:18:01,140
+which in solidity is case zero.
+So saying you Intuit six
+
+2452
+02:18:01,140 --> 02:18:04,890
+favorite number is going to be
+the same as saying you 256
+
+2453
+02:18:04,920 --> 02:18:08,760
+favorite number equals zero
+since it gets initialized to
+
+2454
+02:18:08,760 --> 02:18:11,790
+zero. So for now, let's not
+initialize it to anything. So
+
+2455
+02:18:11,790 --> 02:18:15,030
+that favorite number will
+automatically start off as zero.
+
+2456
+02:18:15,060 --> 02:18:17,670
+Now, if you get confused, as
+you're coding along, and you're
+
+2457
+02:18:17,670 --> 02:18:21,060
+following along with me, be sure
+to write comments in your code
+
+2458
+02:18:21,060 --> 02:18:24,540
+so you know what's going on. So
+maybe, for example, a great
+
+2459
+02:18:24,540 --> 02:18:30,840
+comment here would be this gets
+initially alized to zero. And
+
+2460
+02:18:30,840 --> 02:18:35,490
+then if that's even confusing,
+you could say, this means that
+
+2461
+02:18:35,490 --> 02:18:44,160
+this section is a comment. Now
+let's go ahead and create a
+
+2462
+02:18:44,160 --> 02:18:48,000
+function functions or methods
+are self contained modules that
+
+2463
+02:18:48,000 --> 02:18:51,810
+will execute some specific set
+of instructions for us, when we
+
+2464
+02:18:51,810 --> 02:18:54,990
+call it if you're familiar with
+Java, or Python, or JavaScript
+
+2465
+02:18:54,990 --> 02:18:57,720
+or anything like that functions
+work the exact same way
+
+2466
+02:18:57,750 --> 02:19:01,680
+functions get identified by the
+keyword function, let's create a
+
+2467
+02:19:01,680 --> 02:19:06,510
+function called store that will
+change the value of favorite
+
+2468
+02:19:06,510 --> 02:19:10,020
+number to some new value. And
+the number that we're going to
+
+2469
+02:19:10,020 --> 02:19:13,440
+change it to is going to be
+variables that are passed to our
+
+2470
+02:19:13,440 --> 02:19:16,470
+store function here. So we're
+going to allow our store
+
+2471
+02:19:16,470 --> 02:19:22,020
+function to take a variable of
+type un 256. And we'll call it
+
+2472
+02:19:22,080 --> 02:19:24,030
+underscore favorite
+
+2473
+02:19:25,320 --> 02:19:28,710
+number, we'll make this a public
+function, which we'll get to in
+
+2474
+02:19:28,710 --> 02:19:30,840
+a minute. And all we're going to
+do is we're going to set
+
+2475
+02:19:30,840 --> 02:19:34,620
+favorite number equal to
+whatever variable that we just
+
+2476
+02:19:34,620 --> 02:19:39,870
+passed. So now we have this
+function called store, that it
+
+2477
+02:19:39,870 --> 02:19:43,020
+takes some parameter that we're
+going to give it and it sets
+
+2478
+02:19:43,020 --> 02:19:46,260
+this favorite number variable
+equal to whatever number that we
+
+2479
+02:19:46,260 --> 02:19:49,110
+give this function. Now to see
+this actually in action, let's
+
+2480
+02:19:49,110 --> 02:19:52,530
+deploy this to an even thicker
+blockchain than a test net.
+
+2481
+02:19:52,590 --> 02:19:55,830
+We're going to actually deploy
+this to a local network or a
+
+2482
+02:19:55,830 --> 02:19:59,070
+JavaScript VM. And first before
+we can even do that, let's just
+
+2483
+02:19:59,070 --> 02:20:01,350
+make sure that it's going
+compiling correctly looks like
+
+2484
+02:20:01,350 --> 02:20:04,410
+we have a green checkmark, which
+is good. And we'll come down to
+
+2485
+02:20:04,410 --> 02:20:07,830
+this button here, which is our
+deploy and run Transactions tab.
+
+2486
+02:20:08,730 --> 02:20:11,700
+Our deploy and run Transactions
+tab has a ton of different
+
+2487
+02:20:11,700 --> 02:20:14,310
+configuration pieces for
+actually deploying this
+
+2488
+02:20:14,310 --> 02:20:18,090
+contract. First, we want to make
+sure we are on the JavaScript VM
+
+2489
+02:20:18,210 --> 02:20:21,330
+London piece here, JavaScript VM
+means we're going to be
+
+2490
+02:20:21,330 --> 02:20:26,850
+deploying to a fake local
+JavaScript VM. The JavaScript VM
+
+2491
+02:20:26,880 --> 02:20:30,750
+is a fake local blockchain where
+we can simulate transactions
+
+2492
+02:20:30,750 --> 02:20:33,750
+really quickly without having to
+wait for them to go through on a
+
+2493
+02:20:33,750 --> 02:20:36,630
+test net, don't worry about the
+London versus Berlin piece here
+
+2494
+02:20:36,630 --> 02:20:39,690
+for now, injected web three and
+web three provider we'll talk
+
+2495
+02:20:39,690 --> 02:20:42,750
+about in a little bit. We also
+have this account section here.
+
+2496
+02:20:42,840 --> 02:20:46,110
+When we run on our fake
+JavaScript VM, we're given a
+
+2497
+02:20:46,110 --> 02:20:49,230
+whole bunch of fake accounts
+from where to deploy from, and
+
+2498
+02:20:49,230 --> 02:20:53,190
+we're given 100 eath. For each
+one of these fake accounts, you
+
+2499
+02:20:53,190 --> 02:20:56,970
+can kind of think of it similar
+to our meta mask account in meta
+
+2500
+02:20:56,970 --> 02:21:01,260
+mask, except for the difference
+here is that this is this fake
+
+2501
+02:21:01,380 --> 02:21:04,260
+JavaScript VM Aetherium that
+we're given. For our
+
+2502
+02:21:04,260 --> 02:21:06,930
+transactions, including
+deploying contracts, we're
+
+2503
+02:21:06,930 --> 02:21:09,960
+actually given a gas limit,
+there's also values we can send,
+
+2504
+02:21:09,960 --> 02:21:12,900
+and we can choose our contracts.
+Right now we only have one
+
+2505
+02:21:12,900 --> 02:21:15,390
+contract, simple storage, so
+that's going to be the one that
+
+2506
+02:21:15,390 --> 02:21:18,600
+we're going to deploy. So on the
+left hand side, to deploy this
+
+2507
+02:21:18,630 --> 02:21:21,990
+to our fake JavaScript VM, we're
+gonna go ahead and hit the
+
+2508
+02:21:22,020 --> 02:21:24,660
+Deploy button. And if we scroll
+all the way down to the bottom,
+
+2509
+02:21:24,660 --> 02:21:30,030
+now, we can see a contract was
+deployed. It says simple storage
+
+2510
+02:21:30,240 --> 02:21:34,290
+at x, blah, blah, blah, blah,
+blah. And we see this orange
+
+2511
+02:21:34,290 --> 02:21:38,310
+button store with come this
+grade text you in 256,
+
+2512
+02:21:38,610 --> 02:21:42,480
+underscore favorite number on
+our fake local blockchain, we're
+
+2513
+02:21:42,480 --> 02:21:46,920
+actually given an address every
+single smart contract, it has an
+
+2514
+02:21:46,920 --> 02:21:51,090
+address, just like how our
+wallets have an address. So if
+
+2515
+02:21:51,090 --> 02:21:54,720
+we hit this copy button here,
+and we put it into a comment,
+
+2516
+02:21:55,560 --> 02:21:59,430
+make this a little bit bigger,
+we can see that the address of
+
+2517
+02:21:59,430 --> 02:22:02,850
+this contract that we just
+deployed, is located at this
+
+2518
+02:22:02,850 --> 02:22:06,060
+address. Additionally, if you
+pull up the slider over here,
+
+2519
+02:22:06,420 --> 02:22:08,520
+you'll be able to see this
+little green checkmark with all
+
+2520
+02:22:08,520 --> 02:22:11,280
+this information about this
+deployment. And you can hit the
+
+2521
+02:22:11,280 --> 02:22:14,340
+little drop down and see a whole
+lot more information about this.
+
+2522
+02:22:14,730 --> 02:22:17,340
+Something you might notice is
+you'll see some familiar
+
+2523
+02:22:17,340 --> 02:22:22,590
+keywords like status,
+transaction hash, from to gas,
+
+2524
+02:22:22,620 --> 02:22:27,540
+etc. When we deploy a contract,
+it's actually the same as
+
+2525
+02:22:27,540 --> 02:22:30,840
+sending a transaction. Remember,
+anytime we do anything on the
+
+2526
+02:22:30,840 --> 02:22:36,150
+blockchain, we modify any value,
+we are sending a transaction. So
+
+2527
+02:22:36,150 --> 02:22:40,020
+deploying a contract is
+modifying the blockchain to have
+
+2528
+02:22:40,020 --> 02:22:43,110
+this contract, it's modifying
+the state of the blockchain. And
+
+2529
+02:22:43,110 --> 02:22:45,930
+if we had sent this on a
+Rinkeby, or COVID, or main net
+
+2530
+02:22:45,930 --> 02:22:49,620
+network, we would have had to
+spend the gas to actually deploy
+
+2531
+02:22:49,620 --> 02:22:53,580
+this contract. And this is the
+simulation of how much gas and
+
+2532
+02:22:53,580 --> 02:22:56,670
+the transaction hash and from
+and to and all this other stuff
+
+2533
+02:22:56,940 --> 02:22:59,940
+about our transaction had, we
+actually deployed it to a real
+
+2534
+02:22:59,940 --> 02:23:02,370
+network. But since it's
+JavaScript VM, it's all fake
+
+2535
+02:23:02,370 --> 02:23:05,700
+information. Now we have this
+big orange button store, this
+
+2536
+02:23:05,730 --> 02:23:08,880
+big orange button resembles the
+store function that we just
+
+2537
+02:23:08,880 --> 02:23:12,420
+created. So if we add some
+number into this store, like
+
+2538
+02:23:12,420 --> 02:23:16,530
+123, and we hit the Store
+button, we actually call this
+
+2539
+02:23:16,560 --> 02:23:19,950
+store button. And we actually
+execute a transaction on our
+
+2540
+02:23:19,950 --> 02:23:24,930
+fake Jasika. Blockchain to store
+the number 1234 favorite number.
+
+2541
+02:23:25,020 --> 02:23:28,980
+And if we scroll all the way up
+to our account, now, you'll see
+
+2542
+02:23:29,010 --> 02:23:32,190
+that we have a little bit less
+ether in our fake account. This
+
+2543
+02:23:32,190 --> 02:23:37,050
+is because we spent the gas to
+actually call this contract. And
+
+2544
+02:23:37,050 --> 02:23:40,560
+if we pull up this bottom bit
+here, and I call this with five
+
+2545
+02:23:40,590 --> 02:23:43,950
+I call store, you'll see it
+flashed for a quick second, we
+
+2546
+02:23:43,950 --> 02:23:47,970
+sent another transaction to
+store the value five in our
+
+2547
+02:23:47,970 --> 02:23:50,580
+favorite number. Now the
+question might be having is,
+
+2548
+02:23:50,940 --> 02:23:53,910
+that's really cool, Patrick, but
+I can't see what favorite number
+
+2549
+02:23:53,910 --> 02:23:56,850
+actually is, how do I know that
+those transactions are actually
+
+2550
+02:23:56,850 --> 02:24:00,510
+going through? Well, right now,
+the visibility of our favorite
+
+2551
+02:24:00,510 --> 02:24:04,200
+number is set to private, so we
+actually can't see it. And we'll
+
+2552
+02:24:04,200 --> 02:24:07,290
+talk about visibility in just a
+second. To make it so that we
+
+2553
+02:24:07,290 --> 02:24:10,860
+can see it. We'll change our
+favorite numbers visibility to
+
+2554
+02:24:10,860 --> 02:24:14,610
+public. So let's go ahead, we'll
+recompile we'll go back to the
+
+2555
+02:24:14,610 --> 02:24:18,150
+deploy tab. We'll click the
+little x here, which is to say
+
+2556
+02:24:18,150 --> 02:24:21,420
+let's get rid of this contract.
+And it just gets rid of it from
+
+2557
+02:24:21,450 --> 02:24:23,940
+our window here. It doesn't
+actually get rid of it from the
+
+2558
+02:24:23,940 --> 02:24:27,300
+blockchain, because again,
+they're immutable, well, kind of
+
+2559
+02:24:27,300 --> 02:24:30,480
+immutable, since again, this is
+kind of a fake simulated chain.
+
+2560
+02:24:30,810 --> 02:24:34,440
+But we go ahead and compile, and
+now we hit Deploy again. And if
+
+2561
+02:24:34,440 --> 02:24:37,830
+we scroll down, our new
+contract, will now have two
+
+2562
+02:24:37,830 --> 02:24:41,100
+buttons. One is the orange
+button for store. But now we
+
+2563
+02:24:41,100 --> 02:24:45,750
+have a New Favorite button. This
+button represents this public
+
+2564
+02:24:45,750 --> 02:24:48,990
+variable favorite number, and it
+resembles a function saying,
+
+2565
+02:24:48,990 --> 02:24:52,800
+Hey, show me what favorite
+number is. So if I were to click
+
+2566
+02:24:52,800 --> 02:24:55,170
+this favorite number button,
+what do you think will show up?
+
+2567
+02:24:55,200 --> 02:24:58,320
+Well, do you remember what this
+gets initialized to? Well, let's
+
+2568
+02:24:58,320 --> 02:25:02,640
+click it now. We do indeed See
+that zero shows up, we see that
+
+2569
+02:25:02,640 --> 02:25:06,690
+this is a YouTube ID six, and
+the value stored in it is zero.
+
+2570
+02:25:06,870 --> 02:25:10,320
+Now, if I were to change that
+number to five by calling the
+
+2571
+02:25:10,320 --> 02:25:13,440
+store function, and now hitting
+favorite number, we do indeed
+
+2572
+02:25:13,440 --> 02:25:16,980
+see, favorite number gets
+updated to five functions and
+
+2573
+02:25:16,980 --> 02:25:20,670
+variables can have one for
+visibility specifiers, we have
+
+2574
+02:25:20,670 --> 02:25:26,370
+public, private, external, and
+internal. Public is visible
+
+2575
+02:25:26,370 --> 02:25:30,090
+externally and internally,
+meaning anybody who interacts
+
+2576
+02:25:30,090 --> 02:25:33,150
+with this contract or sees this
+contract can see what's stored
+
+2577
+02:25:33,150 --> 02:25:35,520
+in this favorite number
+function. You'll see here in the
+
+2578
+02:25:35,520 --> 02:25:38,640
+solidity documentation, it says
+it creates a getter function for
+
+2579
+02:25:38,640 --> 02:25:41,310
+the storage slash state
+variables. When we add this
+
+2580
+02:25:41,310 --> 02:25:44,160
+keyword public to favorite
+number, what we're actually
+
+2581
+02:25:44,160 --> 02:25:47,310
+doing is we're creating what's
+called a getter function for
+
+2582
+02:25:47,310 --> 02:25:50,670
+favorite number, we're basically
+creating a function that says to
+
+2583
+02:25:50,670 --> 02:25:54,540
+return the value of favorite
+number, and that's why this blue
+
+2584
+02:25:54,540 --> 02:25:57,690
+button pops up. Because this
+blue button is a function that
+
+2585
+02:25:57,690 --> 02:26:02,040
+says, hey, return the value of
+favorite number private means
+
+2586
+02:26:02,100 --> 02:26:05,730
+only this specific contract can
+call this function. Now for
+
+2587
+02:26:05,730 --> 02:26:09,990
+storage, it doesn't mean only
+this contract can read what's
+
+2588
+02:26:10,020 --> 02:26:13,140
+stored here. And we'll get into
+that a little bit later. But by
+
+2589
+02:26:13,140 --> 02:26:15,960
+that means, this is the only
+contract that can call the
+
+2590
+02:26:15,960 --> 02:26:18,660
+favorite number function.
+Private functions are only
+
+2591
+02:26:18,660 --> 02:26:21,840
+visible to the current contract.
+External functions are only
+
+2592
+02:26:21,840 --> 02:26:25,680
+visible externally, meaning
+somebody outside this contract
+
+2593
+02:26:25,710 --> 02:26:29,100
+can call this function. And then
+internal means that only this
+
+2594
+02:26:29,100 --> 02:26:32,970
+contract and it's children
+contracts can actually read it,
+
+2595
+02:26:32,970 --> 02:26:36,030
+but we'll get into that a little
+bit later, too. So oddly enough,
+
+2596
+02:26:36,060 --> 02:26:39,420
+variables are just function
+calls. Now, the reason that we
+
+2597
+02:26:39,420 --> 02:26:42,420
+didn't see favorite numbers show
+up on the left hand side, when
+
+2598
+02:26:42,420 --> 02:26:45,060
+we first deployed this without
+the public keyword. When we
+
+2599
+02:26:45,060 --> 02:26:47,970
+don't give a visibility
+specifier to functions or
+
+2600
+02:26:47,970 --> 02:26:51,180
+variables, they automatically
+get deployed as internal. And as
+
+2601
+02:26:51,180 --> 02:26:54,630
+we know, internal functions and
+variables can only be called by
+
+2602
+02:26:54,630 --> 02:26:57,870
+this specific contract or
+derived contracts, which again,
+
+2603
+02:26:57,870 --> 02:27:01,320
+we'll get into later. So let's
+just keep it public. For now,
+
+2604
+02:27:01,350 --> 02:27:04,230
+the reason that we're prefixing,
+our parameter here with an
+
+2605
+02:27:04,230 --> 02:27:09,450
+underscore is a way to tell us,
+hey, this variable here is
+
+2606
+02:27:09,450 --> 02:27:11,700
+different from the favorite
+number global, there are some
+
+2607
+02:27:11,700 --> 02:27:14,430
+different naming conventions
+that are used for parameters.
+
+2608
+02:27:14,430 --> 02:27:17,670
+And as we get later into the
+course, will understand more and
+
+2609
+02:27:17,670 --> 02:27:20,550
+more of what good names are
+parameters are, every time we
+
+2610
+02:27:20,550 --> 02:27:24,000
+call this store function. And we
+change the value here, we're
+
+2611
+02:27:24,000 --> 02:27:27,210
+actually sending a transaction
+because remember, every single
+
+2612
+02:27:27,210 --> 02:27:30,390
+time we change the state of the
+blockchain, we do it in a
+
+2613
+02:27:30,390 --> 02:27:33,750
+transaction. And we can see all
+the details here. If you go over
+
+2614
+02:27:33,750 --> 02:27:37,620
+to the transaction details in
+the logging area of your remix,
+
+2615
+02:27:37,830 --> 02:27:41,610
+you can actually scroll down and
+you can see the transaction cost
+
+2616
+02:27:41,640 --> 02:27:44,790
+in units of gas, you'll see a
+number of something around this.
+
+2617
+02:27:44,790 --> 02:27:48,540
+And you'll notice it's more than
+that 21,000 number from sending
+
+2618
+02:27:48,570 --> 02:27:50,910
+Aetherium. That's because we're
+doing something more
+
+2619
+02:27:50,910 --> 02:27:55,320
+computationally expensive. We're
+actually storing a number over
+
+2620
+02:27:55,320 --> 02:27:59,190
+here. Now what do you think will
+happen if we do more inside of
+
+2621
+02:27:59,190 --> 02:28:01,800
+the store function as well. So
+instead of just storing this
+
+2622
+02:28:01,800 --> 02:28:05,670
+number, maybe what else we do is
+we will store the number here.
+
+2623
+02:28:06,330 --> 02:28:08,760
+And then we'll update our
+favorite number will say
+
+2624
+02:28:08,760 --> 02:28:11,610
+favorite number equals favorite
+number plus one. Since we're
+
+2625
+02:28:11,640 --> 02:28:15,390
+doing more stuff, now we should
+see this store function actually
+
+2626
+02:28:15,390 --> 02:28:19,980
+become more expensive. So let's
+go ahead and recompile we'll do
+
+2627
+02:28:19,980 --> 02:28:24,900
+delete this will redeploy. We
+now have a new contract will
+
+2628
+02:28:24,900 --> 02:28:29,040
+store five again. Now if we look
+in the details of this
+
+2629
+02:28:29,040 --> 02:28:33,240
+transaction, and we scroll down
+to execution costs, we do indeed
+
+2630
+02:28:33,240 --> 02:28:36,780
+see the amount of gas has
+greatly increased. And that's
+
+2631
+02:28:36,780 --> 02:28:40,500
+because we're doing more things,
+this store function is now more
+
+2632
+02:28:40,500 --> 02:28:44,040
+computationally expensive. And
+like I said, each blockchain has
+
+2633
+02:28:44,070 --> 02:28:46,860
+a little different way of how
+they actually calculate gas. But
+
+2634
+02:28:46,860 --> 02:28:50,460
+the easiest way to think about
+it is, the more stuff you do,
+
+2635
+02:28:50,760 --> 02:28:54,090
+the more expensive that
+transaction is going to cost. So
+
+2636
+02:28:54,090 --> 02:28:57,720
+let's go ahead and delete this
+line to continue our example.
+
+2637
+02:28:57,750 --> 02:29:02,040
+Now let's talk about scope for a
+second, our favorite number is
+
+2638
+02:29:02,070 --> 02:29:05,220
+basically in something called
+the global scope, meaning
+
+2639
+02:29:05,250 --> 02:29:09,450
+anything inside of these
+brackets can access this
+
+2640
+02:29:09,480 --> 02:29:11,910
+favorite number variable. But
+what if I did something like
+
+2641
+02:29:11,910 --> 02:29:17,730
+this? What if I made a un 256
+called Test var? And I set it
+
+2642
+02:29:17,730 --> 02:29:21,480
+equal to five? And then I
+created a new function called
+
+2643
+02:29:21,480 --> 02:29:26,250
+something will have it take no
+parameters and be public? Could
+
+2644
+02:29:26,250 --> 02:29:29,700
+I access the test var and then
+change it to something like six?
+
+2645
+02:29:30,240 --> 02:29:33,030
+Can we do that? Well, let's go
+ahead and see what happens when
+
+2646
+02:29:33,030 --> 02:29:37,410
+we try to compile this. We
+actually run into an error. We
+
+2647
+02:29:37,410 --> 02:29:41,040
+had expected primary expression
+right here. Oh, well, that's
+
+2648
+02:29:41,040 --> 02:29:44,250
+because I have the double
+question mark. Let's try now. We
+
+2649
+02:29:44,250 --> 02:29:48,090
+get undeclared identifier. Our
+something function doesn't know
+
+2650
+02:29:48,120 --> 02:29:51,930
+about this test var when you
+create variables, they only can
+
+2651
+02:29:51,930 --> 02:29:55,110
+be viewed in the scope of where
+they are. Now if that's a little
+
+2652
+02:29:55,110 --> 02:29:57,900
+confusing, just look for the
+curly brackets. These two curly
+
+2653
+02:29:57,900 --> 02:30:01,860
+brackets encompass this whole
+We'll section here write, the
+
+2654
+02:30:01,860 --> 02:30:04,860
+opening one is up here, the
+closing one is down here. So if
+
+2655
+02:30:04,890 --> 02:30:08,820
+I create a variable directly
+inside of these curly brackets,
+
+2656
+02:30:08,850 --> 02:30:12,480
+that means everything in here
+can access it. However, test var
+
+2657
+02:30:12,510 --> 02:30:15,720
+was created inside of these
+curly brackets, which means that
+
+2658
+02:30:15,750 --> 02:30:19,770
+only stuff inside of these curly
+brackets can access test var,
+
+2659
+02:30:19,920 --> 02:30:23,970
+since our functions something
+isn't inside of store, or
+
+2660
+02:30:23,970 --> 02:30:27,510
+something function won't know
+about test var. So that's how
+
+2661
+02:30:27,510 --> 02:30:30,660
+scope works, you want to look to
+see if your variable that you
+
+2662
+02:30:30,660 --> 02:30:33,870
+created is inside of these curly
+brackets. And that's how you can
+
+2663
+02:30:33,870 --> 02:30:38,100
+know if other functions can work
+with them. So this is why this
+
+2664
+02:30:38,130 --> 02:30:41,310
+fails. Now, like what we saw in
+the documentation, when we add
+
+2665
+02:30:41,310 --> 02:30:44,760
+this public variable to favorite
+number, we're secretly adding a
+
+2666
+02:30:44,760 --> 02:30:48,390
+function that just returns this
+favorite number, we can also add
+
+2667
+02:30:48,390 --> 02:30:51,120
+our own function that also
+returns the favorite number to
+
+2668
+02:30:51,120 --> 02:30:53,670
+resemble the function that's
+getting created in the backend.
+
+2669
+02:30:53,790 --> 02:30:58,320
+So we can say function, we call
+it retrieve, and we make it a
+
+2670
+02:30:58,320 --> 02:31:05,220
+public view. And we'll say it
+returns, you went to 56. or
+
+2671
+02:31:05,220 --> 02:31:08,280
+explain what that means in just
+a second. And we'll say return
+
+2672
+02:31:08,310 --> 02:31:13,830
+favorite number. Now, I'm going
+to hit command S, which again,
+
+2673
+02:31:13,830 --> 02:31:16,110
+I'm going to do that a lot
+throughout this section. But
+
+2674
+02:31:16,110 --> 02:31:19,140
+just remember that that's
+equivalent to me going to the
+
+2675
+02:31:19,140 --> 02:31:22,710
+compile tab and hitting compile.
+Now if we go to the deploy tab,
+
+2676
+02:31:22,800 --> 02:31:26,820
+delete our last one, deploy a
+new one, we now have a retrieve
+
+2677
+02:31:26,820 --> 02:31:30,240
+function, which is going to
+return the exact same thing that
+
+2678
+02:31:30,240 --> 02:31:32,910
+our favorite number is going to
+return. Again, if we update this
+
+2679
+02:31:32,910 --> 02:31:36,630
+to five, called favorite number
+and then retrieve they both now
+
+2680
+02:31:36,660 --> 02:31:40,470
+return five. Now as you can see
+here, these two functions are
+
+2681
+02:31:40,470 --> 02:31:44,100
+blue, but this function is
+orange. What's the difference?
+
+2682
+02:31:44,100 --> 02:31:47,250
+Why did these have these
+different colors? Well, the key
+
+2683
+02:31:47,280 --> 02:31:50,790
+lies in this view keyword here,
+there are actually two keywords
+
+2684
+02:31:50,790 --> 02:31:54,360
+in solidity that notate a
+function that doesn't actually
+
+2685
+02:31:54,360 --> 02:31:58,890
+have to spend gas to run. And
+those keywords are view, and
+
+2686
+02:31:58,890 --> 02:32:02,280
+pure. And let's also get rid of
+this variable here. A function
+
+2687
+02:32:02,280 --> 02:32:05,850
+that is a view function means
+we're just going to read state
+
+2688
+02:32:06,120 --> 02:32:08,400
+from this contract, we're just
+going to read something off of
+
+2689
+02:32:08,400 --> 02:32:11,250
+this contract. For example, our
+retrieve function right now is
+
+2690
+02:32:11,250 --> 02:32:14,910
+just reading what favorite
+number is, a view function
+
+2691
+02:32:14,940 --> 02:32:19,020
+disallows any modification of
+state. So you can't update the
+
+2692
+02:32:19,020 --> 02:32:22,860
+blockchain at all with a view
+function. Pure functions also
+
+2693
+02:32:22,890 --> 02:32:26,070
+disallow any modification of
+state. So we couldn't update our
+
+2694
+02:32:26,070 --> 02:32:29,490
+favorite number. Not only that,
+but they also disallow reading
+
+2695
+02:32:29,490 --> 02:32:32,400
+from the blockchain. So we
+couldn't read favorite number
+
+2696
+02:32:32,400 --> 02:32:36,330
+either. Instead, what you might
+do with a pure function is maybe
+
+2697
+02:32:36,330 --> 02:32:37,110
+something like
+
+2698
+02:32:38,010 --> 02:32:44,760
+function, add public here, one
+plus one,
+
+2699
+02:32:45,990 --> 02:32:51,810
+or return, one plus one, this
+would be turns you into 36,
+
+2700
+02:32:51,930 --> 02:32:54,510
+maybe something like this, maybe
+there's some math you want to
+
+2701
+02:32:54,510 --> 02:32:57,930
+use over and over again, maybe
+there's some specific algorithm
+
+2702
+02:32:57,930 --> 02:32:59,940
+that you want to implement that
+doesn't actually need to read
+
+2703
+02:32:59,940 --> 02:33:03,600
+any storage, etc. Now, if we
+call a view function, or a pure
+
+2704
+02:33:03,600 --> 02:33:07,350
+function by itself, we actually
+don't need to spend any gas.
+
+2705
+02:33:07,380 --> 02:33:09,900
+Since we're just reading from
+the blockchain. Remember, we
+
+2706
+02:33:09,900 --> 02:33:13,800
+only spend gas we only make a
+transaction if we modify the
+
+2707
+02:33:13,800 --> 02:33:17,610
+blockchain state. So you'll
+notice in our little console
+
+2708
+02:33:17,610 --> 02:33:21,090
+down here, that if I call
+retrieve this call things comes
+
+2709
+02:33:21,090 --> 02:33:24,210
+up. However, it looks different
+than when we call the store
+
+2710
+02:33:24,210 --> 02:33:26,820
+function. And we call the store
+function, we get this little
+
+2711
+02:33:26,820 --> 02:33:30,750
+checkmark, we get a hash, we
+don't get a little checkmark.
+
+2712
+02:33:30,750 --> 02:33:33,960
+And we don't get a hash with the
+calls. That's because clicking
+
+2713
+02:33:33,960 --> 02:33:37,140
+these blue buttons doesn't make
+a transaction. This is saying,
+
+2714
+02:33:37,170 --> 02:33:39,330
+Hey, we're just going to read
+off chain, we're just going to
+
+2715
+02:33:39,330 --> 02:33:43,350
+read this value. However, if you
+look in the details of this
+
+2716
+02:33:43,350 --> 02:33:46,830
+call, there's this execution
+cost bit here. So what's going
+
+2717
+02:33:46,830 --> 02:33:50,550
+on? Well, we can read this part
+right here, cost only applies
+
+2718
+02:33:50,550 --> 02:33:54,720
+when called by contract. If we
+do have a function that calls
+
+2719
+02:33:54,720 --> 02:33:58,290
+retrieve, if there's a function
+that is updating state that
+
+2720
+02:33:58,290 --> 02:34:01,770
+calls a view or a pure function,
+that's the only time it'll cost
+
+2721
+02:34:01,800 --> 02:34:05,190
+gas. So for example, if our
+store function which is not a
+
+2722
+02:34:05,190 --> 02:34:08,730
+view function, were to call
+retrieve at some point, then
+
+2723
+02:34:08,760 --> 02:34:12,600
+we'd have to pay the cost of the
+Retrieve because reading from
+
+2724
+02:34:12,600 --> 02:34:16,290
+the blockchain cost this
+computation and cost gas calling
+
+2725
+02:34:16,290 --> 02:34:20,760
+view functions is free, unless
+you're calling it inside of a
+
+2726
+02:34:20,760 --> 02:34:24,420
+function that costs gas, in
+which case it will cost gas. So
+
+2727
+02:34:24,420 --> 02:34:31,140
+if we leave it here, we delete
+this recompile redeploy. We had
+
+2728
+02:34:31,140 --> 02:34:34,770
+favorite number retrieved, they
+both still cost nothing. But if
+
+2729
+02:34:34,770 --> 02:34:40,020
+we add, restore eight in here,
+we can see, we can see our
+
+2730
+02:34:40,020 --> 02:34:43,230
+execution cost has gone up from
+what it was without retrieve,
+
+2731
+02:34:43,320 --> 02:34:45,840
+which we can go ahead, we can
+compile, I hit command us to
+
+2732
+02:34:45,840 --> 02:34:49,950
+compile here, we can deploy.
+Let's go ahead and store again.
+
+2733
+02:34:50,760 --> 02:34:53,730
+We'll click on that transaction,
+we can see that it's much
+
+2734
+02:34:53,730 --> 02:34:56,430
+cheaper without that retrieve
+function in there. And again,
+
+2735
+02:34:56,460 --> 02:34:59,640
+our favorite number variable as
+long as it has this public
+
+2736
+02:34:59,640 --> 02:35:04,050
+visible solidity, it also is
+counted as a view function that
+
+2737
+02:35:04,050 --> 02:35:08,760
+returns a un 256. The returns
+keyword means what is this
+
+2738
+02:35:08,760 --> 02:35:11,940
+function going to give us after
+we call it so we say this
+
+2739
+02:35:11,940 --> 02:35:15,030
+function is going to give us
+this function is going to return
+
+2740
+02:35:15,330 --> 02:35:20,640
+a un 256. When we call retrieve,
+it's going to return or give us
+
+2741
+02:35:20,700 --> 02:35:25,080
+a utility six. This is the
+result of calling the function
+
+2742
+02:35:25,110 --> 02:35:28,410
+this six is the result of
+calling arbitrary function.
+
+2743
+02:35:31,200 --> 02:35:32,130
+Now our contract is
+
+2744
+02:35:32,130 --> 02:35:35,280
+good as it is, it allows us to
+store a single favorite number.
+
+2745
+02:35:35,310 --> 02:35:38,130
+But what if we want to store a
+range of favorite numbers? Or
+
+2746
+02:35:38,130 --> 02:35:42,060
+maybe we want to store a whole
+bunch of different people who
+
+2747
+02:35:42,060 --> 02:35:44,400
+have different favorite numbers?
+Well, how do we do that there
+
+2748
+02:35:44,400 --> 02:35:46,650
+are several different ways that
+we can approach this, one of the
+
+2749
+02:35:46,650 --> 02:35:48,930
+ways we could start approaching
+this is by creating what's
+
+2750
+02:35:48,930 --> 02:35:53,640
+called a struct of people. Or we
+create a new type. In our
+
+2751
+02:35:53,640 --> 02:35:57,600
+solidity, we can create a people
+object that holds both someone's
+
+2752
+02:35:57,600 --> 02:36:02,040
+name, and their favorite number.
+To do that, we say struct
+
+2753
+02:36:02,910 --> 02:36:11,850
+people, you went to 56, favorite
+number, and a string name. Now
+
+2754
+02:36:11,880 --> 02:36:15,450
+we've created a new type called
+people kinda like you intuited
+
+2755
+02:36:15,450 --> 02:36:19,470
+six, or Boolean, or string. Now
+we have a people type that we
+
+2756
+02:36:19,470 --> 02:36:23,730
+can use. Now similar to how we
+created a un 256 public favorite
+
+2757
+02:36:23,730 --> 02:36:28,290
+number, we can do the exact same
+thing. But with a people, we
+
+2758
+02:36:28,290 --> 02:36:33,510
+could say people public, we call
+this person, and we can create a
+
+2759
+02:36:33,510 --> 02:36:37,260
+new people and assign it to this
+variable person. So we'll say
+
+2760
+02:36:37,260 --> 02:36:42,390
+equals people public person,
+equals, and we'll add
+
+2761
+02:36:42,420 --> 02:36:46,170
+parentheses here to signify
+we're creating a new person. And
+
+2762
+02:36:46,170 --> 02:36:49,350
+since we made this a struct, we
+add little curly brackets here
+
+2763
+02:36:49,440 --> 02:36:52,380
+to let solidity know that we're
+going to be grabbing from these
+
+2764
+02:36:52,380 --> 02:36:57,540
+struct variables, we'll say
+favorite number is going to be
+
+2765
+02:36:57,540 --> 02:37:04,560
+two, and the name is going to be
+Patrick semicolon, and then we
+
+2766
+02:37:04,560 --> 02:37:07,950
+can hit Ctrl S, or we can go
+ahead and compile. Now if we go
+
+2767
+02:37:07,950 --> 02:37:15,390
+ahead and deploy this we now
+have a new person, since this,
+
+2768
+02:37:15,420 --> 02:37:19,230
+again, is a public variable, it
+has a getter function called
+
+2769
+02:37:19,230 --> 02:37:23,880
+person. And if we click person,
+we see our new object, the
+
+2770
+02:37:23,880 --> 02:37:27,600
+favorite number is two. And then
+the name is Patrick, you see
+
+2771
+02:37:27,600 --> 02:37:31,950
+this zero and this one, because
+these are showing the index of
+
+2772
+02:37:31,950 --> 02:37:33,900
+the different variables. But
+those of you new to computer
+
+2773
+02:37:33,900 --> 02:37:36,390
+science, typically in computer
+science, let's start with the
+
+2774
+02:37:36,390 --> 02:37:39,810
+number zero. So what are zero
+with index, we have you in 256,
+
+2775
+02:37:39,840 --> 02:37:43,470
+called favorite number, which is
+saved at two. And then at index
+
+2776
+02:37:43,470 --> 02:37:47,160
+one, we have a string, which
+stands for the name of Patrick,
+
+2777
+02:37:47,190 --> 02:37:50,310
+whenever you have a list of
+variables inside of an object in
+
+2778
+02:37:50,310 --> 02:37:54,240
+solidity, they get automatically
+indexed. So favorite number gets
+
+2779
+02:37:54,270 --> 02:37:58,680
+indexed to zero, and name gets
+indexed to one. Interestingly
+
+2780
+02:37:58,710 --> 02:38:01,770
+enough, if you have a whole
+bunch of variables inside your
+
+2781
+02:38:01,770 --> 02:38:05,460
+contract, like we have public
+favorite number, this favorite
+
+2782
+02:38:05,460 --> 02:38:09,090
+number, actually, technically is
+getting indexed at the zero with
+
+2783
+02:38:09,120 --> 02:38:12,360
+storage slot. And if we were to
+make another one of these, maybe
+
+2784
+02:38:12,360 --> 02:38:16,230
+you want to get six public
+brother's favorite number, this
+
+2785
+02:38:16,230 --> 02:38:19,410
+would technically be indexed at
+the first slot. And then if we
+
+2786
+02:38:19,410 --> 02:38:23,070
+were to make one more, maybe
+sister's favorite number, this
+
+2787
+02:38:23,070 --> 02:38:25,920
+would be the next add the second
+slot. So favorite number at
+
+2788
+02:38:25,920 --> 02:38:29,430
+zero, this add one, and this a
+two, but we'll learn more about
+
+2789
+02:38:29,430 --> 02:38:33,300
+that much later in the course.
+Similarly, favorite number is
+
+2790
+02:38:33,300 --> 02:38:37,320
+index zero name is index at one.
+Now what we have is great, but
+
+2791
+02:38:37,320 --> 02:38:39,900
+if we want a whole lot of people
+are we gonna have to keep copy
+
+2792
+02:38:39,900 --> 02:38:43,560
+pasting and changing the
+people's name person to their
+
+2793
+02:38:43,560 --> 02:38:47,760
+favorite one, number one, number
+three, will name them ally.
+
+2794
+02:38:48,780 --> 02:38:53,370
+Person three, their favorite
+number will be seven. Their name
+
+2795
+02:38:53,370 --> 02:38:58,110
+will be Chad or something. This
+obviously isn't great way to
+
+2796
+02:38:58,110 --> 02:39:00,750
+create lists and large number of
+people's because we have to
+
+2797
+02:39:00,750 --> 02:39:04,440
+statically keep typing them in.
+So a much better way to create a
+
+2798
+02:39:04,440 --> 02:39:08,160
+list. And let's actually just go
+ahead and delete Patrick to a
+
+2799
+02:39:08,160 --> 02:39:11,580
+much better way to create a list
+is to use a data structure
+
+2800
+02:39:11,580 --> 02:39:15,720
+called an array. An array is a
+way to store a list, or a
+
+2801
+02:39:15,720 --> 02:39:19,470
+sequence of objects, creating an
+array works the exact same we've
+
+2802
+02:39:19,470 --> 02:39:22,260
+seen to initialize other
+different types. Typically, we
+
+2803
+02:39:22,260 --> 02:39:26,670
+do the type of the object, the
+visibility of the object, and
+
+2804
+02:39:26,670 --> 02:39:29,040
+then the variable name. We do
+the exact same thing with
+
+2805
+02:39:29,040 --> 02:39:33,030
+arrays. We'll say we want a
+people array. These little
+
+2806
+02:39:33,030 --> 02:39:37,350
+brackets represent that we want
+an array of people. We'll give
+
+2807
+02:39:37,350 --> 02:39:42,510
+it a visibility of public and
+we'll call it people you could
+
+2808
+02:39:42,510 --> 02:39:45,690
+do the same thing with you and
+256 for example, you could say
+
+2809
+02:39:45,690 --> 02:39:48,270
+you went to 56
+
+2810
+02:39:49,290 --> 02:39:54,000
+public favorite numbers list
+
+2811
+02:39:54,120 --> 02:39:57,480
+and just add this little array
+key here. And now favorite
+
+2812
+02:39:57,480 --> 02:40:00,630
+numbers list is going to be an
+array or a list We're going to
+
+2813
+02:40:00,630 --> 02:40:03,240
+comment that out for now. Now if
+I were to go ahead and deploy
+
+2814
+02:40:03,240 --> 02:40:06,060
+this contract, let's go ahead
+delete the last one, let's
+
+2815
+02:40:06,060 --> 02:40:11,310
+redeploy. We now have this blue
+people button here. Remember,
+
+2816
+02:40:11,340 --> 02:40:14,820
+since it's public, and it's a
+variable, it automatically is
+
+2817
+02:40:14,820 --> 02:40:18,270
+given a view function, it's
+given one of these blue buttons.
+
+2818
+02:40:18,300 --> 02:40:22,080
+And instead of just having a
+single button where the value
+
+2819
+02:40:22,080 --> 02:40:25,920
+shows up, it's giving us a form
+to fill out, it wants to take a
+
+2820
+02:40:25,920 --> 02:40:30,390
+un 256 as an input parameter. So
+if I put zero, I get nothing
+
+2821
+02:40:30,390 --> 02:40:33,660
+back, if I put one, I get
+nothing back. No matter what you
+
+2822
+02:40:33,660 --> 02:40:36,120
+put in this box, right? Now
+we're gonna get nothing back.
+
+2823
+02:40:36,150 --> 02:40:40,470
+This is because our people array
+or our people list is currently
+
+2824
+02:40:40,470 --> 02:40:43,560
+empty. And the value that it
+wants is going to be the index
+
+2825
+02:40:43,590 --> 02:40:47,430
+of the object that you want. So
+for example, if at index zero, I
+
+2826
+02:40:47,430 --> 02:40:50,370
+had Patrick, it would show
+Patrick for zero, if it didn't x
+
+2827
+02:40:50,370 --> 02:40:54,600
+one I had John, or actually
+better yet, to Patrick.
+
+2828
+02:40:57,000 --> 02:40:58,230
+Seven, John,
+
+2829
+02:40:59,400 --> 02:41:03,150
+etc. This is what it would show.
+But since it's empty, it's going
+
+2830
+02:41:03,150 --> 02:41:06,060
+to show nothing. And let's go
+ahead and remove the public
+
+2831
+02:41:06,060 --> 02:41:09,180
+variable from favorite numbers
+so that we don't get the
+
+2832
+02:41:09,180 --> 02:41:12,090
+duplicate functions at the
+moment, we'll just get the
+
+2833
+02:41:12,090 --> 02:41:14,880
+Retrieve function, we'll show
+you how to add to this array in
+
+2834
+02:41:14,880 --> 02:41:17,910
+just a second. This type of
+array is what's known as a
+
+2835
+02:41:17,940 --> 02:41:22,650
+dynamic array, because the size
+of the array isn't given at the
+
+2836
+02:41:22,650 --> 02:41:26,340
+array initialization. If we were
+to say, a people array and add a
+
+2837
+02:41:26,340 --> 02:41:29,670
+three in these brackets here,
+that means that this list, or
+
+2838
+02:41:29,670 --> 02:41:34,020
+this array of people could only
+be three people big, if we don't
+
+2839
+02:41:34,020 --> 02:41:37,260
+give it a size, it means it can
+be any size and the size of the
+
+2840
+02:41:37,260 --> 02:41:40,530
+array can grow and shrink as we
+add and subtract people, if I
+
+2841
+02:41:40,530 --> 02:41:44,340
+add three, it can only have a
+maximum of three in the array
+
+2842
+02:41:44,370 --> 02:41:47,130
+ever, we're going to work with a
+dynamic array, because we're
+
+2843
+02:41:47,130 --> 02:41:50,460
+going to want to add a arbitrary
+number of people to this array.
+
+2844
+02:41:50,490 --> 02:41:53,130
+So let's go ahead and create a
+function that's going to add
+
+2845
+02:41:53,130 --> 02:41:58,080
+people who are people array, so
+we're gonna say function, add
+
+2846
+02:41:58,080 --> 02:42:04,860
+person. And we're going to take
+string, memory, name as input
+
+2847
+02:42:04,860 --> 02:42:08,400
+parameter, and I'll explain that
+in a minute. And a un 256
+
+2848
+02:42:08,520 --> 02:42:13,110
+underscore favorite number,
+we're going to make this a
+
+2849
+02:42:13,110 --> 02:42:17,130
+public function, or we're going
+to do is we're going to call a
+
+2850
+02:42:17,130 --> 02:42:21,330
+push function that's available
+on our people object. So we're
+
+2851
+02:42:21,330 --> 02:42:25,110
+gonna say people dot push, and
+we're going to create a new
+
+2852
+02:42:25,110 --> 02:42:28,470
+person, a new people object,
+which is going to take in the
+
+2853
+02:42:28,470 --> 02:42:29,400
+favorite number.
+
+2854
+02:42:31,680 --> 02:42:32,400
+And the name.
+
+2855
+02:42:34,050 --> 02:42:36,840
+Now, this might be a little bit
+tricky to you. So let's break
+
+2856
+02:42:36,840 --> 02:42:40,170
+this down. People here is
+capitalized. So we know that
+
+2857
+02:42:40,170 --> 02:42:43,740
+since capitalize, it's referring
+to this struct people and not
+
+2858
+02:42:43,740 --> 02:42:46,740
+our variable people, the
+lowercase people here is
+
+2859
+02:42:46,740 --> 02:42:51,180
+referring to this lowercase
+array. So we're saying our array
+
+2860
+02:42:51,240 --> 02:42:55,110
+dot push, or push is the
+equivalent of adding basically,
+
+2861
+02:42:55,620 --> 02:42:59,670
+a new people that grabs favorite
+number and name. Another way
+
+2862
+02:42:59,670 --> 02:43:03,660
+that we could actually do this
+is we could create a variable of
+
+2863
+02:43:03,660 --> 02:43:07,800
+type people and then add it like
+so. So we could say people, new
+
+2864
+02:43:07,800 --> 02:43:12,570
+person equals people. And then
+we put those brackets the same
+
+2865
+02:43:12,570 --> 02:43:17,670
+way we did before. You say
+favorite number is going to be
+
+2866
+02:43:18,000 --> 02:43:21,930
+this input value, this
+parameter, and we could say name
+
+2867
+02:43:22,260 --> 02:43:26,280
+is going to be this parameter.
+Now if you hit save, you'll get
+
+2868
+02:43:26,280 --> 02:43:29,760
+this error set here, saying data
+location must be stored in
+
+2869
+02:43:29,790 --> 02:43:32,850
+memory, or called data for
+variable but no one's given. For
+
+2870
+02:43:32,850 --> 02:43:35,160
+now, we're just going to add the
+memory keyword here, and I'll
+
+2871
+02:43:35,160 --> 02:43:37,710
+explain what it does in a little
+bit. And then of course, we need
+
+2872
+02:43:37,710 --> 02:43:40,950
+to add the new person into our
+people dot push right here. So
+
+2873
+02:43:40,950 --> 02:43:44,580
+this is how we're actually going
+to push people into our people
+
+2874
+02:43:44,580 --> 02:43:47,790
+array. And I'll get to this
+memory keyword in a bit. Now if
+
+2875
+02:43:47,790 --> 02:43:52,320
+we go back to our deploy tab, we
+delete our last contract. Let's
+
+2876
+02:43:52,320 --> 02:43:56,070
+deploy this new one. Right now,
+if we try to look at the zero
+
+2877
+02:43:56,070 --> 02:43:59,370
+with person in our people array,
+we get nothing but let's go
+
+2878
+02:43:59,370 --> 02:44:03,090
+ahead and add a person, we'll
+call it, Patrick will be the
+
+2879
+02:44:03,090 --> 02:44:07,290
+name, and seven will be the
+favorite number. So we added
+
+2880
+02:44:07,290 --> 02:44:11,430
+Patrick, we added seven. Now if
+we look at people's zero, we
+
+2881
+02:44:11,430 --> 02:44:14,670
+should see the zeroeth person
+has a name of Patrick, and a
+
+2882
+02:44:14,670 --> 02:44:18,420
+favorite number of seven, boom.
+And that's exactly what we do
+
+2883
+02:44:18,420 --> 02:44:21,570
+see, we see a favorite number of
+seven, and we see a string name
+
+2884
+02:44:21,630 --> 02:44:26,400
+Patrick, we tried to add John
+and do his 16. We hit Add
+
+2885
+02:44:26,400 --> 02:44:29,790
+Person, we can see our
+transaction go through. And now
+
+2886
+02:44:29,790 --> 02:44:33,480
+if we go to people at zero, it's
+still Patrick with a favorite
+
+2887
+02:44:33,480 --> 02:44:37,350
+number of seven. But if we look
+at the people at index one, it's
+
+2888
+02:44:37,350 --> 02:44:40,860
+going to be John with a favorite
+number of 16. And if we look at
+
+2889
+02:44:40,860 --> 02:44:44,550
+two, this, of course, should be
+blank. And we do indeed see
+
+2890
+02:44:44,580 --> 02:44:47,460
+nothing actually happens here.
+Perfect. Now there's actually a
+
+2891
+02:44:47,460 --> 02:44:50,580
+couple of different ways to
+create this new person here,
+
+2892
+02:44:50,790 --> 02:44:54,180
+like we showed before, we can
+use this bracket notation, or
+
+2893
+02:44:54,540 --> 02:44:57,540
+what we can do is we can
+actually just add the parameters
+
+2894
+02:44:57,570 --> 02:45:01,500
+in the order that they show. So
+the first parameter for people
+
+2895
+02:45:01,500 --> 02:45:04,560
+is going to be favorite number.
+So we can just do favorite
+
+2896
+02:45:04,560 --> 02:45:08,490
+number, comma, and the second
+one is going to be name, the
+
+2897
+02:45:08,490 --> 02:45:12,330
+second one is going to be name.
+So if we save this, this, this
+
+2898
+02:45:12,330 --> 02:45:15,420
+line we just created is the
+exact same as the last line,
+
+2899
+02:45:15,720 --> 02:45:18,270
+we're being a little bit less
+explicit here. So the other way
+
+2900
+02:45:18,270 --> 02:45:21,270
+is generally a little bit better
+because it's more explicit as to
+
+2901
+02:45:21,270 --> 02:45:24,720
+what variables are what or we
+don't even need to save to this
+
+2902
+02:45:24,720 --> 02:45:27,780
+variable here, we could take out
+this whole line, replace new
+
+2903
+02:45:27,780 --> 02:45:32,130
+person with exactly what we just
+saw, like so now we don't even
+
+2904
+02:45:32,130 --> 02:45:37,110
+need the memory keyword. Now,
+you've probably seen this by
+
+2905
+02:45:37,110 --> 02:45:40,680
+now. But if I go ahead and
+compile, and I see a little,
+
+2906
+02:45:40,920 --> 02:45:44,220
+little red one here, I roll
+over. And it says something
+
+2907
+02:45:44,220 --> 02:45:48,690
+about error, expected semicolon,
+but got bracket, all these
+
+2908
+02:45:48,690 --> 02:45:52,110
+errors mean that your code isn't
+compiling. It's not working as
+
+2909
+02:45:52,110 --> 02:45:55,980
+expected. So now I can go over
+here and do a little semicolon
+
+2910
+02:45:56,640 --> 02:45:59,880
+recompile, and I get a green.
+Now if I delete this top line,
+
+2911
+02:45:59,880 --> 02:46:03,930
+for example, and I compile it,
+actually get a yellow thing.
+
+2912
+02:46:04,350 --> 02:46:08,070
+Yellow stands for warnings, the
+warning that I get is warning
+
+2913
+02:46:08,160 --> 02:46:12,150
+SPX license identifier, not
+provided, you should add it. So
+
+2914
+02:46:12,150 --> 02:46:15,090
+let's go ahead and add that
+back. recompile. And the warning
+
+2915
+02:46:15,090 --> 02:46:18,060
+goes away. Warnings Don't stop
+your code from compiling. So if
+
+2916
+02:46:18,060 --> 02:46:20,940
+you get warnings, it's okay. But
+it's usually a good idea to
+
+2917
+02:46:20,940 --> 02:46:23,610
+listen to the warnings, because
+often they'll give really
+
+2918
+02:46:23,670 --> 02:46:26,790
+insightful information about how
+to improve your smart contracts.
+
+2919
+02:46:26,820 --> 02:46:30,120
+So to summarize, if it's red,
+it's broken. If it's yellow, you
+
+2920
+02:46:30,120 --> 02:46:32,040
+might want to check it out. But
+it won't stop you from
+
+2921
+02:46:32,040 --> 02:46:39,210
+continuing to code. So one thing
+
+2922
+02:46:39,210 --> 02:46:42,420
+that you'll notice here is that
+we have this memory keyword. And
+
+2923
+02:46:42,420 --> 02:46:44,580
+you'll notice if you try to
+delete it from our function
+
+2924
+02:46:44,580 --> 02:46:47,730
+here, you try to compile, you
+actually run into an error data
+
+2925
+02:46:47,730 --> 02:46:51,390
+location must be memory or call
+data for parameter and function.
+
+2926
+02:46:51,480 --> 02:46:54,720
+Now there are actually six
+places you can store data in
+
+2927
+02:46:54,720 --> 02:46:59,970
+solidity you have the stack,
+memory, storage, call data, code
+
+2928
+02:47:00,000 --> 02:47:03,750
+and logs. We're not going to go
+over these right now. But we are
+
+2929
+02:47:03,750 --> 02:47:06,420
+going to focus on three of the
+big ones, or three of the
+
+2930
+02:47:06,420 --> 02:47:10,200
+important ones for this section,
+which are called data, memory,
+
+2931
+02:47:10,290 --> 02:47:12,300
+and storage. So for this
+section, we're going to talk
+
+2932
+02:47:12,300 --> 02:47:15,390
+about call data memory and
+storage. And this is a little
+
+2933
+02:47:15,390 --> 02:47:18,300
+bit advanced. So if you don't
+totally grasp it the first time,
+
+2934
+02:47:18,330 --> 02:47:21,450
+that's totally okay. Please
+continue. Even if it's not
+
+2935
+02:47:21,450 --> 02:47:24,540
+crystal clear what's going on
+here, call data and memory mean
+
+2936
+02:47:24,540 --> 02:47:29,190
+that the variable is only going
+to exist temporarily. So this
+
+2937
+02:47:29,190 --> 02:47:32,670
+name variable only exists
+temporarily during the
+
+2938
+02:47:32,670 --> 02:47:36,210
+transaction that this Add Person
+function is called storage
+
+2939
+02:47:36,210 --> 02:47:41,130
+variables exist, even outside of
+just the function executing.
+
+2940
+02:47:41,310 --> 02:47:45,060
+Even though we didn't specify it
+up above, our favorite number is
+
+2941
+02:47:45,090 --> 02:47:48,870
+automatically cast to be a
+storage variable. Since it's not
+
+2942
+02:47:48,870 --> 02:47:52,110
+explicitly defined in one of
+these functions. Since we don't
+
+2943
+02:47:52,110 --> 02:47:55,920
+need this name variable anymore
+after this function runs, we can
+
+2944
+02:47:55,920 --> 02:48:00,030
+keep it as memory, or we could
+keep it as called data, you can
+
+2945
+02:48:00,030 --> 02:48:03,030
+have a parameter as called data
+if you don't end up modifying
+
+2946
+02:48:03,060 --> 02:48:07,080
+the name. For example, we
+couldn't reassign name to equal
+
+2947
+02:48:07,140 --> 02:48:11,100
+cat here, if we compile we run
+into an error. Type literal
+
+2948
+02:48:11,100 --> 02:48:14,430
+string cat is not implicitly
+convertible to expect the type
+
+2949
+02:48:14,460 --> 02:48:18,690
+string called data. However, if
+we have this as memory, and we
+
+2950
+02:48:18,690 --> 02:48:22,500
+compile and save it, that error
+goes away call data is temporary
+
+2951
+02:48:22,500 --> 02:48:25,500
+variables that can't be
+modified. Memory is temporary
+
+2952
+02:48:25,500 --> 02:48:29,010
+variables that can be modified.
+And storage is permanent
+
+2953
+02:48:29,010 --> 02:48:32,370
+variables that can be modified.
+Now even though I just said
+
+2954
+02:48:32,370 --> 02:48:35,190
+there's actually six places
+where we can access and store
+
+2955
+02:48:35,190 --> 02:48:40,110
+information, we cannot say a
+variable is stack code or logs,
+
+2956
+02:48:40,290 --> 02:48:43,950
+we can only say memory storage
+are called data, you will learn
+
+2957
+02:48:43,950 --> 02:48:46,710
+why in a much later section.
+Now, this is a bit of an
+
+2958
+02:48:46,710 --> 02:48:49,650
+oversimplification of this. But
+that's essentially what's going
+
+2959
+02:48:49,650 --> 02:48:53,970
+on. The next question you might
+have is, well, why do I need to
+
+2960
+02:48:53,970 --> 02:48:58,230
+say memory here, but I don't
+need to say memory here. Well,
+
+2961
+02:48:58,230 --> 02:49:01,620
+let's go ahead and put memory
+here and hit CTRL S or compile.
+
+2962
+02:49:02,130 --> 02:49:05,280
+And let's see what happens we
+get from solidity data location
+
+2963
+02:49:05,280 --> 02:49:08,760
+can only be specified for an
+array, struct or mapping types.
+
+2964
+02:49:08,880 --> 02:49:12,330
+A memory was given arrays
+structs and mappings are
+
+2965
+02:49:12,330 --> 02:49:15,900
+considered special types and
+solidity. solidity automatically
+
+2966
+02:49:15,900 --> 02:49:19,650
+knows where are you in 256 is
+going to be slowly knows that
+
+2967
+02:49:19,650 --> 02:49:24,000
+for this function, a un 256 is
+going to live just in memory.
+
+2968
+02:49:24,150 --> 02:49:27,480
+However, it's not sure what a
+string is going to be. Strings
+
+2969
+02:49:27,510 --> 02:49:30,240
+are actually kind of
+complicated. Behind the scenes,
+
+2970
+02:49:30,270 --> 02:49:34,410
+a string is actually an array of
+bytes. And since a string is an
+
+2971
+02:49:34,410 --> 02:49:38,070
+array, we need to add this
+memory bit to it because we need
+
+2972
+02:49:38,070 --> 02:49:41,910
+to tell solidity, the data
+location of arrays structs, or
+
+2973
+02:49:41,910 --> 02:49:45,480
+mappings and a string is
+secretly an array. So that's why
+
+2974
+02:49:45,480 --> 02:49:48,060
+we need to tell it it's in
+memory. You'll notice we can't
+
+2975
+02:49:48,060 --> 02:49:50,910
+add the storage keyword here
+slowly also knows that since
+
+2976
+02:49:50,910 --> 02:49:53,850
+this is a function, this name
+variable isn't actually getting
+
+2977
+02:49:53,850 --> 02:49:56,730
+stored anywhere. So it says Hey,
+you can't have that you need to
+
+2978
+02:49:56,730 --> 02:49:59,340
+have it beat memory or called
+data and those are the only two
+
+2979
+02:49:59,340 --> 02:50:02,130
+that it accepts So this is what
+we want our function to look
+
+2980
+02:50:02,130 --> 02:50:05,190
+like here. So the summary of
+this is struct mappings and
+
+2981
+02:50:05,190 --> 02:50:09,300
+arrays need to be given this
+memory or called Data keyword
+
+2982
+02:50:09,360 --> 02:50:12,090
+when adding them as a parameter
+to different functions. We'll
+
+2983
+02:50:12,090 --> 02:50:15,480
+learn more about storage memory
+and call data in later
+
+2984
+02:50:15,480 --> 02:50:19,560
+sessions. Now, this list
+
+2985
+02:50:19,590 --> 02:50:22,620
+is great, but what if we know
+someone's name, but we don't
+
+2986
+02:50:22,620 --> 02:50:25,380
+know their favorite number?
+Well, what we could do is we
+
+2987
+02:50:25,380 --> 02:50:28,320
+could look through the whole
+array looking for that person.
+
+2988
+02:50:28,650 --> 02:50:32,250
+For example, in our contract, we
+can say, Okay, I'm looking for
+
+2989
+02:50:32,250 --> 02:50:36,450
+John. Okay, let's start with
+zero. No, okay, that's Patrick.
+
+2990
+02:50:36,720 --> 02:50:39,720
+Okay, let's go to one. Okay.
+That's John. Oh, great. His
+
+2991
+02:50:39,720 --> 02:50:42,240
+favorite number 16? Well, this
+was really easy, because we only
+
+2992
+02:50:42,240 --> 02:50:45,390
+had two people. But what if we
+had hundreds of people in this
+
+2993
+02:50:45,390 --> 02:50:48,930
+array? Well, we'd keep have to
+iterating all the way up to the
+
+2994
+02:50:48,930 --> 02:50:51,720
+index that that person was in,
+it's obviously really
+
+2995
+02:50:51,720 --> 02:50:54,930
+inefficient. What's another way
+to store this information so
+
+2996
+02:50:54,930 --> 02:50:57,840
+that it's much easier and
+quicker to access? Well, another
+
+2997
+02:50:57,840 --> 02:51:00,810
+data structure that we can use
+is something called a mapping,
+
+2998
+02:51:00,990 --> 02:51:04,260
+you can think of a mapping as
+sort of like a dictionary, it's
+
+2999
+02:51:04,260 --> 02:51:08,070
+a set of keys, which each key
+returning a certain value
+
+3000
+02:51:08,070 --> 02:51:10,680
+associated with that key. And we
+create a mapping variable the
+

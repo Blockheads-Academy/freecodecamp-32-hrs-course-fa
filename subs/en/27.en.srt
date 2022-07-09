@@ -1,0 +1,4992 @@
+27001
+04:09:08,400 --> 04:09:11,190
+Now, this is going to be our
+dashboard for creating our sub
+
+27002
+04:09:11,190 --> 04:09:14,520
+graph. And there's a ton of
+instructions over here and
+
+27003
+04:09:14,520 --> 04:09:17,220
+documentation that we can view
+to get started, I'm going to add
+
+27004
+04:09:17,220 --> 04:09:20,520
+this documentation to the GitHub
+repo associated with this
+
+27005
+04:09:20,520 --> 04:09:24,120
+course. So this NFT marketplace
+sub graph is going to need its
+
+27006
+04:09:24,120 --> 04:09:27,450
+own git repository itself. So
+what we're going to do back in
+
+27007
+04:09:27,450 --> 04:09:30,630
+here is we're going to CD down,
+we're going to make a new
+
+27008
+04:09:30,630 --> 04:09:35,040
+directory, and we're going to
+call it graph. And if T
+
+27009
+04:09:35,670 --> 04:09:40,710
+marketplace, FCC, we're going to
+open that up as well. So code
+
+27010
+04:09:40,710 --> 04:09:46,110
+graph NFT, marketplace, FCC, or
+file open graft code marketplace
+
+27011
+04:09:46,140 --> 04:09:50,400
+FCC, and in this window, we're
+going to build our subgraph.
+
+27012
+04:09:50,460 --> 04:09:53,550
+Locally, we're going to build
+our subgraph and push it up to
+
+27013
+04:09:53,550 --> 04:09:56,700
+the subgraph studio. And in
+here, there's a whole bunch of
+
+27014
+04:09:56,700 --> 04:09:59,160
+instructions that we can follow
+along with to go ahead and
+
+27015
+04:09:59,160 --> 04:10:02,850
+install. The first thing that we
+need to do is install the graph
+
+27016
+04:10:02,880 --> 04:10:06,090
+command line interface. And we
+want to install this globally.
+
+27017
+04:10:06,630 --> 04:10:10,260
+So I'm going to copy this part
+here. Come back to my terminal
+
+27018
+04:10:10,560 --> 04:10:15,990
+Oh, yarn, global ad and paste
+that in. It's this command line
+
+27019
+04:10:15,990 --> 04:10:19,890
+that's going to help us build a
+graph and build instructions for
+
+27020
+04:10:19,890 --> 04:10:22,920
+the graph to actually start
+indexing our events. Now that
+
+27021
+04:10:22,920 --> 04:10:26,310
+we've installed the globally, we
+can initialize our graph code.
+
+27022
+04:10:26,460 --> 04:10:31,170
+So we can copy this line. And
+we'll run graph a knit dash dash
+
+27023
+04:10:31,170 --> 04:10:35,520
+studio NFT marketplace and hit
+enter. The protocol is going to
+
+27024
+04:10:35,520 --> 04:10:40,770
+be Aetherium, or subgraph. Slug
+will be NFT. marketplace. We
+
+27025
+04:10:40,770 --> 04:10:43,050
+want the directory to be here,
+but it's saying directory
+
+27026
+04:10:43,050 --> 04:10:46,470
+already exists. So we'll just
+give it NFT marketplace. And
+
+27027
+04:10:46,470 --> 04:10:49,410
+then we'll move it after this.
+And this is on the Rinkeby. Test
+
+27028
+04:10:49,410 --> 04:10:53,250
+net. And now we want to give it
+the contract address. So we want
+
+27029
+04:10:53,250 --> 04:10:56,910
+to grab that address that we
+just deployed. And it should be
+
+27030
+04:10:56,910 --> 04:10:59,700
+now in our network mapping. So
+we're going to grab that
+
+27031
+04:10:59,700 --> 04:11:03,150
+contract address that we just
+deployed, and paste it in here.
+
+27032
+04:11:04,140 --> 04:11:09,360
+Like so. And since we've already
+verified on ether scan, it
+
+27033
+04:11:09,360 --> 04:11:12,720
+automatically grabs the ABI for
+us from ether scan, we'll give
+
+27034
+04:11:12,720 --> 04:11:16,800
+it the contract name, which is
+the NFT marketplace. And it's
+
+27035
+04:11:16,800 --> 04:11:20,190
+going to give us a whole bunch
+of boilerplate code in this NFT
+
+27036
+04:11:20,190 --> 04:11:22,950
+marketplace directory. And this
+might take a couple of minutes.
+
+27037
+04:11:23,070 --> 04:11:26,820
+Alright, awesome. So now that
+it's done, we see subgraph NFT
+
+27038
+04:11:26,820 --> 04:11:30,180
+marketplace created in NFT
+marketplace. Now, I don't want
+
+27039
+04:11:30,180 --> 04:11:32,550
+it to be in the seller folder.
+So what I'm going to do is I'm
+
+27040
+04:11:32,550 --> 04:11:34,890
+going to move it down a
+directory, but you can leave it
+
+27041
+04:11:34,890 --> 04:11:38,340
+where it is, if you want, I'm
+going to say move, I'm going to
+
+27042
+04:11:38,340 --> 04:11:44,340
+say move NFT marketplace, star
+to dot slash. Now everything
+
+27043
+04:11:44,340 --> 04:11:47,340
+inside of NFT marketplace will
+be in this current directory.
+
+27044
+04:11:47,430 --> 04:11:50,160
+And then if the marketplace will
+be empty. So with that, I'm
+
+27045
+04:11:50,160 --> 04:11:53,430
+gonna go ahead and delete. And
+if the marketplace. Alright,
+
+27046
+04:11:53,430 --> 04:11:57,480
+great. Now let me walk you
+through exactly what's going on
+
+27047
+04:11:57,480 --> 04:12:00,660
+here and what these files are
+that we just created. So our
+
+27048
+04:12:00,660 --> 04:12:03,570
+first folder is going to be
+API's. In order for the graph to
+
+27049
+04:12:03,570 --> 04:12:06,810
+index and read our contract
+index our events, it's going to
+
+27050
+04:12:06,810 --> 04:12:11,130
+need the ABI of our events. So
+we've got the ABI of our entire
+
+27051
+04:12:11,130 --> 04:12:15,420
+marketplace, from ether scan, if
+we didn't verify an ether scan,
+
+27052
+04:12:15,450 --> 04:12:18,660
+we can just create this API
+folder ourself and add the NFT
+
+27053
+04:12:18,660 --> 04:12:22,650
+marketplace JSON in here. Now we
+have this generated folder. This
+
+27054
+04:12:22,680 --> 04:12:25,890
+is an auto generated file. He
+even says at the top, do not
+
+27055
+04:12:25,890 --> 04:12:29,370
+edit this file directly. You can
+kind of think of this as the
+
+27056
+04:12:29,370 --> 04:12:33,120
+build folder, or where we
+compile graph code. Node
+
+27057
+04:12:33,120 --> 04:12:35,310
+modules, of course, is going to
+be node modules and
+
+27058
+04:12:35,310 --> 04:12:40,050
+dependencies. SRC is going to be
+where we define and we tell the
+
+27059
+04:12:40,050 --> 04:12:43,560
+graph, how to actually map and
+how to actually work with our
+
+27060
+04:12:43,560 --> 04:12:47,580
+contract. And it is a TypeScript
+file. So for all of you who have
+
+27061
+04:12:47,580 --> 04:12:50,370
+been just doing this in
+JavaScript, I will have to teach
+
+27062
+04:12:50,370 --> 04:12:52,920
+you a little bit of TypeScript
+just to get through this part.
+
+27063
+04:12:53,070 --> 04:12:56,220
+Then we have networks dot JSON,
+which gives us all of our
+
+27064
+04:12:56,220 --> 04:12:59,130
+network information about which
+networks, what are the
+
+27065
+04:12:59,130 --> 04:13:01,170
+addresses, and what are the
+different contracts that we're
+
+27066
+04:13:01,170 --> 04:13:04,140
+going to be indexing, package
+dot JSON, which of course is
+
+27067
+04:13:04,140 --> 04:13:08,400
+just a normal package dot JSON.
+And it's got some graph scripts
+
+27068
+04:13:08,430 --> 04:13:12,240
+already built in schema dot
+graph. QL is going to be our
+
+27069
+04:13:12,240 --> 04:13:16,050
+Graph QL schema. So this is also
+going to be how we tell the
+
+27070
+04:13:16,050 --> 04:13:19,050
+graph how to actually work with
+our events and index our events.
+
+27071
+04:13:19,260 --> 04:13:22,380
+And if you're familiar, the
+schema follows the Graph QL
+
+27072
+04:13:22,380 --> 04:13:26,610
+syntax. So if you've ever worked
+with Graph QL, before, it's
+
+27073
+04:13:26,610 --> 04:13:30,090
+going to be the exact same way,
+graph. QL is a query language
+
+27074
+04:13:30,120 --> 04:13:33,030
+for your API. And instead of
+being kind of a relational
+
+27075
+04:13:33,030 --> 04:13:37,140
+database, it can query in a more
+graph type way, I'm not going to
+
+27076
+04:13:37,140 --> 04:13:40,410
+go too deep into how it actually
+works behind the scenes. But if
+
+27077
+04:13:40,410 --> 04:13:42,180
+you want to learn more, I'm
+going to leave some docs in the
+
+27078
+04:13:42,180 --> 04:13:45,210
+GitHub repository associated
+with this course, the sub graph
+
+27079
+04:13:45,210 --> 04:13:48,360
+dot Yamo tells our subgraph how
+to combine all the files
+
+27080
+04:13:48,360 --> 04:13:51,420
+together. So we have data
+sources, data sources, where
+
+27081
+04:13:51,420 --> 04:13:54,330
+they're coming from different
+addresses, different entities or
+
+27082
+04:13:54,330 --> 04:13:58,650
+events, the API's where to grab
+our files from different event
+
+27083
+04:13:58,650 --> 04:14:01,590
+handlers, which we'll talk about
+in a minute. And then the main
+
+27084
+04:14:01,590 --> 04:14:04,950
+file, which is going to be our
+mapping.ts, we have a TS config,
+
+27085
+04:14:04,980 --> 04:14:08,340
+which is a configuration file
+specific to TypeScript. And then
+
+27086
+04:14:08,340 --> 04:14:11,400
+of course, we have our yarn dot
+lock. With all this information
+
+27087
+04:14:11,400 --> 04:14:15,360
+with all this code, we are now
+going to update all this code to
+
+27088
+04:14:15,360 --> 04:14:20,130
+tell the graph to start indexing
+our events. So we can read our
+
+27089
+04:14:20,130 --> 04:14:22,800
+events from the graph in a
+decentralized context, as
+
+27090
+04:14:22,800 --> 04:14:26,460
+opposed to from a centralized
+database. And after we build
+
+27091
+04:14:26,460 --> 04:14:29,130
+everything, we're going to run
+through this off and deploy
+
+27092
+04:14:29,130 --> 04:14:32,910
+code, which is to authenticate
+ourselves, and then deploy our
+
+27093
+04:14:32,910 --> 04:14:36,690
+code to the graph to start
+indexing. So without further
+
+27094
+04:14:36,690 --> 04:14:40,710
+ado, let's jump in. And let's do
+this. So one of the first things
+
+27095
+04:14:40,710 --> 04:14:43,890
+I'm going to do, I'm going to
+add a highlighter for these dot
+
+27096
+04:14:43,890 --> 04:14:46,830
+Graph QL files. So in our
+extensions, we're gonna look at
+
+27097
+04:14:46,830 --> 04:14:51,210
+Graph QL. And we're gonna stall
+this Graph QL extension. Now
+
+27098
+04:14:51,210 --> 04:14:54,120
+that we've installed it, if we
+go back to schema dot graph, QL,
+
+27099
+04:14:54,570 --> 04:14:57,840
+we've got it with some colors
+now, which is exciting. So this
+
+27100
+04:14:57,840 --> 04:15:02,640
+schema dot Graph QL is going to
+define what entities we have in
+
+27101
+04:15:02,640 --> 04:15:06,060
+our contract if we were to be
+analogous to mirallas. These are
+
+27102
+04:15:06,060 --> 04:15:08,310
+going to be how we're going to
+define what our tables are going
+
+27103
+04:15:08,310 --> 04:15:10,890
+to look like. And these are
+going to be our events. plus
+
+27104
+04:15:10,890 --> 04:15:14,040
+that active item table that we
+created. So we're not going to
+
+27105
+04:15:14,040 --> 04:15:17,640
+have an example entity though,
+we're going to have a type
+
+27106
+04:15:18,210 --> 04:15:22,740
+active item. And this is going
+to be an add entity. So these
+
+27107
+04:15:22,740 --> 04:15:25,770
+are the different types we have
+in our graph that we can
+
+27108
+04:15:25,770 --> 04:15:27,900
+actually query on, our main
+thing that we're going to want
+
+27109
+04:15:27,900 --> 04:15:31,320
+to query on is same as before,
+it's going to be our active
+
+27110
+04:15:31,320 --> 04:15:33,840
+items. And then inside of our
+active items, we're going to
+
+27111
+04:15:33,840 --> 04:15:37,320
+tell the graph, what parameters
+each one of these active item
+
+27112
+04:15:37,320 --> 04:15:42,510
+types has, well, it's going to
+have an ID of type ID. So the
+
+27113
+04:15:42,510 --> 04:15:45,690
+variable is ID of type ID. And
+you can read more about the
+
+27114
+04:15:45,690 --> 04:15:48,510
+different types in the graph
+documentation. And this
+
+27115
+04:15:48,510 --> 04:15:53,310
+exclamation mark means it must
+have an ID. So every active item
+
+27116
+04:15:53,490 --> 04:15:56,310
+needs to have and will have an
+ID, we'll say there's going to
+
+27117
+04:15:56,310 --> 04:15:59,730
+be a buyer, which is going to be
+an address, so that's going to
+
+27118
+04:15:59,730 --> 04:16:03,150
+be a byte and the buyer could be
+blank, right? It could be the
+
+27119
+04:16:03,150 --> 04:16:07,920
+0x 000, we're going to have all
+of our active items have a
+
+27120
+04:16:08,160 --> 04:16:13,620
+0000 dot.if. If no one has
+bought yet, we're going to have
+
+27121
+04:16:13,620 --> 04:16:16,800
+a seller, which of course is
+also going to be a bytes because
+
+27122
+04:16:16,800 --> 04:16:19,560
+it's going to be an address,
+we're going to have an NFT
+
+27123
+04:16:19,560 --> 04:16:22,860
+address. So the address of the
+NFT, which will also be bytes,
+
+27124
+04:16:22,920 --> 04:16:25,530
+we're going to have a token ID
+which isn't going to be bytes,
+
+27125
+04:16:25,530 --> 04:16:28,050
+this is going to be of type big
+int, and then we're going to
+
+27126
+04:16:28,050 --> 04:16:31,980
+have a price, which is also
+going to be a big int. Now price
+
+27127
+04:16:32,010 --> 04:16:35,700
+we're going to leave as not
+required for price, we're just
+
+27128
+04:16:35,700 --> 04:16:39,090
+going to have price be nullable.
+So price can be null. So we have
+
+27129
+04:16:39,090 --> 04:16:42,450
+an active item. Awesome. What
+else are we going to need? What
+
+27130
+04:16:42,450 --> 04:16:44,940
+what other tables do we have in
+Morales? Well, we're going to
+
+27131
+04:16:44,940 --> 04:16:50,310
+need type item listed. And this
+is going to be at entity is
+
+27132
+04:16:50,310 --> 04:16:54,810
+going to need an ID, it'll have
+a seller. Whenever an item gets
+
+27133
+04:16:54,810 --> 04:16:57,180
+listed, it's going to have a
+seller right, which is going to
+
+27134
+04:16:57,180 --> 04:17:00,750
+be a bytes again. And if the
+address the address of the NFT,
+
+27135
+04:17:00,750 --> 04:17:05,160
+which will also be bytes, the
+token ID, which is going to be a
+
+27136
+04:17:05,160 --> 04:17:09,150
+big int, and then the price,
+which will also be a big end,
+
+27137
+04:17:09,930 --> 04:17:13,680
+we're gonna need a type item
+cancelled at entity
+
+27138
+04:17:15,240 --> 04:17:28,530
+which will have an ID seller an
+NFT address. And a token ID will
+
+27139
+04:17:28,530 --> 04:17:34,320
+be a big end. And then last type
+item bought will be in that
+
+27140
+04:17:34,320 --> 04:17:39,780
+entity is going to have an ID
+ID. It's going to be a buyer
+
+27141
+04:17:41,100 --> 04:17:41,730
+bytes.
+
+27142
+04:17:43,860 --> 04:17:53,190
+And then of T address a bytes
+and a token ID again, and then a
+
+27143
+04:17:53,190 --> 04:17:56,580
+price of beginnt. And with
+Justice Information, we've
+
+27144
+04:17:56,580 --> 04:18:00,480
+defined what we want our
+subgraph to keep track of wants
+
+27145
+04:18:00,480 --> 04:18:03,630
+to keep track of item bought
+events, item, cancelled events,
+
+27146
+04:18:03,930 --> 04:18:07,050
+item listed events. And then
+we're going to make this new
+
+27147
+04:18:07,050 --> 04:18:10,620
+active item table similar to
+what we did with mirallas. And
+
+27148
+04:18:10,620 --> 04:18:13,980
+it's going to be some function
+of these these other three
+
+27149
+04:18:13,980 --> 04:18:17,220
+events. And now we're done with
+our schema dot graph. QL.
+
+27150
+04:18:17,490 --> 04:18:20,520
+Awesome. So what do we do now
+we're going to need to tell our
+
+27151
+04:18:20,520 --> 04:18:24,360
+sub graph to actually listen for
+these events. So what we can do.
+
+27152
+04:18:24,630 --> 04:18:27,090
+So what we want to do to tell it
+how to listen for these events,
+
+27153
+04:18:27,480 --> 04:18:33,270
+is we're going to go to src
+mapping.ts. It's this mapping.ts
+
+27154
+04:18:33,270 --> 04:18:37,350
+file that's going to tell our
+subgraph how to actually map and
+
+27155
+04:18:37,350 --> 04:18:40,770
+how to actually store all the
+event information that we have.
+
+27156
+04:18:40,950 --> 04:18:43,650
+If you look in it right now, it
+might even give you kind of a
+
+27157
+04:18:43,650 --> 04:18:47,460
+sample event. So it says Export
+function, handle item event.
+
+27158
+04:18:47,460 --> 04:18:49,950
+This is what Maya says right
+now, it takes as an input
+
+27159
+04:18:49,950 --> 04:18:54,780
+parameter event item bot. So
+this is saying whenever an item
+
+27160
+04:18:54,780 --> 04:18:59,520
+bot event occurs, do this handle
+item bot function. So anytime
+
+27161
+04:18:59,550 --> 04:19:02,910
+item bot happens do this handle
+item bot. And we're actually
+
+27162
+04:19:02,910 --> 04:19:07,620
+getting this item bot from our
+generated NFT marketplace from
+
+27163
+04:19:07,620 --> 04:19:12,000
+some generated code. In the
+graph. If we run graph code Gen.
+
+27164
+04:19:12,900 --> 04:19:16,290
+This graph code Gen command
+grabs all the stuff we have in
+
+27165
+04:19:16,290 --> 04:19:20,430
+the schema dot Graph QL and puts
+it in this generated file. Now
+
+27166
+04:19:20,430 --> 04:19:23,250
+that I've run graph code Gen,
+you'll see in here there's an
+
+27167
+04:19:23,250 --> 04:19:27,000
+item bot class, you see there's
+a schema, that type script. And
+
+27168
+04:19:27,000 --> 04:19:31,410
+actually we can even find that
+new active item class that we
+
+27169
+04:19:31,410 --> 04:19:35,400
+created in our schema. So
+anytime you update schema dot
+
+27170
+04:19:35,400 --> 04:19:39,180
+Graph QL, you're always going to
+want to run graph code Gen, so
+
+27171
+04:19:39,180 --> 04:19:42,150
+you can update those types. And
+if this failed, it means that
+
+27172
+04:19:42,150 --> 04:19:45,000
+you messed up something in your
+schema dot Graph QL. Now in our
+
+27173
+04:19:45,000 --> 04:19:48,990
+mapping.ts, we're actually
+importing item bought item
+
+27174
+04:19:48,990 --> 04:19:52,830
+cancelled item listed from
+generated and if the marketplace
+
+27175
+04:19:53,010 --> 04:19:56,250
+and if the marketplace from our
+generated code. These are going
+
+27176
+04:19:56,250 --> 04:19:59,160
+to be our events. And we're not
+going to need to do anything
+
+27177
+04:19:59,160 --> 04:20:01,710
+with the NFT marketplace. We're
+just going to need our event
+
+27178
+04:20:01,710 --> 04:20:04,740
+information. For now. Let's go
+ahead and just delete everything
+
+27179
+04:20:04,740 --> 04:20:08,430
+inside our handle item bot or
+whatever sample is given to you.
+
+27180
+04:20:09,450 --> 04:20:13,620
+So we're importing a or events
+from our generated code. And
+
+27181
+04:20:13,620 --> 04:20:16,080
+then we have this line here,
+which we're going to change in a
+
+27182
+04:20:16,080 --> 04:20:19,260
+second. So again, we have these
+three functions handle item
+
+27183
+04:20:19,260 --> 04:20:22,860
+bought, handle item canceled and
+handle item listed. Whenever we
+
+27184
+04:20:22,860 --> 04:20:25,350
+get an item bought event, we're
+going to do this function.
+
+27185
+04:20:25,770 --> 04:20:27,810
+Whenever we get an item canceled
+event, we're going to do this
+
+27186
+04:20:27,810 --> 04:20:32,580
+function. And all this code is
+defined in our sub graph dot
+
+27187
+04:20:32,580 --> 04:20:35,910
+Yamo. You can see the different
+entities here in a bot item
+
+27188
+04:20:35,910 --> 04:20:39,930
+cancelled item listed, and the
+event handlers. So it says,
+
+27189
+04:20:39,960 --> 04:20:45,360
+okay, anytime this specific
+event gets fired with an index
+
+27190
+04:20:45,360 --> 04:20:49,080
+address, an index address index,
+YouTube 36 in YouTube had six
+
+27191
+04:20:49,470 --> 04:20:52,890
+call handle item bought, which
+again, we're getting in here
+
+27192
+04:20:52,950 --> 04:20:56,340
+handle item. But so that's
+exactly how this works. So let's
+
+27193
+04:20:56,340 --> 04:21:00,030
+figure out what to do when an
+item bought event triggers. And
+
+27194
+04:21:00,030 --> 04:21:03,090
+I think that item bought item
+cancelled item lists it is a
+
+27195
+04:21:03,090 --> 04:21:07,650
+little confusing. So I like to
+change this to item bought as
+
+27196
+04:21:08,160 --> 04:21:16,110
+item bought event item cancelled
+as item cancelled event item
+
+27197
+04:21:16,110 --> 04:21:22,800
+listed as item listed event. So
+I'm just changing the names of
+
+27198
+04:21:22,800 --> 04:21:26,190
+these three that are imported
+from NFT marketplace. And now
+
+27199
+04:21:26,190 --> 04:21:30,180
+I'm going to change event item
+bot to item bought event. Event
+
+27200
+04:21:30,180 --> 04:21:33,660
+item cancelled to item cancelled
+event and event item listed to
+
+27201
+04:21:33,960 --> 04:21:37,470
+item listed event. Okay, great.
+And we're just going to remove
+
+27202
+04:21:37,470 --> 04:21:39,960
+this line for now. And we also
+don't need this line at the top
+
+27203
+04:21:39,960 --> 04:21:42,420
+at the beginning, we will in a
+minute, but we'll delete it for
+
+27204
+04:21:42,420 --> 04:21:46,710
+now. So here's our minimalistic
+code here. So whenever we list
+
+27205
+04:21:46,710 --> 04:21:50,580
+an item, what do we need to do?
+Well, we need to save that event
+
+27206
+04:21:50,880 --> 04:21:54,870
+in our in our graph. And then we
+also need to update our active
+
+27207
+04:21:54,870 --> 04:21:58,500
+item, exactly as we did with
+Morales. So first thing that
+
+27208
+04:21:58,500 --> 04:22:01,830
+we're going to need to do is
+either get or create an item
+
+27209
+04:22:01,830 --> 04:22:04,680
+listed object. And something
+that we need to know is that
+
+27210
+04:22:04,710 --> 04:22:09,660
+each item needs a unique ID. And
+we actually need to create that
+
+27211
+04:22:09,660 --> 04:22:12,600
+ID. So one of the first things
+I'm going to do is going to
+
+27212
+04:22:12,600 --> 04:22:18,120
+create a function called Get ID
+from event params. And it's
+
+27213
+04:22:18,120 --> 04:22:20,820
+going to take a token ID and
+here's where TypeScript comes
+
+27214
+04:22:20,820 --> 04:22:23,640
+into play a little bit. In
+TypeScript, we actually need to
+
+27215
+04:22:23,640 --> 04:22:26,820
+define the types of our
+different parameters. So token
+
+27216
+04:22:26,820 --> 04:22:31,110
+ID is going to be a big int. And
+we'll also take an NFT address,
+
+27217
+04:22:31,500 --> 04:22:35,160
+which will take in a type of
+address. And we also need to say
+
+27218
+04:22:35,160 --> 04:22:38,700
+what return type or function is
+going to give, which we're going
+
+27219
+04:22:38,700 --> 04:22:42,330
+to return a string, we're going
+to create an ID from event
+
+27220
+04:22:42,330 --> 04:22:45,060
+params. And it's just going to
+be a combination of the token ID
+
+27221
+04:22:45,240 --> 04:22:48,210
+and the NFT address. The
+combination of these two will
+
+27222
+04:22:48,210 --> 04:22:52,110
+give a unique ID for each one of
+these types of event. So we're
+
+27223
+04:22:52,110 --> 04:22:56,220
+just gonna say return token ID,
+and token ID has a function
+
+27224
+04:22:56,220 --> 04:23:03,540
+called to x string, I'm gonna
+say plus, and if T address.to X
+
+27225
+04:23:03,570 --> 04:23:08,100
+string, like so. And big int an
+address, we need to import from
+
+27226
+04:23:08,100 --> 04:23:11,970
+at Graph Protocol slash graph
+TX. It already imported big
+
+27227
+04:23:11,970 --> 04:23:15,000
+enough for me. So I'm just going
+to add address in here is the
+
+27228
+04:23:15,000 --> 04:23:17,220
+two special types that come from
+the graph. And then string is
+
+27229
+04:23:17,220 --> 04:23:20,670
+built into TypeScript. Now that
+we have a way to get a special
+
+27230
+04:23:20,670 --> 04:23:25,110
+ID for each item in our function
+here, we have to now either get
+
+27231
+04:23:25,110 --> 04:23:30,330
+or create a new item listed. Now
+right now we have an item. But
+
+27232
+04:23:30,390 --> 04:23:34,320
+event we don't have an item
+bought object. So the item
+
+27233
+04:23:34,320 --> 04:23:38,250
+bought object is going to be
+what we save, the item bought
+
+27234
+04:23:38,250 --> 04:23:42,870
+event is just the raw event. So
+we have to create an item bought
+
+27235
+04:23:42,870 --> 04:23:46,620
+object from our item bought
+event. And in TypeScript, these
+
+27236
+04:23:46,620 --> 04:23:49,140
+are going to be two different
+types. So we have to import
+
+27237
+04:23:49,140 --> 04:23:53,460
+these item by objects. So those
+actually get auto created from
+
+27238
+04:23:53,460 --> 04:23:57,600
+generated schema. In here we
+have active item, we have item,
+
+27239
+04:23:57,810 --> 04:24:02,160
+we have an item bought class, we
+have an item cancelled, etc. So
+
+27240
+04:24:02,160 --> 04:24:05,370
+we're gonna have to import those
+types from there. So we can say,
+
+27241
+04:24:05,850 --> 04:24:12,510
+import, item listed, comma,
+active item, item bought an item
+
+27242
+04:24:12,510 --> 04:24:18,420
+cancelled from dot slash,
+generated slash schema. Let's go
+
+27243
+04:24:18,420 --> 04:24:22,800
+ahead and get or create an item
+bot object. So we'll say let
+
+27244
+04:24:23,010 --> 04:24:30,150
+item bot equals item bot dot
+load. And this is how we load an
+
+27245
+04:24:30,150 --> 04:24:34,110
+item we load its unique ID by
+calling this get ID from event
+
+27246
+04:24:34,110 --> 04:24:41,970
+params dot load, get ID from
+event params. And we can pass
+
+27247
+04:24:42,000 --> 04:24:45,270
+event dot params. That token ID
+
+27248
+04:24:46,800 --> 04:24:50,130
+because an item bot event is
+going to have a token ID and
+
+27249
+04:24:50,160 --> 04:24:55,530
+event that params.nf T address.
+Now I know we probably should
+
+27250
+04:24:55,530 --> 04:24:58,530
+have done handle item listed
+first but we're doing item bot
+
+27251
+04:24:58,530 --> 04:25:02,340
+first. Since we're buying an
+item, we probably will also have
+
+27252
+04:25:02,400 --> 04:25:05,070
+an active item as well, right?
+We haven't made yet an item
+
+27253
+04:25:05,070 --> 04:25:07,440
+listed. But this is going to be
+similar to what we did with
+
+27254
+04:25:07,440 --> 04:25:11,340
+Morales. So we know that every
+time we live Certain items will
+
+27255
+04:25:11,340 --> 04:25:16,950
+also list an active item. So
+we'll say let active item equals
+
+27256
+04:25:17,550 --> 04:25:21,960
+active item that load. And we're
+going to do this exact same
+
+27257
+04:25:21,960 --> 04:25:25,170
+thing. So I'm just going to copy
+paste it into here. And even
+
+27258
+04:25:25,170 --> 04:25:28,530
+though these are going to have
+the exact same ID, it doesn't
+
+27259
+04:25:28,530 --> 04:25:33,000
+matter because they're the same
+ID across different types. Now
+
+27260
+04:25:33,000 --> 04:25:37,920
+we're gonna say, if there is no
+item bot, we'll say item bot
+
+27261
+04:25:38,490 --> 04:25:45,750
+equals a new item bot object.
+And we'll give it an ID, which
+
+27262
+04:25:45,780 --> 04:25:49,440
+is going to be exactly our ID
+giving parameter here, get ID
+
+27263
+04:25:49,440 --> 04:25:52,140
+from events, and pass that
+there. So we're going to create
+
+27264
+04:25:52,140 --> 04:25:55,110
+a new item bought here. And now
+we're going to update all its
+
+27265
+04:25:55,110 --> 04:25:59,370
+parameters. So back in our
+schema dot graph, QL. An item
+
+27266
+04:25:59,370 --> 04:26:03,870
+bought has an ID, buyer address,
+token ID and price. So we're
+
+27267
+04:26:03,870 --> 04:26:10,200
+gonna say, item bought, that
+buyer equals event dot params
+
+27268
+04:26:10,290 --> 04:26:18,030
+dot buyer, item bought.nf T
+address equals event.params.nf T
+
+27269
+04:26:18,030 --> 04:26:25,050
+address, item bot, dot token ID
+equals event dot params dot
+
+27270
+04:26:25,050 --> 04:26:28,980
+token ID. And that looks good.
+And our active item will be from
+
+27271
+04:26:28,980 --> 04:26:32,250
+item listed, and item listed
+should give it all these
+
+27272
+04:26:32,250 --> 04:26:35,490
+parameters, except for it won't
+have a buyer. So we just need to
+
+27273
+04:26:35,490 --> 04:26:39,660
+update the buyer on our active
+item. So we'll say active item,
+
+27274
+04:26:40,470 --> 04:26:43,230
+dot buyer, we'll do a little
+exclamation mark. This is some
+
+27275
+04:26:43,230 --> 04:26:46,290
+TypeScript stuff, saying we will
+have an active item. Don't worry
+
+27276
+04:26:46,290 --> 04:26:48,750
+too much about it if you're
+unfamiliar with TypeScript. And
+
+27277
+04:26:48,750 --> 04:26:53,160
+we'll say that equals event dot
+params dot buyer. And now
+
+27278
+04:26:53,190 --> 04:26:58,680
+similar to Morales, we're gonna
+do item bot dot save and active
+
+27279
+04:26:58,680 --> 04:27:02,250
+item with an exclamation mark
+again, that save and this is how
+
+27280
+04:27:02,250 --> 04:27:06,240
+we're going to save this item
+bought event as an object in our
+
+27281
+04:27:06,240 --> 04:27:09,570
+the Graph Protocol. And also,
+we're going to update our active
+
+27282
+04:27:09,570 --> 04:27:13,260
+item. So this is our full
+function of handle item bought.
+
+27283
+04:27:13,620 --> 04:27:16,800
+Whenever somebody buys an item,
+we update a new item bought
+
+27284
+04:27:16,800 --> 04:27:21,810
+object, and we update our active
+item to be a new buyer, we're
+
+27285
+04:27:21,810 --> 04:27:24,690
+not going to delete it from our
+active items list, we're just
+
+27286
+04:27:24,690 --> 04:27:27,360
+going to update it with a new
+buyer. And we'll just say if it
+
+27287
+04:27:27,360 --> 04:27:30,870
+has a buyer, that means it's
+been bought. If it doesn't have
+
+27288
+04:27:30,870 --> 04:27:34,320
+a buyer, that means it's still
+on the market. Awesome. So now
+
+27289
+04:27:34,320 --> 04:27:37,380
+that we've done our handle item
+bot, let's now do our handle
+
+27290
+04:27:37,410 --> 04:27:39,960
+item listed, which will
+hopefully make our handle item
+
+27291
+04:27:39,960 --> 04:27:42,990
+bot a little bit easier to
+understand. So for handle item
+
+27292
+04:27:42,990 --> 04:27:45,450
+listed, we're going to do the
+same piece here. So we're going
+
+27293
+04:27:45,450 --> 04:27:51,900
+to say let item listed equals
+item listed dot load. And we're
+
+27294
+04:27:51,900 --> 04:27:55,110
+gonna do the exact same thing as
+what we did for all these will
+
+27295
+04:27:55,110 --> 04:27:59,760
+do get ID from event params.
+Like so, get a different event
+
+27296
+04:27:59,760 --> 04:28:03,660
+params. And we're gonna say let
+active item. And this line is
+
+27297
+04:28:03,660 --> 04:28:07,110
+going to be exactly the same as
+up here. So I'm just going to
+
+27298
+04:28:07,110 --> 04:28:11,040
+copy paste. So we're saying,
+okay, great, grab our item
+
+27299
+04:28:11,040 --> 04:28:14,640
+listed, and grab our active
+item, see if those objects
+
+27300
+04:28:14,670 --> 04:28:18,120
+already exist. I will say if
+there is no item listed, which
+
+27301
+04:28:18,120 --> 04:28:20,220
+there shouldn't be, we'll go
+ahead and create a new one,
+
+27302
+04:28:20,520 --> 04:28:21,630
+we'll say item listed
+
+27303
+04:28:23,490 --> 04:28:28,920
+equals new item listed. And its
+ID is going to be from this
+
+27304
+04:28:28,920 --> 04:28:32,880
+function that we created are
+unique IDs. Now, unlike what we
+
+27305
+04:28:32,880 --> 04:28:36,930
+did above, we're also going to
+say, if there is no active item,
+
+27306
+04:28:37,110 --> 04:28:39,480
+then we're going to create a new
+active item, right? Because
+
+27307
+04:28:39,480 --> 04:28:42,660
+we're listing an item, it
+shouldn't be an active item. Now
+
+27308
+04:28:42,660 --> 04:28:44,430
+this functionality is going to
+make a lot more sense here,
+
+27309
+04:28:44,430 --> 04:28:47,850
+right? Because if we're updating
+the price of an item, active
+
+27310
+04:28:47,850 --> 04:28:51,720
+item will already exist. If it's
+a brand new listing, though,
+
+27311
+04:28:51,990 --> 04:28:55,410
+active item will not exist. So
+we'll say okay, if it doesn't
+
+27312
+04:28:55,410 --> 04:28:58,320
+exist, okay, that means it's a
+brand new listing, we'll say
+
+27313
+04:28:58,320 --> 04:29:03,510
+item listed equals new item
+listed, and then we'll give it
+
+27314
+04:29:03,510 --> 04:29:08,700
+an ID. That's the same ID
+methodology, paste that in. So
+
+27315
+04:29:08,700 --> 04:29:12,990
+now all we got to do is update
+these new objects. So I will say
+
+27316
+04:29:13,020 --> 04:29:19,380
+item listed that seller equals
+event dot params dot seller. And
+
+27317
+04:29:19,380 --> 04:29:22,470
+I'm just going to copy paste
+this line. Because this is just
+
+27318
+04:29:22,470 --> 04:29:27,540
+gonna be active item dot seller
+now. Oops, see me and then it'll
+
+27319
+04:29:27,540 --> 04:29:31,200
+make this active item. active
+item instead of item listed. And
+
+27320
+04:29:31,200 --> 04:29:33,810
+what else comes with item
+listed? Well, let's go to the
+
+27321
+04:29:33,810 --> 04:29:38,700
+schema item listed has an NFT
+address, token ID and a price.
+
+27322
+04:29:38,820 --> 04:29:44,700
+So okay, so let's add those.
+item listed dot NFT address
+
+27323
+04:29:45,210 --> 04:29:50,610
+equals event.params.nf T
+address. Copy paste this line
+
+27324
+04:29:50,640 --> 04:29:55,650
+because it's gonna be the be the
+exact same for active item. Now
+
+27325
+04:29:55,740 --> 04:30:01,440
+item listed that token ID equals
+event dot params dot token ID.
+
+27326
+04:30:02,040 --> 04:30:07,680
+Copy paste this line. Same thing
+for active item. Item listed dot
+
+27327
+04:30:07,680 --> 04:30:12,870
+price equals event dot params
+dot At price, copy, paste this
+
+27328
+04:30:12,870 --> 04:30:17,400
+line for active item. And then
+we just say those two. So item
+
+27329
+04:30:17,400 --> 04:30:24,930
+listed that save active item.
+Save. So in our protocol here,
+
+27330
+04:30:25,020 --> 04:30:28,890
+if it's already been, if there
+already is an active item, then
+
+27331
+04:30:28,890 --> 04:30:31,650
+we just go ahead and we get that
+active item. This would be for a
+
+27332
+04:30:31,650 --> 04:30:35,550
+listing that we're updating. If
+not, we make a new one. We
+
+27333
+04:30:35,580 --> 04:30:38,700
+update it with whatever came in
+through the event. And then we
+
+27334
+04:30:38,700 --> 04:30:42,330
+save it to our graph protocol.
+Okay, perfect. Now we only have
+
+27335
+04:30:42,330 --> 04:30:45,660
+one left, item cancelled. So
+let's figure out how to do item
+
+27336
+04:30:45,660 --> 04:30:48,690
+cancelled, it's going to look
+really similar to item bought.
+
+27337
+04:30:48,720 --> 04:30:55,620
+So we'll say let item cancelled
+equals item cancelled that load.
+
+27338
+04:30:55,860 --> 04:30:58,920
+Again, we're going to do this
+exact same Id get our that we're
+
+27339
+04:30:58,920 --> 04:31:03,480
+doing for everything, we'll say
+let active item equals, and I'm
+
+27340
+04:31:03,480 --> 04:31:08,430
+going to zoom out a little bit
+less active item equals active
+
+27341
+04:31:08,460 --> 04:31:14,790
+item dot load. Or do this exact
+same thing here. Boom. And then
+
+27342
+04:31:14,790 --> 04:31:20,190
+we're gonna say, if not item
+cancelled, which there shouldn't
+
+27343
+04:31:20,190 --> 04:31:22,680
+be because this should be the
+only item canceled event here.
+
+27344
+04:31:23,340 --> 04:31:30,030
+We'll say item cancelled, equals
+new item cancelled. And we're
+
+27345
+04:31:30,030 --> 04:31:33,810
+gonna give it an ID using the
+same ID methodology we've been
+
+27346
+04:31:33,810 --> 04:31:36,600
+using. Now this is going to look
+a little bit different. We're
+
+27347
+04:31:36,600 --> 04:31:41,310
+gonna say item canceled, that
+seller equals event dot params
+
+27348
+04:31:41,340 --> 04:31:46,830
+dot seller. So far, so good.
+Item canceled dot NFT address
+
+27349
+04:31:47,520 --> 04:31:52,680
+equals event dot params dot NFT
+Address item canceled dot token
+
+27350
+04:31:52,680 --> 04:31:58,230
+ID equals event dot params dot
+token ID. And then finally, we
+
+27351
+04:31:58,230 --> 04:32:00,990
+are going to change the active
+item a little bit different than
+
+27352
+04:32:00,990 --> 04:32:04,560
+what we've seen. active item
+exclamation mark again, ignore
+
+27353
+04:32:04,560 --> 04:32:08,040
+if you're confused by that dot
+buyer. And we're going to update
+
+27354
+04:32:08,040 --> 04:32:12,570
+the buyer to equal address dot
+from string.
+
+27355
+04:32:13,830 --> 04:32:16,710
+We're going to give it what's
+called the Dead address. And
+
+27356
+04:32:16,710 --> 04:32:22,170
+that's this right here.
+0x 1-234-567-8910 1112 1314
+
+27357
+04:32:22,170 --> 04:32:25,860
+producing 718 1920 21 to two to
+three to 45 to 67 to
+
+27358
+04:32:25,860 --> 04:32:33,870
+8930 3130 230-334-3536 zeros
+lowercase d, uppercase E,
+
+27359
+04:32:34,050 --> 04:32:38,730
+lowercase A uppercase D, this is
+known as the dead address. And
+
+27360
+04:32:38,730 --> 04:32:41,910
+this is how we're going to
+decide if an item is still on
+
+27361
+04:32:41,910 --> 04:32:45,330
+the marketplace or not. Or if an
+item has been bought or not. If
+
+27362
+04:32:45,330 --> 04:32:49,320
+we have the dead address as its
+buyer, that's going to mean that
+
+27363
+04:32:49,320 --> 04:32:51,900
+the item has been cancelled. And
+that's how we are going to be
+
+27364
+04:32:51,900 --> 04:32:54,810
+able to tell that an item is on
+the marketplace or not dead
+
+27365
+04:32:54,810 --> 04:32:57,960
+address means it's been
+cancelled. An empty address,
+
+27366
+04:32:58,050 --> 04:33:01,200
+which is what will happen for
+handle item listed means it's on
+
+27367
+04:33:01,200 --> 04:33:05,070
+the market. And an actual real
+address means that it's actually
+
+27368
+04:33:05,070 --> 04:33:07,170
+been bought by somebody. So the
+way we can tell if it's on the
+
+27369
+04:33:07,170 --> 04:33:12,060
+market is it's 0x 0000000.
+Because the data address is
+
+27370
+04:33:12,060 --> 04:33:15,780
+obviously going to be different
+than than all zeros. The data
+
+27371
+04:33:15,780 --> 04:33:18,390
+address is a commonly used
+address kind of as a burner
+
+27372
+04:33:18,390 --> 04:33:22,230
+address that nobody owns, then
+we can just say, item cancelled
+
+27373
+04:33:22,980 --> 04:33:28,740
+that save an active item that
+say active item, exclamation
+
+27374
+04:33:28,740 --> 04:33:33,000
+mark dot save and perfect. Our
+mapping file is now completed.
+
+27375
+04:33:33,330 --> 04:33:36,540
+We now have three different
+functions to define how to
+
+27376
+04:33:36,540 --> 04:33:39,840
+handle when items are bought
+events, how to handle when items
+
+27377
+04:33:39,840 --> 04:33:43,020
+are cancelled event and item
+listed events. And if you're
+
+27378
+04:33:43,020 --> 04:33:46,440
+confused, remember all the code
+for this is available on this
+
+27379
+04:33:46,470 --> 04:33:49,530
+the graph section of my GitHub.
+So you can just follow along
+
+27380
+04:33:49,530 --> 04:33:52,680
+with the code here, if you ever
+get lost or need help. And with
+
+27381
+04:33:52,680 --> 04:33:55,860
+that, we're almost ready to tell
+our subgraph to start listening
+
+27382
+04:33:55,860 --> 04:33:58,980
+to our contracts, there's just
+at least one more thing that we
+
+27383
+04:33:58,980 --> 04:34:03,240
+want to do. So in our sub graph
+dot Yamo, we'll see source
+
+27384
+04:34:03,270 --> 04:34:06,600
+address blah, blah, blah, this
+is telling us to start indexing
+
+27385
+04:34:06,600 --> 04:34:10,260
+events since the beginning of
+Aetherium. Now we don't really
+
+27386
+04:34:10,260 --> 04:34:13,710
+want it to do that, because it
+will take a really long time, we
+
+27387
+04:34:13,710 --> 04:34:15,900
+want to tell our subgraph Hey,
+you don't just start from
+
+27388
+04:34:15,900 --> 04:34:19,380
+beginning of time, you just need
+to start from right before our
+
+27389
+04:34:19,380 --> 04:34:22,170
+contract was deployed. So we can
+add what's called our start
+
+27390
+04:34:22,170 --> 04:34:26,460
+block to tell it what block
+number to start deploying. Now
+
+27391
+04:34:26,460 --> 04:34:30,300
+if we have our address, which we
+do right here, we can copy it,
+
+27392
+04:34:30,540 --> 04:34:35,130
+we can paste it on to the rink
+fee, ether scan, paste it in
+
+27393
+04:34:35,130 --> 04:34:38,280
+here, or really any block
+Explorer, and we'll see what
+
+27394
+04:34:38,280 --> 04:34:42,300
+block number our contract was
+deployed. And it looks like it
+
+27395
+04:34:42,300 --> 04:34:46,860
+was this block. So I'm going to
+copy that address, go back to my
+
+27396
+04:34:46,860 --> 04:34:50,220
+code and say starting block,
+it's going to be right here.
+
+27397
+04:34:50,550 --> 04:34:55,020
+Starting block is going to be
+when it was deployed, minus one.
+
+27398
+04:34:55,050 --> 04:34:58,680
+So we're gonna go right before
+we deployed our contract, we're
+
+27399
+04:34:58,680 --> 04:35:02,640
+going to start reading any event
+that is indexed from it. Now if
+
+27400
+04:35:02,640 --> 04:35:05,160
+you just deployed this, it might
+not have any events in it at
+
+27401
+04:35:05,160 --> 04:35:08,070
+all, which we're going to fix in
+just a minute so don't worry,
+
+27402
+04:35:08,100 --> 04:35:10,530
+but with that all the
+instructions for how to build
+
+27403
+04:35:10,560 --> 04:35:14,010
+Our sub graphs are ready to be
+deployed to the graph, start our
+
+27404
+04:35:14,010 --> 04:35:16,650
+indexing and start working with
+our instructions in a
+
+27405
+04:35:16,650 --> 04:35:22,620
+decentralized context. So what
+we can do now is back in the
+
+27406
+04:35:22,620 --> 04:35:27,390
+graph, we actually have the auth
+and deploy code right here, we
+
+27407
+04:35:27,390 --> 04:35:32,010
+can copy this, this graph auth
+dash dash studio, which is our
+
+27408
+04:35:32,040 --> 04:35:35,400
+deploy key on how to deploy. And
+we can run this in our code
+
+27409
+04:35:35,400 --> 04:35:39,240
+editor. So we're going to paste
+that in here, graph off dash
+
+27410
+04:35:39,240 --> 04:35:43,380
+studio, hit enter. And we're
+gonna say deploy key set for the
+
+27411
+04:35:43,380 --> 04:35:46,440
+graph. So this is just setting
+us up so that whenever we push
+
+27412
+04:35:46,440 --> 04:35:49,980
+our code, it's going to push it
+to this sub graph configuration
+
+27413
+04:35:49,980 --> 04:35:52,950
+that we've made on their site to
+help us deploy automatically.
+
+27414
+04:35:52,980 --> 04:35:55,860
+Now we can do, we don't need to
+enter the subgraph, because
+
+27415
+04:35:55,860 --> 04:35:59,280
+we've already moved stuff down,
+is we'll build the sub graph,
+
+27416
+04:35:59,400 --> 04:36:03,390
+we'll run graph code Gen, we can
+just run graph kojem,
+
+27417
+04:36:04,830 --> 04:36:07,950
+which again, is just going to
+make sure our schema dot Graph
+
+27418
+04:36:07,950 --> 04:36:10,770
+QL looks good. And then we're
+going to run our graph build.
+
+27419
+04:36:11,340 --> 04:36:15,240
+And this graph build command is
+going to compile and run all of
+
+27420
+04:36:15,240 --> 04:36:18,660
+our sub graph stuff, everything
+in mapping that JSON all our
+
+27421
+04:36:18,660 --> 04:36:21,450
+generated code. And it's going
+to put this into a real build
+
+27422
+04:36:21,450 --> 04:36:24,390
+folder, the generated folder has
+kind of like a pseudo build
+
+27423
+04:36:24,390 --> 04:36:27,510
+folder. And then we have a real
+build folder. So the generated
+
+27424
+04:36:27,510 --> 04:36:30,810
+is just to build some typings
+for our TypeScript. And it's
+
+27425
+04:36:30,810 --> 04:36:33,780
+this build folder, this real
+build folder, is what we're
+
+27426
+04:36:33,780 --> 04:36:36,630
+going to actually be deploying
+and sending to the graph. And we
+
+27427
+04:36:36,630 --> 04:36:40,230
+can actually deploy our
+subgraph. Now, with graph deploy
+
+27428
+04:36:40,290 --> 04:36:43,140
+dash s studio. And if the
+marketplace, which we're going
+
+27429
+04:36:43,140 --> 04:36:46,290
+to run right now, now is going
+to give us a version label
+
+27430
+04:36:46,290 --> 04:36:51,000
+option, which we're going to
+give it the 0.0 point one, since
+
+27431
+04:36:51,000 --> 04:36:54,840
+this is our first version, and
+it goes ahead and starts
+
+27432
+04:36:54,840 --> 04:36:58,680
+deploying it to the graph, we
+also get to upload our sub graph
+
+27433
+04:36:58,680 --> 04:37:02,340
+to IPFS. And we have a little
+hash right here for IPFS for a
+
+27434
+04:37:02,340 --> 04:37:05,970
+subgraph that we could look at.
+But now if you're successful, we
+
+27435
+04:37:05,970 --> 04:37:09,150
+now have this build completed
+thing. And we have these sub
+
+27436
+04:37:09,150 --> 04:37:12,540
+graph endpoints for queries and
+subscriptions. So we can
+
+27437
+04:37:12,540 --> 04:37:16,500
+actually start querying and
+subscribing to our sub graph.
+
+27438
+04:37:16,530 --> 04:37:20,760
+But if we go back to our site
+here now and we hit refresh, we
+
+27439
+04:37:20,760 --> 04:37:24,360
+can now see status deployed, we
+can see that we're sinking. And
+
+27440
+04:37:24,360 --> 04:37:28,380
+now we have some nodes that are
+listening for our events to be
+
+27441
+04:37:28,380 --> 04:37:31,140
+emitted here, which is
+incredibly exciting. We can go
+
+27442
+04:37:31,140 --> 04:37:34,680
+to logs to see if anything went
+wrong. And right now it's just
+
+27443
+04:37:34,710 --> 04:37:37,620
+indexing, it's listening. It's
+going through all the different
+
+27444
+04:37:37,620 --> 04:37:40,770
+blocks in the blockchain,
+listening for our events. And
+
+27445
+04:37:40,770 --> 04:37:43,950
+then we have a playground here
+where we can run some queries to
+
+27446
+04:37:43,950 --> 04:37:46,860
+see different events and the
+different responses from our
+
+27447
+04:37:46,860 --> 04:37:50,220
+Graph QL, which right now, it's
+totally blank, because we
+
+27448
+04:37:50,220 --> 04:37:53,670
+haven't done anything yet. So
+once again, let's pull up our
+
+27449
+04:37:53,700 --> 04:37:57,060
+hard hat and ft marketplace
+code, or open it up in a new
+
+27450
+04:37:57,060 --> 04:38:00,690
+terminal, whatever you want to
+do. And let's go ahead, and
+
+27451
+04:38:00,690 --> 04:38:05,400
+let's run our mminton list
+script. But for rink B, so we'll
+
+27452
+04:38:05,400 --> 04:38:11,730
+do yarn, hard hat, run scripts,
+mint, and list item dash dash
+
+27453
+04:38:11,730 --> 04:38:16,020
+network Rinkeby. So we're going
+to mint an NF T, right, this is
+
+27454
+04:38:16,020 --> 04:38:17,820
+going to be to transaction, so
+we're gonna have to wait a
+
+27455
+04:38:17,820 --> 04:38:20,430
+little bit, and then we're going
+to approve the NFT. And then
+
+27456
+04:38:20,430 --> 04:38:22,830
+we're going to list it on our
+marketplace. And once it's
+
+27457
+04:38:22,830 --> 04:38:26,310
+listed, it's going to emit an
+item listed event. And we should
+
+27458
+04:38:26,310 --> 04:38:30,750
+see now we have an active item
+and an item listed data in our
+
+27459
+04:38:30,750 --> 04:38:34,500
+Graph QL. Now you can learn more
+about now what you see here on
+
+27460
+04:38:34,500 --> 04:38:37,620
+the left hand side is what's
+known as a Graph QL query. Now,
+
+27461
+04:38:37,620 --> 04:38:39,630
+we're not going to go over how
+to do these, but I'm going to
+
+27462
+04:38:39,630 --> 04:38:42,150
+leave some links in the GitHub
+repository. If you want to learn
+
+27463
+04:38:42,150 --> 04:38:44,760
+how to do more of these queries,
+these are going to be similar to
+
+27464
+04:38:44,760 --> 04:38:47,250
+what we saw with Morales. But
+instead of them being kind of
+
+27465
+04:38:47,250 --> 04:38:50,730
+regular table lookups. They're
+in Graph QL syntax, and the
+
+27466
+04:38:50,730 --> 04:38:53,820
+results of our query, end up
+being over here, we can see more
+
+27467
+04:38:53,820 --> 04:38:56,460
+information about our schema all
+the way to the right over here.
+
+27468
+04:38:56,520 --> 04:39:00,690
+But if we look at our code, now,
+we've made the NFT approved it
+
+27469
+04:39:00,720 --> 04:39:04,410
+we've listed it on our
+marketplace. So now if we go
+
+27470
+04:39:04,410 --> 04:39:09,570
+back to the graph, and we run
+this query, and we do a little
+
+27471
+04:39:09,570 --> 04:39:12,360
+refresh on our NFT marketplace,
+we might have to wait a few
+
+27472
+04:39:12,360 --> 04:39:15,810
+minutes for the graph to index
+these new blocks. But in our
+
+27473
+04:39:15,810 --> 04:39:19,230
+playground, we should see the
+show up as a query. If you don't
+
+27474
+04:39:19,260 --> 04:39:22,860
+automatically get these you can
+pause the video to write these
+
+27475
+04:39:22,860 --> 04:39:26,880
+into your Graph QL playground,
+right? So after a few minutes,
+
+27476
+04:39:27,240 --> 04:39:30,780
+refresh on ether scan, I can see
+that list item transaction has
+
+27477
+04:39:30,780 --> 04:39:34,620
+gone through. This means we've
+emitted a new event. So if I
+
+27478
+04:39:34,620 --> 04:39:38,400
+come back to my playground, and
+I hit play here, oh my goodness,
+
+27479
+04:39:38,430 --> 04:39:42,210
+we can see we have active items.
+And we see we have item listed.
+
+27480
+04:39:42,510 --> 04:39:46,320
+This is fantastic. That means in
+a decentralized context, we have
+
+27481
+04:39:46,320 --> 04:39:49,980
+a off chain service that is
+indexing our events for our
+
+27482
+04:39:49,980 --> 04:39:52,860
+contract so that we can update
+our front end and we can update
+
+27483
+04:39:52,860 --> 04:39:56,160
+people in a decentralized way.
+This is so exciting.
+
+27484
+04:39:59,040 --> 04:40:01,950
+Awesome, so now that we have
+this all set up, we can finally
+
+27485
+04:40:01,950 --> 04:40:07,560
+go back to our next JS project
+or next Jas NFT marketplace the
+
+27486
+04:40:07,560 --> 04:40:11,610
+graph FCC. The reason we did all
+this is because right Now in our
+
+27487
+04:40:11,610 --> 04:40:15,510
+code base for our next Jas NFT
+Marketplace application, we're
+
+27488
+04:40:15,510 --> 04:40:18,450
+reading from a Morales database,
+which we're not going to do
+
+27489
+04:40:18,450 --> 04:40:21,600
+anymore. Instead of reading from
+a Morales database, we're going
+
+27490
+04:40:21,600 --> 04:40:24,960
+to read from the graph, let's go
+ahead and learn how to update
+
+27491
+04:40:24,960 --> 04:40:29,160
+our code our index dot j, s to
+read from the graph instead. So
+
+27492
+04:40:29,220 --> 04:40:31,830
+to highlight this, to show this,
+we're actually going to create a
+
+27493
+04:40:31,830 --> 04:40:34,980
+new page, a new file, and we're
+just going to call it graph,
+
+27494
+04:40:35,490 --> 04:40:39,660
+example, dot j, s. And we're
+just gonna make this a really
+
+27495
+04:40:39,660 --> 04:40:43,770
+minimalistic page to show you
+how to do a graph query. So
+
+27496
+04:40:43,800 --> 04:40:49,650
+similar to index dot j, s, we're
+gonna do export default graph
+
+27497
+04:40:49,680 --> 04:40:53,760
+example. It's going to be a
+function, or default function,
+
+27498
+04:40:54,000 --> 04:40:57,000
+graph example. And we're gonna
+use this tool called Apollo
+
+27499
+04:40:57,000 --> 04:41:00,660
+client, copy, paste it over. And
+we're going to add it with yarn,
+
+27500
+04:41:00,660 --> 04:41:07,710
+add dash dash dev at a P O ll O,
+slash, client, or excuse me, not
+
+27501
+04:41:07,710 --> 04:41:11,250
+Dev, because we do need this on
+the front end. So yarn add at
+
+27502
+04:41:11,250 --> 04:41:16,560
+Apollo slash client. Oh, sorry,
+we also need to do yarn, add
+
+27503
+04:41:16,560 --> 04:41:20,190
+Graph QL, we need to add both of
+those. And it's this Apollo
+
+27504
+04:41:20,190 --> 04:41:23,670
+slash client, which is how we're
+going to make queries to our
+
+27505
+04:41:23,910 --> 04:41:28,620
+newly created graph. QL. So
+we're gonna say import the use
+
+27506
+04:41:28,620 --> 04:41:34,680
+query hook, from this package we
+just installed from at a P, O,
+
+27507
+04:41:34,740 --> 04:41:39,960
+ll o slash client. And we'll
+also import G QL. So to create a
+
+27508
+04:41:39,960 --> 04:41:47,670
+new query, we'll say const, get
+active item equals g QL. And
+
+27509
+04:41:47,670 --> 04:41:51,600
+we'll add this backtick here.
+And we'll add all of our Graph
+
+27510
+04:41:51,600 --> 04:41:54,810
+QL stuff in here, this is gonna
+be equivalent to this, this is
+
+27511
+04:41:54,810 --> 04:41:57,900
+Graph QL. Syntax. And we're
+gonna be putting this Graph QL
+
+27512
+04:41:57,900 --> 04:42:01,860
+syntax into our code base here.
+But we only want to get the
+
+27513
+04:42:01,860 --> 04:42:04,830
+active items. So how are we
+going to get the active items?
+
+27514
+04:42:04,890 --> 04:42:08,100
+Well, we can actually build it
+over here on our playground
+
+27515
+04:42:08,100 --> 04:42:12,420
+first, and then add it to our
+code base. So we'll say we want
+
+27516
+04:42:12,420 --> 04:42:19,050
+to grab the active items, we'll
+grab the first five, and then
+
+27517
+04:42:19,050 --> 04:42:28,500
+we'll say where the buyer is
+going to be 0x 12345678. We're
+
+27518
+04:42:28,500 --> 04:42:31,380
+saying where the buyer is empty.
+So we're grabbing the active
+
+27519
+04:42:31,380 --> 04:42:35,190
+items where there is no buyer,
+and then we're going to do and
+
+27520
+04:42:35,190 --> 04:42:42,990
+then we're going to get the ID,
+the buyer, the seller, the NFT
+
+27521
+04:42:42,990 --> 04:42:51,210
+address, token, ID and the price
+from that. And if we hit run, we
+
+27522
+04:42:51,210 --> 04:42:55,320
+get our active item here. So we
+see here, the buyer is this
+
+27523
+04:42:55,350 --> 04:43:02,850
+exact 0x 12345678 Because it
+gets defaulted to zero when
+
+27524
+04:43:02,850 --> 04:43:05,700
+there is no buyer. And this is
+why for item cancelled, we
+
+27525
+04:43:05,700 --> 04:43:08,760
+updated the buyer to be that
+dead address. So if it's bought,
+
+27526
+04:43:08,970 --> 04:43:11,580
+it won't be active anymore. And
+if it's cancelled, it also won't
+
+27527
+04:43:11,580 --> 04:43:15,720
+be active anymore. Now we can
+copy this query and paste it
+
+27528
+04:43:16,050 --> 04:43:21,000
+into our code. And now we have a
+Graph QL query that we can use
+
+27529
+04:43:21,090 --> 04:43:24,390
+for our graph example. Now in
+our graph example, we'll use
+
+27530
+04:43:24,390 --> 04:43:27,930
+this query with this use query
+hook. So in export default
+
+27531
+04:43:27,930 --> 04:43:31,800
+function, graph example, we can
+say const. And it comes with a
+
+27532
+04:43:31,800 --> 04:43:35,910
+whole bunch of stuff like
+loading error, and then the data
+
+27533
+04:43:35,910 --> 04:43:41,310
+returned equals, use query. And
+then we'll just pass it this Get
+
+27534
+04:43:41,310 --> 04:43:45,420
+active item, or get active
+items, let's put an S on it, get
+
+27535
+04:43:45,420 --> 04:43:50,160
+active items. And then we can
+just return return a little div.
+
+27536
+04:43:51,420 --> 04:43:54,150
+And we'll say hi in the div, and
+then we'll just do console dot
+
+27537
+04:43:54,150 --> 04:43:59,100
+log data. And then now we'll go
+back to our app.js, where we're
+
+27538
+04:43:59,100 --> 04:44:02,010
+wrapping everything in a Morales
+provider, we also need to wrap
+
+27539
+04:44:02,010 --> 04:44:05,040
+everything in an Apollo
+provider. And we need to
+
+27540
+04:44:05,040 --> 04:44:08,580
+initialize it kind of similar to
+how we initialize connecting to
+
+27541
+04:44:08,610 --> 04:44:11,370
+our morale server, but we're
+going to initialize connecting
+
+27542
+04:44:11,370 --> 04:44:18,450
+to our Graph QL. So we're gonna
+say import a P O ll o provider,
+
+27543
+04:44:18,960 --> 04:44:29,550
+a P O ll o client, and in mem
+ory, cache from at a P O ll o
+
+27544
+04:44:29,550 --> 04:44:33,180
+slash client, like that, and
+then we'll have to initialize
+
+27545
+04:44:33,180 --> 04:44:36,600
+this so we can delete the morale
+stuff. We'll initialize this
+
+27546
+04:44:36,600 --> 04:44:43,380
+client by saying const client
+equals new a P O LL. O client,
+
+27547
+04:44:43,560 --> 04:44:46,470
+and we'll give it the parameters
+here. And you can find this all
+
+27548
+04:44:46,470 --> 04:44:49,590
+in the Apollo client
+documentation will say there's
+
+27549
+04:44:49,590 --> 04:44:52,710
+going to be a cache to help when
+we do refreshes and stuff we'll
+
+27550
+04:44:52,710 --> 04:44:54,180
+say new in
+
+27551
+04:44:55,770 --> 04:45:01,170
+memory cache, and we'll say
+comma URI, a que where we're
+
+27552
+04:45:01,170 --> 04:45:03,660
+going to be connecting. And this
+is where we're going to add the
+
+27553
+04:45:03,660 --> 04:45:08,130
+API for our sub graph. So if we
+go back to details, we can see
+
+27554
+04:45:08,130 --> 04:45:12,180
+temporary query URL and this is
+a rate limited temporary query,
+
+27555
+04:45:12,270 --> 04:45:15,540
+because this is just a test net,
+and we're going to copy this, go
+
+27556
+04:45:15,540 --> 04:45:17,970
+back to our code. And we're just
+going to paste it in here. So
+
+27557
+04:45:17,970 --> 04:45:21,060
+whatever you have for temporary
+query URL, and your sub graph
+
+27558
+04:45:21,060 --> 04:45:24,120
+studio, that's where you're
+gonna paste in here. Now, this
+
+27559
+04:45:24,150 --> 04:45:28,740
+client tells our Graph QL, where
+it should be making those
+
+27560
+04:45:28,740 --> 04:45:31,530
+queries. And we're gonna make it
+to here. Now, this starts with
+
+27561
+04:45:31,530 --> 04:45:35,550
+HTTPS. So is this centralized?
+Yes, because we are directly
+
+27562
+04:45:35,550 --> 04:45:40,050
+calling the graph website.
+However, all the data is still
+
+27563
+04:45:40,050 --> 04:45:43,560
+gonna be stored in this
+decentralized graph indexer. And
+
+27564
+04:45:43,560 --> 04:45:46,140
+kind of similar to what we did
+with IPFS, we're doing this kind
+
+27565
+04:45:46,140 --> 04:45:49,410
+of as a gateway to make it a lot
+easier for us to connect and
+
+27566
+04:45:49,410 --> 04:45:53,370
+read the data from the graph
+studio. However, in the future,
+
+27567
+04:45:53,460 --> 04:45:55,980
+as more protocols and more
+browsers adopt the graph, and
+
+27568
+04:45:55,980 --> 04:45:59,970
+IPFS, this will become a lot
+easier inside of our Morales
+
+27569
+04:45:59,970 --> 04:46:03,480
+provider, but outside of our
+notifications provider, we're
+
+27570
+04:46:03,480 --> 04:46:10,020
+gonna say a P O ll o provider,
+and then client equals client.
+
+27571
+04:46:11,130 --> 04:46:15,300
+And then we're going to copy the
+closing tag, and put it around
+
+27572
+04:46:15,300 --> 04:46:18,450
+the notification provider and
+press Save. Now I'm gonna save
+
+27573
+04:46:18,450 --> 04:46:20,400
+our front end, now we're going
+to try to run our front end. And
+
+27574
+04:46:20,400 --> 04:46:22,530
+we're gonna have to change some
+stuff in here because it's going
+
+27575
+04:46:22,530 --> 04:46:27,720
+to freak out. So we're gonna run
+yarn Dev, for new front end. So
+
+27576
+04:46:27,720 --> 04:46:30,990
+we're gonna go to our localhost
+3000. And it's going to totally
+
+27577
+04:46:30,990 --> 04:46:33,300
+freak out, because we still have
+some morale stuff in here. And
+
+27578
+04:46:33,300 --> 04:46:36,180
+that's totally okay. We, of
+course, we don't need a hard hat
+
+27579
+04:46:36,180 --> 04:46:38,280
+Node running. Because we're on a
+test net, we don't need to be
+
+27580
+04:46:38,280 --> 04:46:41,460
+synched with Morales, we don't
+need to be doing any of that
+
+27581
+04:46:41,460 --> 04:46:44,010
+stuff. Because we're working
+with a test net, right now, it's
+
+27582
+04:46:44,010 --> 04:46:47,670
+actually not freaking out, which
+is great. But it shows obviously
+
+27583
+04:46:47,670 --> 04:46:50,670
+nothing for recently listed. So
+what we're going to do now is
+
+27584
+04:46:50,670 --> 04:46:56,130
+we're gonna do slash, graph
+example, and hit enter. And we
+
+27585
+04:46:56,130 --> 04:47:01,590
+can see Hi, show up. But if we
+go to inspect, and we go to
+
+27586
+04:47:01,740 --> 04:47:07,260
+console, a console here, we can
+see an object here of active
+
+27587
+04:47:07,260 --> 04:47:12,300
+items, which is returned from
+the graph with buyer ID, NFT,
+
+27588
+04:47:12,300 --> 04:47:15,060
+address price and all this stuff
+in the air. This is fantastic.
+
+27589
+04:47:15,420 --> 04:47:19,200
+So okay, okay. Okay. So all we
+have to do now is we just have
+
+27590
+04:47:19,200 --> 04:47:22,110
+to update. So let's go ahead,
+we'll kill our server. For now,
+
+27591
+04:47:22,500 --> 04:47:26,790
+all we have to do is update,
+instead of use mirallas query,
+
+27592
+04:47:27,330 --> 04:47:29,820
+we're going to delete this. And
+we're just going to query from
+
+27593
+04:47:29,880 --> 04:47:33,840
+Apollo query from our Graph QL.
+And everything else stays the
+
+27594
+04:47:33,840 --> 04:47:37,170
+same, right? Because our NFT
+box, and all the rest of the
+
+27595
+04:47:37,170 --> 04:47:40,680
+code that we worked with, will
+still work exactly the same. So
+
+27596
+04:47:40,680 --> 04:47:42,240
+first, we just got to get our
+address. So we're gonna say
+
+27597
+04:47:42,240 --> 04:47:46,260
+import, same as Sell, sell NFT,
+import the network mapping, so
+
+27598
+04:47:46,260 --> 04:47:48,930
+I'm actually just going to copy
+it. So we're going to import
+
+27599
+04:47:49,290 --> 04:47:52,740
+network mapping from constants,
+network mapping dot JSON. And
+
+27600
+04:47:52,740 --> 04:47:59,460
+now we can say const.
+Marketplace, address equals, and
+
+27601
+04:47:59,460 --> 04:48:01,770
+we're going to get the exact
+same way we did this and sell
+
+27602
+04:48:01,770 --> 04:48:05,280
+NFT to, so we're going to grab
+this line getting the chain
+
+27603
+04:48:05,280 --> 04:48:08,760
+string, we'll paste that in
+here, which means we're going to
+
+27604
+04:48:08,760 --> 04:48:12,780
+need to get chain ID from user
+Morales. And then we're gonna
+
+27605
+04:48:12,780 --> 04:48:15,420
+get the marketplace address like
+this. So we're going to copy
+
+27606
+04:48:15,420 --> 04:48:18,870
+that line, paste it in here.
+Okay, great. Now we have the
+
+27607
+04:48:18,870 --> 04:48:21,840
+marketplace address. So now
+we're just going to do const.
+
+27608
+04:48:23,310 --> 04:48:29,190
+Loading error data, which we can
+do listed. And if T is again,
+
+27609
+04:48:29,820 --> 04:48:35,820
+equals, use query, and we can do
+that get active items. So what
+
+27610
+04:48:35,820 --> 04:48:39,360
+I'm going to do is I'm going to
+create a new file and constants,
+
+27611
+04:48:39,570 --> 04:48:42,120
+we're going to pass that get
+active items thing in their new
+
+27612
+04:48:42,120 --> 04:48:46,560
+file, we're just going to call
+it sub graph queries, dot j, s.
+
+27613
+04:48:47,160 --> 04:48:53,160
+And then here, we're gonna say
+import G QL. From at a Apollo
+
+27614
+04:48:53,160 --> 04:48:59,940
+slash client. And we'll say
+const, get active items, equals
+
+27615
+04:49:00,390 --> 04:49:05,070
+g QL backtick. And exactly what
+we did in that great, let's go
+
+27616
+04:49:05,070 --> 04:49:07,920
+back to the graph example, we'll
+just copy that whole line
+
+27617
+04:49:07,920 --> 04:49:13,380
+actually pasted in here. And now
+we'll just do export default,
+
+27618
+04:49:14,160 --> 04:49:20,460
+get active items. And we'll
+import this query from sub graph
+
+27619
+04:49:20,460 --> 04:49:26,460
+queries into our index dot j s.
+So we'll say import, get active
+
+27620
+04:49:26,700 --> 04:49:31,860
+queries are skimming apt get
+active items from dot dot slash
+
+27621
+04:49:31,860 --> 04:49:37,020
+constants slash sub graph
+queries. And now in our use
+
+27622
+04:49:37,020 --> 04:49:41,070
+query will pass Get active
+items, which should return are
+
+27623
+04:49:41,070 --> 04:49:46,950
+listed NF Ts. So now, we'll
+change this from fetching listed
+
+27624
+04:49:46,950 --> 04:49:54,300
+NF Ts to loading, loading, or we
+don't have listed NF Ts. So if
+
+27625
+04:49:54,300 --> 04:49:58,350
+it's loading or we don't have
+listen if TS then do loading,
+
+27626
+04:49:58,800 --> 04:50:02,910
+otherwise, we're going to do
+another mapping, but the return
+
+27627
+04:50:02,940 --> 04:50:06,330
+of the Graph QL is going to be a
+little bit different. So instead
+
+27628
+04:50:06,330 --> 04:50:09,690
+of listing MTS dot map, it's
+going to be listed NF T's dot AQ
+
+27629
+04:50:10,260 --> 04:50:15,510
+two have items, dot map and f t,
+and then we're going to get
+
+27630
+04:50:15,510 --> 04:50:19,110
+price. And if the address token
+ID, we're not going to get
+
+27631
+04:50:19,110 --> 04:50:22,620
+marketplace address, but we'll
+get seller from NFT. And it's
+
+27632
+04:50:22,620 --> 04:50:25,170
+not going to be returned with
+attributes. So we can just do
+
+27633
+04:50:25,170 --> 04:50:29,130
+console dot log NFT instead. And
+then we just pass all that stuff
+
+27634
+04:50:29,130 --> 04:50:32,730
+normally to, to that NFT box
+exactly the way that we did
+
+27635
+04:50:32,730 --> 04:50:35,340
+before. So really, we're all
+we're doing is we're swapping
+
+27636
+04:50:35,340 --> 04:50:38,610
+out the query methodology here,
+price is going to be from price
+
+27637
+04:50:38,640 --> 04:50:41,280
+price is going to be from the
+query, and ft address is going
+
+27638
+04:50:41,280 --> 04:50:44,130
+to be from the query token ID
+from the query marketplace
+
+27639
+04:50:44,130 --> 04:50:46,140
+address, that's also gonna be
+slightly different, we're going
+
+27640
+04:50:46,140 --> 04:50:49,080
+to get that from our own config
+seller is going to be from the
+
+27641
+04:50:49,080 --> 04:50:52,590
+query, and then the key is going
+to be from the query as well. So
+
+27642
+04:50:52,590 --> 04:50:57,210
+now if we save that, if we
+restart our website, with yarn
+
+27643
+04:50:57,210 --> 04:51:00,450
+Dev, and we go back to our
+homepage, we should see
+
+27644
+04:51:00,480 --> 04:51:04,440
+everything exactly the same,
+except for the images being
+
+27645
+04:51:04,440 --> 04:51:08,730
+pulled from the graph, instead
+of being pulled from her Alice.
+
+27646
+04:51:08,940 --> 04:51:11,460
+Let's go back to our front end,
+we'll give it a nice refresh,
+
+27647
+04:51:11,580 --> 04:51:15,810
+close out the console. And we'll
+go to our homepage. And I forgot
+
+27648
+04:51:15,810 --> 04:51:21,810
+to do use query. So let's import
+use query, import, use query
+
+27649
+04:51:22,650 --> 04:51:27,870
+from at a Paulo slash client.
+Let's save and let's go back and
+
+27650
+04:51:27,870 --> 04:51:33,420
+give that a refresh. And oh, my
+goodness, we now have updated to
+
+27651
+04:51:33,420 --> 04:51:36,600
+get our events from a
+decentralized data structure.
+
+27652
+04:51:38,430 --> 04:51:43,380
+That's freaking awesome. Now
+let's talk about hosting this
+
+27653
+04:51:43,380 --> 04:51:47,040
+real quickly, we are using the
+image tag in here in our NFT
+
+27654
+04:51:47,040 --> 04:51:51,330
+box, we are using the image tag
+in here from next Jas, which
+
+27655
+04:51:51,330 --> 04:51:54,480
+comes with some pre processing.
+So it's a little hard to use on
+
+27656
+04:51:54,480 --> 04:51:57,990
+IPFS. So we would need to update
+the way we do images in order to
+
+27657
+04:51:57,990 --> 04:52:01,590
+host this on IPFS. But we still
+can do that. Some other options
+
+27658
+04:52:01,590 --> 04:52:04,920
+we have actually are Morales, we
+can actually even host our apps
+
+27659
+04:52:04,920 --> 04:52:08,100
+on Morales, if we want. We can
+also use things like for cell or
+
+27660
+04:52:08,100 --> 04:52:11,640
+Netlify, or etc, or really any
+other traditional centralized
+
+27661
+04:52:11,640 --> 04:52:14,730
+hosting service. Now, if you
+want to, I challenge you to
+
+27662
+04:52:14,730 --> 04:52:18,960
+update this code to make it be
+able to be hosted on IPFS. So
+
+27663
+04:52:18,960 --> 04:52:21,510
+that you'll have an end to end
+decentralized. And if the
+
+27664
+04:52:21,510 --> 04:52:24,300
+marketplace first wanted to make
+a PR to this code, so that it
+
+27665
+04:52:24,300 --> 04:52:28,140
+can be successfully hosted
+completely end to end on IPFS
+
+27666
+04:52:28,260 --> 04:52:31,950
+wins and empty for me. But wow.
+And with that we are done with
+
+27667
+04:52:31,950 --> 04:52:35,880
+less than 15. This is an
+absolutely monstrous
+
+27668
+04:52:35,880 --> 04:52:38,100
+accomplishment. And if you
+finish this, if you've
+
+27669
+04:52:38,100 --> 04:52:40,350
+understood everything, if you've
+gotten through everything so
+
+27670
+04:52:40,350 --> 04:52:43,710
+far, you should feel incredibly
+proud of yourself. Because this
+
+27671
+04:52:43,710 --> 04:52:46,950
+is our last full stack section,
+our front end section and you're
+
+27672
+04:52:46,950 --> 04:52:50,580
+a full stack monster at this
+point. huge congratulations, you
+
+27673
+04:52:50,580 --> 04:52:54,210
+should be super, super, super
+proud. And definitely take a
+
+27674
+04:52:54,210 --> 04:52:58,110
+break, go get a coffee, and get
+ready for the final stretch of
+
+27675
+04:52:58,110 --> 04:53:01,590
+lessons 1617 and 18. Those are
+gonna go by a little bit
+
+27676
+04:53:01,590 --> 04:53:04,800
+quicker. I'm very excited for
+you take a break, and I'll see
+
+27677
+04:53:04,800 --> 04:53:05,220
+you there.
+
+27678
+04:53:13,980 --> 04:53:18,480
+Right, welcome to Lesson Six
+tene, where we're going to be
+
+27679
+04:53:18,480 --> 04:53:23,850
+going into even more low level
+code here. The hard hat upgrades
+
+27680
+04:53:23,880 --> 04:53:27,930
+of course, per usual, our entire
+GitHub repository is located
+
+27681
+04:53:27,930 --> 04:53:30,630
+here. And additionally, we have
+an optional video that you can
+
+27682
+04:53:30,630 --> 04:53:33,420
+watch. If you want to learn
+more, we're actually going to
+
+27683
+04:53:33,420 --> 04:53:36,300
+watch a slice of that video that
+explains upgradable smart
+
+27684
+04:53:36,300 --> 04:53:39,150
+contracts. So let's jump in. Now
+I'm editing this video much
+
+27685
+04:53:39,150 --> 04:53:42,540
+later after I filmed that, hence
+why I have a beard so I'll be
+
+27686
+04:53:42,540 --> 04:53:45,390
+jumping in from time to time
+updating some of the sections.
+
+27687
+04:53:45,870 --> 04:53:48,300
+When deploying your smart
+contracts on chain. We all know
+
+27688
+04:53:48,300 --> 04:53:51,270
+that those smart contracts are
+immutable or unchangeable. But
+
+27689
+04:53:51,270 --> 04:53:53,970
+what if I told you that they
+were immutable?
+
+27690
+04:53:55,500 --> 04:53:58,020
+Well, technically, that wouldn't
+be correct. However, smart
+
+27691
+04:53:58,020 --> 04:54:01,200
+contracts actually can change
+all the time. When people
+
+27692
+04:54:01,200 --> 04:54:04,200
+transfer tokens when people
+stake in a contract or really do
+
+27693
+04:54:04,200 --> 04:54:07,140
+any type of functionality. Those
+smart contracts have to update
+
+27694
+04:54:07,140 --> 04:54:09,600
+their balances and update their
+mappings and update their
+
+27695
+04:54:09,600 --> 04:54:12,780
+variables to reflect this. The
+reason that they're immutable is
+
+27696
+04:54:12,780 --> 04:54:15,630
+that the logic itself never
+changes and will be on chain
+
+27697
+04:54:15,630 --> 04:54:18,300
+like that forever. So
+technically, yes, once they are
+
+27698
+04:54:18,300 --> 04:54:20,520
+deployed, they are immutable.
+And this is actually one of the
+
+27699
+04:54:20,520 --> 04:54:22,590
+major benefits of smart
+contracts in the first place
+
+27700
+04:54:22,590 --> 04:54:25,290
+that nobody can tamper with or
+screw with our smart contracts
+
+27701
+04:54:25,290 --> 04:54:27,810
+once we deploy them. However,
+this can be an issue if, for
+
+27702
+04:54:27,810 --> 04:54:30,510
+example, we want to upgrade our
+smart contract or protocol to do
+
+27703
+04:54:30,510 --> 04:54:34,050
+more things, or want to fix some
+glaring bug or issue that we
+
+27704
+04:54:34,050 --> 04:54:37,110
+have. Now even though we can't
+change the specific code that's
+
+27705
+04:54:37,110 --> 04:54:39,480
+been deployed to an address, we
+can actually do a lot more than
+
+27706
+04:54:39,480 --> 04:54:41,640
+you think. And in this video,
+we're going to explain the
+
+27707
+04:54:41,640 --> 04:54:44,400
+different methodologies behind
+upgrading your smart contracts.
+
+27708
+04:54:44,610 --> 04:54:47,070
+And then we're going to show you
+how to do it with hard hat and
+
+27709
+04:54:47,070 --> 04:54:49,770
+open Zeppelin huge shout out to
+a lot of open Zeppelin and
+
+27710
+04:54:49,770 --> 04:54:52,800
+trilobites articles that helped
+me put this video together and a
+
+27711
+04:54:52,800 --> 04:54:55,680
+number of other sources as well
+links in the description. So
+
+27712
+04:54:55,680 --> 04:54:58,320
+let's get to it. Now at first
+glance, you might be thinking,
+
+27713
+04:54:59,190 --> 04:55:01,920
+if you can upgrade your smart
+contracts, then they're not
+
+27714
+04:55:01,950 --> 04:55:07,020
+really immutable that in a way
+you'd be right. So when
+
+27715
+04:55:07,020 --> 04:55:09,270
+explaining kind of the different
+philosophies and patterns that
+
+27716
+04:55:09,270 --> 04:55:12,360
+we can use here, we do need to
+keep Behind the philosophies and
+
+27717
+04:55:12,360 --> 04:55:15,030
+decentralization implications
+that each one of these patterns
+
+27718
+04:55:15,030 --> 04:55:17,430
+have, as they do all have
+different advantages and
+
+27719
+04:55:17,430 --> 04:55:21,210
+disadvantages. And yes, some of
+the disadvantages here are going
+
+27720
+04:55:21,210 --> 04:55:23,940
+to affect the centrality. So we
+need to keep that in mind. And
+
+27721
+04:55:23,940 --> 04:55:26,460
+this is why it's so important
+that before you go ahead and
+
+27722
+04:55:26,460 --> 04:55:29,340
+jump in and start deploying
+upgradable smart contracts, you
+
+27723
+04:55:29,340 --> 04:55:31,920
+understand the trade offs. So
+we're going to talk about three
+
+27724
+04:55:31,920 --> 04:55:34,770
+different ways to upgrade your
+smart contracts. The first one
+
+27725
+04:55:34,770 --> 04:55:38,520
+being the not really slash
+Paramor ties way to upgrade your
+
+27726
+04:55:38,520 --> 04:55:41,880
+smart contracts, the social
+migration method, and then the
+
+27727
+04:55:41,880 --> 04:55:44,520
+method that you probably have
+heard about, which is proxies,
+
+27728
+04:55:44,820 --> 04:55:47,310
+which have a ton of
+subcategories, like metamorphic
+
+27729
+04:55:47,310 --> 04:55:50,070
+contracts, transparent
+upgradable, proxies, and
+
+27730
+04:55:50,070 --> 04:55:53,070
+universal upgradable proxies. So
+let's talk about the not really
+
+27731
+04:55:53,070 --> 04:55:55,740
+upgrading method, or the
+parameterization method, or
+
+27732
+04:55:55,740 --> 04:55:58,590
+whatever you want to call it.
+This is the simplest way to
+
+27733
+04:55:58,590 --> 04:56:01,260
+think about upgrading your smart
+contracts. And it really isn't
+
+27734
+04:56:01,320 --> 04:56:04,290
+upgrading our smart contracts.
+Because we can't really change
+
+27735
+04:56:04,290 --> 04:56:06,720
+the logic of the smart contract,
+whatever logic that we've
+
+27736
+04:56:06,720 --> 04:56:09,540
+written, is there, we also can
+add new storage or state
+
+27737
+04:56:09,540 --> 04:56:12,840
+variables. So this is really not
+really upgrading. But it is
+
+27738
+04:56:12,870 --> 04:56:16,110
+something to think about
+upgrades is just parameterizing,
+
+27739
+04:56:16,140 --> 04:56:18,960
+everything, whatever logic that
+we've deployed is there, and
+
+27740
+04:56:18,960 --> 04:56:21,120
+that's what we're interacting
+with this function means we just
+
+27741
+04:56:21,120 --> 04:56:23,250
+have a whole bunch of setter
+functions. And we can update
+
+27742
+04:56:23,250 --> 04:56:26,610
+certain parameters. Like maybe
+we have a reward parameter that
+
+27743
+04:56:26,730 --> 04:56:30,630
+gives out a token at 1 percent, every
+year or something like that.
+
+27744
+04:56:30,990 --> 04:56:33,240
+Maybe we have a setter function
+that says, hey, update that to
+
+27745
+04:56:33,240 --> 04:56:36,990
+2 percent, or update that to 4 percent. It's
+just a setter function that
+
+27746
+04:56:36,990 --> 04:56:40,080
+changes some variable. Now, the
+advantages here, obviously, this
+
+27747
+04:56:40,080 --> 04:56:43,740
+is really simple to implement.
+The disadvantage is that if you
+
+27748
+04:56:43,740 --> 04:56:46,620
+didn't think of some logic or
+some functionality, the first
+
+27749
+04:56:46,620 --> 04:56:49,860
+time you deployed their smart
+contract, that's too bad, you're
+
+27750
+04:56:49,860 --> 04:56:52,920
+stuck with it, you can't update
+the logic or really update
+
+27751
+04:56:52,920 --> 04:56:55,770
+anything with the
+parameterization, aka, not
+
+27752
+04:56:55,770 --> 04:56:57,660
+really method. And the other
+thing you have to think about is
+
+27753
+04:56:57,930 --> 04:57:01,080
+who the admins are, who has
+access to these setter functions
+
+27754
+04:57:01,080 --> 04:57:04,950
+to these updating functions. If
+it's a single person, guess
+
+27755
+04:57:04,950 --> 04:57:07,440
+what, you have a centralized
+smart contract. Now of course,
+
+27756
+04:57:07,440 --> 04:57:09,870
+you can add a governance
+contract to be the admin
+
+27757
+04:57:09,870 --> 04:57:12,720
+contract of your protocol. And
+that would be a decentralized
+
+27758
+04:57:12,720 --> 04:57:14,940
+way of doing this. So just keep
+that in mind, you can do this
+
+27759
+04:57:14,940 --> 04:57:17,880
+method just need a governance
+protocol to do so another
+
+27760
+04:57:17,880 --> 04:57:20,340
+example of this might be a
+contract registry. And this is
+
+27761
+04:57:20,340 --> 04:57:23,100
+something actually that early
+versions of ABA used before you
+
+27762
+04:57:23,100 --> 04:57:25,800
+call a function, you actually
+check some contract registry
+
+27763
+04:57:25,800 --> 04:57:28,860
+that is updated as a parameter
+by somebody and you get routed
+
+27764
+04:57:28,860 --> 04:57:31,290
+to the contract, and you do your
+call there. Again, this really
+
+27765
+04:57:31,290 --> 04:57:33,690
+doesn't allow us to have the
+full functionality of upgrades
+
+27766
+04:57:33,690 --> 04:57:36,930
+here, you can argue that this
+registry is a mix of one of the
+
+27767
+04:57:36,930 --> 04:57:39,690
+later versions. But for all
+intents and purposes, this
+
+27768
+04:57:39,690 --> 04:57:41,550
+doesn't really give us that
+flexibility that we want for
+
+27769
+04:57:41,550 --> 04:57:44,400
+upgrades. But some people might
+even think that upgrading your
+
+27770
+04:57:44,400 --> 04:57:47,220
+smart contract is ruining the
+decent reality. And one of the
+
+27771
+04:57:47,220 --> 04:57:49,590
+things that makes smart
+contracts so potent is that they
+
+27772
+04:57:49,620 --> 04:57:51,930
+are immutable, and that this is
+one of the benefits that they
+
+27773
+04:57:51,930 --> 04:57:54,780
+have. So there are some people
+who think that you shouldn't add
+
+27774
+04:57:54,780 --> 04:57:57,840
+any customization or any
+upgradability, you should deploy
+
+27775
+04:57:57,840 --> 04:58:00,840
+your contract. And then that's
+it. trilobites has actually
+
+27776
+04:58:00,840 --> 04:58:04,080
+argued that if you deploy your
+contract, knowing that it can't
+
+27777
+04:58:04,080 --> 04:58:07,590
+be changed later, you take a
+little bit extra time, making
+
+27778
+04:58:07,590 --> 04:58:09,780
+sure you get everything right.
+And there are often less
+
+27779
+04:58:09,780 --> 04:58:12,750
+security vulnerabilities because
+you're just setting it
+
+27780
+04:58:12,750 --> 04:58:15,510
+forgetting it and not looking at
+it again. Now, if I wanted to
+
+27781
+04:58:15,510 --> 04:58:18,360
+upgrade a smart contract with
+this philosophy in mind, the
+
+27782
+04:58:18,360 --> 04:58:20,820
+philosophy that I do want to
+keep my smart contracts
+
+27783
+04:58:20,850 --> 04:58:24,660
+immutable, we can instead use
+the social migration method,
+
+27784
+04:58:24,660 --> 04:58:27,990
+which I previously called the
+Eat method. And now I think it's
+
+27785
+04:58:27,990 --> 04:58:30,420
+less funny. So we're just gonna
+stick with social migration, the
+
+27786
+04:58:30,420 --> 04:58:33,630
+social eating method, or the
+migration method is just when
+
+27787
+04:58:33,630 --> 04:58:36,330
+you deploy your new contract,
+not connected to the old
+
+27788
+04:58:36,330 --> 04:58:39,570
+contract in any way. And by
+social convention, you tell
+
+27789
+04:58:39,570 --> 04:58:42,660
+everybody, hey, hey, this new
+contract, this new one that we
+
+27790
+04:58:42,660 --> 04:58:45,390
+just deployed? Yeah, this is the
+real one now. And it's just by
+
+27791
+04:58:45,390 --> 04:58:49,020
+convention of people migrating
+over into using this new one,
+
+27792
+04:58:49,050 --> 04:58:51,750
+that the upgrade is done, hence
+my slang name of social yeet.
+
+27793
+04:58:51,750 --> 04:58:55,500
+Because you use the first one
+out of the way and move to the
+
+27794
+04:58:55,500 --> 04:58:56,130
+second one.
+
+27795
+04:58:58,620 --> 04:59:01,890
+I think I'm funny. Yeah, this
+has the advantage of truly
+
+27796
+04:59:01,920 --> 04:59:04,890
+always saying, Hey, this is our
+immutable smart contract. And
+
+27797
+04:59:04,890 --> 04:59:07,230
+this is our new one. This is
+really the truest definition of
+
+27798
+04:59:07,230 --> 04:59:11,040
+immutable, because since you
+give it no way of being upgraded
+
+27799
+04:59:11,040 --> 04:59:15,060
+in place, than if somebody calls
+that contract in 50,000 years in
+
+27800
+04:59:15,060 --> 04:59:18,990
+the future, it will respond
+exactly the same. Another huge
+
+27801
+04:59:18,990 --> 04:59:21,330
+disadvantage here is that you
+have to have a totally new
+
+27802
+04:59:21,330 --> 04:59:25,020
+contract address. So if you're
+an ERC 20 token, for example,
+
+27803
+04:59:25,020 --> 04:59:28,470
+you have to go convince all the
+exchanges to list your new
+
+27804
+04:59:28,470 --> 04:59:31,410
+contract address as the actual
+address. Keep in mind that when
+
+27805
+04:59:31,410 --> 04:59:34,770
+we do this, we do have to move
+the state of the first one over
+
+27806
+04:59:34,770 --> 04:59:37,950
+to the second one. So for
+example, if you're an ERC token
+
+27807
+04:59:37,950 --> 04:59:41,070
+moving to a new version of that
+ERC token, you do, you have to
+
+27808
+04:59:41,070 --> 04:59:44,100
+have a way to take all those
+mappings from the first contract
+
+27809
+04:59:44,310 --> 04:59:46,680
+and move it to the second one.
+Obviously, there are ways to do
+
+27810
+04:59:46,680 --> 04:59:49,470
+this, since everything is on
+chain. But if you have a million
+
+27811
+04:59:49,470 --> 04:59:51,660
+transfer calls, I don't want to
+have to write the script that
+
+27812
+04:59:51,690 --> 04:59:53,940
+updates everyone's balance and
+figures out what everyone's
+
+27813
+04:59:53,940 --> 04:59:56,040
+balance is just so I can migrate
+to my new version of the
+
+27814
+04:59:56,040 --> 04:59:59,430
+contract. So there's a ton of
+social convention work here to
+
+27815
+04:59:59,430 --> 05:00:02,250
+do. trilobites has actually
+written a fantastic blog on
+
+27816
+05:00:02,280 --> 05:00:07,290
+upgrading from a v1 to v2 or
+etc. With this eat methodology
+
+27817
+05:00:07,320 --> 05:00:09,570
+and they give a lot of steps for
+moving your storage and your
+
+27818
+05:00:09,570 --> 05:00:12,120
+state variables over To the new
+contract. So link in the
+
+27819
+05:00:12,120 --> 05:00:14,010
+description if you want to read
+that. Now let's get to our big
+
+27820
+05:00:14,010 --> 05:00:16,890
+ticket item. So in order to have
+a really robust upgrading
+
+27821
+05:00:16,890 --> 05:00:20,130
+mentality or philosophy, we need
+to have some type of methodology
+
+27822
+05:00:20,130 --> 05:00:23,700
+or framework that can update our
+state, keep our contract address
+
+27823
+05:00:23,700 --> 05:00:27,420
+and allow us to update any type
+of logic in our smart contracts
+
+27824
+05:00:27,450 --> 05:00:30,780
+in a easy way, which leads us to
+our big ticket item is the
+
+27825
+05:00:30,780 --> 05:00:33,450
+proxies. What's our big ticket
+item?
+
+27826
+05:00:36,480 --> 05:00:40,920
+proxies, proxies. Proxies are
+the truest form of upgrades,
+
+27827
+05:00:41,130 --> 05:00:43,740
+since a user can keep
+interacting with the protocols
+
+27828
+05:00:43,770 --> 05:00:46,560
+through these proxies, and not
+even notice that anything
+
+27829
+05:00:46,560 --> 05:00:49,440
+changed or even got updated.
+Now, these are also the places
+
+27830
+05:00:49,470 --> 05:00:52,680
+where you can screw up the
+easiest. Proxies use a lot of
+
+27831
+05:00:52,680 --> 05:00:56,400
+low level functionality. And the
+main one being the delegate call
+
+27832
+05:00:56,400 --> 05:00:59,640
+functionality. Delegate call is
+a low level function where the
+
+27833
+05:00:59,640 --> 05:01:04,170
+code in the target contract is
+executed in the context of the
+
+27834
+05:01:04,170 --> 05:01:07,530
+calling contract. And message
+dot sender and message dot value
+
+27835
+05:01:07,530 --> 05:01:09,810
+also don't change. So you
+understand what delegate call
+
+27836
+05:01:09,810 --> 05:01:12,780
+means. Now, right? Great. And in
+English, this means if I
+
+27837
+05:01:12,810 --> 05:01:17,610
+delegate call a function in
+contract B from contract a, I
+
+27838
+05:01:17,610 --> 05:01:22,410
+will do contracts B's logic in
+contract a. So if contract B has
+
+27839
+05:01:22,410 --> 05:01:26,220
+a function that says hey, store
+this value in a variable up top,
+
+27840
+05:01:26,400 --> 05:01:30,210
+I'm going to store that variable
+in contract a, this is the
+
+27841
+05:01:30,210 --> 05:01:33,120
+powerhouse. And this combined
+with the fallback function
+
+27842
+05:01:33,360 --> 05:01:37,710
+allows us to delegate all calls
+through a proxy contract address
+
+27843
+05:01:38,070 --> 05:01:41,730
+to some other contract, this
+means that I can have one proxy
+
+27844
+05:01:41,730 --> 05:01:45,030
+contract that will have the same
+address forever. And I can just
+
+27845
+05:01:45,030 --> 05:01:49,260
+point and route people to the
+correct implementation contract
+
+27846
+05:01:49,260 --> 05:01:53,040
+that has the logic, whenever I
+want to upgrade, I just deploy a
+
+27847
+05:01:53,040 --> 05:01:57,090
+new implementation contract and
+point my proxy to that new
+
+27848
+05:01:57,090 --> 05:02:00,030
+implementation. Now, whenever a
+user calls a function on the
+
+27849
+05:02:00,030 --> 05:02:03,570
+proxy contract, I'm going to
+delegate call it to the new
+
+27850
+05:02:03,570 --> 05:02:07,200
+contract, I can just call an
+admin only function on my proxy
+
+27851
+05:02:07,200 --> 05:02:09,630
+contract, let's call it upgrade
+or something and I make all the
+
+27852
+05:02:09,630 --> 05:02:12,300
+contract calls go to this new
+contract. When we're talking
+
+27853
+05:02:12,300 --> 05:02:14,670
+about proxies, there are four
+pieces of terminology that we
+
+27854
+05:02:14,670 --> 05:02:17,550
+want to keep in mind. First is
+the implementation contract. The
+
+27855
+05:02:17,550 --> 05:02:20,400
+implementation contract has all
+of our logic and all the pieces
+
+27856
+05:02:20,400 --> 05:02:23,460
+of our protocol. Whenever we
+upgrade, we actually launch a
+
+27857
+05:02:23,460 --> 05:02:26,520
+brand new implementation
+contract, the proxy contract
+
+27858
+05:02:26,580 --> 05:02:29,940
+proxy points to which
+implementation is the correct
+
+27859
+05:02:29,940 --> 05:02:33,450
+one. And routes everyone's calls
+to the correct implementation
+
+27860
+05:02:33,450 --> 05:02:36,660
+contract, you can think the
+proxy contracts sits on top of
+
+27861
+05:02:36,900 --> 05:02:39,780
+the implementations the user,
+the user is going to be making
+
+27862
+05:02:39,810 --> 05:02:43,200
+contract and function calls
+through the proxy contract. And
+
+27863
+05:02:43,200 --> 05:02:46,080
+then some type of admin, the
+admin is the one who's going to
+
+27864
+05:02:46,080 --> 05:02:50,520
+decide when to upgrade and which
+contract to point to. In this
+
+27865
+05:02:50,520 --> 05:02:53,190
+scenario, the other cool thing
+about the proxy and delegate
+
+27866
+05:02:53,190 --> 05:02:56,100
+call is that all my storage
+variables are going to be stored
+
+27867
+05:02:56,130 --> 05:02:59,850
+in the proxy contract and not in
+the implementation contract.
+
+27868
+05:03:00,270 --> 05:03:04,260
+This way, when I upgrade to a
+new logic contract, all of my
+
+27869
+05:03:04,260 --> 05:03:07,410
+data will stay on the proxy
+contract. So whenever I want to
+
+27870
+05:03:07,410 --> 05:03:10,320
+update my logic, just point to a
+new implementation contract, if
+
+27871
+05:03:10,320 --> 05:03:12,870
+I want to add a new storage
+variable or a new type of
+
+27872
+05:03:12,870 --> 05:03:16,440
+storage, I just add it in my
+logic contract and the proxy
+
+27873
+05:03:16,440 --> 05:03:19,530
+contract will pick it up. Now,
+using proxies has a couple of
+
+27874
+05:03:19,530 --> 05:03:21,690
+gotchas. And we're gonna talk
+about the gotchas. And then
+
+27875
+05:03:21,690 --> 05:03:23,820
+we're going to talk about the
+different proxy contract
+
+27876
+05:03:23,820 --> 05:03:26,790
+methodologies, because yes,
+there are many proxy contract
+
+27877
+05:03:26,790 --> 05:03:29,400
+methodologies as well. And this
+is why trilobites doesn't really
+
+27878
+05:03:29,400 --> 05:03:31,800
+recommend using upgradable
+proxies for your smart
+
+27879
+05:03:31,800 --> 05:03:34,290
+contracts. Because they're
+fraught with a lot of these
+
+27880
+05:03:34,290 --> 05:03:37,410
+potential issues. Not to
+mention, again, you do still
+
+27881
+05:03:37,410 --> 05:03:40,170
+have some type of admin who's
+going to be upgrading your smart
+
+27882
+05:03:40,170 --> 05:03:43,170
+contracts. Now, if this is a
+governance protocol, then great,
+
+27883
+05:03:43,200 --> 05:03:45,690
+you're decentralized. But if
+this is a single group or
+
+27884
+05:03:45,690 --> 05:03:50,640
+entity, then we have a problem.
+The two biggest gotchas are
+
+27885
+05:03:50,640 --> 05:03:55,740
+storage, clashes, and function
+selector clashes. Now, what does
+
+27886
+05:03:55,740 --> 05:03:58,950
+this mean? When we use delegate
+call, remember, we do the logic
+
+27887
+05:03:58,950 --> 05:04:03,690
+of contract B inside contract a.
+So if contract B says we need to
+
+27888
+05:04:03,690 --> 05:04:07,680
+set value to two, we go ahead
+and set value to what these
+
+27889
+05:04:07,680 --> 05:04:11,040
+smart contracts are actually
+kind of dumb, we actually set
+
+27890
+05:04:11,040 --> 05:04:14,040
+the value of whatever is in the
+same storage location on
+
+27891
+05:04:14,040 --> 05:04:17,490
+contract as contract B. So if
+our contract looks like this,
+
+27892
+05:04:17,490 --> 05:04:20,850
+and we have two variables and
+contract a, we're still going to
+
+27893
+05:04:20,850 --> 05:04:24,060
+set the first storage spot on a
+contract a to the new value.
+
+27894
+05:04:24,090 --> 05:04:26,940
+This is really important to know
+because this means we can only
+
+27895
+05:04:26,970 --> 05:04:30,150
+append new storage variables and
+new implementation contracts.
+
+27896
+05:04:30,360 --> 05:04:33,990
+And we can't reorder or change
+old ones. This is called storage
+
+27897
+05:04:33,990 --> 05:04:36,360
+clashing. And in the
+implementations we're going to
+
+27898
+05:04:36,360 --> 05:04:39,810
+talk about, they all address
+this issue. The next one is
+
+27899
+05:04:39,810 --> 05:04:42,510
+called function select or
+clashes. When we tell our
+
+27900
+05:04:42,510 --> 05:04:45,690
+proxies to delegate call to one
+of these implementations, it
+
+27901
+05:04:45,690 --> 05:04:48,930
+uses what's called a function
+selector to find a function. A
+
+27902
+05:04:48,930 --> 05:04:52,290
+function selector is a four byte
+hash of the function name and
+
+27903
+05:04:52,290 --> 05:04:54,510
+the function signature. Don't
+worry about the function
+
+27904
+05:04:54,510 --> 05:04:58,170
+signature for now. Now, it's
+possible that a function in the
+
+27905
+05:04:58,170 --> 05:05:02,520
+implementation contract has the
+same function selector as an
+
+27906
+05:05:02,580 --> 05:05:05,580
+admin function in the proxy
+contract, which may cause you to
+
+27907
+05:05:05,580 --> 05:05:08,730
+do accidentally a whole bunch of
+weird stuff. For example, in
+
+27908
+05:05:08,730 --> 05:05:11,430
+this sample code in front of you
+even though All these functions
+
+27909
+05:05:11,430 --> 05:05:13,980
+are totally different, they
+actually have the same function
+
+27910
+05:05:13,980 --> 05:05:17,040
+selector. So yes, we can run
+into an issue where some
+
+27911
+05:05:17,040 --> 05:05:21,600
+harmless function like get price
+has the same function selector
+
+27912
+05:05:21,600 --> 05:05:25,320
+as upgrade proxy or destroy
+proxy or something like that.
+
+27913
+05:05:25,380 --> 05:05:28,530
+This leads to our first of the
+three implementations of the
+
+27914
+05:05:28,530 --> 05:05:32,220
+proxy contracts. This is called
+the transparent proxy pattern.
+
+27915
+05:05:32,370 --> 05:05:34,080
+And it's actually going to be
+the pattern that we're gonna be
+
+27916
+05:05:34,080 --> 05:05:37,530
+demoing to you today. In this
+methodology, admins are only
+
+27917
+05:05:37,530 --> 05:05:40,440
+allowed to call admin functions.
+And they can't call any
+
+27918
+05:05:40,440 --> 05:05:44,160
+functions in the implementation
+contract. And users can only
+
+27919
+05:05:44,160 --> 05:05:46,740
+call functions in the
+implementation contract and not
+
+27920
+05:05:46,740 --> 05:05:50,220
+any admin contracts. This way,
+you can't ever accidentally have
+
+27921
+05:05:50,220 --> 05:05:53,490
+one of the two swapping, and
+having a function selector clash
+
+27922
+05:05:53,490 --> 05:05:55,860
+and you running into a big issue
+where you call a function, you
+
+27923
+05:05:55,860 --> 05:05:57,870
+probably shouldn't have, if
+you're an admin, you're calling
+
+27924
+05:05:57,870 --> 05:06:00,480
+admin functions. If your user
+you're calling implementation
+
+27925
+05:06:00,480 --> 05:06:02,850
+functions. So if you're an
+admin, and you build some crazy,
+
+27926
+05:06:02,850 --> 05:06:05,340
+awesome defi protocol, you
+better come up with a new wallet
+
+27927
+05:06:05,340 --> 05:06:07,740
+address because you can't
+participate. The second type of
+
+27928
+05:06:07,740 --> 05:06:10,110
+proxy we're going to talk about
+is the universal upgradeable
+
+27929
+05:06:10,110 --> 05:06:11,070
+proxy, or the
+
+27930
+05:06:11,640 --> 05:06:18,870
+op amps. This version of
+upgradable contracts actually
+
+27931
+05:06:18,870 --> 05:06:22,950
+puts all the logic of upgrading
+in the implementation itself
+
+27932
+05:06:22,980 --> 05:06:26,220
+this way, the solidity compiler
+will actually kick out and say,
+
+27933
+05:06:26,220 --> 05:06:29,100
+Hey, we got two functions in
+here that have the same function
+
+27934
+05:06:29,100 --> 05:06:31,860
+selector. This is also
+advantageous because we have one
+
+27935
+05:06:31,860 --> 05:06:35,220
+less read that we have to do, we
+no longer have to check in the
+
+27936
+05:06:35,220 --> 05:06:39,120
+proxy contract if someone is an
+admin or not. This saves on gas,
+
+27937
+05:06:39,120 --> 05:06:41,730
+of course, and the proxy is also
+a little bit smaller. Because of
+
+27938
+05:06:41,730 --> 05:06:44,460
+this, the issue is that if you
+deploy an implementation
+
+27939
+05:06:44,460 --> 05:06:47,070
+contract, without any
+upgradeable functionality,
+
+27940
+05:06:47,580 --> 05:06:51,090
+you're stuck. And it's back to
+the Eat method with you. And the
+
+27941
+05:06:51,090 --> 05:06:53,940
+last pattern or methodology that
+we're going to talk about is the
+
+27942
+05:06:53,940 --> 05:06:56,940
+diamond pattern, which does a
+number of things. But one of the
+
+27943
+05:06:56,940 --> 05:06:59,940
+biggest things that it does, it
+actually allows for multiple
+
+27944
+05:06:59,940 --> 05:07:02,790
+implementation contracts. This
+addresses a couple of different
+
+27945
+05:07:02,790 --> 05:07:05,820
+issues. For example, if your
+contract is so big, and it
+
+27946
+05:07:05,820 --> 05:07:08,880
+doesn't fit into the one
+contract maximum size, you can
+
+27947
+05:07:08,880 --> 05:07:11,460
+just have multiple contracts
+through this multi
+
+27948
+05:07:11,460 --> 05:07:14,400
+implementation method. It also
+allows you to make more granular
+
+27949
+05:07:14,400 --> 05:07:17,820
+upgrades, like you don't have to
+always deploy and upgrade your
+
+27950
+05:07:17,820 --> 05:07:20,160
+entire smart contract, you can
+just upgrade little pieces of
+
+27951
+05:07:20,160 --> 05:07:22,650
+it. If you've chunked them out.
+All the proxies mentioned here
+
+27952
+05:07:22,680 --> 05:07:25,650
+have some type of Aetherium
+improvement proposal, and most
+
+27953
+05:07:25,650 --> 05:07:27,540
+of them are in the draft phase.
+And at the end of this
+
+27954
+05:07:27,540 --> 05:07:30,780
+explainer, we will do a demo of
+showing you how the delegate
+
+27955
+05:07:30,780 --> 05:07:35,520
+call function works. And the end
+of the demo is right now. So
+
+27956
+05:07:35,520 --> 05:07:36,750
+let's look at delegate call.
+
+27957
+05:07:39,390 --> 05:07:42,000
+Now, we're going to learn about
+how to actually build these
+
+27958
+05:07:42,000 --> 05:07:45,270
+proxies how to build these
+upgradable smart contracts. And
+
+27959
+05:07:45,300 --> 05:07:48,240
+to do this, we first need to
+learn about this delegate call
+
+27960
+05:07:48,240 --> 05:07:51,090
+function. And it's going to be
+really similar to the call
+
+27961
+05:07:51,090 --> 05:07:53,700
+function, which we learned much
+earlier. If you haven't seen
+
+27962
+05:07:53,700 --> 05:07:56,280
+that, be sure to go back to our
+Harnett. And if T's we have a
+
+27963
+05:07:56,280 --> 05:08:00,120
+sub lesson in there, about EVM,
+opcodes, and coding and calling
+
+27964
+05:08:00,120 --> 05:08:03,630
+and we'll give you all the
+context for delegate call. Like
+
+27965
+05:08:03,630 --> 05:08:06,600
+I said, in the explainer, it's
+very similar to call however,
+
+27966
+05:08:06,600 --> 05:08:10,080
+the way that I think about it is
+one contract says Oh, I really
+
+27967
+05:08:10,080 --> 05:08:13,230
+like your function, I'm going to
+borrow it myself. And we're
+
+27968
+05:08:13,230 --> 05:08:15,270
+going to be looking at solidity
+by example. I'll leave a
+
+27969
+05:08:15,270 --> 05:08:18,960
+description in the GitHub. And
+all the code for this will be in
+
+27970
+05:08:19,050 --> 05:08:22,050
+the GitHub associated with this
+lesson as well. Now we have two
+
+27971
+05:08:22,050 --> 05:08:25,140
+contracts, we have this contract
+B that we're going to be
+
+27972
+05:08:25,140 --> 05:08:28,320
+deploying on remix and it looks
+like a real minimalistic real
+
+27973
+05:08:28,320 --> 05:08:30,870
+simple contract. We have a
+couple of storage variables
+
+27974
+05:08:30,870 --> 05:08:33,150
+here. And then we have a
+function that updates our
+
+27975
+05:08:33,150 --> 05:08:36,480
+values, we have a function
+called Set VARs and updates are
+
+27976
+05:08:36,750 --> 05:08:40,530
+you into public num? Now as we
+learned before, whenever we have
+
+27977
+05:08:40,560 --> 05:08:43,620
+some type of contract with
+storage variables they get
+
+27978
+05:08:43,620 --> 05:08:47,430
+stored in, in this storage data
+structure that's index starting
+
+27979
+05:08:47,430 --> 05:08:51,390
+from zero, right now are you
+into public num is that index
+
+27980
+05:08:51,420 --> 05:08:55,680
+zero, or sender's at index one,
+our values and index two etc.
+
+27981
+05:08:55,860 --> 05:09:00,000
+Now we're going to deploy a
+contract a and now this contract
+
+27982
+05:09:00,030 --> 05:09:03,150
+is actually going to use the
+delegates call function. Now a
+
+27983
+05:09:03,150 --> 05:09:05,760
+contract a this is going to look
+a little bit different, but it's
+
+27984
+05:09:05,760 --> 05:09:08,610
+still going to have this set
+bars functions, except it's
+
+27985
+05:09:08,610 --> 05:09:12,180
+going to make a delegate call
+function call to our contract B.
+
+27986
+05:09:12,390 --> 05:09:16,500
+Now in our lesson 14 with NF TS
+we learned about call API dot
+
+27987
+05:09:16,500 --> 05:09:19,500
+encode with signature API dot
+encode etc. So if you're
+
+27988
+05:09:19,500 --> 05:09:21,780
+unfamiliar with function
+selectors, if you're unfamiliar
+
+27989
+05:09:21,780 --> 05:09:24,750
+with if you're unfamiliar with
+this syntax, be sure to go back
+
+27990
+05:09:24,750 --> 05:09:28,680
+to lesson 14 To understand ABI
+dot encode with signature and
+
+27991
+05:09:28,710 --> 05:09:32,010
+contract dot call. The
+difference here is we're doing
+
+27992
+05:09:32,010 --> 05:09:36,450
+contract dot delegate call. What
+this call does is something very
+
+27993
+05:09:36,450 --> 05:09:40,590
+similar to call. Normally, if we
+did contract dot call on this
+
+27994
+05:09:40,590 --> 05:09:43,410
+contract, we would just call
+this, we would just be calling
+
+27995
+05:09:43,410 --> 05:09:46,980
+this function set VARs, which
+would update contracts B's
+
+27996
+05:09:47,010 --> 05:09:50,400
+storage, but instead we're
+saying Hey, call that set VARs
+
+27997
+05:09:50,400 --> 05:09:54,450
+function, and then pass this as
+an input parameter, but call it
+
+27998
+05:09:54,630 --> 05:09:58,350
+in our contract, call it on
+contract a, we're kind of
+
+27999
+05:09:58,350 --> 05:10:02,460
+borrowing a function for our
+contract. And so instead, what
+
+28000
+05:10:02,460 --> 05:10:05,610
+we're going to do, is we're
+going to borrow this set bars
+

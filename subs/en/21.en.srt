@@ -1,0 +1,4990 @@
+21001
+21:24:58,020 --> 21:25:01,830
+NFT contract that when you mint,
+one of these NF T's, you're
+
+21002
+21:25:01,830 --> 21:25:06,300
+gonna get a pug a Shiva in you
+or St. Bernard, based off of
+
+21003
+21:25:06,330 --> 21:25:09,960
+some rarity, where the pug is
+really rare. Ship it in you is
+
+21004
+21:25:09,960 --> 21:25:13,020
+sort of rare in the St. Bernard
+is pretty common. The way we do
+
+21005
+21:25:13,020 --> 21:25:17,850
+it is we have this request NF t
+function, which people have to
+
+21006
+21:25:17,850 --> 21:25:21,480
+pay to call and it makes a
+request to a chain link node to
+
+21007
+21:25:21,480 --> 21:25:24,540
+get a random number. Once our
+contract gets that random number
+
+21008
+21:25:24,780 --> 21:25:29,490
+uses a chance array to figure
+out which one of the NF T's
+
+21009
+21:25:29,490 --> 21:25:32,700
+we're going to actually use for
+this for that minting. And we're
+
+21010
+21:25:32,700 --> 21:25:35,700
+going to set the token URI
+accordingly. And we're going to
+
+21011
+21:25:35,700 --> 21:25:40,740
+store the image data for this on
+IPFS, which we haven't done yet.
+
+21012
+21:25:40,980 --> 21:25:43,860
+So our deploy function for this
+is going to be really the
+
+21013
+21:25:43,860 --> 21:25:46,650
+interesting part of this
+contract. But because we just
+
+21014
+21:25:46,650 --> 21:25:48,960
+went over so much, if you want
+to take a quick break quick
+
+21015
+21:25:48,960 --> 21:25:52,140
+breather, and then come back, I
+encourage you to do so we just
+
+21016
+21:25:52,290 --> 21:25:55,770
+learned a lot. And we wrote a
+lot of solidity code. So go take
+
+21017
+21:25:55,770 --> 21:25:57,030
+a quick breather, and I'll see
+you in a
+
+21018
+21:25:57,030 --> 21:26:05,250
+minute. So let's go ahead and
+get on in here, create a new
+
+21019
+21:26:05,250 --> 21:26:15,030
+deploy, go to ploy, random
+ipfs.js. And now this is going
+
+21020
+21:26:15,030 --> 21:26:18,180
+to look really similar once
+again, to the lottery contract
+
+21021
+21:26:18,180 --> 21:26:21,000
+that we've already done. And we
+can copy some boilerplate from
+
+21022
+21:26:21,000 --> 21:26:23,790
+our code over here, we're gonna
+need all this, we'll just copy
+
+21023
+21:26:23,790 --> 21:26:27,630
+that, close it off with a little
+curly and boom, we've already
+
+21024
+21:26:27,630 --> 21:26:29,910
+got a boilerplate. Now, since
+we're working with chainlink,
+
+21025
+21:26:29,910 --> 21:26:32,910
+here, we are going to be working
+with mocks again. So we're gonna
+
+21026
+21:26:32,910 --> 21:26:39,210
+come back new file 00, deploy
+mocks dot j s. And if you want,
+
+21027
+21:26:39,210 --> 21:26:42,270
+you can just copy paste from the
+earlier section that we did with
+
+21028
+21:26:42,270 --> 21:26:44,880
+the with the raffle slash
+lottery. Since we're going to be
+
+21029
+21:26:44,880 --> 21:26:48,120
+doing the exact same thing here,
+I'm gonna go ahead and pause and
+
+21030
+21:26:48,120 --> 21:26:51,330
+you can copy paste from your
+previous projects. Or if you
+
+21031
+21:26:51,330 --> 21:26:54,660
+want, once again, you can just
+come to the GitHub repo
+
+21032
+21:26:54,660 --> 21:26:57,630
+associated with this course,
+come over to the deploy. And go
+
+21033
+21:26:57,630 --> 21:27:00,570
+ahead and grab the deploy mocks
+right from here. If you grab
+
+21034
+21:27:00,570 --> 21:27:03,240
+from the GitHub repo, we also
+are going to be working with a
+
+21035
+21:27:03,240 --> 21:27:06,150
+mock v3 aggregator, but I'm not
+going to add that part in quite
+
+21036
+21:27:06,150 --> 21:27:09,780
+yet, because we don't need it
+quite yet. So go ahead and pause
+
+21037
+21:27:09,780 --> 21:27:12,630
+the video right now. Copy and
+paste the VRF coordinator mock
+
+21038
+21:27:12,630 --> 21:27:16,230
+or pause the video and try to
+write the mock code yourself.
+
+21039
+21:27:16,380 --> 21:27:19,350
+Okay, great. So once you've done
+that, we're of course gonna need
+
+21040
+21:27:19,350 --> 21:27:23,670
+to concentrate ID network dot
+config dot chain ID, because
+
+21041
+21:27:23,670 --> 21:27:25,920
+we're gonna need to decide if
+we're actually on a development
+
+21042
+21:27:25,920 --> 21:27:29,430
+chain. So same as what we did
+before then we're gonna say if
+
+21043
+21:27:30,720 --> 21:27:39,690
+development chains that includes
+network dot name, then we're
+
+21044
+21:27:39,690 --> 21:27:46,140
+gonna say const VRF coordinator,
+B to mock goes await ethers dot
+
+21045
+21:27:46,140 --> 21:27:53,040
+get contract VRF. Core. The name
+for the to mock similar to the
+
+21046
+21:27:53,040 --> 21:27:58,080
+raffle we're gonna say let VRF
+coordinate Tor v two address,
+
+21047
+21:27:58,230 --> 21:28:04,500
+same, the VRF coordinator v two
+address equals VRF. coordinator
+
+21048
+21:28:04,530 --> 21:28:08,070
+v two mach mock that address and
+then we're going to want to
+
+21049
+21:28:08,070 --> 21:28:11,160
+create a subscription exactly
+the same as what we did with our
+
+21050
+21:28:11,160 --> 21:28:16,980
+lottery. So we're gonna say
+const, TX equals weight VRF
+
+21051
+21:28:17,160 --> 21:28:23,550
+coordinate tore V to mock dot
+create subscription. And then
+
+21052
+21:28:23,550 --> 21:28:30,360
+we'll do const TX receipt equals
+weight, TX dot weight one. And
+
+21053
+21:28:30,360 --> 21:28:33,900
+we're gonna get the sub ID from
+this exactly the same way we did
+
+21054
+21:28:33,900 --> 21:28:37,320
+it in the lottery section. So
+we'll say that we need that sub
+
+21055
+21:28:37,320 --> 21:28:45,630
+ID by saying sub subscription ID
+will say subscription ID equals
+
+21056
+21:28:45,690 --> 21:28:52,770
+TX receipt, dot events, zero.
+That args got somebody. So
+
+21057
+21:28:52,770 --> 21:28:57,210
+that's what we do if we're on a
+development chain, else said the
+
+21058
+21:28:57,210 --> 21:29:06,030
+VRF coordinate tore V to address
+equals network config of the
+
+21059
+21:29:06,030 --> 21:29:12,990
+chain ID dot VRF coordinate or B
+to that then the subscription ID
+
+21060
+21:29:13,170 --> 21:29:19,800
+equals network config. Chain ID
+dot subscription ID. Perfect.
+
+21061
+21:29:19,890 --> 21:29:23,820
+And then we'll just double check
+our helper hard hat config. So
+
+21062
+21:29:23,820 --> 21:29:28,650
+that Rigby has both the VRF
+coordinator v2. And we're also
+
+21063
+21:29:28,650 --> 21:29:31,650
+going to need a subscription ID.
+So right now, I have our
+
+21064
+21:29:31,650 --> 21:29:34,530
+subscription ID from our past
+project from our lottery
+
+21065
+21:29:34,530 --> 21:29:38,160
+project. But we can go ahead to
+V or F dot chain link, we can go
+
+21066
+21:29:38,160 --> 21:29:41,850
+to V RF, that chain link can
+make sure we're on rink B here.
+
+21067
+21:29:42,060 --> 21:29:44,730
+Let's see our other
+subscriptions. And it looks like
+
+21068
+21:29:44,730 --> 21:29:49,110
+we have one here. So I'm going
+to copy this and paste it in for
+
+21069
+21:29:49,110 --> 21:29:53,340
+Rigby. Now again, we can go over
+to DockStar, chain link EVM
+
+21070
+21:29:53,340 --> 21:29:57,000
+chains, contract addresses for
+using reminisce to see more
+
+21071
+21:29:57,000 --> 21:30:00,840
+parameters in here, especially
+for Rigby and make sure these
+
+21072
+21:30:00,840 --> 21:30:04,080
+are all correct. We have our
+subscription here, we'll add a
+
+21073
+21:30:04,080 --> 21:30:07,650
+new consumer very soon once we
+deploy this contract if we're
+
+21074
+21:30:07,650 --> 21:30:11,760
+actually going to use RankBrain.
+So we'll do a little log here
+
+21075
+21:30:11,820 --> 21:30:19,230
+with a bunch of hyphens. We'll
+now get args equals, we'll make
+
+21076
+21:30:19,230 --> 21:30:22,770
+our arguments here. And what do
+we need, we need the coordinator
+
+21077
+21:30:22,800 --> 21:30:27,810
+subscription, gasoline callback,
+address, dog, your dog token,
+
+21078
+21:30:27,810 --> 21:30:31,920
+your eyes and admin fee. So
+we're going to need VRF
+
+21079
+21:30:32,490 --> 21:30:39,270
+coordinator for the to address
+subscription ID. And we'll need
+
+21080
+21:30:39,270 --> 21:30:46,920
+the network config. Chain ID dot
+gas lane. We need the network
+
+21081
+21:30:46,950 --> 21:30:53,370
+config chain ID dot meant fee,
+then we'll leave that work
+
+21082
+21:30:53,490 --> 21:30:58,710
+config chain ID dot callback gas
+limit
+
+21083
+21:30:59,910 --> 21:31:03,390
+the right order? Yes it is. And
+then we need the dog token your
+
+21084
+21:31:03,390 --> 21:31:05,820
+eyes and the mint fee with the
+done here.
+
+21085
+21:31:12,210 --> 21:31:16,260
+Now what do we not have, we
+don't have this array of token
+
+21086
+21:31:16,260 --> 21:31:19,950
+your eyes. Now we can do this
+one of a couple of ways. If you
+
+21087
+21:31:19,950 --> 21:31:24,900
+go to the GitHub repo associated
+with this, go to deploy, we
+
+21088
+21:31:24,900 --> 21:31:28,020
+actually did the randomness for
+oh three in the get here,
+
+21089
+21:31:28,110 --> 21:31:30,570
+there's one section where we
+just automatically say, okay,
+
+21090
+21:31:30,570 --> 21:31:33,690
+great token, you rise is just
+going to be these three. And
+
+21091
+21:31:33,690 --> 21:31:37,140
+then if we can actually even
+copy paste these CDs on IPFS,
+
+21092
+21:31:37,290 --> 21:31:41,070
+these are the better ones that
+actually do have the IPFS as the
+
+21093
+21:31:41,070 --> 21:31:44,490
+image. And we can see them like
+that. So we could just use the
+
+21094
+21:31:44,490 --> 21:31:46,560
+stuff that I've already
+deployed. And if you want to do
+
+21095
+21:31:46,560 --> 21:31:51,750
+that, you absolutely 100 percent Can,
+or what we could do is we get to
+
+21096
+21:31:51,750 --> 21:31:55,200
+actually learn to upload
+programmatically our own images
+
+21097
+21:31:55,200 --> 21:31:59,130
+to IPFS. That sounds a lot
+cooler. So let's go ahead and do
+
+21098
+21:31:59,130 --> 21:32:02,070
+that. Now what I want you to do,
+if you want to use your own
+
+21099
+21:32:02,070 --> 21:32:04,800
+images for this, feel free to do
+so. But if you want to just
+
+21100
+21:32:04,800 --> 21:32:08,430
+follow along with us, then we're
+going to go to the Hardhead NFT
+
+21101
+21:32:08,460 --> 21:32:14,340
+FCC repo. And we're going to
+grab these random NF T's from
+
+21102
+21:32:14,340 --> 21:32:17,400
+him. So all you can do is you
+can come to here. And we can go
+
+21103
+21:32:17,400 --> 21:32:20,640
+ahead, we can right click Save
+Image, Jas, we'll save it to our
+
+21104
+21:32:20,640 --> 21:32:23,850
+downloads, let's actually create
+a new folder, we'll call it
+
+21105
+21:32:23,880 --> 21:32:27,840
+images. And the images will
+create a new folder called
+
+21106
+21:32:28,290 --> 21:32:33,540
+random, then we can pull it just
+right into here, make the name
+
+21107
+21:32:33,540 --> 21:32:38,280
+random NFT. And this is just
+going to be plugged up png. So
+
+21108
+21:32:38,280 --> 21:32:42,090
+we can do that for all of our
+images. Now in our images tag,
+
+21109
+21:32:42,090 --> 21:32:46,200
+we have the pug ship in you and
+St Bernard. So we have these
+
+21110
+21:32:46,200 --> 21:32:50,400
+locally. But we want to upload
+these to IPFS. We want to upload
+
+21111
+21:32:50,400 --> 21:32:52,980
+them in a way that anybody can
+actually pin them and work with
+
+21112
+21:32:52,980 --> 21:32:56,100
+them. So before we do all this
+stuff, where we get the
+
+21113
+21:32:56,130 --> 21:32:59,010
+arguments to deploy this
+contract, we're going to need to
+
+21114
+21:32:59,160 --> 21:33:04,260
+get the IPFS hashes of our
+images. And there's a couple of
+
+21115
+21:33:04,260 --> 21:33:09,960
+ways we can do this. We do with
+our own IPFS node, which I've
+
+21116
+21:33:09,960 --> 21:33:13,110
+already shown you how to do that
+manually, we can also do that
+
+21117
+21:33:13,110 --> 21:33:15,660
+programmatically. Now, I'm not
+going to show you how to do this
+
+21118
+21:33:15,660 --> 21:33:19,980
+here. However, if you go through
+the IPFS documentation, you
+
+21119
+21:33:19,980 --> 21:33:22,230
+actually can learn how to do
+through the command line and
+
+21120
+21:33:22,260 --> 21:33:25,170
+even through some scripts.
+However, if we're the only node
+
+21121
+21:33:25,170 --> 21:33:27,900
+that's running this, again, it's
+kind of centralized. So ideally,
+
+21122
+21:33:27,900 --> 21:33:31,050
+we'd want these images and these
+token your eyes and this and
+
+21123
+21:33:31,050 --> 21:33:35,880
+this token metadata on our own
+IPFS node and some other nodes.
+
+21124
+21:33:36,240 --> 21:33:39,240
+So the second way that we can
+look at this is using something
+
+21125
+21:33:39,240 --> 21:33:43,410
+like Hinata Hinata is a service
+that basically you just pay to
+
+21126
+21:33:43,440 --> 21:33:46,830
+help pin NF T for you. And this
+is going to be the one that
+
+21127
+21:33:46,830 --> 21:33:49,140
+we're going to be looking at
+here. Now the issue with binotto
+
+21128
+21:33:49,140 --> 21:33:52,260
+of course, is that we're just
+paying once single centralized
+
+21129
+21:33:52,260 --> 21:33:55,560
+entity to go ahead and pin our
+data, we're kind of trusting
+
+21130
+21:33:55,560 --> 21:33:57,420
+that they're actually going to
+pin it and that they're not
+
+21131
+21:33:57,420 --> 21:34:01,170
+going to go down. The final way
+that we could look into actually
+
+21132
+21:34:01,230 --> 21:34:04,110
+getting our data is was this
+thing called NF T dot storage.
+
+21133
+21:34:04,170 --> 21:34:07,830
+And if T dot storage uses the
+file coin network on the back
+
+21134
+21:34:07,830 --> 21:34:11,910
+end to pin our data now filecoin
+is a blockchain dedicated to
+
+21135
+21:34:11,910 --> 21:34:16,020
+pinning IPFS data and storing
+decentralized data. For us, the
+
+21136
+21:34:16,020 --> 21:34:19,380
+process is a little bit more
+complicated. But NFT dot storage
+
+21137
+21:34:19,380 --> 21:34:22,440
+makes it really, really easy.
+Now, we're not going to go over
+
+21138
+21:34:22,440 --> 21:34:26,010
+using NFT dot storage in this
+video. However, if you want to
+
+21139
+21:34:26,010 --> 21:34:29,610
+look into NF T dot storage, for
+putting your data in the GitHub
+
+21140
+21:34:29,610 --> 21:34:32,880
+repo associated with this
+course, we do have a script that
+
+21141
+21:34:32,910 --> 21:34:36,540
+uploads your code to NFT to
+storage called in the utils
+
+21142
+21:34:36,540 --> 21:34:39,780
+folder, upload to NFT. Storage.
+And if you want to go and try it
+
+21143
+21:34:39,780 --> 21:34:42,810
+out, I recommend that you do so
+working with NF T dot storage
+
+21144
+21:34:42,810 --> 21:34:45,690
+will be one of the most
+persistent ways to keep our data
+
+21145
+21:34:45,720 --> 21:34:48,810
+up. But it's still good to
+upload your own data to your own
+
+21146
+21:34:48,810 --> 21:34:52,080
+IPFS node, which we've learned
+how to do manually and at least
+
+21147
+21:34:52,080 --> 21:34:54,660
+get one other person also
+pinning your data. And then
+
+21148
+21:34:54,690 --> 21:34:58,380
+ideally, an entire decentralized
+network, pinning your data,
+
+21149
+21:34:58,410 --> 21:35:02,130
+which is what NFS storage helps
+you do. But for now, for us,
+
+21150
+21:35:02,130 --> 21:35:04,710
+we're just going to work with
+pinata to keep it nice and
+
+21151
+21:35:04,710 --> 21:35:08,340
+simple for this video. And then
+uploading uploading our metadata
+
+21152
+21:35:08,340 --> 21:35:12,000
+and our token, your eyes up to
+IPFS will give us this list of
+
+21153
+21:35:12,000 --> 21:35:15,630
+token your eyes for our three
+dogs. So up at the top here,
+
+21154
+21:35:15,810 --> 21:35:19,110
+we're going to do a little if
+we're gonna say if process dot e
+
+21155
+21:35:19,110 --> 21:35:25,620
+NV dot upload to pinata equals
+true, yes, we're going to use
+
+21156
+21:35:25,620 --> 21:35:29,610
+the string true like that. Then
+we're going to upload to pinata.
+
+21157
+21:35:29,850 --> 21:35:33,030
+Above here we're going to say
+let's token your eyes. And we're
+
+21158
+21:35:33,030 --> 21:35:35,460
+gonna say token your eyes equals
+await,
+
+21159
+21:35:36,690 --> 21:35:40,080
+handle token your eyes. And
+we're going to create a function
+
+21160
+21:35:40,080 --> 21:35:43,020
+called handle token your eyes,
+which is going to upload our
+
+21161
+21:35:43,020 --> 21:35:46,710
+code to pinata down outside of
+this, we're going to create a
+
+21162
+21:35:46,710 --> 21:35:52,470
+new function called async.
+function. And we'll token your
+
+21163
+21:35:52,470 --> 21:35:56,640
+eyes. And this is going to
+return an array of token your
+
+21164
+21:35:56,640 --> 21:35:59,760
+eyes for us to upload to our
+smart contract, we're gonna say
+
+21165
+21:35:59,760 --> 21:36:03,600
+token, your eyes equals this and
+then way at the bottom, we're
+
+21166
+21:36:03,600 --> 21:36:06,900
+gonna say return token your
+rise, right, so we're going to
+
+21167
+21:36:06,900 --> 21:36:10,680
+be returning this array here.
+Now we need to do two things, we
+
+21168
+21:36:10,680 --> 21:36:16,230
+need to both store the image in
+IPFS. And then we need to store
+
+21169
+21:36:16,680 --> 21:36:21,000
+the metadata in IPFS. So first,
+we're going to create a store
+
+21170
+21:36:21,000 --> 21:36:23,640
+images function. And this is
+where we're going to actually
+
+21171
+21:36:23,640 --> 21:36:25,860
+get to go to our utils. And
+we're going to create a new
+
+21172
+21:36:25,860 --> 21:36:29,010
+folder in here, we're going to
+create a file called New File,
+
+21173
+21:36:29,220 --> 21:36:34,710
+Upload to pinata dot j s, we're
+going to add all of our code for
+
+21174
+21:36:34,710 --> 21:36:38,880
+actually uploading to pinata in
+here. Because again, pinata is
+
+21175
+21:36:38,880 --> 21:36:42,090
+this service that we're going to
+be using to just pin data for us
+
+21176
+21:36:42,180 --> 21:36:46,440
+and work with pinata, we can go
+ahead, try for free. And we can
+
+21177
+21:36:46,440 --> 21:36:48,240
+create our own application.
+
+21178
+21:36:56,190 --> 21:37:00,360
+And we're good to go. See the
+setup here looks really similar
+
+21179
+21:37:00,360 --> 21:37:03,990
+to an IPFS node, because that's
+essentially what pinata is. It's
+
+21180
+21:37:03,990 --> 21:37:07,650
+just an IPFS node, run by
+somebody else. And we can say,
+
+21181
+21:37:07,650 --> 21:37:11,430
+Hey, can you please pin this
+data for us. So a manual way we
+
+21182
+21:37:11,430 --> 21:37:15,780
+could do this is we could just
+hit Upload Cid just like an IPFS
+
+21183
+21:37:15,780 --> 21:37:19,710
+node and put the hash of some
+IPFS file, and pinata would pin
+
+21184
+21:37:19,710 --> 21:37:23,670
+it for us, we could also upload
+a file or a folder just like an
+
+21185
+21:37:23,670 --> 21:37:26,910
+IPFS node. But for us, we're
+just going to leave this blank
+
+21186
+21:37:26,910 --> 21:37:29,130
+because we're going to want to
+do this programmatically,
+
+21187
+21:37:29,130 --> 21:37:32,430
+because we're engineers. So what
+we can do is we come over to our
+
+21188
+21:37:32,430 --> 21:37:36,780
+profile, we'll open up API keys
+and documentation. And the
+
+21189
+21:37:36,780 --> 21:37:39,630
+documentation pretty much has
+everything that we need to get
+
+21190
+21:37:39,630 --> 21:37:44,610
+started. If you scroll down to
+the pinata Node js SDK, this is
+
+21191
+21:37:44,610 --> 21:37:46,500
+basically what we're going to be
+working with, they've already
+
+21192
+21:37:46,500 --> 21:37:49,560
+created an SDK for us that we
+can work with, we're gonna go
+
+21193
+21:37:49,560 --> 21:37:53,550
+ahead and install this pinata
+SDK. So they're using NPM,
+
+21194
+21:37:53,580 --> 21:37:57,690
+install dash to save, we're just
+gonna go ahead and use yarn, add
+
+21195
+21:37:57,690 --> 21:38:02,640
+dash dash dev at pinata dash
+SDK, and they have all these
+
+21196
+21:38:02,640 --> 21:38:05,400
+different endpoints, we can call
+to actually pin data, we're
+
+21197
+21:38:05,400 --> 21:38:08,700
+going to be doing pin file to
+IPFS, because we're going to
+
+21198
+21:38:08,760 --> 21:38:14,460
+upload our files and also pin
+JSON to IPFS. Since JSON is
+
+21199
+21:38:14,460 --> 21:38:17,220
+going to be the metadata, and
+file is going to be the actual
+
+21200
+21:38:17,220 --> 21:38:20,280
+image. And if you click on it,
+it'll even give you kind of the
+
+21201
+21:38:20,280 --> 21:38:23,370
+output of the SDK here. So back
+in our code, now that we've
+
+21202
+21:38:23,370 --> 21:38:26,070
+downloaded this, we can go ahead
+and start creating this. So
+
+21203
+21:38:26,070 --> 21:38:31,650
+we'll say const pinata SDK
+equals require at pinata slash
+
+21204
+21:38:31,650 --> 21:38:36,030
+SDK, and then we'll create a
+function async function called
+
+21205
+21:38:36,030 --> 21:38:41,490
+store images, it'll take an
+images file path. So we're going
+
+21206
+21:38:41,490 --> 21:38:45,960
+to use this function will pass
+it our images, random n of t
+
+21207
+21:38:45,960 --> 21:38:48,630
+file paths, and we're going to
+have it store everything in that
+
+21208
+21:38:48,630 --> 21:38:51,480
+folder to help us work with
+paths. We're also going to
+
+21209
+21:38:51,480 --> 21:38:56,070
+Install this path package. So
+we're gonna do yarn, add dash
+
+21210
+21:38:56,070 --> 21:38:59,760
+dash dev path, like, so, we're
+just going to work with Fs as
+
+21211
+21:38:59,760 --> 21:39:03,120
+well not Fs extra. So now that
+that's up, we're gonna say
+
+21212
+21:39:03,120 --> 21:39:08,460
+const. Path equals require path.
+And in here, we're gonna say
+
+21213
+21:39:08,460 --> 21:39:16,110
+const, full images, path, equals
+path dot resolve, images file
+
+21214
+21:39:16,110 --> 21:39:20,970
+path. So if we give that like
+dot slash images, slash random,
+
+21215
+21:39:21,480 --> 21:39:25,290
+you know, NF T or whatever, this
+will just give us give you the
+
+21216
+21:39:25,290 --> 21:39:28,140
+full output of the path. So
+we're getting the full images
+
+21217
+21:39:28,140 --> 21:39:32,550
+path, and then we'll say, we'll
+get those files by doing const
+
+21218
+21:39:32,550 --> 21:39:37,710
+files equals Fs. So we'll do
+we'll grab s will say const Fs
+
+21219
+21:39:37,710 --> 21:39:42,960
+equals require Fs just to read
+these files in here, that read
+
+21220
+21:39:43,620 --> 21:39:47,580
+DirSync. We're just going to
+read the entire directory and
+
+21221
+21:39:47,580 --> 21:39:53,610
+get our files back to read
+DirSync full images path. And to
+
+21222
+21:39:53,610 --> 21:39:56,670
+actually test that this is
+working, what we're going to do
+
+21223
+21:39:57,060 --> 21:40:03,270
+is we're going to do module dot
+exports, equals store images.
+
+21224
+21:40:03,480 --> 21:40:06,720
+And then back in our deploy
+script here, we can just go
+
+21225
+21:40:06,720 --> 21:40:06,990
+ahead and
+
+21226
+21:40:08,639 --> 21:40:16,049
+comment out args. And we can do
+import const, store images
+
+21227
+21:40:16,079 --> 21:40:21,269
+equals require dot dot slash
+utils, slash upload to pinata.
+
+21228
+21:40:22,109 --> 21:40:25,799
+And in this script, we could
+just do a little, we just call
+
+21229
+21:40:25,799 --> 21:40:31,589
+this we could say await, or
+images, and then we'll pass pass
+
+21230
+21:40:31,589 --> 21:40:35,699
+our images location, maybe way
+at the top, even outside of the
+
+21231
+21:40:35,699 --> 21:40:42,809
+function, we'll say const images
+location equals dot slash images
+
+21232
+21:40:42,809 --> 21:40:47,219
+slash random and ft. So we'll do
+a weight store images like that.
+
+21233
+21:40:47,309 --> 21:40:51,209
+And we should be able to run
+Hardhead deploy. Then if we add
+
+21234
+21:40:51,209 --> 21:40:57,419
+some tags to this deploy thing,
+module, dot exports, dot tags
+
+21235
+21:40:57,449 --> 21:41:03,869
+equals, we'll say all random
+IPFS. And then main, we do
+
+21236
+21:41:03,869 --> 21:41:09,389
+Hardhead deployed dash dash
+tags, random IPFS will also do
+
+21237
+21:41:09,389 --> 21:41:14,939
+mocks believe, and I need to
+create a test folder in here New
+
+21238
+21:41:14,939 --> 21:41:20,519
+Folder test. And we need to add
+that VF coordinator v2 Mock in
+
+21239
+21:41:20,519 --> 21:41:23,879
+here. So again, I'm just copy
+pasting the VRF coordinator v2
+
+21240
+21:41:23,879 --> 21:41:28,139
+Mock from our raffle project.
+Feel free to pause, copy, paste
+
+21241
+21:41:28,169 --> 21:41:31,499
+it over, or again, everything's
+available on the GitHub. So
+
+21242
+21:41:31,499 --> 21:41:35,819
+we'll try one more time. Tags,
+random IPFS, and mocks and boom,
+
+21243
+21:41:35,849 --> 21:41:40,559
+okay, mocks deployed and perfect
+pug dot png ship any png St.
+
+21244
+21:41:40,559 --> 21:41:44,159
+Bernard PNG. Great. So we're
+getting the files correctly
+
+21245
+21:41:44,159 --> 21:41:49,139
+here. Now let's create a little
+array for responses from the
+
+21246
+21:41:49,139 --> 21:41:52,619
+pinata server. So we'll say
+responses equals this. And we'll
+
+21247
+21:41:52,619 --> 21:41:58,469
+say for each file index in files
+for each one of these files in
+
+21248
+21:41:58,469 --> 21:42:04,289
+here, we're gonna say const
+readable stream for file equals
+
+21249
+21:42:04,319 --> 21:42:17,099
+Fs dot create read stream of the
+full images path slash files of
+
+21250
+21:42:17,519 --> 21:42:21,419
+file index. What does this line
+doing? Well, we're creating a
+
+21251
+21:42:21,419 --> 21:42:25,169
+read stream. Since this is an
+image file, it doesn't work
+
+21252
+21:42:25,199 --> 21:42:28,259
+exactly the same as just like
+push this data, right? We have
+
+21253
+21:42:28,259 --> 21:42:31,499
+to create a stream where we
+stream all the data inside of
+
+21254
+21:42:31,499 --> 21:42:34,469
+these images. Because these
+images, even though they're just
+
+21255
+21:42:34,469 --> 21:42:37,079
+like a cute little image here,
+they're really this kind of this
+
+21256
+21:42:37,079 --> 21:42:40,139
+big file with all this bytes and
+all this data in here, and then
+
+21257
+21:42:40,139 --> 21:42:45,569
+we're going to send it by doing
+try, we'll say const response
+
+21258
+21:42:46,079 --> 21:42:50,519
+equals await. And this is where
+we're going to do pinata stuff.
+
+21259
+21:42:50,729 --> 21:42:54,209
+If we go back to the pinata
+docks, there's some stuff about
+
+21260
+21:42:54,239 --> 21:42:57,509
+keys in here. What we can do, if
+you go to your profile, go to
+
+21261
+21:42:57,509 --> 21:43:02,489
+API keys, we can create a new
+key, we'll say this is an admin
+
+21262
+21:43:02,489 --> 21:43:06,299
+key, why not? We'll give it all
+the pinning access here. Maybe
+
+21263
+21:43:06,299 --> 21:43:07,919
+we'll give it this, maybe we'll
+just give it everything,
+
+21264
+21:43:07,949 --> 21:43:10,979
+whatever you want to do. And
+then we'll call this hard hat,
+
+21265
+21:43:11,249 --> 21:43:17,069
+Free Code Camp key, create key.
+Now we're going to want to grab
+
+21266
+21:43:17,069 --> 21:43:21,359
+these and drop these into a dot
+env. So the API key, go ahead
+
+21267
+21:43:21,359 --> 21:43:26,039
+and copy, come back over here.
+Open up our dot env. And we're
+
+21268
+21:43:26,039 --> 21:43:32,879
+gonna call it our pinata. And
+data API key equals that key.
+
+21269
+21:43:33,029 --> 21:43:38,519
+We're going to grab the API
+secret and say pinata API secret
+
+21270
+21:43:39,149 --> 21:43:42,329
+equals that key. We don't need
+this massive token here for what
+
+21271
+21:43:42,329 --> 21:43:44,279
+we're going to do. But if you
+want it, you can absolutely have
+
+21272
+21:43:44,279 --> 21:43:47,819
+it. And then outside of our
+store images, we're going to say
+
+21273
+21:43:47,819 --> 21:43:54,089
+const pinata API key equals
+price says, do you need that
+
+21274
+21:43:54,179 --> 21:44:03,569
+pinata API key? And then can't
+pinata. API secret equals
+
+21275
+21:44:03,569 --> 21:44:09,809
+process dot E and V dot pinata
+API secret. And then we'll say
+
+21276
+21:44:09,809 --> 21:44:18,089
+const. pinata equals pin auta s.
+DK of pinata
+
+21277
+21:44:19,079 --> 21:44:24,959
+API key comma, pinata API.
+Secret in order to work with
+
+21278
+21:44:24,959 --> 21:44:29,279
+pinata, we need to pass it an
+API key and API secret so that
+
+21279
+21:44:29,279 --> 21:44:32,639
+pinata knows it's us who's
+working with them. So once we
+
+21280
+21:44:32,669 --> 21:44:38,009
+initialize this pinata thing, we
+can now run pinata dot and then
+
+21281
+21:44:38,009 --> 21:44:42,119
+do some pinata stuff, right, we
+want to work with this pin file
+
+21282
+21:44:42,359 --> 21:44:45,689
+to IPFS, which takes this
+readable stream, which is why we
+
+21283
+21:44:45,689 --> 21:44:52,259
+created that readable string, so
+pinata that pin file to IPFS. Of
+
+21284
+21:44:52,259 --> 21:44:58,259
+readable stream or file. And
+then we're going to push this
+
+21285
+21:44:58,259 --> 21:45:02,369
+response on to our responses
+array. So we'll say responses
+
+21286
+21:45:02,369 --> 21:45:06,869
+dot push response. And then
+we're going to catch error, just
+
+21287
+21:45:06,869 --> 21:45:09,359
+in case there's some weird error
+here. And we'll just say console
+
+21288
+21:45:09,359 --> 21:45:14,909
+dot log error, and then we're
+going to return responses and
+
+21289
+21:45:14,909 --> 21:45:18,599
+files. So we're going to return
+all the responses from pushing
+
+21290
+21:45:18,599 --> 21:45:22,469
+all these files up, and then the
+files as well. Now, at this
+
+21291
+21:45:22,469 --> 21:45:25,049
+current point, we can go ahead
+and actually test this out
+
+21292
+21:45:25,049 --> 21:45:28,379
+ourselves. So we have this in
+here. If we go back to our
+
+21293
+21:45:28,379 --> 21:45:31,799
+deploy, at the top, we have this
+if process dot E and V dot
+
+21294
+21:45:31,829 --> 21:45:37,109
+upload to Niada equals true, do
+this stuff here, uploading to
+
+21295
+21:45:37,139 --> 21:45:40,439
+IPFS. And the final thing we
+need to do in here, of course,
+
+21296
+21:45:40,439 --> 21:45:48,509
+is going to be require dot env
+dot config, so that we can pull
+
+21297
+21:45:48,509 --> 21:45:52,409
+in our dot env file. Down here,
+we're just doing a weight store
+
+21298
+21:45:52,409 --> 21:45:57,749
+images. So if we run this as is,
+it should go ahead and store
+
+21299
+21:45:57,749 --> 21:46:02,309
+images. So let's run that same
+command, or that deploy random
+
+21300
+21:46:02,309 --> 21:46:05,819
+IPFS and the MOX to run this
+store images command. And if we
+
+21301
+21:46:05,819 --> 21:46:09,749
+come back to our pinata, after
+we run it, we'll be able to see
+
+21302
+21:46:09,749 --> 21:46:15,149
+the code uploaded here. If we
+run now, the script loaded IPFS
+
+21303
+21:46:15,449 --> 21:46:17,519
+it'll give us a little bit of a
+delay, because it needs to
+
+21304
+21:46:17,519 --> 21:46:22,589
+upload these big picture files
+to IPFS. or more correctly.
+
+21305
+21:46:22,589 --> 21:46:27,209
+pinata, I'm gonna say uploading
+to nada. And we could even say,
+
+21306
+21:46:27,989 --> 21:46:35,309
+console dot log, working on file
+index, done Excel. And okay,
+
+21307
+21:46:35,309 --> 21:46:38,819
+great. It looks like it finished
+running. So if we come back to
+
+21308
+21:46:38,819 --> 21:46:43,079
+our project here, and we do a
+little refresh, we see our three
+
+21309
+21:46:43,079 --> 21:46:46,379
+files have been uploaded, and we
+see they each come with their
+
+21310
+21:46:46,379 --> 21:46:50,819
+own CID. Now, if you want, you
+can go ahead and copy the CID.
+
+21311
+21:46:51,209 --> 21:46:55,319
+And if you have your IPFS node,
+what you can do, what we can do
+
+21312
+21:46:55,319 --> 21:47:00,449
+is actually we can hit import
+from IPFS. Paste it in here. And
+
+21313
+21:47:00,449 --> 21:47:04,829
+we can say exactly what this is,
+which is IPFS dot dot slash last
+
+21314
+21:47:05,039 --> 21:47:10,409
+as the St. Bernard called St.
+Bernard. Important. And now
+
+21315
+21:47:10,409 --> 21:47:14,819
+we'll have it pinned on our
+IPFS. I've got mine saved in a
+
+21316
+21:47:14,819 --> 21:47:17,129
+little puppies file. Now that
+we've got them uploaded, and
+
+21317
+21:47:17,129 --> 21:47:20,069
+pinata do actually recommend you
+pin your own on your own node as
+
+21318
+21:47:20,069 --> 21:47:25,319
+well. So cool. So we've got a
+way to get those images up onto
+
+21319
+21:47:25,349 --> 21:47:26,789
+IPFS. Awesome
+
+21320
+21:47:26,820 --> 21:47:34,770
+onto. Now that we've done that,
+we're also going to need to
+
+21321
+21:47:34,770 --> 21:47:39,990
+store the token URI metadata. So
+let's go ahead and we'll delete
+
+21322
+21:47:39,990 --> 21:47:43,710
+that for now. What we can do
+back in here, is back up at the
+
+21323
+21:47:43,710 --> 21:47:49,950
+top again, we can say const meta
+data, template equals and we'll
+
+21324
+21:47:49,950 --> 21:47:53,820
+create a metadata template. This
+is going to have all the basics
+
+21325
+21:47:53,820 --> 21:47:57,330
+of what we need for our metadata
+for our token URI. So in here,
+
+21326
+21:47:57,330 --> 21:48:01,560
+we'll have a name, set, it's
+blank, we'll have a description,
+
+21327
+21:48:02,340 --> 21:48:06,600
+which will also set as blank
+will have the image which this
+
+21328
+21:48:06,600 --> 21:48:10,770
+is going to be replaced with the
+image URI that IPFS URI we just
+
+21329
+21:48:10,770 --> 21:48:14,580
+created. And if you want to give
+your NFT like any types of
+
+21330
+21:48:14,580 --> 21:48:20,100
+stats, you can do some you can
+create this Attributes section
+
+21331
+21:48:20,130 --> 21:48:25,860
+like so. And if you give it like
+traits type, cuteness, comma,
+
+21332
+21:48:26,640 --> 21:48:29,310
+value 100. And this is how if
+you wanted to create like
+
+21333
+21:48:29,310 --> 21:48:33,300
+different cards or have
+different attack, defense, HP
+
+21334
+21:48:33,300 --> 21:48:37,170
+speed in different different
+stats for your NF T's, you would
+
+21335
+21:48:37,170 --> 21:48:40,380
+add them in this Attributes
+section. Typically, you'd want
+
+21336
+21:48:40,380 --> 21:48:43,740
+these attributes also stored on
+chain so your contracts can
+
+21337
+21:48:43,920 --> 21:48:46,440
+obviously programmatically
+interact with these attributes.
+
+21338
+21:48:46,620 --> 21:48:49,590
+But so now we have this metadata
+data template. This is what
+
+21339
+21:48:49,590 --> 21:48:52,020
+we're going to fill out for each
+one of our dogs. Yes, we're
+
+21340
+21:48:52,020 --> 21:48:57,030
+going to create a new function
+in here called async, store
+
+21341
+21:48:57,360 --> 21:49:03,150
+token URI metadata. And we'll
+pass in the meta data to the
+
+21342
+21:49:03,150 --> 21:49:07,140
+async function. And we'll pass
+in the metadata that we get from
+
+21343
+21:49:07,140 --> 21:49:10,560
+our script over here. So we have
+this little template here. And
+
+21344
+21:49:10,560 --> 21:49:14,010
+we're going to populate this
+template based off of what we
+
+21345
+21:49:14,010 --> 21:49:17,190
+get from storing data in IPFS.
+So now we're going to write the
+
+21346
+21:49:17,190 --> 21:49:20,040
+rest of this handle token your
+eyes bit. And so we're going to
+
+21347
+21:49:20,040 --> 21:49:23,790
+want to do in our data and V,
+we're going to say, upload to
+
+21348
+21:49:23,790 --> 21:49:28,170
+pinata equals true, so that we
+can do everything and handle
+
+21349
+21:49:28,170 --> 21:49:31,860
+token your eyes. So upload to
+pinata, it's true, we'll scroll
+
+21350
+21:49:31,860 --> 21:49:34,290
+down, we'll start creating this.
+So the first thing we got to do,
+
+21351
+21:49:34,290 --> 21:49:37,230
+obviously, we're gonna want to
+get those responses and those
+
+21352
+21:49:37,230 --> 21:49:41,550
+files, right, because it's in
+the responses, pin file to IPFS
+
+21353
+21:49:41,580 --> 21:49:45,360
+is going to return the hash of
+the file, right, and we need
+
+21354
+21:49:45,360 --> 21:49:48,600
+that hash, to add to our
+metadata. So we're going to do
+
+21355
+21:49:48,810 --> 21:49:52,590
+is down here, we're gonna say
+const, responses, which is going
+
+21356
+21:49:52,590 --> 21:50:00,660
+to be image upload, responses,
+comma files, equals await, store
+
+21357
+21:50:00,660 --> 21:50:06,900
+images, and then images,
+location. And so this response
+
+21358
+21:50:06,900 --> 21:50:11,130
+is, is going to be a list of
+these responses from pinata. And
+
+21359
+21:50:11,130 --> 21:50:14,250
+these responses are going to
+have the hash of each one of
+
+21360
+21:50:14,250 --> 21:50:17,370
+these uploaded files. So now
+we're going to loop through that
+
+21361
+21:50:17,370 --> 21:50:20,910
+list and upload each of the
+metadata does. So we're going to
+
+21362
+21:50:20,910 --> 21:50:28,410
+say for each image upload
+response index, in image upload
+
+21363
+21:50:29,160 --> 21:50:30,390
+responses.
+
+21364
+21:50:31,740 --> 21:50:34,560
+For each one of these, we're
+going to create the metadata,
+
+21365
+21:50:34,710 --> 21:50:38,760
+we're going to create metadata
+and then upload the metadata. So
+
+21366
+21:50:38,790 --> 21:50:45,450
+we're gonna say let token URI,
+metadata equals dot dot, dot
+
+21367
+21:50:45,600 --> 21:50:50,280
+meta data template. So this is
+some fun JavaScript, syntactic
+
+21368
+21:50:50,280 --> 21:50:54,180
+sugar, which kind of means like,
+unpack. So basically, we're
+
+21369
+21:50:54,180 --> 21:50:57,720
+saying token URI metadata is
+going to be equal to this stuff.
+
+21370
+21:50:57,810 --> 21:51:01,500
+We're sticking all this stuff
+into this token, your metadata
+
+21371
+21:51:01,530 --> 21:51:05,640
+variable, now we're gonna say
+token, your metadata. dot name
+
+21372
+21:51:05,700 --> 21:51:12,630
+is going to be equal to files
+of, of the index, dot replace,
+
+21373
+21:51:13,140 --> 21:51:17,910
+dot png, dot png with nothing.
+So files is going to be each one
+
+21374
+21:51:17,910 --> 21:51:22,380
+of those files, right? It's
+going to be dot png can be St
+
+21375
+21:51:22,380 --> 21:51:26,370
+Bernard dot PNG, and it's going
+to be Shiva dot png. And
+
+21376
+21:51:26,370 --> 21:51:28,590
+basically, all we're doing is
+we're saying, okay, cool, the
+
+21377
+21:51:28,590 --> 21:51:31,560
+name inside of our token,
+metadata is just going to be
+
+21378
+21:51:31,560 --> 21:51:34,440
+pug. So we're just going to drop
+the extension, basically. So
+
+21379
+21:51:34,440 --> 21:51:39,240
+that's how we're gonna get the
+name token, your AI metadata dot
+
+21380
+21:51:39,270 --> 21:51:46,380
+description, is going to be
+equal to and adore a bowl. And
+
+21381
+21:51:46,380 --> 21:51:50,010
+then we're just going to get the
+name, token URI metadata dot
+
+21382
+21:51:50,010 --> 21:51:53,280
+name. So it's going to be an
+adorable pug pup and adorable
+
+21383
+21:51:53,280 --> 21:51:57,120
+St. Bernard pop or an adorable
+ship and you pup token URI
+
+21384
+21:51:57,150 --> 21:52:01,110
+metadata dot image, which is
+probably the most important one
+
+21385
+21:52:01,110 --> 21:52:05,760
+here, this is going to be, it's
+going to be that IPFS extension
+
+21386
+21:52:05,970 --> 21:52:10,920
+with the IPFS hash that we get
+from the response. So we can get
+
+21387
+21:52:10,920 --> 21:52:18,360
+that by doing image, upload
+responses of the image upload
+
+21388
+21:52:19,020 --> 21:52:26,160
+response index dot i IPFS. Hash,
+so we can go to the pinata docs.
+
+21389
+21:52:26,700 --> 21:52:31,950
+And we can see pin file to IPFS
+returns in IPFS hash, the pin
+
+21390
+21:52:31,950 --> 21:52:36,090
+size and the timestamp, all we
+care about is the IPFS hash. And
+
+21391
+21:52:36,090 --> 21:52:41,310
+we're going to use that to give
+the our metadata image here. And
+
+21392
+21:52:41,310 --> 21:52:45,510
+then finally, I'll do a little
+console dot log uploading. And
+
+21393
+21:52:45,510 --> 21:52:52,560
+then we'll say, token, your eye
+metadata dot name, dot dot dot.
+
+21394
+21:52:52,890 --> 21:52:58,020
+And now we'll have to store the
+file or store store the JSON to
+
+21395
+21:52:58,020 --> 21:53:02,010
+pinata slash IPFS. And this is
+where in our upload to pinata
+
+21396
+21:53:02,010 --> 21:53:05,070
+bit here, we're going to add
+this function here. So we have
+
+21397
+21:53:05,070 --> 21:53:08,850
+store token URI metadata. And
+all we're gonna do in here, so
+
+21398
+21:53:08,850 --> 21:53:13,950
+we're gonna say try const
+response equals await, and nada,
+
+21399
+21:53:13,980 --> 21:53:20,850
+that pin JSON to IPFS of the
+metadata, right. And again, we
+
+21400
+21:53:20,850 --> 21:53:25,320
+have, we want pin JSON to IPFS,
+which is going to be really
+
+21401
+21:53:25,320 --> 21:53:29,010
+similar. So we need to pass the
+body, which is going to be the
+
+21402
+21:53:29,010 --> 21:53:31,470
+JSON. And we have some optional
+stuff here, but it's gonna give
+
+21403
+21:53:31,470 --> 21:53:36,270
+us the same return the IPFS hash
+pin, size and timestamp. And
+
+21404
+21:53:36,270 --> 21:53:38,970
+then if this works, well, we're
+just going to do return
+
+21405
+21:53:39,300 --> 21:53:43,980
+response. Otherwise, we'll do
+catch error. And then we'll just
+
+21406
+21:53:43,980 --> 21:53:48,510
+do console dot log error, and
+then we'll just do return null
+
+21407
+21:53:50,130 --> 21:53:54,000
+and then we'll exports or token
+URI metadata. And then back in
+
+21408
+21:53:54,000 --> 21:53:58,740
+our deploy, we'll go ahead and
+import this store token URI
+
+21409
+21:53:58,740 --> 21:54:04,020
+metadata. And we'll scroll down.
+And they'll do const, metadata,
+
+21410
+21:54:04,260 --> 21:54:10,260
+upload response equals await,
+store token URI metadata where
+
+21411
+21:54:10,260 --> 21:54:15,930
+we pass the token, Uri,
+metadata. And now finally, and
+
+21412
+21:54:15,930 --> 21:54:19,530
+now with all of these metadata
+is being uploaded are finally
+
+21413
+21:54:19,530 --> 21:54:22,650
+going to have the token you
+arise that we need. So we'll
+
+21414
+21:54:22,650 --> 21:54:28,230
+say, token, your eyes dot push,
+IPFS, slash slash, and then the
+
+21415
+21:54:28,230 --> 21:54:33,510
+metadata response here, metadata
+upload response dot IPFS. Hash.
+
+21416
+21:54:33,540 --> 21:54:37,680
+So we finally will have this
+array of IPFS hashes that points
+
+21417
+21:54:37,680 --> 21:54:40,800
+to the metadata, and each one of
+these metadata are pointing to
+
+21418
+21:54:40,800 --> 21:54:44,310
+the image. And then we'll do a
+little console dot log token.
+
+21419
+21:54:44,550 --> 21:54:50,550
+You arise, uploaded, they are
+and then we'll do another little
+
+21420
+21:54:50,550 --> 21:54:56,880
+console dot log token your eyes.
+Oh, all right. So let's go ahead
+
+21421
+21:54:56,880 --> 21:55:00,330
+and run this. And let's see if
+it works. In our pinata, we
+
+21422
+21:55:00,330 --> 21:55:04,620
+should see both the images and
+then also the metadata. If
+
+21423
+21:55:04,620 --> 21:55:08,250
+process dot E and V dot upload
+to pinata equals true, looks
+
+21424
+21:55:08,250 --> 21:55:12,210
+like it is true. And we should
+run this and handle token, your
+
+21425
+21:55:12,210 --> 21:55:17,310
+eyes will both upload our images
+with store images here and then
+
+21426
+21:55:17,340 --> 21:55:21,900
+upload our metadata. We'll only
+see it in here once because
+
+21427
+21:55:21,900 --> 21:55:24,900
+again, it's gonna have the exact
+same Cid right, it's gonna have
+
+21428
+21:55:24,900 --> 21:55:28,800
+the same hash, so we won't get
+duplicates of the same file in
+
+21429
+21:55:28,800 --> 21:55:33,360
+pinata, or in our IPFS. So let's
+open this up. Let's run this one
+
+21430
+21:55:33,360 --> 21:55:37,320
+more time, or had deployed dash
+dash tags, random IPFS and
+
+21431
+21:55:37,320 --> 21:55:40,320
+mocks. Okay, it looks like we
+almost worked uploading to
+
+21432
+21:55:40,320 --> 21:55:44,520
+banana working on zero working
+on one working on two metadata
+
+21433
+21:55:44,520 --> 21:55:50,670
+template is not defined. Ha,
+because I spelt meta data
+
+21434
+21:55:50,670 --> 21:55:54,480
+template, meta data template,
+let's spell things correctly.
+
+21435
+21:55:55,170 --> 21:55:58,080
+Now let's try this again, it
+working on zero is it working on
+
+21436
+21:55:58,200 --> 21:56:02,850
+two image upload response is not
+defined. I should spell
+
+21437
+21:56:02,850 --> 21:56:07,470
+correctly. There we go. Let's,
+let's do our caps correctly.
+
+21438
+21:56:07,470 --> 21:56:11,610
+Let's try this one more time.
+Okay, 012, uploading pug
+
+21439
+21:56:11,640 --> 21:56:14,940
+uploading Shiva in you uploading
+St. Bernard token your eyes
+
+21440
+21:56:14,970 --> 21:56:18,990
+upload it and they're here. Now
+if we grab this, and stick it
+
+21441
+21:56:18,990 --> 21:56:22,920
+into our browser, or your IPFS
+node, boom, we have them in
+
+21442
+21:56:22,920 --> 21:56:26,880
+here. And what we can do is we
+can grab this hash, we can jump
+
+21443
+21:56:26,880 --> 21:56:32,700
+into our IPFS desktop, go to
+files, we import from IPFS paste
+
+21444
+21:56:32,700 --> 21:56:35,610
+it in here. And you know give it
+the name etc, that we have it on
+
+21445
+21:56:35,610 --> 21:56:39,960
+our own IPFS node as well.
+Awesome. Now if we go over to
+
+21446
+21:56:39,960 --> 21:56:43,800
+pinata give this a little
+refresh, we can see we have
+
+21447
+21:56:43,800 --> 21:56:47,610
+everything in here. So if I copy
+one of these, and I go to IPFS
+
+21448
+21:56:47,610 --> 21:56:51,120
+dot dot slash paste that in, we
+can see the metadata in here.
+
+21449
+21:56:51,420 --> 21:56:55,080
+And everything looks good. So
+this is absolutely massive that
+
+21450
+21:56:55,080 --> 21:56:58,950
+we've just done this because now
+we can store data both on our
+
+21451
+21:56:58,950 --> 21:57:02,550
+own IPFS node and at least one
+other nodes so that if our
+
+21452
+21:57:02,580 --> 21:57:04,890
+computer goes down or our server
+goes down, and there's at least
+
+21453
+21:57:04,890 --> 21:57:05,940
+somebody else who's done it.
+
+21454
+21:57:11,459 --> 21:57:14,909
+Now we finally have this list of
+token your eyes, we can finally
+
+21455
+21:57:14,909 --> 21:57:20,009
+go back to our arguments. And
+now we can do like this. And we
+
+21456
+21:57:20,009 --> 21:57:23,339
+can upload all of those token
+your eyes to our smart contract.
+
+21457
+21:57:23,459 --> 21:57:26,699
+And then we're going to need a
+mint fee as well for this. So if
+
+21458
+21:57:26,699 --> 21:57:29,879
+we go to our upper heart at
+config will create like a little
+
+21459
+21:57:29,879 --> 21:57:33,779
+mint fee in here, say mint fee
+is going to be whatever we want
+
+21460
+21:57:33,929 --> 21:57:41,369
+12345678123456789 What we'll do
+is 0.01 eath. So we'll even drop
+
+21461
+21:57:41,369 --> 21:57:44,669
+this down one, we'll do it for
+we'll do it for the Hard Hat
+
+21462
+21:57:44,669 --> 21:57:47,759
+Network. And then we'll also do
+it for Rinckey as well. We have
+
+21463
+21:57:47,759 --> 21:57:51,869
+the arguments here. Now we can
+finally deploy our contract. So
+
+21464
+21:57:51,869 --> 21:57:57,869
+we'll do const random IPFS. And
+if t equals await, deploy, if
+
+21465
+21:57:57,869 --> 21:58:05,789
+the contract is random IPFS NF T
+from Deployer. args is args. Log
+
+21466
+21:58:05,789 --> 21:58:11,159
+is true. And then wait
+confirmations is going to be
+
+21467
+21:58:11,159 --> 21:58:21,599
+network dot config dot block for
+confirm terminations, or one,
+
+21468
+21:58:21,869 --> 21:58:25,049
+and great they might do another
+little line here. We'll do the
+
+21469
+21:58:25,049 --> 21:58:28,799
+verification bit. I'm actually
+just going to copy that from our
+
+21470
+21:58:28,799 --> 21:58:32,999
+deploy. Our basic I'm just going
+to copy this it's going to be
+
+21471
+21:58:33,059 --> 21:58:36,269
+code is going to be exactly the
+same, except for we're going to
+
+21472
+21:58:36,269 --> 21:58:41,009
+verify random IPFS instead of
+and then actually we use args
+
+21473
+21:58:41,009 --> 21:58:44,549
+instead of arguments, then that
+is it. So we'll give this a
+
+21474
+21:58:44,549 --> 21:58:49,499
+quick deploy test, HH deploy or
+yarn Hardhead deploy. And it
+
+21475
+21:58:49,499 --> 21:58:52,019
+looks like we almost worked we
+almost got Everything's done.
+
+21476
+21:58:52,049 --> 21:58:56,249
+Network config is not defined,
+because we didn't import it. So
+
+21477
+21:58:56,249 --> 21:58:59,339
+let's go ahead and import
+network config from our helper
+
+21478
+21:58:59,339 --> 21:59:03,179
+Hardhead. Config. So import
+network config. We'll try this
+
+21479
+21:59:03,179 --> 21:59:07,079
+one more time chain ID is not
+defined, it's going to be chain
+
+21480
+21:59:07,079 --> 21:59:13,169
+ID, that chain Id try one more
+time. And awesome, it's at least
+
+21481
+21:59:13,169 --> 21:59:15,629
+working for our heart Hat
+Network. And then we can copy
+
+21482
+21:59:15,629 --> 21:59:19,919
+this array, and just paste it in
+here. Boom. And now we have this
+
+21483
+21:59:19,919 --> 21:59:23,699
+token your eyes. And now back in
+our dot env. Now we can set this
+
+21484
+21:59:23,699 --> 21:59:27,629
+to false. Since we have all
+those token neurons already, we
+
+21485
+21:59:27,629 --> 21:59:30,839
+just run hard hit Deploy, we'll
+just use the token heroes that
+
+21486
+21:59:30,839 --> 21:59:34,709
+we already have uploaded. Yes,
+we have done it. Now I know
+
+21487
+21:59:34,709 --> 21:59:38,159
+you're excited to see this on
+something like open See, you're
+
+21488
+21:59:38,159 --> 21:59:41,519
+excited to see this right away.
+But let's save deploying all
+
+21489
+21:59:41,519 --> 21:59:44,579
+these to rink B for our last
+thing, because again, deploying
+
+21490
+21:59:44,579 --> 21:59:47,459
+to test nets is really slow. So
+let's just wait until our last
+
+21491
+21:59:47,459 --> 21:59:51,119
+bit and then we'll go ahead, and
+we'll deploy this to rank B. But
+
+21492
+21:59:51,119 --> 21:59:53,309
+before we write tests, something
+that I noticed when I was
+
+21493
+21:59:53,309 --> 21:59:56,489
+writing my test is that we
+forgot to update the token
+
+21494
+21:59:56,489 --> 21:59:59,909
+counter. So in here, before we
+do, our safe, men will do s
+
+21495
+21:59:59,909 --> 22:00:03,719
+token counter plus equals s
+token counter, which is going to
+
+21496
+22:00:03,719 --> 22:00:07,319
+be esto. Encounter equals es
+token counter plus one. And
+
+21497
+22:00:07,319 --> 22:00:09,839
+that's a perfect example of why
+writing tests is so important.
+
+21498
+22:00:10,229 --> 22:00:12,419
+Before you write any tests,
+you're definitely going to need
+
+21499
+22:00:12,419 --> 22:00:16,139
+to fund that subscription, which
+we didn't do in here. So we need
+
+21500
+22:00:16,139 --> 22:00:24,719
+to do a wait VRF coordinate Tor
+V to mock dot fund, sub
+
+21501
+22:00:25,649 --> 22:00:32,939
+scription. subscription ID,
+comma will do fund amount, and
+
+21502
+22:00:32,939 --> 22:00:35,429
+then just up at the top,
+actually, we can even pull this
+
+21503
+22:00:35,429 --> 22:00:38,999
+out too. Since that's not gonna
+change at all. We can do let
+
+21504
+22:00:38,999 --> 22:00:44,009
+token year I was like that looks
+like const fund amount equals
+
+21505
+22:00:44,189 --> 22:00:46,829
+cool. Or you could do you know,
+you could also do ethers dot
+
+21506
+22:00:46,829 --> 22:00:59,849
+parse. But as you know, before
+we can even deploy to rink beam,
+
+21507
+22:01:00,089 --> 22:01:03,869
+what should we do? Well, you got
+it right, we should absolutely
+
+21508
+22:01:03,929 --> 22:01:08,429
+100 percent write some tests. So we're
+create a new file called random
+
+21509
+22:01:08,549 --> 22:01:14,009
+IPFS NF t dot test dot j s. And
+we can write some tests here.
+
+21510
+22:01:14,129 --> 22:01:16,979
+Now, once again, there isn't
+anything new that you're going
+
+21511
+22:01:16,979 --> 22:01:20,789
+to learn in this test here, it's
+going to be very similar to the
+
+21512
+22:01:20,789 --> 22:01:23,969
+lottery tests that we've written
+before. So here's what I'm going
+
+21513
+22:01:23,969 --> 22:01:27,359
+to say, I'm going to highly
+recommend once again, that you
+
+21514
+22:01:27,359 --> 22:01:30,749
+try to write at least two or
+three of your own tests, but
+
+21515
+22:01:30,749 --> 22:01:33,839
+definitely write a test fulfill
+random words. But I'm going to
+
+21516
+22:01:33,839 --> 22:01:37,469
+encourage you to pause the video
+now, please pause the video and
+
+21517
+22:01:37,469 --> 22:01:40,019
+try to write some tests yourself
+struggling with some of these
+
+21518
+22:01:40,019 --> 22:01:42,599
+tests. And writing some of these
+tests is going to be what really
+
+21519
+22:01:42,599 --> 22:01:45,599
+gives you those coding muscles,
+if you will, that's going to
+
+21520
+22:01:45,599 --> 22:01:47,819
+give you the skills to keep
+writing these tests and be
+
+21521
+22:01:47,819 --> 22:01:50,519
+really fast and really
+efficient. When you're building
+
+21522
+22:01:50,519 --> 22:01:53,339
+these smart contracts. These
+tests are the tests that protect
+
+21523
+22:01:53,339 --> 22:01:57,359
+you from writing bad immutable
+code. So please pause the video,
+
+21524
+22:01:57,419 --> 22:01:59,729
+I'm going to copy paste from the
+GitHub repo. But please take
+
+21525
+22:01:59,729 --> 22:02:02,369
+this time to write some of your
+own tests here.
+
+21526
+22:02:08,700 --> 22:02:12,330
+Alright, great. Did you write
+some tests? Hope you did. If you
+
+21527
+22:02:12,330 --> 22:02:14,370
+didn't write some tests, pause
+this video and go write some
+
+21528
+22:02:14,370 --> 22:02:17,940
+tests. I promise you doing these
+tests, writing exercises on your
+
+21529
+22:02:17,940 --> 22:02:20,790
+own will help you dramatically
+at this point, what have we
+
+21530
+22:02:20,790 --> 22:02:24,450
+done, we've done some some
+amazing stuff, we've deployed a
+
+21531
+22:02:24,450 --> 22:02:27,390
+basic NFT with pretty much
+nothing to it, then we've
+
+21532
+22:02:27,390 --> 22:02:31,530
+deployed a provably random NFT
+with random stats with random
+
+21533
+22:02:31,530 --> 22:02:35,370
+traits with different rarities,
+for each NF T's depending on
+
+21534
+22:02:35,550 --> 22:02:38,760
+when it was minted, or who
+minted it. We've stored the data
+
+21535
+22:02:38,760 --> 22:02:42,300
+for this on IPFS. And we've
+learned how to programmatically
+
+21536
+22:02:42,330 --> 22:02:46,020
+upload our files to pinata,
+which is another pinning service
+
+21537
+22:02:46,020 --> 22:02:49,800
+for us. We learned a little bit
+about NFT debt storage, which is
+
+21538
+22:02:49,830 --> 22:02:54,960
+another way to pin data to IPFS.
+And then of course, we learned
+
+21539
+22:02:54,960 --> 22:02:58,020
+that if we wanted to, we could
+programmatically pin data to
+
+21540
+22:02:58,020 --> 22:03:01,410
+IPFS on our own node. But since
+a lot of us aren't gonna be
+
+21541
+22:03:01,410 --> 22:03:04,620
+running our own computers 24/7.
+We went ahead and said, Okay,
+
+21542
+22:03:04,620 --> 22:03:07,500
+well, we'll stick with pinata
+for our default here. Now that
+
+21543
+22:03:07,500 --> 22:03:10,620
+we've done all that, boom, got
+another little checkmark here.
+
+21544
+22:03:13,230 --> 22:03:16,500
+Now I got something to say we
+don't need to host our data on
+
+21545
+22:03:16,500 --> 22:03:21,150
+IPFS can actually host our data,
+our metadata directly on chain
+
+21546
+22:03:21,150 --> 22:03:24,060
+if we want to. However, there
+are some pros and cons to IT
+
+21547
+22:03:24,180 --> 22:03:27,540
+pros of hosting on IPFS, or
+that's going to be cheap. And
+
+21548
+22:03:27,540 --> 22:03:32,640
+the cons are that someone needs
+to pin our data, right? There's
+
+21549
+22:03:32,880 --> 22:03:36,030
+at least one person always needs
+to have her data pinned, right?
+
+21550
+22:03:36,030 --> 22:03:39,600
+It's decentralized, but you at
+least need somebody to pin your
+
+21551
+22:03:39,600 --> 22:03:42,540
+data, right? And using something
+like file coin is a way to
+
+21552
+22:03:42,540 --> 22:03:45,150
+incentivize people to pin that
+data. But if you're not using
+
+21553
+22:03:45,150 --> 22:03:48,810
+File coin, it's not necessarily
+guaranteed the pros of doing our
+
+21554
+22:03:48,810 --> 22:03:53,670
+SVG on chain NFT the data A is
+on chain. And you never have to
+
+21555
+22:03:53,670 --> 22:03:56,910
+worry about somebody actually
+pinning the data. The cons are
+
+21556
+22:03:56,910 --> 22:04:01,890
+that this is much more
+expensive. These little images,
+
+21557
+22:04:02,100 --> 22:04:05,160
+right here are actually
+surprisingly large and storing
+
+21558
+22:04:05,160 --> 22:04:07,980
+them on chain can actually get
+pretty expensive. So we're going
+
+21559
+22:04:07,980 --> 22:04:10,830
+to use some different images, so
+much smaller images, much
+
+21560
+22:04:10,830 --> 22:04:13,830
+cheaper images to work with
+here. And if you want to see
+
+21561
+22:04:13,830 --> 22:04:17,460
+another version of this, I have
+another video, how to make NFT
+
+21562
+22:04:17,460 --> 22:04:20,760
+art with on chain metadata, it
+goes through pretty much what
+
+21563
+22:04:20,760 --> 22:04:23,220
+we're about to go through here
+as well if you want a second
+
+21564
+22:04:23,250 --> 22:04:25,650
+reference, and there's a link to
+this in the GitHub repo
+
+21565
+22:04:25,680 --> 22:04:29,250
+associated with this course. So
+instead of these PNGs that we're
+
+21566
+22:04:29,250 --> 22:04:38,190
+using, we're going to use
+something called SVG s. Now, an
+
+21567
+22:04:38,190 --> 22:04:42,600
+SVG stands for Scalable Vector
+Graphics. And these are much
+
+21568
+22:04:42,600 --> 22:04:46,260
+much more minimalistic files
+that we can go ahead and upload
+
+21569
+22:04:46,260 --> 22:04:49,020
+to to the blockchain. So that's
+why we're going to use them
+
+21570
+22:04:49,020 --> 22:04:51,090
+because since there's so much
+more minimalistic, they're a lot
+
+21571
+22:04:51,090 --> 22:04:53,580
+cheaper to upload. Because
+remember, the more data that you
+
+21572
+22:04:53,580 --> 22:04:56,160
+upload to the blockchain, the
+more expensive it is. Now in
+
+21573
+22:04:56,160 --> 22:05:00,180
+this video, I make randomize SVG
+data on chain. And here's kind
+
+21574
+22:05:00,180 --> 22:05:02,580
+of an example of what one looks
+like. It's just a whole bunch of
+
+21575
+22:05:02,580 --> 22:05:06,360
+random lines. Not super
+thrilling, but random and kind
+
+21576
+22:05:06,360 --> 22:05:09,480
+of cool. And it's 100 percent. On
+chain, these SVG is actually
+
+21577
+22:05:09,480 --> 22:05:12,720
+work right in HTML. So if you
+want to use these for your
+
+21578
+22:05:12,720 --> 22:05:16,020
+websites, you can as well now
+there's a link to this tutorial
+
+21579
+22:05:16,020 --> 22:05:18,690
+in the GitHub repo associated
+with this course, where we can
+
+21580
+22:05:18,690 --> 22:05:21,450
+go ahead and try it yourself.
+And we can actually play with
+
+21581
+22:05:21,450 --> 22:05:23,760
+making an SVG, right, so they
+have all these different
+
+21582
+22:05:23,760 --> 22:05:29,250
+commands in this web through
+schools.com/graphics/svg intro
+
+21583
+22:05:29,250 --> 22:05:32,850
+dot ASP, you can see some of the
+different commands, right, you
+
+21584
+22:05:32,850 --> 22:05:36,480
+can make a rectangle you can
+make a circle path is a big one
+
+21585
+22:05:36,480 --> 22:05:40,140
+where you can say exactly what
+the path or the line you want to
+
+21586
+22:05:40,140 --> 22:05:42,840
+draw is going to look like.
+There's a whole bunch of stuff
+
+21587
+22:05:43,080 --> 22:05:46,680
+you can make in this SVG. And
+the cool thing is, no matter how
+
+21588
+22:05:46,680 --> 22:05:50,340
+big you make an SVG, the quality
+is always going to be exactly
+
+21589
+22:05:50,340 --> 22:05:53,550
+the same, because SVG just
+explains exactly how to draw it
+
+21590
+22:05:53,550 --> 22:05:56,760
+no matter how big or how little,
+the image is going to be. So if
+
+21591
+22:05:56,760 --> 22:05:59,580
+you want to learn more about SVG
+is you want to play with SVG is
+
+21592
+22:05:59,610 --> 22:06:02,010
+you know, you can come in here
+and try it yourself. So with
+
+21593
+22:06:02,010 --> 22:06:04,770
+that being said, that's what
+we're going to store on chain.
+
+21594
+22:06:04,830 --> 22:06:07,680
+So that's how we're going to
+store this SVG stuff on chain.
+
+21595
+22:06:07,950 --> 22:06:09,810
+But we're gonna go one step
+further, we're gonna make this
+
+21596
+22:06:09,810 --> 22:06:13,740
+dynamic, we're gonna make this
+actually change based off of
+
+21597
+22:06:13,770 --> 22:06:17,340
+some data on chain. If you go to
+the GitHub repo associated with
+
+21598
+22:06:17,340 --> 22:06:20,880
+this lesson, and you go to the
+images, and you go to dynamic
+
+21599
+22:06:20,880 --> 22:06:24,960
+NFT, you'll see two images, see
+happy dot SVG, which looks like
+
+21600
+22:06:24,960 --> 22:06:29,280
+this. And you'll see frown dot
+SVG, which looks like this. So
+
+21601
+22:06:29,280 --> 22:06:32,130
+we're going to make this NFT
+dynamic in the sense that we're
+
+21602
+22:06:32,130 --> 22:06:37,440
+going to say, if the price of
+eath is above some number, then
+
+21603
+22:06:37,440 --> 22:06:39,750
+we're going to have it be a
+happy face. And then if it's
+
+21604
+22:06:39,750 --> 22:06:44,130
+below that, we're going to make
+it a frowny face. So our NFT is
+
+21605
+22:06:44,130 --> 22:06:47,340
+going to change based off of
+some real world parameters. And
+
+21606
+22:06:47,340 --> 22:06:49,230
+this is obviously really
+powerful and really cool,
+
+21607
+22:06:49,230 --> 22:06:53,100
+because we can have an NFT that
+changes based off stats, we can
+
+21608
+22:06:53,100 --> 22:06:56,640
+have an NF t that changes based
+off of really whatever, and
+
+21609
+22:06:56,640 --> 22:06:59,760
+we're going to store all the
+data 100 percent on chain, it's going
+
+21610
+22:06:59,760 --> 22:07:02,040
+to be a little bit more
+expensive. So that's what we're
+
+21611
+22:07:02,040 --> 22:07:03,000
+going to be building here.
+
+21612
+22:07:08,459 --> 22:07:11,129
+Let's go ahead, let's jump into
+it. And let's do the final
+
+21613
+22:07:11,129 --> 22:07:14,489
+contract for our ultimate NFT
+section. So we're going to
+
+21614
+22:07:14,489 --> 22:07:17,609
+create a new contract in here,
+new contract, and this is going
+
+21615
+22:07:17,609 --> 22:07:24,149
+to be our dynamic, SVG and F T
+dot soul. And it's going to look
+
+21616
+22:07:24,149 --> 22:07:28,919
+real similar to what we've been
+doing. slash slash dynamic. SVG
+
+21617
+22:07:28,919 --> 22:07:37,229
+and ft dot saw, slash lat spdx,
+license identifier, and my team
+
+21618
+22:07:37,889 --> 22:07:46,709
+pragma. solidity, Eric zero,
+point 8.7. Contract, dynamic
+
+21619
+22:07:46,739 --> 22:07:52,109
+SVG, NF t. Now let's talk about
+what the architecture of this is
+
+21620
+22:07:52,109 --> 22:07:54,959
+going to look like. It's gonna
+look like pretty normal NF T,
+
+21621
+22:07:55,439 --> 22:07:58,559
+with a couple of caveats. We're
+gonna give it a min function to
+
+21622
+22:07:58,559 --> 22:08:02,939
+mint, these NF T's are also
+going to store our SVG
+
+21623
+22:08:02,969 --> 22:08:07,169
+information somewhere. And then
+we're going to need to have some
+
+21624
+22:08:07,169 --> 22:08:14,099
+logic to say show x image or
+show y image, right. And as we
+
+21625
+22:08:14,099 --> 22:08:17,579
+know, that's really just going
+to be switching the token URI to
+
+21626
+22:08:17,579 --> 22:08:21,149
+say show X or show y. So let's
+go into how we'd actually do
+
+21627
+22:08:21,149 --> 22:08:25,289
+this. So first, we know this is
+going to be in ERC. 721. So we
+
+21628
+22:08:25,289 --> 22:08:27,869
+can go ahead and import that
+from open Zeppelin. So we're
+
+21629
+22:08:27,869 --> 22:08:33,479
+going to say import at open
+Zeppelin slash contracts, slash
+
+21630
+22:08:33,479 --> 22:08:40,409
+token slash ERC. 721 slash ERC.
+721 That's all. Now we're not
+
+21631
+22:08:40,409 --> 22:08:43,859
+going to call that set token URI
+function that we call before so
+
+21632
+22:08:43,859 --> 22:08:47,309
+we can just use the raw ERC 721
+instead of an extension. So
+
+21633
+22:08:47,309 --> 22:08:52,889
+we'll say our contract is ERC
+721 and Now that we're making it
+
+21634
+22:08:52,889 --> 22:08:57,389
+an ERC 721. We can say construct
+dorm like this, then we'll call
+
+21635
+22:08:57,389 --> 22:09:01,349
+the constructor of the ERC. 721,
+which we're going to call this
+
+21636
+22:09:01,499 --> 22:09:09,749
+dynamic SVG, and f t DSN,
+dynamic SVG and s, t and f t,
+
+21637
+22:09:10,259 --> 22:09:14,579
+like so then we're also going to
+need a mint function. So let's
+
+21638
+22:09:14,579 --> 22:09:18,929
+just create that right now say
+function, mint and f t or
+
+21639
+22:09:18,929 --> 22:09:21,659
+request NFT. And we'll be a
+little bit looser here, we'll
+
+21640
+22:09:21,659 --> 22:09:25,199
+say the user doesn't need to pay
+any money for this. So this will
+
+21641
+22:09:25,199 --> 22:09:27,959
+just be a public function. And
+we're just going to mint them
+
+21642
+22:09:27,959 --> 22:09:31,979
+and NFT. Same thing, we're just
+going to call Safe mint message
+
+21643
+22:09:31,979 --> 22:09:35,969
+dot sender. And of course, we
+need that token count term. So
+
+21644
+22:09:35,969 --> 22:09:40,949
+let's go ahead and in our top
+will do you in 256, private s
+
+21645
+22:09:40,949 --> 22:09:45,209
+underscore token counter, we'll
+do token counter here. And then
+
+21646
+22:09:45,209 --> 22:09:47,609
+after we meant we'll do tag
+counter plus, there's gonna be
+
+21647
+22:09:47,609 --> 22:09:52,169
+equals token counter plus one.
+And then that's pretty much it,
+
+21648
+22:09:52,529 --> 22:09:55,319
+we have a way to meant we've
+done some of the basics here.
+
+21649
+22:09:55,619 --> 22:09:58,829
+We'll even we'll be explicit
+will say s token counter equals
+
+21650
+22:09:58,829 --> 22:10:02,219
+zero to initialize it. But now
+what is this token going to look
+
+21651
+22:10:02,219 --> 22:10:05,939
+like? We want these to look like
+SVGs. And we want it to be based
+
+21652
+22:10:05,939 --> 22:10:09,869
+off the price of some asset in
+our constructor, all right,
+
+21653
+22:10:10,049 --> 22:10:15,389
+create a string memory. We'll
+call it low SVG and a string
+
+21654
+22:10:15,419 --> 22:10:27,569
+memory, high SVG. And in our
+code will save this low SVG in
+
+21655
+22:10:27,569 --> 22:10:30,089
+this highest V G. So these will
+be the images, these will be
+
+21656
+22:10:30,089 --> 22:10:32,729
+like the frowny face and the
+smiley face that will just
+
+21657
+22:10:32,759 --> 22:10:37,259
+import as input parameters here.
+So as we know, we can make these
+
+21658
+22:10:37,259 --> 22:10:39,959
+immutable since these are
+probably not going to change. We
+
+21659
+22:10:39,959 --> 22:10:47,309
+can say String, private, I
+underscore low image URI. And in
+
+21660
+22:10:47,309 --> 22:10:52,409
+string private, I underscore
+high image URI. But if we just
+
+21661
+22:10:52,409 --> 22:10:55,439
+pass the SVG data, right, the
+SVG data is going to look like
+
+21662
+22:10:55,439 --> 22:11:00,539
+what in this GitHub, I can go to
+display the source blob here and
+
+21663
+22:11:00,539 --> 22:11:03,569
+I can see exactly what this code
+looks like this code here is
+
+21664
+22:11:03,569 --> 22:11:07,589
+definitely not an image URI.
+What we need is the image URI to
+
+21665
+22:11:07,589 --> 22:11:09,929
+look something like this, right?
+Now, the way that we're going to
+
+21666
+22:11:09,929 --> 22:11:12,809
+pass it in is like with this SVG
+code, right? Because we want to
+
+21667
+22:11:12,809 --> 22:11:15,719
+just pass it the SVG code, and
+then have the contract handle
+
+21668
+22:11:15,719 --> 22:11:16,589
+everything else.
+
+21669
+22:11:16,679 --> 22:11:21,509
+So how do we actually do this?
+Well, what we can do is we can
+
+21670
+22:11:21,509 --> 22:11:28,559
+create a function called SVG to
+image URI. And on chain, we can
+
+21671
+22:11:28,559 --> 22:11:33,929
+convert these SVGs from SVGs. To
+image arise. So instead of
+
+21672
+22:11:33,929 --> 22:11:37,649
+having IPFS, as their start,
+we're gonna use something called
+
+21673
+22:11:37,679 --> 22:11:43,019
+base 64 encoding, you can
+actually encode any SVG to a
+
+21674
+22:11:43,019 --> 22:11:48,089
+base 64 image URL. That's right.
+It'll look something like this
+
+21675
+22:11:48,179 --> 22:11:51,509
+base. 64 is group a binary to
+text encoding schemes that
+
+21676
+22:11:51,509 --> 22:11:56,159
+represents binary data. Or in
+our case, our SVG data. Base. 64
+
+21677
+22:11:56,159 --> 22:11:59,489
+is particularly prevalent in the
+world wide web, or one of its
+
+21678
+22:11:59,489 --> 22:12:03,059
+uses is the ability to embed
+image files or other binary
+
+21679
+22:12:03,059 --> 22:12:07,259
+assets inside textual assets,
+such as HTML, and CSS, what we
+
+21680
+22:12:07,259 --> 22:12:12,809
+can do, can actually convert all
+this SVG stuff to a URL or an
+
+21681
+22:12:12,809 --> 22:12:16,439
+image URI would be great, right?
+That's exactly what we want, we
+
+21682
+22:12:16,439 --> 22:12:20,579
+want to be able to convert this
+to a URL or an image URI. Now,
+
+21683
+22:12:20,609 --> 22:12:23,699
+if you take one of these images,
+or these SVG images, like the
+
+21684
+22:12:23,699 --> 22:12:26,639
+happy to have SVG, what we can
+actually do in this happy dot
+
+21685
+22:12:26,639 --> 22:12:31,589
+SVG is we can actually copy the
+image address, which is going to
+
+21686
+22:12:31,589 --> 22:12:34,319
+be the URL of this address. And
+if we paste it back in, we'll
+
+21687
+22:12:34,319 --> 22:12:38,099
+see justice file here. And in
+this site, we can actually do
+
+21688
+22:12:38,099 --> 22:12:43,349
+data type, remote URL, paste it
+in here. And we can say encode
+
+21689
+22:12:43,349 --> 22:12:48,599
+SVG to base 64. And down here,
+we'll get this weird job role of
+
+21690
+22:12:48,629 --> 22:12:53,279
+numbers and letters and stuff.
+This base 64 encoding represents
+
+21691
+22:12:53,279 --> 22:12:56,759
+the SVG that we just got and
+what we can do in our browser,
+
+21692
+22:12:56,789 --> 22:13:06,419
+we can type data, colon, image,
+slash SVG, plus XML, semicolon,
+
+21693
+22:13:06,989 --> 22:13:11,789
+base, 64, comma, and then paste
+that massive thing in here and
+
+21694
+22:13:11,789 --> 22:13:16,109
+Enter. And wouldn't you know it,
+we get exactly that image back
+
+21695
+22:13:16,109 --> 22:13:21,029
+up. So that huge, massive thing
+here is the base 64 encoding of
+
+21696
+22:13:21,029 --> 22:13:24,719
+this image. So with this basic C
+four encoded image, we can use
+
+21697
+22:13:24,719 --> 22:13:28,829
+this on chain as the image you
+arrive for our images. And then
+
+21698
+22:13:28,829 --> 22:13:31,709
+for our metadata. We'll just
+bake that directly into our
+
+21699
+22:13:31,709 --> 22:13:34,559
+token URI. You'll see what I
+mean in a second. So we have a
+
+21700
+22:13:34,559 --> 22:13:38,159
+way where we can actually
+directly put our SVG code right
+
+21701
+22:13:38,159 --> 22:13:40,589
+into our smart contracts. Let's
+figure out how to do that. So we
+
+21702
+22:13:40,589 --> 22:13:44,159
+have function, SVG to image URI,
+so we know we're going to want
+
+21703
+22:13:44,159 --> 22:13:47,909
+to probably do that same base 64
+encoding on chain. We're gonna
+
+21704
+22:13:47,909 --> 22:13:50,849
+100 percent do this off chain if you
+want to save some gas but it's
+
+21705
+22:13:50,849 --> 22:13:53,669
+kind of fun for To show how to
+do this all on chain, so we'll
+
+21706
+22:13:53,669 --> 22:13:56,969
+make this a public pure
+function. And we'll have it
+
+21707
+22:13:56,969 --> 22:14:02,189
+returns a string memory. So
+we're going to give this
+
+21708
+22:14:02,189 --> 22:14:05,039
+function an SVG, which we're
+going to pass in from our
+
+21709
+22:14:05,039 --> 22:14:08,279
+constructor. And we're going to
+return a string, which is going
+
+21710
+22:14:08,279 --> 22:14:11,759
+to be that base 64 encoded URL
+that we just saw, while up at
+
+21711
+22:14:11,759 --> 22:14:20,759
+our top will do string, private
+constant, base S feed, base 64,
+
+21712
+22:14:21,239 --> 22:14:29,159
+encoded SVG prefix equals that
+right there. And we'll use this
+
+21713
+22:14:29,189 --> 22:14:34,199
+to generate our SVG now, well,
+we can do. And then we're going
+
+21714
+22:14:34,199 --> 22:14:39,449
+to do string memory SVG, we're
+going to encode this SVG in
+
+21715
+22:14:39,449 --> 22:14:43,529
+basically for ourself by adding
+the base 64 encoding on chain.
+
+21716
+22:14:43,679 --> 22:14:46,979
+Now, we don't really want to
+have to rewrite that ourselves.
+
+21717
+22:14:47,039 --> 22:14:49,559
+So luckily for us, somebody has
+already done this. And we can
+
+21718
+22:14:49,559 --> 22:14:52,709
+see the GitHub repo associated
+with this, this was created by
+
+21719
+22:14:52,709 --> 22:14:55,469
+one of the LoopRing devs really
+awesome project, if you want to
+
+21720
+22:14:55,469 --> 22:14:58,109
+check that out as well. And
+we're going to borrow this code
+
+21721
+22:14:58,139 --> 22:15:02,219
+for our SVG on chain. So what we
+can do is we can add this in
+
+21722
+22:15:02,219 --> 22:15:05,939
+here, add their GitHub code,
+where they have basically
+
+21723
+22:15:05,939 --> 22:15:09,269
+everything that we need in here
+to encode and decode basics
+
+21724
+22:15:09,269 --> 22:15:15,869
+before, we can do yarn, add dash
+dash Dev, base 64 Dash soul,
+
+21725
+22:15:16,049 --> 22:15:18,599
+this is going to add their code
+as a dependency. And once we've
+
+21726
+22:15:18,629 --> 22:15:23,939
+added it, we can go ahead and
+import it with import, base 64,
+
+21727
+22:15:24,329 --> 22:15:31,439
+dash soul slash, base 64 dot
+Sol. And this contract comes
+
+21728
+22:15:31,439 --> 22:15:36,989
+with an encoder. So then we can
+just do string memory, SVG base,
+
+21729
+22:15:37,019 --> 22:15:44,099
+64, encoded, equals base 64 dot
+ENCODE. And here's where it gets
+
+21730
+22:15:44,129 --> 22:15:45,389
+a little bit weird.
+
+21731
+22:15:45,870 --> 22:15:56,190
+We'll do bytes string, abi dot
+ENCODE, act, SVG, and then we'll
+
+21732
+22:15:56,190 --> 22:16:04,350
+return string API dot encode
+packed, base 64, encoded SVG
+
+21733
+22:16:04,350 --> 22:16:09,900
+prefix, comma SVG base 64
+encoded, and just this function,
+
+21734
+22:16:09,900 --> 22:16:15,240
+this SVG to image URI will take
+in any SVG and spit us back out
+
+21735
+22:16:15,450 --> 22:16:20,310
+a URL or URI that looks exactly
+like this. Now, I kind of sped
+
+21736
+22:16:20,310 --> 22:16:22,740
+through some stuff in here.
+There's a whole bunch of new
+
+21737
+22:16:22,740 --> 22:16:26,730
+stuff like ABI dot encode packed
+that we did twice, what is this
+
+21738
+22:16:26,760 --> 22:16:28,650
+ABI dot encode packed doing?
+
+21739
+22:16:29,040 --> 22:16:37,710
+Well, let's learn about that. So
+from a really, really high
+
+21740
+22:16:37,710 --> 22:16:41,940
+level, this is basically how you
+concatenate strings. Right, this
+
+21741
+22:16:41,940 --> 22:16:44,220
+is how you combine strings
+together. And we're going to
+
+21742
+22:16:44,220 --> 22:16:49,260
+jump over remix to actually
+explore this ABI dot encode pact
+
+21743
+22:16:49,260 --> 22:16:52,980
+and this ABI encoding stuff a
+little bit more. Now the section
+
+21744
+22:16:52,980 --> 22:16:56,670
+that we're about to go through
+is definitely advanced. And
+
+21745
+22:16:56,670 --> 22:16:59,940
+we're going to be going over
+some really low level stuff, and
+
+21746
+22:16:59,940 --> 22:17:03,240
+how solidity works behind the
+scenes, how the binary works,
+
+21747
+22:17:03,240 --> 22:17:06,390
+and this thing called opcodes.
+And all this crazy, low level,
+
+21748
+22:17:06,750 --> 22:17:09,930
+tricky, difficult things to
+understand. If you want to move
+
+21749
+22:17:09,930 --> 22:17:13,350
+past this section, there are
+timestamps in the GitHub repo.
+
+21750
+22:17:13,530 --> 22:17:16,830
+To help you move past this.
+However, I do encourage you to
+
+21751
+22:17:16,830 --> 22:17:20,160
+at least try to absorb most of
+this material, if you don't
+
+21752
+22:17:20,160 --> 22:17:24,810
+understand it the first time.
+That's 100 percent. Okay, this is more
+
+21753
+22:17:24,840 --> 22:17:28,410
+advanced. Anyways, for most of
+your basic projects, you won't
+
+21754
+22:17:28,410 --> 22:17:32,100
+really need this information.
+It's only later on once you get
+
+21755
+22:17:32,100 --> 22:17:35,160
+more advanced that knowing all
+this is really going to make you
+
+21756
+22:17:35,340 --> 22:17:38,580
+a phenomenal solidity developer.
+And when you approach this
+
+21757
+22:17:38,580 --> 22:17:42,090
+section, when you approach this
+sub lesson on EVM, opcodes, and
+
+21758
+22:17:42,090 --> 22:17:45,570
+coding and calling, just know
+that if you don't 100 percent
+
+21759
+22:17:45,570 --> 22:17:48,720
+understand it the first time
+that is okay, if you want to
+
+21760
+22:17:48,720 --> 22:17:52,380
+watch this section a couple of
+times fantastic. So if you want
+
+21761
+22:17:52,380 --> 22:17:55,110
+to jump over to remix and follow
+along, let's do it. Now in our
+
+21762
+22:17:55,110 --> 22:17:57,450
+contract section, let's go ahead
+and create a new file, we're
+
+21763
+22:17:57,450 --> 22:18:01,230
+going to call it encoding dot
+soul. And remember, all the code
+
+21764
+22:18:01,230 --> 22:18:03,420
+that we're going to be going
+with in here is going to be in
+
+21765
+22:18:03,420 --> 22:18:07,980
+this sub Lesson folder of the
+Hardhead NFT. FCC. And all the
+
+21766
+22:18:07,980 --> 22:18:10,200
+code we're going to be working
+with is going to be in this
+
+21767
+22:18:10,200 --> 22:18:13,590
+encoding dot soul. And then in a
+little bit, we're going to work
+
+21768
+22:18:13,590 --> 22:18:17,040
+on this call anything that soul
+so we're in this encoding dot
+
+21769
+22:18:17,040 --> 22:18:20,640
+soul. And let's just make our
+basic code here. So we'll say
+
+21770
+22:18:20,880 --> 22:18:31,620
+spdx, license identifier, MIT
+pragma, solidity, carrot, zero,
+
+21771
+22:18:32,130 --> 22:18:36,660
+point 8.7, like that, do
+contract encoding, boom,
+
+21772
+22:18:36,780 --> 22:18:40,650
+compile, or Command S or ctrl S
+great things are looking good.
+
+21773
+22:18:40,710 --> 22:18:44,250
+Now remember, the whole purpose
+for this is to first understand
+
+21774
+22:18:44,250 --> 22:18:48,480
+what's going on here, and more
+about this API dot encode packed
+
+21775
+22:18:48,480 --> 22:18:52,470
+stuff. So let's first just write
+a function that should owes us
+
+21776
+22:18:52,500 --> 22:18:55,950
+wrapping API dot encode packed
+with some strings and wrapping
+
+21777
+22:18:55,950 --> 22:18:59,340
+it around a string is going to
+return a string. So we could do
+
+21778
+22:18:59,700 --> 22:19:04,440
+function, bind strings, or
+concatenate strings. This will
+
+21779
+22:19:04,440 --> 22:19:08,340
+be a public pure since we're not
+going to be reading any storage,
+
+21780
+22:19:08,790 --> 22:19:15,450
+we'll say returns string memory.
+And we'll say return string, API
+
+21781
+22:19:15,450 --> 22:19:21,330
+dot encode packed. I'm I'm
+comma, space in here, I miss
+
+21782
+22:19:21,330 --> 22:19:25,380
+you, like so. We need another
+parenthesis here. Okay, great.
+
+21783
+22:19:25,650 --> 22:19:28,950
+Now let's go ahead and deploy
+this, we'll start a JavaScript
+
+21784
+22:19:28,950 --> 22:19:33,900
+VM will deploy encoding
+coding.so. We'll come down here,
+
+21785
+22:19:34,050 --> 22:19:37,020
+we'll click Combine strings, and
+we get that whole string output.
+
+21786
+22:19:37,020 --> 22:19:41,820
+Hi, Mom, miss you. So what we're
+doing here is we're encoding hi
+
+21787
+22:19:41,820 --> 22:19:46,710
+mom misuse together into its
+bytes form, because API dot
+
+21788
+22:19:46,710 --> 22:19:50,760
+encode packed returns a bytes
+object, and we are typecasting
+
+21789
+22:19:50,760 --> 22:19:53,580
+it by wrapping it in this string
+thing to be a string. And
+
+21790
+22:19:53,580 --> 22:19:56,790
+solidity says, okay, yeah, bytes
+to string, that's fine, that
+
+21791
+22:19:56,790 --> 22:20:00,690
+totally works. And this API dot
+encode packed are these globally
+
+21792
+22:20:00,750 --> 22:20:04,650
+available methods and units. And
+actually, in solidity, there's a
+
+21793
+22:20:04,650 --> 22:20:07,920
+whole bunch of these, there's
+this solidity cheat sheet, and
+
+21794
+22:20:07,920 --> 22:20:10,320
+there's gonna be a link to this
+in the GitHub repo as well, that
+
+21795
+22:20:10,320 --> 22:20:13,110
+has a whole bunch of operators
+and it has a whole bunch of
+
+21796
+22:20:13,110 --> 22:20:15,720
+these global variables and
+methods. You can see if we look
+
+21797
+22:20:15,720 --> 22:20:19,770
+in here, we look for ABI dot
+encode pact, we see ABI dot
+
+21798
+22:20:19,770 --> 22:20:22,800
+encode pact right here, we
+scroll down, we'll see some more
+
+21799
+22:20:22,800 --> 22:20:25,590
+that we're familiar with as
+well. Like, for example, message
+
+21800
+22:20:25,590 --> 22:20:29,730
+dot sender, sender of the
+message, message dot value.
+
+21801
+22:20:29,880 --> 22:20:33,540
+There's a whole bunch of other
+globally available methods and
+
+21802
+22:20:33,570 --> 22:20:36,840
+variables that we can use when
+we're coding our stuff. Now, I
+
+21803
+22:20:36,840 --> 22:20:41,160
+will say though, in 0.8, point,
+well, plus, you can actually do
+
+21804
+22:20:41,160 --> 22:20:47,460
+string dot concat, you know,
+string a, comma string B, if you
+
+21805
+22:20:47,460 --> 22:20:51,630
+want to, instead of doing this
+API to encode packed, but I
+
+21806
+22:20:51,630 --> 22:20:53,790
+still wanted to show you the API
+dot encode pack, because it's a
+
+21807
+22:20:53,790 --> 22:20:56,700
+great segue into all this ABI
+stuff that we're about to go
+
+21808
+22:20:56,700 --> 22:21:00,810
+over. But let's focus on this
+encode packed thing. So what is
+
+21809
+22:21:00,810 --> 22:21:05,310
+actually going on here? Well,
+before we dive deeper into this
+
+21810
+22:21:05,310 --> 22:21:09,480
+encode pact, let's understand a
+little bit more about what
+
+21811
+22:21:09,480 --> 22:21:12,570
+happens when we send a
+transaction. So when we compile
+
+21812
+22:21:12,570 --> 22:21:15,210
+our code, and again, all these
+pictures are going to be in the
+
+21813
+22:21:15,210 --> 22:21:18,420
+GitHub repo. Remember back to
+ethers.js, we had those two
+
+21814
+22:21:18,420 --> 22:21:22,950
+files, we got a dot ABI file,
+and a dot bin or dot binary.
+
+21815
+22:21:23,160 --> 22:21:26,040
+Back in our ether symbol
+storage, when we ran yarn,
+
+21816
+22:21:26,190 --> 22:21:30,870
+compile. The two main files that
+we got, were this symbol storage
+
+21817
+22:21:30,870 --> 22:21:34,620
+that abi, which was this, you
+know, this ABI thing that we've
+
+21818
+22:21:34,620 --> 22:21:37,800
+become familiar with. And then
+the simple storage dot bin,
+
+21819
+22:21:38,010 --> 22:21:40,920
+which is the binary, which has a
+whole bunch of just numbers and
+
+21820
+22:21:40,920 --> 22:21:43,350
+letters and stuff we didn't
+understand. And you can see that
+
+21821
+22:21:43,350 --> 22:21:47,340
+in remix to, like if we were to
+compile this, you get a
+
+21822
+22:21:47,340 --> 22:21:50,310
+compilation details, you get a
+whole bunch of stuff in here,
+
+21823
+22:21:50,310 --> 22:21:53,280
+right? You can see the ABI in
+here, which this is kind of like
+
+21824
+22:21:53,280 --> 22:21:56,340
+a different way of viewing that
+API, we also get this bytecode
+
+21825
+22:21:56,340 --> 22:22:00,510
+bit and it's this object that
+has the same stuff that has like
+
+21826
+22:22:00,510 --> 22:22:03,330
+those random numbers and
+letters. But this is actually
+
+21827
+22:22:03,330 --> 22:22:05,850
+the binary this is actually
+what's getting put on the
+
+21828
+22:22:05,850 --> 22:22:09,060
+blockchain. It's this binary,
+it's this low level stuff. Now,
+
+21829
+22:22:09,090 --> 22:22:12,300
+when we actually send these
+contracts to the blockchain,
+
+21830
+22:22:12,330 --> 22:22:15,210
+we're sending like I said, we're
+sending this binary thing.
+
+21831
+22:22:15,240 --> 22:22:17,610
+That's exactly what we're
+sending to the blockchain. And
+
+21832
+22:22:17,610 --> 22:22:22,290
+remember how, again, back in our
+ethers project, we saw what is a
+
+21833
+22:22:22,290 --> 22:22:25,290
+transaction, right, a
+transaction has a nonce, it has
+
+21834
+22:22:25,290 --> 22:22:29,220
+a gas price guess limit to value
+data, we kind of skipped over
+
+21835
+22:22:29,220 --> 22:22:31,860
+the VRS a little bit, because
+that's kind of that mathy
+
+21836
+22:22:31,860 --> 22:22:34,980
+component of the transaction
+signature. But again, back in
+
+21837
+22:22:34,980 --> 22:22:37,620
+our ethos project, we did this
+as well, right in our deploy
+
+21838
+22:22:37,620 --> 22:22:41,370
+script, ended up sending a
+transaction ourselves, using
+
+21839
+22:22:41,370 --> 22:22:46,170
+just ethers. We passed a nonce,
+a gas price, gas limit to value
+
+21840
+22:22:46,530 --> 22:22:50,010
+data was this massive thing to
+declare a contract, and then
+
+21841
+22:22:50,010 --> 22:22:53,490
+also the chain ID. We didn't
+work with the VAR s, because
+
+21842
+22:22:53,520 --> 22:22:56,460
+ethers does that for us. But
+there's also this VAR s
+
+21843
+22:22:56,460 --> 22:22:59,460
+component that we don't bother
+to look at. When we send a
+
+21844
+22:22:59,460 --> 22:23:04,410
+transaction that actually
+creates a contract, the two is
+
+21845
+22:23:04,410 --> 22:23:06,240
+going to be empty. We're not
+going to send this contract
+
+21846
+22:23:06,240 --> 22:23:10,590
+deployment to any address. But
+the data of this is going to
+
+21847
+22:23:10,590 --> 22:23:15,930
+have the contract initialization
+code and contract bytecode.
+
+21848
+22:23:15,960 --> 22:23:18,960
+Right. So when we compile it, we
+get all this code, like how do
+
+21849
+22:23:18,960 --> 22:23:21,990
+you initialize the contract, and
+then what the contract actually
+
+21850
+22:23:21,990 --> 22:23:24,420
+looks like. So if you look at
+any of the contracts that you
+
+21851
+22:23:24,420 --> 22:23:27,030
+deployed, for example, I'm going
+to look at our raffle that we
+
+21852
+22:23:27,030 --> 22:23:30,810
+deployed. If you go to the
+transactions of your contract,
+
+21853
+22:23:30,870 --> 22:23:35,070
+we can see create raffle, right,
+let's go to that transaction. If
+
+21854
+22:23:35,070 --> 22:23:39,090
+we go down and click to see more
+in the ether scan, we can see
+
+21855
+22:23:39,090 --> 22:23:42,660
+this input data thing. And once
+again, it's got all this random
+
+21856
+22:23:42,750 --> 22:23:47,130
+garbled numbers and letters.
+This is that binary data of the
+
+21857
+22:23:47,130 --> 22:23:50,370
+contract initialization code and
+the contract byte code right
+
+21858
+22:23:50,370 --> 22:23:53,700
+what we send in our trend In
+this action is this data thing,
+
+21859
+22:23:53,730 --> 22:23:58,050
+we send this this weird bunch of
+garbled nonsense. Now we're
+
+21860
+22:23:58,050 --> 22:24:00,690
+going to head back to remix. And
+I'm just going to leave this as
+
+21861
+22:24:00,690 --> 22:24:03,630
+comments in here in the encoding
+dot soul and the GitHub repo.
+
+21862
+22:24:03,630 --> 22:24:06,780
+There's a ton of comments in
+here explaining exactly what I'm
+
+21863
+22:24:06,780 --> 22:24:09,330
+explaining. So if you want to
+follow along there, you can as
+
+21864
+22:24:09,330 --> 22:24:12,870
+well. But now in order for the
+blockchain to understand, okay,
+
+21865
+22:24:12,870 --> 22:24:16,350
+what do these numbers and
+letters even mean? You need a
+
+21866
+22:24:16,350 --> 22:24:18,870
+special reader cerium or the
+blockchain needs to be able to
+
+21867
+22:24:18,870 --> 22:24:23,220
+read all this stuff, it needs to
+be able to map all these random
+
+21868
+22:24:23,220 --> 22:24:28,020
+numbers and letters to what they
+actually do. How does Aetherium
+
+21869
+22:24:28,020 --> 22:24:32,040
+or polygon or avalanche know
+that all this nonsense is
+
+21870
+22:24:32,040 --> 22:24:34,410
+basically telling it to make a
+contract, you kind of think of
+
+21871
+22:24:34,410 --> 22:24:37,530
+it as saying, like, take off
+your coat. The only reason that
+
+21872
+22:24:37,530 --> 22:24:41,310
+we as human beings understand
+what take off your coat means is
+
+21873
+22:24:41,310 --> 22:24:44,610
+that we understand English,
+We're all reading English, for
+
+21874
+22:24:44,610 --> 22:24:47,700
+solidity. And for blockchains.
+Instead of English, I read these
+
+21875
+22:24:47,700 --> 22:24:50,550
+numbers and letters kind of like
+words, just instead of take off
+
+21876
+22:24:50,550 --> 22:24:53,250
+your coat, it's like deploy
+contract, and the contract does
+
+21877
+22:24:53,250 --> 22:24:55,860
+next XYZ and all this random
+stuff. So this bytecode
+
+21878
+22:24:55,860 --> 22:24:58,350
+represents the low level
+computer instructions to make
+
+21879
+22:24:58,350 --> 22:25:00,660
+our contract happen. And all
+these numbers and letters
+
+21880
+22:25:00,660 --> 22:25:04,860
+represent kind of an alphabet,
+just like how take off your coat
+
+21881
+22:25:04,860 --> 22:25:07,500
+is an alphabet. And when you
+combine them like this, it makes
+
+21882
+22:25:07,500 --> 22:25:10,260
+something that to us makes
+sense, you can kind of think of
+
+21883
+22:25:10,260 --> 22:25:13,800
+the alphabet for these as what's
+called opcodes. If you go to
+
+21884
+22:25:13,830 --> 22:25:17,790
+create a new tab, if you go to
+EVM dot codes, we'll get to this
+
+21885
+22:25:17,790 --> 22:25:21,960
+place where it just has a list
+of all these instructions. On
+
+21886
+22:25:21,960 --> 22:25:25,410
+the left side, you can see this
+thing called opcode. And then
+
+21887
+22:25:25,410 --> 22:25:29,610
+you can see name, so this opcode
+section is saying, Hey, if you
+
+21888
+22:25:29,610 --> 22:25:36,930
+see a 00 in this bytecode, that
+00 represents this opcode stop,
+
+21889
+22:25:36,990 --> 22:25:41,280
+which does what which halts
+execution, if you see a 01
+
+21890
+22:25:41,370 --> 22:25:44,790
+you're gonna do some addition
+stuff, a 02 is multiply, there
+
+21891
+22:25:44,790 --> 22:25:49,080
+are all these op codes that are
+kind of like the alphabet, or
+
+21892
+22:25:49,080 --> 22:25:52,050
+the language of this binary
+stuff, right, and they go all
+
+21893
+22:25:52,050 --> 22:25:55,470
+the way down to f f self
+destruct, these op codes also
+
+21894
+22:25:55,470 --> 22:25:58,950
+have, and that's what this is
+reading. Right? So if we look at
+
+21895
+22:25:59,040 --> 22:26:01,140
+our transaction here, and your
+yours might be a little bit
+
+21896
+22:26:01,140 --> 22:26:04,350
+different. Oh six, one says,
+Okay, the first thing we want
+
+21897
+22:26:04,350 --> 22:26:07,980
+you to do is the O six, one
+opcode. And if we go to EVM,
+
+21898
+22:26:07,980 --> 22:26:12,510
+opcodes, we look for six one,
+it's saying push to place to buy
+
+21899
+22:26:12,510 --> 22:26:15,600
+item on the stack. That's
+exactly how it's reading this
+
+21900
+22:26:15,660 --> 22:26:19,860
+any language that can compile
+down to this opcode stuff down
+
+21901
+22:26:19,860 --> 22:26:23,130
+to this specific set of
+Aetherium opcodes, or EVM.
+
+21902
+22:26:23,130 --> 22:26:27,270
+opcodes, is what's known as the
+EVM, the Etherium virtual
+
+21903
+22:26:27,270 --> 22:26:30,750
+machine. So being able to read
+these op codes is sometimes
+
+21904
+22:26:30,990 --> 22:26:34,830
+abstractly called the EVM, the
+Etherium virtual machine, the
+
+21905
+22:26:34,830 --> 22:26:39,720
+EVM basically represents all the
+instructions, a computer must be
+
+21906
+22:26:39,720 --> 22:26:42,870
+able to read for it to interact
+with Aetherium, or Aetherium,
+
+21907
+22:26:42,870 --> 22:26:47,040
+like applications. And this is
+why so many blockchains all work
+
+21908
+22:26:47,040 --> 22:26:50,940
+with solidity because solidity
+compiles down to this bytecode
+
+21909
+22:26:50,940 --> 22:26:55,830
+here, and polygon, avalanche
+arbitrage Aetherium, they all
+
+21910
+22:26:55,830 --> 22:27:00,510
+compiled down to the exact same
+type of binary, and they all
+
+21911
+22:27:00,510 --> 22:27:03,210
+have the exact same readers. Now
+why are we telling you all this
+
+21912
+22:27:03,210 --> 22:27:05,250
+stuff, you might be saying, hey,
+Patrick, this is cool and all
+
+21913
+22:27:05,250 --> 22:27:07,920
+but it looks like ABI dot encode
+packed, all that does is
+
+21914
+22:27:07,920 --> 22:27:12,420
+concatenate strings, abi encode
+pack can do actually way more.
+
+21915
+22:27:12,630 --> 22:27:16,620
+And if we look at these global
+variables, API dot encode packed
+
+21916
+22:27:16,620 --> 22:27:19,620
+is like what the third one down
+the list because it's a non
+
+21917
+22:27:19,620 --> 22:27:23,460
+standard way to encode stuff to
+this binary stuff that we just
+
+21918
+22:27:23,460 --> 22:27:27,300
+talked about, we can actually
+encode pretty much anything we
+
+21919
+22:27:27,300 --> 22:27:32,160
+want to being in this binary
+format, basically. And let's
+
+21920
+22:27:32,160 --> 22:27:34,650
+take a look at at encoding
+something. So let's create a
+
+21921
+22:27:34,650 --> 22:27:38,850
+function called encode number.
+And this will be a public pure
+
+21922
+22:27:38,850 --> 22:27:41,910
+function, since we're not going
+to read any state, and we'll say
+
+21923
+22:27:41,910 --> 22:27:46,050
+returns a bytes memory. We're
+going to have this function
+
+21924
+22:27:46,050 --> 22:27:49,890
+return a bytes object, we're
+going to have it returned the
+
+21925
+22:27:49,920 --> 22:27:52,860
+what this number is going to
+look like but in binary, so
+
+21926
+22:27:52,860 --> 22:27:59,760
+we'll say bytes, memory number
+equals ABI dot encode one, and
+
+21927
+22:27:59,760 --> 22:28:04,560
+then return number. So we're
+going to encode number down to
+
+21928
+22:28:04,560 --> 22:28:08,850
+it's a bi or it's binary format.
+So I know a lot of times when we
+
+21929
+22:28:08,850 --> 22:28:12,420
+say oh, what's the ABI what's
+the ABI right? Previously, we
+
+21930
+22:28:12,420 --> 22:28:15,960
+say, Oh, the ABI is, is this
+thing, right? It's, it's all
+
+21931
+22:28:15,960 --> 22:28:18,840
+these inputs and outputs. This
+is kind of the human readable
+
+21932
+22:28:18,840 --> 22:28:21,810
+version of the ABI. But again,
+the ABI is the application
+
+21933
+22:28:21,810 --> 22:28:26,040
+binary interface we want to
+encode or numbers down to it's
+
+21934
+22:28:26,040 --> 22:28:29,520
+basically it's binary, this ABI
+dot ENCODE is going to be a
+
+21935
+22:28:29,520 --> 22:28:32,310
+little different than like the
+ABI that you see when you're
+
+21936
+22:28:32,310 --> 22:28:35,700
+looking at compilation details.
+This is technically like the ABI
+
+21937
+22:28:35,730 --> 22:28:39,420
+technically is how to interact
+with this contract. However,
+
+21938
+22:28:39,510 --> 22:28:42,270
+it's not the actual binary
+version of it. So we're saying,
+
+21939
+22:28:42,270 --> 22:28:46,530
+okay, encode this number one
+down to its binary version, so
+
+21940
+22:28:46,530 --> 22:28:49,620
+that our contracts can interact
+with it in a way that they
+
+21941
+22:28:49,620 --> 22:28:52,620
+understand. So we're just saying
+okay, Watch that number one,
+
+21942
+22:28:52,680 --> 22:28:56,580
+let's make you machine readable.
+And if we go, we compile this
+
+21943
+22:28:56,610 --> 22:28:59,310
+and we deploy this right, let's
+delete that that old contract,
+
+21944
+22:28:59,310 --> 22:29:02,580
+we deploy this, we now have
+combined strings and encode
+
+21945
+22:29:02,580 --> 22:29:07,950
+number, we click it, we get this
+big hex thing. This is how the
+
+21946
+22:29:07,950 --> 22:29:11,430
+computer is going to understand
+the number one. Now we can
+
+21947
+22:29:11,430 --> 22:29:14,100
+encode pretty much anything
+actually, we could encode a
+
+21948
+22:29:14,100 --> 22:29:16,380
+string. So we'll say,
+
+21949
+22:29:17,549 --> 22:29:22,709
+function, encode string, we'll
+make this a public key here as
+
+21950
+22:29:22,709 --> 22:29:27,029
+well. It'll return a bytes
+memory, because we want to give
+
+21951
+22:29:27,029 --> 22:29:30,659
+it that binary stuff or that
+bites stuff. And we'll say bytes
+
+21952
+22:29:30,659 --> 22:29:37,109
+memory, some string equals ABI
+dot encode some string, and then
+
+21953
+22:29:37,109 --> 22:29:41,309
+return some string. Now let's
+compile that delete our old
+
+21954
+22:29:41,309 --> 22:29:45,839
+contract, deploy that code
+string, we get this big, big,
+
+21955
+22:29:45,839 --> 22:29:49,589
+big object here. And this is the
+binary. Now you'll notice
+
+21956
+22:29:49,589 --> 22:29:53,309
+something here, there's a ton of
+zeros, and those zeros take up
+
+21957
+22:29:53,309 --> 22:29:56,339
+space, right, that's a lot of
+space for the computer to take
+
+21958
+22:29:56,339 --> 22:29:58,829
+up, even though they're not
+really doing anything. They're
+
+21959
+22:29:58,829 --> 22:30:02,969
+just kind of taking up space. So
+solidity also comes with this
+
+21960
+22:30:02,999 --> 22:30:07,229
+ABI dot encode tact, which
+performs packed encoding of the
+
+21961
+22:30:07,229 --> 22:30:10,019
+given arguments. And you can
+read more about it in the
+
+21962
+22:30:10,019 --> 22:30:13,169
+solidity docs, if you want. And
+this is called the non standard
+
+21963
+22:30:13,169 --> 22:30:16,499
+packed mode. And it does the
+same encoding with some
+
+21964
+22:30:16,499 --> 22:30:19,859
+stipulations type shorter than
+32 bytes are concatenated
+
+21965
+22:30:19,859 --> 22:30:23,129
+directly without padding, or
+sign extension, dynamic types
+
+21966
+22:30:23,129 --> 22:30:25,379
+are encoded in place. And
+without the length array
+
+21967
+22:30:25,379 --> 22:30:28,109
+elements are padded, but still
+encoded in place, you can kind
+
+21968
+22:30:28,109 --> 22:30:31,079
+of think of ENCODE packed as
+sort of like a compressor,
+
+21969
+22:30:31,109 --> 22:30:34,799
+right? It's the ENCODE function.
+But it compresses stuff, if we
+
+21970
+22:30:34,799 --> 22:30:37,949
+wanted to encode some string but
+want to save space. And we
+
+21971
+22:30:37,949 --> 22:30:41,699
+didn't need the perfect low
+level binary of it. We could do
+
+21972
+22:30:41,699 --> 22:30:46,769
+function and code string packed,
+make this a public pure, and
+
+21973
+22:30:46,769 --> 22:30:51,929
+have it return a bytes memory.
+We could say, bytes memory, some
+
+21974
+22:30:51,929 --> 22:30:57,059
+string equals ABI dot encode
+packed once again, some string.
+
+21975
+22:30:57,509 --> 22:31:00,689
+So we're doing a code pack
+instead of a code. And we'll
+
+21976
+22:31:00,689 --> 22:31:03,749
+return some string here, we'll
+compile this and we'll see the
+
+21977
+22:31:03,749 --> 22:31:07,649
+difference, right compile, we'll
+delete our old one, we'll deploy
+
+21978
+22:31:07,649 --> 22:31:11,819
+this. Now we have ENCODE string,
+which again, that's what encoded
+
+21979
+22:31:11,819 --> 22:31:14,459
+string is gonna give us and we
+have encoded string packed,
+
+21980
+22:31:14,759 --> 22:31:19,379
+which returns us this much, much
+smaller bytes object. So you see
+
+21981
+22:31:19,379 --> 22:31:23,009
+the size difference, if we're
+trying to save gas, in code,
+
+21982
+22:31:23,009 --> 22:31:26,489
+string packed is going to be a
+way for us to save a lot more
+
+21983
+22:31:26,489 --> 22:31:30,119
+gas. Now, abi dot encode pact is
+actually really similar to
+
+21984
+22:31:30,119 --> 22:31:33,569
+something that we've done
+before, which is typecasting, if
+
+21985
+22:31:33,569 --> 22:31:39,029
+we didn't function and code
+string, bytes, public pure
+
+21986
+22:31:39,059 --> 22:31:45,989
+returns, bytes, memory, bytes,
+memories, some string equals
+
+21987
+22:31:46,469 --> 22:31:51,419
+bytes, some string, turn some
+string, these two are going to
+
+21988
+22:31:51,419 --> 22:31:54,869
+look nearly identical, right? So
+if we compile, we'll delete our
+
+21989
+22:31:54,869 --> 22:31:59,999
+old contract, deploy this code
+string bytes, which gives us
+
+21990
+22:31:59,999 --> 22:32:03,209
+this and encode string pack
+using the ABI to encode pack,
+
+21991
+22:32:03,269 --> 22:32:06,149
+they give us the exact same
+output, whereas encode strings
+
+21992
+22:32:06,149 --> 22:32:09,029
+to give us this big piece. So
+the two of these get the same
+
+21993
+22:32:09,029 --> 22:32:11,459
+result. But behind the scenes,
+they're doing something a little
+
+21994
+22:32:11,459 --> 22:32:14,429
+bit different. And I'm not going
+to go over exactly what that is.
+
+21995
+22:32:14,429 --> 22:32:18,479
+But I've left a link inside of
+the code here, if you want to
+
+21996
+22:32:18,479 --> 22:32:21,359
+learn more, which is exactly
+what we're doing in our NFT.
+
+21997
+22:32:21,359 --> 22:32:24,269
+Right, we're doing ABR dot
+encode packed, we're combining
+
+21998
+22:32:24,269 --> 22:32:28,049
+two strings. By putting them
+together, we're encoding them to
+
+21999
+22:32:28,049 --> 22:32:31,169
+their bytes implementation to
+their packed bytes
+
+22000
+22:32:31,169 --> 22:32:35,099
+implementation, and then we're
+just typecasting them back from
+

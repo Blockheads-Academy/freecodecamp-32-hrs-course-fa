@@ -1,0 +1,4992 @@
+13001
+13:10:04,960 --> 13:10:07,690
+since once a contract is
+deployed, the addresses are
+
+13002
+13:10:07,690 --> 13:10:10,330
+going to change is they're going
+to have some type of constants
+
+13003
+13:10:10,330 --> 13:10:15,400
+file. So they'll create a new
+file called constants, dot j s.
+
+13004
+13:10:17,500 --> 13:10:20,680
+And in here, they'll add the
+addresses and any API's and
+
+13005
+13:10:20,680 --> 13:10:25,240
+anything like that for us to use
+in our fund piece here. Now, as
+
+13006
+13:10:25,240 --> 13:10:27,670
+we're developing, and as we're
+building, this, the backend and
+
+13007
+13:10:27,670 --> 13:10:30,250
+the front end team are gonna
+have to interact a little bit,
+
+13008
+13:10:30,280 --> 13:10:32,860
+or if it's just you doing the
+full stack, you're gonna have to
+
+13009
+13:10:32,860 --> 13:10:36,070
+interact with their back end. So
+this is why it's so important to
+
+13010
+13:10:36,070 --> 13:10:40,900
+have both your front end and
+your back end code nearby. So if
+
+13011
+13:10:40,900 --> 13:10:45,280
+we go back to our Hardhead, fund
+me project that we just made, we
+
+13012
+13:10:45,280 --> 13:10:49,630
+can find the ABI in here. Once
+again, if we go to artifacts, go
+
+13013
+13:10:49,630 --> 13:10:54,370
+to contracts, we can go to fund
+me dot soul, fund me dot JSON,
+
+13014
+13:10:54,790 --> 13:10:58,660
+we can find the ABI right here,
+it's going to be this massive
+
+13015
+13:10:58,660 --> 13:11:01,480
+thing right here. So you can go
+ahead, you can even copy this
+
+13016
+13:11:01,480 --> 13:11:05,140
+whole thing in this little non
+squiggly bracket and this little
+
+13017
+13:11:05,140 --> 13:11:09,040
+bracket here, we can copy that.
+And then we can come back to our
+
+13018
+13:11:09,040 --> 13:11:12,580
+constant.js. And we can just
+save it as variable, we'll say
+
+13019
+13:11:12,670 --> 13:11:23,200
+Export const, Avi, e equals and
+paste that in there. And then
+
+13020
+13:11:23,200 --> 13:11:26,920
+back in our index dot j s, we
+can import it with import
+
+13021
+13:11:28,509 --> 13:11:38,529
+API from constants. Oops. Okay,
+great. So we have the API. Well,
+
+13022
+13:11:38,559 --> 13:11:41,439
+what about the address, since
+we're going to be running this
+
+13023
+13:11:41,439 --> 13:11:44,289
+locally, we want to get the
+contract address of this locally
+
+13024
+13:11:44,319 --> 13:11:48,039
+run contract, we can do that a
+couple of ways. One way is you
+
+13025
+13:11:48,039 --> 13:11:50,799
+can just have two windows open
+one with your front end code,
+
+13026
+13:11:50,829 --> 13:11:53,559
+one with your back end code, and
+the one with your back end code,
+
+13027
+13:11:53,559 --> 13:11:57,579
+you can run yarn, hard hat node,
+which will spin up our
+
+13028
+13:11:57,579 --> 13:12:01,839
+blockchain node for us, and give
+us the address in here. Or what
+
+13029
+13:12:01,839 --> 13:12:04,239
+we can do. And this will
+probably be a little bit easier
+
+13030
+13:12:04,329 --> 13:12:07,449
+is in your window with your
+front end code and create a new
+
+13031
+13:12:07,449 --> 13:12:10,569
+terminal. And now we'll have two
+terminals running. And then this
+
+13032
+13:12:10,599 --> 13:12:15,849
+second one, we're going to CD
+down CD dot dot, and then CD,
+
+13033
+13:12:16,329 --> 13:12:20,649
+hard hat on Me Free Code Camp.
+And in here, we're going to run
+
+13034
+13:12:20,649 --> 13:12:25,929
+yarn, art head node. And this is
+going to spin up our local
+
+13035
+13:12:25,929 --> 13:12:30,159
+blockchain in this second
+terminal in here, where we have
+
+13036
+13:12:30,459 --> 13:12:34,029
+deploying fund me deploy that
+address, blah, blah, blah, right
+
+13037
+13:12:34,029 --> 13:12:37,869
+here. And just a reminder, if I
+hit this x, it just hides the
+
+13038
+13:12:37,869 --> 13:12:41,619
+terminal. I can always pull it
+back up with terminal new
+
+13039
+13:12:41,619 --> 13:12:45,639
+terminal, and I can always hide
+it, but this is still running
+
+13040
+13:12:45,669 --> 13:12:48,399
+inside of my terminal. So I'm
+going to hide it. And what I can
+
+13041
+13:12:48,399 --> 13:12:51,699
+do is I can come back over to
+our constants folder, and at the
+
+13042
+13:12:51,699 --> 13:12:59,439
+top, we can do export const
+contract address. equals, we'll
+
+13043
+13:12:59,439 --> 13:13:04,059
+pull the terminal back up. And
+we'll go grab, where it says,
+
+13044
+13:13:04,929 --> 13:13:08,709
+pulling fund me deployed at
+right here. We'll copy that
+
+13045
+13:13:08,709 --> 13:13:12,999
+address, put some quotes, and
+we'll paste it in. And now we're
+
+13046
+13:13:12,999 --> 13:13:16,959
+also exporting the contract
+address, then in our index.js
+
+13047
+13:13:17,019 --> 13:13:22,749
+will import the contract address
+with comma, contract address.
+
+13048
+13:13:23,469 --> 13:13:28,149
+And now we have both the ABI and
+the contract address. So what we
+
+13049
+13:13:28,149 --> 13:13:33,249
+can do, we can say const
+contract equals new ethers dot
+
+13050
+13:13:33,249 --> 13:13:38,439
+contract of, we'll pass the
+contract address, pass the API,
+
+13051
+13:13:38,679 --> 13:13:41,649
+and we'll pass it the signer.
+Now we have an ethers contract
+
+13052
+13:13:41,649 --> 13:13:44,829
+object that's connected to our
+signer, and we have the contract
+
+13053
+13:13:44,829 --> 13:13:47,769
+address, and we have the
+contract abi, now that we have a
+
+13054
+13:13:47,769 --> 13:13:50,829
+contract object, we can go ahead
+and start making transactions
+
+13055
+13:13:51,009 --> 13:13:54,219
+the exact same way we've made
+transactions before we can just
+
+13056
+13:13:54,219 --> 13:14:02,739
+run const transaction response
+equals a weight contract dot
+
+13057
+13:14:02,799 --> 13:14:08,829
+fund. And then we'll pass a
+value of ethers dot utils dot
+
+13058
+13:14:09,039 --> 13:14:14,619
+parse, ether ether mount. So
+this is going to be how we're
+
+13059
+13:14:14,619 --> 13:14:18,219
+going to go ahead and create our
+transaction. And if you take
+
+13060
+13:14:18,219 --> 13:14:21,159
+this right now, and we go to our
+front, we give it a little
+
+13061
+13:14:21,159 --> 13:14:24,699
+refresh, make sure we're
+connected and we hit fund, we're
+
+13062
+13:14:24,699 --> 13:14:29,529
+gonna get this error value must
+be a string. That's because at
+
+13063
+13:14:29,529 --> 13:14:33,219
+the mount right now is being
+passed in as nothing. Now
+
+13064
+13:14:33,219 --> 13:14:36,669
+normally, we'll pass parameters
+directly to our functions. But
+
+13065
+13:14:36,789 --> 13:14:39,309
+what we're going to do is for
+now is we're just going to hard
+
+13066
+13:14:39,309 --> 13:14:43,629
+code this. So we'll say const.
+At the mount equals, we'll do
+
+13067
+13:14:43,629 --> 13:14:47,379
+like 77, or something we had
+fun. Now, what do you think's
+
+13068
+13:14:47,379 --> 13:14:51,669
+gonna happen? Well, we get this
+other air, insufficient funds
+
+13069
+13:14:51,699 --> 13:14:55,089
+for intrinsic transaction cost,
+or you might get some other
+
+13070
+13:14:55,089 --> 13:14:57,459
+error, but you're gonna get a
+weird error here. And that's
+
+13071
+13:14:57,459 --> 13:15:01,689
+because we're not actually
+connected to our local hard head
+
+13072
+13:15:01,689 --> 13:15:04,899
+node right now. Well, if we look
+at our Metamask, we're currently
+
+13073
+13:15:04,929 --> 13:15:08,409
+not connected to the right
+blockchain, we're connected to
+
+13074
+13:15:08,409 --> 13:15:12,729
+rink B, or main net or whatever,
+we need to get connected to our
+
+13075
+13:15:12,729 --> 13:15:16,209
+local host. If you look in your
+networks, you'll actually have a
+
+13076
+13:15:16,209 --> 13:15:19,869
+local host object here already.
+But let's just be super
+
+13077
+13:15:19,869 --> 13:15:23,079
+specific. And we'll add a new
+network here, we're going to add
+
+13078
+13:15:23,079 --> 13:15:27,099
+something called our hard hat,
+local host. And we'll hit Add
+
+13079
+13:15:27,099 --> 13:15:30,549
+Network and we'll add Hardhead.
+Local host in here, the RPC URL,
+
+13080
+13:15:30,789 --> 13:15:35,379
+we can find from our node area,
+which we scroll to where our
+
+13081
+13:15:35,379 --> 13:15:39,579
+node is running, we can copy
+this URL and paste it into new
+
+13082
+13:15:39,579 --> 13:15:44,859
+RPC URL, chain ID is going to be
+31337 currency symbol is going
+
+13083
+13:15:44,859 --> 13:15:48,789
+to be go or ether. Even though
+this pop up says it might have a
+
+13084
+13:15:48,789 --> 13:15:51,159
+different currency symbol go,
+we're just going to put eath in
+
+13085
+13:15:51,159 --> 13:15:54,429
+here. And there is no block
+explorer, right? Because this is
+
+13086
+13:15:54,429 --> 13:15:57,249
+a local blockchain, we're not
+going to have a block Explorer.
+
+13087
+13:15:57,309 --> 13:15:58,809
+So we'll go ahead and hit Save.
+
+13088
+13:15:58,900 --> 13:16:01,870
+And now we have an account here,
+which is great. We're connected
+
+13089
+13:16:01,870 --> 13:16:04,990
+to our local blockchain. And if
+we switch our meta mask, we can
+
+13090
+13:16:04,990 --> 13:16:08,590
+see we're on the local hard hat.
+And we are connected. Awesome.
+
+13091
+13:16:08,770 --> 13:16:13,390
+Let's refresh. Let's run fund
+one more time. And we'll see a
+
+13092
+13:16:13,390 --> 13:16:17,740
+transaction does indeed pop up.
+This is great. But our account
+
+13093
+13:16:17,740 --> 13:16:21,190
+here doesn't have any money we
+have, we're broke, we don't have
+
+13094
+13:16:21,190 --> 13:16:24,880
+any local Hardhead Aetherium. So
+we're actually going to need to
+
+13095
+13:16:24,940 --> 13:16:29,230
+import one of our accounts from
+hard hat into our meta mask,
+
+13096
+13:16:29,530 --> 13:16:33,640
+which we can do so and you can
+actually do this for any account
+
+13097
+13:16:33,640 --> 13:16:36,940
+with a private key so hard that
+gives us these accounts. And
+
+13098
+13:16:36,940 --> 13:16:40,030
+we're going to import the
+private key of Count zero into
+
+13099
+13:16:40,060 --> 13:16:42,910
+our meta mask. So we're going to
+copy the private key, we're
+
+13100
+13:16:42,910 --> 13:16:45,790
+going to come back to our front
+end, click on our meta mask,
+
+13101
+13:16:46,090 --> 13:16:48,850
+we're gonna hit this big button,
+we're gonna hit import account.
+
+13102
+13:16:49,270 --> 13:16:52,450
+It's like type private key, and
+we're gonna paste our private
+
+13103
+13:16:52,450 --> 13:16:57,340
+key here. A quick note, if you
+choose json file, remember how
+
+13104
+13:16:57,340 --> 13:17:01,510
+back in that ether section, we
+encrypted our key into a JSON
+
+13105
+13:17:01,510 --> 13:17:05,830
+file with a password, you can
+actually import accounts with
+
+13106
+13:17:05,830 --> 13:17:08,770
+that JSON file with the
+password. So if you encrypt a
+
+13107
+13:17:08,770 --> 13:17:11,650
+key and you want to add it to
+meta mask, you can go ahead and
+
+13108
+13:17:11,650 --> 13:17:13,750
+add it in just like this. But
+for now, we're going to use
+
+13109
+13:17:13,750 --> 13:17:16,180
+private key, we'll paste the
+private key in and we'll hit
+
+13110
+13:17:16,180 --> 13:17:21,100
+import. And we can see we now
+have an account, a new account
+
+13111
+13:17:21,130 --> 13:17:26,380
+and account three, with a ton of
+eath from our local blockchain.
+
+13112
+13:17:26,650 --> 13:17:29,890
+So we'll refresh one more time,
+we'll go ahead and connect,
+
+13113
+13:17:29,920 --> 13:17:33,370
+we'll make sure that our account
+three is connected. And if it's
+
+13114
+13:17:33,370 --> 13:17:36,700
+not, we'll go ahead and hit this
+Connect button. So that now our
+
+13115
+13:17:36,700 --> 13:17:39,760
+account three is what's
+connected here. And we'll go
+
+13116
+13:17:39,760 --> 13:17:43,720
+ahead and hit fund. And we now
+see that we can fund this
+
+13117
+13:17:43,720 --> 13:17:48,340
+contract, we can go ahead and
+hit Confirm. And if we look and
+
+13118
+13:17:48,340 --> 13:17:50,230
+nothing's going to happen on our
+front end, because we didn't
+
+13119
+13:17:50,230 --> 13:17:52,450
+tell our front end to do
+anything once we confirm, but if
+
+13120
+13:17:52,450 --> 13:17:55,960
+we go to our blockchain, we can
+see our fun function was called
+
+13121
+13:17:55,990 --> 13:17:58,750
+we've just made our first
+transaction on a blockchain from
+
+13122
+13:17:58,750 --> 13:18:02,680
+our own front end, this is
+awesome, great work. But it's
+
+13123
+13:18:02,710 --> 13:18:05,440
+probably a little confusing to
+the user. If nothing happens
+
+13124
+13:18:05,440 --> 13:18:07,720
+here, they're going to hit the
+fun function. And it's going to
+
+13125
+13:18:07,720 --> 13:18:12,190
+be like, Oh, okay, cool. What,
+what happens? Now, we probably
+
+13126
+13:18:12,190 --> 13:18:14,740
+want to make it a little bit
+more obvious that something just
+
+13127
+13:18:14,740 --> 13:18:17,200
+happened. And one more thing I
+want to show you, you don't have
+
+13128
+13:18:17,200 --> 13:18:20,590
+to follow along here, if I hit
+fund, and then I hit reject,
+
+13129
+13:18:20,860 --> 13:18:23,470
+it's gonna freak out on us and
+be like, hey, like, you hit
+
+13130
+13:18:23,470 --> 13:18:25,720
+reject, I don't know what to do
+now. So we're going to make our
+
+13131
+13:18:25,720 --> 13:18:28,600
+code a little bit more robust by
+adding a try catch. So we'll
+
+13132
+13:18:28,600 --> 13:18:36,160
+tell JavaScript to try running
+this transaction. And then if it
+
+13133
+13:18:36,160 --> 13:18:41,980
+catches an error, just to
+console dot log, that error. So
+
+13134
+13:18:41,980 --> 13:18:46,330
+now, if I hit fund, and I hit
+reject, it's gonna, it'll still
+
+13135
+13:18:46,330 --> 13:18:49,060
+be a little bit mad, but at
+least we're catching it and it's
+
+13136
+13:18:49,060 --> 13:18:52,240
+not going to break and destroy
+everything. Okay, cool. We've
+
+13137
+13:18:52,240 --> 13:18:55,840
+got a transaction response here.
+And when we hit fund, our front
+
+13138
+13:18:55,840 --> 13:19:03,130
+end goes great. You've funded me
+I'm I'm super confused. Oh, one
+
+13139
+13:19:03,130 --> 13:19:05,800
+other point, something that
+you'll probably run into
+
+13140
+13:19:05,830 --> 13:19:09,820
+multiple times. As we're doing
+this. If you get an error that
+
+13141
+13:19:09,820 --> 13:19:13,360
+looks like this eath. JS query
+while formatting outputs from
+
+13142
+13:19:13,360 --> 13:19:17,200
+RPC, nonce to high expected not
+to be too but got form, you will
+
+13143
+13:19:17,200 --> 13:19:20,560
+definitely see this a whole lot.
+Here's what you do to fix this.
+
+13144
+13:19:20,680 --> 13:19:23,890
+The reason this happens is
+because you've closed your
+
+13145
+13:19:23,890 --> 13:19:27,490
+hardhat node and then restarted
+it, and your heart had node
+
+13146
+13:19:27,490 --> 13:19:30,610
+goes, Okay, well, I'm starting
+fresh, I'm starting from zero.
+
+13147
+13:19:30,880 --> 13:19:34,240
+But Metamask isn't smart enough
+to know that, what we want to do
+
+13148
+13:19:34,300 --> 13:19:36,850
+is we want to come to our
+Metamask, we'll hit this big
+
+13149
+13:19:36,850 --> 13:19:40,540
+button, we'll go down to
+settings, we'll go to Advanced,
+
+13150
+13:19:40,870 --> 13:19:44,050
+and we'll go to reset account.
+And yes, we're going to reset
+
+13151
+13:19:44,050 --> 13:19:48,100
+it. This isn't something ideally
+that you'd like to do with an
+
+13152
+13:19:48,100 --> 13:19:51,820
+actual account with actual money
+on a local network, this is
+
+13153
+13:19:51,820 --> 13:19:54,940
+fine. Now if you reset the
+account, and you reset the node,
+
+13154
+13:19:55,090 --> 13:19:58,030
+we can go ahead and hit Confirm.
+And it doesn't give us that
+
+13155
+13:19:58,030 --> 13:20:01,180
+error anymore. So that's kind of
+the tip there, you want to reset
+
+13156
+13:20:01,180 --> 13:20:04,120
+the nuts so that our Metamask
+and our blockchain are in sync
+
+13157
+13:20:04,120 --> 13:20:05,410
+with that nonce number.
+
+13158
+13:20:08,290 --> 13:20:10,810
+So we have this transaction
+response. And we probably want
+
+13159
+13:20:10,810 --> 13:20:14,680
+our front end to give the user
+some indication, hey, the
+
+13160
+13:20:14,680 --> 13:20:17,590
+transaction went through. So
+what we want to do is we want to
+
+13161
+13:20:17,590 --> 13:20:20,590
+listen to the blockchain for
+this to finish. So we can either
+
+13162
+13:20:20,650 --> 13:20:26,860
+listen for the TX to be mined.
+Or we can listen for an event.
+
+13163
+13:20:27,130 --> 13:20:29,950
+We haven't learned about events
+yet. But we will. So for now,
+
+13164
+13:20:29,950 --> 13:20:32,230
+since we haven't learned about
+events yet, we're just going to
+
+13165
+13:20:32,230 --> 13:20:34,960
+listen for the TX to be mined.
+Or to listen for the transaction
+
+13166
+13:20:34,960 --> 13:20:37,240
+to be mined, we're actually
+going to create a new function
+
+13167
+13:20:37,510 --> 13:20:44,950
+called function, listen, or
+transaction mine in this is
+
+13168
+13:20:44,950 --> 13:20:49,360
+going to take as input a
+transaction response, and a
+
+13169
+13:20:49,360 --> 13:20:53,410
+provider. Now you'll notice this
+isn't an async function. For
+
+13170
+13:20:53,410 --> 13:20:56,050
+this section. This is
+intentional, we don't want this
+
+13171
+13:20:56,050 --> 13:20:57,970
+to be an async function. And
+you'll see why in a second.
+
+13172
+13:20:58,390 --> 13:21:00,970
+We're going to be using
+JavaScript promise JavaScript
+
+13173
+13:21:01,000 --> 13:21:04,270
+async functionality to its
+massive advantage. And this is
+
+13174
+13:21:04,270 --> 13:21:07,060
+why JavaScript actually works so
+well on the front end is because
+
+13175
+13:21:07,420 --> 13:21:09,790
+of how it's asynchronous. So
+we're going to create this
+
+13176
+13:21:09,790 --> 13:21:12,400
+function listen for transaction
+to be mined, we're going to
+
+13177
+13:21:12,400 --> 13:21:16,180
+await in our fund function. And
+we're going to have this return
+
+13178
+13:21:16,240 --> 13:21:19,270
+a promise. Let's go ahead, and
+let's learn how to build this.
+
+13179
+13:21:19,270 --> 13:21:22,750
+So we're gonna say console dot
+log, string interpolation, we'll
+
+13180
+13:21:22,750 --> 13:21:27,730
+say mining. And then in here,
+we'll say transaction, response
+
+13181
+13:21:27,730 --> 13:21:32,140
+dot hash. All of our transaction
+response objects have a hash,
+
+13182
+13:21:32,140 --> 13:21:36,100
+which just represent that hash.
+And we'll do a couple of data
+
+13183
+13:21:36,100 --> 13:21:39,280
+dot, we'll put in our console
+here, we're waiting for the
+
+13184
+13:21:39,280 --> 13:21:42,250
+transaction to be mined, then
+what we're going to do is we're
+
+13185
+13:21:42,250 --> 13:21:47,740
+going to return a new promise.
+And the reason we're going to
+
+13186
+13:21:47,740 --> 13:21:52,060
+return a promise is because we
+need to create a listener for
+
+13187
+13:21:52,060 --> 13:21:55,750
+the blockchain. We want to
+listen for this event to happen.
+
+13188
+13:21:55,780 --> 13:22:01,150
+But we want to tell JavaScript,
+hey, wait for this thing to
+
+13189
+13:22:01,150 --> 13:22:04,930
+finish looking, wait for this
+thing to finish looking. Now
+
+13190
+13:22:04,930 --> 13:22:07,270
+here's where this gets a little
+bit tricky. In our fund
+
+13191
+13:22:07,270 --> 13:22:10,960
+function. After we create the
+transaction, we basically want
+
+13192
+13:22:10,960 --> 13:22:17,260
+to tell JavaScript Hey, wait for
+this TX to finish. So our code
+
+13193
+13:22:17,290 --> 13:22:22,420
+is going to look as simple as
+await listen for transaction
+
+13194
+13:22:22,420 --> 13:22:28,330
+mine. And we're going to pass it
+the trans action response
+
+13195
+13:22:29,529 --> 13:22:32,469
+and our provider. So we're
+saying hey, listen for this
+
+13196
+13:22:32,469 --> 13:22:35,289
+transaction finish. And we're
+using this await keyword,
+
+13197
+13:22:35,469 --> 13:22:38,589
+because again, the await keyword
+says okay, we're gonna stop
+
+13198
+13:22:38,619 --> 13:22:40,599
+right here. We're gonna stop
+until this function is
+
+13199
+13:22:40,599 --> 13:22:43,899
+completely done. Now in this
+listen for transaction in mind,
+
+13200
+13:22:43,929 --> 13:22:46,539
+we have to define how we're
+actually going to listen for
+
+13201
+13:22:46,539 --> 13:22:50,289
+this. So we're going to say
+listen for this transaction to
+
+13202
+13:22:50,289 --> 13:22:54,399
+finish. Ethers actually comes
+with a way for us to listen for
+
+13203
+13:22:54,399 --> 13:22:57,279
+transactions and listen for
+events, which again, we haven't
+
+13204
+13:22:57,279 --> 13:23:00,159
+learned About, but don't worry
+about that yet. So we can go to
+
+13205
+13:23:00,159 --> 13:23:04,509
+the ethers docs. And we can look
+up once. Contract dot once.
+
+13206
+13:23:04,569 --> 13:23:08,019
+There's a whole bunch of
+listeners that we can use to
+
+13207
+13:23:08,049 --> 13:23:11,019
+listen for events and listen for
+different things to happen, we
+
+13208
+13:23:11,019 --> 13:23:13,749
+can do this thing called
+provider dot once where we
+
+13209
+13:23:13,749 --> 13:23:18,489
+listen for some event. And once
+that event fires, we call some
+
+13210
+13:23:18,519 --> 13:23:21,129
+other function that we've
+defined. Now, we haven't talked
+
+13211
+13:23:21,129 --> 13:23:24,099
+about events yet. And again,
+don't worry about this quite
+
+13212
+13:23:24,099 --> 13:23:27,099
+yet. One of the events that we
+can wait for is we can just wait
+
+13213
+13:23:27,099 --> 13:23:30,639
+for the transaction receipt to
+finish, right, because once we
+
+13214
+13:23:30,639 --> 13:23:33,999
+get a transaction receipt, that
+means that the transaction has
+
+13215
+13:23:33,999 --> 13:23:36,309
+actually finished going through.
+So we're going to use this
+
+13216
+13:23:36,309 --> 13:23:41,109
+provider dot once syntax to wait
+for the transaction receipt,
+
+13217
+13:23:41,259 --> 13:23:43,959
+which is going to be our event,
+which isn't really an event, but
+
+13218
+13:23:43,959 --> 13:23:45,849
+don't worry about that yet. And
+then we're going to call some
+
+13219
+13:23:45,849 --> 13:23:48,069
+listener function that we
+defined, you can also do
+
+13220
+13:23:48,069 --> 13:23:52,569
+provider.on, which will trigger
+anytime your event fires
+
+13221
+13:23:52,599 --> 13:23:56,199
+provider once just triggers one
+time, we only care about this
+
+13222
+13:23:56,199 --> 13:23:59,379
+transaction going through one
+time. So we're passing our
+
+13223
+13:23:59,379 --> 13:24:04,239
+provider object. So we're gonna
+say provider dot once our event
+
+13224
+13:24:04,269 --> 13:24:09,669
+which is just going to be
+transaction response, hash,
+
+13225
+13:24:09,999 --> 13:24:13,269
+provided on transaction response
+dot hash. So once we get this
+
+13226
+13:24:13,269 --> 13:24:16,119
+hash, which will pretty much get
+right away, we're going to call
+
+13227
+13:24:16,119 --> 13:24:20,349
+our listener function. Now we
+can create a function listener
+
+13228
+13:24:20,529 --> 13:24:23,739
+like this, and then just pass
+listener in here. But we're
+
+13229
+13:24:23,739 --> 13:24:25,869
+going to do an anonymous
+function here, because that's
+
+13230
+13:24:25,959 --> 13:24:28,239
+typically what we see as the
+syntax for these loops. And so
+
+13231
+13:24:28,239 --> 13:24:30,909
+far, we're doing provider dot
+once to do this anonymous
+
+13232
+13:24:30,909 --> 13:24:34,539
+function, we're going to do just
+two little parentheses here. And
+
+13233
+13:24:34,539 --> 13:24:39,069
+this arrow notation. So this by
+itself represents an anonymous
+
+13234
+13:24:39,069 --> 13:24:41,919
+function. So we're saying, hey,
+there's some function, it
+
+13235
+13:24:41,919 --> 13:24:45,039
+doesn't take any parameters, and
+it doesn't have any code, this
+
+13236
+13:24:45,039 --> 13:24:48,039
+arrow function, this whole thing
+is saying this is an anonymous
+
+13237
+13:24:48,039 --> 13:24:51,099
+function. So we're saying
+provided at once transaction
+
+13238
+13:24:51,099 --> 13:24:53,259
+hash happens, here's the
+function that you want to
+
+13239
+13:24:53,259 --> 13:24:56,709
+execute. It doesn't do anything
+right now. But let's have a do
+
+13240
+13:24:56,709 --> 13:24:58,959
+something. So once this
+transaction dot response
+
+13241
+13:24:58,989 --> 13:25:05,739
+finishes, we're going to take a
+trans transaction received as an
+
+13242
+13:25:05,739 --> 13:25:09,399
+input parameter, or our our
+callback function, or our
+
+13243
+13:25:09,399 --> 13:25:12,189
+listener function. And all we're
+going to do is we're gonna say
+
+13244
+13:25:12,189 --> 13:25:19,209
+console dot log, completed with
+a little string interpolation,
+
+13245
+13:25:19,449 --> 13:25:23,649
+transaction receipt, that
+confirmations, confirmations,
+
+13246
+13:25:24,069 --> 13:25:26,319
+and then completed with
+transaction receipt,
+
+13247
+13:25:26,349 --> 13:25:30,699
+confirmations, confirmations. So
+once this provider dot once sees
+
+13248
+13:25:30,699 --> 13:25:34,479
+that there's a transaction hash,
+it's going to give as an input
+
+13249
+13:25:34,479 --> 13:25:37,749
+rammer to our listener function,
+the transaction receipt, kind of
+
+13250
+13:25:37,749 --> 13:25:40,389
+that same syntax that we've been
+seeing this whole time, once a
+
+13251
+13:25:40,389 --> 13:25:43,179
+transaction response finishes,
+we get the transaction receipt,
+
+13252
+13:25:43,479 --> 13:25:45,729
+and we can do stuff with it. And
+we see how many block
+
+13253
+13:25:45,729 --> 13:25:48,909
+confirmations it has. For us,
+this pretty much should always
+
+13254
+13:25:48,909 --> 13:25:52,749
+be one. Now if we save this, go
+back to our front end, and we
+
+13255
+13:25:52,749 --> 13:25:56,319
+hit fund, it's going to work,
+we're going to give the user
+
+13256
+13:25:56,319 --> 13:25:59,409
+some indication that it worked,
+which is great. But it's not
+
+13257
+13:25:59,499 --> 13:26:02,229
+really going to work the way
+that we want it to work. We have
+
+13258
+13:26:02,229 --> 13:26:05,709
+this console dot log done right
+after we do the await, listen
+
+13259
+13:26:05,709 --> 13:26:09,789
+for transaction mine, and we
+come back and we hit fund, we
+
+13260
+13:26:09,789 --> 13:26:13,839
+hit confirm, it actually doesn't
+go in the order that we want it
+
+13261
+13:26:13,839 --> 13:26:18,489
+to go, it goes mining this thing
+that it says Done. And then it
+
+13262
+13:26:18,489 --> 13:26:21,879
+says completed with one trip
+confirmation what what's going
+
+13263
+13:26:21,879 --> 13:26:26,349
+on here, we should write
+completed before we write done,
+
+13264
+13:26:26,409 --> 13:26:28,929
+because that's the order that we
+have this in. But it looks like
+
+13265
+13:26:28,929 --> 13:26:32,199
+it's words, it's going out of
+order. What what's going on
+
+13266
+13:26:32,199 --> 13:26:35,709
+here, what's going to happen is
+when we call listen for
+
+13267
+13:26:35,709 --> 13:26:40,569
+transaction mine, or listen for
+transaction, mine function is
+
+13268
+13:26:40,569 --> 13:26:44,499
+going to kick off, but it's
+going to kick off provided on
+
+13269
+13:26:44,499 --> 13:26:49,059
+once as its own process. So
+await listen for transaction,
+
+13270
+13:26:49,059 --> 13:26:53,349
+mine will kick off the listener,
+but it doesn't wait for this
+
+13271
+13:26:53,349 --> 13:26:57,279
+listener to find the transaction
+response. So this function will
+
+13272
+13:26:57,279 --> 13:27:04,269
+actually finish before provider
+dot once finishes. So after it
+
+13273
+13:27:04,269 --> 13:27:08,079
+kicks off the listener, it'll
+run to the next line of our
+
+13274
+13:27:08,079 --> 13:27:12,369
+code, which is console dot log
+and done. Our front end we'll go
+
+13275
+13:27:12,369 --> 13:27:15,969
+oh, oh, you kicked off a
+listener earlier. Let me go back
+
+13276
+13:27:15,969 --> 13:27:20,049
+down and let me recheck to see
+if it's finished. And if it has
+
+13277
+13:27:20,049 --> 13:27:23,229
+finished, I'll go do what it
+told me to do. And this is where
+
+13278
+13:27:23,229 --> 13:27:25,029
+what's known as the event loop
+kicks in.
+
+13279
+13:27:25,389 --> 13:27:28,479
+We don't actually wait for this
+provider that wants to finish,
+
+13280
+13:27:28,809 --> 13:27:32,259
+we add this provided at once
+onto this queue called the event
+
+13281
+13:27:32,259 --> 13:27:36,399
+loop. And our front end is going
+to periodically check back to it
+
+13282
+13:27:36,399 --> 13:27:40,689
+to see if it's finished. So we
+want to adjust our code. So we
+
+13283
+13:27:40,689 --> 13:27:43,539
+wait for the listener to finish
+listening, which is where we're
+
+13284
+13:27:43,539 --> 13:27:47,079
+going to get into promises here.
+So what we want to do is we want
+
+13285
+13:27:47,079 --> 13:27:50,649
+to adjust this function to now
+return a promise. And we're
+
+13286
+13:27:50,649 --> 13:27:53,139
+going to use this syntax a
+couple of times in the future.
+
+13287
+13:27:53,169 --> 13:27:55,959
+So what we're going to do is
+we're going to say hey, we want
+
+13288
+13:27:55,959 --> 13:27:59,379
+to wait for the listener To
+finish listening, we're going to
+
+13289
+13:27:59,379 --> 13:28:02,739
+wrap this whole thing into a
+promise. And we're going to say
+
+13290
+13:28:02,739 --> 13:28:08,469
+return, new promise. And a
+promise takes a function itself
+
+13291
+13:28:08,499 --> 13:28:12,759
+as an input parameter. So again,
+we'll use kind of this anonymous
+
+13292
+13:28:12,759 --> 13:28:15,489
+function notation. And it will
+take two input parameters
+
+13293
+13:28:15,489 --> 13:28:21,189
+resolve and reject. So resolve
+says, hey, if this promise works
+
+13294
+13:28:21,189 --> 13:28:24,489
+correctly, call this resolve
+function. And for us, this
+
+13295
+13:28:24,489 --> 13:28:28,629
+promise is going to be done when
+the listener finishes listening.
+
+13296
+13:28:28,839 --> 13:28:31,899
+And then we would reject if
+there was some type of timeout,
+
+13297
+13:28:31,929 --> 13:28:34,599
+we're not going to write the
+reject function. But in the
+
+13298
+13:28:34,599 --> 13:28:37,479
+future, if you were to do this
+for production, you'd add some
+
+13299
+13:28:37,479 --> 13:28:40,299
+timeout as the reject parameter.
+Basically, you're saying, hey,
+
+13300
+13:28:40,449 --> 13:28:42,249
+once the listener finishes
+listening, we're going to
+
+13301
+13:28:42,249 --> 13:28:45,219
+resolve and if it takes too
+long, we're gonna say ask for
+
+13302
+13:28:45,219 --> 13:28:47,799
+you, you took too long, and
+instead of closing it off, here,
+
+13303
+13:28:47,949 --> 13:28:52,359
+we're going to close it off
+around this provider thing. So
+
+13304
+13:28:52,359 --> 13:28:55,599
+we're gonna say return new
+promise, resolve, reject. And
+
+13305
+13:28:55,629 --> 13:29:00,729
+only once this transaction gets
+fired, are we going to resolve
+
+13306
+13:29:00,759 --> 13:29:05,199
+this promise, like so. So what
+is happening here, so we're
+
+13307
+13:29:05,199 --> 13:29:10,269
+going to put the resolve inside
+of this provider at once. So
+
+13308
+13:29:10,269 --> 13:29:15,849
+we're saying, once this
+transaction hash is found, then
+
+13309
+13:29:15,849 --> 13:29:18,069
+we're going to call this
+function, we're gonna say
+
+13310
+13:29:18,069 --> 13:29:21,219
+console dot log, and then we're
+going to resolve so this promise
+
+13311
+13:29:21,249 --> 13:29:25,389
+only returns once a resolve or
+reject is called. And we're
+
+13312
+13:29:25,389 --> 13:29:30,759
+telling it only resolve only
+finish this function once.
+
+13313
+13:29:31,239 --> 13:29:34,329
+Transaction response dot hash is
+found, because it's going to be
+
+13314
+13:29:34,359 --> 13:29:38,349
+inside of these little squiggly
+parentheses for provider dot
+
+13315
+13:29:38,349 --> 13:29:43,569
+once, the promise right now only
+resolves after it's fired. It's
+
+13316
+13:29:43,569 --> 13:29:47,619
+event here. If this was really
+confusing, just copy paste this
+
+13317
+13:29:47,679 --> 13:29:50,859
+and move on, we're getting a
+little bit deeper into front end
+
+13318
+13:29:50,859 --> 13:29:54,339
+stuff here. So hopefully, this
+was clear, if not definitely
+
+13319
+13:29:54,339 --> 13:29:56,559
+jump in to the GitHub
+discussions to start asking
+
+13320
+13:29:56,559 --> 13:30:00,639
+about this stuff. But now that
+we've updated this, we can come
+
+13321
+13:30:00,639 --> 13:30:03,489
+back to our front end, we can
+hit the fund button. And
+
+13322
+13:30:03,489 --> 13:30:06,099
+hopefully this time, everything
+will go in order. We'll hit
+
+13323
+13:30:06,099 --> 13:30:10,749
+confirm, we see mining
+completed, and then we see done.
+
+13324
+13:30:10,959 --> 13:30:14,349
+And the reason for this is
+because again, our await keyword
+
+13325
+13:30:14,409 --> 13:30:17,469
+is now waiting, it says oh,
+you're returning a promise, I
+
+13326
+13:30:17,469 --> 13:30:21,489
+need to await I need to wait for
+it to resolve or reject. And we
+
+13327
+13:30:21,519 --> 13:30:25,029
+only resolve the promise once
+our provider finds this
+
+13328
+13:30:25,029 --> 13:30:27,969
+transaction hash and this
+transaction receipt, this is
+
+13329
+13:30:27,969 --> 13:30:31,269
+this listen for transaction
+mine. In future sections, all of
+
+13330
+13:30:31,269 --> 13:30:33,819
+this is going to be abstracted
+away for us. So life is going to
+
+13331
+13:30:33,819 --> 13:30:36,069
+be much easier, but it is
+important to understand what's
+
+13332
+13:30:36,069 --> 13:30:39,609
+actually going on here. Awesome.
+So now we're giving the front
+
+13333
+13:30:39,609 --> 13:30:47,079
+end some indication of what's
+going on. Our fun function is
+
+13334
+13:30:47,079 --> 13:30:52,359
+done well, no, not really. Why
+not? Well, because right now
+
+13335
+13:30:52,359 --> 13:30:55,659
+we're hard coding the eath
+amount to 0.1. And on the front
+
+13336
+13:30:55,659 --> 13:30:57,939
+end, we probably don't want to
+hard code it, we probably want
+
+13337
+13:30:57,939 --> 13:31:02,049
+to allow users to fund as much
+or as little as they want. So we
+
+13338
+13:31:02,049 --> 13:31:05,349
+actually need to change this
+from just a button to a input
+
+13339
+13:31:05,349 --> 13:31:09,639
+form. So to do this, we're gonna
+go back over into our HTML. So
+
+13340
+13:31:09,639 --> 13:31:13,149
+we'll go back to index dot HTML.
+And we're going to change this
+
+13341
+13:31:13,179 --> 13:31:15,939
+fun section here, we're going to
+add some form information. So
+
+13342
+13:31:15,939 --> 13:31:18,249
+we're going to keep this button
+as it is, or we're going to add
+
+13343
+13:31:18,249 --> 13:31:22,809
+like a little text box to input
+as much eath as they want. So
+
+13344
+13:31:22,839 --> 13:31:26,739
+I'm going to create a label,
+we're gonna say it's for, it's
+
+13345
+13:31:26,739 --> 13:31:29,889
+going to be fund and this label
+we're gonna say, is eath amount,
+
+13346
+13:31:30,549 --> 13:31:32,589
+and then we're gonna close
+label, this is basically just
+
+13347
+13:31:32,589 --> 13:31:34,959
+going to create a label. And if
+we go back to our front end, we
+
+13348
+13:31:34,959 --> 13:31:37,899
+now just have this Etham out
+label that isn't labeling
+
+13349
+13:31:37,929 --> 13:31:40,809
+anything. Now we're going to
+create an input, and we're going
+
+13350
+13:31:40,809 --> 13:31:45,249
+to give it an ID of eath amount.
+And we're going to give it a
+
+13351
+13:31:45,249 --> 13:31:46,059
+placeholder
+
+13352
+13:31:47,140 --> 13:31:53,470
+of 0.1. And then we're gonna
+close the input. So now if we
+
+13353
+13:31:53,470 --> 13:31:56,920
+flip to our front end, we have
+eath amount, labeling this
+
+13354
+13:31:56,920 --> 13:31:59,710
+little text box with a
+placeholder of 0.1. And we can
+
+13355
+13:31:59,710 --> 13:32:02,110
+add stuff in here, you know,
+blah, blah, whatever. And one
+
+13356
+13:32:02,110 --> 13:32:05,170
+more thing, if you have some
+tags, but you don't put anything
+
+13357
+13:32:05,170 --> 13:32:07,720
+in between them, you can
+actually shorten it by just
+
+13358
+13:32:07,960 --> 13:32:11,950
+putting the little closing thing
+at the back of it like this. So
+
+13359
+13:32:11,950 --> 13:32:13,600
+if you don't have anything
+between your tags, you can just
+
+13360
+13:32:13,600 --> 13:32:17,140
+close them like this, these two
+are equivalent, boom, boom,
+
+13361
+13:32:17,170 --> 13:32:20,230
+boom, boom, those are the same
+thing. Great. When we called
+
+13362
+13:32:20,230 --> 13:32:22,900
+fund right now we're calling
+fund and we're not passing any
+
+13363
+13:32:22,900 --> 13:32:27,130
+parameters. Let's update our
+fund to no longer be hardcoding
+
+13364
+13:32:27,160 --> 13:32:30,100
+eath amount in here, and we'll
+have and we'll have our fund
+
+13365
+13:32:30,130 --> 13:32:36,070
+function populated by whatever
+we put in this eath amount input
+
+13366
+13:32:36,070 --> 13:32:39,250
+box in our fund function,
+instead of saying const eath
+
+13367
+13:32:39,250 --> 13:32:45,400
+amount equals 0.1. We'll grab it
+from this eath amount ID and
+
+13368
+13:32:45,700 --> 13:32:53,830
+we'll say document dot get
+element by ID eath amount, dot
+
+13369
+13:32:53,830 --> 13:32:59,020
+value. So we're going to grab
+whatever value In this input box
+
+13370
+13:32:59,020 --> 13:33:02,800
+here, now, in our index.js, we
+have console dot log funding
+
+13371
+13:33:02,800 --> 13:33:07,540
+with eath amount, if in our
+front end, we do 1.7. And we hit
+
+13372
+13:33:07,540 --> 13:33:11,230
+fund, we now see in our console
+dot log, it says funding with
+
+13373
+13:33:11,230 --> 13:33:16,900
+1.7. And we'll get 1.7. And our
+little fun section confirm, it
+
+13374
+13:33:16,900 --> 13:33:20,620
+will mine it, it'll complete it,
+and then say, done. Awesome. So
+
+13375
+13:33:20,620 --> 13:33:24,280
+now we've added a little text
+box here. So people can fund as
+
+13376
+13:33:24,280 --> 13:33:27,670
+much or as little as they want.
+Perfect, this whole thing can
+
+13377
+13:33:27,670 --> 13:33:31,480
+kind of be considered a form.
+There's also a form tag, but
+
+13378
+13:33:31,480 --> 13:33:36,850
+we're going to just use this for
+now. All right, great. We're
+
+13379
+13:33:36,850 --> 13:33:39,580
+doing a lot of funding right,
+and we keep funding our contract
+
+13380
+13:33:39,580 --> 13:33:42,370
+with more and more Ethan, we
+keep adding more and more stuff,
+
+13381
+13:33:42,400 --> 13:33:45,220
+we probably want a button to
+keep track of how much is
+
+13382
+13:33:45,220 --> 13:33:48,310
+actually in here. So let's just
+add a really simple balance
+
+13383
+13:33:48,310 --> 13:33:51,190
+button. And let me actually just
+move this down to the bottom
+
+13384
+13:33:51,190 --> 13:33:56,140
+here, much better. So we'll say
+button, id equals balance
+
+13385
+13:33:56,140 --> 13:34:03,010
+button. We'll call it get
+balance. Now we have a get
+
+13386
+13:34:03,010 --> 13:34:05,500
+balanced button. And it's not
+going to do anything because we
+
+13387
+13:34:05,500 --> 13:34:07,780
+don't have a get balanced
+function. So let's go back to
+
+13388
+13:34:07,780 --> 13:34:11,500
+our index.js. And we'll create a
+get bounced function async
+
+13389
+13:34:13,300 --> 13:34:17,110
+function get bounce. And we'll
+just do what we've been doing so
+
+13390
+13:34:17,110 --> 13:34:23,140
+far. If type of window dot
+Aetherium does not equal,
+
+13391
+13:34:23,680 --> 13:34:27,670
+undefined, then we're going to
+do const provider equals new
+
+13392
+13:34:27,910 --> 13:34:34,540
+ethers, ethers, dot providers
+dot web three provider of
+
+13393
+13:34:34,540 --> 13:34:40,840
+window, that Aetherium then will
+do const balance equals awaits
+
+13394
+13:34:40,840 --> 13:34:46,810
+provider dot get balance,
+contract address, which again,
+
+13395
+13:34:46,840 --> 13:34:49,990
+we're importing way up at the
+top, and then we'll just do
+
+13396
+13:34:50,020 --> 13:34:59,680
+console dot log ethers dot utils
+dot format, ether, bounce this
+
+13397
+13:34:59,680 --> 13:35:02,620
+format ether function ethers
+utils, which you can find in the
+
+13398
+13:35:02,620 --> 13:35:06,910
+documentation to make reading
+ethers, formatted numbers much
+
+13399
+13:35:06,910 --> 13:35:09,970
+easier to read. Then same as
+what we've been doing before,
+
+13400
+13:35:10,540 --> 13:35:13,390
+we're going to go up, we're
+going to copy this fun button
+
+13401
+13:35:13,390 --> 13:35:19,540
+line, paste it will say balance
+button equals document dot get
+
+13402
+13:35:19,540 --> 13:35:26,860
+element by ID, balance button.
+And then we'll say balance
+
+13403
+13:35:26,860 --> 13:35:31,780
+button on click equals get
+balance, we're gonna come back
+
+13404
+13:35:31,780 --> 13:35:34,030
+to our front end, we'll do a
+quick refresh, we'll do get
+
+13405
+13:35:34,030 --> 13:35:37,420
+balance. And now we can see the
+balance in the console, we can
+
+13406
+13:35:37,420 --> 13:35:42,550
+fund with more like 1.8, we'll
+hit fund metamath pops up, we'll
+
+13407
+13:35:42,550 --> 13:35:46,030
+go ahead and confirm mining
+completed done, we hit get
+
+13408
+13:35:46,030 --> 13:35:53,080
+balanced, and now we're at 3.8.
+Fantastic. Alright, let's keep
+
+13409
+13:35:53,080 --> 13:35:55,690
+it going. What do we need to do
+next, we're gonna go ahead and
+
+13410
+13:35:55,690 --> 13:35:58,750
+eat our withdrawal function
+here. So let's create that this
+
+13411
+13:35:58,750 --> 13:36:01,600
+is gonna look really similar to
+everything we've done so far. So
+
+13412
+13:36:01,600 --> 13:36:04,630
+on our index dot HTML, let's
+create a new button that we can
+
+13413
+13:36:04,630 --> 13:36:09,190
+do by copying this whole line,
+paste it underneath, call this
+
+13414
+13:36:09,190 --> 13:36:13,930
+withdraw button, we'll call
+withdraw. And we'll call this
+
+13415
+13:36:13,960 --> 13:36:18,880
+withdraw. And then in our index,
+do the same thing, we'll copy
+
+13416
+13:36:18,880 --> 13:36:25,390
+this, paste it below. So with
+drop button was document get
+
+13417
+13:36:25,390 --> 13:36:31,180
+element by ID, withdraw button,
+withdraw button.on Click equals
+
+13418
+13:36:31,240 --> 13:36:34,780
+withdraw. So let's make a
+withdrawal function down at the
+
+13419
+13:36:34,780 --> 13:36:39,400
+bottom. We'll go ahead, say
+async. Function withdraw,
+
+13420
+13:36:40,930 --> 13:36:43,990
+will do the exact same that
+we've done above. And I can even
+
+13421
+13:36:43,990 --> 13:36:48,430
+just copy everything from the
+get balance and just remove the
+
+13422
+13:36:48,430 --> 13:36:51,730
+balance section. If type of
+window dot Aetherium does not
+
+13423
+13:36:51,730 --> 13:36:56,320
+equal to undefined, then we'll
+grab the provider here. And same
+
+13424
+13:36:56,320 --> 13:37:00,430
+as the fund contract, we'll grab
+the signer and the contract. So
+
+13425
+13:37:00,430 --> 13:37:03,910
+let's just grab those two lines.
+Paste them down here called
+
+13426
+13:37:03,910 --> 13:37:07,180
+signer equals provider dot get
+signer. Contract equals new
+
+13427
+13:37:07,180 --> 13:37:09,970
+contract, blah, blah, blah.
+Okay, cool. Now we're gonna do
+
+13428
+13:37:09,970 --> 13:37:13,360
+the exact same here as we did
+with the fun function. So we're
+
+13429
+13:37:13,360 --> 13:37:15,820
+gonna do a little try, catch,
+and then we'll even add the
+
+13430
+13:37:15,820 --> 13:37:21,970
+catch here, catch error, console
+dot log error. And inside of our
+
+13431
+13:37:21,970 --> 13:37:29,080
+try, we'll do const transaction
+response equals await, contracts
+
+13432
+13:37:29,110 --> 13:37:33,310
+dot withdraw. We don't need to
+put any parameters in here. Oh,
+
+13433
+13:37:33,310 --> 13:37:39,070
+then actually, let's do a little
+console dot log, withdrawing,
+
+13434
+13:37:39,220 --> 13:37:41,470
+and then we'll get this
+transaction response. And then
+
+13435
+13:37:41,470 --> 13:37:43,930
+we'll listen for this
+transaction to get mined as
+
+13436
+13:37:43,930 --> 13:37:52,480
+well. By running a Wait, listen
+for transaction mine transaction
+
+13437
+13:37:52,480 --> 13:37:59,320
+response comma, provider And
+that's it, since we can reuse
+
+13438
+13:37:59,320 --> 13:38:02,530
+the functionality from our
+listen for transaction mine. So
+
+13439
+13:38:02,530 --> 13:38:05,350
+now we'll refresh, we'll make
+sure we're connected, check the
+
+13440
+13:38:05,350 --> 13:38:09,850
+current balance, which is 3.8.
+Now we'll go ahead and withdraw.
+
+13441
+13:38:11,050 --> 13:38:14,620
+We see our little withdrawing
+console dot log, we'll hit
+
+13442
+13:38:14,620 --> 13:38:19,330
+Confirm. And it looks like we've
+completed it, if we look in our
+
+13443
+13:38:19,330 --> 13:38:23,800
+Metamask, our bounced will have
+been increased by the amount
+
+13444
+13:38:23,800 --> 13:38:27,760
+that was added here. And now if
+we hit balance, we do indeed see
+
+13445
+13:38:27,820 --> 13:38:30,460
+zero, we can even double check
+that this is actually working,
+
+13446
+13:38:30,580 --> 13:38:34,600
+we can see our balance is 9.99.
+Let's go ahead and even fund
+
+13447
+13:38:34,600 --> 13:38:39,520
+this with 99 eath. Good confirm,
+looks like it's completed. Our
+
+13448
+13:38:39,520 --> 13:38:44,320
+meta mask now shows 99.00. And
+if we go ahead and withdraw,
+
+13449
+13:38:44,860 --> 13:38:48,130
+confirm, that withdrawal has
+gone through, we can see our
+
+13450
+13:38:48,130 --> 13:38:55,030
+balance is back up to 9999. And
+now let's just go back and
+
+13451
+13:38:55,030 --> 13:39:00,070
+change. Hey, what's good. We'll
+refresh our front end. And now
+
+13452
+13:39:00,070 --> 13:39:03,910
+we can see you've done it, we've
+created a minimalistic website
+
+13453
+13:39:04,090 --> 13:39:07,480
+that allows us to connect to the
+blockchain and call functions
+
+13454
+13:39:07,510 --> 13:39:10,750
+from a front end. And from a
+website, this is absolutely
+
+13455
+13:39:10,780 --> 13:39:13,660
+massive, you should be
+incredibly proud and incredibly
+
+13456
+13:39:13,660 --> 13:39:16,780
+excited with yourself. Now, this
+is definitely a minimalistic
+
+13457
+13:39:16,780 --> 13:39:19,510
+version. And we're going to work
+with more powerful and more
+
+13458
+13:39:19,510 --> 13:39:22,330
+modern front end frameworks. But
+this will give you an idea of
+
+13459
+13:39:22,330 --> 13:39:25,780
+exactly what's going on behind
+the scenes when we're working
+
+13460
+13:39:25,780 --> 13:39:28,840
+with those more advanced front
+ends, and we'll style them up.
+
+13461
+13:39:28,840 --> 13:39:31,780
+So they look a little bit better
+than this. But with that being
+
+13462
+13:39:31,780 --> 13:39:34,570
+said, you've just learned the
+basics of how these front ends
+
+13463
+13:39:34,570 --> 13:39:37,210
+work. And now that you know how
+to push things up to get, I
+
+13464
+13:39:37,210 --> 13:39:40,150
+highly recommend you start
+pushing all of these projects up
+
+13465
+13:39:40,150 --> 13:39:43,150
+to your GitHub, they will be a
+record that you've actually done
+
+13466
+13:39:43,150 --> 13:39:45,610
+the work and you've built these
+smart contracts. And if you're
+
+13467
+13:39:45,610 --> 13:39:47,800
+looking to get an internship
+down the line, if you're looking
+
+13468
+13:39:47,800 --> 13:39:51,190
+to help other GitHub projects,
+this will be a record of hey, I
+
+13469
+13:39:51,190 --> 13:39:54,280
+can do this, what I can build
+look at what I know how to do so
+
+13470
+13:39:54,280 --> 13:39:57,160
+congratulations on your first
+full stack or your first front
+
+13471
+13:39:57,160 --> 13:40:00,250
+end application. Before we move
+on, let's do a quick refresher
+
+13472
+13:40:00,250 --> 13:40:03,250
+of everything we've learned
+here. So number one, typically,
+
+13473
+13:40:03,280 --> 13:40:07,210
+you want the repository or your
+code base. For your back end for
+
+13474
+13:40:07,210 --> 13:40:09,940
+your smart contracts to be a
+different repository than your
+
+13475
+13:40:09,940 --> 13:40:12,370
+front end, your front end code
+is going to be a combination of
+
+13476
+13:40:12,370 --> 13:40:15,460
+HTML and JavaScript. When we
+have a wallet like meta mask,
+
+13477
+13:40:15,490 --> 13:40:18,610
+we're injecting these browser
+based wallets into the window
+
+13478
+13:40:18,610 --> 13:40:21,940
+object of our browsers like
+window dot Aetherium. Each
+
+13479
+13:40:21,940 --> 13:40:24,580
+browser will have a different
+extension here, reason we do
+
+13480
+13:40:24,580 --> 13:40:28,240
+this, we want to connect to the
+RPC URL that's built into our
+
+13481
+13:40:28,240 --> 13:40:31,300
+meta masks. And in this way,
+we're making the same API calls
+
+13482
+13:40:31,330 --> 13:40:34,870
+to an RPC URL as we do in hard
+hat as we do in remix as we do
+
+13483
+13:40:34,870 --> 13:40:38,800
+in ethers, etc, we created our
+first promise based function
+
+13484
+13:40:38,860 --> 13:40:42,400
+where we had a listener kickoff,
+and we wrapped it in a promise
+
+13485
+13:40:42,400 --> 13:40:46,480
+to say, hey, we want to wait for
+our listener to finish since
+
+13486
+13:40:46,480 --> 13:40:49,600
+this is a promise based
+function, we set a weight listen
+
+13487
+13:40:49,600 --> 13:40:52,120
+for transaction mind and we
+waited for this transaction to
+
+13488
+13:40:52,120 --> 13:40:55,270
+finish so that on our front end,
+once our transaction finished
+
+13489
+13:40:55,270 --> 13:40:57,910
+going through, we can tell the
+user it's finished going through
+
+13490
+13:40:57,910 --> 13:41:00,430
+and we can continue doing other
+stuff. Give yourself that round
+
+13491
+13:41:00,430 --> 13:41:02,920
+of applause and let's move on to
+the next section.
+
+13492
+13:41:04,340 --> 13:41:08,090
+All right, welcome to the next
+section. We are now on Lesson
+
+13493
+13:41:08,120 --> 13:41:11,990
+Nine, our hardhat smart contract
+lottery, which again, all the
+
+13494
+13:41:11,990 --> 13:41:15,290
+code for this section is going
+to be available in the GitHub
+
+13495
+13:41:15,290 --> 13:41:17,750
+repo associated with this
+course. Alright, so let me show
+
+13496
+13:41:17,750 --> 13:41:20,000
+you what we're about to build.
+I'm going to show you the front
+
+13497
+13:41:20,000 --> 13:41:22,400
+end login, you don't have to do
+the front end, if you don't
+
+13498
+13:41:22,400 --> 13:41:25,550
+want. But the front end does
+give us a nice way to visualize
+
+13499
+13:41:25,550 --> 13:41:27,620
+the lottery that we're building.
+Here, we're building an
+
+13500
+13:41:27,620 --> 13:41:30,890
+application that allows users
+completely decentralized to
+
+13501
+13:41:30,890 --> 13:41:35,660
+allow us to engage in a fair, a
+verifiably random lottery. This
+
+13502
+13:41:35,660 --> 13:41:39,080
+is the application that would
+actually fix the McDonald's
+
+13503
+13:41:39,080 --> 13:41:42,530
+issue that we talked about much
+earlier. So first, we got this
+
+13504
+13:41:42,560 --> 13:41:45,830
+Kinect Wallet button that we're
+going to click to connect to
+
+13505
+13:41:45,830 --> 13:41:48,020
+meta mask. And here, we're
+actually going to show you how
+
+13506
+13:41:48,020 --> 13:41:51,260
+to connect to more than just
+Metamask wallet connect to trust
+
+13507
+13:41:51,260 --> 13:41:53,570
+wallet, math, wallet, any of
+these wallets, and we'll show
+
+13508
+13:41:53,570 --> 13:41:56,690
+you how to customize even more.
+So we're going to connect to
+
+13509
+13:41:56,690 --> 13:42:00,350
+Metamask. Here, we'll choose our
+account that we imported in from
+
+13510
+13:42:00,350 --> 13:42:03,050
+Hardhead, we choose Next we're
+gonna choose Connect. And
+
+13511
+13:42:03,050 --> 13:42:06,440
+remember, for our front end bit,
+we're gonna go to Settings
+
+13512
+13:42:06,500 --> 13:42:09,890
+Advanced reset account, if we're
+working with a brand new hard
+
+13513
+13:42:09,890 --> 13:42:12,650
+hat blockchain. Now, the front
+end doesn't look super nice, but
+
+13514
+13:42:12,650 --> 13:42:15,980
+we have an enter raffle button.
+And we have a little bit of UI
+
+13515
+13:42:15,980 --> 13:42:18,920
+talking about the current number
+of players and then the most
+
+13516
+13:42:18,920 --> 13:42:22,400
+previous winner of a raffle. So
+we can go ahead and enter the
+
+13517
+13:42:22,400 --> 13:42:27,590
+raffle and allow anybody to pay
+0.1 eath. To enter our smart
+
+13518
+13:42:27,590 --> 13:42:30,590
+contract, we get a little
+transaction saying transaction
+
+13519
+13:42:30,590 --> 13:42:33,800
+complete, and we get the current
+number of players is one, we can
+
+13520
+13:42:33,800 --> 13:42:37,310
+continue to enter the raffle and
+anybody can enter this raffle.
+
+13521
+13:42:37,340 --> 13:42:40,130
+And this, the smart contract
+will keep track of all the
+
+13522
+13:42:40,130 --> 13:42:43,220
+players in here, we're going to
+run this on a timer, the lottery
+
+13523
+13:42:43,220 --> 13:42:46,580
+is going to automatically
+trigger somebody to win. And to
+
+13524
+13:42:46,580 --> 13:42:49,700
+do this, to get a pure
+verifiable random number, we're
+
+13525
+13:42:49,700 --> 13:42:53,450
+going to be using chain link VRF
+to get a pure verifiably random
+
+13526
+13:42:53,450 --> 13:42:57,770
+number. And then we're gonna use
+chain link keepers to trigger
+
+13527
+13:42:57,830 --> 13:43:01,880
+the automation to automatically
+have one of these winners get
+
+13528
+13:43:01,880 --> 13:43:04,730
+picked every time one of those
+time intervals is up. Once the
+
+13529
+13:43:04,730 --> 13:43:07,700
+keepers kick it off, they will
+pick a winner, our decentralized
+
+13530
+13:43:07,700 --> 13:43:10,580
+lottery will say the most
+previous winner is so and so.
+
+13531
+13:43:10,820 --> 13:43:13,820
+And they will get all the money
+from this lottery making a
+
+13532
+13:43:13,820 --> 13:43:17,090
+perfectly fair decentralized
+lottery, we're going to call our
+
+13533
+13:43:17,090 --> 13:43:20,150
+contract, raffle dot soul but
+you can call it lottery dot soul
+
+13534
+13:43:20,150 --> 13:43:22,400
+or really whatever you want. And
+we're going to make it look
+
+13535
+13:43:22,400 --> 13:43:25,850
+really, really nice. So now
+we're back in our Visual Studio
+
+13536
+13:43:25,850 --> 13:43:28,940
+code. This is going to be the
+project. If you learn this, you
+
+13537
+13:43:28,940 --> 13:43:31,880
+have the skills to learn all the
+rest of the smart contract
+
+13538
+13:43:31,880 --> 13:43:34,640
+concepts, and you are going to
+be able to do great things in
+
+13539
+13:43:34,640 --> 13:43:37,610
+the space. This is going to be
+your flagship project, this is
+
+13540
+13:43:37,610 --> 13:43:40,070
+going to be the one that you can
+be the most excited and the most
+
+13541
+13:43:40,070 --> 13:43:46,220
+proud about for this tutorial.
+So let's go ahead and let's
+
+13542
+13:43:46,220 --> 13:43:50,810
+create a new folder. So we're
+gonna do MK dir, hardhat, smart
+
+13543
+13:43:50,810 --> 13:43:55,130
+contract lottery, FCC or smart
+contract, raffle, whatever you
+
+13544
+13:43:55,130 --> 13:43:58,160
+want to call it, then we're
+going to cd into our hard hat,
+
+13545
+13:43:58,400 --> 13:44:01,160
+smart contract lottery Free Code
+Camp. And we're going to type
+
+13546
+13:44:01,160 --> 13:44:04,670
+code period, or we're going to
+open this up in a new folder,
+
+13547
+13:44:04,700 --> 13:44:07,430
+however we choose to do. So now
+that we're in our new folder,
+
+13548
+13:44:07,460 --> 13:44:11,210
+we're going to create our new
+hard hat project. So we're going
+
+13549
+13:44:11,210 --> 13:44:19,730
+to do yarn, add dash dash dev
+hard hat. And we'll get our node
+
+13550
+13:44:19,730 --> 13:44:23,150
+modules are package dot JSON and
+our yarn dot lock. Now we'll do
+
+13551
+13:44:23,150 --> 13:44:26,630
+yarn hardhat. To get started
+with a new project, and we're
+
+13552
+13:44:26,630 --> 13:44:30,200
+just going to select create an
+empty hard hat dot config dot j
+
+13553
+13:44:30,200 --> 13:44:32,900
+s because we know what a basic
+project looks like. And we're
+
+13554
+13:44:32,900 --> 13:44:35,150
+gonna give this project the
+customizations that we want to
+
+13555
+13:44:35,150 --> 13:44:37,940
+see, we're going to create an
+empty hard hat dot config. And
+
+13556
+13:44:37,940 --> 13:44:42,140
+now in here we have a blank
+hardhead.config.js with almost
+
+13557
+13:44:42,140 --> 13:44:44,420
+nothing in here. So we're
+starting completely from
+
+13558
+13:44:44,420 --> 13:44:47,420
+scratch. Now we're going to add
+all of our dependencies in here.
+
+13559
+13:44:47,450 --> 13:44:50,870
+And oftentimes, you'll add these
+sequentially as you build but
+
+13560
+13:44:50,870 --> 13:44:54,110
+we're just going to add them all
+in one line, and there are a lot
+
+13561
+13:44:54,110 --> 13:44:57,350
+of them. So we've left a copy,
+paste the whole section of the
+
+13562
+13:44:57,350 --> 13:45:00,320
+full blockchain solidity course,
+J S, for you to just copy,
+
+13563
+13:45:00,320 --> 13:45:03,530
+paste, so you can install
+everything in one go. So grab
+
+13564
+13:45:03,530 --> 13:45:05,420
+that line, and it's going to
+have everything that we've been
+
+13565
+13:45:05,420 --> 13:45:09,080
+talking about. And we'll just
+hit enter, and we'll install all
+
+13566
+13:45:09,080 --> 13:45:09,560
+of these.
+
+13567
+13:45:10,820 --> 13:45:13,850
+And as you create more and more
+projects, you'll get the feel of
+
+13568
+13:45:13,850 --> 13:45:16,430
+what you like for your
+dependencies and what tools that
+
+13569
+13:45:16,580 --> 13:45:20,060
+you like to use. Remember, at
+the end of the day, the tool
+
+13570
+13:45:20,060 --> 13:45:23,240
+that's best for you and best for
+the job is the tool that you
+
+13571
+13:45:23,240 --> 13:45:26,540
+like the most. There never
+really is a one tool fits all,
+
+13572
+13:45:26,570 --> 13:45:30,770
+there's almost always going to
+be trade offs. Alright, now that
+
+13573
+13:45:30,770 --> 13:45:32,990
+we have all those dependencies
+installed, if we look at our
+
+13574
+13:45:32,990 --> 13:45:36,020
+package, JSON will have this
+massive dev dependencies, we'll
+
+13575
+13:45:36,020 --> 13:45:38,750
+have everything in Node modules
+will have everything in yarn dot
+
+13576
+13:45:38,750 --> 13:45:41,810
+lock. And of course, as we know,
+in order for any of these to
+
+13577
+13:45:41,810 --> 13:45:45,140
+actually work, we need to add
+them into our Hardhead config.
+
+13578
+13:45:45,380 --> 13:45:48,530
+Now, there's a lot of stuff to
+add in here as well. So like
+
+13579
+13:45:48,530 --> 13:45:51,650
+once again, if you want to come
+to the heart at smart contract,
+
+13580
+13:45:51,650 --> 13:45:55,700
+lottery, FCC, and go to the
+Hardhead config, you can just
+
+13581
+13:45:55,700 --> 13:45:59,180
+copy paste everything and place
+it into your project so that you
+
+13582
+13:45:59,180 --> 13:46:02,450
+don't have to always type
+everything out yourself. Meclabs
+
+13583
+13:46:02,450 --> 13:46:05,120
+Hardhead waffle anomic labs
+started ether scan harder to
+
+13584
+13:46:05,120 --> 13:46:08,090
+deploy slitted coverage, or had
+gas reporter heart had contract
+
+13585
+13:46:08,090 --> 13:46:10,790
+sizer, which we haven't talked
+about yet. But we will Don't
+
+13586
+13:46:10,790 --> 13:46:14,420
+worry. And then require dot env
+dot config. And as you all know,
+
+13587
+13:46:14,450 --> 13:46:17,030
+all these little semicolons are
+popping up and those are going
+
+13588
+13:46:17,030 --> 13:46:20,840
+to drive me absolutely crazy. So
+once again, we can create a dot
+
+13589
+13:46:20,870 --> 13:46:25,220
+prettier, RC. And if you want to
+copy this as well, from one of
+
+13590
+13:46:25,220 --> 13:46:29,300
+your previous projects are free
+to do so. One thing that I added
+
+13591
+13:46:29,300 --> 13:46:33,320
+in here was a print width of
+100. This just changes how long
+
+13592
+13:46:33,350 --> 13:46:36,320
+a line can be before it goes on
+to a new line. That's the only
+
+13593
+13:46:36,320 --> 13:46:39,560
+difference here. Now if we go to
+our config and hit save, they go
+
+13594
+13:46:39,560 --> 13:46:43,370
+away, thank goodness. Now if we
+look at our solidity version,
+
+13595
+13:46:43,430 --> 13:46:47,000
+we're currently using zero point
+7.3. Let's go ahead and update
+
+13596
+13:46:47,000 --> 13:46:50,780
+that to 8.8 or 8.7, or whatever
+you want to use. Now that we
+
+13597
+13:46:50,780 --> 13:46:53,990
+have all the basic setup, we can
+begin coding our smart
+
+13598
+13:46:53,990 --> 13:47:00,140
+contracts. So we first need to
+create a new folder called
+
+13599
+13:47:00,170 --> 13:47:03,290
+contracts where we're going to
+store all of our contracts. And
+
+13600
+13:47:03,290 --> 13:47:07,430
+let's go ahead and create a new
+file called lottery dot soul or
+
+13601
+13:47:07,430 --> 13:47:09,950
+raffle dot soul or whatever you
+want to call it. I'm going to
+
+13602
+13:47:09,950 --> 13:47:13,550
+call mine raffle dot soul. And
+you might see this indexing
+
+13603
+13:47:13,550 --> 13:47:16,430
+thing happened from time to
+time. It's our hard hat,
+
+13604
+13:47:16,430 --> 13:47:20,630
+solidity extension, indexing all
+of our node modules. So it knows
+
+13605
+13:47:20,630 --> 13:47:22,460
+how to highlight things and
+knows how to work with
+
+13606
+13:47:22,490 --> 13:47:25,310
+everything in our solidity
+files. So that's what happens
+
+13607
+13:47:25,310 --> 13:47:28,400
+when that pops up. Now before we
+jump in and create it, let's
+
+13608
+13:47:28,430 --> 13:47:31,310
+figure out what we're going to
+do. So we're going to create our
+
+13609
+13:47:31,310 --> 13:47:34,370
+raffle contract. And what do we
+want people able to do? Well, we
+
+13610
+13:47:34,370 --> 13:47:37,400
+probably want people be able to
+enter the lottery, you know,
+
+13611
+13:47:37,430 --> 13:47:40,970
+paying some amount, we're
+probably going to want to be
+
+13612
+13:47:40,970 --> 13:47:44,630
+able to pick a random winner.
+But we want this to be
+
+13613
+13:47:44,660 --> 13:47:47,930
+verifiably random, we want this
+to be untampered with a bowl.
+
+13614
+13:47:47,960 --> 13:47:53,480
+And we also want winner to be
+selected every X minutes or
+
+13615
+13:47:53,480 --> 13:47:57,260
+years or months, aka we want
+this to be completely automated.
+
+13616
+13:47:57,290 --> 13:48:00,470
+So we want to deploy the smart
+contract and almost have no
+
+13617
+13:48:00,470 --> 13:48:03,020
+maintenance almost have nobody
+ever have to touch it again. And
+
+13618
+13:48:03,020 --> 13:48:05,810
+it'll just automatically run
+forever. This is the power of
+
+13619
+13:48:05,810 --> 13:48:08,390
+smart contracts. As we know,
+since we're picking a random
+
+13620
+13:48:08,390 --> 13:48:12,530
+number, and we have some event
+driven execution, we know that
+
+13621
+13:48:12,530 --> 13:48:15,680
+we're going to need to use a
+chain link Oracle, since we're
+
+13622
+13:48:15,680 --> 13:48:17,840
+going to need to get the
+randomness from outside the
+
+13623
+13:48:17,840 --> 13:48:21,290
+blockchain. And we're going to
+need to have that automated
+
+13624
+13:48:21,320 --> 13:48:25,160
+execution. Because a smart
+contract can execute itself, we
+
+13625
+13:48:25,160 --> 13:48:28,250
+need somebody to automatically
+trigger these. So to trigger
+
+13626
+13:48:28,280 --> 13:48:31,070
+selecting a winner, we're gonna
+have to use the chain link
+
+13627
+13:48:31,100 --> 13:48:34,400
+keepers. And that's pretty much
+going to be our entire code.
+
+13628
+13:48:34,490 --> 13:48:37,160
+Now, I usually like to do this
+before I start any project. And
+
+13629
+13:48:37,160 --> 13:48:39,440
+the reason that I do a little
+bit of brainstorming is because
+
+13630
+13:48:39,440 --> 13:48:42,710
+we don't want to just jump in
+and really do anything, we want
+
+13631
+13:48:42,710 --> 13:48:45,590
+to have a good idea of what
+we're trying to build so that we
+
+13632
+13:48:45,590 --> 13:48:48,140
+can write tests for it, so that
+we can know if we're going in
+
+13633
+13:48:48,140 --> 13:48:50,870
+the right direction, etc. Now
+that we have a good idea of
+
+13634
+13:48:50,870 --> 13:48:55,280
+where we're going, let's build
+it. So per usual, let's do spdx
+
+13635
+13:48:55,310 --> 13:49:01,430
+license identifier. And my team
+will do pragma solidity little
+
+13636
+13:49:01,430 --> 13:49:05,360
+caret here, zero point 8.7, even
+zoom out, just a hair will trash
+
+13637
+13:49:05,360 --> 13:49:09,530
+that and we'll say contract,
+raffle, we can even make sure
+
+13638
+13:49:09,560 --> 13:49:12,440
+that we're not going crazy by
+doing a little yarn Hardhead
+
+13639
+13:49:12,440 --> 13:49:15,440
+compile and compiled
+successfully, we want it to be
+
+13640
+13:49:15,440 --> 13:49:18,650
+able to enter the lottery want
+us to be able to enter it. So
+
+13641
+13:49:18,800 --> 13:49:22,460
+maybe we'll create a function
+called enter raffle. What else
+
+13642
+13:49:22,460 --> 13:49:25,400
+do we want to do, we want to be
+able to pick a random winner. So
+
+13643
+13:49:25,400 --> 13:49:30,800
+maybe we'll create a function
+called pick a random winner, and
+
+13644
+13:49:30,800 --> 13:49:33,500
+boom. So let's comment out pick
+random winner for now. And let's
+
+13645
+13:49:33,500 --> 13:49:36,440
+just work on this enter raffle
+thing. In the past, we've
+
+13646
+13:49:36,440 --> 13:49:39,470
+created projects like Funmi,
+where people can send ether to
+
+13647
+13:49:39,470 --> 13:49:42,440
+our contracts or send whatever
+native blockchain token to our
+
+13648
+13:49:42,440 --> 13:49:45,830
+smart contracts using the
+message dot value based off of
+
+13649
+13:49:45,860 --> 13:49:48,260
+some USD value. For this one,
+we're just going to have the
+
+13650
+13:49:48,260 --> 13:49:50,990
+entrance fee instead be USD
+based, it's just going to be
+
+13651
+13:49:51,020 --> 13:49:53,900
+that native asset. So for our
+enter raffle, we don't have to
+
+13652
+13:49:53,900 --> 13:49:57,410
+set a USD price, we can just set
+a minimum eath price. So up at
+
+13653
+13:49:57,410 --> 13:50:01,490
+the top, let's pick our minimum
+price. So we'll do a un 256
+
+13654
+13:50:01,910 --> 13:50:05,330
+entrance fee. And now some of
+our learnings from our last
+
+13655
+13:50:05,330 --> 13:50:09,260
+section should come in here, we
+now know that this entrance fee
+
+13656
+13:50:09,320 --> 13:50:12,230
+is going to be a what, it's
+going to be a storage variable.
+
+13657
+13:50:12,260 --> 13:50:15,800
+So let's prepend it with s
+underscore let's make a private
+
+13658
+13:50:15,800 --> 13:50:18,920
+variable because we always want
+to set our visibility. But let's
+
+13659
+13:50:18,920 --> 13:50:21,530
+have the entrance fee be
+configurable. Well, let's create
+
+13660
+13:50:21,530 --> 13:50:24,170
+a constructor now. And we'll
+have this entrance fee be
+
+13661
+13:50:24,170 --> 13:50:27,380
+settable in our constructor, so
+our constructor will take a UNT
+
+13662
+13:50:27,410 --> 13:50:32,810
+two to the sixth entrance fee, s
+underscore entrance fee equals
+
+13663
+13:50:33,350 --> 13:50:36,680
+entrance fee. Well, if we're
+gonna only set this one time, we
+
+13664
+13:50:36,680 --> 13:50:38,780
+might as well make this a
+constant or an immutable
+
+13665
+13:50:38,780 --> 13:50:41,690
+variable. So let's make this an
+immutable variable so that we
+
+13666
+13:50:41,690 --> 13:50:46,610
+save some gas we'll change this
+from S to I and now we're saying
+
+13667
+13:50:46,640 --> 13:50:50,060
+you interviewed six private
+immutable I entrance fee equals
+
+13668
+13:50:50,060 --> 13:50:53,090
+entrance fee. Now we probably
+are going to want other users to
+
+13669
+13:50:53,090 --> 13:50:56,240
+see the entrance fee. So down
+below, we can create function
+
+13670
+13:50:56,270 --> 13:50:59,930
+get entrance fee, and this will
+be a public view function which
+
+13671
+13:50:59,930 --> 13:51:03,560
+will returns a UN to the set
+Next, and we'll just say return
+
+13672
+13:51:04,010 --> 13:51:07,280
+entrance fee. Now we have a
+function that users can call to
+
+13673
+13:51:07,280 --> 13:51:10,610
+get the entrance fee. But we, as
+developers can use this AI
+
+13674
+13:51:10,610 --> 13:51:13,730
+entrance fee to know this is an
+immutable variable. This is
+
+13675
+13:51:13,730 --> 13:51:17,210
+pretty cheap gas wise for us to
+read from in our enter raffle,
+
+13676
+13:51:17,240 --> 13:51:20,180
+we've done a ton of these
+before, all we need to do is we
+
+13677
+13:51:20,180 --> 13:51:24,560
+just need to require the message
+dot value is greater than that I
+
+13678
+13:51:24,560 --> 13:51:27,770
+underscore entrance fee, what
+we've learned before about those
+
+13679
+13:51:27,800 --> 13:51:32,570
+error codes, so we could use
+require message dot value, or we
+
+13680
+13:51:32,570 --> 13:51:35,360
+could do one of these customers,
+which is going to be a lot more
+
+13681
+13:51:35,360 --> 13:51:38,150
+gas efficient, because instead
+of storing this string, we're
+
+13682
+13:51:38,150 --> 13:51:41,030
+just going to store an error
+code in our smart contract. So
+
+13683
+13:51:41,030 --> 13:51:44,900
+let's do that. Instead, we'll
+say if the message dot value is
+
+13684
+13:51:44,930 --> 13:51:47,180
+less than our eye entrance fee,
+
+13685
+13:51:48,620 --> 13:51:52,010
+then we're just going to revert
+the whole transaction with some
+
+13686
+13:51:52,010 --> 13:51:56,540
+error code. And we'll use a best
+practice naming raffle
+
+13687
+13:51:56,720 --> 13:52:02,930
+underscore underscore not enough
+eath entered. And we'll grab
+
+13688
+13:52:02,930 --> 13:52:06,110
+this arrow code. And we'll have
+if the user doesn't send enough
+
+13689
+13:52:06,110 --> 13:52:10,130
+value will revert with not
+enough eath entered now that we
+
+13690
+13:52:10,130 --> 13:52:13,490
+know they're calling into raffle
+with enough value, we're
+
+13691
+13:52:13,490 --> 13:52:16,250
+probably going to want to keep
+track of all the users who
+
+13692
+13:52:16,250 --> 13:52:19,640
+actually enter our raffle. That
+way, when we pick a winner, we
+
+13693
+13:52:19,640 --> 13:52:22,880
+know who's in the running. So
+let's create an array of players
+
+13694
+13:52:22,910 --> 13:52:26,300
+at the top error here. And then
+just to make this look even
+
+13695
+13:52:26,300 --> 13:52:29,300
+nicer, we'll do a little comment
+here. And we'll say state
+
+13696
+13:52:29,360 --> 13:52:32,780
+variables. And we'll combine
+both our storage and are not
+
+13697
+13:52:32,780 --> 13:52:35,510
+storage variables just in this
+state variable section. So we'll
+
+13698
+13:52:35,510 --> 13:52:41,030
+do address array players. Now
+players, of course, is going to
+
+13699
+13:52:41,030 --> 13:52:43,520
+have to be in storage, because
+we're going to modify this a
+
+13700
+13:52:43,520 --> 13:52:45,980
+lot, we're going to be adding
+and subtracting players all the
+
+13701
+13:52:45,980 --> 13:52:49,580
+time. So we're going to do s
+players will make this private
+
+13702
+13:52:49,580 --> 13:52:53,210
+as well. And we're going to make
+this address payable players
+
+13703
+13:52:53,240 --> 13:52:55,340
+because one of these players
+wins, we're going to need to
+
+13704
+13:52:55,340 --> 13:52:59,060
+have to pay them. So we'll make
+this address payable private as
+
+13705
+13:52:59,060 --> 13:53:01,460
+players. And since we're going
+to make this private, and it's
+
+13706
+13:53:01,460 --> 13:53:04,730
+probably good that we know who's
+in the players array, we'll even
+
+13707
+13:53:04,730 --> 13:53:09,800
+do function it player. This will
+be a public view that returns an
+
+13708
+13:53:09,800 --> 13:53:14,870
+address of one of these players.
+And we'll just return s players
+
+13709
+13:53:15,230 --> 13:53:19,880
+of index will have this
+function, take a un 256 index as
+
+13710
+13:53:19,880 --> 13:53:22,370
+an input parameter, we know that
+players is going to be a storage
+
+13711
+13:53:22,370 --> 13:53:25,640
+variable. And we're going to add
+it to our enter raffle Oh, and
+
+13712
+13:53:25,640 --> 13:53:29,210
+we definitely want our Inter
+raffle to be public and to be
+
+13713
+13:53:29,210 --> 13:53:33,290
+payable. Since we're having
+people send message dot value,
+
+13714
+13:53:33,350 --> 13:53:36,260
+and we want anyone to be able to
+enter our raffle. So it'll be
+
+13715
+13:53:36,260 --> 13:53:39,140
+public, it'll be payable, it'll
+be perfect. Now that we have our
+
+13716
+13:53:39,170 --> 13:53:43,910
+array, and someone's entered the
+raffle, we'll do s players dot
+
+13717
+13:53:43,970 --> 13:53:49,160
+push message dot sender. Now,
+this doesn't actually work
+
+13718
+13:53:49,220 --> 13:53:52,580
+because message dot sender isn't
+a payable address. So we'll need
+
+13719
+13:53:52,580 --> 13:53:56,600
+to typecast it as a payable
+address just by wrapping it in
+
+13720
+13:53:56,600 --> 13:53:59,510
+payable. So now we have a way to
+keep track of all the players
+
+13721
+13:53:59,540 --> 13:54:00,200
+that are entering
+
+13722
+13:54:00,230 --> 13:54:05,300
+a raffle. Now one of the
+concepts that we haven't gone
+
+13723
+13:54:05,300 --> 13:54:08,510
+over yet is actually going to be
+events. And events are really
+
+13724
+13:54:08,510 --> 13:54:11,840
+important to our smart
+contracts. Whenever we update a
+
+13725
+13:54:11,840 --> 13:54:15,920
+dynamic object, like an array or
+a mapping, we always want to
+
+13726
+13:54:15,950 --> 13:54:18,890
+omit an event when we get to
+less than 10. And then
+
+13727
+13:54:18,920 --> 13:54:22,850
+especially less than 15 with the
+next Jas and if T marketplace,
+
+13728
+13:54:22,880 --> 13:54:25,940
+these events will make a ton of
+sense, especially for front end
+
+13729
+13:54:25,940 --> 13:54:29,780
+developers. So right now events
+might be a little bit of a weird
+
+13730
+13:54:29,780 --> 13:54:32,330
+thing for you as we explain it.
+But as we continue on, they'll
+
+13731
+13:54:32,330 --> 13:54:34,700
+start to make more and more
+sense. So we're going to start
+
+13732
+13:54:34,700 --> 13:54:37,460
+adding events to our smart
+contracts. Whenever we update
+
+13733
+13:54:37,460 --> 13:54:40,310
+one of these dynamically sized
+data structures. And to learn
+
+13734
+13:54:40,310 --> 13:54:42,800
+more about events and how to use
+them. We're gonna watch another
+
+13735
+13:54:42,800 --> 13:54:45,620
+video that explains all about
+events. You can actually follow
+
+13736
+13:54:45,620 --> 13:54:48,500
+along with this video as a side
+project. But let's learn all
+
+13737
+13:54:48,500 --> 13:54:50,930
+about events. Now, if you've
+worked with solidity, you've
+
+13738
+13:54:50,930 --> 13:54:54,230
+probably seen these things
+called events before or maybe
+
+13739
+13:54:54,230 --> 13:54:56,450
+you haven't seen something like
+events. But you've always
+
+13740
+13:54:56,450 --> 13:54:59,390
+wondered how chain link or the
+graph or some of these other off
+
+13741
+13:54:59,390 --> 13:55:02,120
+chain protocols work under the
+hood. And in this video, we're
+
+13742
+13:55:02,120 --> 13:55:05,240
+gonna learn about logging and
+events in solidity, viewing
+
+13743
+13:55:05,240 --> 13:55:08,360
+those events on ether scan, and
+then working with them in hard
+
+13744
+13:55:08,360 --> 13:55:12,080
+hat. Now it's the Ethereum
+virtual machine, or EVM. That
+
+13745
+13:55:12,080 --> 13:55:15,470
+makes a lot of these block
+chains tick, like Aetherium. And
+
+13746
+13:55:15,470 --> 13:55:19,100
+the EVM has this functionality
+called a logging functionality.
+
+13747
+13:55:19,280 --> 13:55:22,550
+When things happen on a
+blockchain, the EVM writes these
+
+13748
+13:55:22,550 --> 13:55:26,150
+things to a specific data
+structure called its log, we can
+
+13749
+13:55:26,150 --> 13:55:28,940
+actually read these logs from
+our blockchain nodes that we
+
+13750
+13:55:28,940 --> 13:55:32,090
+run. In fact, if you run a node
+or you connect to a node, you
+
+13751
+13:55:32,090 --> 13:55:37,130
+can make a F get logs call to
+get the logs. Now inside these
+
+13752
+13:55:37,130 --> 13:55:40,970
+logs is an important piece of
+logging called events. And this
+
+13753
+13:55:40,970 --> 13:55:42,950
+is the main piece that we're
+gonna be talking about today.
+
+13754
+13:55:43,040 --> 13:55:46,940
+events allow you to print
+information to this logging
+
+13755
+13:55:46,940 --> 13:55:49,910
+structure in a way that's more
+gas efficient than actually
+
+13756
+13:55:49,910 --> 13:55:53,150
+saving it to something like a
+storage variable. These events
+
+13757
+13:55:53,150 --> 13:55:56,690
+and logs live in this special
+data structure that isn't
+
+13758
+13:55:56,720 --> 13:56:00,050
+accessible to smart contracts.
+That's why it's cheaper because
+
+13759
+13:56:00,050 --> 13:56:02,600
+smart contracts can access them
+so that If the trade off here,
+
+13760
+13:56:02,630 --> 13:56:05,270
+we can still print some
+information that's important to
+
+13761
+13:56:05,270 --> 13:56:09,140
+us without having to save it in
+a storage variable, which is
+
+13762
+13:56:09,140 --> 13:56:12,620
+going to take up much more gas.
+Each one of these events is tied
+
+13763
+13:56:12,620 --> 13:56:16,550
+to the smart contract or account
+address that emitted this event
+
+13764
+13:56:16,580 --> 13:56:19,880
+in these transactions. listening
+for these events is incredibly
+
+13765
+13:56:19,880 --> 13:56:22,790
+helpful. Let's say for example,
+you want to do something every
+
+13766
+13:56:22,790 --> 13:56:26,450
+time somebody calls a transfer
+function. Instead of always
+
+13767
+13:56:26,450 --> 13:56:29,540
+reading all the variables and
+looking for something to flip
+
+13768
+13:56:29,540 --> 13:56:34,220
+and switch, all you have to do
+is say, listen for event. So a
+
+13769
+13:56:34,220 --> 13:56:37,010
+transaction happened, an event
+is emitted. And we can listen
+
+13770
+13:56:37,010 --> 13:56:40,460
+for these events. This is how a
+lot of off chain infrastructure
+
+13771
+13:56:40,490 --> 13:56:44,210
+works. When you're on a website,
+and that website reloads when a
+
+13772
+13:56:44,210 --> 13:56:47,510
+transaction completes, it
+actually was listening for that
+
+13773
+13:56:47,510 --> 13:56:51,200
+transaction to finish listening
+for that event to be emitted, so
+
+13774
+13:56:51,200 --> 13:56:53,870
+that it could reload or it could
+do something else. It's
+
+13775
+13:56:53,870 --> 13:56:57,020
+incredibly important for front
+ends. It's also incredibly
+
+13776
+13:56:57,020 --> 13:57:00,770
+important for things like chain
+link, and the graph in the chain
+
+13777
+13:57:00,770 --> 13:57:03,620
+link network. A chain link node
+is actually listening for
+
+13778
+13:57:03,650 --> 13:57:07,850
+request data events for to get a
+random number, make an API call,
+
+13779
+13:57:07,850 --> 13:57:11,780
+or etc. Sometimes there are way
+too many events. And you need to
+
+13780
+13:57:11,930 --> 13:57:15,170
+index them in a way that makes
+sense that you can query all
+
+13781
+13:57:15,170 --> 13:57:18,620
+these events that happen at a
+later date. The graph listens
+
+13782
+13:57:18,620 --> 13:57:21,620
+for these events and stores them
+in the graph so that they're
+
+13783
+13:57:21,650 --> 13:57:25,280
+easy to query later on. So
+events are incredibly powerful.
+
+13784
+13:57:25,280 --> 13:57:27,590
+And they have a wide range of
+uses. They're also good for
+
+13785
+13:57:27,590 --> 13:57:30,290
+testing and some other stuff,
+but you get the picture. They're
+
+13786
+13:57:30,290 --> 13:57:33,110
+really sick. Now that we know
+what events are, let's look at
+
+13787
+13:57:33,110 --> 13:57:36,500
+what they look like how we can
+use them and how we might use
+
+13788
+13:57:36,500 --> 13:57:39,590
+them in our smart contract
+development suite. Now here's
+
+13789
+13:57:39,590 --> 13:57:42,680
+what an event is going to look
+like. We have an event here
+
+13790
+13:57:42,680 --> 13:57:46,490
+called stored number. So we have
+basically a new type of event
+
+13791
+13:57:46,520 --> 13:57:49,880
+called stored number. We're
+saying, hey, solidity, hey,
+
+13792
+13:57:49,880 --> 13:57:53,300
+smart contract, we have this new
+event thing, we're going to be
+
+13793
+13:57:53,330 --> 13:57:57,290
+omitting things of typed stored
+number in the future. When we
+
+13794
+13:57:57,320 --> 13:58:00,110
+emit this event, it's going to
+have these four parameters, it's
+
+13795
+13:58:00,110 --> 13:58:03,770
+going to have a unique 256. For
+called old number. Are you
+
+13796
+13:58:03,770 --> 13:58:06,260
+interested? Is it called new
+number are you intimidated six
+
+13797
+13:58:06,260 --> 13:58:09,440
+called add a number and an
+address called center. Now for
+
+13798
+13:58:09,440 --> 13:58:10,580
+the astute people here, you
+
+13799
+13:58:10,580 --> 13:58:13,790
+might have noticed that there
+was another keyword in here, the
+
+13800
+13:58:13,820 --> 13:58:17,360
+index to keyword and this is a
+really important keyword. When
+
+13801
+13:58:17,360 --> 13:58:19,580
+we omit one of these events,
+there are two kinds of
+
+13802
+13:58:19,580 --> 13:58:23,240
+parameters, there are the index
+parameters and the non indexed
+
+13803
+13:58:23,240 --> 13:58:27,380
+parameters, you can have up to
+three index parameters. And
+
+13804
+13:58:27,380 --> 13:58:30,830
+they're also known as topics. So
+if you see a topic, you know
+
+13805
+13:58:30,830 --> 13:58:33,590
+that that's going to be an
+indexed parameter. Index
+
+13806
+13:58:33,590 --> 13:58:37,100
+parameters are parameters that
+are much easier to search for,
+
+13807
+13:58:37,160 --> 13:58:40,550
+and much easier to query than
+the non index parameters. In
+
+13808
+13:58:40,550 --> 13:58:43,910
+fact, we recommend F get logs
+function, it even has a
+
+13809
+13:58:43,910 --> 13:58:46,940
+parameter allows us to search
+for specific topics. So it's
+
+13810
+13:58:46,940 --> 13:58:50,540
+much more searchable than the
+non indexed ones. The non
+
+13811
+13:58:50,540 --> 13:58:53,450
+indexed ones are harder to
+search because they get ABI
+
+13812
+13:58:53,450 --> 13:58:56,090
+encoded, and you have to know
+the API in order to decode them.
+
+13813
+13:58:56,120 --> 13:58:58,400
+Now, this is told our smart
+contract that there is a new
+
+13814
+13:58:58,400 --> 13:59:02,630
+type of stored number, a new
+kind of event here, we need to
+
+13815
+13:59:02,630 --> 13:59:06,230
+actually emit that event in
+order to store that data into
+
+13816
+13:59:06,230 --> 13:59:10,640
+the logging data structure of
+the EVM. To do that, we need to
+
+13817
+13:59:10,640 --> 13:59:13,580
+do something that looks like
+this. This is what it looks like
+
+13818
+13:59:13,580 --> 13:59:16,730
+when we emit an event, it looks
+very similar to calling a
+
+13819
+13:59:16,730 --> 13:59:21,230
+function. So you call a mitt and
+then the name of the event. And
+
+13820
+13:59:21,230 --> 13:59:24,140
+then you add all the parameters
+in there that you like. Here's
+
+13821
+13:59:24,140 --> 13:59:27,560
+the full example of a smart
+contract that has an event and
+
+13822
+13:59:27,560 --> 13:59:30,290
+is going to be the example that
+we walked through in hard hat.
+
+13823
+13:59:30,320 --> 13:59:33,530
+Now in this smart contract,
+whenever anybody calls the store
+
+13824
+13:59:33,530 --> 13:59:37,400
+function, we're going to omit
+this event. Here's an example of
+
+13825
+13:59:37,400 --> 13:59:41,180
+a transaction where we call the
+store function with a value of
+
+13826
+13:59:41,330 --> 13:59:45,950
+one, let's look into the logs to
+see what this event actually is
+
+13827
+13:59:45,950 --> 13:59:49,010
+going to look like an event is
+going to be broken down like so
+
+13828
+13:59:49,040 --> 13:59:52,490
+the address of the contract or
+account, the event is emitted
+
+13829
+13:59:52,490 --> 13:59:56,750
+from the topics or the index
+parameters of the event data.
+
+13830
+13:59:56,900 --> 14:00:00,680
+This is the ABI encoded non
+index parameters of the event.
+
+13831
+14:00:01,250 --> 14:00:04,070
+What does this mean? This means
+that we took those parameters
+
+13832
+14:00:04,070 --> 14:00:08,810
+that were non indexed, we match
+them together with their API or
+
+13833
+14:00:08,810 --> 14:00:11,480
+application binary interface,
+pumped them through an encoding
+
+13834
+14:00:11,480 --> 14:00:14,240
+algorithm, and boom, this is
+what we got. If you have the
+
+13835
+14:00:14,240 --> 14:00:17,360
+API, they're very easy to
+decode. If you don't have the
+
+13836
+14:00:17,360 --> 14:00:22,310
+ABI they are very hard to decode
+these non indexed parameters
+
+13837
+14:00:22,340 --> 14:00:26,180
+cost less gas to pump into the
+logs. Now in this particular
+
+13838
+14:00:26,180 --> 14:00:29,690
+contract, since we have verified
+the code, we verified the
+
+13839
+14:00:29,690 --> 14:00:33,020
+contract ether scan knows what
+the ABI is, and we can view this
+
+13840
+14:00:33,020 --> 14:00:37,940
+in Deke or decoded mode. Hex
+mode is obviously the non
+
+13841
+14:00:37,940 --> 14:00:41,690
+decoded mode, or in its raw, hex
+or hexadecimal or encoded mode.
+
+13842
+14:00:41,810 --> 14:00:44,780
+You can read more about the
+layout of these events in the
+
+13843
+14:00:44,780 --> 14:00:50,180
+solidity docs. Now, so that's
+the basic introduction of
+
+13844
+14:00:50,180 --> 14:00:52,580
+events. And for those of you who
+want to watch the rest of that
+
+13845
+14:00:52,580 --> 14:00:55,460
+video, and who wants to actually
+practice using events yourself,
+
+13846
+14:00:55,520 --> 14:00:58,070
+there's a link to these videos
+and the code repository
+
+13847
+14:00:58,100 --> 14:01:00,500
+associated with that video, if
+you want to play with it, and if
+
+13848
+14:01:00,500 --> 14:01:02,750
+you want to learn more, so feel
+free Ready to refer back to the
+
+13849
+14:01:02,750 --> 14:01:05,570
+full blockchain solidity course,
+Jas, if you want to go deeper
+
+13850
+14:01:05,570 --> 14:01:07,790
+into events now that we're back,
+and we've learned a little bit
+
+13851
+14:01:07,790 --> 14:01:10,730
+more about events, let's add
+some events to this contract.
+
+13852
+14:01:10,850 --> 14:01:13,610
+Remember, these events get
+emitted to a data storage
+
+13853
+14:01:13,640 --> 14:01:16,640
+outside of this smart contract.
+Let's create an event called
+
+13854
+14:01:16,670 --> 14:01:21,140
+raffle enter a good syntax for
+naming events, name events, with
+
+13855
+14:01:21,140 --> 14:01:25,490
+the function name reversed. So
+for enter raffle, we're gonna
+
+13856
+14:01:25,490 --> 14:01:28,880
+say raffle entered. So up at the
+top below our state variables,
+
+13857
+14:01:28,880 --> 14:01:32,390
+but above our constructor, we'll
+create a new section called
+
+13858
+14:01:32,420 --> 14:01:36,890
+events. And we'll create our
+first event. So we'll do event,
+
+13859
+14:01:37,520 --> 14:01:40,790
+raffle, Enter. And we'll just
+have this raffle enter take one
+
+13860
+14:01:40,820 --> 14:01:45,440
+index parameter, it'll be an
+address indexed player. So in
+
+13861
+14:01:45,440 --> 14:01:49,910
+our Inter raffle, we're going to
+say omit raffle enter. And we're
+
+13862
+14:01:49,910 --> 14:01:52,880
+just going to pass it message
+dot sender. I'm going to remove
+
+13863
+14:01:52,880 --> 14:01:55,430
+these comments for now. But feel
+free to leave them in as you
+
+13864
+14:01:55,430 --> 14:01:59,210
+code along. Now in this part of
+my raffle coding or my lottery
+
+13865
+14:01:59,210 --> 14:02:02,480
+coding process, I probably would
+start already writing some tests
+
+13866
+14:02:02,480 --> 14:02:05,330
+and already writing some deploy
+scripts. The reason that we do
+
+13867
+14:02:05,330 --> 14:02:08,300
+this is it's good to test our
+functionality as we progress.
+
+13868
+14:02:08,360 --> 14:02:11,030
+And oftentimes, when I'm writing
+smart contracts, I'm constantly
+
+13869
+14:02:11,030 --> 14:02:14,000
+flipping back and forth between
+my deploy scripts, my contracts
+
+13870
+14:02:14,030 --> 14:02:17,060
+and my tests to make sure
+everything is doing exactly what
+
+13871
+14:02:17,060 --> 14:02:19,700
+I want it to do for the purpose
+of this course. And just to make
+
+13872
+14:02:19,700 --> 14:02:22,340
+it easy for you to learn and
+follow along, we're not going to
+
+13873
+14:02:22,340 --> 14:02:24,800
+do that. And we're just going to
+keep writing our smart contract
+
+13874
+14:02:24,830 --> 14:02:28,040
+almost to complete and then move
+to our deploy scripts and tests.
+
+13875
+14:02:30,710 --> 14:02:33,620
+So in its minimalistic sense, we
+essentially have a way for
+
+13876
+14:02:33,620 --> 14:02:37,070
+people to enter our raffle. Now
+we need a way to pick the random
+
+13877
+14:02:37,100 --> 14:02:40,040
+winner. And this is where we're
+going to need chain link VRF and
+
+13878
+14:02:40,040 --> 14:02:43,310
+chain link keepers. So let's
+again, watch some sub lessons
+
+13879
+14:02:43,340 --> 14:02:46,550
+about learning about chain link
+VRF. And learning about chain
+
+13880
+14:02:46,550 --> 14:02:49,340
+link keepers. We've made some
+videos about these before. So
+
+13881
+14:02:49,340 --> 14:02:51,440
+we're just going to play these
+videos. So you can learn about
+
+13882
+14:02:51,440 --> 14:02:54,320
+how taling VRF version two
+works, and also how chain link
+
+13883
+14:02:54,350 --> 14:02:56,870
+keepers works, then we're going
+to come back and we're going to
+
+13884
+14:02:56,870 --> 14:02:59,090
+add them into our contracts
+here. If you're already
+
+13885
+14:02:59,090 --> 14:03:01,340
+familiar, and you already played
+with them, feel free to skip
+
+13886
+14:03:01,340 --> 14:03:03,710
+those sections. And we'll just
+get to building them here.
+
+13887
+14:03:04,160 --> 14:03:06,680
+Hi, my name is Steven fluid. And
+today we're going to be taking a
+
+13888
+14:03:06,680 --> 14:03:10,160
+look at chain links VRF. version
+two, version two has a few
+
+13889
+14:03:10,160 --> 14:03:12,890
+different mental models that we
+should be aware of. And I want
+
+13890
+14:03:12,890 --> 14:03:15,440
+to show you what it feels like
+to be using it. The big
+
+13891
+14:03:15,440 --> 14:03:18,620
+important thing to know about
+Vera version two is that instead
+
+13892
+14:03:18,620 --> 14:03:21,200
+of the Vera one model where
+you'd be funding your contract
+
+13893
+14:03:21,200 --> 14:03:24,380
+with Link, instead, you're going
+to be funding a subscription,
+
+13894
+14:03:24,620 --> 14:03:27,170
+which is basically an account
+that allows you to fund and
+
+13895
+14:03:27,170 --> 14:03:31,550
+maintain balance for multiple
+consumer contracts. Let's dive
+
+13896
+14:03:31,550 --> 14:03:34,760
+into the docs and see what using
+Vera fie two looks and feels
+
+13897
+14:03:34,760 --> 14:03:37,730
+like. In order to show this off
+a little bit. I'm going to dive
+
+13898
+14:03:37,730 --> 14:03:40,700
+right into the get a random
+number guide in the chain link
+
+13899
+14:03:40,700 --> 14:03:43,160
+documentation. And so it's going
+to go through a few the
+
+13900
+14:03:43,160 --> 14:03:44,870
+requirements of some of the
+technology we're going to use
+
+13901
+14:03:44,870 --> 14:03:47,630
+today. And the first thing it's
+going to ask us to do is to make
+
+13902
+14:03:47,630 --> 14:03:50,120
+sure that we are on the Rinkeby
+test net. So let's go ahead and
+
+13903
+14:03:50,120 --> 14:03:53,720
+jump over to Rinkeby. Make sure
+my meta mask is unlocked here.
+
+13904
+14:03:54,200 --> 14:03:57,890
+And now that I'm on Rinkeby,
+great, I should be able to use
+
+13905
+14:03:58,220 --> 14:04:02,420
+the VIP version to test net. Now
+we're going to jump over to
+
+13906
+14:04:02,420 --> 14:04:05,630
+subscription manager. And the
+subscription manager is where
+
+13907
+14:04:05,630 --> 14:04:07,580
+we're going to manage our
+subscription account. Basically,
+
+13908
+14:04:07,640 --> 14:04:10,370
+this is the place that you put
+the funds in order to be able to
+
+13909
+14:04:10,370 --> 14:04:13,130
+use it across a bunch of
+different chains. So we're going
+
+13910
+14:04:13,130 --> 14:04:16,010
+to go ahead and connect our
+wallet here in order to use the
+
+13911
+14:04:16,010 --> 14:04:20,090
+subscription app. And then we're
+going to go ahead and create a
+
+13912
+14:04:20,150 --> 14:04:22,760
+new subscription. So we'll just
+use my address as the
+
+13913
+14:04:22,760 --> 14:04:27,200
+subscription address here. I'll
+approve the creation. And as
+
+13914
+14:04:27,200 --> 14:04:29,420
+soon as that transaction is
+confirmed, our subscription
+
+13915
+14:04:29,420 --> 14:04:33,230
+should be created. Alright, now
+we have a subscription.
+
+13916
+14:04:33,230 --> 14:04:35,300
+Basically, this is the account
+where we're going to fund it.
+
+13917
+14:04:35,510 --> 14:04:38,990
+And then we can use that account
+for all of our random Miss
+
+13918
+14:04:38,990 --> 14:04:42,140
+requests. So I'm gonna go ahead
+and just put in 10 link here,
+
+13919
+14:04:42,140 --> 14:04:46,880
+you can put in however much you
+want. The price and link of
+
+13920
+14:04:46,880 --> 14:04:49,520
+every random number you request,
+it's going to be based on the
+
+13921
+14:04:49,550 --> 14:04:54,320
+current gas rates on a given
+chain, as well as the gasoline
+
+13922
+14:04:54,320 --> 14:04:57,320
+that you've chosen. On our funds
+have been added, let's go ahead
+
+13923
+14:04:57,320 --> 14:05:00,290
+and add a consumer contract. So
+it's asking us for consumer
+
+13924
+14:05:00,290 --> 14:05:02,780
+address, we don't actually have
+a consumer address yet. So let's
+
+13925
+14:05:02,780 --> 14:05:06,380
+go ahead and jump over to the
+documentation and create a
+
+13926
+14:05:06,380 --> 14:05:09,560
+contract that is going to
+request a number. So if you
+
+13927
+14:05:09,560 --> 14:05:12,320
+scroll down, you're going to see
+this Vera fee to consumer that
+
+13928
+14:05:12,320 --> 14:05:14,960
+soul contract that we can open
+it in remix, let's just jump
+
+13929
+14:05:14,990 --> 14:05:18,290
+right there. We're gonna notice
+a few different things in this
+
+13930
+14:05:18,290 --> 14:05:20,870
+contract at the top, we've got
+some input. So now you've got
+
+13931
+14:05:20,870 --> 14:05:23,720
+VRF, consumer base version two,
+we've got an interface for the
+
+13932
+14:05:23,720 --> 14:05:27,320
+VRF coordinator, and then also a
+reference to the link token
+
+13933
+14:05:27,320 --> 14:05:30,530
+interface. So all of those are
+specified for you on the Rinkeby
+
+13934
+14:05:30,530 --> 14:05:33,620
+network here in the example
+code. And then you can refer to
+
+13935
+14:05:33,620 --> 14:05:35,570
+the documentation for whatever
+chain you're going to be
+
+13936
+14:05:35,570 --> 14:05:39,620
+deploying to. And then you're
+going to see a few new options
+
+13937
+14:05:39,620 --> 14:05:43,190
+here. So the key hash option is
+the way that you specify that
+
+13938
+14:05:43,190 --> 14:05:46,370
+gasoline that was described in
+the documentation. So depending
+
+13939
+14:05:46,370 --> 14:05:49,640
+on the key hash you choose for
+the given chain you're on the
+
+13940
+14:05:49,640 --> 14:05:53,480
+gas limit will be set
+differently for your random
+
+13941
+14:05:53,480 --> 14:05:56,510
+number requests. So for example,
+on a theory main net, we have a
+
+13942
+14:05:56,510 --> 14:06:00,680
+200 way key hash 500 Wiki hash
+and 1000 graykey hash. You can
+
+13943
+14:06:00,680 --> 14:06:03,410
+also see in our contract Hear
+that we have a callback estimate
+
+13944
+14:06:03,410 --> 14:06:06,290
+that you're in charge of. So
+depending on how much gas you're
+
+13945
+14:06:06,290 --> 14:06:09,530
+willing to spend in the fulfill
+random number, you should set
+
+13946
+14:06:09,530 --> 14:06:13,640
+this value appropriately. Next
+up is request confirmations. So
+
+13947
+14:06:13,640 --> 14:06:15,950
+this was something in verify
+would be one that you could not
+
+13948
+14:06:15,950 --> 14:06:18,050
+control. But here now, depending
+on the chain you're on,
+
+13949
+14:06:18,050 --> 14:06:20,600
+depending on the request and the
+type nature of the request you
+
+13950
+14:06:20,600 --> 14:06:24,200
+want to make, you can actually
+change this number. And then one
+
+13951
+14:06:24,200 --> 14:06:26,600
+of the most important and useful
+features that gives you a lot
+
+13952
+14:06:26,600 --> 14:06:30,350
+more flexibility and control of
+your VRF is you can actually
+
+13953
+14:06:30,350 --> 14:06:34,010
+specify the number of random
+numbers you want. And so you
+
+13954
+14:06:34,010 --> 14:06:36,800
+specify the number words, and
+then that will specify how many
+
+13955
+14:06:36,800 --> 14:06:42,560
+random you went to 56 as you get
+back from the network. All right
+
+13956
+14:06:42,560 --> 14:06:45,800
+here in the constructor, we're
+gonna see a address for the
+
+13957
+14:06:45,800 --> 14:06:48,380
+coordinator and address for the
+link token. And then you'll see
+
+13958
+14:06:48,380 --> 14:06:50,810
+that the subscription ID is
+going to be created as we deploy
+
+13959
+14:06:50,810 --> 14:06:54,260
+the contract. And so I'm gonna
+go ahead and get that. So if you
+
+13960
+14:06:54,260 --> 14:06:56,330
+remember when we created the
+subscription after we found it,
+
+13961
+14:06:56,330 --> 14:06:59,060
+and we see this subscription ID,
+and now when I deploy this, I'm
+
+13962
+14:06:59,060 --> 14:07:01,520
+going to use that subscription
+ID. And we've got two methods
+
+13963
+14:07:01,520 --> 14:07:05,000
+that should look very familiar,
+we've got fulfill randomness
+
+13964
+14:07:05,000 --> 14:07:07,940
+method that takes in randomness
+is going to be fulfilled by the
+
+13965
+14:07:07,940 --> 14:07:10,970
+Bureau of Oracle, as well as you
+got request random words, which
+
+13966
+14:07:10,970 --> 14:07:13,130
+is how we're actually going to
+initiate the request to the
+
+13967
+14:07:13,130 --> 14:07:15,830
+Oracle. So I think we're
+actually are already ready to go
+
+13968
+14:07:15,830 --> 14:07:18,620
+ahead and deploy this. So let's
+jump to the deploy screen here
+
+13969
+14:07:19,010 --> 14:07:21,800
+and select the right contract,
+which in our case, is your FB to
+
+13970
+14:07:21,800 --> 14:07:24,800
+consumer. And I'm going to make
+sure that I am on injected web
+
+13971
+14:07:24,800 --> 14:07:26,900
+three so that we can actually
+deploy to the Rinkeby network.
+
+13972
+14:07:27,770 --> 14:07:29,990
+And I'm going to paste in the
+subscription ID here. And I'm
+
+13973
+14:07:29,990 --> 14:07:33,140
+going to deploy, let's go ahead
+and pay for that transaction.
+
+13974
+14:07:35,870 --> 14:07:38,660
+And as soon as that is confirmed
+by the network will show up
+
+13975
+14:07:38,660 --> 14:07:41,690
+here, and we'll be able to copy
+this address, and then add that
+
+13976
+14:07:41,690 --> 14:07:45,860
+as a consumer and authorize this
+contract to use my subscription
+
+13977
+14:07:45,860 --> 14:07:51,830
+account. So let's go ahead and
+authorize this with them another
+
+13978
+14:07:51,830 --> 14:07:52,790
+Metamask transaction.
+
+13979
+14:07:56,390 --> 14:07:58,130
+Alright, we can have your
+subscription, we can see how
+
+13980
+14:07:58,130 --> 14:08:00,830
+much link we funded it with. And
+we can see our consumer
+
+13981
+14:08:00,830 --> 14:08:04,190
+contract. So now by doing this,
+we've authorized our consumer
+
+13982
+14:08:04,190 --> 14:08:08,360
+contract to make requests for
+randomness. So let's go ahead
+
+13983
+14:08:08,360 --> 14:08:10,820
+and make a request for
+randomness here. So we're gonna
+
+13984
+14:08:10,820 --> 14:08:14,000
+go back to our contract that we
+deployed here. And we're just
+
+13985
+14:08:14,000 --> 14:08:16,460
+gonna use the remix interface
+here to keep things simple. And
+
+13986
+14:08:16,460 --> 14:08:19,460
+I'm going to request some
+randomness. So obviously, this
+
+13987
+14:08:19,460 --> 14:08:23,090
+is going to use all of the
+configuration that I specified
+
+13988
+14:08:23,090 --> 14:08:25,250
+in my contract, just kind of
+hard coded here. So we're gonna
+
+13989
+14:08:25,250 --> 14:08:27,890
+get to words of random is here.
+So we're gonna hit request
+
+13990
+14:08:27,890 --> 14:08:32,450
+randomness, confirm the Rigby
+transaction. And then as soon as
+
+13991
+14:08:32,450 --> 14:08:35,000
+that transaction comes back, we
+should notice that we actually
+
+13992
+14:08:35,000 --> 14:08:38,360
+have a request. And then what
+we'll be doing is we'll be
+
+13993
+14:08:38,360 --> 14:08:41,930
+waiting for the Oracle to call
+fulfill random words on our
+
+13994
+14:08:41,930 --> 14:08:44,390
+contract. And then we'll be
+storing all of those random
+
+13995
+14:08:44,390 --> 14:08:48,710
+words in this s random words,
+storage variable. Let's go ahead
+
+13996
+14:08:48,710 --> 14:08:50,750
+and check to see if our random
+numbers come back from the
+
+13997
+14:08:50,750 --> 14:08:53,630
+Oracle. So I'll go in here into
+random words. And let's request
+
+13998
+14:08:53,630 --> 14:08:56,330
+the zeroeth item of the array
+looks like we've got a random
+
+13999
+14:08:56,330 --> 14:08:58,970
+number there. And because we
+requested two random numbers, we
+
+14000
+14:08:58,970 --> 14:09:03,800
+should also have an item in
+index one. All right, we we've
+

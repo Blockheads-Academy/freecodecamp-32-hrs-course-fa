@@ -1,0 +1,4989 @@
+1001
+00:54:39,900 --> 00:54:44,400
+go back over to Rinkeby ether
+scan, paste our address and and
+
+1002
+00:54:44,400 --> 00:54:49,350
+we can see that we now have 0.1
+ether as a balance. We can also
+
+1003
+00:54:49,350 --> 00:54:53,280
+see that we have a transaction
+with all this information going
+
+1004
+00:54:53,310 --> 00:54:56,520
+into our wallet. That's what
+this green is for. If you click
+
+1005
+00:54:56,520 --> 00:55:00,180
+that transaction link, you'd get
+something like this, but If you
+
+1006
+00:55:00,180 --> 00:55:03,930
+didn't, don't worry, because on
+the ether scan, if you click the
+
+1007
+00:55:03,930 --> 00:55:07,320
+transaction hash in the
+transaction list, you can also
+
+1008
+00:55:07,320 --> 00:55:10,740
+see all the details like that.
+So now in our meta mask, we have
+
+1009
+00:55:10,770 --> 00:55:15,300
+0.1 eath. Again, this is fake
+Aetherium. And we have a
+
+1010
+00:55:15,300 --> 00:55:18,930
+transaction associated with our
+wallet now, which is awesome.
+
+1011
+00:55:18,990 --> 00:55:22,410
+Again, though, if we switch
+networks, if we switch networks
+
+1012
+00:55:22,410 --> 00:55:25,890
+back to Etherium main net, you
+can see that we have nothing on
+
+1013
+00:55:25,890 --> 00:55:29,190
+a theory main net. Or if we go
+to ropsten, we also have
+
+1014
+00:55:29,190 --> 00:55:33,510
+nothing, we only have this 0.1
+eath. On the Rinkeby test
+
+1015
+00:55:33,540 --> 00:55:36,900
+network, if you want to practice
+working with another test net,
+
+1016
+00:55:37,110 --> 00:55:40,440
+and the faucet that we're using,
+has multiple test nets. Let's go
+
+1017
+00:55:40,440 --> 00:55:43,530
+ahead and try it during this
+section right now is completely
+
+1018
+00:55:43,530 --> 00:55:46,200
+optional, you can watch or you
+can follow along. But for
+
+1019
+00:55:46,200 --> 00:55:49,320
+example, I can see in my wallet
+that we already have COVID
+
+1020
+00:55:49,320 --> 00:55:53,220
+supported, so maybe I'll switch
+to COVID. Maybe we'll switch to
+
+1021
+00:55:53,220 --> 00:55:57,000
+COVID. In the drop down here,
+we'll remove test 10 Link,
+
+1022
+00:55:57,030 --> 00:56:01,080
+because we only need test eath.
+We'll hit I'm not a robot, and
+
+1023
+00:56:01,080 --> 00:56:04,950
+we'll send request and the same
+things will pop up this time,
+
+1024
+00:56:04,980 --> 00:56:08,280
+this is going to be for the
+COVID test net. And once our
+
+1025
+00:56:08,280 --> 00:56:11,520
+transaction finishes going
+through. Now, same thing on
+
+1026
+00:56:11,520 --> 00:56:14,160
+COVID. Here, like what we did
+with rink B, once our
+
+1027
+00:56:14,160 --> 00:56:18,450
+transaction finishes going
+through, we'll see 0.1 test eath
+
+1028
+00:56:18,480 --> 00:56:21,390
+on the COVID network, if you
+want to go ahead and try working
+
+1029
+00:56:21,390 --> 00:56:25,110
+with another one of the test
+nets. Like maybe, for example
+
+1030
+00:56:25,650 --> 00:56:28,830
+COVID recommend you go ahead and
+giving it a try. But it's
+
+1031
+00:56:28,830 --> 00:56:31,650
+completely optional. And I would
+always refer back to the GitHub
+
+1032
+00:56:31,650 --> 00:56:34,470
+repo to make sure you're working
+with the most up to date faucet
+
+1033
+00:56:34,500 --> 00:56:37,500
+and test net. And if we look
+back at ether scan, we can
+
+1034
+00:56:37,500 --> 00:56:41,340
+actually see more details on
+what actually just took place.
+
+1035
+00:56:41,340 --> 00:56:45,540
+What actually just happened, how
+did our Metamask get a balance
+
+1036
+00:56:45,570 --> 00:56:48,840
+of 0.1 eath. All of a sudden?
+Well, if we looked down in the
+
+1037
+00:56:48,840 --> 00:56:52,560
+transaction section, we can see
+that there's a transaction here,
+
+1038
+00:56:53,100 --> 00:56:58,590
+some address sent us 0.1 ether.
+And if we click the transaction
+
+1039
+00:56:58,590 --> 00:57:02,910
+hash, we can see more details
+about what actually went down
+
+1040
+00:57:02,940 --> 00:57:05,610
+with this transaction. Now
+understanding what's going on in
+
+1041
+00:57:05,610 --> 00:57:09,060
+this transaction is essential to
+learning and being a smart
+
+1042
+00:57:09,060 --> 00:57:12,360
+contract developer or just
+engaging with the ecosystem. So
+
+1043
+00:57:12,360 --> 00:57:16,200
+let's learn the first bit at the
+top is this transaction hash.
+
+1044
+00:57:16,470 --> 00:57:21,150
+This is a unique identifier for
+this blockchain or this test net
+
+1045
+00:57:21,360 --> 00:57:24,900
+that identifies this exact
+transaction. This transaction
+
+1046
+00:57:24,900 --> 00:57:31,260
+hash identifies sending 0.1 eath
+to our address, we can see that
+
+1047
+00:57:31,350 --> 00:57:34,920
+the status of this transaction
+was successful, it didn't break.
+
+1048
+00:57:34,920 --> 00:57:38,460
+In any case, we can see the
+block number that this
+
+1049
+00:57:38,460 --> 00:57:41,580
+transaction was included in and
+we'll get to blocks in a little
+
+1050
+00:57:41,580 --> 00:57:45,630
+bit, we can see the timestamp
+which of course is when this
+
+1051
+00:57:45,750 --> 00:57:49,170
+transaction occurred, we can see
+which account it was from which
+
+1052
+00:57:49,200 --> 00:57:54,360
+if we go ahead and open in a new
+tab, we can see that this is the
+
+1053
+00:57:54,360 --> 00:57:57,870
+account that this transaction
+came from. And it's got 3
+
+1054
+00:57:57,870 --> 00:58:01,440
+million ether. Of course, this
+is fake Rinckey ether. So it
+
+1055
+00:58:01,440 --> 00:58:04,860
+doesn't really matter, we can
+all see who it was to, which
+
+1056
+00:58:04,860 --> 00:58:10,110
+again, is just us. This is our
+wallet address 0x 106 X blah,
+
+1057
+00:58:10,110 --> 00:58:15,330
+blah, blah, cero x 1066, blah,
+blah, blah, right, the value of
+
+1058
+00:58:15,330 --> 00:58:19,200
+this transaction, of course, is
+0.1 ether. Now what's all this
+
+1059
+00:58:19,200 --> 00:58:22,530
+that we see as the value so
+obviously, the value is 0.1,
+
+1060
+00:58:22,530 --> 00:58:24,960
+because that's a mode which we
+sent. But we see this
+
+1061
+00:58:24,960 --> 00:58:28,440
+transaction fee. In this gas
+price, we hover over the
+
+1062
+00:58:28,440 --> 00:58:31,950
+tooltip, we can see if you zoom
+in on your ether scan, you see
+
+1063
+00:58:31,950 --> 00:58:35,790
+amount paid to the miner for
+processing the transaction. And
+
+1064
+00:58:35,790 --> 00:58:40,200
+we see a gas price which is cost
+per unit of gas specified for
+
+1065
+00:58:40,200 --> 00:58:43,590
+the transaction and ether and
+gray. The higher the gas price,
+
+1066
+00:58:43,620 --> 00:58:46,950
+the higher the chance of getting
+included in the block. Now if we
+
+1067
+00:58:46,980 --> 00:58:50,220
+scroll down even more, and we
+click See more, we can also see
+
+1068
+00:58:50,220 --> 00:58:53,460
+a ton of other information here.
+For now we're just going to
+
+1069
+00:58:53,460 --> 00:58:57,360
+click to see less and just focus
+on these two. I'll explain all
+
+1070
+00:58:57,360 --> 00:58:58,830
+of these in a later session.
+
+1071
+00:59:01,470 --> 00:59:02,490
+Let's talk about just
+
+1072
+00:59:02,490 --> 00:59:06,090
+the concept of transaction fees
+and gas for a second. Remember
+
+1073
+00:59:06,090 --> 00:59:08,970
+how I said the blockchain is run
+by all these different nodes
+
+1074
+00:59:09,180 --> 00:59:12,000
+will all those different nodes
+are running this blockchain
+
+1075
+00:59:12,210 --> 00:59:15,990
+because they actually get paid
+for all the transactions that
+
+1076
+00:59:15,990 --> 00:59:19,260
+happen on these blockchains
+whenever you make a transaction,
+
+1077
+00:59:19,290 --> 00:59:23,850
+there's a node or a miner or or
+a validator somebody running the
+
+1078
+00:59:23,850 --> 00:59:28,410
+blockchain software is gonna get
+paid a tiny bit of Aetherium or
+
+1079
+00:59:28,410 --> 00:59:30,960
+polygon or whatever blockchain
+that you're running on, they're
+
+1080
+00:59:30,960 --> 00:59:34,020
+gonna get paid a tiny bit of
+that native blockchain currency.
+
+1081
+00:59:34,110 --> 00:59:37,290
+This payment is obviously to
+incentivize people to continue
+
+1082
+00:59:37,290 --> 00:59:40,200
+to run nodes and they calculate
+how much you pay and how much
+
+1083
+00:59:40,200 --> 00:59:43,920
+the node operators get paid
+based off of how much gas you
+
+1084
+00:59:43,920 --> 00:59:48,120
+use. So there's this concept of
+gas. Gas is a unit of
+
+1085
+00:59:48,120 --> 00:59:52,230
+computational measure. The more
+computation a transaction uses,
+
+1086
+00:59:52,230 --> 00:59:56,370
+the more gas you'd have to pay
+for. For example, we do hit
+
+1087
+00:59:56,370 --> 01:00:00,240
+click More just really quickly.
+We can see this section say A
+
+1088
+01:00:00,270 --> 01:00:04,260
+gas limit and gas usage by
+transaction, there was a limit
+
+1089
+01:00:04,290 --> 01:00:09,780
+of 60,000 units of gas on this
+transaction, and 21,000 or
+
+1090
+01:00:09,780 --> 01:00:15,000
+actually use. So this
+transaction use 21 units of gas.
+
+1091
+01:00:15,060 --> 01:00:19,140
+Now for very simple things like
+sending ether, the units of gas
+
+1092
+01:00:19,170 --> 01:00:22,290
+are usually pretty cheap. But
+maybe for more complex things
+
+1093
+01:00:22,320 --> 01:00:25,980
+like like minting NFT,
+depositing to some defy
+
+1094
+01:00:25,980 --> 01:00:30,150
+contract, etc, maybe those will
+cost more gas because they'll be
+
+1095
+01:00:30,150 --> 01:00:33,390
+more computationally expensive.
+And this is a little confusing
+
+1096
+01:00:33,390 --> 01:00:35,760
+right now, don't worry too much
+about it. But just know that we
+
+1097
+01:00:35,760 --> 01:00:39,990
+use 21,000 gas here. And if we
+pull out the calculator 21,000
+
+1098
+01:00:39,990 --> 01:00:45,750
+gas times this gas price right
+here, times the gas price, we
+
+1099
+01:00:45,750 --> 01:00:50,610
+get the exact same as we see for
+the transaction fee. So gas
+
+1100
+01:00:50,610 --> 01:00:55,890
+price, times how much gas you
+used, is the transaction fee. So
+
+1101
+01:00:55,890 --> 01:01:04,050
+whoever sent us this 0.1 ether,
+also paid 0.0000525, etc Rinkeby
+
+1102
+01:01:04,080 --> 01:01:07,920
+ether to make this transaction.
+Now, each blockchain has a
+
+1103
+01:01:07,920 --> 01:01:11,130
+different way of actually
+calculating how this gas stuff
+
+1104
+01:01:11,130 --> 01:01:14,340
+works. So that's basically going
+to be the high level of it. So
+
+1105
+01:01:14,340 --> 01:01:16,350
+we're going to focus just here
+for now there's a total
+
+1106
+01:01:16,350 --> 01:01:19,590
+transaction fee. And then
+there's obviously the gas price.
+
+1107
+01:01:19,650 --> 01:01:22,620
+After we cover how blockchain
+works, I'll explain what this
+
+1108
+01:01:22,620 --> 01:01:25,680
+burn stuff is these gas fees and
+all these other stuff. For now,
+
+1109
+01:01:25,680 --> 01:01:28,980
+just know that anytime you make
+a transaction on chain, you have
+
+1110
+01:01:28,980 --> 01:01:32,490
+to pay a little bit of what I
+call transaction gas. So for
+
+1111
+01:01:32,490 --> 01:01:35,520
+example, if we go to our
+Metamask, we have two accounts
+
+1112
+01:01:35,520 --> 01:01:39,870
+right here, we have account one
+was 0.1, Rinckey eath, and
+
+1113
+01:01:39,870 --> 01:01:46,500
+account two was zero. Rigby. If
+I were to send 0.05 Rinckey
+
+1114
+01:01:46,500 --> 01:01:50,580
+eath. From this account to my
+other account, how much rinky
+
+1115
+01:01:50,580 --> 01:01:53,970
+eath Do you think I'd have left?
+Well, let's go ahead and try it,
+
+1116
+01:01:54,000 --> 01:01:56,580
+this will be the first
+transaction that you're actually
+
+1117
+01:01:56,580 --> 01:02:00,480
+creating that you are going to
+spend the gas for. So if we go
+
+1118
+01:02:00,480 --> 01:02:03,330
+ahead and hit send, we'll hit
+transfer between my accounts.
+
+1119
+01:02:03,600 --> 01:02:06,630
+count two, we'll do 0.05.
+
+1120
+01:02:07,380 --> 01:02:09,450
+Next, we can see
+
+1121
+01:02:10,620 --> 01:02:13,560
+some information here about
+what's actually going on
+
+1122
+01:02:13,590 --> 01:02:17,550
+Metamask has some new advanced
+gas for UI and settings, we're
+
+1123
+01:02:17,550 --> 01:02:20,520
+also going to turn the song, so
+go ahead and click that enable
+
+1124
+01:02:20,520 --> 01:02:24,480
+enhanced gas UI, turn that on,
+and then go back. And again,
+
+1125
+01:02:24,480 --> 01:02:27,060
+this is going to be the
+experimental tab. But it could
+
+1126
+01:02:27,060 --> 01:02:29,670
+also just be in the General
+Settings tab. Depending on when
+
+1127
+01:02:29,670 --> 01:02:32,460
+you actually run this, we can
+see a little notification here.
+
+1128
+01:02:32,490 --> 01:02:35,100
+Again, this depends on what
+version of Metamask we're using.
+
+1129
+01:02:35,640 --> 01:02:38,760
+And we get this little drop down
+that says Here are some of the
+
+1130
+01:02:38,760 --> 01:02:41,640
+different type of gas fees that
+you can actually pay. The reason
+
+1131
+01:02:41,640 --> 01:02:45,300
+that gas fees might change, as
+you can see here is that
+
+1132
+01:02:45,300 --> 01:02:47,940
+depending on how busy the
+blockchain is, you have to pay
+
+1133
+01:02:47,940 --> 01:02:52,680
+more gas. If a lot of people are
+sending transactions, that means
+
+1134
+01:02:52,680 --> 01:02:55,290
+there's not going to be enough
+space for everyone's transaction
+
+1135
+01:02:55,290 --> 01:02:58,320
+to get through. That's a bit of
+an oversimplification of what's
+
+1136
+01:02:58,320 --> 01:03:00,810
+happening. But don't worry too
+much about it for now. Now, if
+
+1137
+01:03:00,810 --> 01:03:04,620
+we want to send the 0.05 ether
+to our second account, we can
+
+1138
+01:03:04,620 --> 01:03:08,490
+see this gas estimated section,
+which is saying it's estimating,
+
+1139
+01:03:08,520 --> 01:03:15,390
+we're going to pay 0.00004792
+gas in addition to sending the
+
+1140
+01:03:15,390 --> 01:03:19,620
+0.5 eath. So at the bottom, we
+have amount plus gas fee. And
+
+1141
+01:03:19,620 --> 01:03:22,200
+this is going to be the total
+amount that we're going to be
+
+1142
+01:03:22,350 --> 01:03:26,310
+spending on this transaction
+0.05 is what we're sending. And
+
+1143
+01:03:26,310 --> 01:03:30,960
+we also have this gas piece. So
+we go ahead and confirm, we now
+
+1144
+01:03:30,960 --> 01:03:34,740
+see we have a transaction
+pending in our Rigby ether scan.
+
+1145
+01:03:34,860 --> 01:03:38,640
+And if we click on it, we can
+even hit View on block Explorer.
+
+1146
+01:03:39,900 --> 01:03:42,960
+And a Rigby transaction hash
+will pop up and depending on
+
+1147
+01:03:42,960 --> 01:03:46,200
+when you click it, it might say
+indexing, this means that ether
+
+1148
+01:03:46,200 --> 01:03:49,260
+scan has received your
+transaction and is trying to
+
+1149
+01:03:49,260 --> 01:03:52,140
+place it. If you don't see
+anything here, it means that
+
+1150
+01:03:52,140 --> 01:03:54,510
+maybe the transaction hasn't
+gone through yet. Maybe you need
+
+1151
+01:03:54,510 --> 01:03:57,090
+to wait a little bit more. Or
+maybe you need to go back to the
+
+1152
+01:03:57,090 --> 01:04:00,450
+GitHub repo and pick the
+recommended testament and
+
+1153
+01:04:00,450 --> 01:04:03,150
+faucet. So you might have to
+wait a minute or so for this to
+
+1154
+01:04:03,150 --> 01:04:06,750
+actually finish indexing. After
+a minute or so we can see that
+
+1155
+01:04:06,780 --> 01:04:09,780
+this transaction has indeed
+passed. And we can see a lot of
+
+1156
+01:04:09,780 --> 01:04:13,740
+the same information that we saw
+on our last one, this time with
+
+1157
+01:04:13,740 --> 01:04:18,030
+0.05 ether. And now if we look
+in our meta mask, we'll see we
+
+1158
+01:04:18,030 --> 01:04:22,020
+can see account one has 0.05
+It's rounding up a little bit,
+
+1159
+01:04:22,170 --> 01:04:24,270
+we click on the big button, we
+can see it actually has
+
+1160
+01:04:24,270 --> 01:04:30,240
+0.049953, etc. And our other
+account account two does have
+
+1161
+01:04:30,240 --> 01:04:35,340
+exactly 0.05. This is because we
+spent a little bit of Aetherium
+
+1162
+01:04:35,370 --> 01:04:39,390
+on gas to send this transaction.
+And now with just this little
+
+1163
+01:04:39,390 --> 01:04:42,660
+bit of information, you know how
+to actually interact with
+
+1164
+01:04:42,660 --> 01:04:45,570
+applications that use the
+blockchain, how to send
+
+1165
+01:04:45,570 --> 01:04:48,750
+transactions and a lot of the
+non technical details. Now
+
+1166
+01:04:48,750 --> 01:04:50,880
+here's something that's
+incredibly exciting with just
+
+1167
+01:04:50,880 --> 01:04:53,760
+this little bit of information.
+You now know how to interact
+
+1168
+01:04:53,760 --> 01:04:56,550
+with blockchains and interact
+with the Etherion protocol. So
+
+1169
+01:04:56,550 --> 01:05:00,120
+if you don't want to learn how
+to code anything, you can go If
+
+1170
+01:05:00,270 --> 01:05:02,730
+you can start interacting with
+Aetherium and interact with
+
+1171
+01:05:02,730 --> 01:05:06,000
+protocols with just as much
+information. However, I know
+
+1172
+01:05:06,000 --> 01:05:08,400
+most of you guys are here to
+learn how to code. So let's look
+
+1173
+01:05:08,490 --> 01:05:11,400
+under the hood of Aetherium. And
+what is actually going on with
+
+1174
+01:05:11,400 --> 01:05:13,830
+these transactions, and what
+these gas and what these
+
+1175
+01:05:13,830 --> 01:05:17,610
+blockchains. And what's really
+going on, let's learn all the
+
+1176
+01:05:17,610 --> 01:05:19,830
+fundamentals of a blockchain.
+Now, if you want to just go
+
+1177
+01:05:19,830 --> 01:05:22,590
+ahead and jump into the coding,
+go ahead and grab a timestamp
+
+1178
+01:05:22,620 --> 01:05:26,160
+from the description. However,
+learning exactly how the
+
+1179
+01:05:26,160 --> 01:05:28,920
+blockchain works is going to
+make you an incredibly powerful
+
+1180
+01:05:28,920 --> 01:05:29,520
+developer.
+
+1181
+01:05:29,580 --> 01:05:33,990
+So let's take a look at that
+first. So we're going to
+
+1182
+01:05:33,990 --> 01:05:36,540
+be going through this blockchain
+demo on this site right here.
+
+1183
+01:05:36,540 --> 01:05:39,210
+Now, the creator of the site has
+a fantastic video and a
+
+1184
+01:05:39,210 --> 01:05:41,400
+fantastic walk through
+blockchain one on one, it is
+
+1185
+01:05:41,400 --> 01:05:44,340
+right on their site. So if
+you're looking for another
+
+1186
+01:05:44,340 --> 01:05:47,070
+explanation, definitely check
+out his video, it is absolutely
+
+1187
+01:05:47,070 --> 01:05:49,680
+fantastic. But the first thing
+that we really need to do in
+
+1188
+01:05:49,680 --> 01:05:52,440
+order to understand blockchain
+or just on really anything, and
+
+1189
+01:05:52,440 --> 01:05:54,330
+everything that's going on here
+working first really need to
+
+1190
+01:05:54,330 --> 01:05:58,410
+understand this Sha 256, hash,
+or hashing just kind of in
+
+1191
+01:05:58,410 --> 01:06:01,710
+general, let's first understand
+what a hash is. A hash is a
+
+1192
+01:06:01,710 --> 01:06:06,210
+unique fixed length string,
+meant to identify any piece of
+
+1193
+01:06:06,210 --> 01:06:09,330
+data, they are created by
+putting some piece of data into
+
+1194
+01:06:09,330 --> 01:06:13,890
+a hash function. In this
+example, the hashing algorithm
+
+1195
+01:06:13,890 --> 01:06:18,090
+used is Sha 256. Now Etherium
+actually uses this, this right
+
+1196
+01:06:18,090 --> 01:06:22,710
+here for its hashing algorithm,
+which isn't quite Sha 256, but
+
+1197
+01:06:22,710 --> 01:06:26,400
+as in kind of this SHA family.
+But it's really just another way
+
+1198
+01:06:26,400 --> 01:06:30,840
+to hash things. And the specific
+hash algorithm doesn't matter so
+
+1199
+01:06:30,840 --> 01:06:34,410
+much. So this example, you just
+shot up to six, but you can
+
+1200
+01:06:34,410 --> 01:06:36,540
+imagine it's the same as the
+Etherium. Hash, they're just
+
+1201
+01:06:36,540 --> 01:06:40,320
+going to result in a different
+hash. So what's going to happen
+
+1202
+01:06:40,350 --> 01:06:44,790
+in this application here is
+whatever data or whatever
+
+1203
+01:06:44,790 --> 01:06:48,330
+information we put into this
+data section here, as you can
+
+1204
+01:06:48,330 --> 01:06:54,240
+see below this hash changes. So
+what's happening is this data is
+
+1205
+01:06:54,240 --> 01:06:59,100
+running through the Sha 256 hash
+algorithm. And it's outputting,
+
+1206
+01:06:59,130 --> 01:07:04,740
+this unique hash. So this hash
+is a unique fixed length string,
+
+1207
+01:07:04,950 --> 01:07:07,830
+that's going to identify like a
+blank data piece here, right. So
+
+1208
+01:07:07,830 --> 01:07:11,520
+if I put in, you know, my name
+like Patrick Collins, this is
+
+1209
+01:07:11,520 --> 01:07:14,490
+the hash that's going to
+represent Patrick Collins,
+
+1210
+01:07:14,490 --> 01:07:18,540
+right. And you can see, even
+when I put, you know, tons and
+
+1211
+01:07:18,540 --> 01:07:23,640
+tons of data in here, the length
+of the string doesn't change,
+
+1212
+01:07:24,120 --> 01:07:29,160
+right. So it's always gonna be
+the same, we can put almost any
+
+1213
+01:07:29,160 --> 01:07:32,520
+amount of data in here, there is
+an upper limit on the max size
+
+1214
+01:07:32,520 --> 01:07:36,570
+of the data. But for all intents
+purposes, we can pretty much put
+
+1215
+01:07:36,570 --> 01:07:39,660
+any length in here. And you'll
+see to that every time I type in
+
+1216
+01:07:39,660 --> 01:07:43,290
+Patrick Collins, this hash is
+always gonna be this seven e
+
+1217
+01:07:43,290 --> 01:07:46,170
+five D, right? I'm gonna delete
+I'm gonna do Patrick Collins,
+
+1218
+01:07:46,170 --> 01:07:50,760
+again, you're 75 B is always
+this, this unique hash is always
+
+1219
+01:07:50,760 --> 01:07:53,610
+going to be unique, right, it's
+always gonna be this fixed
+
+1220
+01:07:53,640 --> 01:07:57,240
+length string here. So now we
+can take this idea while putting
+
+1221
+01:07:57,240 --> 01:08:01,500
+this data in here, we can move
+on to this concept of a block.
+
+1222
+01:08:01,620 --> 01:08:04,110
+So with this block concept,
+we're going to take the exact
+
+1223
+01:08:04,110 --> 01:08:06,870
+same thing with this hash this
+this data section, right, but
+
+1224
+01:08:06,870 --> 01:08:09,210
+instead of having everything
+just being in this, this
+
+1225
+01:08:09,210 --> 01:08:12,420
+singular data area right here,
+we're going to split this data
+
+1226
+01:08:12,420 --> 01:08:16,290
+up into block, nuns, and data.
+So all so what we're going to do
+
+1227
+01:08:16,290 --> 01:08:20,040
+is we're actually going to hash
+all three of these to get to get
+
+1228
+01:08:20,040 --> 01:08:21,570
+this hash, right, we're gonna
+put all three of these, we're
+
+1229
+01:08:21,570 --> 01:08:24,900
+gonna say all three of these are
+combined. Together, we're gonna
+
+1230
+01:08:24,930 --> 01:08:28,230
+put every all three of them into
+this hashing algorithm to figure
+
+1231
+01:08:28,230 --> 01:08:31,860
+it out. So if I type a bunch of
+stuff here, we can see that
+
+1232
+01:08:31,890 --> 01:08:36,330
+block one with nonce, you know,
+this nonce, and this data, we're
+
+1233
+01:08:36,330 --> 01:08:39,450
+going to get this hash. And as
+you can see, actually, the
+
+1234
+01:08:39,450 --> 01:08:44,250
+screen turns red, this block
+turned red. Now, what happens
+
+1235
+01:08:44,250 --> 01:08:47,580
+when I hit this mind button?
+When I hit this mind button,
+
+1236
+01:08:47,580 --> 01:08:49,410
+it's actually gonna take some
+time, it's gonna think for a
+
+1237
+01:08:49,410 --> 01:08:53,610
+little bit. And we can see that
+the nonce here actually changed,
+
+1238
+01:08:53,790 --> 01:08:56,820
+right? The nonce is different
+from what it was before. And
+
+1239
+01:08:57,480 --> 01:09:02,160
+this hash now starts with four
+zeros. Okay, and then the back
+
+1240
+01:09:02,160 --> 01:09:04,680
+turn green. When we're talking
+about mining, we're talking
+
+1241
+01:09:04,680 --> 01:09:08,250
+about miners solving some type
+of very difficult problem that
+
+1242
+01:09:08,250 --> 01:09:12,420
+takes a lot of time to do now in
+this example, here, the problem
+
+1243
+01:09:12,480 --> 01:09:17,160
+that the miners had to solve was
+they had to find a nonce, or or
+
+1244
+01:09:17,160 --> 01:09:20,790
+a value in this nonce section
+that when hashed with at block
+
+1245
+01:09:20,790 --> 01:09:25,380
+number one with this data, it
+would start with four zeros. So
+
+1246
+01:09:25,380 --> 01:09:28,050
+the problem here the miners had
+to solve was to start with four
+
+1247
+01:09:28,050 --> 01:09:31,440
+zeros and the only way for them
+to really do that is kind of
+
+1248
+01:09:31,440 --> 01:09:33,990
+this brute force, you know,
+trying stuff so they tried one
+
+1249
+01:09:33,990 --> 01:09:38,820
+okay, one didn't work. Okay,
+two, nope, two didn't work. 3456
+
+1250
+01:09:38,820 --> 01:09:40,740
+Okay, five, well, that started
+with one zero, but it's not
+
+1251
+01:09:40,740 --> 01:09:43,890
+four. And they have to keep
+trying all these numbers until
+
+1252
+01:09:43,890 --> 01:09:47,430
+they get to this one where you
+know, let's hit mine again.
+
+1253
+01:09:50,130 --> 01:09:54,240
+Where it has four zeros at the
+top at the start. Now, this
+
+1254
+01:09:54,240 --> 01:09:56,970
+specific problem changes
+blockchain to blockchain right
+
+1255
+01:09:56,970 --> 01:10:00,360
+yet. Aetherium has a different
+problem for miners to solve A
+
+1256
+01:10:00,570 --> 01:10:02,940
+bitcoin is different problems
+from yourself, but this concept
+
+1257
+01:10:02,940 --> 01:10:07,320
+is going to be the same. So they
+have to take it, one block is
+
+1258
+01:10:07,320 --> 01:10:10,530
+going to be this, this, this
+concept is going to be all this
+
+1259
+01:10:10,530 --> 01:10:13,890
+data, it's going to be the block
+number. And it's going to be
+
+1260
+01:10:13,890 --> 01:10:18,510
+this nonce, right. And so this
+nonce is the solution is going
+
+1261
+01:10:18,510 --> 01:10:20,940
+to be the the number that they
+use to get like the solution to
+
+1262
+01:10:20,940 --> 01:10:24,930
+the problem, right? So if I go
+to one here, you know, I do this
+
+1263
+01:10:24,930 --> 01:10:25,410
+again,
+
+1264
+01:10:27,210 --> 01:10:30,630
+hit mine. And the nonces
+changed, right? And went from
+
+1265
+01:10:30,630 --> 01:10:35,760
+one to 33,128. Because this is
+the nonce that allowed this hash
+
+1266
+01:10:35,760 --> 01:10:39,810
+to start with four zeros. And so
+that's what's happening. When
+
+1267
+01:10:40,200 --> 01:10:42,510
+blockchain miners are mining
+they're going through this
+
+1268
+01:10:42,510 --> 01:10:46,410
+process is very computationally
+intensive process of trying to
+
+1269
+01:10:46,410 --> 01:10:50,070
+find a nonce that fulfills
+whatever the problem is. So
+
+1270
+01:10:50,070 --> 01:10:52,350
+that's really it, actually. So
+that's a block. And that's
+
+1271
+01:10:52,350 --> 01:10:54,510
+really what's happening when
+miners are mining. They're just
+
+1272
+01:10:54,510 --> 01:10:57,450
+looking, there's trial and
+error, brute force trying to
+
+1273
+01:10:57,450 --> 01:11:00,990
+find this nut so so now that we
+know what a block is, let's go
+
+1274
+01:11:00,990 --> 01:11:03,840
+to the next step and figure out
+okay, well, what's a block
+
+1275
+01:11:03,870 --> 01:11:08,190
+chain. So here we have an
+example of what a blockchain is
+
+1276
+01:11:08,190 --> 01:11:11,310
+going to look like. Right, we
+have a combination, you know, we
+
+1277
+01:11:11,310 --> 01:11:13,620
+have back here in the block
+section, we have one what one
+
+1278
+01:11:13,620 --> 01:11:17,460
+block looks like. Now here, we
+have multiple different blocks,
+
+1279
+01:11:17,460 --> 01:11:20,040
+right, each one of these
+represents a different block,
+
+1280
+01:11:20,040 --> 01:11:23,010
+but we have an additional column
+here, we have additional
+
+1281
+01:11:23,040 --> 01:11:26,850
+variable here. So like before,
+you know, we have block nonce
+
+1282
+01:11:26,850 --> 01:11:30,360
+and data, right, we have blocked
+nonce data, we also have this
+
+1283
+01:11:30,360 --> 01:11:33,780
+thing called previous right, and
+so this is actually gonna be
+
+1284
+01:11:33,780 --> 01:11:38,640
+pointing to the previous hash of
+the last block. So for example,
+
+1285
+01:11:38,640 --> 01:11:41,610
+if we go to the last block in
+this blockchain, it says
+
+1286
+01:11:41,610 --> 01:11:45,420
+previous 008. And if we look at
+the hash of block number four,
+
+1287
+01:11:45,660 --> 01:11:50,790
+is 00008. And then we look at
+its previous it's four zeros, B
+
+1288
+01:11:50,790 --> 01:11:54,120
+nine, we have four zeros, B,
+nine, and so on, all the way
+
+1289
+01:11:54,120 --> 01:11:58,110
+back to our first block, which
+has previous of just all zeros,
+
+1290
+01:11:58,260 --> 01:12:02,130
+right. And so the block with the
+previous of all zeros, is going
+
+1291
+01:12:02,130 --> 01:12:04,590
+to be known as the Genesis
+block. So you've probably heard
+
+1292
+01:12:04,590 --> 01:12:07,050
+that before the Genesis block,
+it's the first block in the
+
+1293
+01:12:07,050 --> 01:12:10,500
+blockchain were the previous
+hash points to a hash that
+
+1294
+01:12:10,710 --> 01:12:13,470
+doesn't actually exist. Now, as
+you can imagine, kind of the
+
+1295
+01:12:13,470 --> 01:12:17,070
+same as how this block worked,
+how the block nuts and dated all
+
+1296
+01:12:17,070 --> 01:12:20,580
+go through the hashing algorithm
+in the blockchain, the block
+
+1297
+01:12:20,610 --> 01:12:24,090
+nonce data, and previous hash
+all go through this hashing
+
+1298
+01:12:24,090 --> 01:12:28,560
+algorithm to figure out what the
+hashes okay? So if we go to over
+
+1299
+01:12:28,560 --> 01:12:31,890
+here, you know, for example, if
+I type in Patrick, obviously,
+
+1300
+01:12:31,920 --> 01:12:34,560
+this is now no longer valid,
+right? Because this nuns
+
+1301
+01:12:35,130 --> 01:12:37,980
+combined with the block the data
+in the previous hash, aren't
+
+1302
+01:12:37,980 --> 01:12:41,430
+going to solve our problem of
+having four zeros at the at the
+
+1303
+01:12:41,430 --> 01:12:44,460
+start, right. So I'm gonna go
+and fix that. And that's, that's
+
+1304
+01:12:44,460 --> 01:12:47,790
+kind of an easy way to see it
+being broken. But, but let's
+
+1305
+01:12:47,790 --> 01:12:51,780
+take a look, if I break this
+block, right here, what happens
+
+1306
+01:12:51,780 --> 01:12:54,480
+if I, if I break the data in
+here, if I do like Patrick in
+
+1307
+01:12:54,480 --> 01:12:59,220
+here, you can see that both of
+these are now read, both of
+
+1308
+01:12:59,220 --> 01:13:03,030
+these are now invalid, right?
+Because the block hash with the
+
+1309
+01:13:03,030 --> 01:13:06,450
+nonce hash with the new data,
+which is my name, Patrick has
+
+1310
+01:13:07,170 --> 01:13:11,520
+hashed with the previous block
+is now a brand new hash, right,
+
+1311
+01:13:11,550 --> 01:13:15,840
+and this block is still pointing
+to this previous hash right
+
+1312
+01:13:15,840 --> 01:13:19,920
+here, right is pointing to this
+previous block. And now it is
+
+1313
+01:13:19,920 --> 01:13:24,030
+wrong, and it is messed up and
+now, and now it's nuts with this
+
+1314
+01:13:24,030 --> 01:13:28,200
+previous hash is also wrong.
+Right? And this is where when we
+
+1315
+01:13:28,200 --> 01:13:32,130
+talk about blockchains, being
+immutable, this is exactly how
+
+1316
+01:13:32,130 --> 01:13:35,340
+it's immutable, right? Because I
+go back and I change anything,
+
+1317
+01:13:35,370 --> 01:13:39,060
+you know, if I've just typed a
+right here, the entire
+
+1318
+01:13:39,060 --> 01:13:42,420
+blockchain is now invalidated.
+Because none of these are going
+
+1319
+01:13:42,420 --> 01:13:47,220
+to have nonces that solve this
+equation anymore. So this is why
+
+1320
+01:13:47,220 --> 01:13:50,400
+blockchains are immutable is
+because anytime you change one
+
+1321
+01:13:50,400 --> 01:13:54,480
+thing, you ruin the rest of the
+blockchain, okay? So however,
+
+1322
+01:13:54,480 --> 01:13:57,330
+though, you know, if it was
+here, originally, we can go
+
+1323
+01:13:57,330 --> 01:14:00,420
+ahead and mine these, mine all
+these but as you can see, you
+
+1324
+01:14:00,420 --> 01:14:03,330
+know, this is going to start
+getting very computationally
+
+1325
+01:14:03,330 --> 01:14:07,170
+expensive, because I have to go
+redo basically the entire
+
+1326
+01:14:07,170 --> 01:14:10,500
+blockchain. And the farther and
+farther down the line you get,
+
+1327
+01:14:10,500 --> 01:14:13,800
+the harder and harder it becomes
+to, you know, rehash and redo
+
+1328
+01:14:13,830 --> 01:14:16,020
+all these different block chains
+here. Now, this makes a lot of
+
+1329
+01:14:16,020 --> 01:14:17,790
+sense, right? So we have this
+blockchain, it's really hard to
+
+1330
+01:14:17,790 --> 01:14:19,590
+change something in the past,
+but if we do, we can just go
+
+1331
+01:14:19,590 --> 01:14:22,800
+ahead and remind it. Now if I'm
+the one who controls the
+
+1332
+01:14:22,800 --> 01:14:25,020
+blockchain, right, if I'm the
+one who controls this, you know,
+
+1333
+01:14:25,020 --> 01:14:27,120
+and I want to change something,
+the past will, okay, great. All
+
+1334
+01:14:27,120 --> 01:14:30,390
+I got to do is change the state
+of here. And then you know,
+
+1335
+01:14:30,420 --> 01:14:32,460
+mine, each one of these, you
+know, obviously, it's going to
+
+1336
+01:14:32,700 --> 01:14:34,530
+be very computationally
+expensive, but it's something
+
+1337
+01:14:34,530 --> 01:14:37,470
+that I can do right if I'm the
+one who owns the blockchain.
+
+1338
+01:14:39,390 --> 01:14:42,330
+Now, here's where the
+decentralized nature or the
+
+1339
+01:14:42,330 --> 01:14:47,130
+distributed nature really makes
+it incredibly powerful. So we're
+
+1340
+01:14:47,130 --> 01:14:50,070
+gonna go to the distributed tab
+here, which is also referred to
+
+1341
+01:14:50,070 --> 01:14:53,190
+as the decentralized tab here,
+and it's going to show us what a
+
+1342
+01:14:53,190 --> 01:14:57,030
+blockchain looks like in a
+decentralized manner. So we have
+
+1343
+01:14:57,030 --> 01:15:00,270
+this exact same initial setup
+here we have to Shoot a
+
+1344
+01:15:00,270 --> 01:15:02,850
+blockchain, we have our first
+blockchain, which is kind of
+
+1345
+01:15:02,850 --> 01:15:06,600
+exactly as the one from here.
+But we also have more than once
+
+1346
+01:15:06,600 --> 01:15:10,140
+we have peer, a peer beam, and
+PRC and when people are talking
+
+1347
+01:15:10,140 --> 01:15:12,840
+about Peer to Peer, peer to peer
+transactions through the
+
+1348
+01:15:12,840 --> 01:15:15,210
+talking, this is kind of that
+concept that they're talking
+
+1349
+01:15:15,210 --> 01:15:18,480
+about, right. So we have a
+number of different peers who
+
+1350
+01:15:18,480 --> 01:15:20,820
+are running this blockchain
+technology, they're all weighted
+
+1351
+01:15:20,820 --> 01:15:23,910
+equally, right, each one of
+these peers or each one of these
+
+1352
+01:15:23,910 --> 01:15:27,300
+nodes, each one of these
+entities running a blockchain
+
+1353
+01:15:27,990 --> 01:15:32,310
+has the exact same power as
+anybody else, right. So the way
+
+1354
+01:15:32,310 --> 01:15:36,330
+that we can tell very easily
+which blockchain is correct, or
+
+1355
+01:15:36,330 --> 01:15:40,590
+which ones are correct, or by
+looking at this end, hash here,
+
+1356
+01:15:40,590 --> 01:15:44,160
+right, or by looking at where we
+are in the blockchain, because
+
+1357
+01:15:44,160 --> 01:15:47,670
+again, remember, because again,
+remember this, this hash that
+
+1358
+01:15:47,670 --> 01:15:52,290
+this this in this last block
+here, is going to encompass all
+
+1359
+01:15:52,290 --> 01:15:55,920
+of the blocks from before,
+right, because this last hash is
+
+1360
+01:15:55,920 --> 01:15:58,680
+going to have the previous hash
+here, which includes the
+
+1361
+01:15:58,680 --> 01:16:01,350
+previous hash here, which this
+hash includes the previous hash
+
+1362
+01:16:01,350 --> 01:16:05,070
+here. And so this last hash is
+encompasses everything in here,
+
+1363
+01:16:05,160 --> 01:16:08,730
+right? And we can look, we can
+look at the hash of Piercey,
+
+1364
+01:16:08,940 --> 01:16:11,760
+which is four zeros, and then E
+four B, we can look at the
+
+1365
+01:16:11,760 --> 01:16:15,810
+latest hash appear B, which is
+four zeros, E for B, and then
+
+1366
+01:16:15,810 --> 01:16:19,770
+pure A, which is four zeros, E
+for b. So all of these peers,
+
+1367
+01:16:19,800 --> 01:16:23,070
+all of these nodes, all of these
+decentralized, you know these
+
+1368
+01:16:23,070 --> 01:16:27,240
+independent, all these
+independent users running this
+
+1369
+01:16:27,240 --> 01:16:30,030
+blockchain software, they're all
+matched up, it's very easy for
+
+1370
+01:16:30,030 --> 01:16:32,970
+their nodes to look at each
+other and say, hey, great, we
+
+1371
+01:16:32,970 --> 01:16:37,710
+are all matched up. Now, what
+let's say that a decides that,
+
+1372
+01:16:37,740 --> 01:16:40,170
+you know, something happened on
+the blockchain that they didn't
+
+1373
+01:16:40,170 --> 01:16:43,320
+like, and they wanted to go back
+and change something, right. So
+
+1374
+01:16:43,320 --> 01:16:46,410
+let's say they change here, you
+know, obviously, the rest of
+
+1375
+01:16:46,410 --> 01:16:49,080
+their blockchain is invalidated.
+And they have to spend a lot of
+
+1376
+01:16:49,080 --> 01:16:52,170
+computational power to catch up
+to speed. So let's go ahead and
+
+1377
+01:16:52,170 --> 01:16:55,110
+humor it. Let's say that they
+did, they ended up catching up.
+
+1378
+01:16:55,950 --> 01:16:57,660
+They ended up catching up, you
+know, they ended up mining
+
+1379
+01:16:57,660 --> 01:17:01,830
+everything. And now they have a
+valid blockchain. Right? It
+
+1380
+01:17:01,830 --> 01:17:06,330
+solves the equation. Awesome.
+However, in block number three,
+
+1381
+01:17:06,840 --> 01:17:10,110
+there's something new, right?
+This is here, and it shouldn't
+
+1382
+01:17:10,110 --> 01:17:12,690
+have been here, this is some
+that Peer A put in by
+
+1383
+01:17:12,960 --> 01:17:17,820
+themselves. All that happens now
+is we look at all the
+
+1384
+01:17:17,820 --> 01:17:21,090
+blockchains that are running the
+software, and we're looking at
+
+1385
+01:17:21,120 --> 01:17:25,680
+all the hashes and hash at block
+number five. So pure A has this
+
+1386
+01:17:25,680 --> 01:17:31,380
+new hash. Now, there's a 09 BC.
+But pure B has a different hash
+
+1387
+01:17:31,440 --> 01:17:35,850
+00, e for B, right? So who's
+right? Is it disappear a with
+
+1388
+01:17:35,850 --> 01:17:39,300
+their new stuff? Or is it pure
+B? Well, that's where the
+
+1389
+01:17:39,300 --> 01:17:40,950
+decentralized data comes in.
+Because then we can look at
+
+1390
+01:17:40,950 --> 01:17:45,630
+Piercey Piercey, also as E
+forby. So if you're being
+
+1391
+01:17:45,630 --> 01:17:50,430
+Piercey will say, Hey, you're a,
+you're wrong, get out, right.
+
+1392
+01:17:50,640 --> 01:17:52,920
+And pure A will stop being able
+to participate in the mining
+
+1393
+01:17:52,920 --> 01:17:56,310
+rewards because they have
+essentially forked the
+
+1394
+01:17:56,310 --> 01:17:59,400
+blockchain and started their own
+little blockchain right with
+
+1395
+01:17:59,400 --> 01:18:02,520
+their own history, because
+they're the only ones with this,
+
+1396
+01:18:02,790 --> 01:18:07,290
+this piece of data in block
+three, whereas pure B, and pure
+
+1397
+01:18:07,290 --> 01:18:10,500
+C have nothing in there. So that
+really shows why in these
+
+1398
+01:18:10,500 --> 01:18:12,780
+blockchain worlds in this
+decentralized world, there
+
+1399
+01:18:12,780 --> 01:18:15,360
+really is no centralized entity,
+you know, pure A, you know,
+
+1400
+01:18:15,360 --> 01:18:18,330
+might have been maliciously
+motivated to change. You know,
+
+1401
+01:18:18,330 --> 01:18:21,570
+there's this block number three,
+however, democracy rules, right,
+
+1402
+01:18:21,570 --> 01:18:24,780
+the majority rules in the
+blockchain, pure vmpfc will say,
+
+1403
+01:18:24,780 --> 01:18:28,200
+hey, you know, the, that's cute
+and all puree. But you're wrong,
+
+1404
+01:18:28,230 --> 01:18:31,350
+right? That's not right. Now, it
+might be a little abstract, that
+
+1405
+01:18:31,350 --> 01:18:33,420
+you just look at data and you
+know, as typing kind of random
+
+1406
+01:18:33,420 --> 01:18:36,180
+stuff in here and think, okay,
+yeah, that's, that's data,
+
+1407
+01:18:36,180 --> 01:18:38,580
+right? That makes sense, you
+know, just kind of random
+
+1408
+01:18:38,580 --> 01:18:41,340
+strings in here doesn't really
+do anything for us. So if we
+
+1409
+01:18:41,340 --> 01:18:44,490
+actually go over to the token
+section here, this is where
+
+1410
+01:18:44,490 --> 01:18:47,670
+everything really starts to make
+a lot of sense. So we have the
+
+1411
+01:18:47,670 --> 01:18:52,170
+exact same setup here with pure
+a pure B Piercey. Except and the
+
+1412
+01:18:52,170 --> 01:18:55,530
+difference is, instead of having
+kind of this, this data section,
+
+1413
+01:18:55,530 --> 01:18:59,730
+we have this TX This transaction
+section, right? And this
+
+1414
+01:18:59,760 --> 01:19:03,390
+represents all the transactions
+that are happening in this
+
+1415
+01:19:03,390 --> 01:19:08,010
+block, right? So we're sending
+$25, from Darcy to Bingle, or to
+
+1416
+01:19:08,010 --> 01:19:13,830
+Bingley force toward dollars and
+27 cents here. 1922, right. And
+
+1417
+01:19:13,830 --> 01:19:17,010
+it's the exact same thing. So
+this, all these transactions are
+
+1418
+01:19:17,010 --> 01:19:20,880
+gonna get hashed in the exact
+same way that the data is going
+
+1419
+01:19:20,880 --> 01:19:23,400
+to get hashed. And, and this is
+why it's so powerful, because
+
+1420
+01:19:23,400 --> 01:19:26,850
+again, you know, if I want to be
+malicious, right, if, if I want
+
+1421
+01:19:26,850 --> 01:19:30,270
+to say, hey, I really wanted to
+give Jane a lot more money from
+
+1422
+01:19:30,270 --> 01:19:33,450
+Elizabeth, so I'm puree and I go
+back and I change it to 100.
+
+1423
+01:19:33,450 --> 01:19:37,860
+Well, now, you know not only do
+I does my whole blockchain get
+
+1424
+01:19:37,860 --> 01:19:41,250
+invalidated because that was so
+so long ago, but I'm not going
+
+1425
+01:19:41,250 --> 01:19:43,950
+to match any of these other
+chains. Right? And so my
+
+1426
+01:19:43,950 --> 01:19:46,950
+blockchain is going to be
+excluded from the overall
+
+1427
+01:19:46,950 --> 01:19:50,220
+blockchain. So and let's let's
+go ahead and fix this. And it's
+
+1428
+01:19:50,220 --> 01:19:53,400
+the same thing if down here if I
+become malicious, and I want to
+
+1429
+01:19:53,400 --> 01:19:55,200
+send you know, I want
+
+1430
+01:19:56,730 --> 01:19:59,790
+Miss Audrey to have less money.
+Maybe I want to send $1 And they
+
+1431
+01:19:59,790 --> 01:20:04,560
+go had in mind it the same thing
+here, this hash now this two a
+
+1432
+01:20:04,560 --> 01:20:11,100
+one is not going to match the
+rubies rubies hash of BBA. And
+
+1433
+01:20:11,100 --> 01:20:14,610
+it's not going to match Pierce's
+hash of BBA as well. So the two
+
+1434
+01:20:14,610 --> 01:20:17,370
+of them are gonna say, hey,
+this, your blockchain is
+
+1435
+01:20:17,370 --> 01:20:20,220
+invalid, it's not matching the
+majority, you know, you're out,
+
+1436
+01:20:20,340 --> 01:20:25,590
+right. So that's really how
+these blockchains work at a low
+
+1437
+01:20:25,590 --> 01:20:28,470
+level. And it all goes back to
+this, this understanding this
+
+1438
+01:20:28,470 --> 01:20:32,520
+hash idea, and using it in this
+very sophisticated manner, to
+
+1439
+01:20:32,520 --> 01:20:36,240
+kind of cryptographically prove,
+you know, where, where stuff
+
+1440
+01:20:36,240 --> 01:20:39,000
+lies. Now, the way the
+blockchain works is, instead of
+
+1441
+01:20:39,000 --> 01:20:41,370
+random stuff, put in the Status
+section, it's actually going to
+
+1442
+01:20:41,370 --> 01:20:44,790
+be solidity code in here to
+finding ways to interact with
+
+1443
+01:20:44,790 --> 01:20:47,970
+different blocks and different
+protocols that are on chain, or,
+
+1444
+01:20:48,240 --> 01:20:52,350
+as we've said before, different
+smart contracts. Now, the next
+
+1445
+01:20:52,350 --> 01:20:56,160
+question that you might be
+asking is, okay, well, how do I
+
+1446
+01:20:56,160 --> 01:21:00,540
+know how can I be sure that I'm
+the one? You know, let's say
+
+1447
+01:21:00,540 --> 01:21:03,630
+this is, let's say, I'm Darcy
+right? How can I be sure that I
+
+1448
+01:21:03,630 --> 01:21:06,780
+was that Darcy was the one to
+actually send us money here. How
+
+1449
+01:21:06,780 --> 01:21:11,460
+do we know that Darcy sent $25.
+To Bingley? Well, this is where
+
+1450
+01:21:11,460 --> 01:21:15,210
+we get into private keys and
+public keys. And that's what
+
+1451
+01:21:15,210 --> 01:21:18,660
+we're going to go into. Now.
+Let's just do a quick recap of
+
+1452
+01:21:18,660 --> 01:21:20,910
+what we've learned in this
+section. So far, right? We've
+
+1453
+01:21:20,910 --> 01:21:25,290
+learned that Aetherium actually
+runs on this hit check 256. But
+
+1454
+01:21:25,410 --> 01:21:28,800
+we use Sha 256. For this demo,
+it doesn't really matter. We're
+
+1455
+01:21:28,800 --> 01:21:33,090
+just talking about hashing
+algorithms. So again, hash is a
+
+1456
+01:21:33,090 --> 01:21:39,000
+unique fixed length string meant
+to identify any piece of data. A
+
+1457
+01:21:39,000 --> 01:21:42,150
+hash algorithm or a hash
+function is a function or
+
+1458
+01:21:42,150 --> 01:21:46,650
+algorithm that computes any type
+of data into a unique hash.
+
+1459
+01:21:47,220 --> 01:21:50,280
+Mining is going to be the
+process of finding the solution
+
+1460
+01:21:50,310 --> 01:21:53,280
+to the blockchain problem. In
+our example, the problem was
+
+1461
+01:21:53,280 --> 01:21:57,240
+finding a hash that starts with
+four zeros. nodes get paid for
+
+1462
+01:21:57,240 --> 01:22:00,120
+mining different blocks. And the
+problem is going to be different
+
+1463
+01:22:00,120 --> 01:22:03,480
+blockchain to blockchain a block
+and a blockchain is basically a
+
+1464
+01:22:03,480 --> 01:22:07,080
+combination of a block, nonce
+transaction and previous hash to
+
+1465
+01:22:07,080 --> 01:22:11,490
+create this unique hash for this
+block. And again, depending on
+
+1466
+01:22:11,490 --> 01:22:13,890
+the blockchain implementation,
+this might have a couple other
+
+1467
+01:22:13,890 --> 01:22:16,200
+fields or might have different
+fields. But this is essentially
+
+1468
+01:22:16,200 --> 01:22:19,470
+what's going on blockchains are
+decentralized and distributed
+
+1469
+01:22:19,470 --> 01:22:22,620
+because many independent users
+are going to run this blockchain
+
+1470
+01:22:22,620 --> 01:22:25,050
+software. And they will check
+and then we'll compare against
+
+1471
+01:22:25,050 --> 01:22:27,930
+each other to see which
+blockchains are acting honestly,
+
+1472
+01:22:27,930 --> 01:22:30,780
+and which ones are acting
+maliciously, in the blockchain
+
+1473
+01:22:30,780 --> 01:22:35,490
+world majority rules. The nonce
+here is the answer used or the
+
+1474
+01:22:35,490 --> 01:22:39,270
+number used to get this hash.
+Now nonce is kind of an
+
+1475
+01:22:39,270 --> 01:22:41,850
+overloaded term, it's actually
+used for a number of different
+
+1476
+01:22:41,850 --> 01:22:44,700
+reasons. In this case, we're
+using it to solve this problem
+
+1477
+01:22:44,700 --> 01:22:48,030
+of getting four or five zeros at
+the stop or the hash. However,
+
+1478
+01:22:48,030 --> 01:22:51,300
+in Aetherium, it will also be
+often used as the number of
+
+1479
+01:22:51,300 --> 01:22:54,090
+transactions from a given
+address.
+
+1480
+01:22:56,700 --> 01:22:58,650
+So now we're going to talk a
+little bit about signing these
+
+1481
+01:22:58,650 --> 01:23:01,830
+transactions and private keys
+and some other cryptography
+
+1482
+01:23:01,830 --> 01:23:04,890
+pieces, right? Because in this
+blockchain demo here, we can see
+
+1483
+01:23:04,950 --> 01:23:06,930
+we have all these these
+fantastic transactions, right?
+
+1484
+01:23:06,930 --> 01:23:09,660
+All these things went through,
+but how do we know that it was
+
+1485
+01:23:09,690 --> 01:23:14,580
+Darcy? Who was the one to send
+$25? To bangli? Right? How do we
+
+1486
+01:23:14,580 --> 01:23:18,900
+know that actually happened. And
+this is where all those pieces
+
+1487
+01:23:18,900 --> 01:23:22,890
+that we just learned about in
+our test net, in our meta mask
+
+1488
+01:23:22,890 --> 01:23:25,260
+account are really going to
+start to, to come to life here a
+
+1489
+01:23:25,260 --> 01:23:29,280
+little bit here. So here we have
+an example of public and private
+
+1490
+01:23:29,340 --> 01:23:33,420
+keys, okay, at the top, we have
+this private key, right that was
+
+1491
+01:23:33,450 --> 01:23:37,230
+that was randomly generated. A
+private key is you know, as it
+
+1492
+01:23:37,230 --> 01:23:39,930
+kind of states is a key that you
+really want to keep secret,
+
+1493
+01:23:39,930 --> 01:23:43,050
+because you're going to be using
+this as kind of your your secret
+
+1494
+01:23:43,050 --> 01:23:45,690
+password for all your
+transactions where I can really
+
+1495
+01:23:45,690 --> 01:23:49,770
+pick, you know, any, any, any
+private key, anything that I
+
+1496
+01:23:49,770 --> 01:23:54,030
+want. And with it, this
+algorithm, or they're going to
+
+1497
+01:23:54,030 --> 01:23:56,700
+use an algorithm for Aetherium.
+Bitcoin, they both use this
+
+1498
+01:23:56,730 --> 01:24:00,030
+elliptic curve, digital
+signature algorithm, it's a
+
+1499
+01:24:00,030 --> 01:24:03,300
+variant of just a digital
+signature algorithm. And it's
+
+1500
+01:24:03,300 --> 01:24:05,850
+going to create this this public
+key, right, I'm really not going
+
+1501
+01:24:05,850 --> 01:24:09,480
+to go at all into kind of this
+digital signature algorithm. But
+
+1502
+01:24:09,480 --> 01:24:12,480
+just know it does use some of
+these, some of the hash
+
+1503
+01:24:13,020 --> 01:24:15,720
+knowledge that we just learned
+combined with some other pieces
+
+1504
+01:24:16,260 --> 01:24:18,990
+to kind of get this this public
+here. So I'm not gonna go too
+
+1505
+01:24:18,990 --> 01:24:22,380
+deep into it. But we have this
+private key that we create. And
+
+1506
+01:24:22,380 --> 01:24:26,070
+we get this public key. Now this
+public key we want everybody to
+
+1507
+01:24:26,070 --> 01:24:28,890
+have access to right this is
+yeah, whole world can see this,
+
+1508
+01:24:28,890 --> 01:24:32,790
+this private key, we really want
+it to be private, we don't want
+
+1509
+01:24:32,790 --> 01:24:35,820
+people to see this, we're going
+to use this private key as like
+
+1510
+01:24:35,820 --> 01:24:40,380
+a password to quote unquote,
+digitally sign transactions, and
+
+1511
+01:24:40,380 --> 01:24:44,640
+then people can verify them with
+this public key. So let's, let's
+
+1512
+01:24:44,640 --> 01:24:46,830
+see what this actually looks
+like. Let's pick a random key, a
+
+1513
+01:24:46,830 --> 01:24:49,590
+more secure key, right? Because
+the longer it is, the more
+
+1514
+01:24:49,590 --> 01:24:53,610
+secure it's going to be. And if
+we go to signatures now, right?
+
+1515
+01:24:54,090 --> 01:24:57,630
+Let's say we have this, this
+message that we want, right?
+
+1516
+01:24:57,630 --> 01:25:00,660
+We'll say hi world, right? We
+want this To be the message,
+
+1517
+01:25:00,900 --> 01:25:04,350
+what's gonna happen is this
+private key that we've created,
+
+1518
+01:25:04,650 --> 01:25:07,380
+we can use to sign this data,
+right? Remember how in the
+
+1519
+01:25:07,380 --> 01:25:10,350
+blockchain demo, you know, we
+were kind of we were hashing
+
+1520
+01:25:10,350 --> 01:25:14,970
+stuff, right? We were using this
+Shea 256 hash to get this hash.
+
+1521
+01:25:14,970 --> 01:25:17,400
+Well, we're doing something
+similar. But instead of hashing,
+
+1522
+01:25:17,400 --> 01:25:20,790
+we're, we're using this digital
+signature algorithm to create
+
+1523
+01:25:20,790 --> 01:25:24,810
+this message signature. Now,
+what's really powerful about how
+
+1524
+01:25:24,810 --> 01:25:28,950
+this this algorithm works, is
+that you can create this message
+
+1525
+01:25:28,950 --> 01:25:33,300
+signature with your private key,
+but somebody else can't derive
+
+1526
+01:25:33,300 --> 01:25:36,540
+your private key from the
+message signature. And that's
+
+1527
+01:25:36,540 --> 01:25:39,450
+what makes this really, really
+powerful. However, if we go to
+
+1528
+01:25:39,450 --> 01:25:43,920
+verify using this public key,
+right, and so this is the this
+
+1529
+01:25:43,920 --> 01:25:47,760
+is that, Oh, 403. This is that
+same public key, using this,
+
+1530
+01:25:47,940 --> 01:25:51,810
+using this public key, anybody
+can verify, let's go ahead and
+
+1531
+01:25:51,810 --> 01:25:57,150
+sign again, anybody can verify
+that the signature is yours,
+
+1532
+01:25:57,420 --> 01:26:01,680
+right? So you have a public a
+private key, just for you. So
+
+1533
+01:26:01,680 --> 01:26:04,920
+you can sign things and a public
+key that anybody can verify
+
+1534
+01:26:04,920 --> 01:26:07,860
+something, right. So anybody can
+verify this, and let's say
+
+1535
+01:26:07,860 --> 01:26:10,110
+somebody tries to fake a
+transaction from you, they say,
+
+1536
+01:26:10,110 --> 01:26:15,270
+Hey, you know, this is this is
+this is their transaction, all
+
+1537
+01:26:15,270 --> 01:26:19,590
+they have to do is verify that
+this signature against your
+
+1538
+01:26:19,620 --> 01:26:24,120
+public key and very easily, this
+whole thing turns red, because
+
+1539
+01:26:24,390 --> 01:26:27,780
+it isn't verified, right, that
+the algorithm says, hey, that's
+
+1540
+01:26:27,780 --> 01:26:31,530
+wrong. So we can go ahead and
+take that into transactions in
+
+1541
+01:26:31,530 --> 01:26:35,130
+this exact same way. So if I
+want to send money, you know, if
+
+1542
+01:26:35,130 --> 01:26:40,290
+I want to send $400, from, you
+know, my address to another
+
+1543
+01:26:40,290 --> 01:26:45,240
+address, using my private key, I
+can sign that transaction. And
+
+1544
+01:26:45,240 --> 01:26:48,930
+anybody else in the world can
+then verify this transaction,
+
+1545
+01:26:49,050 --> 01:26:52,110
+right. And this is why when
+people say Hydra keys, you know,
+
+1546
+01:26:52,110 --> 01:26:55,110
+protect your keys, this is what
+we're talking about in our
+
+1547
+01:26:55,110 --> 01:27:00,420
+accounts here. Right? If we go
+to settings, and again, the only
+
+1548
+01:27:00,420 --> 01:27:03,270
+reason that I'm showing you
+guys, my pneumonic, and my
+
+1549
+01:27:03,270 --> 01:27:06,660
+private key is because this is
+a, this is a dumpster account,
+
+1550
+01:27:06,660 --> 01:27:08,730
+I'm going to throw this away at
+the end of this video, or I'm
+
+1551
+01:27:08,730 --> 01:27:15,480
+just not gonna put any real
+money in it. But when we look at
+
+1552
+01:27:15,480 --> 01:27:19,770
+our Metamask, here, we have this
+pneumonic phrase, which allows
+
+1553
+01:27:19,770 --> 01:27:24,270
+us to easily get these different
+private keys, right? So
+
+1554
+01:27:24,720 --> 01:27:28,680
+pneumonic phrase combined with,
+you know, whatever account
+
+1555
+01:27:28,680 --> 01:27:31,380
+number will get us a private
+key. So mnemonic phrase combined
+
+1556
+01:27:31,380 --> 01:27:34,650
+with one, we're gonna get this
+private key. And this is when we
+
+1557
+01:27:34,650 --> 01:27:36,690
+look at account details, export
+private key.
+
+1558
+01:27:40,950 --> 01:27:44,310
+That's where it confirm, this is
+going to be the private key that
+
+1559
+01:27:44,310 --> 01:27:47,370
+we're going to use to sign our
+transactions, right, this, if
+
+1560
+01:27:47,400 --> 01:27:50,580
+anybody else gets access to this
+private key, they then can sign
+
+1561
+01:27:50,580 --> 01:27:54,090
+transactions for us, and they
+can send transactions for us.
+
+1562
+01:27:54,090 --> 01:27:57,480
+And that's why we want to keep
+these private, so that it works
+
+1563
+01:27:57,480 --> 01:28:00,300
+the exact same way, right. And
+so this is why it's so important
+
+1564
+01:28:00,300 --> 01:28:03,840
+to hide your private keys and
+hide your mnemonics now, your
+
+1565
+01:28:03,870 --> 01:28:11,940
+Aetherium address is actually a
+piece is actually a piece of
+
+1566
+01:28:11,940 --> 01:28:15,540
+your public key. Now, to get our
+address in Aetherium, all we
+
+1567
+01:28:15,540 --> 01:28:17,880
+have to do is take this public
+key that we've created with our
+
+1568
+01:28:17,880 --> 01:28:21,150
+private key, hash it using that
+same Aetherium hashing
+
+1569
+01:28:21,150 --> 01:28:23,910
+algorithm, and then take the
+last 20 bytes. And that's how
+
+1570
+01:28:23,910 --> 01:28:28,110
+we'll actually derive to our to
+our address here. Now, knowing
+
+1571
+01:28:28,110 --> 01:28:31,890
+the exact methodology of how to
+get the address doesn't really
+
+1572
+01:28:31,890 --> 01:28:34,050
+matter, because it could change
+blockchain to blockchain and
+
+1573
+01:28:34,170 --> 01:28:36,930
+could even change it too. But
+just know that that is
+
+1574
+01:28:36,930 --> 01:28:39,780
+essentially how kind of these
+addresses are derived or there's
+
+1575
+01:28:39,780 --> 01:28:43,080
+some derivative of the public
+key, right, because the public
+
+1576
+01:28:43,080 --> 01:28:46,590
+key is public. And you know,
+using the public key and kind of
+
+1577
+01:28:46,590 --> 01:28:50,820
+any public way is totally fine,
+but not the private key. So that
+
+1578
+01:28:50,820 --> 01:28:53,910
+is how we sign our transactions.
+Note though, this isn't how we
+
+1579
+01:28:53,910 --> 01:28:56,880
+send the transaction. So so this
+is just going to assign it
+
+1580
+01:28:56,880 --> 01:29:00,090
+create a transaction for us to
+send, we'll learn later on how
+
+1581
+01:29:00,090 --> 01:29:02,910
+to send these transactions.
+Cool. So that was a lot of
+
+1582
+01:29:02,910 --> 01:29:06,240
+information there too. Let's do
+a quick recap, your public key
+
+1583
+01:29:06,270 --> 01:29:10,080
+is derived by using a digital
+signature algorithm on your
+
+1584
+01:29:10,080 --> 01:29:13,620
+private key, right, and you want
+to keep your private key private
+
+1585
+01:29:13,650 --> 01:29:16,680
+at all times, because you're
+going to use your private key to
+
+1586
+01:29:16,680 --> 01:29:20,190
+sign transactions. Signing
+transactions with your private
+
+1587
+01:29:20,190 --> 01:29:23,040
+key, you are the only one who
+can actually do this because you
+
+1588
+01:29:23,040 --> 01:29:27,570
+can't get the private key from a
+message signature. However,
+
+1589
+01:29:27,780 --> 01:29:32,040
+using your public key, you can
+anybody can very easily verify
+
+1590
+01:29:32,040 --> 01:29:35,940
+that a signature that signed by
+you is in fact signed by you in
+
+1591
+01:29:35,940 --> 01:29:39,360
+our meta mask. Our private keys
+are located in this account
+
+1592
+01:29:39,360 --> 01:29:43,020
+details section you just hit
+show private keys and type in
+
+1593
+01:29:43,020 --> 01:29:46,530
+your password. And you'll get
+your your private key here. A
+
+1594
+01:29:46,530 --> 01:29:49,470
+quick note here is oftentimes
+when using your private keys
+
+1595
+01:29:49,470 --> 01:29:52,650
+somewhere, they want it in
+hexadecimal form. So if we're
+
+1596
+01:29:52,650 --> 01:29:56,430
+going to use our private key for
+something like brownie, which
+
+1597
+01:29:56,430 --> 01:29:59,550
+we'll go into later, we need to
+actually append a 0x to the
+
+1598
+01:29:59,550 --> 01:30:03,600
+front but We'll get into that
+later. And the address of your
+
+1599
+01:30:03,600 --> 01:30:07,680
+account is derived from this. So
+if you think about your private
+
+1600
+01:30:07,680 --> 01:30:11,190
+key creates your public key,
+which then can create your
+
+1601
+01:30:11,190 --> 01:30:15,960
+address. And there's a little
+barrier or a big barrier here.
+
+1602
+01:30:16,860 --> 01:30:18,690
+Because your private key, you
+want to keep private and your
+
+1603
+01:30:18,690 --> 01:30:21,060
+public key and your address can
+all be public information.
+
+1604
+01:30:27,930 --> 01:30:28,710
+Now that we know a little
+
+1605
+01:30:28,710 --> 01:30:31,140
+bit more about what's going on
+underneath the hood of these
+
+1606
+01:30:31,140 --> 01:30:34,080
+blockchains, let's go back at
+our transactions and look at
+
+1607
+01:30:34,080 --> 01:30:36,630
+this gas thing again, and we'll
+look to see what's actually
+
+1608
+01:30:36,630 --> 01:30:39,390
+happening here, gas in
+particular can be a little bit
+
+1609
+01:30:39,390 --> 01:30:42,030
+tricky to wrap your head around.
+So if you don't get it right
+
+1610
+01:30:42,030 --> 01:30:45,240
+away, don't worry. As we go
+through examples, it'll start to
+
+1611
+01:30:45,240 --> 01:30:48,600
+make more sense. So before I was
+saying, let's just look at this
+
+1612
+01:30:48,600 --> 01:30:51,210
+transaction fee bid, which is
+the costs associated with
+
+1613
+01:30:51,210 --> 01:30:54,150
+running this transaction. If I
+scroll over this on ether scan,
+
+1614
+01:30:54,210 --> 01:30:57,540
+I can see this thing that says
+block base fee per gas plus max
+
+1615
+01:30:57,540 --> 01:31:01,440
+party fee per gas times the gas
+use, which might be a little bit
+
+1616
+01:31:01,440 --> 01:31:04,290
+confusing here, let's actually
+break down what's going on on
+
+1617
+01:31:04,290 --> 01:31:08,100
+Aetherium with ERP 15, five nine
+in place. And again, this is
+
+1618
+01:31:08,100 --> 01:31:10,440
+going to be specific to
+Aetherium, as every blockchain
+
+1619
+01:31:10,440 --> 01:31:12,360
+might do it a little bit
+differently. But if we click to
+
+1620
+01:31:12,360 --> 01:31:15,540
+see more, we can see a number of
+useful values here, we can see
+
+1621
+01:31:15,540 --> 01:31:21,030
+gas limit is 21,000. And usage
+is 21,000. So this transaction
+
+1622
+01:31:21,060 --> 01:31:26,370
+used 21,000 gas, and we sent
+21,000 gas along with it.
+
+1623
+01:31:26,730 --> 01:31:29,760
+Sometimes when sending a
+transaction, depending on when
+
+1624
+01:31:29,760 --> 01:31:32,700
+it's sent. And depending on what
+the specific instructions are,
+
+1625
+01:31:32,760 --> 01:31:35,160
+it might actually use way more
+gas than what you want it to
+
+1626
+01:31:35,160 --> 01:31:38,160
+use. So with your transactions,
+you can actually set a limit,
+
+1627
+01:31:38,190 --> 01:31:41,970
+hey, I don't want to use more
+than x amount of gas, I don't
+
+1628
+01:31:41,970 --> 01:31:45,180
+want to do more than x
+computational units. And in
+
+1629
+01:31:45,180 --> 01:31:49,080
+fact, we go to our Metamask. And
+we click Send to transfer
+
+1630
+01:31:49,080 --> 01:31:53,040
+between accounts again, and we
+pick you know, 0.01 eath, or
+
+1631
+01:31:53,040 --> 01:31:57,090
+something next can actually hit
+this little button here, go to
+
+1632
+01:31:57,090 --> 01:32:00,390
+Advanced, and we can actually
+edit some specifics of this
+
+1633
+01:32:00,390 --> 01:32:03,690
+transaction, one of them is
+going to be the gas limit, we
+
+1634
+01:32:03,690 --> 01:32:09,060
+can change this gas limit to
+maybe 2200 2300, or more or even
+
+1635
+01:32:09,060 --> 01:32:13,500
+less, since sending Aetherium
+takes exactly 21,000 Gas
+
+1636
+01:32:13,560 --> 01:32:16,410
+Metamask just defaults to
+setting into that. Well, we also
+
+1637
+01:32:16,410 --> 01:32:19,020
+see these other interesting
+things, we see a priority fee,
+
+1638
+01:32:19,320 --> 01:32:24,750
+and a max base fee. Let's reject
+this transaction. And let's look
+
+1639
+01:32:24,750 --> 01:32:27,660
+back at ether scan to talk about
+these. So currently in
+
+1640
+01:32:27,660 --> 01:32:32,580
+Aetherium, according to EE IP
+1559, every transaction on
+
+1641
+01:32:32,580 --> 01:32:36,150
+Aetherium comes with something
+called the base fee. This is the
+
+1642
+01:32:36,150 --> 01:32:39,960
+minimum gas price you need to
+set to include your transaction.
+
+1643
+01:32:40,410 --> 01:32:42,870
+And you'll notice that these are
+priced in something called
+
+1644
+01:32:43,170 --> 01:32:47,280
+gateway. So what is a gateway?
+If we come to the site eath
+
+1645
+01:32:47,280 --> 01:32:50,340
+converter.com. And again,
+there's a link to this in the
+
+1646
+01:32:50,340 --> 01:32:55,230
+GitHub repository, we scroll
+down we can see way gateway and
+
+1647
+01:32:55,230 --> 01:33:00,330
+ether five put one ether in
+here, I can see how much one
+
+1648
+01:33:00,360 --> 01:33:04,830
+ether is in terms of way. And in
+terms of way, one ether is equal
+
+1649
+01:33:04,830 --> 01:33:12,480
+to 1-234-567-8990. So that's
+that's 1 billion way is going to
+
+1650
+01:33:12,480 --> 01:33:18,960
+be one ether. And then
+1-234-567-8910 1112 1314 Did 16
+
+1651
+01:33:18,960 --> 01:33:23,550
+Seven, eight team and then 18
+zeros is away. These are just
+
+1652
+01:33:23,580 --> 01:33:27,180
+easier ways of referring to
+really, really small amounts of
+
+1653
+01:33:27,210 --> 01:33:31,410
+Aetherium. So if we look at our
+gas fees, we see that the base
+
+1654
+01:33:31,410 --> 01:33:38,640
+fee is 0.00000004 Go away. And
+this obviously would be an even
+
+1655
+01:33:38,640 --> 01:33:42,090
+smaller number if this was in
+units of weigh. So if we take
+
+1656
+01:33:42,090 --> 01:33:46,650
+this number, and we put it into
+our calculator, we can see that
+
+1657
+01:33:46,650 --> 01:33:51,780
+this is equal to 40 weigh or
+0.0000 a whole bunch of zeros
+
+1658
+01:33:51,780 --> 01:33:55,920
+for ether. The max fee here
+refers to the maximum gas fee
+
+1659
+01:33:55,920 --> 01:33:59,520
+that we're willing to pay for
+this transaction. And you can
+
+1660
+01:33:59,520 --> 01:34:04,230
+actually see that our max fee is
+a little bit higher than what we
+
+1661
+01:34:04,230 --> 01:34:08,400
+actually ended up paying. Our
+maximum was 2.2132 something
+
+1662
+01:34:08,400 --> 01:34:12,180
+something and the gas price we
+actually paid was up here. Now
+
+1663
+01:34:12,180 --> 01:34:15,090
+your transaction might of course
+be a little bit different than
+
+1664
+01:34:15,090 --> 01:34:18,330
+Additionally we have a max
+priority fee. This is going to
+
+1665
+01:34:18,330 --> 01:34:21,660
+be the max gas fee that we're
+willing to pay plus the max tip
+
+1666
+01:34:21,660 --> 01:34:24,000
+that we're willing to give to
+miners. Now currently in
+
+1667
+01:34:24,000 --> 01:34:28,710
+Aetherium, this base fee ends up
+getting burnt and we can see on
+
+1668
+01:34:28,710 --> 01:34:31,650
+ether scan exactly how much is
+getting burnt here. And if we
+
+1669
+01:34:31,650 --> 01:34:36,870
+pull up our calculator again, we
+can grab this gas fee, multiply
+
+1670
+01:34:36,870 --> 01:34:40,920
+it by the amount of gas we used,
+and we can see that this is
+
+1671
+01:34:40,920 --> 01:34:44,220
+indeed how much Aetherium we
+actually ended up burning. We go
+
+1672
+01:34:44,220 --> 01:34:47,070
+back to Ethereum converter,
+paste it in we can see that
+
+1673
+01:34:47,070 --> 01:34:51,570
+these two numbers are indeed
+equal. This means whenever you
+
+1674
+01:34:51,570 --> 01:34:55,500
+send a transaction, a little bit
+of Aetherium is removed from
+
+1675
+01:34:55,500 --> 01:34:59,640
+circulation forever, or it's
+considered burnt. So currently,
+
+1676
+01:34:59,640 --> 01:35:01,920
+in theory As part of your
+Aetherium part of your
+
+1677
+01:35:01,920 --> 01:35:05,280
+transaction fee actually gets
+burnt. And then the other part
+
+1678
+01:35:05,310 --> 01:35:08,880
+goes directly to miners. So to
+figure out exactly how much went
+
+1679
+01:35:08,880 --> 01:35:14,820
+to miners, we could do this
+number minus the burnt amount.
+
+1680
+01:35:14,910 --> 01:35:18,450
+And this is how much Etherium
+was paid to Aetherium miner for
+
+1681
+01:35:18,450 --> 01:35:21,180
+this transaction, you'll see
+down here your transaction type
+
+1682
+01:35:21,180 --> 01:35:26,430
+to ERP 15, five, nine, this is
+the eip 15 five nine version of
+
+1683
+01:35:26,430 --> 01:35:28,890
+these transactions. Like I said,
+every blockchain is going to
+
+1684
+01:35:28,890 --> 01:35:33,000
+have a different fee burning and
+fee and gas process. And they're
+
+1685
+01:35:33,000 --> 01:35:35,610
+all going to be a little bit
+different, but the some of it is
+
+1686
+01:35:35,640 --> 01:35:39,600
+blockchains have limited block
+space for transactions, the gas
+
+1687
+01:35:39,600 --> 01:35:42,510
+price that costs for your
+transaction to be included in
+
+1688
+01:35:42,510 --> 01:35:45,990
+one of these blocks changes
+based off how much demand there
+
+1689
+01:35:45,990 --> 01:35:49,320
+is the base gas fee for
+Aetherium will go up and down
+
+1690
+01:35:49,350 --> 01:35:53,580
+depending on how many people are
+sending transactions and how
+
+1691
+01:35:53,580 --> 01:35:57,210
+many people want to be included
+in a block. If a ton of people
+
+1692
+01:35:57,210 --> 01:36:01,080
+want to be included in a block.
+That means a ton of gas is
+
+1693
+01:36:01,110 --> 01:36:04,830
+obviously going to get burnt.
+We've left a link to a video in
+
+1694
+01:36:04,830 --> 01:36:08,610
+the GitHub repository with this
+section from this YouTuber who
+
+1695
+01:36:08,610 --> 01:36:12,960
+does an amazing job breaking
+down this EIP 15, five, nine and
+
+1696
+01:36:12,960 --> 01:36:16,080
+more about how this gas model
+actually works. I highly
+
+1697
+01:36:16,080 --> 01:36:18,840
+recommend you pause this video
+and watch that video. To
+
+1698
+01:36:18,840 --> 01:36:21,960
+understand more, the base fee
+gets programmatically
+
+1699
+01:36:21,960 --> 01:36:26,100
+algorithmically adjusted to try
+to target for all the blocks to
+
+1700
+01:36:26,100 --> 01:36:30,960
+be 50% full. If they're more
+than 50% full, this base fee
+
+1701
+01:36:30,990 --> 01:36:34,590
+automatically goes up. If
+they're less than 50% full, this
+
+1702
+01:36:34,590 --> 01:36:38,190
+base fee goes down. Now this is
+a lot of the basics of how this
+
+1703
+01:36:38,190 --> 01:36:40,890
+transaction works. And it can be
+a little confusing. So let's do
+
+1704
+01:36:40,920 --> 01:36:43,890
+a quick refresher of everything
+in here. There's a unique
+
+1705
+01:36:43,890 --> 01:36:48,750
+transaction hash that uniquely
+identifies this transaction. On
+
+1706
+01:36:48,780 --> 01:36:52,560
+this blockchain, we can see the
+status, we can see the block
+
+1707
+01:36:52,590 --> 01:36:56,010
+number that it's confirmed on.
+One other thing we want to look
+
+1708
+01:36:56,010 --> 01:36:58,890
+at. If we scroll up, we see
+block number and block
+
+1709
+01:36:58,890 --> 01:37:03,300
+confirmations. This is how many
+blocks have been mined. Since
+
+1710
+01:37:03,360 --> 01:37:06,990
+this block was included. Like we
+saw with our blockchain demo,
+
+1711
+01:37:07,020 --> 01:37:10,320
+the longer the blockchain gets,
+the harder it is to tamper with
+
+1712
+01:37:10,320 --> 01:37:12,660
+and the more secure it is
+typically, you'll see some
+
+1713
+01:37:12,660 --> 01:37:16,140
+processes say they'll only do
+something after 20 Block
+
+1714
+01:37:16,140 --> 01:37:20,310
+confirmations, 30 Block
+confirmations or etc. The reason
+
+1715
+01:37:20,310 --> 01:37:22,890
+that they wait for these block
+confirmations is because they
+
+1716
+01:37:22,890 --> 01:37:25,290
+want to make sure that that
+transaction is actually
+
+1717
+01:37:25,290 --> 01:37:28,830
+included. And we can actually
+see the block that our
+
+1718
+01:37:28,830 --> 01:37:32,100
+transaction was included in and
+all the other transactions with
+
+1719
+01:37:32,100 --> 01:37:35,700
+it, different details about how
+much gas was used, the gas
+
+1720
+01:37:35,700 --> 01:37:39,780
+limit, etc. timestamp is when
+the transaction happened, we can
+
+1721
+01:37:39,780 --> 01:37:44,130
+see from and to we can see the
+value. And then we can see the
+
+1722
+01:37:44,130 --> 01:37:47,670
+transaction fee, which we see
+right here is blocked base fee
+
+1723
+01:37:47,670 --> 01:37:51,540
+per gas plus the max priority
+fee per gas times the gas used.
+
+1724
+01:37:51,660 --> 01:37:54,870
+And we see all the details of
+the gas down here gas price is
+
+1725
+01:37:54,870 --> 01:38:00,090
+the cost of one unit of gas gas
+limit is the max amount of units
+
+1726
+01:38:00,090 --> 01:38:03,960
+of gas that we're willing to pay
+in this transaction, the usage
+
+1727
+01:38:03,990 --> 01:38:07,860
+is how many actually got us the
+base fee is going to be the base
+
+1728
+01:38:07,890 --> 01:38:13,980
+network fee per gas. So 40 way
+per one gas used, the max gas is
+
+1729
+01:38:13,980 --> 01:38:18,360
+the max gas price we're willing
+to pay. And Max priority is
+
+1730
+01:38:18,360 --> 01:38:21,720
+gonna be the max gas price, plus
+the tip that we give to miners,
+
+1731
+01:38:21,750 --> 01:38:23,940
+and then we can see how much is
+burnt. And then we see
+
+1732
+01:38:23,940 --> 01:38:27,360
+transaction savings which which
+is the difference between how
+
+1733
+01:38:27,360 --> 01:38:31,110
+much was actually used or paid
+for and then returned. So for
+
+1734
+01:38:31,110 --> 01:38:34,650
+example, in this transaction,
+the gas price we ended up
+
+1735
+01:38:34,650 --> 01:38:38,760
+picking was a little less than
+our max gas price here. So the
+
+1736
+01:38:38,760 --> 01:38:41,880
+gas price we ended up using was
+a little less than our max
+
+1737
+01:38:41,880 --> 01:38:45,420
+priority fee here. So we had
+some savings compared to that,
+
+1738
+01:38:45,510 --> 01:38:49,290
+we can also see that this was an
+ERP 15 five nine transaction, we
+
+1739
+01:38:49,290 --> 01:38:53,490
+can see our nonce here, which
+was not zero because the
+
+1740
+01:38:53,490 --> 01:38:56,460
+transaction that I'm showing is
+our first nones. And then of
+
+1741
+01:38:56,460 --> 01:38:59,520
+course, we can see the input
+data for transactions that are
+
+1742
+01:38:59,520 --> 01:39:02,670
+just sending Aetherium, the
+input data is going to be blank.
+
+1743
+01:39:02,700 --> 01:39:05,220
+But you'll see that when we get
+to smart contracts, the input
+
+1744
+01:39:05,220 --> 01:39:07,560
+data is not going to be blank.
+And it's going to be one of the
+
+1745
+01:39:07,560 --> 01:39:11,490
+most important features of these
+transactions. You'll also notice
+
+1746
+01:39:11,490 --> 01:39:15,420
+that there's a state tab. This
+is an advanced tab, and it shows
+
+1747
+01:39:15,450 --> 01:39:18,510
+the different states that are
+changed based off of this
+
+1748
+01:39:18,510 --> 01:39:21,480
+transaction. We're going to
+ignore this one for now. Now
+
+1749
+01:39:21,480 --> 01:39:24,570
+that we know how the blockchain
+itself works under the hood,
+
+1750
+01:39:24,600 --> 01:39:28,260
+let's talk about some blockchain
+fundamentals. And we actually
+
+1751
+01:39:28,260 --> 01:39:31,530
+covered all these topics in a
+previous Freako camp video. So
+
+1752
+01:39:31,530 --> 01:39:32,250
+let's go to that.
+
+1753
+01:39:34,770 --> 01:39:35,760
+If the first time
+
+1754
+01:39:35,760 --> 01:39:38,460
+you listen to this, some of
+these concepts seem a little bit
+
+1755
+01:39:38,460 --> 01:39:42,930
+hard to grasp. Don't worry about
+it. As we continue and as we
+
+1756
+01:39:42,930 --> 01:39:45,630
+move on with this course,
+they'll start to make more sense
+
+1757
+01:39:45,630 --> 01:39:48,960
+when you see them used in real
+examples. I definitely would
+
+1758
+01:39:48,960 --> 01:39:51,720
+recommend going back and
+rewatching and re listening to
+
+1759
+01:39:51,720 --> 01:39:55,350
+the parts that you don't quite
+get an asking questions in the
+
+1760
+01:39:55,350 --> 01:39:58,740
+discussions tab of the GitHub
+repository. Awesome. So now that
+
+1761
+01:39:58,740 --> 01:40:01,410
+we know all the cryptography
+pieces and all the little nitty
+
+1762
+01:40:01,410 --> 01:40:04,200
+gritties of how the blockchain
+actually works, and how our
+
+1763
+01:40:04,200 --> 01:40:06,570
+signatures work and how
+everything sticks together.
+
+1764
+01:40:06,960 --> 01:40:10,110
+Let's talk a little bit about
+how this works, in actuality,
+
+1765
+01:40:10,170 --> 01:40:12,720
+and what's really going on. Now
+for a lot of this, each
+
+1766
+01:40:12,720 --> 01:40:15,390
+different blockchain has
+slightly different algorithms
+
+1767
+01:40:15,390 --> 01:40:18,750
+and slightly different metrics
+and criteria for doing a lot of
+
+1768
+01:40:18,750 --> 01:40:21,720
+this stuff. So when we're
+talking about these specific
+
+1769
+01:40:21,750 --> 01:40:25,020
+implementations, keep in mind,
+the exact algorithm might be a
+
+1770
+01:40:25,020 --> 01:40:27,630
+little bit different, but the
+concepts are all still going to
+
+1771
+01:40:27,630 --> 01:40:30,930
+be exactly the same. Hashing and
+hash function is going to be the
+
+1772
+01:40:30,930 --> 01:40:34,110
+same. No matter where you look
+at decentralized blockchain,
+
+1773
+01:40:34,290 --> 01:40:36,600
+it's going to be the same no
+matter where you look, how it's
+
+1774
+01:40:36,600 --> 01:40:39,210
+actually implemented, is going
+to be a little bit different.
+
+1775
+01:40:39,300 --> 01:40:42,330
+Now traditionally, when you run
+an application, you will be
+
+1776
+01:40:42,390 --> 01:40:45,690
+website or something that
+connects to some server, you are
+
+1777
+01:40:45,690 --> 01:40:49,980
+interacting with a centralized
+entity. And unlike how we saw
+
+1778
+01:40:49,980 --> 01:40:52,980
+with the blockchain with
+multiple different peers, it's
+
+1779
+01:40:52,980 --> 01:40:56,070
+going to be run by a single
+centralized group. Now, it still
+
+1780
+01:40:56,070 --> 01:40:59,220
+could be run on many different
+servers, but all those servers
+
+1781
+01:40:59,250 --> 01:41:02,520
+are still going to be controlled
+by the same centralized group
+
+1782
+01:41:02,760 --> 01:41:07,020
+blockchains, as we saw run on a
+network of different independent
+
+1783
+01:41:07,020 --> 01:41:10,380
+nodes. When we saw a peer, a
+peer, B Piercey. Those were
+
+1784
+01:41:10,380 --> 01:41:14,370
+different examples of different
+independent users running the
+
+1785
+01:41:14,370 --> 01:41:17,490
+blockchain technology on their
+own node. Now, when I use the
+
+1786
+01:41:17,490 --> 01:41:20,640
+term node, I'm usually referring
+to a single instance of a
+
+1787
+01:41:20,640 --> 01:41:23,700
+decentralized system. So when I
+say a single node, when I'm
+
+1788
+01:41:23,700 --> 01:41:26,310
+talking about a blockchain, I'm
+talking about one of those pure
+
+1789
+01:41:26,310 --> 01:41:29,850
+A's pure BS pure C's running
+that blockchain software, I'm
+
+1790
+01:41:29,850 --> 01:41:33,330
+talking about one server running
+this technology. And again, it's
+
+1791
+01:41:33,330 --> 01:41:35,730
+this network. It's this
+combination of these nodes
+
+1792
+01:41:35,730 --> 01:41:38,280
+interacting with each other,
+that creates this entire
+
+1793
+01:41:38,280 --> 01:41:41,880
+blockchain. What makes these so
+potent too, is that anybody can
+
+1794
+01:41:41,880 --> 01:41:44,610
+join the network. And that's why
+there's decentralized the
+
+1795
+01:41:44,610 --> 01:41:47,220
+barrier to entry is a little bit
+of hardware requirements for
+
+1796
+01:41:47,220 --> 01:41:50,460
+getting the correct materials to
+run the software. And then you
+
+1797
+01:41:50,490 --> 01:41:52,830
+running the software, anybody
+can join these networks and
+
+1798
+01:41:52,830 --> 01:41:55,830
+participate. And that's what
+makes it truly decentralized. In
+
+1799
+01:41:55,830 --> 01:41:58,920
+fact, you can go to GitHub right
+now, and run your own Aetherium
+
+1800
+01:41:58,920 --> 01:42:02,070
+node in a few seconds. Now in
+the traditional world,
+
+1801
+01:42:02,130 --> 01:42:05,100
+applications are run by
+centralized entities. And if
+
+1802
+01:42:05,100 --> 01:42:09,510
+that entity goes down, or is
+maliciously bribed, or decides
+
+1803
+01:42:09,510 --> 01:42:12,600
+that they want to shut off, they
+just can't, because they are the
+
+1804
+01:42:12,600 --> 01:42:16,410
+ones that control everything.
+blockchains, by contrast, don't
+
+1805
+01:42:16,410 --> 01:42:20,250
+have this problem. If one node
+or one entity that runs several
+
+1806
+01:42:20,250 --> 01:42:24,150
+nodes goes down, since there are
+so many other independent nodes
+
+1807
+01:42:24,150 --> 01:42:27,570
+running that it doesn't matter,
+the blockchain and the system
+
+1808
+01:42:27,570 --> 01:42:30,990
+will persist so long as there is
+at least one node always
+
+1809
+01:42:30,990 --> 01:42:34,260
+running. And luckily for us,
+most of the most popular chains
+
+1810
+01:42:34,260 --> 01:42:38,550
+like Bitcoin and Aetherium, have
+1000s and 1000s of nodes. And as
+
+1811
+01:42:38,550 --> 01:42:42,120
+we showed in our demo, if one
+node acts maliciously, all the
+
+1812
+01:42:42,120 --> 01:42:46,380
+other nodes will ignore that
+node and kick that out or even
+
+1813
+01:42:46,380 --> 01:42:49,350
+punish it in some systems,
+because they can easily check
+
+1814
+01:42:49,350 --> 01:42:52,980
+everybody else's node and see,
+okay, this one is out of sync
+
+1815
+01:42:52,980 --> 01:42:55,500
+with the majority. And yes,
+majority rules when it comes to
+
+1816
+01:42:55,500 --> 01:42:58,890
+the blockchain. Each blockchain
+keeps a full list of every
+
+1817
+01:42:58,890 --> 01:43:01,770
+transaction and interaction
+that's happened on that
+
+1818
+01:43:01,770 --> 01:43:05,430
+blockchain and we saw if a node
+tries to act maliciously, then
+
+1819
+01:43:05,460 --> 01:43:07,530
+all their hashes are going to be
+way out of whack and they're not
+
+1820
+01:43:07,530 --> 01:43:10,020
+going to match everybody else.
+This gives blockchains this
+
+1821
+01:43:10,020 --> 01:43:13,650
+incredibly potent immutability
+trait where nothing can be
+
+1822
+01:43:13,650 --> 01:43:16,290
+changed or corrupted. So in
+essence, we can think of a
+
+1823
+01:43:16,290 --> 01:43:20,010
+blockchain as a decentralized
+database. And with Aetherium, it
+
+1824
+01:43:20,010 --> 01:43:24,090
+has an extra additional feature
+where it also can do computation
+
+1825
+01:43:24,210 --> 01:43:27,870
+in a decentralized manner. Now
+let's talk consensus, proof of
+
+1826
+01:43:27,870 --> 01:43:30,690
+work and proof of stake because
+you've probably heard these
+
+1827
+01:43:30,690 --> 01:43:33,180
+before. And they're really
+important to how these
+
+1828
+01:43:33,180 --> 01:43:35,670
+blockchains actually work. We
+went through that blockchain
+
+1829
+01:43:35,670 --> 01:43:39,420
+example, and we did that mining
+feature. This is what's known as
+
+1830
+01:43:39,450 --> 01:43:43,740
+proof of work. Proof of Work and
+proof of steak fall under this
+
+1831
+01:43:43,770 --> 01:43:47,400
+umbrella of consensus and
+consensus is a really important
+
+1832
+01:43:47,400 --> 01:43:49,710
+topic when it comes to
+blockchains. Consensus is
+
+1833
+01:43:49,710 --> 01:43:53,670
+defined as the mechanism used to
+reach an agreement on the state
+
+1834
+01:43:53,670 --> 01:43:56,880
+or a single value on the
+blockchain, especially in a
+
+1835
+01:43:56,880 --> 01:43:59,910
+decentralized system. I briefly
+alluded to this consensus
+
+1836
+01:43:59,910 --> 01:44:03,000
+mechanism in our blockchain
+example, when I said if one
+
+1837
+01:44:03,000 --> 01:44:06,600
+change is something and the
+other two, don't, then majority
+
+1838
+01:44:06,600 --> 01:44:09,480
+will rule and kick that one out.
+This is part of that consensus
+
+1839
+01:44:09,480 --> 01:44:13,080
+mechanism. Now very roughly a
+consensus protocol in a
+
+1840
+01:44:13,080 --> 01:44:15,930
+blockchain or decentralized
+system can be broken down into
+
+1841
+01:44:15,930 --> 01:44:19,080
+two pieces, a chain selection
+algorithm, and a civil
+
+1842
+01:44:19,080 --> 01:44:22,110
+resistance mechanism, that
+mining piece that we were doing,
+
+1843
+01:44:22,350 --> 01:44:25,440
+or where the proof of work
+algorithm is what's known as a
+
+1844
+01:44:25,440 --> 01:44:28,590
+civil resistance mechanism. And
+this is what Aetherium and
+
+1845
+01:44:28,590 --> 01:44:31,770
+Bitcoin currently use. Please
+note that depending on when
+
+1846
+01:44:31,770 --> 01:44:34,740
+you're watching this, if eath
+two is out, then it's no longer
+
+1847
+01:44:34,740 --> 01:44:37,020
+proof of work. Now, proof of
+work is known as a civil
+
+1848
+01:44:37,020 --> 01:44:40,350
+resistance mechanism, because it
+defines a way to figure out who
+
+1849
+01:44:40,350 --> 01:44:43,890
+is the block author, which node
+is going to be the node who did
+
+1850
+01:44:43,890 --> 01:44:47,460
+the work to find that mine and
+be the author of that block so
+
+1851
+01:44:47,580 --> 01:44:50,100
+all the other nodes can verify
+that it's accurate civil
+
+1852
+01:44:50,100 --> 01:44:54,000
+resistance is a blockchains
+ability to defend against users
+
+1853
+01:44:54,000 --> 01:44:57,330
+creating a large number of
+pseudo anonymous identities to
+
+1854
+01:44:57,330 --> 01:45:00,810
+gain a disproportionately
+advantageous influence is over
+
+1855
+01:45:00,840 --> 01:45:04,080
+set system. And in layman's
+terms, it's basically a way for
+
+1856
+01:45:04,080 --> 01:45:06,270
+a blockchain to defend against
+somebody making a bunch of fake
+
+1857
+01:45:06,270 --> 01:45:09,210
+blockchains so that they can get
+more and more rewards. Now,
+
+1858
+01:45:09,210 --> 01:45:11,880
+there are two types of civil
+resistance mechanisms that we're
+
+1859
+01:45:11,880 --> 01:45:15,090
+going to talk about here. Namely
+proof of work and proof of
+
+1860
+01:45:15,090 --> 01:45:18,150
+stake. Let's talk about proof of
+work a little bit more in depth
+
+1861
+01:45:18,150 --> 01:45:21,150
+first, in proof of work. This is
+civil resistant, because a
+
+1862
+01:45:21,150 --> 01:45:24,540
+single node has to go through a
+very computationally expensive
+
+1863
+01:45:24,750 --> 01:45:28,590
+process called mining, which we
+demonstrated earlier to figure
+
+1864
+01:45:28,590 --> 01:45:30,450
+out the answer to the
+blockchains Riddle of finding
+
+1865
+01:45:30,450 --> 01:45:32,190
+that correct nonce, or, or
+whatever the
+
+1866
+01:45:32,190 --> 01:45:34,830
+blockchain system has in place.
+And proof of work. This works
+
+1867
+01:45:34,830 --> 01:45:37,890
+because no matter how many
+pseudo anonymous accounts you
+
+1868
+01:45:37,890 --> 01:45:40,650
+make, each one still has to
+undergo this very
+
+1869
+01:45:40,650 --> 01:45:44,220
+computationally expensive
+activity of finding the answer
+
+1870
+01:45:44,220 --> 01:45:47,490
+to the proof of work problem, or
+the proof of work riddle, which
+
+1871
+01:45:47,490 --> 01:45:50,460
+again, in our demonstration, it
+was finding a nonce with that
+
+1872
+01:45:50,460 --> 01:45:54,030
+first four zeros. But again,
+each blockchain might change the
+
+1873
+01:45:54,030 --> 01:45:55,890
+riddle work or change the
+problem to be a little bit
+
+1874
+01:45:55,890 --> 01:45:58,110
+different. In fact, some of
+these blockchains make this
+
+1875
+01:45:58,110 --> 01:46:01,410
+riddle intentionally hard or
+intentionally easy to change
+
+1876
+01:46:01,410 --> 01:46:04,170
+what's called the block time,
+the block time is how long it
+
+1877
+01:46:04,170 --> 01:46:06,870
+takes between blocks being
+published. And it's proportional
+
+1878
+01:46:06,870 --> 01:46:10,350
+to how hard these algorithms
+are. So these problems actually
+
+1879
+01:46:10,350 --> 01:46:13,470
+can change. Depending on how
+long they want the blockchain to
+
+1880
+01:46:13,470 --> 01:46:17,130
+be. If a system wants to block
+time to be very, very long, they
+
+1881
+01:46:17,130 --> 01:46:20,220
+just make the problem very, very
+hard. If they wanted to be very
+
+1882
+01:46:20,220 --> 01:46:23,040
+short, they make the problem a
+lot easier. We'll talk about
+
+1883
+01:46:23,040 --> 01:46:25,500
+civil attacks in a little bit
+and how they can affect the
+
+1884
+01:46:25,500 --> 01:46:28,710
+system. But with proof of work,
+it's a verifiable way to figure
+
+1885
+01:46:28,710 --> 01:46:32,340
+out who the block author is and
+be civil resistant. Now, you
+
+1886
+01:46:32,340 --> 01:46:35,460
+need to combine this with a
+chain selection rule create this
+
+1887
+01:46:35,460 --> 01:46:37,920
+consensus. Now, there's some
+consensus protocols that have
+
+1888
+01:46:37,920 --> 01:46:40,560
+more features, but very, very
+roughly, these are the two
+
+1889
+01:46:40,560 --> 01:46:43,020
+pieces that we're going to look
+at. The second piece is going to
+
+1890
+01:46:43,020 --> 01:46:47,220
+be a chain selection rule. How
+do we know which blockchain is
+
+1891
+01:46:47,220 --> 01:46:50,070
+actually the real blockchain and
+the true blockchain now on
+
+1892
+01:46:50,070 --> 01:46:53,310
+Bitcoin and Aetherium, they both
+use a form of consensus called
+
+1893
+01:46:53,430 --> 01:46:57,120
+Nakamoto consensus. And this is
+a combination of proof of work
+
+1894
+01:46:57,240 --> 01:47:00,630
+and longest chain rule, the
+decentralized network side that
+
+1895
+01:47:00,660 --> 01:47:03,600
+whichever blockchain has the
+longest chain, or the most
+
+1896
+01:47:03,600 --> 01:47:06,870
+number of blocks on it is going
+to be the chain that they use.
+
+1897
+01:47:07,020 --> 01:47:09,780
+This makes a lot of sense,
+because every additional block
+
+1898
+01:47:09,780 --> 01:47:12,270
+that a chain is behind, it's
+going to take more and more
+
+1899
+01:47:12,270 --> 01:47:16,110
+computation for it to come up.
+That's why when we saw in our
+
+1900
+01:47:16,110 --> 01:47:19,500
+transaction, we actually saw
+confirmations. The number of
+
+1901
+01:47:19,500 --> 01:47:23,790
+confirmations is the number of
+additional blocks added on after
+
+1902
+01:47:23,790 --> 01:47:26,310
+our transaction went through in
+a block. So if we see
+
+1903
+01:47:26,310 --> 01:47:28,860
+confirmations as to it means
+that the block that our
+
+1904
+01:47:28,860 --> 01:47:32,460
+transaction was in has two
+blocks ahead of it in the
+
+1905
+01:47:32,460 --> 01:47:35,100
+longest chain. Now, I do want to
+point out that a lot of people
+
+1906
+01:47:35,100 --> 01:47:38,910
+use proof of work as a consensus
+protocol. And I do want to say
+
+1907
+01:47:38,910 --> 01:47:41,730
+that this is a little bit
+inaccurate, but sometimes people
+
+1908
+01:47:41,730 --> 01:47:45,690
+use it interchangeably. Proof of
+Work is a piece of the overall
+
+1909
+01:47:45,690 --> 01:47:48,900
+consensus protocol, which in
+Bitcoin and Aetherium. One
+
+1910
+01:47:48,930 --> 01:47:53,310
+current case is Nakamoto
+consensus, Nakamoto consensus is
+
+1911
+01:47:53,310 --> 01:47:56,490
+a combination of proof of work,
+and this longest chain rule,
+
+1912
+01:47:56,820 --> 01:48:00,870
+both equally and very, very
+important. Now, proof of work
+
+1913
+01:48:00,870 --> 01:48:03,960
+also tells us where these
+transaction fees and these block
+
+1914
+01:48:03,960 --> 01:48:07,440
+rewards go to remember how when
+we made this transaction, we had
+
+1915
+01:48:07,440 --> 01:48:10,920
+to talk about gas and a
+transaction fee. So who's
+
+1916
+01:48:10,920 --> 01:48:13,350
+getting paid who was getting
+this transaction, and this
+
+1917
+01:48:13,350 --> 01:48:16,740
+transaction fee is going to the
+miners or the validators in a
+
+1918
+01:48:16,740 --> 01:48:19,710
+proof of work network? They're
+called miners and in the proof
+
+1919
+01:48:19,710 --> 01:48:23,310
+of stake network, they're called
+validators there are a little
+
+1920
+01:48:23,310 --> 01:48:25,200
+bit different. And we'll get
+into that when we talk about
+
+1921
+01:48:25,200 --> 01:48:28,620
+proof of stake in this proof of
+work system. All these nodes are
+
+1922
+01:48:28,620 --> 01:48:31,680
+competing against each other to
+find the answer to the
+
+1923
+01:48:31,680 --> 01:48:34,860
+blockchain riddle. Remember, in
+our example, it was to find a
+
+1924
+01:48:34,890 --> 01:48:38,520
+hash that has four zeros at the
+start. And again, depending on
+
+1925
+01:48:38,520 --> 01:48:40,590
+the blockchain implementation,
+that riddle is going to be a
+
+1926
+01:48:40,590 --> 01:48:44,610
+little bit different. But all
+the nodes are trying as many as
+
+1927
+01:48:44,610 --> 01:48:48,210
+possible to try to get this
+answer first. Why? Because the
+
+1928
+01:48:48,210 --> 01:48:51,330
+first node to figure out the
+answer to the blockchain real is
+
+1929
+01:48:51,330 --> 01:48:53,850
+gonna get that transaction fee,
+they're gonna get paid from
+
+1930
+01:48:53,850 --> 01:48:56,160
+that. Now, when a node gets
+paid, they actually get paid in
+
+1931
+01:48:56,160 --> 01:48:59,490
+two different ways. One is going
+to be with a transaction fee.
+
+1932
+01:48:59,670 --> 01:49:02,430
+And another piece is going to be
+the block reward. Remember how
+
+1933
+01:49:02,430 --> 01:49:05,490
+we talked about alternating the
+gas price or the gray on our
+
+1934
+01:49:05,490 --> 01:49:08,370
+transaction? Well, that's the
+transaction fee that we're going
+
+1935
+01:49:08,370 --> 01:49:11,700
+to pay to these blockchain nodes
+for including our transaction,
+
+1936
+01:49:11,880 --> 01:49:15,120
+the block reward is given to
+these nodes from the protocol
+
+1937
+01:49:15,120 --> 01:49:18,000
+from the blockchain itself.
+You've probably heard of the
+
+1938
+01:49:18,000 --> 01:49:21,630
+Bitcoin halving before the
+halving is referring to this
+
+1939
+01:49:21,630 --> 01:49:24,720
+block reward getting cut in half
+and it's supposed to be cut in
+
+1940
+01:49:24,720 --> 01:49:29,370
+half, roughly every four years.
+This block reward increases the
+
+1941
+01:49:29,370 --> 01:49:32,190
+circulating amount of whatever
+cryptocurrency that is being
+
+1942
+01:49:32,190 --> 01:49:34,710
+rewarded. For example, on
+Aetherium the block reward is
+
+1943
+01:49:34,710 --> 01:49:37,230
+giving out Aetherium and a
+Bitcoin the block reward is
+
+1944
+01:49:37,230 --> 01:49:40,230
+giving out Bitcoin. So these
+nodes are competing against each
+
+1945
+01:49:40,230 --> 01:49:43,140
+other to be the first one to
+find this transaction to be the
+
+1946
+01:49:43,140 --> 01:49:46,410
+first one to find the answer to
+this problem, so that they can
+
+1947
+01:49:46,410 --> 01:49:49,500
+be the ones to win both this
+block reward and your
+
+1948
+01:49:49,500 --> 01:49:52,230
+transaction fee. Some block
+chains like Bitcoin, for
+
+1949
+01:49:52,230 --> 01:49:55,620
+example, have a set time when
+they're no longer going to give
+
+1950
+01:49:55,620 --> 01:49:58,860
+out block rewards and the miners
+or the nodes are only going to
+
+1951
+01:49:58,860 --> 01:50:02,610
+get paid from trends. Action
+fees. Now this gas fee, again is
+
+1952
+01:50:02,610 --> 01:50:06,360
+paid by whoever initialize the
+transaction. When we got our
+
+1953
+01:50:06,360 --> 01:50:09,810
+funds from the faucet, there was
+some server and somebody else
+
+1954
+01:50:09,840 --> 01:50:13,890
+was paying the transaction fee
+for us. However, when we sent
+
+1955
+01:50:13,920 --> 01:50:16,830
+ether from one account to
+another, our first account
+
+1956
+01:50:16,860 --> 01:50:20,850
+actually paid some transaction
+fee to send that ether. In proof
+
+1957
+01:50:20,850 --> 01:50:23,670
+of steak. There's also a gas
+fee, but it's paid out to
+
+1958
+01:50:23,700 --> 01:50:26,880
+validators instead of miners.
+And we'll talk about that in a
+
+1959
+01:50:26,880 --> 01:50:29,400
+little bit. Now let's talk about
+two types of attacks that can
+
+1960
+01:50:29,400 --> 01:50:31,590
+happen in these blockchain
+worlds. Let's talk about the
+
+1961
+01:50:31,590 --> 01:50:34,650
+first one being the Sybil
+attack. The Sybil attack is when
+
+1962
+01:50:34,680 --> 01:50:37,830
+a user creates a whole bunch of
+pseudo anonymous accounts to try
+
+1963
+01:50:37,830 --> 01:50:41,280
+to influence a network. Now,
+obviously, on Bitcoin and
+
+1964
+01:50:41,310 --> 01:50:44,280
+Aetherium, this is really,
+really difficult because user
+
+1965
+01:50:44,280 --> 01:50:47,310
+needs to do all this work in
+proof of work or have a ton of
+
+1966
+01:50:47,310 --> 01:50:49,860
+collateral and proof of stake,
+which again, we'll talk about in
+
+1967
+01:50:49,860 --> 01:50:53,700
+a bit. The other more prevalent
+attack is what's known as a 51%
+
+1968
+01:50:53,730 --> 01:50:57,000
+attack. Now, as we saw as part
+of our consensus protocol, these
+
+1969
+01:50:57,000 --> 01:51:00,540
+block chains are going to agree
+that the longest chain is the
+
+1970
+01:51:00,540 --> 01:51:03,210
+one that they're going to go
+with, so long as it matches up
+
+1971
+01:51:03,210 --> 01:51:07,050
+with 51% of the rest of the
+network. This means that if you
+
+1972
+01:51:07,050 --> 01:51:10,620
+have the longest chain, and you
+have more than 51% of the rest
+
+1973
+01:51:10,620 --> 01:51:13,200
+of the network, you can do
+what's called a fork in the
+
+1974
+01:51:13,200 --> 01:51:16,710
+network, and bring the network
+onto your now longest chain. Now
+
+1975
+01:51:16,710 --> 01:51:19,590
+Sybil attacks, obviously, are
+when a single node or a single
+
+1976
+01:51:19,590 --> 01:51:23,040
+entity tries to affect the
+decent reality of the network by
+
+1977
+01:51:23,040 --> 01:51:25,590
+pretending to be multiple
+different people, although
+
+1978
+01:51:25,590 --> 01:51:28,440
+they're just the same person or
+entity. And like I said, it's
+
+1979
+01:51:28,440 --> 01:51:31,110
+really difficult to do in proof
+of work and proof of steak. So
+
+1980
+01:51:31,110 --> 01:51:33,870
+you can see now that blockchains
+are very democratic, whichever
+
+1981
+01:51:33,870 --> 01:51:37,320
+blockchain has the most buy in
+and is the longest is the
+
+1982
+01:51:37,320 --> 01:51:40,500
+blockchain that the whole system
+is going to corroborate. When
+
+1983
+01:51:40,500 --> 01:51:43,440
+nodes produce a new block and
+add to the longest chain, the
+
+1984
+01:51:43,440 --> 01:51:45,810
+other nodes will follow this
+longest chain that the rest of
+
+1985
+01:51:45,810 --> 01:51:48,570
+the network is agreeing with,
+add those blocks to their chain
+
+1986
+01:51:48,600 --> 01:51:51,780
+and follow up. So very small
+reorganizations are actually
+
+1987
+01:51:51,780 --> 01:51:54,900
+pretty common when a blockchain
+picks a block from a different
+
+1988
+01:51:54,900 --> 01:51:58,410
+longest chain puts it on and
+then has to swap it out for
+
+1989
+01:51:58,470 --> 01:52:01,290
+another block and continue with
+a different blockchain. However,
+
+1990
+01:52:01,290 --> 01:52:04,290
+if a group of nodes had enough
+nodes or enough power, they
+
+1991
+01:52:04,290 --> 01:52:08,070
+could essentially be 51% of the
+network and influence the
+
+1992
+01:52:08,070 --> 01:52:10,740
+network in whatever direction
+that they want it. This is
+
+1993
+01:52:10,740 --> 01:52:14,100
+what's known as a 51% attack.
+And it's happened on blockchains
+
+1994
+01:52:14,100 --> 01:52:17,550
+like Ethereum classic, which is
+not Aetherium. This is why the
+
+1995
+01:52:17,550 --> 01:52:20,460
+bigger a blockchain is, the more
+decentralized and the more
+
+1996
+01:52:20,460 --> 01:52:21,960
+secure it becomes.
+
+1997
+01:52:21,990 --> 01:52:24,120
+So after you watch this video,
+and you become a blockchain
+
+1998
+01:52:24,120 --> 01:52:27,000
+engineering expert, I definitely
+recommend you run a node as
+
+1999
+01:52:27,000 --> 01:52:29,550
+well, because you are going to
+increase the security of the
+
+2000
+01:52:29,550 --> 01:52:32,760
+network as a whole by running a
+node. So proof of work is
+

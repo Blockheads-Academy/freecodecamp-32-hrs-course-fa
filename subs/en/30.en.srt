@@ -1,0 +1,3864 @@
+30001
+07:08:29,990 --> 07:08:33,260
+actually need the proposal ID
+for later on when we actually go
+
+30002
+07:08:33,260 --> 07:08:35,660
+to vote. So what we're going to
+do is we're actually going to do
+
+30003
+07:08:35,660 --> 07:08:41,750
+const propose receipt equals
+proposed text dot weight. And
+
+30004
+07:08:41,750 --> 07:08:44,600
+we're going to get those events
+from this proposed receipt. So
+
+30005
+07:08:44,600 --> 07:08:49,700
+we're gonna say const. Proposal,
+id equals proposed receipt, that
+
+30006
+07:08:49,700 --> 07:08:52,640
+events, the zero with event
+because that first event is the
+
+30007
+07:08:52,640 --> 07:08:56,780
+only one we care about that are
+your stop proposal ID. This is
+
+30008
+07:08:56,780 --> 07:09:00,830
+how we get this proposal ID from
+this omit also created event. A
+
+30009
+07:09:00,830 --> 07:09:03,110
+couple other ways to get
+proposals to get events in
+
+30010
+07:09:03,110 --> 07:09:05,540
+hardhat. And I got a video on it
+on my YouTube, if you want to go
+
+30011
+07:09:05,540 --> 07:09:08,330
+check that out. Something else
+that we want to do is maybe we
+
+30012
+07:09:08,330 --> 07:09:11,030
+want to see what the deadline is
+with a snapshot, you can go
+
+30013
+07:09:11,030 --> 07:09:13,850
+ahead and check my GitHub to
+kind of see what the snapshot
+
+30014
+07:09:13,850 --> 07:09:16,160
+looks like or the deadline,
+basically, how long we have to
+
+30015
+07:09:16,160 --> 07:09:18,590
+vote, you know what snapshot
+you're working with, and all
+
+30016
+07:09:18,590 --> 07:09:20,150
+these different things. But for
+now, we're just gonna stick with
+
+30017
+07:09:20,150 --> 07:09:22,670
+the proposal Id be sure to check
+out the GitHub for more stuff.
+
+30018
+07:09:22,700 --> 07:09:25,160
+Now we want to save this
+proposal ID, we want to save it
+
+30019
+07:09:25,160 --> 07:09:27,980
+somewhere so that our other
+scripts so that our vote and our
+
+30020
+07:09:27,980 --> 07:09:31,310
+queue and execute know what this
+proposal ID is going to be when
+
+30021
+07:09:31,310 --> 07:09:33,800
+we run those. So what we're
+going to do is we're going to
+
+30022
+07:09:33,830 --> 07:09:36,500
+create this file called
+proposals dot JSON. And it's
+
+30023
+07:09:36,500 --> 07:09:38,780
+going to store all of our
+proposals. So we're gonna say
+
+30024
+07:09:38,780 --> 07:09:42,440
+pro poll, souls dot JSON, it's
+going to have all of our
+
+30025
+07:09:42,440 --> 07:09:45,020
+proposals in here. So what we're
+going to do and we're going to
+
+30026
+07:09:45,050 --> 07:09:48,380
+add this to our helper Hardhead
+config, and do export const,
+
+30027
+07:09:48,380 --> 07:09:52,850
+proposals, file equals proposals
+dot JSON. And we're going to
+
+30028
+07:09:52,850 --> 07:09:56,510
+import this at the top as well
+as proposals file. And then once
+
+30029
+07:09:56,510 --> 07:09:59,480
+we get this proposal ID, we're
+going to do is we're going to
+
+30030
+07:09:59,480 --> 07:10:02,630
+read all the current proposals.
+So we're gonna say let proposals
+
+30031
+07:10:02,960 --> 07:10:08,420
+equals JSON dot parse, and we're
+gonna do Fs dot read file sync
+
+30032
+07:10:08,720 --> 07:10:13,520
+from this probe proposals file,
+and we're going to pass it to
+
+30033
+07:10:13,790 --> 07:10:18,200
+UTF eight. Now, this Fs we don't
+have yet, so we're going to need
+
+30034
+07:10:18,200 --> 07:10:23,630
+to import Fs. So we're going to
+do yarn add Fs like that. If
+
+30035
+07:10:23,630 --> 07:10:26,930
+we're looking at package dot
+JSON. Oops, I should have saved
+
+30036
+07:10:26,930 --> 07:10:31,010
+that as Dev, but I didn't Oh,
+well, doesn't really matter. Now
+
+30037
+07:10:31,010 --> 07:10:33,050
+that we have that we can
+actually import this into our
+
+30038
+07:10:33,050 --> 07:10:38,030
+TypeScript. So we're just going
+to say, import star as Fs from
+
+30039
+07:10:38,060 --> 07:10:42,770
+Fs. And now we can actually use
+Fs F as a way to kind of read
+
+30040
+07:10:42,770 --> 07:10:45,740
+from files. Now we can get this
+list of proposals. So we got two
+
+30041
+07:10:45,740 --> 07:10:48,620
+proposals that JSON right now
+we're just making a blank JSON.
+
+30042
+07:10:48,620 --> 07:10:51,410
+So the first time we run it,
+it'll just be blank. But later
+
+30043
+07:10:51,410 --> 07:10:54,050
+on, it'll have stuff in it. And
+the way that we're going to save
+
+30044
+07:10:54,050 --> 07:10:58,640
+these proposals is we're going
+to say pro proposals of network
+
+30045
+07:10:58,940 --> 07:11:02,900
+dot config dot chain ID, and
+this little bank to say, yes,
+
+30046
+07:11:02,900 --> 07:11:06,170
+there will be a chain id.to
+string, we're going to store
+
+30047
+07:11:06,170 --> 07:11:09,290
+them by their chain IDs, right.
+So for each network that we have
+
+30048
+07:11:09,290 --> 07:11:12,020
+a proposal to we'll we'll start
+like that. And then we'll do dot
+
+30049
+07:11:12,020 --> 07:11:17,060
+push proposal, id.to string, and
+then we'll write it back. We'll
+
+30050
+07:11:17,060 --> 07:11:23,390
+do Fs dot right, file sync,
+proposals file. JSON does string
+
+30051
+07:11:23,420 --> 07:11:28,280
+phi, proposals, and awesome. And
+that's all we need to do. So
+
+30052
+07:11:28,280 --> 07:11:30,260
+let's go ahead and actually run
+this. And then I have some
+
+30053
+07:11:30,260 --> 07:11:32,630
+console dot logs in here saying,
+Hey, here's what the proposal
+
+30054
+07:11:32,630 --> 07:11:35,930
+state is, is it open? Is it
+voting is it canceled, you know,
+
+30055
+07:11:35,930 --> 07:11:38,900
+etc. What the proposal snapshot
+is, you know, again, check my
+
+30056
+07:11:38,900 --> 07:11:42,020
+GitHub for that. But what we can
+do, now this is done, we can do
+
+30057
+07:11:42,020 --> 07:11:46,100
+yarn, Hardhead node, spin up our
+little note here. And all the
+
+30058
+07:11:46,100 --> 07:11:50,570
+contracts are deployed. And then
+we'll do yarn, run scripts,
+
+30059
+07:11:50,630 --> 07:11:54,500
+proposed that TS dash dash
+network, local host scripts
+
+30060
+07:11:54,500 --> 07:12:01,130
+proposed that TS is not found.
+Pro pose, yarn, hard hat, run
+
+30061
+07:12:01,130 --> 07:12:06,020
+scripts, pose IDs, oops, dash
+dash network, local hosts. Try
+
+30062
+07:12:06,020 --> 07:12:09,950
+this again. Now you found it.
+Yay. Oh, I ran into an issue.
+
+30063
+07:12:10,400 --> 07:12:12,950
+Although description Moviebox
+Cannot read property zero of
+
+30064
+07:12:12,950 --> 07:12:16,160
+undefined. Let's see where it
+got mad at me. Poser sheet dot
+
+30065
+07:12:16,160 --> 07:12:20,270
+event. It is events, not event
+shots again, on the localhost.
+
+30066
+07:12:20,390 --> 07:12:23,900
+There we go running ran into
+another issue. Posle already
+
+30067
+07:12:23,900 --> 07:12:27,590
+exists. Okay, so great. So the
+proposal already exists, let's
+
+30068
+07:12:27,590 --> 07:12:30,500
+go ahead and just like kill the
+node, restart the node, so you
+
+30069
+07:12:30,500 --> 07:12:33,110
+can't have two proposals that
+are exactly the same, basically,
+
+30070
+07:12:33,170 --> 07:12:35,840
+right. So we can't do that, we
+would need to change the
+
+30071
+07:12:35,840 --> 07:12:37,550
+description or something. So
+we're just going to kill the
+
+30072
+07:12:37,550 --> 07:12:39,710
+node and restart. Now we're
+going to run this proposal
+
+30073
+07:12:39,710 --> 07:12:44,060
+again. And hopefully this one
+should work this time. Community
+
+30074
+07:12:44,060 --> 07:12:49,490
+Property zero of undefined owes
+receipt. This needs to be await
+
+30075
+07:12:49,520 --> 07:12:52,790
+because it is a promise, kill
+this one more time we run it
+
+30076
+07:12:53,150 --> 07:12:56,000
+once all these get deployed. And
+we're gonna go ahead and run
+
+30077
+07:12:56,000 --> 07:12:58,190
+this. Now you can see how much
+quicker this is than if you were
+
+30078
+07:12:58,190 --> 07:13:00,980
+to actually send this to a test
+net right to an event a lot of
+
+30079
+07:13:00,980 --> 07:13:06,500
+waiting, which is no bueno. And
+we run into one more Cannot read
+
+30080
+07:13:06,500 --> 07:13:09,410
+property, push them undefined.
+That makes a lot of sense, too.
+
+30081
+07:13:09,410 --> 07:13:13,880
+Because proposals dot JSON as
+nothing for chain IDs. So
+
+30082
+07:13:13,970 --> 07:13:18,800
+231337. And we'll put a little
+list in here. Right now it's an
+
+30083
+07:13:18,800 --> 07:13:21,800
+empty list. Now we're going to
+kill this one more time, kill
+
+30084
+07:13:21,800 --> 07:13:22,040
+it.
+
+30085
+07:13:23,419 --> 07:13:25,159
+And then once this goes, then
+we're gonna go ahead and do
+
+30086
+07:13:25,159 --> 07:13:29,809
+this. Perfect. Now we're going
+to run this and now it should
+
+30087
+07:13:29,809 --> 07:13:34,729
+save and everything should be
+peachy hunky dory. Awesome.
+
+30088
+07:13:34,789 --> 07:13:38,119
+proposal number one store in the
+box, we move the blocks. And if
+
+30089
+07:13:38,119 --> 07:13:41,179
+we look at proposal dot JSON, we
+now see there's a list of
+
+30090
+07:13:41,179 --> 07:13:44,239
+proposals. And this is the
+proposal ID of that one we just
+
+30091
+07:13:44,239 --> 07:13:47,659
+created. Oh, okay, we made a
+proposal. Awesome. Nice work,
+
+30092
+07:13:47,659 --> 07:13:50,329
+we'll leave that Node running.
+And hopefully we'll just do
+
+30093
+07:13:50,329 --> 07:13:54,199
+things right for the voting. So
+let's create this vote script
+
+30094
+07:13:54,199 --> 07:13:58,189
+now. Okay, so now we proposed
+it's time to vote, let's do a
+
+30095
+07:13:58,189 --> 07:14:00,889
+little voting. So this is going
+to look pretty similar to that
+
+30096
+07:14:00,889 --> 07:14:03,439
+script, we just we just created
+right. So we're in New async
+
+30097
+07:14:03,469 --> 07:14:08,479
+function, we'll call this main
+proposal index number, and we're
+
+30098
+07:14:08,479 --> 07:14:11,569
+calling this main because we're
+going to have the vote function
+
+30099
+07:14:11,569 --> 07:14:13,489
+be a little bit different.
+You'll see why. And at the
+
+30100
+07:14:13,489 --> 07:14:17,419
+bottom, of course, we're going
+to do main index dot then
+
+30101
+07:14:17,659 --> 07:14:24,109
+process dot exit zero, catch
+error arrow function, console
+
+30102
+07:14:24,109 --> 07:14:30,049
+dot error, error, and then
+process that exit. One main
+
+30103
+07:14:30,079 --> 07:14:34,219
+index, we're gonna say our index
+zero cost index zero. We'll do
+
+30104
+07:14:34,219 --> 07:14:36,829
+like this cost index is your
+postal index. So we're gonna get
+
+30105
+07:14:36,859 --> 07:14:39,589
+we're gonna get that bit zero
+with index, right, the first
+
+30106
+07:14:39,589 --> 07:14:42,949
+index in our proposals dot JSON.
+So whatever is the first one in
+
+30107
+07:14:42,949 --> 07:14:44,779
+this list is what we're gonna
+use, right? And that's what we
+
+30108
+07:14:44,779 --> 07:14:46,909
+want right now. There's only one
+so it's easy. So we're gonna get
+
+30109
+07:14:46,909 --> 07:14:49,909
+that first one in here. So first
+thing we're gonna need to do is
+
+30110
+07:14:49,909 --> 07:14:52,279
+we're gonna need to grab the
+list of proposals. So we're
+
+30111
+07:14:52,279 --> 07:14:57,439
+gonna do const proposals equals
+JSON dot parse, FS dot read,
+
+30112
+07:14:57,769 --> 07:15:02,599
+file sync proposals file, UTF,
+eight. So of course, we're going
+
+30113
+07:15:02,599 --> 07:15:05,209
+to need to import a bunch of
+stuff. We're going to import
+
+30114
+07:15:05,269 --> 07:15:10,639
+proposals file from that a slash
+a Bernhard config. And then
+
+30115
+07:15:10,639 --> 07:15:16,459
+we're going to do import star as
+Fs from us. Great. We have Fs,
+
+30116
+07:15:16,489 --> 07:15:19,699
+we can read stuff, and we can
+get those boats. Okay, cool. So
+
+30117
+07:15:19,699 --> 07:15:22,789
+we have a list of proposal IDs.
+Now let's get our proposal idea
+
+30118
+07:15:22,789 --> 07:15:28,459
+we'll do const probo. also ID
+equals proposals of network dot
+
+30119
+07:15:28,459 --> 07:15:32,329
+config. And then that's not what
+we want. We want to actually
+
+30120
+07:15:32,329 --> 07:15:37,189
+import network, import network
+from hard hat, network dot
+
+30121
+07:15:37,189 --> 07:15:42,979
+config, that chain ID,
+exclamation mark of proposal
+
+30122
+07:15:43,039 --> 07:15:45,529
+index, which for us is going to
+be zero, right? We're getting
+
+30123
+07:15:45,529 --> 07:15:48,289
+that first proposal in the list
+of proposals. Now we're gonna
+
+30124
+07:15:48,289 --> 07:15:52,129
+choose how we want to vote. So
+zero equals against one equals
+
+30125
+07:15:52,159 --> 07:15:55,639
+four, and then two is abstain. I
+don't know why you'd ever
+
+30126
+07:15:55,639 --> 07:15:58,879
+abstain abstaining costs gas,
+you could just not vote, but
+
+30127
+07:15:58,879 --> 07:16:01,399
+we're gonna say const vote way
+and the way we're gonna vote
+
+30128
+07:16:01,429 --> 07:16:05,719
+equals one. And we can also do a
+reason. So if we go back to our
+
+30129
+07:16:05,749 --> 07:16:07,939
+governor, there's a couple
+different functions we get to do
+
+30130
+07:16:07,939 --> 07:16:10,759
+to vote, there's cast vote,
+where we just cast a vote, cast,
+
+30131
+07:16:10,759 --> 07:16:14,359
+vote with reason, and cast vote
+with signature where we actually
+
+30132
+07:16:14,359 --> 07:16:17,419
+do a signature. And I asked this
+question, Hey, what is cast vote
+
+30133
+07:16:17,419 --> 07:16:19,999
+by sick do on the opens up on
+forum, I was like, hey, what's
+
+30134
+07:16:19,999 --> 07:16:22,909
+the what is the purpose of this?
+My hunch was that anyone could
+
+30135
+07:16:22,909 --> 07:16:25,009
+then execute this vote on behalf
+of me if I didn't send the
+
+30136
+07:16:25,009 --> 07:16:27,709
+transaction. And that's exactly
+what it is. This method
+
+30137
+07:16:27,709 --> 07:16:30,289
+implements a meta transaction
+and allows a project to
+
+30138
+07:16:30,289 --> 07:16:32,839
+subsidize voting fees, the
+voters can generate a signature
+
+30139
+07:16:32,839 --> 07:16:35,599
+for free, and the project can
+submit those and pay for the
+
+30140
+07:16:35,599 --> 07:16:38,989
+gas. So this is incredibly
+powerful. And this is the
+
+30141
+07:16:38,989 --> 07:16:43,339
+function that allows this, this,
+this cast vote by signature is
+
+30142
+07:16:43,339 --> 07:16:46,369
+what allows that snapshot chain
+link integration that you know,
+
+30143
+07:16:46,369 --> 07:16:49,879
+hopefully one of you build, but
+for us for this, since we're not
+
+30144
+07:16:49,909 --> 07:16:52,099
+implementing these meta
+transactions, these off chain
+
+30145
+07:16:52,099 --> 07:16:54,859
+stuff, we're just going to do
+cast a vote with reason why
+
+30146
+07:16:54,859 --> 07:16:57,199
+because we want to give it a
+reason. That's really it. So
+
+30147
+07:16:57,199 --> 07:17:02,869
+we're gonna say const boat TX
+response equals await. Gov nor
+
+30148
+07:17:03,109 --> 07:17:06,349
+dot cast, excuse me, we need to
+get the government contract. So
+
+30149
+07:17:06,349 --> 07:17:11,089
+we'll do const. Gov nor equals
+await ethers dot get contract.
+
+30150
+07:17:11,149 --> 07:17:14,809
+Gov contract. And then if we
+don't have ethers, we should get
+
+30151
+07:17:14,809 --> 07:17:18,349
+ethers. Great. Let's get ethers.
+And we'll ignore that. But now
+
+30152
+07:17:18,349 --> 07:17:21,649
+we have the contract. So we'll
+do a weight gov dot cast vote
+
+30153
+07:17:21,739 --> 07:17:25,789
+with reason spell this right?
+With reason. And we'll say
+
+30154
+07:17:25,789 --> 07:17:29,989
+proposal ID that way. And then
+the reason which we don't have a
+
+30155
+07:17:29,989 --> 07:17:33,199
+reason here, so let's make a
+reason. Let's say the reason is
+
+30156
+07:17:33,769 --> 07:17:39,829
+reason, equals I like do cha
+cha, if you know that film, you
+
+30157
+07:17:39,829 --> 07:17:41,899
+should definitely comment it in
+the description. We have a
+
+30158
+07:17:41,899 --> 07:17:45,349
+reason so we're voting for we're
+saying yes, we want we do indeed
+
+30159
+07:17:45,379 --> 07:17:49,489
+want you to change the box to
+77. And the reason is because I
+
+30160
+07:17:49,489 --> 07:17:52,909
+like a do the Cha Cha makes
+perfect sense if you don't think
+
+30161
+07:17:52,909 --> 07:17:56,299
+about and then we'll do a wait,
+Kotex response that wait. So I
+
+30162
+07:17:56,299 --> 07:17:59,599
+do some stuff, again, checking
+the state of the proposal where
+
+30163
+07:17:59,629 --> 07:18:02,239
+different numbers mean, hey,
+it's in process, it's voting,
+
+30164
+07:18:02,239 --> 07:18:04,759
+etc, we could check on that. But
+we're gonna skip that for now.
+
+30165
+07:18:04,819 --> 07:18:07,549
+All we're going to do now, now
+that we voted, we're going to be
+
+30166
+07:18:07,549 --> 07:18:09,919
+the ones to vote. So we're just
+going to once again move the
+
+30167
+07:18:09,919 --> 07:18:13,279
+blocks along. Why because we
+want to just get to the end of
+
+30168
+07:18:13,279 --> 07:18:16,069
+that voting period. So we're
+gonna do again, if velopment
+
+30169
+07:18:16,069 --> 07:18:20,839
+chains, that includes network
+dot name, then we're gonna do a
+
+30170
+07:18:20,839 --> 07:18:25,489
+weight move blocks, voting
+period, plus one. So we need to
+
+30171
+07:18:25,489 --> 07:18:28,519
+import a whole bunch of stuff in
+here. poses file development,
+
+30172
+07:18:28,699 --> 07:18:31,669
+looks like those got auto
+imported, we need to import this
+
+30173
+07:18:31,669 --> 07:18:37,459
+move blocks. So import move
+blocks from utils blocks, and
+
+30174
+07:18:37,459 --> 07:18:40,099
+that network is in here. And
+then we need voting period from
+
+30175
+07:18:40,099 --> 07:18:43,219
+our helper config. voting
+period. Okay, cool. And then
+
+30176
+07:18:43,219 --> 07:18:49,399
+we'll do console dot log, voted,
+ready to go. Now the reason that
+
+30177
+07:18:49,399 --> 07:18:52,939
+I checked the proposal state is
+because there's this state
+
+30178
+07:18:52,939 --> 07:18:55,789
+function in the governor
+contract. So if we look up
+
+30179
+07:18:55,789 --> 07:18:59,149
+state, what this does is it
+tells us what the state of the
+
+30180
+07:18:59,149 --> 07:19:02,599
+proposals in right if it's been
+executed, return that's been
+
+30181
+07:19:02,599 --> 07:19:05,419
+executed, if it's been canceled,
+return has been canceled. You
+
+30182
+07:19:05,419 --> 07:19:08,179
+have the deadline, check to see
+if it's active, check to see if
+
+30183
+07:19:08,179 --> 07:19:10,999
+quorum reached all this stuff,
+right? And what you're usually
+
+30184
+07:19:10,999 --> 07:19:14,479
+looking for is worm reached and
+vote succeeded, right? If both
+
+30185
+07:19:14,479 --> 07:19:17,389
+of these happen, the proposal
+state DOT succeeded, right?
+
+30186
+07:19:17,479 --> 07:19:20,419
+Otherwise, it's defeated or it's
+not there yet. I believe this is
+
+30187
+07:19:20,419 --> 07:19:23,209
+a one and this is a zero. So if
+you were to call that function
+
+30188
+07:19:23,209 --> 07:19:27,079
+and get the state right, now we
+should get a zero. Or excuse me,
+
+30189
+07:19:27,079 --> 07:19:29,839
+we should get a one for this
+having passed. If you want to do
+
+30190
+07:19:29,839 --> 07:19:32,389
+that as a little extra credit,
+feel free to do so. So let's see
+
+30191
+07:19:32,389 --> 07:19:34,489
+if we did this right. Well,
+actually, I guess we got to
+
+30192
+07:19:34,489 --> 07:19:37,459
+change this just to vote. But I
+just wrapped everything up into
+
+30193
+07:19:37,489 --> 07:19:40,459
+main. So let's see if this
+works. Yarn, hard hat run
+
+30194
+07:19:40,459 --> 07:19:44,479
+scripts vote network, local
+host. So we should get a little
+
+30195
+07:19:44,479 --> 07:19:48,289
+console dot log at the bottom
+that says voted ready to go. So
+
+30196
+07:19:48,289 --> 07:19:51,409
+now we're voting. We didn't just
+go to the Arctic Council, we
+
+30197
+07:19:51,409 --> 07:19:55,999
+could do yarn, hard hat console,
+dash dash network, local host.
+
+30198
+07:19:56,179 --> 07:19:58,699
+And in here, you can actually
+just check the state right in
+
+30199
+07:19:58,699 --> 07:20:02,509
+here. Why not? We'll copy this
+line as governor because we
+
+30200
+07:20:02,539 --> 07:20:06,139
+either get contract Governor
+contract. Now we can do a wait,
+
+30201
+07:20:06,319 --> 07:20:12,109
+Governor, that's state of go to
+the proposals dot JSON, grab
+
+30202
+07:20:12,109 --> 07:20:16,069
+this, paste it in here. And we
+get a for the state of this
+
+30203
+07:20:16,069 --> 07:20:19,399
+right now is for I forget what
+four means. It's like a proposal
+
+30204
+07:20:19,399 --> 07:20:22,639
+state. The proposal state is
+actually in the eye governor so
+
+30205
+07:20:22,639 --> 07:20:27,349
+the interface of the governor We
+can see, zero is pending, one is
+
+30206
+07:20:27,349 --> 07:20:30,469
+active, two cancelled, three
+defeated, and four have
+
+30207
+07:20:30,469 --> 07:20:34,129
+succeeded. So we are in a
+succeeded state, which is really
+
+30208
+07:20:34,129 --> 07:20:36,409
+good. That's exactly what we
+want. So let's go ahead and quit
+
+30209
+07:20:36,409 --> 07:20:41,149
+now. Excuse me Ctrl. C, our
+proposal is now in a succeeded
+
+30210
+07:20:41,149 --> 07:20:44,539
+state. And we've actually moved
+the blocks along the voting
+
+30211
+07:20:44,539 --> 07:20:47,809
+period. So voting is now over
+because we cheated. So now let's
+
+30212
+07:20:47,809 --> 07:20:52,039
+go ahead and queue and execute
+this to the last bit here. So
+
+30213
+07:20:52,099 --> 07:20:53,899
+this is gonna look real similar
+to what we've done already.
+
+30214
+07:20:53,929 --> 07:20:59,449
+Right? Let's minimize this,
+export async, function, Q, and
+
+30215
+07:20:59,509 --> 07:21:04,069
+execute. And then at the bottom,
+we'll just call queue, and
+
+30216
+07:21:04,069 --> 07:21:07,039
+execute. And I'm just going to
+copy paste, but it's that same
+
+30217
+07:21:07,039 --> 07:21:10,759
+syntax here, then process exec
+catch, blah, blah, blah, you get
+
+30218
+07:21:10,759 --> 07:21:14,029
+the drill. So in order to queue
+and execute, go back to the
+
+30219
+07:21:14,029 --> 07:21:16,099
+governor contract, not the
+governor, let's go to the
+
+30220
+07:21:16,099 --> 07:21:19,219
+governor. First thing we're
+going to do is call this queue.
+
+30221
+07:21:19,729 --> 07:21:24,019
+Now this Q function is actually
+in the governor time lock, which
+
+30222
+07:21:24,019 --> 07:21:27,169
+is in this extensions here. So
+we can find the governor Time
+
+30223
+07:21:27,169 --> 07:21:31,939
+Lock controller here, and it
+does exactly the same as propose
+
+30224
+07:21:31,939 --> 07:21:34,819
+we take everything that we did
+in the proposal, and then we
+
+30225
+07:21:34,819 --> 07:21:37,579
+just queue it like so. So we
+pass the exact same values here.
+
+30226
+07:21:37,669 --> 07:21:40,009
+And that's so cute. So what
+we're going to do is we're gonna
+
+30227
+07:21:40,009 --> 07:21:42,559
+need to first get those exact
+same values, which I told you
+
+30228
+07:21:42,559 --> 07:21:45,229
+we're going to use a few times.
+So we're going to import bunk,
+
+30229
+07:21:45,409 --> 07:21:51,319
+new store value, proposal
+description of our article
+
+30230
+07:21:51,319 --> 07:21:53,809
+thing, right now that we have
+all that stuff, we'll say const
+
+30231
+07:21:53,809 --> 07:21:56,629
+args equals a new store value,
+
+30232
+07:21:56,989 --> 07:22:03,079
+we'll do const box equals await
+ethers dot get contract, let's
+
+30233
+07:22:03,079 --> 07:22:06,199
+get that box contract again,
+we're gonna have to import
+
+30234
+07:22:06,439 --> 07:22:10,879
+ethers from our hat. And this is
+going to be from we're gonna do
+
+30235
+07:22:11,119 --> 07:22:15,949
+TS ignore, then we're once again
+code this function call to const
+
+30236
+07:22:16,009 --> 07:22:21,229
+encoded function call equals
+Boxtop interface, encode
+
+30237
+07:22:21,649 --> 07:22:25,729
+function data. Once again, we're
+gonna do funk is the function we
+
+30238
+07:22:25,729 --> 07:22:28,789
+want to call and args this is
+like real similar to the our
+
+30239
+07:22:28,789 --> 07:22:31,729
+proposed bit that we did. And
+then we're gonna do content
+
+30240
+07:22:31,759 --> 07:22:38,779
+description hash equals ethers
+dot utils that get GAC 256
+
+30241
+07:22:38,989 --> 07:22:43,879
+ethers dot utils, that to you,
+TF eight bytes, this will make
+
+30242
+07:22:43,909 --> 07:22:47,299
+sense in a second. We're also
+description. So what's our
+
+30243
+07:22:47,299 --> 07:22:51,769
+propose, all we did was pass our
+proposal description, however,
+
+30244
+07:22:51,799 --> 07:22:54,769
+it actually gets hashed on
+chain, and that's what our view
+
+30245
+07:22:54,769 --> 07:22:56,749
+and execute is gonna be looking
+for, it's gonna be looking for
+
+30246
+07:22:56,749 --> 07:22:59,419
+the description hash, instead of
+just the pure description,
+
+30247
+07:22:59,449 --> 07:23:01,069
+right, and it's gonna be a
+little bit cheaper gas wise,
+
+30248
+07:23:01,069 --> 07:23:04,129
+which is good. So now that we
+have the description hash, now
+
+30249
+07:23:04,129 --> 07:23:06,679
+that we have all the same
+functions that we did for the
+
+30250
+07:23:06,709 --> 07:23:11,089
+suppose it's time to queue them.
+So do cost gov equals await
+
+30251
+07:23:11,179 --> 07:23:16,309
+ethers dot get contract. Gov
+contract, console dot log will
+
+30252
+07:23:16,309 --> 07:23:23,599
+say we're queuing and then we'll
+do cos Q, dx equals gov dot q.
+
+30253
+07:23:23,899 --> 07:23:26,029
+And we're going to pass the
+exact same parameters we did
+
+30254
+07:23:26,029 --> 07:23:28,489
+with the pose except for what
+the hash instead of the actual
+
+30255
+07:23:28,489 --> 07:23:32,839
+proposal, so box that address
+zero for eath, and pass that
+
+30256
+07:23:33,019 --> 07:23:38,839
+code at function call. And then
+the description hash rate. And
+
+30257
+07:23:38,839 --> 07:23:42,439
+then we're going to do oops, is
+going to be a weight here. And
+
+30258
+07:23:42,439 --> 07:23:46,129
+then we're gonna do a wait. You
+text Oh, wait, one, wait a block
+
+30259
+07:23:46,129 --> 07:23:50,179
+there. And great, then we're all
+queued up. Now we still have to
+
+30260
+07:23:50,179 --> 07:23:53,989
+wait that minimum delay, right?
+Remember, on our timeline, it's
+
+30261
+07:23:53,989 --> 07:23:56,449
+got this min delay thing. It
+says, Hey, once something gets
+
+30262
+07:23:56,449 --> 07:23:59,329
+queued up, you can't just
+execute it right away. You gotta
+
+30263
+07:23:59,329 --> 07:24:02,869
+give people time to get out. So
+we're going to speed up time
+
+30264
+07:24:02,869 --> 07:24:06,499
+again, we're going to say if
+development chains develop l
+
+30265
+07:24:06,559 --> 07:24:09,499
+meant chains that includes and
+then it looks like it auto
+
+30266
+07:24:09,499 --> 07:24:12,739
+imported for me development
+chains. Yes, it did. Amazing.
+
+30267
+07:24:13,039 --> 07:24:16,999
+That includes network dot name.
+Let's just make sure we import
+
+30268
+07:24:16,999 --> 07:24:20,929
+network from Hardhead. That
+includes our name, then, of
+
+30269
+07:24:20,929 --> 07:24:23,569
+course, we're going to move
+blocks. But we also actually
+
+30270
+07:24:23,569 --> 07:24:26,959
+have to move time here as the
+minimum delay is looking for
+
+30271
+07:24:26,959 --> 07:24:31,699
+some time. So let's create a new
+util called Move time. Okay,
+
+30272
+07:24:31,729 --> 07:24:36,139
+move time that Yes. And this
+util is going to allow us to
+
+30273
+07:24:36,139 --> 07:24:38,839
+move time so you're learning all
+the cool stuff. So we'll quickly
+
+30274
+07:24:38,839 --> 07:24:41,809
+write a script to do this
+important network from hard hat
+
+30275
+07:24:41,899 --> 07:24:47,029
+export async function move time,
+how much time will be a number
+
+30276
+07:24:47,029 --> 07:24:52,399
+of Mount console dot log, moving
+time, and let's say await
+
+30277
+07:24:52,459 --> 07:24:59,149
+network dot provider dot send
+EVM increase time and then just
+
+30278
+07:24:59,149 --> 07:25:03,079
+by the amount, then we'll just
+say console dot log, move
+
+30279
+07:25:03,079 --> 07:25:07,639
+forward, amount seconds, it goes
+forward and seconds. Cool. So
+
+30280
+07:25:07,639 --> 07:25:10,369
+now we have this move time
+function. That was pretty quick,
+
+30281
+07:25:10,369 --> 07:25:12,769
+right? So first, we're going to
+move time and we're gonna move
+
+30282
+07:25:12,769 --> 07:25:16,579
+time by that min delay first,
+plus one just to be safe. And
+
+30283
+07:25:16,579 --> 07:25:18,799
+then we're also going to move
+blocks. We're gonna do a weight
+
+30284
+07:25:18,799 --> 07:25:22,399
+move time, and then a weight
+move blocks. And we'll just move
+
+30285
+07:25:22,399 --> 07:25:26,839
+on block. So got it Import move
+blocks from utils. It imports
+
+30286
+07:25:27,169 --> 07:25:32,629
+move time from those utils as
+well, time. And then we also
+
+30287
+07:25:32,629 --> 07:25:35,659
+have to import this min delay,
+which we get from our helper.
+
+30288
+07:25:35,659 --> 07:25:38,899
+Hardhead config. Great. So we
+moved all that stuff. Again, if
+
+30289
+07:25:38,899 --> 07:25:41,209
+this were a real chain, you just
+have to wait. But since we're
+
+30290
+07:25:41,209 --> 07:25:43,879
+not a real chain, we can do
+whatever we want. Yes, love
+
+30291
+07:25:43,879 --> 07:25:46,489
+doing whatever I want. Now that
+it's all cued up, the voters
+
+30292
+07:25:46,489 --> 07:25:51,499
+passed, we're looking spicy.
+Let's drive this home. Xe cuting
+
+30293
+07:25:52,039 --> 07:25:56,989
+do a little console dot log
+executing the const execute TX
+
+30294
+07:25:57,019 --> 07:26:01,459
+equals await. gov dot execute.
+We're going to pass this the
+
+30295
+07:26:01,459 --> 07:26:05,299
+exact same set of things we did
+for the Q TX so I'm literally
+
+30296
+07:26:05,299 --> 07:26:08,989
+gonna copy this. paste it down
+here. And then we're just going
+
+30297
+07:26:08,989 --> 07:26:13,399
+to do a weight SQ TX dot weight.
+We're going to wait one block.
+
+30298
+07:26:13,699 --> 07:26:18,619
+And then the final hour we'll
+see if the governance updated
+
+30299
+07:26:18,799 --> 07:26:23,749
+our box contract const box new
+value equals await box dot
+
+30300
+07:26:23,779 --> 07:26:28,939
+retrieve. And that will do
+console dot log. New box value.
+
+30301
+07:26:30,230 --> 07:26:35,720
+Box new value.to string Oh, so
+if we did this right, it's new
+
+30302
+07:26:35,720 --> 07:26:39,830
+box value to be updated. Let's
+see if we did it right yarn hard
+
+30303
+07:26:39,830 --> 07:26:45,170
+hat run grips Q and execute now
+work localhost. Did we do it
+
+30304
+07:26:45,170 --> 07:26:49,910
+right? Are we successfully done
+governance? We did. That's okay.
+
+30305
+07:26:50,120 --> 07:26:52,490
+We're gonna figure out what we
+did wrong. Did you mean could
+
+30306
+07:26:52,490 --> 07:26:57,170
+check 256 I spelt some stuff
+wrong. It needs to be spelt like
+
+30307
+07:26:57,230 --> 07:27:01,700
+no CK. Just just k. Okay, let's
+try again. It failed before it
+
+30308
+07:27:01,700 --> 07:27:04,280
+actually did. I think that's
+good. Queuing moving time
+
+30309
+07:27:04,280 --> 07:27:08,870
+provider EVM and crit cuz I
+spelt increased time wrong. Oh,
+
+30310
+07:27:08,870 --> 07:27:15,020
+no EVM increase time to just
+double check. Make sure I'm
+
+30311
+07:27:15,020 --> 07:27:18,230
+spelling this right T is
+actually capital. So I totally
+
+30312
+07:27:18,260 --> 07:27:21,920
+messed up. So it's actually
+already been queued. It's been
+
+30313
+07:27:21,920 --> 07:27:25,880
+queued right now on our little
+node EVM increased team. So we
+
+30314
+07:27:25,880 --> 07:27:28,730
+can either delete and kind of
+restart, or I can just go ahead
+
+30315
+07:27:28,730 --> 07:27:31,370
+and I'm just going to comment
+out a bunch of stuff, we're just
+
+30316
+07:27:31,370 --> 07:27:34,370
+going to skip the cueing here.
+We're gonna run this one more
+
+30317
+07:27:34,370 --> 07:27:37,130
+time, because it's already been
+queued. And now should just
+
+30318
+07:27:37,130 --> 07:27:40,940
+execute, we're gonna move time
+again. But that's fine. Oh, my
+
+30319
+07:27:40,940 --> 07:27:43,760
+goodness, we did it. Right. And
+then normally, you would just do
+
+30320
+07:27:43,760 --> 07:27:46,430
+it in one script. But this queue
+would fail because it was
+
+30321
+07:27:46,430 --> 07:27:49,460
+already queued. Right, you can't
+queue twice, move forward. In
+
+30322
+07:27:49,460 --> 07:27:53,870
+time, we move blocks we executed
+and we got a new box value
+
+30323
+07:27:54,080 --> 07:27:58,910
+completely using our Dow
+completely decentralized voting
+
+30324
+07:27:58,910 --> 07:28:02,960
+completely on chain, no third
+party trust going in on here.
+
+30325
+07:28:03,050 --> 07:28:06,560
+There's no voting booth, there's
+no you know, spending 1000s of
+
+30326
+07:28:06,560 --> 07:28:10,370
+dollars on staff, everything we
+just voted on happened right in
+
+30327
+07:28:10,370 --> 07:28:13,700
+front of our faces. Now, again,
+I highly recommend go to my
+
+30328
+07:28:13,700 --> 07:28:16,400
+GitHub repo, you take a look and
+you see what's going on here.
+
+30329
+07:28:16,430 --> 07:28:18,530
+Again, if you want to see
+JavaScript stuff, feel free to
+
+30330
+07:28:18,530 --> 07:28:21,890
+do some JavaScript stuff. But
+this goes over how to just get
+
+30331
+07:28:21,890 --> 07:28:24,500
+clone and get started if you
+want to do that as well. But if
+
+30332
+07:28:24,500 --> 07:28:28,490
+you walked with me here, if you
+walked through this with me, you
+
+30333
+07:28:28,490 --> 07:28:31,310
+have learned in the absolute
+Khan, thank you so much for
+
+30334
+07:28:31,310 --> 07:28:32,930
+being here. And I'll see you
+next time.
+
+30335
+07:28:35,539 --> 07:28:40,219
+All right. Now, welcome to the
+final section of our course, the
+
+30336
+07:28:40,219 --> 07:28:44,269
+security and auditing section,
+this one is going to be a little
+
+30337
+07:28:44,269 --> 07:28:47,899
+bit less coding and a little bit
+more explaining. And most of
+
+30338
+07:28:47,899 --> 07:28:49,849
+what we're going to be learning
+about here is in this Hardhead
+
+30339
+07:28:49,849 --> 07:28:53,869
+security FCC section. Throughout
+this course, we've given you a
+
+30340
+07:28:53,869 --> 07:28:57,589
+couple of tips about different
+security features. One, we
+
+30341
+07:28:57,589 --> 07:29:00,499
+talked about reentrancy, we
+talked a little bit about Oracle
+
+30342
+07:29:00,499 --> 07:29:03,139
+Tax, and we're going to talk
+about those more. And some of
+
+30343
+07:29:03,139 --> 07:29:07,639
+the tools we can use to make our
+code more efficient, to look out
+
+30344
+07:29:07,639 --> 07:29:11,839
+for bugs, and to make our code
+more secure. So we're gonna go
+
+30345
+07:29:11,839 --> 07:29:15,499
+ahead, we're gonna go over this
+hard hat security FCC code base,
+
+30346
+07:29:15,529 --> 07:29:18,529
+and we're going to walk through
+it a little bit. So one of the
+
+30347
+07:29:18,529 --> 07:29:22,189
+first things that we're going to
+talk about is, what is an audit?
+
+30348
+07:29:22,339 --> 07:29:25,129
+Well, an audit is going to be a
+security focused code review,
+
+30349
+07:29:25,159 --> 07:29:29,119
+looking for issues with your
+code. So for example, let's say
+
+30350
+07:29:29,119 --> 07:29:31,849
+we have some code that looks
+like this, this should be a
+
+30351
+07:29:31,849 --> 07:29:34,969
+little bit familiar, because we
+talked about this in one of our
+
+30352
+07:29:34,969 --> 07:29:38,269
+earlier sections with
+reentrancy, our code, withdraw,
+
+30353
+07:29:38,389 --> 07:29:42,769
+goes and sends ether and then
+updates the balances, this code
+
+30354
+07:29:42,799 --> 07:29:45,979
+is clearly vulnerable to a
+reentrancy attack here. And this
+
+30355
+07:29:45,979 --> 07:29:48,199
+is something that an auditor
+would catch. Since when we
+
+30356
+07:29:48,199 --> 07:29:50,959
+deploy our code, that code is
+immutable. And that code will
+
+30357
+07:29:50,959 --> 07:29:54,169
+always be there, it's really
+important to have these security
+
+30358
+07:29:54,169 --> 07:29:57,259
+reviews done before we deploy
+our code to a main net, and
+
+30359
+07:29:57,259 --> 07:30:00,349
+before we go live, so if you're
+going to deploy some crazy,
+
+30360
+07:30:00,349 --> 07:30:02,509
+massive defy protocol, and
+you're gonna have billions of
+
+30361
+07:30:02,509 --> 07:30:05,419
+dollars of people's money locked
+into your protocol, you probably
+
+30362
+07:30:05,419 --> 07:30:07,969
+want to make sure that the money
+is going to go to the correct
+
+30363
+07:30:07,969 --> 07:30:12,379
+places. So audits are incredibly
+important for the lifecycle of
+
+30364
+07:30:12,409 --> 07:30:15,889
+our projects. And we want people
+to peer review, we want people
+
+30365
+07:30:15,889 --> 07:30:19,789
+to review our code to make sure
+that everything looks good. Now,
+
+30366
+07:30:19,849 --> 07:30:22,339
+when we send our code to audit,
+though, we shouldn't just say
+
+30367
+07:30:22,339 --> 07:30:24,859
+hey, here's our code. Can you
+check them Make sure it's good.
+
+30368
+07:30:25,309 --> 07:30:27,769
+That's not going to give an
+auditor enough information, they
+
+30369
+07:30:27,769 --> 07:30:30,859
+need to be able to very easily
+know what your code does, how to
+
+30370
+07:30:30,859 --> 07:30:34,099
+work with it, and what you're
+looking for. Because auditors
+
+30371
+07:30:34,099 --> 07:30:36,679
+aren't going to be kind of this,
+this failsafe, where if your
+
+30372
+07:30:36,679 --> 07:30:39,259
+code is terrible, they're going
+to catch everything. Auditors
+
+30373
+07:30:39,259 --> 07:30:42,289
+are human beings too. They can
+miss things as well, auditors.
+
+30374
+07:30:42,319 --> 07:30:45,619
+Also, don't make sure that your
+code is bug free. Like I said,
+
+30375
+07:30:45,649 --> 07:30:49,549
+audits are security focused peer
+reviews for your codebase. And
+
+30376
+07:30:49,549 --> 07:30:52,669
+when you do send your code to
+audit, you want to make sure you
+
+30377
+07:30:52,669 --> 07:30:56,419
+help out your auditors as much
+as possible. There's an amazing
+
+30378
+07:30:56,449 --> 07:30:59,599
+tweet thread from Tinto and
+previously was an open Zeplin
+
+30379
+07:30:59,599 --> 07:31:02,449
+auditor with a ton of tips and
+tricks for working with
+
+30380
+07:31:02,449 --> 07:31:06,169
+auditors, I highly recommend you
+pause the video, you click this
+
+30381
+07:31:06,169 --> 07:31:08,659
+link and you read through his
+tweets because they are
+
+30382
+07:31:08,689 --> 07:31:12,889
+fantastic. openzeppelin has a
+readiness guide to try to help
+
+30383
+07:31:12,889 --> 07:31:16,129
+you make sure that you're even
+ready for an audit in the first
+
+30384
+07:31:16,129 --> 07:31:18,799
+place. And we've got a link to
+this readiness guide in the
+
+30385
+07:31:18,799 --> 07:31:22,759
+GitHub repository. The summary
+of them are to add comments to
+
+30386
+07:31:22,759 --> 07:31:26,059
+your code, use natspec, which we
+learned about to document your
+
+30387
+07:31:26,059 --> 07:31:29,119
+functions, document your
+functions, document your
+
+30388
+07:31:29,119 --> 07:31:33,109
+functions, test, be ready to
+talk to your auditors, and be
+
+30389
+07:31:33,109 --> 07:31:36,859
+prepared to give them plenty of
+time. They are literally pouring
+
+30390
+07:31:36,889 --> 07:31:39,979
+themselves over your code for
+weeks on end to make sure
+
+30391
+07:31:39,979 --> 07:31:42,469
+there's nothing wrong. If you
+rush your auditors, you're gonna
+
+30392
+07:31:42,469 --> 07:31:45,829
+get a rushed audit, and they're
+going to miss things. So let's
+
+30393
+07:31:45,829 --> 07:31:48,829
+talk about the auditing process.
+In auditing process is going to
+
+30394
+07:31:48,829 --> 07:31:51,529
+look like this. First, they're
+going to run your tests. That's
+
+30395
+07:31:51,529 --> 07:31:54,499
+the first step in order is
+always going to take and right
+
+30396
+07:31:54,499 --> 07:31:56,899
+there, they're gonna find okay,
+do they have enough code
+
+30397
+07:31:56,899 --> 07:32:00,769
+coverage? Is everything passing?
+What do the tests do? What is
+
+30398
+07:32:00,769 --> 07:32:04,159
+the optimal functionality, after
+an auditor runs tests, they're
+
+30399
+07:32:04,159 --> 07:32:07,459
+going to read specs or run your
+docs. And then they're going to
+
+30400
+07:32:07,459 --> 07:32:11,029
+run some fast tools like
+Slither, linters and static
+
+30401
+07:32:11,029 --> 07:32:13,519
+analysis. And that's going to be
+one of the first things we're
+
+30402
+07:32:13,519 --> 07:32:17,839
+going to talk about slither and
+static analysis. So static
+
+30403
+07:32:17,839 --> 07:32:22,099
+analysis is the process of just
+running some program to read
+
+30404
+07:32:22,099 --> 07:32:25,279
+over all your code and look for
+commonly known bugs. One of the
+
+30405
+07:32:25,279 --> 07:32:28,489
+most popular static analysis
+tools is going to be this tool
+
+30406
+07:32:28,489 --> 07:32:31,159
+called Slither. And that's going
+to be one of the first things
+
+30407
+07:32:31,159 --> 07:32:34,279
+we're going to do here. So let's
+go ahead and open up our VS code
+
+30408
+07:32:34,279 --> 07:32:37,639
+now. And we'll make a new
+directory called hardhats
+
+30409
+07:32:37,969 --> 07:32:45,229
+security, FCC. We'll cd into it.
+We'll do code period. And we'll
+
+30410
+07:32:45,229 --> 07:32:49,099
+open this up. Now what I want
+you to do, instead of starting a
+
+30411
+07:32:49,099 --> 07:32:51,289
+new folder, and everything is
+we're going to get clone, my
+
+30412
+07:32:51,289 --> 07:32:56,419
+heart had security FCC. So we'll
+do git clone, our net security
+
+30413
+07:32:56,419 --> 07:33:00,859
+FCC space, and then put a period
+to clone it into this directory.
+
+30414
+07:33:00,949 --> 07:33:04,369
+And we'll get everything like
+this. Now in here, this comes
+
+30415
+07:33:04,369 --> 07:33:07,849
+with a couple of different
+contracts for us already, that
+
+30416
+07:33:07,879 --> 07:33:10,489
+each have a different
+vulnerability, one of them is
+
+30417
+07:33:10,489 --> 07:33:14,569
+going to be bad RNG. This is a
+contract that picks a random
+
+30418
+07:33:14,569 --> 07:33:18,439
+winner of a raffle using block
+difficulty and message dot
+
+30419
+07:33:18,439 --> 07:33:22,339
+sender. This isn't truly random,
+as the miners can influence the
+
+30420
+07:33:22,339 --> 07:33:25,339
+block dot difficulty, and people
+can cancel transactions. And
+
+30421
+07:33:25,339 --> 07:33:28,039
+there's a ton of ton of
+different vulnerabilities with
+
+30422
+07:33:28,039 --> 07:33:32,089
+creating randomness in this way.
+We also have this liquid pool as
+
+30423
+07:33:32,089 --> 07:33:35,389
+an Oracle, the two most common
+types of attacks are reentrancy,
+
+30424
+07:33:35,989 --> 07:33:38,959
+which we've learned about an
+Oracle manipulation attacks,
+
+30425
+07:33:39,199 --> 07:33:42,199
+which luckily for you, we've
+taught you about decentralized
+
+30426
+07:33:42,199 --> 07:33:44,659
+Oracle's and working with chain
+link, which should make you a
+
+30427
+07:33:44,659 --> 07:33:48,349
+lot safer. And especially for
+this section, I'm going to harp
+
+30428
+07:33:48,349 --> 07:33:51,349
+on these, please, please,
+please, if you taking this
+
+30429
+07:33:51,349 --> 07:33:55,129
+course, please do not make a
+protocol that falls victim to
+
+30430
+07:33:55,129 --> 07:33:57,949
+one of these, I will feel like I
+have failed you. If you build a
+
+30431
+07:33:57,949 --> 07:34:00,829
+protocol where you use some
+centralized oracle that gets
+
+30432
+07:34:00,829 --> 07:34:03,589
+manipulated, or you build a
+protocol that has a reentrancy
+
+30433
+07:34:03,589 --> 07:34:06,319
+attack. The tools that I'm going
+to show you right here are going
+
+30434
+07:34:06,319 --> 07:34:09,199
+to help you with reentrancy. And
+everything I've taught you about
+
+30435
+07:34:09,199 --> 07:34:12,439
+chain link should hopefully
+teach you how to not get Oracle
+
+30436
+07:34:12,439 --> 07:34:16,279
+manipulated. So in this contract
+here, we're using a liquidity
+
+30437
+07:34:16,279 --> 07:34:19,849
+pool as an Oracle and this is
+kind of some advanced defy stuff
+
+30438
+07:34:19,849 --> 07:34:23,419
+here. This is a minimalistic
+decentralized exchange example
+
+30439
+07:34:23,689 --> 07:34:27,139
+where people can buy and sell
+and swap different assets. Now
+
+30440
+07:34:27,139 --> 07:34:32,119
+using this singular exchange, to
+get the swap price is a terrible
+
+30441
+07:34:32,119 --> 07:34:36,229
+idea. Because this is a single
+protocol for a single price. The
+
+30442
+07:34:36,229 --> 07:34:39,619
+price from this protocol is a
+single centralized location, and
+
+30443
+07:34:39,619 --> 07:34:42,679
+we don't want to get our price
+from a single centralized
+
+30444
+07:34:42,679 --> 07:34:45,679
+exchange. We want to get it from
+many exchanges. Getting the
+
+30445
+07:34:45,679 --> 07:34:50,569
+price of any asset from a single
+decentralized exchange is not
+
+30446
+07:34:50,599 --> 07:34:53,359
+decentralized, is somebody
+manipulates the market doing
+
+30447
+07:34:53,359 --> 07:34:57,679
+some crazy advanced defy things
+that will ruin the price of your
+
+30448
+07:34:57,679 --> 07:35:01,099
+assets. So getting the price of
+your assets from a centralized
+
+30449
+07:35:01,099 --> 07:35:05,149
+location is a terrible idea. We
+have a metamorphic proxy here.
+
+30450
+07:35:05,329 --> 07:35:08,599
+The issue here is that it's
+initialized double, and we don't
+
+30451
+07:35:08,599 --> 07:35:11,989
+guarantee that the contract has
+been initialized. We have a
+
+30452
+07:35:11,989 --> 07:35:15,679
+classic reentrancy issue here.
+And then we have and then we
+
+30453
+07:35:15,679 --> 07:35:19,099
+have a vault here where some
+password is stored on chain and
+
+30454
+07:35:19,099 --> 07:35:22,489
+we're crossing our fingers that
+nobody reads this password to
+
+30455
+07:35:22,489 --> 07:35:25,789
+unlock it. So we're going to run
+some static analysis on these
+
+30456
+07:35:25,789 --> 07:35:29,089
+contracts, see if that static
+analysis can spot some of the
+
+30457
+07:35:29,089 --> 07:35:30,019
+bad things in here.
+
+30458
+07:35:32,720 --> 07:35:35,300
+To get started, we're going to
+use a tool like I said called
+
+30459
+07:35:35,330 --> 07:35:40,100
+slither slither tool was created
+by this Crytek team, aka the
+
+30460
+07:35:40,100 --> 07:35:44,240
+trilobites team. Now, trilobites
+is one of my absolute favorite
+
+30461
+07:35:44,270 --> 07:35:47,600
+auditors in the space. And I
+absolutely love all the tools
+
+30462
+07:35:47,600 --> 07:35:49,940
+that this team puts out, they
+put up open source security
+
+30463
+07:35:49,940 --> 07:35:53,630
+tools for any of us to use such
+as slitter. Now to get started
+
+30464
+07:35:53,630 --> 07:35:57,740
+with Slither, we actually need
+to install Python first. So you
+
+30465
+07:35:57,740 --> 07:36:01,040
+can also run it with Docker. But
+I'm going to show you how to how
+
+30466
+07:36:01,040 --> 07:36:04,040
+to work with Python first. So if
+you haven't worked with Python,
+
+30467
+07:36:04,040 --> 07:36:07,130
+before, you can come to
+python.org/downloads and
+
+30468
+07:36:07,130 --> 07:36:09,800
+download Python right from the
+website, you'll know you've done
+
+30469
+07:36:09,800 --> 07:36:13,970
+it right. And you can run python
+three dash dash version, like
+
+30470
+07:36:13,970 --> 07:36:16,850
+this. Or if you have an older
+version of Python, you can run
+
+30471
+07:36:16,850 --> 07:36:19,880
+Python dash dash version. Once
+you install Python, you should
+
+30472
+07:36:19,880 --> 07:36:22,610
+also have this tool called PIP
+three installed and you can
+
+30473
+07:36:22,610 --> 07:36:27,620
+check by running PIP three dash
+dash version, or PIP dash dash
+
+30474
+07:36:27,620 --> 07:36:32,030
+version. And we also want to
+install this sock select package
+
+30475
+07:36:32,030 --> 07:36:35,210
+just in case we're using weird
+versions of solidity to install.
+
+30476
+07:36:35,210 --> 07:36:40,340
+So select, we run PIP three,
+install sock select, like that.
+
+30477
+07:36:40,910 --> 07:36:45,680
+And then we can do sock, select,
+use. And then we can choose the
+
+30478
+07:36:45,680 --> 07:36:49,130
+version of solidity or slither
+to work with. Once you have
+
+30479
+07:36:49,130 --> 07:36:52,010
+those tools, you can just run
+PIP three install slither
+
+30480
+07:36:52,070 --> 07:36:56,150
+analyzer like so. And you can
+install slither into your Python
+
+30481
+07:36:56,150 --> 07:36:59,000
+environment. I'm not going to
+run it because already have. You
+
+30482
+07:36:59,000 --> 07:37:01,130
+can also learn how to do this
+all with Docker and we'll learn
+
+30483
+07:37:01,130 --> 07:37:04,400
+how to do this with Docker in a
+little bit. Now in our package
+
+30484
+07:37:04,430 --> 07:37:08,930
+json, we actually have command
+script in our package. JSON for
+
+30485
+07:37:08,930 --> 07:37:11,510
+running Slither, you'll know
+you've installed slither
+
+30486
+07:37:11,510 --> 07:37:18,380
+correctly. If you can run
+Slither, dash dash help you get
+
+30487
+07:37:18,380 --> 07:37:21,980
+an output like this. Now we can
+use slither to run it on our
+
+30488
+07:37:21,980 --> 07:37:25,340
+contracts folder by running this
+big command here. So we'll say
+
+30489
+07:37:25,340 --> 07:37:29,510
+Slither. And we want to run it
+on dot slash contracts, we need
+
+30490
+07:37:29,510 --> 07:37:32,840
+to tell it that it has some
+psaltery mappings, and every
+
+30491
+07:37:32,840 --> 07:37:36,260
+time it sees open Zeppelin, it
+should use Node module slash
+
+30492
+07:37:36,260 --> 07:37:39,830
+open Zeppelin and every time it
+sees chain link introduced node
+
+30493
+07:37:39,830 --> 07:37:42,500
+modules slash chain link. And
+I'm just going to read from our
+
+30494
+07:37:42,500 --> 07:37:46,070
+package json. And we're
+excluding a couple of functions
+
+30495
+07:37:46,070 --> 07:37:49,070
+that it runs and excluding
+builder ignore, but don't worry
+
+30496
+07:37:49,070 --> 07:37:51,770
+too much about that. We've
+actually just run that by first
+
+30497
+07:37:51,770 --> 07:37:53,780
+running yarn to install all of
+our packages.
+
+30498
+07:38:03,289 --> 07:38:06,439
+And after we've installed all of
+our packages, we can run yarn
+
+30499
+07:38:06,529 --> 07:38:09,979
+Slither. Or you can copy paste
+that slither command and run it
+
+30500
+07:38:09,979 --> 07:38:14,059
+directly. Now we'll get this
+massive output that looks like
+
+30501
+07:38:14,059 --> 07:38:17,149
+this with some red and some
+green. Let's go through what's
+
+30502
+07:38:17,149 --> 07:38:20,149
+actually happening here, the way
+that we can read Slither, it'll
+
+30503
+07:38:20,149 --> 07:38:23,689
+list out a number of lines that
+have an issue and then a
+
+30504
+07:38:23,689 --> 07:38:26,629
+reference to that issue. And
+each one of these is separated
+
+30505
+07:38:26,629 --> 07:38:30,949
+by a new line. So that's a
+section that's exception, etc.
+
+30506
+07:38:31,339 --> 07:38:34,819
+So if we get a red here, that
+means that there is a high
+
+30507
+07:38:34,849 --> 07:38:38,449
+impact issue that we definitely
+should address. And it even
+
+30508
+07:38:38,449 --> 07:38:42,379
+comes with a reference link that
+we can copy paste and put into
+
+30509
+07:38:42,379 --> 07:38:45,799
+our browser and see what the
+issue is and more information
+
+30510
+07:38:45,829 --> 07:38:49,519
+from the slither tool about what
+that issue is and how to correct
+
+30511
+07:38:49,519 --> 07:38:54,559
+it. We can see it catches our
+metamorphic contract issue. It
+
+30512
+07:38:54,559 --> 07:38:57,949
+says metamorphic contract is
+never initialized. It is used
+
+30513
+07:38:57,949 --> 07:39:01,489
+here in metamorphic dot kill.
+The reason that this is a
+
+30514
+07:39:01,489 --> 07:39:05,749
+massive issue, if we go to our
+metamorphic contract outsole is
+
+30515
+07:39:05,749 --> 07:39:09,349
+that if we deploy this contract,
+somebody else could initialize
+
+30516
+07:39:09,349 --> 07:39:12,679
+this code, become the owner, and
+then automatically kill it
+
+30517
+07:39:12,709 --> 07:39:15,589
+before we even have a chance.
+This is actually something that
+
+30518
+07:39:15,589 --> 07:39:19,279
+has happened in the past and has
+caused a ton of issues. So if we
+
+30519
+07:39:19,279 --> 07:39:22,729
+see red in the terminal, this
+means Hey, massive issue, we
+
+30520
+07:39:22,729 --> 07:39:25,789
+should absolutely check it out.
+Now there's gonna be a ton of
+
+30521
+07:39:25,789 --> 07:39:28,819
+green in here. These are
+detectors that are probably low
+
+30522
+07:39:28,819 --> 07:39:31,969
+impact, and they're probably
+okay. And in fact, we can see,
+
+30523
+07:39:32,089 --> 07:39:35,389
+it's even just calling out some
+opens up on stuff here, saying,
+
+30524
+07:39:35,389 --> 07:39:38,839
+Hey, we see some inline
+assembly. Inline assembly is
+
+30525
+07:39:38,839 --> 07:39:41,749
+kind of scary, maybe don't use
+that. So you can think of green
+
+30526
+07:39:41,749 --> 07:39:44,269
+as kind of a warning that
+there's a low likelihood that
+
+30527
+07:39:44,269 --> 07:39:46,909
+this will impact anything, but
+you might want to check it out,
+
+30528
+07:39:47,029 --> 07:39:50,119
+we get this different versions
+of solidity used, which is just
+
+30529
+07:39:50,119 --> 07:39:52,369
+saying, hey, there's a couple
+different versions of solidity
+
+30530
+07:39:52,519 --> 07:39:54,739
+that might be something you want
+to keep in mind, maybe you
+
+30531
+07:39:54,739 --> 07:39:58,219
+should use the same versions of
+solidity. We have this allow old
+
+30532
+07:39:58,219 --> 07:40:00,739
+versions. And this is actually
+why throughout this whole
+
+30533
+07:40:00,739 --> 07:40:05,149
+course, we've been using zero
+point 8.7 Because zero point 8.4
+
+30534
+07:40:05,479 --> 07:40:08,869
+and zero point 8.7 are
+considered more stable versions
+
+30535
+07:40:08,869 --> 07:40:12,049
+of solidity. So if you're using
+versions outside of there, so
+
+30536
+07:40:12,049 --> 07:40:14,449
+there will say hey, maybe you
+want to work with a different
+
+30537
+07:40:14,449 --> 07:40:18,379
+version. We have some flags in
+here about maybe Hey, you should
+
+30538
+07:40:18,379 --> 07:40:21,349
+make a variable constant because
+it never changes which is great.
+
+30539
+07:40:21,619 --> 07:40:24,229
+Uses literal with too many
+digits saying hey, this Just
+
+30540
+07:40:24,229 --> 07:40:27,019
+kind of hard to read, maybe you
+screwed up some of the zeros,
+
+30541
+07:40:27,289 --> 07:40:31,879
+loud old versions. And what's
+this reentrancy in ether store
+
+30542
+07:40:31,879 --> 07:40:36,139
+dot withdraw. So just by running
+this slither tool, we can catch
+
+30543
+07:40:36,199 --> 07:40:39,379
+a reentrancy vulnerability in
+one of our contracts, which is
+
+30544
+07:40:39,379 --> 07:40:43,789
+fantastic. So running the static
+analysis caught at least two
+
+30545
+07:40:43,789 --> 07:40:47,719
+huge vulnerabilities in our
+metamorphic contract. And in our
+
+30546
+07:40:47,719 --> 07:40:50,659
+reentrancy contract, it didn't
+catch the issues involved at
+
+30547
+07:40:50,659 --> 07:40:55,219
+sole liquidity pool, or bad RNG,
+though, which is why we don't
+
+30548
+07:40:55,249 --> 07:40:57,829
+only want to rely on slither
+because it's not going to catch
+
+30549
+07:40:57,859 --> 07:41:02,239
+everything, but it will catch a
+lot of major vulnerabilities. So
+
+30550
+07:41:02,239 --> 07:41:05,029
+that's how we can use Slither,
+at least from a middle middle
+
+30551
+07:41:05,029 --> 07:41:08,629
+stack point to get started. So
+great, we just learned how to
+
+30552
+07:41:08,629 --> 07:41:11,809
+work with Slither. That's one of
+the first tools that are really
+
+30553
+07:41:11,809 --> 07:41:14,119
+fantastic in our audit process.
+And that's going to be
+
+30554
+07:41:14,119 --> 07:41:18,019
+considered a fast tool for
+static analysis, running tests,
+
+30555
+07:41:18,049 --> 07:41:21,949
+linters, etc, are also types of
+static analysis.
+
+30556
+07:41:24,619 --> 07:41:28,639
+After we run a tool like that,
+we enter some manual analysis
+
+30557
+07:41:28,669 --> 07:41:31,549
+where we walk through the code
+ourselves manually, and maybe we
+
+30558
+07:41:31,549 --> 07:41:35,509
+do it in tangent with running
+some slower tools, like a kitna
+
+30559
+07:41:35,749 --> 07:41:39,649
+Manta Corp, and other symbolic
+execution tools. Symbolic
+
+30560
+07:41:39,649 --> 07:41:43,909
+Execution is where we simulate
+executing transactions on the
+
+30561
+07:41:43,909 --> 07:41:46,609
+blockchain. And one of these
+symbolic execution tools that
+
+30562
+07:41:46,609 --> 07:41:49,969
+we're going to work with is this
+a kidmin tool. Again, this is a
+
+30563
+07:41:49,969 --> 07:41:52,699
+trail of bits tool for doing
+something called fuzz testing.
+
+30564
+07:41:52,729 --> 07:41:55,999
+Now in programming, fuzzing or
+fuzz testing is an automated
+
+30565
+07:41:55,999 --> 07:41:59,209
+software testing technique that
+involves providing invalid
+
+30566
+07:41:59,299 --> 07:42:03,289
+unexpected or random data as
+inputs to a computer program. In
+
+30567
+07:42:03,289 --> 07:42:06,139
+a lot of our code, oftentimes,
+we're going to get people
+
+30568
+07:42:06,139 --> 07:42:10,099
+interacting with them in ways
+that we will never think about.
+
+30569
+07:42:10,429 --> 07:42:13,669
+So we want to be able to provide
+random data and random
+
+30570
+07:42:13,669 --> 07:42:16,939
+information to our test to see
+if something weird happens that
+
+30571
+07:42:16,939 --> 07:42:20,269
+we weren't expecting. So we can
+actually build our own fuzz
+
+30572
+07:42:20,269 --> 07:42:24,019
+tests in our hard hat projects
+and run these fuzz tests, I've
+
+30573
+07:42:24,019 --> 07:42:27,199
+actually created a sample of
+fuzz tests, we write our fuzz
+
+30574
+07:42:27,199 --> 07:42:31,129
+tests in solidity, actually, as
+opposed to writing our tests in
+
+30575
+07:42:31,129 --> 07:42:34,249
+JavaScript. So let's say for
+example, we've built this vault
+
+30576
+07:42:34,249 --> 07:42:38,689
+contract. And we think that at
+first glance, hey, nobody should
+
+30577
+07:42:38,689 --> 07:42:41,209
+ever be able to know the
+password, and no one should ever
+
+30578
+07:42:41,209 --> 07:42:45,079
+be able to unlock this contract.
+Which obviously, we know is
+
+30579
+07:42:45,079 --> 07:42:48,619
+ridiculous, because we know that
+anybody can read anything in a
+
+30580
+07:42:48,619 --> 07:42:51,769
+storage variable. So we know
+that this should fail, but it
+
+30581
+07:42:51,769 --> 07:42:54,739
+might be hard to write a test.
+To catch that this actually
+
+30582
+07:42:54,739 --> 07:42:57,979
+would fail. A good approach to
+testing this would be to just
+
+30583
+07:42:58,009 --> 07:43:02,119
+send a ton of random bytes 32
+objects to this unlock function
+
+30584
+07:43:02,329 --> 07:43:05,659
+to see if we can unlock it. We
+can write a fuzz test to do
+
+30585
+07:43:05,659 --> 07:43:09,649
+exactly that. So in my vault,
+fuzz test dot Sol, we're
+
+30586
+07:43:09,649 --> 07:43:13,579
+importing vault outsole. And so
+we're saying vault fuzz test is
+
+30587
+07:43:13,579 --> 07:43:19,999
+vault and we have a password of
+123, ASD 123. And now we have a
+
+30588
+07:43:19,999 --> 07:43:24,079
+function called a kid and a test
+find password, where it's going
+
+30589
+07:43:24,079 --> 07:43:28,579
+to send a ton of random data
+into vault to try to make s
+
+30590
+07:43:28,579 --> 07:43:31,909
+locked equal false. So we just
+say s locked equals true here,
+
+30591
+07:43:32,089 --> 07:43:35,809
+and our first test will try to
+make s locked equals false. Now
+
+30592
+07:43:35,809 --> 07:43:38,989
+we could install just the kitna,
+but at this point, it's a good
+
+30593
+07:43:38,989 --> 07:43:43,459
+idea to bring up our the
+security toolbox from trail of
+
+30594
+07:43:43,459 --> 07:43:46,699
+bits. So trail of bits has a
+package called the eath security
+
+30595
+07:43:46,699 --> 07:43:50,089
+toolbox, which has all their
+security tools in one single
+
+30596
+07:43:50,089 --> 07:43:54,649
+container kitna, Ethan o Manta
+core, slither, rattle, and not
+
+30597
+07:43:54,649 --> 07:43:58,159
+so smart contracts, it has all
+these in the same exact package.
+
+30598
+07:43:58,399 --> 07:44:01,339
+Now to work with this toolbox.
+We're gonna need Docker
+
+30599
+07:44:01,339 --> 07:44:03,949
+installed. So we're gonna do a
+little bit of installation here.
+
+30600
+07:44:03,979 --> 07:44:06,589
+And again, sometimes this can be
+the hardest part of the course
+
+30601
+07:44:06,619 --> 07:44:09,859
+is just installing these
+packages. So we've left a link
+
+30602
+07:44:09,889 --> 07:44:13,549
+to Doc's dot docker.com, get
+Docker to install Docker, to
+
+30603
+07:44:13,549 --> 07:44:15,709
+actually work with these tools,
+you're just going to come you're
+
+30604
+07:44:15,709 --> 07:44:18,349
+going to click whichever one of
+these is appropriate for you to
+
+30605
+07:44:18,349 --> 07:44:21,349
+install Docker, once we have
+Docker installed, we can run the
+
+30606
+07:44:21,379 --> 07:44:25,429
+E security toolbox by pulling it
+down from the Docker equivalent
+
+30607
+07:44:25,459 --> 07:44:27,739
+of GitHub. And we're going to
+use a whole bunch of Docker
+
+30608
+07:44:27,739 --> 07:44:29,929
+commands that I'm not going to
+explain here because this isn't
+
+30609
+07:44:29,929 --> 07:44:32,689
+a Docker course, if you're
+looking to get into the security
+
+30610
+07:44:32,689 --> 07:44:34,909
+stuff, I would definitely
+recommend reading up on all
+
+30611
+07:44:34,909 --> 07:44:37,189
+these commands afterwards. And
+we're going to leave a ton of
+
+30612
+07:44:37,189 --> 07:44:40,279
+links for you to learn more. And
+in the package that JSON
+
+30613
+07:44:40,369 --> 07:44:44,389
+associated with this lesson. We
+even have the command to get set
+
+30614
+07:44:44,389 --> 07:44:47,929
+up right in here. So we can just
+run yarn toolbox, which will run
+
+30615
+07:44:47,959 --> 07:44:51,619
+our Docker command like this. So
+I'm just going to run yarn
+
+30616
+07:44:51,619 --> 07:44:54,559
+toolbox. And if you get
+something like this saying
+
+30617
+07:44:54,559 --> 07:44:57,049
+cannot connect to the Docker
+daemon is the Docker daemon
+
+30618
+07:44:57,049 --> 07:45:00,499
+running, because I need to have
+my Docker daemon running. Since
+
+30619
+07:45:00,499 --> 07:45:04,459
+I installed Docker desktop. I
+need to have my Docker engine
+
+30620
+07:45:04,459 --> 07:45:07,759
+started and running for it to
+actually be working. Again to
+
+30621
+07:45:07,759 --> 07:45:10,639
+work with this. There's a lot of
+Docker setup and configuration
+
+30622
+07:45:10,669 --> 07:45:13,249
+that needs to happen, which I'm
+going to leave a ton of
+
+30623
+07:45:13,249 --> 07:45:15,709
+instructions on how to get
+started with Docker. Once we
+
+30624
+07:45:15,709 --> 07:45:19,519
+have Docker setup. Now we can
+run yarn toolbox, which will
+
+30625
+07:45:19,549 --> 07:45:22,999
+stick us into a new shell to
+work with any of these tools
+
+30626
+07:45:22,999 --> 07:45:26,359
+that trilobites has Out of the
+box. Now our vault fuzz test
+
+30627
+07:45:26,479 --> 07:45:30,829
+comes with a config as well.
+This is in a Yamo file with all
+
+30628
+07:45:30,829 --> 07:45:34,429
+our arguments for running a
+kidnap. So it has a test limit,
+
+30629
+07:45:34,459 --> 07:45:37,459
+which is how many different
+runs, we should do a time delay,
+
+30630
+07:45:37,489 --> 07:45:40,909
+block delay. And then of course,
+some re mappings in here. This
+
+30631
+07:45:40,909 --> 07:45:43,579
+darker shell will already have
+the security tools already
+
+30632
+07:45:43,579 --> 07:45:50,179
+installed like the Kidner test.
+So we'll run a kinah test on SRC
+
+30633
+07:45:50,179 --> 07:45:58,009
+slash contracts slash test slash
+fuzzing slash fault fuzz test
+
+30634
+07:45:58,039 --> 07:46:05,239
+dot Sol dash dash contract will
+be vault fuzz test, dash dash
+
+30635
+07:46:05,239 --> 07:46:10,459
+config will be SRC slash
+contracts slash test slash
+
+30636
+07:46:10,789 --> 07:46:15,319
+buzzing slash config dot Yamo.
+And we'll go ahead and we'll hit
+
+30637
+07:46:15,319 --> 07:46:18,139
+enter here, and it'll say
+analyzing contract, it'll give
+
+30638
+07:46:18,139 --> 07:46:20,749
+us an output like this, it will
+give us an output that looks
+
+30639
+07:46:20,749 --> 07:46:24,499
+like this. What it's saying is
+it found a use case where it
+
+30640
+07:46:24,499 --> 07:46:28,969
+could make s locked equals
+false. And the use case was 123,
+
+30641
+07:46:29,179 --> 07:46:34,309
+ASD 123. So when what seemed
+like almost seconds, it found
+
+30642
+07:46:34,309 --> 07:46:37,789
+the password to unlock our
+contract. And this is why
+
+30643
+07:46:37,789 --> 07:46:41,089
+running a fuzz tester can be so
+powerful, we thought our
+
+30644
+07:46:41,089 --> 07:46:43,939
+contract was secure, but it
+immediately found the password,
+
+30645
+07:46:44,059 --> 07:46:47,209
+which means anybody else could
+immediately find the password.
+
+30646
+07:46:47,389 --> 07:46:49,729
+And this would be an indicator
+that what we're doing there is
+
+30647
+07:46:49,729 --> 07:46:53,419
+not a good setup. So we'll hit
+CTRL C to escape. And to leave
+
+30648
+07:46:53,449 --> 07:46:54,829
+our Docker setup here,
+
+30649
+07:46:54,860 --> 07:46:58,130
+we'll just write exit. Now
+again, I'm going to leave a ton
+
+30650
+07:46:58,130 --> 07:47:00,290
+of links to work with a
+kidnapper and work with this
+
+30651
+07:47:00,290 --> 07:47:03,770
+fuzz tester in the GitHub repo
+associated with this lesson, so
+
+30652
+07:47:03,770 --> 07:47:09,380
+that you can go ahead and learn
+more. Now, if you take anything
+
+30653
+07:47:09,410 --> 07:47:13,280
+away from this whole section, it
+should be this right here. The
+
+30654
+07:47:13,280 --> 07:47:16,160
+two most common tasks are
+reentrant. See, and Oracle
+
+30655
+07:47:16,160 --> 07:47:19,190
+manipulation. So if you're not
+going to be an auditor, and you
+
+30656
+07:47:19,190 --> 07:47:22,700
+just want to deploy things to
+main net, always, always before
+
+30657
+07:47:22,700 --> 07:47:26,660
+you deploy anything, the
+absolute minimum that you should
+
+30658
+07:47:26,660 --> 07:47:29,930
+be doing is always running
+Slither. And then looking
+
+30659
+07:47:29,930 --> 07:47:33,920
+manually for Oracle manipulation
+and reentrancy attacks. If you
+
+30660
+07:47:33,920 --> 07:47:37,670
+see in your code that you're
+getting pricing information.
+
+30661
+07:47:37,970 --> 07:47:40,730
+Price is a piece of data that we
+as humans have assigned to
+
+30662
+07:47:40,730 --> 07:47:42,830
+something if you're getting
+pricing information from a
+
+30663
+07:47:42,830 --> 07:47:46,670
+centralized location, rethink
+that scenario, rethink what
+
+30664
+07:47:46,670 --> 07:47:49,250
+you're doing there. If you're
+getting a random number, if
+
+30665
+07:47:49,250 --> 07:47:51,500
+you're doing any type of
+automation from a centralized
+
+30666
+07:47:51,500 --> 07:47:54,980
+location, rethink it and change
+your strategy. The chain link
+
+30667
+07:47:54,980 --> 07:47:58,310
+Oracle network has been created
+for a reason to prevent getting
+
+30668
+07:47:58,310 --> 07:48:02,240
+hacked like this. So please keep
+these in mind before you deploy
+
+30669
+07:48:02,270 --> 07:48:05,720
+anything to main that with any
+type of security guarantees.
+
+30670
+07:48:05,930 --> 07:48:08,480
+Okay, great. So we've learned
+about the fast tools, we've
+
+30671
+07:48:08,480 --> 07:48:11,090
+learned about some of the slow
+tools. We didn't look into Manta
+
+30672
+07:48:11,090 --> 07:48:14,750
+Corp or Mythix. But these are
+also tools that you can use
+
+30673
+07:48:14,810 --> 07:48:17,780
+Manta Corp is going to be
+another tool from the trilobites
+
+30674
+07:48:17,780 --> 07:48:21,800
+team. And Mythix is actually a
+smart contract security service
+
+30675
+07:48:21,830 --> 07:48:24,830
+from the consensus team, you
+basically send a bot that they
+
+30676
+07:48:24,830 --> 07:48:27,260
+have running in the cloud your
+contracts and will do some
+
+30677
+07:48:27,290 --> 07:48:30,800
+automated process to check for
+security vulnerabilities. This
+
+30678
+07:48:30,800 --> 07:48:33,620
+is a paid service. But if you're
+going to be deploying a protocol
+
+30679
+07:48:33,620 --> 07:48:36,680
+that's worth millions of
+dollars, spending a few $1,000.
+
+30680
+07:48:36,770 --> 07:48:39,350
+Spending a few $1,000 to make
+sure it actually does. What it
+
+30681
+07:48:39,350 --> 07:48:41,840
+says is going to do correctly is
+definitely something that you
+
+30682
+07:48:41,840 --> 07:48:45,860
+want to invest in. After you run
+through this whole process. You
+
+30683
+07:48:46,130 --> 07:48:49,100
+the smart contract developers
+and the auditors should discuss
+
+30684
+07:48:49,100 --> 07:48:52,430
+their findings. And if there's
+any issues, repeat the steps,
+
+30685
+07:48:52,460 --> 07:48:56,270
+repeat all the steps again after
+changes are made. So this audit
+
+30686
+07:48:56,270 --> 07:48:59,660
+process and making sure your
+contracts are secure is a long
+
+30687
+07:48:59,660 --> 07:49:02,810
+process. And then afterwards, an
+auditor will finally write your
+
+30688
+07:49:02,810 --> 07:49:05,600
+report with all security
+vulnerabilities and everything
+
+30689
+07:49:05,600 --> 07:49:08,780
+that they found in your
+contracts. Typically, you'll
+
+30690
+07:49:08,780 --> 07:49:11,180
+organize reports in a chart
+that'll look something like
+
+30691
+07:49:11,180 --> 07:49:14,690
+this, you'll label issues that
+have a high chance of happening
+
+30692
+07:49:14,750 --> 07:49:17,870
+and have a high impact as
+critical things that have a high
+
+30693
+07:49:17,870 --> 07:49:22,430
+impact, but a low likelihood as
+medium, and etc. I'm also going
+
+30694
+07:49:22,430 --> 07:49:25,130
+to leave some examples two
+audits that have been done in
+
+30695
+07:49:25,130 --> 07:49:28,070
+the past so that you can take a
+look at them. And you can see
+
+30696
+07:49:28,100 --> 07:49:31,460
+what a full audit looks like on
+certain code. We'll be looking
+
+30697
+07:49:31,460 --> 07:49:34,880
+at openzeppelin sigma prime, and
+trilobites, because these are
+
+30698
+07:49:34,880 --> 07:49:37,490
+three of what I think are some
+of the best auditors in the
+
+30699
+07:49:37,490 --> 07:49:40,640
+space. Now in the GitHub repo.
+We also have a ton of other
+
+30700
+07:49:40,640 --> 07:49:44,780
+tools that you can use Mythix,
+mithril ethers play and
+
+30701
+07:49:44,780 --> 07:49:47,780
+consensus security tools. If you
+want to learn more about
+
+30702
+07:49:47,780 --> 07:49:51,290
+security and auditing, I highly
+recommend that after this course
+
+30703
+07:49:51,320 --> 07:49:54,770
+you play the Ethernet game and
+damn vulnerable Defy. These are
+
+30704
+07:49:54,770 --> 07:49:57,710
+two games that will teach you a
+ton about security. And we'll
+
+30705
+07:49:57,800 --> 07:50:00,530
+test the chops and we'll test
+everything that you've learned
+
+30706
+07:50:00,590 --> 07:50:03,650
+in this course. There's also a
+couple of security focused blogs
+
+30707
+07:50:03,680 --> 07:50:06,740
+that I really like. One of them
+in particular is wrecked dot
+
+30708
+07:50:06,740 --> 07:50:10,910
+news. They keep a running list
+of some of the largest hacks
+
+30709
+07:50:10,910 --> 07:50:14,120
+that have ever happened in the
+space and then retrospectives on
+
+30710
+07:50:14,150 --> 07:50:16,850
+why those actually happened. And
+they usually make it very
+
+30711
+07:50:16,850 --> 07:50:20,000
+entertaining as well. We have
+some articles in here as well.
+
+30712
+07:50:20,180 --> 07:50:23,510
+One of the best places to look
+at is this known attacks section
+
+30713
+07:50:23,690 --> 07:50:26,570
+where they talk Talk about
+reentrancy, Oracle manipulation,
+
+30714
+07:50:26,750 --> 07:50:30,260
+front running and a ton of other
+attacks that you should
+
+30715
+07:50:30,260 --> 07:50:32,930
+absolutely be aware of when
+writing your smart contracts,
+
+30716
+07:50:32,990 --> 07:50:35,510
+we're not going to go over them
+here because they do a great job
+
+30717
+07:50:35,540 --> 07:50:38,510
+in these resources explaining
+them, you should also check out
+
+30718
+07:50:38,540 --> 07:50:41,300
+this article because I helped
+write it. So definitely check
+
+30719
+07:50:41,300 --> 07:50:44,780
+that out. And then we've got a
+list to even more sections. So
+
+30720
+07:50:44,810 --> 07:50:48,110
+this is going to be a living
+section here. So please feel
+
+30721
+07:50:48,110 --> 07:50:50,870
+free. If you find more things in
+the future, please feel free to
+
+30722
+07:50:50,870 --> 07:50:54,260
+make pull requests and update
+this repository so that other
+
+30723
+07:50:54,260 --> 07:50:57,800
+people can learn and know more
+about security and auditing and
+
+30724
+07:50:57,800 --> 07:51:01,190
+have contract examples on what
+bad code looks like and how to
+
+30725
+07:51:01,190 --> 07:51:03,920
+actually catch them. Even though
+this was one of our quickest
+
+30726
+07:51:03,920 --> 07:51:06,890
+sections. From a video
+standpoint, this actually is
+
+30727
+07:51:06,890 --> 07:51:09,950
+going to be one of the longest
+sections of your career.
+
+30728
+07:51:10,190 --> 07:51:13,250
+Security is something that is
+always going to be on your mind.
+
+30729
+07:51:13,430 --> 07:51:16,520
+And there's always going to be
+new tools to help with security.
+
+30730
+07:51:16,520 --> 07:51:18,770
+And there's always going to be
+new things to think about. So
+
+30731
+07:51:18,770 --> 07:51:22,100
+even though we went through this
+very quickly, I would 100% want
+
+30732
+07:51:22,100 --> 07:51:25,580
+you to pause this video, and
+work with and try out some of
+
+30733
+07:51:25,580 --> 07:51:28,460
+the tools we tried here. And
+then maybe even try coming up
+
+30734
+07:51:28,460 --> 07:51:32,960
+with your own vulnerabilities as
+well. And with that being said,
+
+30735
+07:51:33,050 --> 07:51:38,180
+you have just finished the last
+section of this massive master
+
+30736
+07:51:38,180 --> 07:51:42,680
+course on learning smart
+contracts, solidity, web three
+
+30737
+07:51:42,740 --> 07:51:43,910
+and blockchain development,
+
+30738
+07:51:44,539 --> 07:52:07,159
+you should be incredibly proud
+of yourself. Congratulations, I
+
+30739
+07:52:07,219 --> 07:52:11,119
+and the web three community as a
+whole want to congratulate you
+
+30740
+07:52:11,299 --> 07:52:16,849
+for completing this absolutely
+monstrosity of a tutorial, you
+
+30741
+07:52:16,849 --> 07:52:21,229
+have done an amazing job to get
+this far. And to watch me
+
+30742
+07:52:21,229 --> 07:52:24,139
+talking to you right now. And if
+you haven't finished the course,
+
+30743
+07:52:24,169 --> 07:52:28,639
+go back and finish it before
+coming here. We have learned so
+
+30744
+07:52:28,639 --> 07:52:33,469
+much on this journey. And I can
+say from the bottom of my soul
+
+30745
+07:52:33,619 --> 07:52:36,739
+that I am so glad to have you in
+the web three space, smart
+
+30746
+07:52:36,739 --> 07:52:40,279
+contract space, the blockchain
+space, the cryptocurrency space,
+
+30747
+07:52:40,579 --> 07:52:44,299
+we are so excited that you're
+here. I'm really looking forward
+
+30748
+07:52:44,329 --> 07:52:48,319
+to seeing you in the web three
+in the blockchain community. Now
+
+30749
+07:52:48,349 --> 07:52:52,009
+a lot of people ask, Well, where
+do I go? Now, I didn't have all
+
+30750
+07:52:52,009 --> 07:52:55,819
+this newfound knowledge. I'm
+armed with the intelligence of
+
+30751
+07:52:55,819 --> 07:52:59,779
+the web three developer space.
+Well, I've left some links in
+
+30752
+07:52:59,779 --> 07:53:03,289
+the GitHub repository to lead
+you to those next steps. But the
+
+30753
+07:53:03,289 --> 07:53:06,529
+biggest thing that you can do
+for yourself right now is go
+
+30754
+07:53:06,529 --> 07:53:10,639
+take what you've learned, and
+apply it somewhere. This is
+
+30755
+07:53:10,639 --> 07:53:14,029
+going to be probably the most
+thorough course you will ever go
+
+30756
+07:53:14,029 --> 07:53:17,959
+through in this space. And you
+can go tutorial to tutorial and
+
+30757
+07:53:17,959 --> 07:53:21,259
+boot camp to bootcamp all you
+want. But at some point, you
+
+30758
+07:53:21,259 --> 07:53:25,489
+have to make that leap, and you
+have to dive in. And that's
+
+30759
+07:53:25,519 --> 07:53:28,939
+where the majority of the growth
+is going to be anyways. So if
+
+30760
+07:53:28,939 --> 07:53:32,809
+you're here, wondering where to
+go next, go join a hackathon. Go
+
+30761
+07:53:32,809 --> 07:53:36,889
+start jumping into issues on
+GitHub repos, go start applying
+
+30762
+07:53:36,889 --> 07:53:40,099
+for grants, go start applying
+for jobs and say, I took
+
+30763
+07:53:40,099 --> 07:53:43,369
+Patrick's massive course. Here's
+my GitHub repo, work on a
+
+30764
+07:53:43,369 --> 07:53:47,029
+personal project, work on
+somebody else's project. Take
+
+30765
+07:53:47,029 --> 07:53:50,389
+this knowledge and apply it, the
+challenges that you'll run into
+
+30766
+07:53:50,389 --> 07:53:53,389
+and the challenges that you'll
+face. Really trying to do
+
+30767
+07:53:53,389 --> 07:53:56,959
+something without me hand
+holding you is where you're
+
+30768
+07:53:56,959 --> 07:54:00,679
+going to learn 10 times as much
+as what you've learned here.
+
+30769
+07:54:00,949 --> 07:54:03,529
+I've walked through as deep down
+this rabbit hole as I can take
+
+30770
+07:54:03,529 --> 07:54:08,149
+you. Now it's up to you to go
+out and do something with it. So
+
+30771
+07:54:08,149 --> 07:54:11,839
+thank you, everybody who helped
+me create this course. Thank you
+
+30772
+07:54:11,839 --> 07:54:15,649
+for taking this course. And I'm
+so excited to see you in the
+
+30773
+07:54:15,649 --> 07:54:20,539
+community and see what you build
+and see what we can create with
+
+30774
+07:54:20,599 --> 07:54:21,679
+this technology.
+
