@@ -1,0 +1,4986 @@
+1
+00:00:00,000 --> 00:00:02,910
+If you're interested in learning
+about blockchain, this is the
+
+2
+00:00:02,910 --> 00:00:06,840
+course for you. Patrick Collins
+is a veteran software engineer
+
+3
+00:00:06,960 --> 00:00:10,470
+and longtime finance industry
+developer. Be sure to leave a
+
+4
+00:00:10,470 --> 00:00:12,660
+comment with something you
+learned from this course.
+
+5
+00:00:12,870 --> 00:00:17,550
+Welcome to the ultimate solidity
+smart contract and blockchain
+
+6
+00:00:17,550 --> 00:00:20,940
+Developer course, JavaScript
+addition, we recently did a
+
+7
+00:00:20,940 --> 00:00:24,690
+version of this video in Python
+that has over 2 million views
+
+8
+00:00:24,690 --> 00:00:28,140
+right now making it the most
+watched smart contract tutorial
+
+9
+00:00:28,170 --> 00:00:31,050
+on the planet. We've learned a
+ton from doing that first
+
+10
+00:00:31,050 --> 00:00:34,110
+course. And if you love the
+Python language, definitely be
+
+11
+00:00:34,110 --> 00:00:36,600
+sure to check that one out.
+We've taken all the learnings
+
+12
+00:00:36,600 --> 00:00:39,810
+we've got from making that first
+course, wrapped it up and put it
+
+13
+00:00:39,810 --> 00:00:42,780
+into this JavaScript video for
+you. If you're looking to get
+
+14
+00:00:42,780 --> 00:00:46,260
+started in web three blockchain
+smart contracts or any of these
+
+15
+00:00:46,260 --> 00:00:50,310
+terms, this is the course for
+you. And it's for anybody and
+
+16
+00:00:50,310 --> 00:00:53,610
+everybody, no matter your
+experience level in programming
+
+17
+00:00:53,640 --> 00:00:57,240
+or in blockchain. Ideally, you
+know, a little bit of JavaScript
+
+18
+00:00:57,270 --> 00:01:00,900
+before starting this. But if you
+don't, no worries, we will help
+
+19
+00:01:00,900 --> 00:01:03,390
+you along the way. And in case
+you do want to learn a little
+
+20
+00:01:03,390 --> 00:01:05,880
+bit of JavaScript before
+starting here, there are some
+
+21
+00:01:05,880 --> 00:01:09,390
+fantastic courses on Free Code
+Camp to learn more, but you
+
+22
+00:01:09,390 --> 00:01:12,720
+absolutely don't have to. And
+really, any experience with any
+
+23
+00:01:12,720 --> 00:01:15,600
+object oriented programming
+language will work, right. So if
+
+24
+00:01:15,600 --> 00:01:18,510
+you're brand new to coding, or
+if you're brand new to
+
+25
+00:01:18,510 --> 00:01:22,080
+blockchain, this is exactly
+where you should be. And if you
+
+26
+00:01:22,080 --> 00:01:24,810
+already know a lot about
+blockchain or coding, this
+
+27
+00:01:24,810 --> 00:01:29,070
+course will give you even more
+deep fundamentals on the space.
+
+28
+00:01:29,250 --> 00:01:32,940
+So welcome to the edge of the
+rabbit hole. So for those of you
+
+29
+00:01:32,940 --> 00:01:35,430
+who don't know, my name is
+Patrick Collins. I'm a smart
+
+30
+00:01:35,430 --> 00:01:38,490
+contract engineer, developer
+advocate on the chain link
+
+31
+00:01:38,490 --> 00:01:43,560
+protocol. And I live in breed
+smart contracts. I also make
+
+32
+00:01:43,560 --> 00:01:46,230
+YouTube videos on my own
+channel, medium Twitter threads
+
+33
+00:01:46,230 --> 00:01:49,740
+and more. teaching people about
+smart contracts about coding and
+
+34
+00:01:49,740 --> 00:01:53,700
+about this new technology. I
+love helping developers learn,
+
+35
+00:01:53,730 --> 00:01:56,910
+grow and learn about this new
+Advent. That's blockchain and
+
+36
+00:01:56,910 --> 00:01:59,730
+smart contracts. And I'll be
+taking you on your journey to
+
+37
+00:01:59,730 --> 00:02:03,450
+becoming a blockchain expert and
+Wizard of the smart contract
+
+38
+00:02:03,450 --> 00:02:06,420
+developing world. And even if
+you don't want to become a
+
+39
+00:02:06,420 --> 00:02:10,710
+developer, the first section our
+blockchain basics, will give you
+
+40
+00:02:10,740 --> 00:02:14,040
+a lot of fundamental knowledge
+about how blockchain and smart
+
+41
+00:02:14,040 --> 00:02:18,030
+contracts, even work. I am so
+excited for you to be here. And
+
+42
+00:02:18,030 --> 00:02:21,480
+I hope you enjoy the journey.
+This is a data dump, passion
+
+43
+00:02:21,480 --> 00:02:24,660
+educational project of
+everything I've learned working
+
+44
+00:02:24,690 --> 00:02:28,560
+in this space. And I am 100%
+certain that if you follow
+
+45
+00:02:28,560 --> 00:02:31,650
+along, you'll come out the other
+side of this, armed with the
+
+46
+00:02:31,650 --> 00:02:35,130
+knowledge to be a positive force
+in this incredible industry,
+
+47
+00:02:35,190 --> 00:02:38,700
+solidity and smart contract
+developers are massively in
+
+48
+00:02:38,700 --> 00:02:43,770
+demand with an average salary of
+being around $145,000 a year,
+
+49
+00:02:43,980 --> 00:02:47,040
+there is massive economic
+opportunity from learning this
+
+50
+00:02:47,040 --> 00:02:50,820
+course. And this technology has
+the ability to revolutionize
+
+51
+00:02:50,940 --> 00:02:54,270
+everything that we interact
+with, and you can be one of the
+
+52
+00:02:54,270 --> 00:02:58,650
+pioneers ushering in this new
+age. In our courses. We already
+
+53
+00:02:58,650 --> 00:03:01,710
+have a track record of giving
+people these educational needs
+
+54
+00:03:01,830 --> 00:03:04,950
+and sending them into their
+careers in the blockchain and
+
+55
+00:03:04,950 --> 00:03:08,370
+smart contract space. And we are
+going to give you all of the
+
+56
+00:03:08,370 --> 00:03:11,880
+cutting edge tools and how to
+use them including working with
+
+57
+00:03:11,880 --> 00:03:16,830
+things like D phi NF TS Dows,
+ERC 20s upgradable, smart
+
+58
+00:03:16,830 --> 00:03:19,590
+contracts and more. We're going
+to teach you the skills
+
+59
+00:03:19,590 --> 00:03:22,830
+necessary to build defy
+applications like Ave synthetics
+
+60
+00:03:22,830 --> 00:03:27,180
+and compound, billion dollar
+decentralized applications, or
+
+61
+00:03:27,210 --> 00:03:30,900
+massively successful NFT
+projects like crypto punks, or
+
+62
+00:03:30,900 --> 00:03:35,010
+board apes. Dow is like maker
+Dow or developer, Dow and any of
+
+63
+00:03:35,010 --> 00:03:38,040
+the amazing things you've seen
+in the cryptocurrency world. In
+
+64
+00:03:38,040 --> 00:03:40,800
+learning these skills, you will
+have all these economic
+
+65
+00:03:40,800 --> 00:03:44,790
+opportunities at your fingertips
+and the ability to be a pioneer
+
+66
+00:03:44,820 --> 00:03:48,120
+in completely changing the way
+we interact with each other. In
+
+67
+00:03:48,120 --> 00:03:51,120
+a fundamental way. Building
+decentralized smart contract
+
+68
+00:03:51,120 --> 00:03:54,810
+applications is building a world
+that's more accountable a world
+
+69
+00:03:54,810 --> 00:03:58,260
+with unbreakable promises, a
+faster, more efficient,
+
+70
+00:03:58,260 --> 00:04:00,780
+financially free world, a
+collaborative community,
+
+71
+00:04:00,780 --> 00:04:04,080
+combining the prowess of
+philosophy and technology into a
+
+72
+00:04:04,080 --> 00:04:08,100
+new system. We'll learn more
+about the purpose and the value
+
+73
+00:04:08,130 --> 00:04:11,280
+of smart contracts and
+decentralized applications in
+
+74
+00:04:11,310 --> 00:04:14,490
+lesson one of this course, and
+why they're so exciting. Finish
+
+75
+00:04:14,490 --> 00:04:17,460
+this course. And you'll be
+ready. So again, I want to give
+
+76
+00:04:17,460 --> 00:04:20,580
+a major thank you and a major
+kudos to you because you've
+
+77
+00:04:20,580 --> 00:04:24,300
+taken the first step to enter
+this realm. So welcome to Web
+
+78
+00:04:24,300 --> 00:04:26,850
+three. Welcome to the
+blockchain. Welcome to smart
+
+79
+00:04:26,850 --> 00:04:29,850
+contracts. And I'll see you at
+the bottom of the rabbit hole.
+
+80
+00:04:29,880 --> 00:04:33,540
+So let's jump into some best
+practices for this course so
+
+81
+00:04:33,540 --> 00:04:36,330
+that you can learn most
+effectively and learn with this
+
+82
+00:04:36,330 --> 00:04:37,560
+course as best you can.
+
+83
+00:04:40,620 --> 00:04:41,580
+You do not want to skip
+
+84
+00:04:41,580 --> 00:04:44,910
+this part. It'll help you solve
+80% of your issue. Now, while
+
+85
+00:04:44,910 --> 00:04:48,240
+going through this course be
+100% certain to follow along
+
+86
+00:04:48,240 --> 00:04:51,450
+with a GitHub repository
+associated with this course we
+
+87
+00:04:51,450 --> 00:04:54,330
+have a link in the description
+of this video for you to
+
+88
+00:04:54,330 --> 00:04:58,200
+absolutely click on follow along
+have open in a tab as you're
+
+89
+00:04:58,200 --> 00:05:01,200
+doing this because it has all
+the code Sam polls, timestamps a
+
+90
+00:05:01,200 --> 00:05:04,770
+community to interact with and
+more, it is going to be your
+
+91
+00:05:04,770 --> 00:05:07,950
+Bible for watching this course.
+And yes, we have a Discussions
+
+92
+00:05:07,950 --> 00:05:10,590
+tab. This Discussions tab is a
+place where you can ask
+
+93
+00:05:10,590 --> 00:05:13,770
+questions, engage with other
+developers who are going through
+
+94
+00:05:13,770 --> 00:05:17,430
+this course as well. Get some
+help, and etc. Be sure to say
+
+95
+00:05:17,430 --> 00:05:20,160
+hello and meet other like minded
+individuals like yourselves.
+
+96
+00:05:20,190 --> 00:05:22,770
+Now, blockchain and smart
+contracts move really quickly.
+
+97
+00:05:22,980 --> 00:05:25,860
+And things are constantly being
+updated. So to make sure you're
+
+98
+00:05:25,860 --> 00:05:28,320
+always up to date with the
+latest, when I open up some
+
+99
+00:05:28,320 --> 00:05:31,320
+documentation, try to open up
+the documentation for yourself
+
+100
+00:05:31,320 --> 00:05:34,710
+as well. And maybe even have the
+code sample next to you. And as
+
+101
+00:05:34,710 --> 00:05:37,620
+you're writing code, be sure to
+refer back to make sure that you
+
+102
+00:05:37,620 --> 00:05:39,990
+are keeping pace, and then you
+have the most up to date
+
+103
+00:05:39,990 --> 00:05:43,230
+samples, sometimes technology
+might change, and there might be
+
+104
+00:05:43,260 --> 00:05:46,200
+a way to do something a little
+bit better. So we have this file
+
+105
+00:05:46,200 --> 00:05:49,290
+called chronological updates, be
+sure that this is the first
+
+106
+00:05:49,290 --> 00:05:51,720
+place to check when you run into
+an issue to see if maybe
+
+107
+00:05:51,720 --> 00:05:54,390
+something was updated that you
+missed, it'll be chronologically
+
+108
+00:05:54,390 --> 00:05:57,180
+ordered. So it's easier to find
+updates. Basically, this is to
+
+109
+00:05:57,180 --> 00:06:00,810
+say, always refer back to the
+GitHub repo first. And if you do
+
+110
+00:06:00,810 --> 00:06:02,730
+to find a mistake, or something
+isn't working the way you
+
+111
+00:06:02,730 --> 00:06:05,190
+expected, jump into the
+conversation, leave a
+
+112
+00:06:05,190 --> 00:06:09,420
+discussion, leave an issue, ask
+questions here, take breaks, I
+
+113
+00:06:09,420 --> 00:06:13,110
+cannot tell you how many people
+tried rushing through our entire
+
+114
+00:06:13,110 --> 00:06:15,780
+first course in one setting and
+didn't retain as much
+
+115
+00:06:15,780 --> 00:06:18,480
+information, your brain
+remembers information much
+
+116
+00:06:18,480 --> 00:06:21,390
+better if you take breaks. So
+every 25 minutes or half an
+
+117
+00:06:21,390 --> 00:06:24,420
+hour, maybe take a five minute
+walk. And then every two hours
+
+118
+00:06:24,450 --> 00:06:27,240
+take a much longer break. And if
+you really want to make sure
+
+119
+00:06:27,240 --> 00:06:30,000
+something drills in, try to go
+back and reflect on what you did
+
+120
+00:06:30,000 --> 00:06:32,730
+for the lesson prior before
+continuing to the next lesson.
+
+121
+00:06:32,940 --> 00:06:36,720
+And at the same time, though,
+learn at your own speed. There
+
+122
+00:06:36,720 --> 00:06:41,400
+is no right speed for this
+course. If it takes you a day, a
+
+123
+00:06:41,400 --> 00:06:45,300
+week, a month or even a year, it
+doesn't matter. Learn at the
+
+124
+00:06:45,300 --> 00:06:48,510
+pace that's right for you, you
+can change the speed at which I
+
+125
+00:06:48,510 --> 00:06:52,080
+talked using the little gear
+icon in the YouTube video. If
+
+126
+00:06:52,080 --> 00:06:55,620
+I'm talking way too fast for
+you, you can slow me down. And
+
+127
+00:06:55,620 --> 00:06:59,460
+at the same time, if I'm talking
+too slow, you can speed me up,
+
+128
+00:06:59,490 --> 00:07:02,790
+you also don't even have to go
+in order. You can bounce around
+
+129
+00:07:02,790 --> 00:07:05,340
+topic to topic, if you don't
+want to learn full stack, you
+
+130
+00:07:05,340 --> 00:07:07,680
+can skip the full stack stuff.
+If you don't want to learn
+
+131
+00:07:07,680 --> 00:07:10,380
+coding, we can skip the coding
+stuff. If you only want to go to
+
+132
+00:07:10,380 --> 00:07:13,380
+the advanced stuff, go to the
+advanced stuff. You are highly
+
+133
+00:07:13,380 --> 00:07:16,530
+encouraged to pause, come back
+and ask questions. The
+
+134
+00:07:16,530 --> 00:07:18,750
+blockchain and smart contract
+world is incredibly
+
+135
+00:07:18,750 --> 00:07:22,560
+collaborative. So be sure to use
+tools like the discussions tab
+
+136
+00:07:22,560 --> 00:07:26,640
+of our GitHub repository, asking
+questions on Stack Overflow and
+
+137
+00:07:26,640 --> 00:07:30,450
+Aetherium Stack Exchange and
+tagging relative technologies,
+
+138
+00:07:30,480 --> 00:07:33,120
+making issues on different
+GitHub repositories that you're
+
+139
+00:07:33,120 --> 00:07:36,450
+working with jumping into
+discord, Reddit, Twitter, and
+
+140
+00:07:36,450 --> 00:07:39,120
+any other place that these
+communities and technologies are
+
+141
+00:07:39,120 --> 00:07:41,790
+congregating. And the reason I'm
+putting so much emphasis on
+
+142
+00:07:41,790 --> 00:07:44,460
+these community aspects is that
+becoming a solidity and
+
+143
+00:07:44,460 --> 00:07:47,940
+blockchain engineer is so much
+more than just the solidity
+
+144
+00:07:47,940 --> 00:07:50,850
+part. Being comfortable with all
+the tools in this space,
+
+145
+00:07:51,000 --> 00:07:55,260
+including the ones to get help
+and to give help are essential
+
+146
+00:07:55,260 --> 00:07:58,320
+to being successful here.
+Networking is massive, and it
+
+147
+00:07:58,320 --> 00:08:01,110
+makes it a ton of fun. As you
+continue your journey and you
+
+148
+00:08:01,110 --> 00:08:03,600
+get more advanced and you're
+looking for places to meet other
+
+149
+00:08:03,600 --> 00:08:07,080
+developers. Hackathons are one
+of the best places to connect
+
+150
+00:08:07,080 --> 00:08:10,200
+with other engineers, the
+chainlink hackathons eath,
+
+151
+00:08:10,200 --> 00:08:13,650
+global hackathons, and Dev folio
+hackathons are three great
+
+152
+00:08:13,650 --> 00:08:16,890
+hackathon suites to connect. And
+no matter where you are in your
+
+153
+00:08:16,890 --> 00:08:19,680
+journey, they're great places to
+flex what you've learned.
+
+154
+00:08:19,740 --> 00:08:22,350
+Alright, so those are some of
+the best practices for this
+
+155
+00:08:22,350 --> 00:08:26,700
+course. You're standing at the
+edge of the rabbit hole, looking
+
+156
+00:08:26,700 --> 00:08:30,210
+down, peering into the world of
+web three and smart contracts
+
+157
+00:08:30,210 --> 00:08:33,390
+and blockchain. If you're like
+me want to jump in, you want to
+
+158
+00:08:33,390 --> 00:08:37,110
+keep going further. Let's begin
+our journey into the world of
+
+159
+00:08:37,110 --> 00:08:40,410
+smart contracts. And it all
+starts with the blockchain
+
+160
+00:08:40,410 --> 00:08:41,100
+basics.
+
+161
+00:08:43,679 --> 00:08:44,939
+Now, I know you're excited
+
+162
+00:08:44,940 --> 00:08:47,880
+to get coding. But before we
+jump in, we want to learn some
+
+163
+00:08:47,880 --> 00:08:50,910
+of the fundamentals of
+blockchains and smart contracts.
+
+164
+00:08:50,970 --> 00:08:53,550
+Understanding these ideologies
+and these basics are so
+
+165
+00:08:53,550 --> 00:08:56,790
+important, because it'll dictate
+how you architect your
+
+166
+00:08:56,790 --> 00:08:59,700
+decentralized applications,
+learning the basics of
+
+167
+00:08:59,700 --> 00:09:02,730
+blockchain and solidity is
+critical. But if you already
+
+168
+00:09:02,730 --> 00:09:05,490
+know the basics of a blockchain,
+feel free to jump into lesson
+
+169
+00:09:05,490 --> 00:09:05,850
+two.
+
+170
+00:09:08,520 --> 00:09:09,480
+Now, since you're here,
+
+171
+00:09:09,510 --> 00:09:12,840
+you've probably heard of Bitcoin
+before. Bitcoin was one of the
+
+172
+00:09:12,840 --> 00:09:16,230
+first protocols to use this
+revolutionary technology called
+
+173
+00:09:16,260 --> 00:09:19,530
+blockchain. The Bitcoin white
+paper was created by the pseudo
+
+174
+00:09:19,530 --> 00:09:23,400
+anonymous Satoshi Nakamoto, and
+outlined how Bitcoin can make
+
+175
+00:09:23,400 --> 00:09:26,850
+peer to peer transactions. In a
+decentralized network. This
+
+176
+00:09:26,850 --> 00:09:30,030
+network was powered by
+cryptography, decent Tality, and
+
+177
+00:09:30,030 --> 00:09:34,020
+allowed people to engage in
+censorship resistant finance, in
+
+178
+00:09:34,020 --> 00:09:37,320
+a decentralized manner due to
+its features, which we'll talk
+
+179
+00:09:37,320 --> 00:09:40,770
+about in a little bit. People
+took to this as a superior
+
+180
+00:09:40,800 --> 00:09:44,760
+digital store of value, a better
+store of value over something
+
+181
+00:09:44,760 --> 00:09:47,220
+like gold, for example, and
+that's why you'll also hear
+
+182
+00:09:47,220 --> 00:09:51,120
+people commonly refer to it as a
+digital gold similar to gold.
+
+183
+00:09:51,150 --> 00:09:54,600
+There's a scarce amount or a set
+amount of bitcoin available on
+
+184
+00:09:54,600 --> 00:09:57,780
+the planet, only so much that
+you can buy and sell. You can
+
+185
+00:09:57,780 --> 00:10:00,510
+read more about the original
+vision in the white A paper
+
+186
+00:10:00,540 --> 00:10:03,330
+we've linked to the white paper
+in the GitHub repo associated
+
+187
+00:10:03,330 --> 00:10:06,420
+with this course. Now, this was
+an insane breakthrough in a
+
+188
+00:10:06,420 --> 00:10:09,540
+little bit, we're going to learn
+exactly how this is all possible
+
+189
+00:10:09,540 --> 00:10:11,880
+and how this actually works
+under the hood. Some people
+
+190
+00:10:11,880 --> 00:10:15,240
+though, saw this technology and
+wanted to take it a little bit
+
+191
+00:10:15,240 --> 00:10:18,900
+farther, and do even more with
+this blockchain technology. And
+
+192
+00:10:18,930 --> 00:10:22,380
+a few years later, a man named
+Vitalik Buterin, released a
+
+193
+00:10:22,380 --> 00:10:26,640
+white paper for a new protocol
+named Aetherium, which use this
+
+194
+00:10:26,640 --> 00:10:30,330
+same blockchain infrastructure
+with an additional feature. And
+
+195
+00:10:30,330 --> 00:10:34,200
+in 2015, him and a number of
+other co founders released the
+
+196
+00:10:34,200 --> 00:10:37,050
+project Aetherium, where people
+could not only make
+
+197
+00:10:37,050 --> 00:10:40,350
+decentralized transactions, but
+decentralized agreements,
+
+198
+00:10:40,470 --> 00:10:43,800
+decentralized organizations, and
+all these other ways to interact
+
+199
+00:10:43,800 --> 00:10:46,740
+with each other without a
+centralized intermediary or
+
+200
+00:10:46,740 --> 00:10:50,190
+centralized governing force.
+Basically, their idea was to
+
+201
+00:10:50,190 --> 00:10:53,610
+take this thing that made
+Bitcoin so great, and add
+
+202
+00:10:53,640 --> 00:10:58,200
+decentralized agreements to it,
+or smart contracts. And in fact,
+
+203
+00:10:58,230 --> 00:11:00,810
+technically, these smart
+contracts weren't even really a
+
+204
+00:11:00,810 --> 00:11:05,220
+new idea. Back in 1994, a man
+named Nick Zabo, had actually
+
+205
+00:11:05,250 --> 00:11:08,310
+originally come up with the idea
+smart contracts are a set of
+
+206
+00:11:08,310 --> 00:11:12,240
+instructions executed in a
+decentralized autonomous way,
+
+207
+00:11:12,420 --> 00:11:16,440
+without the need for a third
+party or centralized body to run
+
+208
+00:11:16,440 --> 00:11:19,170
+them. And they come to life on
+these blockchains, or these
+
+209
+00:11:19,170 --> 00:11:22,350
+smart contract platforms, like
+Aetherium. And it's the smart
+
+210
+00:11:22,350 --> 00:11:24,930
+contracts that are going to be
+the core thing that we're going
+
+211
+00:11:24,930 --> 00:11:26,940
+to be working on in this course,
+and that we're going to be
+
+212
+00:11:26,940 --> 00:11:29,520
+developing, you can think of
+smart contracts in the same way
+
+213
+00:11:29,520 --> 00:11:31,740
+you think of traditional
+contracts or traditional
+
+214
+00:11:31,740 --> 00:11:34,740
+agreements. They're just a set
+of instructions between parties,
+
+215
+00:11:34,980 --> 00:11:37,920
+except instead of written on pen
+and paper or typed up in
+
+216
+00:11:37,920 --> 00:11:41,430
+Microsoft Word, they are written
+in code and embodied on these
+
+217
+00:11:41,430 --> 00:11:44,190
+decentralized blockchain
+platforms. And that's also where
+
+218
+00:11:44,190 --> 00:11:47,130
+they're executed. Instead of
+being executed by the two
+
+219
+00:11:47,130 --> 00:11:49,650
+parties, or three parties, or
+however many parties that are
+
+220
+00:11:49,650 --> 00:11:53,340
+involved. This removes this
+centralized issue that we'll
+
+221
+00:11:53,340 --> 00:11:55,440
+talk about more in a bit. This
+is one of the main
+
+222
+00:11:55,440 --> 00:11:58,200
+differentiators between the
+Etherium protocol and the
+
+223
+00:11:58,200 --> 00:12:01,500
+Bitcoin protocol. It's these
+smart contracts. Now,
+
+224
+00:12:01,530 --> 00:12:04,800
+technically, bitcoin does have
+smart contracts, but they're
+
+225
+00:12:04,800 --> 00:12:08,130
+intentionally Turing incomplete,
+which means they don't have all
+
+226
+00:12:08,130 --> 00:12:10,290
+the functionality that a
+programming language would give
+
+227
+00:12:10,290 --> 00:12:13,230
+them. This was an intentional
+move by Bitcoin developers.
+
+228
+00:12:13,590 --> 00:12:17,160
+Bitcoin developers viewed
+Bitcoin as a store of value
+
+229
+00:12:17,190 --> 00:12:21,150
+versus Aetherium, developers
+viewed Aetherium as both a store
+
+230
+00:12:21,150 --> 00:12:25,260
+of value and a utility to
+facilitate these decentralized
+
+231
+00:12:25,260 --> 00:12:28,230
+agreements. Now, the smart
+contracts on blockchains alone
+
+232
+00:12:28,260 --> 00:12:31,320
+are absolutely incredible.
+However, they do come with a
+
+233
+00:12:31,320 --> 00:12:34,740
+huge issue. If we want these
+digital agreements to replace
+
+234
+00:12:34,740 --> 00:12:37,470
+the agreements in our everyday
+lives, they probably are going
+
+235
+00:12:37,470 --> 00:12:40,560
+to need data from the real world
+blockchains by themselves
+
+236
+00:12:40,560 --> 00:12:44,280
+actually can't interact with and
+can't read or listen to data
+
+237
+00:12:44,340 --> 00:12:47,220
+from the real world. This is
+what's known as the Oracle
+
+238
+00:12:47,220 --> 00:12:50,100
+problem. These blockchains are
+deterministic systems and
+
+239
+00:12:50,100 --> 00:12:52,740
+they're deterministic on
+purpose. And we'll learn about
+
+240
+00:12:52,770 --> 00:12:55,830
+more about how that works in the
+sessions to come. So everything
+
+241
+00:12:55,830 --> 00:12:58,620
+that happens with them happens
+in their little world. But if
+
+242
+00:12:58,620 --> 00:13:00,480
+they're going to be these
+agreements, they need external
+
+243
+00:13:00,480 --> 00:13:03,330
+data and they need external
+computation. And this is where
+
+244
+00:13:03,360 --> 00:13:06,090
+Oracle's come into play.
+Oracle's are any device that
+
+245
+00:13:06,090 --> 00:13:09,360
+delivers data to these
+decentralized blockchain or runs
+
+246
+00:13:09,360 --> 00:13:12,660
+external computation. However,
+if we want our applications to
+
+247
+00:13:12,660 --> 00:13:17,040
+stay truly decentralized, we
+can't work with a single Oracle
+
+248
+00:13:17,070 --> 00:13:20,040
+or a single data provider or a
+single source that's running
+
+249
+00:13:20,040 --> 00:13:24,060
+these external computations. So
+we need a decentralized Oracle
+
+250
+00:13:24,060 --> 00:13:26,970
+network. Similar to our
+decentralized blockchain
+
+251
+00:13:26,970 --> 00:13:29,730
+network, you're on chain logic
+will be decentralized, but you
+
+252
+00:13:29,760 --> 00:13:32,610
+also need your off chain data
+and computation be
+
+253
+00:13:32,610 --> 00:13:36,780
+decentralized, combining this on
+chain decentralized logic. With
+
+254
+00:13:36,810 --> 00:13:39,300
+this off chain, decentralized
+data and decentralized
+
+255
+00:13:39,300 --> 00:13:42,720
+computation gives rise to
+something called hybrid smart
+
+256
+00:13:42,720 --> 00:13:45,930
+contracts. And most of the
+biggest protocols that we
+
+257
+00:13:45,930 --> 00:13:49,830
+interact with today are some
+type of hybrid smart contract or
+
+258
+00:13:49,830 --> 00:13:52,440
+interact with hybrid smart
+contracts. To some extent, this
+
+259
+00:13:52,440 --> 00:13:55,200
+is where the protocol chaining
+comes into play. It is a
+
+260
+00:13:55,200 --> 00:13:58,830
+modular, decentralized Oracle
+network that can both bring
+
+261
+00:13:58,830 --> 00:14:02,400
+external data and external
+computation into our smart
+
+262
+00:14:02,400 --> 00:14:05,730
+contracts to make sure they're
+decentralized end to end, while
+
+263
+00:14:05,730 --> 00:14:09,780
+giving them the feature richness
+that we need for our agreements.
+
+264
+00:14:09,810 --> 00:14:13,500
+chainlink allows for us to get
+data to upkeeps, get random
+
+265
+00:14:13,500 --> 00:14:16,530
+numbers or really customize our
+smart contracts in any
+
+266
+00:14:16,530 --> 00:14:18,900
+meaningful way. Now, throughout
+the course, we're going to use
+
+267
+00:14:18,900 --> 00:14:22,560
+the terminology smart contract.
+However, whenever we say smart
+
+268
+00:14:22,560 --> 00:14:26,010
+contract, we're often using it a
+little interchangeably with
+
+269
+00:14:26,160 --> 00:14:28,920
+hybrid smart contracts, but just
+know that when we say hybrid
+
+270
+00:14:28,920 --> 00:14:32,040
+smart contract, we're talking
+specifically about smart
+
+271
+00:14:32,040 --> 00:14:35,430
+contracts that have some type of
+off chain component. Now since
+
+272
+00:14:35,430 --> 00:14:37,890
+the theorems release, a number
+of different block chains or
+
+273
+00:14:37,890 --> 00:14:41,490
+smart contract platforms have
+come to light such as avalanche
+
+274
+00:14:41,490 --> 00:14:45,420
+polygon, Phantom harmony, and
+more. For the majority of this
+
+275
+00:14:45,420 --> 00:14:47,460
+course, we're going to be
+assuming that we're going to be
+
+276
+00:14:47,460 --> 00:14:50,580
+deploying to the Ethereum
+network. However, everything
+
+277
+00:14:50,580 --> 00:14:53,280
+that we learned here is going to
+be applicable to the vast
+
+278
+00:14:53,280 --> 00:14:56,520
+majority of the blockchains out
+there like polygon, avalanche,
+
+279
+00:14:56,550 --> 00:14:59,310
+Phantom harmony, etc, and
+understanding everything from a
+
+280
+00:14:59,310 --> 00:15:01,890
+theory and funding mentals will
+give you the skills that you
+
+281
+00:15:01,890 --> 00:15:05,670
+need to switch chains very
+easily with literally one line
+
+282
+00:15:05,670 --> 00:15:08,760
+of code. So don't worry about
+learning a specific tool or with
+
+283
+00:15:08,760 --> 00:15:12,600
+a specific chain because most of
+them work together seamlessly.
+
+284
+00:15:12,630 --> 00:15:15,090
+Now, there are a couple of smart
+contract platforms that don't
+
+285
+00:15:15,090 --> 00:15:18,360
+use solidity. But still learning
+the fundamentals here will make
+
+286
+00:15:18,360 --> 00:15:21,420
+you much better at those as
+well. And the Etherium by far
+
+287
+00:15:21,420 --> 00:15:24,300
+has the most value locked and is
+the most used blockchain and
+
+288
+00:15:24,300 --> 00:15:26,700
+smart contract platform out
+there. You'll also hear those
+
+289
+00:15:26,700 --> 00:15:29,190
+two terms used a little bit
+interchangeably as well.
+
+290
+00:15:29,250 --> 00:15:31,380
+Sometimes they'll say smart
+contract platform, sometimes
+
+291
+00:15:31,380 --> 00:15:33,960
+they'll say blockchain, they
+kind of mean the same thing.
+
+292
+00:15:34,200 --> 00:15:37,530
+Obviously, blockchains could
+mean store of value and smart
+
+293
+00:15:37,530 --> 00:15:41,070
+contract platform, but you get
+the idea. Similarly, chainlink
+
+294
+00:15:41,070 --> 00:15:44,640
+is the most popular and powerful
+decentralized Oracle network is
+
+295
+00:15:44,640 --> 00:15:46,950
+the one that we're going to be
+focusing on for this course as
+
+296
+00:15:46,950 --> 00:15:50,400
+well. chainlink is also
+blockchain agnostic. So to work
+
+297
+00:15:50,400 --> 00:15:54,540
+on Aetherium, avalanche, Polygon
+Solana Terra, or really any
+
+298
+00:15:54,540 --> 00:15:56,880
+other blockchain out there. Now,
+throughout this course, you'll
+
+299
+00:15:56,880 --> 00:16:00,390
+hear the term DAP or
+decentralized Protocol, or smart
+
+300
+00:16:00,390 --> 00:16:03,540
+contract Protocol, or
+decentralized application. And
+
+301
+00:16:03,540 --> 00:16:06,060
+they all kind of mean the same
+thing. A decentralized
+
+302
+00:16:06,060 --> 00:16:08,970
+application is usually the
+combination of many smart
+
+303
+00:16:08,970 --> 00:16:11,850
+contracts. And when we get into
+solidity, you'll see what a
+
+304
+00:16:11,850 --> 00:16:14,820
+singular smart contract really
+looks like. And like I said,
+
+305
+00:16:14,850 --> 00:16:17,520
+learning all these core
+fundamentals will make you a
+
+306
+00:16:17,520 --> 00:16:20,640
+better solidity and a better
+smart contract developer, you'll
+
+307
+00:16:20,640 --> 00:16:24,000
+also hear the term web three a
+lot in this video. And in the
+
+308
+00:16:24,000 --> 00:16:26,700
+industry, web three is the idea
+that blockchain and smart
+
+309
+00:16:26,700 --> 00:16:30,810
+contracts are the next iteration
+of the web web one being this
+
+310
+00:16:30,810 --> 00:16:34,950
+permissionless open source world
+with static content, web two
+
+311
+00:16:34,950 --> 00:16:37,980
+being the permissioned web with
+dynamic content, but all the
+
+312
+00:16:37,980 --> 00:16:41,610
+agreements and logic runs off of
+centralized servers where they
+
+313
+00:16:41,610 --> 00:16:44,490
+control your information. And
+then web three comes back to the
+
+314
+00:16:44,490 --> 00:16:48,450
+permissionless web. But once
+again, with dynamic content, and
+
+315
+00:16:48,450 --> 00:16:50,790
+instead of centralized servers,
+running your logic,
+
+316
+00:16:50,880 --> 00:16:54,480
+decentralized networks, run the
+logic creating these censorship
+
+317
+00:16:54,510 --> 00:16:58,080
+resistant agreements, that the
+smart contracts enable is also
+
+318
+00:16:58,080 --> 00:17:01,170
+generally accompanied by the
+idea that the users own the
+
+319
+00:17:01,170 --> 00:17:04,080
+protocols that they work with,
+and it's an ownership economy.
+
+320
+00:17:04,140 --> 00:17:06,390
+You'll see what I mean later in
+this course. And we've talked a
+
+321
+00:17:06,390 --> 00:17:09,000
+lot about the history and about
+the high level of these
+
+322
+00:17:09,000 --> 00:17:12,030
+protocols and of the smart
+contracts and what they can do.
+
+323
+00:17:12,240 --> 00:17:15,630
+But what do these smart
+contracts really mean? What is
+
+324
+00:17:15,630 --> 00:17:18,960
+it when I say trust, minimize
+agreements or unbreakable
+
+325
+00:17:18,960 --> 00:17:23,130
+promises? What is the real value
+add of these smart contracts?
+
+326
+00:17:23,130 --> 00:17:25,830
+Before we look under the hood,
+take a peek at how this all
+
+327
+00:17:25,830 --> 00:17:29,400
+works. From a technical
+standpoint. Let's learn what all
+
+328
+00:17:29,400 --> 00:17:32,340
+the value of this is. What is
+the purpose of us building all
+
+329
+00:17:32,340 --> 00:17:35,310
+these technologies? Have you
+taken this course? What problem
+
+330
+00:17:35,340 --> 00:17:38,850
+does this technology solve? In
+my mind, a technology is really
+
+331
+00:17:38,850 --> 00:17:41,910
+only as good as the problem that
+it solves. If it doesn't solve a
+
+332
+00:17:41,910 --> 00:17:45,960
+problem, then why bother Mark
+contracts, Blockchain web three
+
+333
+00:17:45,960 --> 00:17:48,750
+cryptocurrencies, those are all
+just different words that
+
+334
+00:17:48,750 --> 00:17:52,140
+encapsulate the idea of what
+we're doing in such a unique
+
+335
+00:17:52,140 --> 00:17:55,860
+paradigm. I think the easiest
+way to sum up what these smart
+
+336
+00:17:55,860 --> 00:17:59,970
+contracts do is that they create
+trust minimized agreements. And
+
+337
+00:17:59,970 --> 00:18:02,640
+if you might be scratching your
+head to that. A much easier way
+
+338
+00:18:02,640 --> 00:18:06,360
+to think about it is just that
+give rise to unbreakable
+
+339
+00:18:06,360 --> 00:18:10,410
+promises. Yes, you heard that
+right. Unbreakable agreements
+
+340
+00:18:10,440 --> 00:18:13,860
+and promises. Additionally, they
+give rise to speed, efficiency
+
+341
+00:18:13,860 --> 00:18:17,130
+and transparency, and a number
+of other things. I made a video
+
+342
+00:18:17,130 --> 00:18:21,150
+pretty recently about exactly
+this. So let's dive in and take
+
+343
+00:18:21,150 --> 00:18:24,150
+a listen to the purpose the
+undeniable value
+
+344
+00:18:24,510 --> 00:18:30,030
+of smart contracts
+cryptocurrencies, fundamentally
+
+345
+00:18:30,030 --> 00:18:33,330
+re landscape markets and
+agreements as we know them.
+
+346
+00:18:33,630 --> 00:18:36,060
+Unfortunately, you've probably
+only been bombarded with people
+
+347
+00:18:36,060 --> 00:18:38,610
+screaming about empties and
+money. Now, some of the memes
+
+348
+00:18:38,610 --> 00:18:41,070
+are fun, but let's forget the
+bullet and get down to the
+
+349
+00:18:41,070 --> 00:18:44,400
+essence of the space. If you're
+already in web three. This is
+
+350
+00:18:44,400 --> 00:18:47,280
+the video to send to your
+friends to explain why you're so
+
+351
+00:18:47,280 --> 00:18:50,550
+excited about this space and
+explain why we're here. And then
+
+352
+00:18:50,550 --> 00:18:53,010
+if you're not into crypto,
+you've come to the right place.
+
+353
+00:18:53,070 --> 00:18:55,890
+And yes, there are fun memes and
+markets and there's some money
+
+354
+00:18:55,890 --> 00:18:58,740
+stuff in there all these things.
+But outside of all that the
+
+355
+00:18:58,740 --> 00:19:02,790
+purpose of blockchains relates
+to the age old elementary school
+
+356
+00:19:02,820 --> 00:19:07,710
+unbreakable, promise the pinky
+swear, let's get Froggy. Nearly
+
+357
+00:19:07,710 --> 00:19:10,860
+everything you do in life is the
+result of an agreement or a
+
+358
+00:19:10,860 --> 00:19:14,100
+contract. Your chair was the
+result of an agreement to buy
+
+359
+00:19:14,100 --> 00:19:16,770
+and sell lumber to assemble and
+sell the chair to a real tailor
+
+360
+00:19:16,770 --> 00:19:19,860
+on Amazon. Then you made an
+agreement to buy the chair for
+
+361
+00:19:19,860 --> 00:19:23,400
+$40. The lights in your house
+are powered by electricity,
+
+362
+00:19:23,430 --> 00:19:25,680
+which is an agreement from you
+and the electric company you
+
+363
+00:19:25,680 --> 00:19:28,170
+agree to pay them in return
+they'll keep the lights on the
+
+364
+00:19:28,170 --> 00:19:30,810
+electricity they generate it's
+agreements between them and
+
+365
+00:19:30,810 --> 00:19:33,990
+engineers who built turbines to
+generate the electricity with
+
+366
+00:19:33,990 --> 00:19:36,570
+insurance you agree to pay some
+amount of money to them every
+
+367
+00:19:36,570 --> 00:19:39,870
+month, and in return, they will
+do nothing or I mean, they'll
+
+368
+00:19:39,870 --> 00:19:43,530
+cover your medical bills, almost
+everything you do and everything
+
+369
+00:19:43,530 --> 00:19:46,860
+you interact with is the result
+of some form of agreement or
+
+370
+00:19:46,860 --> 00:19:50,190
+contract in some aspect. Now,
+agreements and contracts can
+
+371
+00:19:50,190 --> 00:19:54,180
+feel kind of abstract and boring
+to really grasp on to simplify,
+
+372
+00:19:54,210 --> 00:19:57,120
+we can also refer to them as
+promises. When you get an oil
+
+373
+00:19:57,120 --> 00:19:59,760
+change. They're promising that
+they will faithfully change your
+
+374
+00:19:59,760 --> 00:20:03,090
+oil In exchange for money, when
+you put money in the bank, they
+
+375
+00:20:03,090 --> 00:20:06,390
+promise to keep it safe in
+exchange for them to use your
+
+376
+00:20:06,390 --> 00:20:09,240
+money to give out loans. When
+you buy a lottery ticket, the
+
+377
+00:20:09,240 --> 00:20:12,360
+lottery promises to give you a
+fair chance at winning a ton of
+
+378
+00:20:12,360 --> 00:20:15,330
+money in exchange for you buying
+the ticket. Whenever you make
+
+379
+00:20:15,330 --> 00:20:19,050
+one of these agreements. In a
+way, you're asking them to pinky
+
+380
+00:20:19,050 --> 00:20:22,590
+swear to not screw you over and
+to treat you fairly. But this
+
+381
+00:20:22,590 --> 00:20:25,500
+doesn't always happen. Let's
+look at a real world example of
+
+382
+00:20:25,500 --> 00:20:28,590
+someone breaking the Pinkie
+swear back in the 80s and 90s,
+
+383
+00:20:28,590 --> 00:20:30,810
+McDonald's ran a promotion for
+people to win money by
+
+384
+00:20:30,810 --> 00:20:33,930
+collecting McDonald's Monopoly
+game cards. The idea was simple.
+
+385
+00:20:33,960 --> 00:20:36,870
+You buy McDonald's in return,
+you get a chance to win $1
+
+386
+00:20:36,870 --> 00:20:41,130
+million. You can imagine
+McDonald's literally going Hey,
+
+387
+00:20:41,130 --> 00:20:44,160
+everybody, I promise you if you
+buy our MC food and McNuggets,
+
+388
+00:20:44,340 --> 00:20:48,450
+we'll give you a fair chance of
+winning this money, we ended up
+
+389
+00:20:48,450 --> 00:20:50,910
+breaking this promise, instead
+of having a fair chance of
+
+390
+00:20:50,910 --> 00:20:56,040
+winning your chance was in fact,
+zero in the mid 90s. Between 13
+
+391
+00:20:56,040 --> 00:21:00,330
+and $24 million went into the
+pockets of not people playing
+
+392
+00:21:00,330 --> 00:21:03,420
+the game, honestly. But a group
+of corrupt insiders who had
+
+393
+00:21:03,420 --> 00:21:06,270
+rigged the game, meaning that
+when you played the McDonald's
+
+394
+00:21:06,270 --> 00:21:09,630
+Monopoly game, you were buying
+into a set of lies and promises
+
+395
+00:21:09,660 --> 00:21:13,890
+that were 100% always going to
+be broken. And the thing is, it
+
+396
+00:21:13,890 --> 00:21:16,470
+doesn't really matter if this
+was McDonald's fault or not.
+
+397
+00:21:16,500 --> 00:21:19,020
+They were the ones making the
+promises that they ultimately
+
+398
+00:21:19,020 --> 00:21:21,540
+could not keep. Another way you
+could think about it is that
+
+399
+00:21:21,540 --> 00:21:26,130
+that's $24 million that they
+essentially stole from you and I
+
+400
+00:21:26,370 --> 00:21:30,480
+now if this system was deployed
+on a blockchain was something
+
+401
+00:21:30,480 --> 00:21:34,080
+called a smart contract, it
+would have been impossible to
+
+402
+00:21:34,080 --> 00:21:39,690
+defraud this $24 million due to
+smart contracts being immutable,
+
+403
+00:21:39,720 --> 00:21:42,750
+decentralized and transparent.
+But I'll get back to that in a
+
+404
+00:21:42,750 --> 00:21:47,430
+minute. In all the agreements
+and contracts we make, imagine
+
+405
+00:21:47,430 --> 00:21:51,000
+making a pinky swear with a 10
+year old and imagining how that
+
+406
+00:21:51,000 --> 00:21:53,280
+agreement would hold up. Hey,
+buddy, Could you could you
+
+407
+00:21:53,280 --> 00:21:55,500
+please keep my money safe? You
+can play with it if you like,
+
+408
+00:21:55,500 --> 00:21:58,680
+but just please have it when I
+come back. Immediately. You
+
+409
+00:21:58,680 --> 00:22:01,050
+might get that worrying feeling
+in your chest, something might
+
+410
+00:22:01,050 --> 00:22:03,660
+go wrong. This 10 year old might
+lose your money. You might be
+
+411
+00:22:03,660 --> 00:22:07,380
+thinking, how could I trust
+them? Will they break their
+
+412
+00:22:07,380 --> 00:22:10,770
+promise and this feeling of I
+can't breathe because of
+
+413
+00:22:10,770 --> 00:22:14,580
+untrustworthy situations
+happens? Once all the time. Can
+
+414
+00:22:14,580 --> 00:22:16,860
+I trust this used car
+salesperson to give me a good
+
+415
+00:22:16,860 --> 00:22:20,190
+car? Can I trust this tag that
+says machine washable? Or will
+
+416
+00:22:20,190 --> 00:22:22,620
+it make my shirt shrink? Will my
+insurance provider break their
+
+417
+00:22:22,620 --> 00:22:25,800
+promise of covering my medical
+bills want to get hit by a bus?
+
+418
+00:22:25,980 --> 00:22:28,830
+I'm Patrick promises he'll go on
+a hike with me. Well, he
+
+419
+00:22:28,830 --> 00:22:32,400
+actually I actually will. But
+the issue with our current
+
+420
+00:22:32,400 --> 00:22:35,430
+agreements and contracts is we
+have to trust the people. We're
+
+421
+00:22:35,430 --> 00:22:38,310
+making them to do the right
+thing. However often they're
+
+422
+00:22:38,310 --> 00:22:41,520
+actually incentivized to not do
+the right thing. insurance
+
+423
+00:22:41,520 --> 00:22:44,580
+doesn't want to pay out money.
+Sometimes salespeople just want
+
+424
+00:22:44,580 --> 00:22:47,400
+to get the shit off the shelves
+and with my girlfriend, I
+
+425
+00:22:47,400 --> 00:22:50,790
+promised to go on a hike. But I
+need hikes. Where else is has
+
+426
+00:22:50,790 --> 00:22:52,950
+happened. Now you might be
+thinking okay, Patrick, this
+
+427
+00:22:52,950 --> 00:22:56,370
+seems cool. But like Where has
+this actually affected me? Well,
+
+428
+00:22:56,370 --> 00:22:59,010
+the McDonald's lottery that we
+just spoke about above during
+
+429
+00:22:59,010 --> 00:23:01,710
+the Great Depression with the
+run of the banks banks promised
+
+430
+00:23:01,710 --> 00:23:04,560
+to keep our money safe and that
+when we went back to go get it
+
+431
+00:23:04,620 --> 00:23:07,920
+they would actually have the
+money there. And well and behold
+
+432
+00:23:07,920 --> 00:23:10,200
+there were times that they
+didn't have the money they're
+
+433
+00:23:10,230 --> 00:23:14,250
+just last year Robin Hood
+painted this amazing picture. On
+
+434
+00:23:14,250 --> 00:23:17,340
+user application we will give
+you access to the markets we
+
+435
+00:23:17,340 --> 00:23:22,470
+promise we will give you a
+retail investor a fair chance of
+
+436
+00:23:22,500 --> 00:23:24,420
+interacting with the world the
+finance
+
+437
+00:23:25,800 --> 00:23:29,520
+side, but not this asset. This
+asset, this asset or this asset,
+
+438
+00:23:29,550 --> 00:23:33,030
+the 2008 financial crisis
+remember that shady deals behind
+
+439
+00:23:33,030 --> 00:23:35,580
+closed doors combined with lies
+about financial product brought
+
+440
+00:23:35,580 --> 00:23:39,420
+the world to its economic knees,
+how are you? hyperinflation in
+
+441
+00:23:39,420 --> 00:23:42,600
+Zimbabwe hyperinflation in
+Brazil, fair enough. US history
+
+442
+00:23:42,600 --> 00:23:46,470
+is a relentless lesson of
+trustworthy entities being
+
+443
+00:23:46,500 --> 00:23:49,740
+notorious promised breakers and
+we finally have a way to fix it
+
+444
+00:23:49,980 --> 00:23:52,530
+with smart contracts. Now,
+before I jump into smart
+
+445
+00:23:52,530 --> 00:23:56,220
+contracts, a lot of people might
+be thinking, hey, cool in all,
+
+446
+00:23:56,250 --> 00:23:59,790
+however, we have systems in
+place to protect against a lot
+
+447
+00:23:59,790 --> 00:24:03,030
+of these things, which is true,
+and which is great. And that is
+
+448
+00:24:03,030 --> 00:24:06,780
+a very helpful step forward. But
+these systems often breaks ones
+
+449
+00:24:06,780 --> 00:24:09,570
+in 2008 Definitely didn't work.
+The ones with the Robin Hood
+
+450
+00:24:09,570 --> 00:24:12,870
+crisis definitely didn't work.
+And even if these systems apply,
+
+451
+00:24:12,930 --> 00:24:15,960
+and you go to court to try to
+work them out, maybe you're in
+
+452
+00:24:15,960 --> 00:24:18,990
+court for years before you
+actually see a resolution and by
+
+453
+00:24:18,990 --> 00:24:23,310
+that time, what you needed the
+money for is longer. So what is
+
+454
+00:24:23,310 --> 00:24:26,460
+this technology? What is this
+tool that can fix this
+
+455
+00:24:26,460 --> 00:24:30,000
+fundamental problem in our
+agreements today, this tool is
+
+456
+00:24:30,000 --> 00:24:33,660
+smart contracts and this tool is
+what the blockchain was built
+
+457
+00:24:33,660 --> 00:24:36,540
+for. Now, I'm gonna give you a
+quick overview of what a smart
+
+458
+00:24:36,540 --> 00:24:39,030
+contract is. However, I'm
+leaving some links in the
+
+459
+00:24:39,030 --> 00:24:42,420
+description for more in depth
+explanations, but the basics of
+
+460
+00:24:42,420 --> 00:24:46,050
+them is a smart contract is an
+agreement contract or a set of
+
+461
+00:24:46,050 --> 00:24:49,680
+instructions deployed on a
+decentralized blockchain. And
+
+462
+00:24:49,680 --> 00:24:52,830
+once the contract or set of
+instructions is deployed, it
+
+463
+00:24:52,920 --> 00:24:56,100
+cannot be altered, it
+automatically executes and
+
+464
+00:24:56,130 --> 00:24:59,340
+everyone can see the terms of
+the agreement. Real basics of it
+
+465
+00:24:59,370 --> 00:25:02,940
+is that the code is executed by
+decentralized collective like a
+
+466
+00:25:02,940 --> 00:25:05,130
+group of people but a group of
+people running a certain
+
+467
+00:25:05,130 --> 00:25:08,760
+software. This means that no one
+person or entity can actually
+
+468
+00:25:08,790 --> 00:25:11,460
+alter any of these agreements or
+change the terms of the
+
+469
+00:25:11,460 --> 00:25:14,760
+arrangement in these traditional
+agreements. Whoever owns the
+
+470
+00:25:14,760 --> 00:25:17,370
+contract, whoever owns the
+execution of the contract can
+
+471
+00:25:17,790 --> 00:25:20,910
+flip a switch and say, We're not
+going to do that anymore. In
+
+472
+00:25:20,910 --> 00:25:24,120
+smart contracts and web three in
+blockchain, you no longer can do
+
+473
+00:25:24,120 --> 00:25:26,880
+that. Typically, these smart
+contracts are on a decentralized
+
+474
+00:25:26,880 --> 00:25:29,670
+blockchain, and used in
+combination with a decentralized
+
+475
+00:25:29,700 --> 00:25:32,730
+Oracle network to get the real
+world assets and information.
+
+476
+00:25:32,820 --> 00:25:35,220
+And if these words sound like
+I'm conjuring up a magic spell,
+
+477
+00:25:35,250 --> 00:25:37,410
+well, again, check the links in
+the description. If you want to
+
+478
+00:25:37,410 --> 00:25:39,750
+learn more about the technical
+implications. If you're not a
+
+479
+00:25:39,750 --> 00:25:41,730
+technical person, then you're
+not interested in getting into
+
+480
+00:25:41,730 --> 00:25:45,330
+the nitty gritty, you can kind
+of think of it like HTTPS, I bet
+
+481
+00:25:45,330 --> 00:25:48,390
+the vast majority of you don't
+even know what HTTPS stands for.
+
+482
+00:25:48,450 --> 00:25:51,060
+And yet you use it every single
+day whenever you log on to the
+
+483
+00:25:51,060 --> 00:25:53,940
+internet. So how does this fix
+the McDonald's Monopoly issue?
+
+484
+00:25:54,120 --> 00:25:57,540
+In its traditional form, the
+lottery was executed behind
+
+485
+00:25:57,540 --> 00:26:01,290
+closed doors, somebody operated
+and owned the code and the
+
+486
+00:26:01,290 --> 00:26:03,870
+contracts and the agreements
+that ran the lottery, and they
+
+487
+00:26:03,870 --> 00:26:07,200
+had the power to alter it. And
+nobody other than the people
+
+488
+00:26:07,200 --> 00:26:10,740
+internal on the lottery could
+audit this altering happening.
+
+489
+00:26:10,770 --> 00:26:14,940
+Now if the code for this lottery
+was deployed onto a blockchain,
+
+490
+00:26:15,000 --> 00:26:18,150
+every time a hacker attempted to
+alter it, everyone would be
+
+491
+00:26:18,150 --> 00:26:21,300
+notified. Not only that, but you
+couldn't even alter it, because
+
+492
+00:26:21,300 --> 00:26:23,790
+the terms of a smart contract
+cannot be altered. Once
+
+493
+00:26:23,790 --> 00:26:26,670
+deployed, combine that smart
+contract with a chain link VRF
+
+494
+00:26:26,670 --> 00:26:30,360
+Oracle to get a verifiably
+random number. And presto, you
+
+495
+00:26:30,360 --> 00:26:33,120
+now have a perfectly
+decentralized, unalterable
+
+496
+00:26:33,120 --> 00:26:36,420
+agreement that is impossible to
+hack commit fraud or manipulate
+
+497
+00:26:36,450 --> 00:26:40,740
+we have just saved the public
+between 13,000,020 $4 million
+
+498
+00:26:41,370 --> 00:26:46,050
+just by fixing the issue of
+trust. How does this fix Robin
+
+499
+00:26:46,050 --> 00:26:48,480
+Hood? Well, the problem with
+Robin Hood is already fixed.
+
+500
+00:26:48,510 --> 00:26:51,360
+Right? Again, the problem is
+that there's a centralized body
+
+501
+00:26:51,360 --> 00:26:55,380
+that can flip a switch at any
+time and say you can't access
+
+502
+00:26:55,380 --> 00:26:58,290
+these markets anymore. We're
+breaking our promise of actually
+
+503
+00:26:58,290 --> 00:27:01,260
+giving you access to the
+markets. This is already fixed
+
+504
+00:27:01,290 --> 00:27:03,390
+with something called
+decentralized exchanges. And
+
+505
+00:27:03,390 --> 00:27:07,080
+these exist today, one of these
+exchanges is one called uniswap.
+
+506
+00:27:07,140 --> 00:27:10,320
+You can swap ERC 20 tokens,
+which are kind of the equivalent
+
+507
+00:27:10,320 --> 00:27:13,200
+of stocks, but some are some
+are, it's a little confusing. I
+
+508
+00:27:13,200 --> 00:27:15,810
+won't get into that here either.
+But it doesn't have that
+
+509
+00:27:15,810 --> 00:27:19,620
+centralized body that can flip a
+switch and ruin access to the
+
+510
+00:27:19,620 --> 00:27:22,860
+markets. And had these investors
+been on a decentralized
+
+511
+00:27:22,860 --> 00:27:26,730
+exchange, it would have saved
+them hundreds of millions of
+
+512
+00:27:26,730 --> 00:27:29,010
+dollars, and it would have
+prevented fraudulent market
+
+513
+00:27:29,010 --> 00:27:31,530
+manipulation. How does it fix
+run of the banks with
+
+514
+00:27:31,530 --> 00:27:34,470
+transparency built in an
+automated solvency checks, you
+
+515
+00:27:34,470 --> 00:27:37,050
+can build a bank like smart
+contract that has insolvency
+
+516
+00:27:37,050 --> 00:27:39,840
+checks built in that make it
+impossible to get there and
+
+517
+00:27:39,840 --> 00:27:44,190
+solve it means brokers any
+agreement or any history lesson,
+
+518
+00:27:44,430 --> 00:27:46,890
+where there was a trust
+assumption that was broken,
+
+519
+00:27:47,070 --> 00:27:50,850
+smart contracts can be applied
+to and should be applied to,
+
+520
+00:27:50,910 --> 00:27:54,480
+especially in a time where big
+money runs, owns and controls
+
+521
+00:27:54,480 --> 00:27:58,350
+everything, we desperately need
+to move to a world where some
+
+522
+00:27:58,350 --> 00:28:01,620
+self interested centralized
+entity can't flip a switch and
+
+523
+00:28:01,620 --> 00:28:04,680
+ruin people's access to the
+services that they need. We can
+
+524
+00:28:04,680 --> 00:28:08,640
+move away from a world that is
+brand based to a world that is
+
+525
+00:28:08,700 --> 00:28:11,940
+math based. Right now, if you
+interact with a service that you
+
+526
+00:28:11,940 --> 00:28:15,330
+don't like, or that they break
+their promise, the only thing
+
+527
+00:28:15,330 --> 00:28:18,330
+you can do is walk down the
+street to the next service
+
+528
+00:28:18,330 --> 00:28:20,700
+that's going to make the same
+set of promises. And you have to
+
+529
+00:28:20,700 --> 00:28:23,160
+hope and pray that they're
+actually going to keep it we can
+
+530
+00:28:23,160 --> 00:28:26,520
+move from that to a world where
+we can just look at the map and
+
+531
+00:28:26,520 --> 00:28:29,580
+say, oh, okay, one plus one
+equals two. This is what this
+
+532
+00:28:29,580 --> 00:28:33,690
+agreement is going to do for me
+every single time guaranteed,
+
+533
+00:28:33,750 --> 00:28:36,750
+because it's a decentralized
+autonomous agent has no
+
+534
+00:28:36,750 --> 00:28:39,570
+incentive to be evil, and
+everything is transparent and
+
+535
+00:28:39,570 --> 00:28:42,060
+out in the open of a big
+company. And if it was better
+
+536
+00:28:42,060 --> 00:28:45,480
+for me for one plus one to equal
+three, maybe I would go behind
+
+537
+00:28:45,480 --> 00:28:48,060
+some closed doors and flood some
+numbers and come back and be
+
+538
+00:28:48,060 --> 00:28:51,570
+like, hey, one plus one equals
+three with smart contracts.
+
+539
+00:28:51,600 --> 00:28:55,680
+That's impossible. Doing the
+right thing is infrastructural
+
+540
+00:28:55,710 --> 00:28:58,770
+now, given the choice between
+two agreements, one where you
+
+541
+00:28:58,770 --> 00:29:01,530
+have to trust a single
+centralized entity that they're
+
+542
+00:29:01,530 --> 00:29:05,400
+going to do the right thing for
+you, versus a decentralized
+
+543
+00:29:05,430 --> 00:29:07,170
+untampered double collective,
+
+544
+00:29:07,230 --> 00:29:09,840
+which one you're gonna choose.
+I'm picking the one that can't
+
+545
+00:29:09,840 --> 00:29:14,010
+screw me over every single time.
+For every agreement I can apply
+
+546
+00:29:14,010 --> 00:29:17,160
+it to now this technology is
+relatively new, but we have
+
+547
+00:29:17,190 --> 00:29:20,550
+already seen it relandscaping
+entire markets and continue to
+
+548
+00:29:20,550 --> 00:29:23,700
+do so the traditional financial
+world is already getting its
+
+549
+00:29:23,700 --> 00:29:27,660
+lunch eaten by defy or
+decentralized finance. There's
+
+550
+00:29:27,660 --> 00:29:30,990
+already over $200 billion of
+people's money in these
+
+551
+00:29:30,990 --> 00:29:34,260
+protocols to help have a more
+fair, more accountable, more
+
+552
+00:29:34,260 --> 00:29:37,530
+transparent financial system.
+This defy movement is one of the
+
+553
+00:29:37,530 --> 00:29:40,530
+main reasons I got into this
+space because we desperately
+
+554
+00:29:40,530 --> 00:29:44,550
+need to move away from where we
+are right now. And and people's
+
+555
+00:29:44,550 --> 00:29:47,850
+chances for wealth being sucked
+up by some group that's bending
+
+556
+00:29:47,850 --> 00:29:50,700
+the rules in their favor and
+smart contracts are our ticket
+
+557
+00:29:50,700 --> 00:29:53,790
+to that better world. More and
+more industries are also coming
+
+558
+00:29:53,790 --> 00:29:56,010
+over to smart contracts and
+blockchain because of all the
+
+559
+00:29:56,010 --> 00:29:59,280
+innovations and because of all
+the advantages that it has as we
+
+560
+00:29:59,280 --> 00:30:02,220
+grow and as we get better as we
+get closer to this vision of
+
+561
+00:30:02,220 --> 00:30:06,690
+having this concept fulfilled,
+trust minimized agreements.
+
+562
+00:30:06,750 --> 00:30:09,660
+These smart contracts are
+minimizing the trust that we
+
+563
+00:30:09,660 --> 00:30:12,600
+need to give other people in
+order for these agreements to be
+
+564
+00:30:12,630 --> 00:30:15,150
+executed. If trust minimized
+agreements is too confusing for
+
+565
+00:30:15,150 --> 00:30:18,630
+you just say unbreakable
+promises. Now I gotta be honest
+
+566
+00:30:18,630 --> 00:30:21,090
+with you guys. blockchains and
+smart contracts and
+
+567
+00:30:21,090 --> 00:30:23,460
+cryptocurrencies can actually do
+more than just trust, minimize
+
+568
+00:30:23,460 --> 00:30:26,820
+agreements. They have security
+benefits, uptime benefits,
+
+569
+00:30:26,850 --> 00:30:29,340
+execution, speed benefits, and a
+whole lot more. But it's a lot
+
+570
+00:30:29,340 --> 00:30:31,620
+easier to just learn about one
+and learn the other ones later,
+
+571
+00:30:31,620 --> 00:30:34,260
+right. It's kind of like
+sprinkles on top. So this is why
+
+572
+00:30:34,260 --> 00:30:36,990
+we are here. This is why we're
+building this future and this is
+
+573
+00:30:36,990 --> 00:30:39,390
+why we are so excited about it.
+
+574
+00:30:42,720 --> 00:30:46,440
+Even in just this introduction
+part, we've learned a ton. So
+
+575
+00:30:46,440 --> 00:30:49,680
+let's do a quick summary of what
+we've learned so far. Bitcoin
+
+576
+00:30:49,680 --> 00:30:53,070
+was the first protocol to take
+this blockchain technology into
+
+577
+00:30:53,070 --> 00:30:55,500
+the limelight and take these
+cryptocurrencies into the
+
+578
+00:30:55,500 --> 00:30:59,400
+mainstream Bitcoin is a sort of
+digital gold or a store of value
+
+579
+00:30:59,430 --> 00:31:02,730
+able to make transactions
+between users in a decentralized
+
+580
+00:31:02,730 --> 00:31:05,130
+manner. Aetherium and other
+smart contract platforms take
+
+581
+00:31:05,130 --> 00:31:08,640
+this blockchain technology one
+step further, enabling people to
+
+582
+00:31:08,640 --> 00:31:11,550
+make smart contracts and
+decentralized trust minimized
+
+583
+00:31:11,580 --> 00:31:14,760
+agreements, the smart contracts
+and decentralized applications
+
+584
+00:31:14,880 --> 00:31:18,120
+can access and interact with the
+real world using something
+
+585
+00:31:18,120 --> 00:31:21,090
+called decentralized Oracle
+networks. chain link is a
+
+586
+00:31:21,090 --> 00:31:24,060
+decentralized network that
+allows us to build these hybrid
+
+587
+00:31:24,060 --> 00:31:28,830
+smart contracts, which combines
+our on chain logic with our off
+
+588
+00:31:28,830 --> 00:31:31,950
+chain, decentralized data, and
+decentralized computation,
+
+589
+00:31:31,980 --> 00:31:35,220
+giving rise to our logic being
+completely decentralized, and
+
+590
+00:31:35,220 --> 00:31:37,890
+our data and external
+computation being completely
+
+591
+00:31:37,890 --> 00:31:41,280
+decentralized, giving us all the
+features that traditional
+
+592
+00:31:41,280 --> 00:31:44,190
+agreements and traditional
+contracts have. Now these
+
+593
+00:31:44,190 --> 00:31:46,860
+digital currencies like
+Aetherium, and Bitcoin have
+
+594
+00:31:46,860 --> 00:31:50,070
+value. Even without the smart
+contract part, having a
+
+595
+00:31:50,070 --> 00:31:53,310
+censorship resistant,
+decentralized store of value is
+
+596
+00:31:53,340 --> 00:31:56,130
+naturally powerful in its own
+right, we have some links in the
+
+597
+00:31:56,130 --> 00:31:58,680
+GitHub repository that will
+teach you how this decentralized
+
+598
+00:31:58,680 --> 00:32:02,010
+store of value flips traditional
+finance on its head. And it's
+
+599
+00:32:02,010 --> 00:32:04,650
+another one of the great reasons
+for building smart contracts.
+
+600
+00:32:04,680 --> 00:32:08,460
+But again, the easiest way to
+boil it down is trust minimized
+
+601
+00:32:08,490 --> 00:32:11,430
+agreements, or unbreakable
+promises. But let's also go into
+
+602
+00:32:11,430 --> 00:32:13,830
+some of these other features
+that smart contracts have over
+
+603
+00:32:13,830 --> 00:32:16,500
+our traditional environment. The
+first feature, of course, is
+
+604
+00:32:16,500 --> 00:32:19,230
+that they are decentralized. And
+they have no centralized
+
+605
+00:32:19,260 --> 00:32:21,840
+intermediary, the different
+individuals that run one of
+
+606
+00:32:21,840 --> 00:32:24,870
+these blockchains are known as
+node operators. And it's the
+
+607
+00:32:24,870 --> 00:32:28,500
+combination of all these 1000s
+of node operators running the
+
+608
+00:32:28,500 --> 00:32:31,260
+same software running these
+algorithms running these smart
+
+609
+00:32:31,260 --> 00:32:34,800
+contracts that make the network
+decentralized. We'll dive deeper
+
+610
+00:32:34,800 --> 00:32:38,010
+into how that works later. The
+next feature is transparency and
+
+611
+00:32:38,010 --> 00:32:40,890
+flexibility in these
+decentralized networks. Since
+
+612
+00:32:41,250 --> 00:32:44,010
+all these individual node
+operators run the software,
+
+613
+00:32:44,250 --> 00:32:47,010
+everybody can see everything
+that's happening on chain,
+
+614
+00:32:47,310 --> 00:32:49,620
+meaning there's no shady deals,
+there's no weird things
+
+615
+00:32:49,620 --> 00:32:53,550
+happening. Anything that's going
+to be unfair, people will be
+
+616
+00:32:53,550 --> 00:32:56,790
+able to see and just not use,
+everybody has perfect
+
+617
+00:32:56,790 --> 00:33:00,150
+information and has to play by
+the same rules. Now
+
+618
+00:33:00,150 --> 00:33:03,060
+additionally, this doesn't mean
+that there's no privacy, the
+
+619
+00:33:03,060 --> 00:33:05,820
+blockchain is pseudo anonymous,
+meaning that you aren't
+
+620
+00:33:05,820 --> 00:33:09,660
+necessarily tied to an identity
+in real life, they also have the
+
+621
+00:33:09,660 --> 00:33:12,480
+feature of speed and efficiency.
+For those of you who have ever
+
+622
+00:33:12,480 --> 00:33:16,020
+tried to do a bank transfer or
+send money across seas, you
+
+623
+00:33:16,020 --> 00:33:19,620
+know, it sometimes can take two
+to three weeks, when in fact,
+
+624
+00:33:19,740 --> 00:33:22,950
+all these banks are really doing
+is basic math. They're
+
+625
+00:33:22,950 --> 00:33:26,130
+subtracting money from your
+balance and adding it to some
+
+626
+00:33:26,130 --> 00:33:29,580
+other balance. Why does it take
+so long, in the blockchain, all
+
+627
+00:33:29,580 --> 00:33:33,030
+of these transactions happen
+instantly. Another instance for
+
+628
+00:33:33,030 --> 00:33:35,850
+those in the financial world
+today know that clearing houses
+
+629
+00:33:35,850 --> 00:33:39,090
+and settlement days can take a
+long time. In the blockchain,
+
+630
+00:33:39,180 --> 00:33:42,090
+there's no need for any of that,
+because they happen instantly.
+
+631
+00:33:42,150 --> 00:33:45,270
+This obviously is much quicker,
+but it also makes for much more
+
+632
+00:33:45,300 --> 00:33:48,960
+efficient interactions with each
+other security and immutability.
+
+633
+00:33:48,990 --> 00:33:52,800
+Again, immutable means that it
+can't be changed. Once a smart
+
+634
+00:33:52,800 --> 00:33:56,460
+contract is deployed, that's it,
+whatever is in the code is going
+
+635
+00:33:56,460 --> 00:33:59,430
+to be in the code forever, they
+cannot be altered or tampered
+
+636
+00:33:59,430 --> 00:34:02,550
+with in any way. This means that
+the security is much easier.
+
+637
+00:34:02,580 --> 00:34:04,860
+Whereas in a centralized world,
+somebody can hack into the
+
+638
+00:34:04,860 --> 00:34:08,010
+server, jump into the database
+and change some numbers. You
+
+639
+00:34:08,010 --> 00:34:10,380
+can't do that in the blockchain
+world. And since it's
+
+640
+00:34:10,380 --> 00:34:13,710
+decentralized, in order to hack
+the blockchain, you'd have to
+
+641
+00:34:14,040 --> 00:34:17,430
+take over half of the nodes as
+opposed to in the centralized
+
+642
+00:34:17,430 --> 00:34:20,520
+world, where you only have to
+take over one in the regular
+
+643
+00:34:20,520 --> 00:34:23,910
+world. If your computer and your
+backup computer go down, all of
+
+644
+00:34:23,910 --> 00:34:27,540
+your data is gone. In the
+blockchain world, if your
+
+645
+00:34:27,540 --> 00:34:30,660
+computer and your backup
+computer go down, all your data
+
+646
+00:34:30,690 --> 00:34:34,500
+is safe, because it's being run
+on all these other decentralized
+
+647
+00:34:34,500 --> 00:34:38,190
+nodes. And even if a few 100
+nodes or a few 1000 nodes go
+
+648
+00:34:38,190 --> 00:34:41,550
+down. It doesn't matter because
+as long as one node has a copy
+
+649
+00:34:41,550 --> 00:34:45,240
+of the blockchain, you're good
+to go hacking a blockchain is
+
+650
+00:34:45,390 --> 00:34:49,140
+nearly impossible, and leaps and
+bounds more difficult than
+
+651
+00:34:49,140 --> 00:34:52,290
+hacking a centralized server.
+Not only that, but this is safer
+
+652
+00:34:52,320 --> 00:34:56,010
+in the asset sense as well. All
+you need to access your
+
+653
+00:34:56,010 --> 00:34:59,760
+credentials and your information
+in your assets is your private
+
+654
+00:34:59,760 --> 00:35:03,300
+key. Which is basically your
+password for all of this. And as
+
+655
+00:35:03,300 --> 00:35:06,000
+we've discussed in the video,
+the smart contracts remove this
+
+656
+00:35:06,000 --> 00:35:09,540
+counterparty risk, remove this
+centralized intermediary, remove
+
+657
+00:35:09,540 --> 00:35:13,050
+these trust gateways that we
+have to do in web two. When we
+
+658
+00:35:13,050 --> 00:35:15,960
+engage with users and
+individuals, they don't always
+
+659
+00:35:15,960 --> 00:35:19,230
+have our best interests at heart
+smart contracts, remove this
+
+660
+00:35:19,230 --> 00:35:21,600
+counterparty risk, because once
+one of these contracts is
+
+661
+00:35:21,600 --> 00:35:24,840
+created, they can't go in and
+they can't alter it. And they
+
+662
+00:35:24,840 --> 00:35:27,390
+can't let greed or ego or
+anything else, get the better of
+
+663
+00:35:27,390 --> 00:35:30,630
+them and alter the terms of the
+deal. And as we said, this gives
+
+664
+00:35:30,630 --> 00:35:34,440
+rise to these trust minimized
+agreements or these programmatic
+
+665
+00:35:34,470 --> 00:35:38,400
+unbreakable promises. We move
+away from brand based agreements
+
+666
+00:35:38,460 --> 00:35:41,400
+to math based agreements, where
+we can look at the cryptography
+
+667
+00:35:41,400 --> 00:35:44,970
+we can look right at the code
+and see exactly what something
+
+668
+00:35:44,970 --> 00:35:47,880
+is going to do and how it's
+going to execute, versus having
+
+669
+00:35:47,880 --> 00:35:51,000
+to rely on a human being doing
+the right thing with smart
+
+670
+00:35:51,000 --> 00:35:54,510
+contracts and decentralized
+hybrid smart contracts. Doing
+
+671
+00:35:54,510 --> 00:35:57,750
+the right thing is
+infrastructural all these pieces
+
+672
+00:35:57,750 --> 00:36:01,020
+boil down to us having the
+freedom to interact the way we
+
+673
+00:36:01,020 --> 00:36:04,590
+want to interact without having
+to be afraid that interacting
+
+674
+00:36:04,590 --> 00:36:07,590
+like that is going to screw us
+over this trust minimized piece,
+
+675
+00:36:07,590 --> 00:36:12,420
+these unbreakable promises, make
+interactions so much better. In
+
+676
+00:36:12,420 --> 00:36:15,270
+a purely web two world, we're
+constantly bombarded with
+
+677
+00:36:15,270 --> 00:36:19,410
+messages of projects and
+protocols pushing us to move or
+
+678
+00:36:19,410 --> 00:36:22,620
+act in the direction that makes
+them more profitable. Versus in
+
+679
+00:36:22,620 --> 00:36:23,820
+the smart contract space,
+
+680
+00:36:23,910 --> 00:36:26,460
+we can see everything
+transparently. And we can even
+
+681
+00:36:26,460 --> 00:36:29,970
+engage in interact and be
+partially owners of the
+
+682
+00:36:29,970 --> 00:36:33,360
+protocols and the interactions
+that we decide that we want to
+
+683
+00:36:33,360 --> 00:36:33,750
+be a part
+
+684
+00:36:33,750 --> 00:36:38,700
+of. So smart contracts have
+
+685
+00:36:38,700 --> 00:36:41,850
+been around for a few years now.
+And what did they generate for
+
+686
+00:36:41,880 --> 00:36:44,640
+what industries have come about
+due to these smart contract
+
+687
+00:36:44,640 --> 00:36:46,950
+platforms being around? Well,
+you've probably heard of some of
+
+688
+00:36:46,950 --> 00:36:49,020
+these and some of these we've
+already mentioned, but let's
+
+689
+00:36:49,020 --> 00:36:52,530
+give you a quick refresher, d
+phi d phi stands for
+
+690
+00:36:52,560 --> 00:36:56,010
+decentralized finance. And it
+gives users the ability to
+
+691
+00:36:56,010 --> 00:36:58,950
+engage with finance and markets
+without having to go through a
+
+692
+00:36:58,950 --> 00:37:01,500
+centralized intermediary. For
+example, like we said, with
+
+693
+00:37:01,500 --> 00:37:04,290
+Robin Hood, you no longer have
+to trust that Robin Hood would
+
+694
+00:37:04,290 --> 00:37:07,350
+continue to give you access to
+the markets, you instead would
+
+695
+00:37:07,350 --> 00:37:10,290
+be able to see in the smart
+contract. Yes, I have access to
+
+696
+00:37:10,290 --> 00:37:13,320
+the markets or in the 2008
+financial crisis. You never have
+
+697
+00:37:13,320 --> 00:37:16,530
+to trust that these groups and
+institutions are giving you the
+
+698
+00:37:16,530 --> 00:37:19,230
+correct things on the back end.
+You can see everything
+
+699
+00:37:19,230 --> 00:37:22,440
+transparently right on the
+blockchain, you can engage with
+
+700
+00:37:22,440 --> 00:37:25,590
+things like money markets and
+sophisticated financial products
+
+701
+00:37:25,830 --> 00:37:30,090
+easy effectively and securely at
+the time of recording. defi has
+
+702
+00:37:30,090 --> 00:37:34,500
+around $200 billion in assets
+under management and is quickly
+
+703
+00:37:34,500 --> 00:37:37,860
+growing. If you're really
+excited about defy we have a ton
+
+704
+00:37:37,860 --> 00:37:40,650
+of defy examples showing you how
+to build and interact with these
+
+705
+00:37:40,650 --> 00:37:43,920
+protocols. In coming lessons.
+Dows or decentralized.
+
+706
+00:37:43,950 --> 00:37:46,620
+autonomous organizations are
+another group that we've already
+
+707
+00:37:46,620 --> 00:37:49,650
+mentioned. Dows are groups that
+are governed completely
+
+708
+00:37:49,650 --> 00:37:52,770
+decentralized by a set of
+instructions or smart contracts
+
+709
+00:37:52,800 --> 00:37:56,130
+on chain. There are some massive
+benefits here where engagement
+
+710
+00:37:56,130 --> 00:37:58,770
+is much easier. The rules are
+black and white. And you can see
+
+711
+00:37:58,770 --> 00:38:01,200
+everything directly on chain
+voting and governance
+
+712
+00:38:01,200 --> 00:38:04,050
+technologies completely
+decentralized in the blockchain
+
+713
+00:38:04,050 --> 00:38:06,840
+space is one of the big ones
+pushing how we can evolve
+
+714
+00:38:06,840 --> 00:38:09,360
+politics and how we can evolve
+governance to make it more
+
+715
+00:38:09,360 --> 00:38:12,450
+efficient, fair and reasonable.
+And you better know it, we have
+
+716
+00:38:12,450 --> 00:38:15,120
+some examples of how to build
+Dows and how to work with Dows
+
+717
+00:38:15,120 --> 00:38:18,990
+incoming lessons. So be sure to
+watch those NF T's Stanford non
+
+718
+00:38:18,990 --> 00:38:22,860
+fungible tokens and can really
+be kind of described as digital
+
+719
+00:38:22,860 --> 00:38:26,850
+art or just a unique asset, they
+can do so much more, but we'll
+
+720
+00:38:26,850 --> 00:38:29,250
+keep it high level for now.
+Projects like board apes and
+
+721
+00:38:29,250 --> 00:38:32,760
+crypto punks have revolutionized
+the way that people get paid for
+
+722
+00:38:32,760 --> 00:38:35,670
+their work, show off their
+creativity, status, and so much
+
+723
+00:38:35,670 --> 00:38:38,730
+more. And yes, of course, we
+have lessons showing you how to
+
+724
+00:38:38,730 --> 00:38:42,060
+create and interact with NF T's
+as well, so many other groups
+
+725
+00:38:42,060 --> 00:38:44,880
+and so many other industries are
+being created as a result of
+
+726
+00:38:44,880 --> 00:38:47,850
+this insane technology. And
+maybe after finishing the
+
+727
+00:38:47,850 --> 00:38:51,450
+journey with us here, you go out
+and you'd be the one to pioneer
+
+728
+00:38:51,450 --> 00:38:54,960
+the next industry or the next
+billion dollar idea you've
+
+729
+00:38:54,960 --> 00:38:58,290
+learned so much already. But now
+that we've learned a lot of this
+
+730
+00:38:58,290 --> 00:39:02,700
+high level information, let's
+finally jump in, and let's make
+
+731
+00:39:02,700 --> 00:39:06,450
+your first transaction and let's
+get you set up to interact with
+
+732
+00:39:06,450 --> 00:39:09,120
+this new world. In this next
+section, we're going to get you
+
+733
+00:39:09,120 --> 00:39:12,720
+a wallet and we're going to show
+you exactly what a transaction
+
+734
+00:39:12,720 --> 00:39:20,310
+looks like and feels like. Let's
+dive in. This is the Aetherium
+
+735
+00:39:20,340 --> 00:39:24,840
+website aetherium.org We are
+going to make a transaction on a
+
+736
+00:39:24,840 --> 00:39:28,050
+test Aetherium blockchain I'll
+explain what that means in a
+
+737
+00:39:28,050 --> 00:39:31,170
+little bit. This is going to be
+our first transaction that's
+
+738
+00:39:31,170 --> 00:39:34,710
+made on the blockchain. Now
+again, this process that we're
+
+739
+00:39:34,710 --> 00:39:38,100
+going to follow is going to work
+the exact same with polygon,
+
+740
+00:39:38,130 --> 00:39:41,970
+avalanche Phantom and all these
+other EVM compatible
+
+741
+00:39:41,970 --> 00:39:44,730
+blockchains. I'll explain what
+that means in a bit too. For
+
+742
+00:39:44,730 --> 00:39:47,820
+now, just follow along and have
+fun in order to make a
+
+743
+00:39:47,820 --> 00:39:50,970
+transaction on any of these
+blockchains. The first thing
+
+744
+00:39:50,970 --> 00:39:55,110
+that we need to do is we need to
+set up a wallet. So I'm gonna go
+
+745
+00:39:55,110 --> 00:39:57,810
+ahead and go to meta mask
+because it's one of the most
+
+746
+00:39:57,810 --> 00:40:00,930
+popular wallets and one of the
+easiest to Use, we're going to
+
+747
+00:40:00,930 --> 00:40:03,870
+go ahead and download it. I'm
+using the brave browser, but it
+
+748
+00:40:03,870 --> 00:40:07,740
+works for Chrome, Firefox or
+really any other browsers. And
+
+749
+00:40:07,740 --> 00:40:11,070
+it's just going to be a little
+extension in the top right hand
+
+750
+00:40:11,430 --> 00:40:14,910
+of your browser. This way, we
+can really easily see it any
+
+751
+00:40:14,910 --> 00:40:17,730
+times what we have in our
+wallet, will still are all of
+
+752
+00:40:17,730 --> 00:40:21,240
+our Aetherium based currencies.
+So I'm gonna go ahead and
+
+753
+00:40:21,240 --> 00:40:22,950
+install meta mask for brave,
+
+754
+00:40:24,030 --> 00:40:27,930
+add to brave, add extension. And
+now we can go ahead and get
+
+755
+00:40:27,930 --> 00:40:31,500
+started with working with Brave,
+this is the first step you
+
+756
+00:40:31,500 --> 00:40:34,170
+absolutely need to take when
+starting your journey and one of
+
+757
+00:40:34,170 --> 00:40:36,750
+the easiest steps to take. So
+we're gonna go ahead and get
+
+758
+00:40:36,750 --> 00:40:40,050
+started. And we're going to
+create a brand new wallet. So
+
+759
+00:40:40,050 --> 00:40:42,840
+we're gonna go ahead and hit
+create wallet. If you already
+
+760
+00:40:42,840 --> 00:40:46,830
+have a wallet, you can actually
+import it via I have a seed
+
+761
+00:40:46,830 --> 00:40:49,680
+phrase, and we'll talk about the
+seed phrase or secret phrase in
+
+762
+00:40:49,680 --> 00:40:53,460
+a little bit. So let's go ahead
+and create a new wallet. And
+
+763
+00:40:53,490 --> 00:40:56,640
+sure, we'll agree to help out
+Metamask now we will create our
+
+764
+00:40:56,640 --> 00:41:00,660
+password make sure that this is
+really secure. For the purpose
+
+765
+00:41:00,690 --> 00:41:03,300
+of this demo, my passwords are
+just gonna be password. But
+
+766
+00:41:03,450 --> 00:41:06,060
+please don't have that be your
+password. You may also get a
+
+767
+00:41:06,060 --> 00:41:08,760
+video like this teaching you
+about your secret recovery
+
+768
+00:41:08,760 --> 00:41:12,120
+phrase. This is the same thing
+as your pneumonic. But see your
+
+769
+00:41:12,120 --> 00:41:15,420
+recovery phrase is a lot more
+clear as to what it is. And
+
+770
+00:41:15,420 --> 00:41:17,820
+again, to give us a ton of
+different tips on how to
+
+771
+00:41:17,820 --> 00:41:21,630
+actually store it and keep it
+safe. The main takeaway from
+
+772
+00:41:21,630 --> 00:41:24,960
+this is never shared this
+absolutely never shared this. So
+
+773
+00:41:24,960 --> 00:41:28,140
+we're going to go ahead and
+click reveal secret words. I'm
+
+774
+00:41:28,140 --> 00:41:31,470
+showing you guys here because
+this is just a demo and I don't
+
+775
+00:41:31,470 --> 00:41:35,250
+really care. However, if you
+show this secret phrase to
+
+776
+00:41:35,250 --> 00:41:38,820
+anybody else, they will have
+access to all the funds in your
+
+777
+00:41:38,820 --> 00:41:41,460
+application. So everything that
+we're going to do in this
+
+778
+00:41:41,460 --> 00:41:43,980
+tutorial, we're going to use
+fake money, we're going to use
+
+779
+00:41:44,070 --> 00:41:47,340
+not real money, so it doesn't
+matter. Now for the purposes of
+
+780
+00:41:47,340 --> 00:41:51,270
+testing and developing, I always
+recommend using a completely
+
+781
+00:41:51,270 --> 00:41:54,750
+separate meta mask, a completely
+separate Wallet. So for going
+
+782
+00:41:54,750 --> 00:41:57,870
+throughout this entire course,
+if you already have a wallet, or
+
+783
+00:41:57,870 --> 00:42:01,080
+if you already have a meta mask,
+please just set up a new one,
+
+784
+00:42:01,080 --> 00:42:04,020
+create a new profile, create a
+new meta mask, and this will be
+
+785
+00:42:04,020 --> 00:42:06,600
+your wallet that you use for the
+duration of this course.
+
+786
+00:42:06,630 --> 00:42:09,000
+However, if you're going to
+actually put money in here, you
+
+787
+00:42:09,000 --> 00:42:11,310
+absolutely need to have this
+written down. Because if you
+
+788
+00:42:11,310 --> 00:42:14,160
+lose access to this, and all
+your private keys, which we'll
+
+789
+00:42:14,160 --> 00:42:17,370
+talk about in a little bit, you
+will lose access to your wallet,
+
+790
+00:42:17,460 --> 00:42:20,310
+and you will lose access to all
+your funds. So they give some
+
+791
+00:42:20,310 --> 00:42:23,190
+tips like store this phrase and
+a password manager like one
+
+792
+00:42:23,190 --> 00:42:26,220
+password, write this phrase down
+on a piece of paper, put it in a
+
+793
+00:42:26,220 --> 00:42:30,300
+secure location, memorize it,
+whatever you want to do, just
+
+794
+00:42:30,300 --> 00:42:32,850
+make sure you have this backed
+up somewhere, I'm just gonna go
+
+795
+00:42:32,850 --> 00:42:35,640
+ahead and hit download this for
+now, it's not best practice to
+
+796
+00:42:35,640 --> 00:42:37,890
+save to your computer, it is
+much better to use a password
+
+797
+00:42:37,890 --> 00:42:40,740
+manager or write it down on a
+piece of paper or something. So
+
+798
+00:42:40,740 --> 00:42:44,430
+we're gonna go ahead and hit
+next. And it's going to ask us
+
+799
+00:42:44,430 --> 00:42:49,800
+to verify that we actually have
+it written down. And we're gonna
+
+800
+00:42:49,800 --> 00:42:52,920
+go ahead and hit confirm, and
+great and gives us a couple
+
+801
+00:42:52,920 --> 00:42:55,800
+other tips. Remember, definitely
+take these tips very seriously,
+
+802
+00:42:55,830 --> 00:42:58,530
+especially if you're gonna use
+this for real money. Like I
+
+803
+00:42:58,530 --> 00:43:01,500
+said, For this demo, we're just
+going to use test money. So it's
+
+804
+00:43:01,500 --> 00:43:04,080
+not as big of a deal. But if you
+put real money in, you
+
+805
+00:43:04,080 --> 00:43:08,040
+absolutely need to backup this
+seed phrase or secret phrase or
+
+806
+00:43:08,160 --> 00:43:11,700
+we're going to refer to it as
+our pneumonic phrase. Awesome.
+
+807
+00:43:11,730 --> 00:43:16,080
+Now we can see the interface of
+our wallet here full screen. And
+
+808
+00:43:16,080 --> 00:43:19,410
+depending on your browser, you
+can actually come up and pin it
+
+809
+00:43:19,410 --> 00:43:22,080
+to your browser so that you can
+just click it up in the top
+
+810
+00:43:22,080 --> 00:43:25,620
+right, and it'll drop down and
+you can see the same interface
+
+811
+00:43:25,620 --> 00:43:29,310
+here our pneumonic phrase that
+secret phrase, those that secret
+
+812
+00:43:29,310 --> 00:43:33,420
+12 words that they gave us have
+given us access to a new
+
+813
+00:43:33,450 --> 00:43:36,810
+account, the address of our
+account is located right here.
+
+814
+00:43:36,870 --> 00:43:41,160
+In fact, if we click it and copy
+it to our clipboard, and go to a
+
+815
+00:43:41,160 --> 00:43:45,420
+tool called a block explorer
+called ether scan, we can
+
+816
+00:43:45,420 --> 00:43:49,020
+actually paste our address in
+here and see details about our
+
+817
+00:43:49,020 --> 00:43:52,050
+account. Ether scan, like I
+said, is what's known as a block
+
+818
+00:43:52,050 --> 00:43:55,920
+Explorer. And it's a way to view
+different addresses transactions
+
+819
+00:43:55,920 --> 00:43:59,550
+and other happenings that happen
+with a blockchain. If we look at
+
+820
+00:43:59,550 --> 00:44:02,760
+this address that we just
+created on ether scan for
+
+821
+00:44:02,790 --> 00:44:06,420
+Etherium main net, we can see no
+transactions have happened.
+
+822
+00:44:06,750 --> 00:44:09,660
+There's really no analytics,
+there's no comments, there's no
+
+823
+00:44:09,660 --> 00:44:13,440
+balance, there's no value,
+because it's a brand new wallet,
+
+824
+00:44:13,500 --> 00:44:16,800
+and this address that we just
+punched into ether scan
+
+825
+00:44:16,950 --> 00:44:21,450
+represents our unique address
+our unique wallet only
+
+826
+00:44:21,450 --> 00:44:25,080
+identifiable for us. We'll talk
+about ether scan a little bit
+
+827
+00:44:25,080 --> 00:44:27,510
+more in a bit because it's a
+tool that we're going to use
+
+828
+00:44:27,510 --> 00:44:30,840
+quite often in wallets like meta
+mask, you can actually even
+
+829
+00:44:30,840 --> 00:44:34,980
+click right here and create even
+more accounts. So let's go ahead
+
+830
+00:44:34,980 --> 00:44:37,230
+and create a new account. We'll
+call this
+
+831
+00:44:38,400 --> 00:44:39,570
+account two.
+
+832
+00:44:41,370 --> 00:44:44,850
+As you can see, this one has a
+different address. So if we
+
+833
+00:44:44,850 --> 00:44:49,020
+click this one, we go back to
+ether scan. We paste the address
+
+834
+00:44:49,020 --> 00:44:53,460
+in here. We hit Enter. We can
+see another address again that's
+
+835
+00:44:53,460 --> 00:44:57,930
+uniquely identifiable to us,
+right here. It is zero balance,
+
+836
+00:44:57,960 --> 00:45:01,530
+no value, no transactions now If
+we go back to our Metamask, and
+
+837
+00:45:01,530 --> 00:45:04,500
+we click the little button, we
+can see we have two different
+
+838
+00:45:04,530 --> 00:45:07,710
+accounts in here, it's the same.
+If we hit the extension in the
+
+839
+00:45:07,710 --> 00:45:12,600
+top right, click the button, we
+have two different accounts. The
+
+840
+00:45:12,600 --> 00:45:16,920
+12 word secret recovery phrase
+allows us to create multiple
+
+841
+00:45:16,920 --> 00:45:20,640
+accounts, all with the same
+secret recovery phrase. So that
+
+842
+00:45:20,640 --> 00:45:24,090
+secret recovery phrase will give
+us access to both account one
+
+843
+00:45:24,360 --> 00:45:28,350
+and account two and any other
+accounts that we create by
+
+844
+00:45:28,350 --> 00:45:30,990
+hitting this Create Account
+button, because it gives you
+
+845
+00:45:30,990 --> 00:45:34,770
+access to all the accounts in
+your meta mask. Now, these
+
+846
+00:45:34,770 --> 00:45:38,490
+addresses of both of our
+accounts are the public unique
+
+847
+00:45:38,490 --> 00:45:43,380
+identifiers, but they also have
+a private unique identifier only
+
+848
+00:45:43,410 --> 00:45:48,000
+identifiable to us. Similar to
+the pneumonic, these are private
+
+849
+00:45:48,000 --> 00:45:51,330
+identifiers we never want to
+share and we never want to give
+
+850
+00:45:51,330 --> 00:45:55,470
+out their private This is known
+as your accounts private key. So
+
+851
+00:45:55,470 --> 00:45:58,050
+the mnemonic will give you
+access over many of these
+
+852
+00:45:58,050 --> 00:46:01,140
+accounts, the private key will
+give you access to just one of
+
+853
+00:46:01,140 --> 00:46:04,500
+these accounts, we can see it by
+hitting these little three dots,
+
+854
+00:46:04,560 --> 00:46:08,520
+going to account details and
+export private key, you'll just
+
+855
+00:46:08,520 --> 00:46:12,090
+have to punch in your password
+here. And you'll be able to see
+
+856
+00:46:12,120 --> 00:46:16,920
+your private key. This is going
+to be your private key for your
+
+857
+00:46:16,920 --> 00:46:19,890
+account, you can think of your
+private key as a password for
+
+858
+00:46:19,890 --> 00:46:23,100
+your account that lets you
+create transactions. Now the
+
+859
+00:46:23,100 --> 00:46:26,400
+reason that I'm showing mine on
+screen is because I'm not going
+
+860
+00:46:26,400 --> 00:46:28,770
+to put any real money in here.
+And this is just going to be a
+
+861
+00:46:28,770 --> 00:46:32,430
+burner account for this
+tutorial. And I highly recommend
+
+862
+00:46:32,430 --> 00:46:35,580
+once again, you use a burner
+account, you use accounts that
+
+863
+00:46:35,580 --> 00:46:38,850
+you never put any real money
+into. And along the way, I'll
+
+864
+00:46:38,850 --> 00:46:42,240
+show you how to make sure that
+you don't do that. But normally,
+
+865
+00:46:42,240 --> 00:46:45,600
+it's not a good idea to show or
+share your private keys or your
+
+866
+00:46:45,600 --> 00:46:49,110
+secret recovery phrase, if
+somebody gets a hold of this
+
+867
+00:46:49,110 --> 00:46:52,830
+private key, they will have
+access to my account one.
+
+868
+00:46:53,220 --> 00:46:57,090
+However, they won't have access
+to my account to if they get a
+
+869
+00:46:57,090 --> 00:47:00,960
+hold of my 12 word recovery
+phrase or pneumonic they'll have
+
+870
+00:47:00,960 --> 00:47:04,560
+access to both accounts. And
+this is why when people say keep
+
+871
+00:47:04,560 --> 00:47:07,860
+your private keys safe, your
+keys, your Bitcoin, your keys,
+
+872
+00:47:07,860 --> 00:47:11,190
+your Aetherium, they're talking
+about both your mnemonics or
+
+873
+00:47:11,190 --> 00:47:15,090
+your secret recovery phrases.
+And your private keys keep those
+
+874
+00:47:15,090 --> 00:47:19,080
+private, your public addresses
+are totally public. And anybody
+
+875
+00:47:19,080 --> 00:47:22,350
+can view your accounts on
+something like ether scan, or
+
+876
+00:47:22,350 --> 00:47:25,860
+any other explore. And it's
+totally okay for people to share
+
+877
+00:47:25,860 --> 00:47:28,740
+their public addresses. If you
+lose your private key, you lose
+
+878
+00:47:28,740 --> 00:47:31,320
+access to one of your accounts.
+If you lose your mnemonic, you
+
+879
+00:47:31,320 --> 00:47:34,470
+could potentially lose access to
+all your accounts. Basically,
+
+880
+00:47:34,470 --> 00:47:37,710
+what I'm trying to say is back
+these up and keep them in safe
+
+881
+00:47:37,710 --> 00:47:41,430
+places for this course it's okay
+if you lose one, since we're not
+
+882
+00:47:41,430 --> 00:47:44,430
+putting any real money in them.
+But in the real world, be sure
+
+883
+00:47:44,430 --> 00:47:46,710
+to do this. And great. Those are
+some of the main security
+
+884
+00:47:46,710 --> 00:47:49,890
+considerations here. Now, if you
+look up in the top right, right
+
+885
+00:47:49,890 --> 00:47:52,590
+next to that account button that
+we've been clicking, you also
+
+886
+00:47:52,590 --> 00:47:57,240
+see this thing saying Etherium
+main net, this is our networks
+
+887
+00:47:57,240 --> 00:48:00,930
+tab. And if we click it, we can
+see a list of all the different
+
+888
+00:48:00,930 --> 00:48:05,520
+networks that we currently have
+access to a Etherium main net is
+
+889
+00:48:05,550 --> 00:48:09,630
+the main network of Aetherium.
+And this is where real money is
+
+890
+00:48:09,660 --> 00:48:13,440
+spent and used for transactions.
+For this course, we're not going
+
+891
+00:48:13,440 --> 00:48:15,930
+to be working with the Etherium
+main net, we're instead going to
+
+892
+00:48:15,930 --> 00:48:18,570
+be working with something called
+a test net. Since we're
+
+893
+00:48:18,570 --> 00:48:22,380
+engineers, oftentimes, we're
+going to want to test and see
+
+894
+00:48:22,650 --> 00:48:25,410
+what our code is actually going
+to do and how to interact with
+
+895
+00:48:25,410 --> 00:48:28,650
+it. We're going to use a
+combination of local networks
+
+896
+00:48:28,650 --> 00:48:32,460
+and test networks to actually do
+this to actually test our smart
+
+897
+00:48:32,460 --> 00:48:35,370
+contracts. We're mainly going to
+use local networks. But we'll
+
+898
+00:48:35,370 --> 00:48:38,400
+get to that in a little bit to
+see some of the test networks
+
+899
+00:48:38,400 --> 00:48:42,240
+that come default with meta
+mask, we hit show slash hide
+
+900
+00:48:42,270 --> 00:48:45,360
+test networks, this will bring
+us into the settings page. And
+
+901
+00:48:45,360 --> 00:48:48,690
+we just hit select this to show
+test networks in the list. And
+
+902
+00:48:48,690 --> 00:48:52,590
+we just hit on Now if we scroll
+back up, we'll close out of the
+
+903
+00:48:52,590 --> 00:48:57,060
+settings, we hit the network's
+tab again. Now we can see all of
+
+904
+00:48:57,060 --> 00:49:01,590
+these other networks here like
+ropsten, Koven, Rinkeby, and
+
+905
+00:49:01,590 --> 00:49:04,800
+Garelli. These test networks or
+networks that resemble
+
+906
+00:49:04,830 --> 00:49:08,190
+Aetherium, or polygon, or
+Avalanche or phantom or any of
+
+907
+00:49:08,190 --> 00:49:11,430
+these other blockchains. And we
+can actually switch our accounts
+
+908
+00:49:11,460 --> 00:49:15,000
+to one of these other test
+networks. Let's click rink B,
+
+909
+00:49:15,000 --> 00:49:18,390
+for example, we can see that on
+the Rinkeby test network. We
+
+910
+00:49:18,420 --> 00:49:22,500
+also have zero Aetherium we have
+no money or nothing in here, we
+
+911
+00:49:22,500 --> 00:49:26,220
+have a blank Rinkeby wallet.
+These test nets work nearly
+
+912
+00:49:26,220 --> 00:49:29,580
+identical to how Aetherium main
+networks except for they run
+
+913
+00:49:29,580 --> 00:49:33,150
+with not real money. They run
+with fake money as a way for us
+
+914
+00:49:33,150 --> 00:49:36,270
+to learn and interact and see
+how these different smart
+
+915
+00:49:36,270 --> 00:49:39,780
+contracts actually work together
+at the time of filming. rink B
+
+916
+00:49:39,780 --> 00:49:43,740
+is one of the most popular test
+networks along with COVID. So
+
+917
+00:49:43,770 --> 00:49:47,670
+we're going to work a lot with
+Rigby In this tutorial, however,
+
+918
+00:49:47,700 --> 00:49:51,720
+be absolutely sure to check our
+GitHub repository to make sure
+
+919
+00:49:51,720 --> 00:49:55,380
+that you're always up to date
+with the best test network for
+
+920
+00:49:55,380 --> 00:49:57,870
+following along with the
+tutorial here since their test
+
+921
+00:49:57,870 --> 00:50:00,360
+networks people are running them
+out of the goodness of their
+
+922
+00:50:00,360 --> 00:50:03,810
+hearts. And sometimes the best
+ones actually change so, so be
+
+923
+00:50:03,810 --> 00:50:06,720
+sure to follow along with the
+GitHub repository. We might also
+
+924
+00:50:06,720 --> 00:50:10,050
+use COVID From time to time or
+maybe even Grilli. So we're
+
+925
+00:50:10,050 --> 00:50:12,360
+going to show you how to use a
+couple of these different test
+
+926
+00:50:12,360 --> 00:50:15,720
+nets. In fact, if we go to the
+GitHub repo associated with this
+
+927
+00:50:15,720 --> 00:50:19,740
+course, we can see recommended
+test net is indeed currently
+
+928
+00:50:19,770 --> 00:50:22,170
+ranking. So that's what we're
+going to work with should this
+
+929
+00:50:22,170 --> 00:50:25,020
+change, you should be able to
+follow along with another test.
+
+930
+00:50:25,020 --> 00:50:28,500
+And we'll leave notes as to how
+to continue. Now what we can do
+
+931
+00:50:28,500 --> 00:50:32,850
+actually is we can go to Rigby
+ether scan, we can go to,
+
+932
+00:50:34,530 --> 00:50:37,020
+you can look up Rinku ether
+scan, and it looks like it's the
+
+933
+00:50:37,020 --> 00:50:41,640
+first thing that shows up
+Rinkeby dot ether scan.io, we
+
+934
+00:50:41,640 --> 00:50:47,070
+can punch in this same address,
+copy and paste it. And we can
+
+935
+00:50:47,070 --> 00:50:50,610
+see some of the details of this
+address on the Rinkeby ether
+
+936
+00:50:50,610 --> 00:50:53,970
+scan. Like I said, right now,
+it's totally blank. This
+
+937
+00:50:53,970 --> 00:50:57,300
+networks interface later on is
+also how we're going to be able
+
+938
+00:50:57,300 --> 00:51:00,810
+to work with polygon, avalanche,
+etc, we'll just have to add
+
+939
+00:51:00,810 --> 00:51:03,840
+networks. But we'll get to that
+in a bit. And just to reiterate,
+
+940
+00:51:03,840 --> 00:51:06,990
+test nets are free and for
+testing our smart contracts and
+
+941
+00:51:06,990 --> 00:51:11,250
+main net networks cost money and
+are considered live. Now I also
+
+942
+00:51:11,250 --> 00:51:14,460
+do want to put a caveat here
+that we do want to keep in mind
+
+943
+00:51:14,460 --> 00:51:17,700
+that these test nets are being
+run at the goodness of people's
+
+944
+00:51:17,700 --> 00:51:20,700
+hearts. So we don't want to
+abuse them, we want to use them
+
+945
+00:51:20,700 --> 00:51:23,940
+to learn and then move on. So
+try not to send a billion
+
+946
+00:51:23,940 --> 00:51:26,790
+transactions on one of these
+test nets. In fact, what we're
+
+947
+00:51:26,790 --> 00:51:30,000
+going to do right now is we're
+going to send a transaction on
+
+948
+00:51:30,030 --> 00:51:33,750
+the Rinkeby test net. And this
+will show us exactly what it
+
+949
+00:51:33,750 --> 00:51:36,630
+would look like on a main
+network. In order for us to
+
+950
+00:51:36,630 --> 00:51:39,150
+simulate one of these
+transactions, we're going to go
+
+951
+00:51:39,150 --> 00:51:42,480
+to what's called a faucet. And
+if you go to the GitHub
+
+952
+00:51:42,480 --> 00:51:45,690
+repository associated with this
+course, right underneath the
+
+953
+00:51:45,690 --> 00:51:49,260
+recommended test net is going to
+be a test net faucets, which is
+
+954
+00:51:49,260 --> 00:51:53,280
+going to show us where the most
+up to date faucet location is
+
+955
+00:51:53,340 --> 00:51:56,250
+for us getting test net
+Aetherium. So here we are at
+
+956
+00:51:56,250 --> 00:51:59,910
+faucets dot chain dot link,
+which again is the recommended
+
+957
+00:51:59,910 --> 00:52:03,570
+faucet, and what we can do is we
+can actually put our wallet
+
+958
+00:52:03,570 --> 00:52:08,550
+address in and get some test net
+link or test net Aetherium. Now
+
+959
+00:52:08,550 --> 00:52:11,310
+what we are gonna have to do is
+we are gonna have to connect our
+
+960
+00:52:11,310 --> 00:52:15,180
+wallet to the Rinkeby network.
+So we're going to come down,
+
+961
+00:52:15,870 --> 00:52:21,630
+we're going to switch from COVID
+to Etherium. Rigby, and then
+
+962
+00:52:21,780 --> 00:52:25,920
+we're going to make sure our
+meta mask is on the Rinkeby test
+
+963
+00:52:25,920 --> 00:52:28,980
+network here. Once both of those
+are set up, we're gonna go ahead
+
+964
+00:52:28,980 --> 00:52:32,370
+and hit Connect wallet. And
+we're going to choose meta mask.
+
+965
+00:52:33,960 --> 00:52:36,720
+Once we do that, our meta mask
+is actually going to pop up and
+
+966
+00:52:36,720 --> 00:52:40,020
+say would you like to connect to
+this website, connecting to a
+
+967
+00:52:40,020 --> 00:52:43,230
+website is how we give these
+websites in interface to
+
+968
+00:52:43,230 --> 00:52:46,560
+interact with our wallets and
+interact with our meta masks.
+
+969
+00:52:46,830 --> 00:52:49,710
+Don't worry, we're not sending
+any transactions like this,
+
+970
+00:52:49,740 --> 00:52:52,830
+we'll get to that in a bit. So
+we just we can pick an account
+
+971
+00:52:52,830 --> 00:52:56,610
+we want to connect. Let's choose
+our account one, we'll hit Next.
+
+972
+00:52:57,000 --> 00:53:00,330
+And then we'll go ahead and
+connect. Now that we're
+
+973
+00:53:00,330 --> 00:53:04,200
+connected, we can actually see
+our account connected up here.
+
+974
+00:53:04,290 --> 00:53:07,860
+And that little warning is now
+gone. And our wallet address is
+
+975
+00:53:07,890 --> 00:53:10,950
+automatically placed into here,
+we're going to make our first
+
+976
+00:53:10,980 --> 00:53:15,030
+test transaction. And for now,
+we don't need test link. So
+
+977
+00:53:15,030 --> 00:53:17,610
+we're going to leave that off.
+But later on, we're going to
+
+978
+00:53:17,610 --> 00:53:20,520
+come back and get that test
+link. For now we're just going
+
+979
+00:53:20,520 --> 00:53:22,740
+to need 0.1 test Aetherium.
+
+980
+00:53:24,060 --> 00:53:27,420
+So let's go ahead and complete
+the security by choosing the
+
+981
+00:53:27,420 --> 00:53:31,770
+traffic lights. And we're going
+to hit Send Request. What this
+
+982
+00:53:31,770 --> 00:53:37,290
+is going to do is we're asking
+this faucet to send us 0.1 test
+
+983
+00:53:37,320 --> 00:53:41,430
+Aetherium test net faucets are
+ways for us to get money into
+
+984
+00:53:41,430 --> 00:53:44,580
+our wallets on a test net. And
+this is why this test and
+
+985
+00:53:44,580 --> 00:53:47,730
+Aetherium isn't worth any actual
+money. Since we can get it for
+
+986
+00:53:47,730 --> 00:53:51,930
+free. These don't exist on Main
+net, you can't get real
+
+987
+00:53:51,930 --> 00:53:55,440
+Aetherium or real money for free
+on a main network. So we're on
+
+988
+00:53:55,440 --> 00:53:58,320
+Rinkeby we're getting fake
+Rinckey Aetherium. And we're
+
+989
+00:53:58,320 --> 00:54:00,780
+gonna go ahead and hit send
+request. Once we hit Send
+
+990
+00:54:00,780 --> 00:54:04,830
+Request, this transaction hash
+is going to pop up here, and it
+
+991
+00:54:04,830 --> 00:54:07,500
+says transactions have been
+initiated waiting for
+
+992
+00:54:07,500 --> 00:54:11,100
+confirmation. This means that
+some other wallet is actually
+
+993
+00:54:11,100 --> 00:54:15,720
+going to send us 0.1 test eath.
+And this is the transaction that
+
+994
+00:54:15,720 --> 00:54:18,600
+it's doing to do that now we
+just have to wait for our
+
+995
+00:54:18,600 --> 00:54:22,080
+transaction to finish verifying
+and finish going through. Now if
+
+996
+00:54:22,080 --> 00:54:24,540
+this doesn't work right away, I
+would recommend Wait a minute
+
+997
+00:54:24,540 --> 00:54:27,270
+and then just try it again. But
+what we can do is we can click
+
+998
+00:54:27,300 --> 00:54:31,020
+this transaction hash. If that
+transaction doesn't show up, we
+
+999
+00:54:31,020 --> 00:54:35,940
+can also just close this. And we
+can copy our address here. And
+
+1000
+00:54:35,940 --> 00:54:39,900
+actually we already see 0.1 eath
+in our wallets here. But we can
+
